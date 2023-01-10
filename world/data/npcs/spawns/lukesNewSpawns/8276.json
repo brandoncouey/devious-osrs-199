@@ -1,0 +1,222 @@
+[
+	{
+		"name": "Monkey guard",
+		"id": "7126",
+		"x": "2067",
+		"y": "5420",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7122",
+		"x": "2068",
+		"y": "5402",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7123",
+		"x": "2069",
+		"y": "5386",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7125",
+		"x": "2070",
+		"y": "5408",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7124",
+		"x": "2082",
+		"y": "5400",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7128",
+		"x": "2083",
+		"y": "5411",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7127",
+		"x": "2083",
+		"y": "5413",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7143",
+		"x": "2099",
+		"y": "5425",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7130",
+		"x": "2067",
+		"y": "5393",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7131",
+		"x": "2067",
+		"y": "5420",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7129",
+		"x": "2078",
+		"y": "5409",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7132",
+		"x": "2089",
+		"y": "5408",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7135",
+		"x": "2097",
+		"y": "5425",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7134",
+		"x": "2098",
+		"y": "5395",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7133",
+		"x": "2098",
+		"y": "5403",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7136",
+		"x": "2067",
+		"y": "5420",
+		"z": "3",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7137",
+		"x": "2069",
+		"y": "5408",
+		"z": "3",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7138",
+		"x": "2080",
+		"y": "5408",
+		"z": "3",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7140",
+		"x": "2084",
+		"y": "5388",
+		"z": "3",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7141",
+		"x": "2088",
+		"y": "5385",
+		"z": "3",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7142",
+		"x": "2097",
+		"y": "5388",
+		"z": "3",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monkey guard",
+		"id": "7139",
+		"x": "2098",
+		"y": "5403",
+		"z": "3",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

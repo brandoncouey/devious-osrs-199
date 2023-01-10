@@ -1,0 +1,92 @@
+[
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3288,
+    "y": 3891,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3290,
+    "y": 3890,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3291,
+    "y": 3888,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3292,
+    "y": 3887,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3287,
+    "y": 3887,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 565,
+    "amount": 1,
+    "x": 3296,
+    "y": 3887,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Blood rune",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3313,
+    "y": 3890,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3316,
+    "y": 3888,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3321,
+    "y": 3892,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  }
+]

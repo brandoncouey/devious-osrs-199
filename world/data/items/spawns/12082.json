@@ -1,0 +1,52 @@
+[
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3028,
+    "y": 3259,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 6561,
+    "amount": 1,
+    "x": 3049,
+    "y": 3257,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Ahab\u0027s beer",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 7957,
+    "amount": 1,
+    "x": 3016,
+    "y": 3229,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "White apron",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1005,
+    "amount": 1,
+    "x": 3009,
+    "y": 3204,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "White apron",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1963,
+    "amount": 1,
+    "x": 3009,
+    "y": 3207,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Banana",
+    "respawnSeconds": 60
+  }
+]

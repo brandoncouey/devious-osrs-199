@@ -1,0 +1,380 @@
+[
+  {
+    "name": "Black dragon",
+    "id": 7863,
+    "x": 3366,
+    "y": 10157,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hellhound",
+    "id": 7877,
+    "x": 3442,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hellhound",
+    "id": 7877,
+    "x": 3440,
+    "y": 10081,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hellhound",
+    "id": 7877,
+    "x": 3443,
+    "y": 10084,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3359,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3361,
+    "y": 10078,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3364,
+    "y": 10075,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3351,
+    "y": 10076,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3351,
+    "y": 10081,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3355,
+    "y": 10082,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ankou",
+    "id": 7864,
+    "x": 3357,
+    "y": 10082,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lesser demon",
+    "id": 7867,
+    "x": 3340,
+    "y": 10141,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lesser demon",
+    "id": 7865,
+    "x": 3336,
+    "y": 10139,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lesser demon",
+    "id": 7866,
+    "x": 3335,
+    "y": 10134,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lesser demon",
+    "id": 7867,
+    "x": 3338,
+    "y": 10131,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ice giant",
+    "id": 7878,
+    "x": 3336,
+    "y": 10061,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lesser demon",
+    "id": 7866,
+    "x": 3341,
+    "y": 10132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ice giant",
+    "id": 7880,
+    "x": 3335,
+    "y": 10057,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black demon",
+    "id": 7874,
+    "x": 3362,
+    "y": 10125,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ice giant",
+    "id": 7880,
+    "x": 3339,
+    "y": 10056,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lesser demon",
+    "id": 7865,
+    "x": 3342,
+    "y": 10137,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ice giant",
+    "id": 7879,
+    "x": 3347,
+    "y": 10055,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black demon",
+    "id": 7875,
+    "x": 3358,
+    "y": 10123,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ice giant",
+    "id": 7878,
+    "x": 3343,
+    "y": 10060,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Greater demon",
+    "id": 7871,
+    "x": 3425,
+    "y": 10152,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ice giant",
+    "id": 7879,
+    "x": 3335,
+    "y": 10054,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black demon",
+    "id": 7876,
+    "x": 3361,
+    "y": 10115,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black demon",
+    "id": 7874,
+    "x": 3365,
+    "y": 10115,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Greater demon",
+    "id": 7873,
+    "x": 3430,
+    "y": 10149,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Greater demon",
+    "id": 7872,
+    "x": 3429,
+    "y": 10144,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Greater demon",
+    "id": 7871,
+    "x": 3427,
+    "y": 10147,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Greater demon",
+    "id": 7873,
+    "x": 3425,
+    "y": 10149,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Greater demon",
+    "id": 7873,
+    "x": 3424,
+    "y": 10152,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Greater demon",
+    "id": 7872,
+    "x": 3424,
+    "y": 10145,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hellhound",
+    "id": 7877,
+    "x": 3439,
+    "y": 10085,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Hellhound",
+    "id": 7877,
+    "x": 3441,
+    "y": 10087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green dragon",
+    "id": 7869,
+    "x": 3414,
+    "y": 10070,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green dragon",
+    "id": 7870,
+    "x": 3419,
+    "y": 10065,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green dragon",
+    "id": 7868,
+    "x": 3414,
+    "y": 10065,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green dragon",
+    "id": 7870,
+    "x": 3398,
+    "y": 10124,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Green dragon",
+    "id": 7868,
+    "x": 3402,
+    "y": 10122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Black dragon",
+    "id": 7861,
+    "x": 3359,
+    "y": 10157,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

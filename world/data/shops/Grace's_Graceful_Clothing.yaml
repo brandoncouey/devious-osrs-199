@@ -1,0 +1,121 @@
+---
+identifier: "130e716b-eb95-479b-ab1e-2a3dbdc52c6f"
+title: "Grace's Graceful Clothing"
+currency: "MARKS_OF_GRACE"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: false
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 80
+  changePer: 0
+defaultStock:
+- id: 11850
+  amount: 100
+- id: 11854
+  amount: 100
+- id: 11856
+  amount: 100
+- id: 11858
+  amount: 100
+- id: 11860
+  amount: 100
+- id: 11852
+  amount: 100
+- id: 13591
+  amount: 100
+  price: 30
+- id: 13595
+  amount: 100
+  price: 50
+- id: 13597
+  amount: 100
+  price: 55
+- id: 13599
+  amount: 100
+  price: 25
+- id: 13601
+  amount: 100
+  price: 35
+- id: 13593
+  amount: 100
+  price: 35
+- id: 13603
+  amount: 100
+  price: 30
+- id: 13607
+  amount: 100
+  price: 50
+- id: 13609
+  amount: 100
+  price: 55
+- id: 13611
+  amount: 100
+  price: 25
+- id: 13613
+  amount: 100
+  price: 35
+- id: 13605
+  amount: 100
+  price: 35
+- id: 13615
+  amount: 100
+  price: 30
+- id: 13619
+  amount: 100
+  price: 50
+- id: 13621
+  amount: 100
+  price: 55
+- id: 13623
+  amount: 100
+  price: 25
+- id: 13625
+  amount: 100
+  price: 35
+- id: 13617
+  amount: 100
+  price: 35
+- id: 13627
+  amount: 100
+  price: 30
+- id: 13631
+  amount: 100
+  price: 50
+- id: 13633
+  amount: 100
+  price: 55
+- id: 13635
+  amount: 100
+  price: 25
+- id: 13637
+  amount: 100
+  price: 35
+- id: 13629
+  amount: 100
+  price: 35
+- id: 13667
+  amount: 100
+  price: 30
+- id: 13671
+  amount: 100
+  price: 50
+- id: 13673
+  amount: 100
+  price: 55
+- id: 13675
+  amount: 100
+  price: 25
+- id: 13677
+  amount: 100
+  price: 35
+- id: 13669
+  amount: 100
+- id: 12641
+  amount: 1000

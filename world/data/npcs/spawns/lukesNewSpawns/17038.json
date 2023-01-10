@@ -1,0 +1,752 @@
+[
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4229",
+		"y": "9131",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4229",
+		"y": "9137",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fire giant",
+		"id": "8392",
+		"x": "4230",
+		"y": "9115",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4232",
+		"y": "9141",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4233",
+		"y": "9122",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mummy",
+		"id": "8398",
+		"x": "4234",
+		"y": "9109",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4236",
+		"y": "9146",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4237",
+		"y": "9117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4239",
+		"y": "9126",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4241",
+		"y": "9122",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4242",
+		"y": "9132",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4242",
+		"y": "9141",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mummy",
+		"id": "8398",
+		"x": "4245",
+		"y": "9098",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4248",
+		"y": "9127",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4248",
+		"y": "9138",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fire giant",
+		"id": "8394",
+		"x": "4249",
+		"y": "9092",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4253",
+		"y": "9100",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fire giant",
+		"id": "8393",
+		"x": "4254",
+		"y": "9093",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fire giant",
+		"id": "8392",
+		"x": "4254",
+		"y": "9122",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4258",
+		"y": "9096",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4258",
+		"y": "9106",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fire giant",
+		"id": "8393",
+		"x": "4258",
+		"y": "9117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4261",
+		"y": "9112",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4262",
+		"y": "9093",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4267",
+		"y": "9106",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4268",
+		"y": "9093",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4272",
+		"y": "9112",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4273",
+		"y": "9103",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4277",
+		"y": "9097",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4277",
+		"y": "9105",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4282",
+		"y": "9101",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4231",
+		"y": "9122",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4231",
+		"y": "9141",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4234",
+		"y": "9134",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4235",
+		"y": "9121",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4235",
+		"y": "9137",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4235",
+		"y": "9149",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4236",
+		"y": "9113",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4238",
+		"y": "9129",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4242",
+		"y": "9117",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4242",
+		"y": "9145",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4245",
+		"y": "9134",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4246",
+		"y": "9129",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4246",
+		"y": "9141",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4247",
+		"y": "9122",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4250",
+		"y": "9099",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4254",
+		"y": "9106",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4258",
+		"y": "9095",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4258",
+		"y": "9110",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4262",
+		"y": "9099",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mummy",
+		"id": "8399",
+		"x": "4263",
+		"y": "9130",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4265",
+		"y": "9098",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4265",
+		"y": "9109",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mummy",
+		"id": "8399",
+		"x": "4265",
+		"y": "9127",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mummy",
+		"id": "8399",
+		"x": "4266",
+		"y": "9133",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mummy",
+		"id": "8399",
+		"x": "4269",
+		"y": "9130",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4270",
+		"y": "9102",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4270",
+		"y": "9110",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4277",
+		"y": "9095",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4277",
+		"y": "9111",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4278",
+		"y": "9099",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4282",
+		"y": "9106",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4286",
+		"y": "9100",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4236",
+		"y": "9147",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4237",
+		"y": "9119",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4239",
+		"y": "9126",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4239",
+		"y": "9137",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4239",
+		"y": "9145",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4241",
+		"y": "9117",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4252",
+		"y": "9100",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8395",
+		"x": "4254",
+		"y": "9103",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4262",
+		"y": "9103",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4273",
+		"y": "9103",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8397",
+		"x": "4280",
+		"y": "9101",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Warrior of Murahs",
+		"id": "8396",
+		"x": "4282",
+		"y": "9105",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

@@ -1,0 +1,85 @@
+---
+identifier: "PVPTOKEN"
+title: "PVP Token Shop"
+currency: "PVP_TOKENS"
+accessibleByRegular: true
+accessibleByIronMan: true
+canSellToStore: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+priceRules:
+  buysAt: 20
+  changePer: 3
+defaultStock:
+  - id: 22625
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22628
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22631
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22622
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22616
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22619
+    amount: 100000
+    price: 10
+    placeholderId: 0
+  - id: 22613
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22638
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22641
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22644
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22650
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22653
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22656
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 22647
+    amount: 1000
+    price: 10
+    placeholderId: 0
+  - id: 12637
+    amount: 1000
+    price: 25
+    placeholderId: 0
+  - id: 12638
+    amount: 1000
+    price: 25
+    placeholderId: 0
+  - id: 12639
+    amount: 1000
+    price: 25
+    placeholderId: 0
+
+
+

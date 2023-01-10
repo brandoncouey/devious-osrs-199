@@ -1,0 +1,322 @@
+[
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2769",
+		"y": "4593",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2770",
+		"y": "4591",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2774",
+		"y": "4592",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2776",
+		"y": "4577",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2777",
+		"y": "4582",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2780",
+		"y": "4592",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2783",
+		"y": "4591",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2783",
+		"y": "4593",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2785",
+		"y": "4580",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2785",
+		"y": "4594",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2785",
+		"y": "4598",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2786",
+		"y": "4571",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2786",
+		"y": "4578",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2787",
+		"y": "4579",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2791",
+		"y": "4560",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2792",
+		"y": "4567",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2792",
+		"y": "4597",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2796",
+		"y": "4587",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2798",
+		"y": "4592",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2798",
+		"y": "4596",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2800",
+		"y": "4573",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2801",
+		"y": "4580",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2802",
+		"y": "4580",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2802",
+		"y": "4591",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2802",
+		"y": "4599",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2807",
+		"y": "4572",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2808",
+		"y": "4597",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Haze",
+		"id": "3626",
+		"x": "2808",
+		"y": "4601",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2810",
+		"y": "4573",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2811",
+		"y": "4567",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2812",
+		"y": "4577",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2813",
+		"y": "4571",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

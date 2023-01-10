@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 2616,
+    "y": 3255,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1773,
+    "amount": 1,
+    "x": 2563,
+    "y": 3261,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Purple dye",
+    "respawnSeconds": 60
+  }
+]

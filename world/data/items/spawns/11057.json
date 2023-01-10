@@ -1,0 +1,152 @@
+[
+  {
+    "id": 1917,
+    "amount": 1,
+    "x": 2796,
+    "y": 3165,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1919,
+    "amount": 1,
+    "x": 2795,
+    "y": 3165,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1919,
+    "amount": 1,
+    "x": 2794,
+    "y": 3165,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1919,
+    "amount": 1,
+    "x": 2798,
+    "y": 3161,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1919,
+    "amount": 1,
+    "x": 2798,
+    "y": 3160,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1919,
+    "amount": 1,
+    "x": 2795,
+    "y": 3160,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1351,
+    "amount": 1,
+    "x": 2795,
+    "y": 3161,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze axe",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1919,
+    "amount": 1,
+    "x": 2798,
+    "y": 3156,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1919,
+    "amount": 1,
+    "x": 2799,
+    "y": 3155,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1917,
+    "amount": 1,
+    "x": 2799,
+    "y": 3156,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 995,
+    "amount": 5,
+    "x": 2772,
+    "y": 3197,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Coins",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 995,
+    "amount": 5,
+    "x": 2767,
+    "y": 3197,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Coins",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 995,
+    "amount": 4,
+    "x": 2768,
+    "y": 3198,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Coins",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 995,
+    "amount": 3,
+    "x": 2767,
+    "y": 3199,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Coins",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 995,
+    "amount": 3,
+    "x": 2765,
+    "y": 3198,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Coins",
+    "respawnSeconds": 60
+  }
+]

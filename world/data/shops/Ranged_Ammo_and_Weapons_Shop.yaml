@@ -1,0 +1,71 @@
+---
+identifier: "9c9c490e-61b9-4aec-b4be-0321105e2d5b"
+title: "Range Shop"
+currency: "COINS"
+accessibleByRegular: true
+accessibleByIronMan: false
+canSellToStore: false
+restockRules:
+  restockTicks: 1
+  restockPerTick: 100
+defaultStock:
+- id: 8880
+  amount: 100000
+- id: 8882
+  amount: 100000000
+- id: 853
+  amount: 100000
+- id: 861
+  amount: 100000
+- id: 890
+  amount: 100000
+- id: 892
+  amount: 100000000
+- id: 863
+  amount: 100000000
+- id: 868
+  amount: 100000000
+- id: 809
+  amount: 100000000
+- id: 811
+  amount: 100000000
+- id: 9185
+  amount: 100000000
+- id: 9144
+  amount: 100000
+- id: 9244
+  amount: 100000000
+- id: 9242
+  amount: 100000000
+- id: 9243
+  amount: 100000000
+- id: 10499
+  amount: 100000000
+- id: 12865
+  amount: 100000
+- id: 22275
+  amount: 100000
+- id: 12867
+  amount: 100000
+- id: 22278
+  amount: 100000
+- id: 12869
+  amount: 100000
+- id: 22281
+  amount: 100000
+- id: 12871
+  amount: 100000
+- id: 22284
+  amount: 100000
+- id: 6328
+  amount: 100000
+- id: 3749
+  amount: 100000
+- id: 1169
+  amount: 100000
+- id: 1129
+  amount: 100000
+- id: 12610
+  amount: 100000
+- id: 6522
+  amount: 100000

@@ -1,0 +1,26 @@
+---
+identifier: "ase10zYyCINVUR5ul0a9WCMfYvc1D1"
+title: "Aurel's Supplies"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 130
+  buysAt: 40
+  changePer: 3
+defaultStock:
+- id: 1351
+  amount: 10
+- id: 590
+  amount: 10
+- id: 3363
+  amount: 10
+- id: 353
+  amount: 10

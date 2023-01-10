@@ -1,0 +1,52 @@
+[
+  {
+    "id": 733,
+    "amount": 1,
+    "x": 3482,
+    "y": 3279,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Smashed glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 229,
+    "amount": 1,
+    "x": 3481,
+    "y": 3279,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Vial",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 229,
+    "amount": 1,
+    "x": 3481,
+    "y": 3278,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Vial",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 733,
+    "amount": 1,
+    "x": 3481,
+    "y": 3277,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Smashed glass",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 733,
+    "amount": 1,
+    "x": 3482,
+    "y": 3276,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Smashed glass",
+    "respawnSeconds": 60
+  }
+]

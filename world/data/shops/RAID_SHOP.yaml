@@ -1,0 +1,21 @@
+---
+identifier: "RAIDSHOP"
+title: "Raid Shop"
+currency: "RAID_POINTS"
+accessibleByRegular: true
+accessibleByIronMan: true
+canSellToStore: false
+mentalOnly: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+priceRules:
+  buysAt: 20
+  changePer: 3
+defaultStock:
+  - id: 27275
+    amount: 1000
+    price: 5000
+  - id: 30424
+    amount: 1000
+    price: 1250

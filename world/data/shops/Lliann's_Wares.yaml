@@ -1,0 +1,55 @@
+---
+identifier: "0RiP7Hmjs87l0Da0eGvrYFfk6UPyIO"
+title: "Lliann's Wares"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: false
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 55
+  changePer: 1
+defaultStock:
+- id: 23911
+  amount: 3
+- id: 23927
+  amount: 10
+- id: 23929
+  amount: 10
+- id: 23931
+  amount: 10
+- id: 23933
+  amount: 10
+- id: 23935
+  amount: 10
+- id: 23937
+  amount: 10
+- id: 23939
+  amount: 10
+- id: 23941
+  amount: 10
+- id: 24003
+  amount: 50
+- id: 24006
+  amount: 50
+- id: 24009
+  amount: 100
+- id: 24012
+  amount: 100
+- id: 24015
+  amount: 100
+- id: 24018
+  amount: 100
+- id: 24021
+  amount: 100
+- id: 24024
+  amount: 100
+- id: 24027
+  amount: 100

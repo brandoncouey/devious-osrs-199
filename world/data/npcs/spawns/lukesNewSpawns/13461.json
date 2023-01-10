@@ -1,0 +1,112 @@
+[
+	{
+		"name": "Rod Fishing spot",
+		"id": "1529",
+		"x": "3350",
+		"y": "9567",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "1529",
+		"x": "3354",
+		"y": "9566",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "1529",
+		"x": "3356",
+		"y": "9566",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "1529",
+		"x": "3360",
+		"y": "9567",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "1529",
+		"x": "3362",
+		"y": "9588",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Nirrie",
+		"id": "4739",
+		"x": "3367",
+		"y": "9586",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Hallak",
+		"id": "4741",
+		"x": "3368",
+		"y": "9585",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tirrie",
+		"id": "4740",
+		"x": "3368",
+		"y": "9587",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "1529",
+		"x": "3371",
+		"y": "9576",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "1529",
+		"x": "3371",
+		"y": "9578",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Target",
+		"id": "4765",
+		"x": "3379",
+		"y": "9556",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

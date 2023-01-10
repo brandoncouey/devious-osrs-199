@@ -1,0 +1,62 @@
+[
+  {
+    "id": 882,
+    "amount": 1,
+    "x": 2957,
+    "y": 3206,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze arrow",
+    "respawnSeconds": 15
+  },
+  {
+    "id": 882,
+    "amount": 1,
+    "x": 2957,
+    "y": 3205,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze arrow",
+    "respawnSeconds": 15
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 2958,
+    "y": 3205,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 15
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 2959,
+    "y": 3205,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 15
+  },
+  {
+    "id": 1265,
+    "amount": 1,
+    "x": 2963,
+    "y": 3216,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze pickaxe",
+    "respawnSeconds": 15
+  },
+  {
+    "id": 1321,
+    "amount": 1,
+    "x": 2965,
+    "y": 3211,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Bronze scimitar",
+    "respawnSeconds": 15
+  }
+]

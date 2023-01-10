@@ -1,0 +1,92 @@
+[
+	{
+		"name": "Ungadulu",
+		"id": "3957",
+		"x": "2792",
+		"y": "9327",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Death wing",
+		"id": "509",
+		"x": "2796",
+		"y": "9304",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Death wing",
+		"id": "509",
+		"x": "2799",
+		"y": "9308",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Death wing",
+		"id": "509",
+		"x": "2800",
+		"y": "9301",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Death wing",
+		"id": "509",
+		"x": "2803",
+		"y": "9296",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Death wing",
+		"id": "509",
+		"x": "2806",
+		"y": "9292",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Death wing",
+		"id": "509",
+		"x": "2808",
+		"y": "9308",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Death wing",
+		"id": "509",
+		"x": "2811",
+		"y": "9296",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Death wing",
+		"id": "509",
+		"x": "2811",
+		"y": "9301",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

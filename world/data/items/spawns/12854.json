@@ -1,0 +1,84 @@
+[
+  {
+    "id": 995,
+    "amount": 4,
+    "x": 3232,
+    "y": 3500,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 995,
+    "amount": 3,
+    "x": 3228,
+    "y": 3504,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 995,
+    "amount": 4,
+    "x": 3232,
+    "y": 3500,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 995,
+    "amount": 3,
+    "x": 3228,
+    "y": 3504,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1171,
+    "amount": 1,
+    "x": 3204,
+    "y": 3515,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Wooden shield",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 2313,
+    "amount": 1,
+    "x": 3222,
+    "y": 3494,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Pie dish",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 3221,
+    "y": 3497,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 3222,
+    "y": 3491,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 8794,
+    "amount": 1,
+    "x": 3241,
+    "y": 3470,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Saw",
+    "respawnSeconds": 60
+  }
+]

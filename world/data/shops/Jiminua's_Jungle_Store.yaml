@@ -1,0 +1,73 @@
+---
+identifier: "Vc08MyCVo0LVcxKYiPNeczeGD8uGVl"
+title: "Jiminua's Jungle Store"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: true
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 150
+  buysAt: 50
+  changePer: 2
+defaultStock:
+- id: 590
+  amount: 2
+- id: 36
+  amount: 10
+- id: 596
+  amount: 10
+- id: 1931
+  amount: 3
+- id: 954
+  amount: 10
+- id: 1129
+  amount: 12
+- id: 1059
+  amount: 10
+- id: 1061
+  amount: 10
+- id: 2142
+  amount: 2
+- id: 2309
+  amount: 10
+- id: 229
+  amount: 10
+- id: 11877
+  amount: 100
+- id: 227
+  amount: 50
+- id: 11879
+  amount: 50
+- id: 233
+  amount: 3
+- id: 175
+  amount: 10
+- id: 970
+  amount: 50
+- id: 973
+  amount: 50
+- id: 946
+  amount: 2
+- id: 2347
+  amount: 10
+- id: 975
+  amount: 50
+- id: 952
+  amount: 10
+- id: 1351
+  amount: 10
+- id: 1265
+  amount: 2
+- id: 1349
+  amount: 5
+- id: 2349
+  amount: 10
+
+

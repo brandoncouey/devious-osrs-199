@@ -1,0 +1,45 @@
+[
+  { #Crystalline Hunllef
+  "ids": [ 9021, 9022, 9023, 9024 ],
+  "handler": "io.ruin.model.map.object.actions.impl.prifddinas.amlodddistrict.gauntlet.impl.hunllefCombat",
+  //Combat Info
+  "hitpoints": 2000,
+  "aggressive_level": 1880,
+  "max_damage": 50,
+  "attack_style": "MAGICAL_MELEE",
+  //Slayer Info
+  "slayer_level": 0,
+  "slayer_xp": 0,
+  "slayer_tasks": [],
+  //Combat Stats
+  "attack": 240,
+  "strength": 240,
+  "defence": 240,
+  "ranged": 240,
+  "magic": 240,
+  //Aggressive Stats
+  "stab_attack": 76,
+  "slash_attack": 76,
+  "crush_attack": 76,
+  "magic_attack": 76,
+  "ranged_attack": 76,
+  //Defensive Stats
+  "stab_defence": 20,
+  "slash_defence": 20,
+  "crush_defence": 20,
+  "magic_defence": 20,
+  "ranged_defence": 20,
+  //Immunites
+  "poison_immunity": true,
+  "venom_immunity": true,
+  //Speeds
+  "attack_ticks": 5,
+  "death_ticks": 3,
+  "respawn_ticks": -1,
+  //Animations
+  "spawn_animation": 8417,
+  "attack_animation": 8754,
+  "defend_animation": -1,
+  "death_animation": 8753
+  }
+]

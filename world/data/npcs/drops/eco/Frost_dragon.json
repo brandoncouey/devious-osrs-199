@@ -1,0 +1,63 @@
+[
+  {
+    "ids": [ 13192 ],
+    "guaranteed": [
+      { "id": 1752, "min": 3, "max": 5 }, //Blue dragonhide
+      { "id": 537, "min": 1, "max": 2 } //Dragon bones
+    ],
+    "tables": [
+      {
+        "name": "Weapons/Armour",
+        "weight": 1,
+        "items": [
+          { "id": 1377, "min": 1, "max": 1, "weight": 15 }, //Dragon Battleaxe
+          { "id": 1434, "min": 1, "max": 1, "weight": 15 }, //Dragon Mace
+          { "id": 4087, "min": 1, "max": 1, "weight": 15 }, //Dragon Plate Legs
+          { "id": 4585, "min": 1, "max": 1, "weight": 12 }, //Dragon Plate Skirt
+          { "id": 1305, "min": 1, "max": 1, "weight": 12 }, //Dragon LongSword
+          { "id": 4587, "min": 1, "max": 1, "weight": 12 }, //Dragon scimitar
+          { "id": 11286, "min": 1, "max": 1, "weight": 1 } //Draconic visage
+        ]
+      },
+      {
+        "name": "Runes",
+        "weight": 1,
+        "items": [
+          { "id": 555, "min": 75, "max": 400, "weight": 30 }, //Water rune
+          { "id": 554, "min": 30, "max": 200, "weight": 30 }, //Fire rune
+          { "id": 563, "min": 20, "max": 80, "weight": 30 }, //Law rune
+          { "id": 565, "min": 20, "max": 120, "weight": 30 }, //Blood rune
+          { "id": 560, "min": 20, "max": 100, "weight": 30 }, //Death rune
+          { "id": 562, "min": 20, "max": 150, "weight": 30 }, //Chaos rune
+          { "id": 561, "min": 50, "max": 200, "weight": 30 } //Nature rune
+        ]
+      },
+      {
+        "name": "Herbs",
+        "weight": 1,
+        "items": [
+          { "id": 202, "min": 1, "max": 10, "weight": 35 }, //Grimy marrentill
+          { "id": 204, "min": 1, "max": 10, "weight": 35 }, //Grimy tarromin
+          { "id": 212, "min": 1, "max": 10, "weight": 35 }, //Grimy avantoe
+          { "id": 210, "min": 1, "max": 10, "weight": 35 }, //Grimy irit leaf
+          { "id": 2486, "min": 1, "max": 10, "weight": 35 }, //Grimy lantadyme
+          { "id": 208, "min": 1, "max": 5, "weight": 35  }, //Grimy ranarr weed
+          { "id": 218, "min": 1, "max": 10, "weight": 35 } //Grimy dwarf weed
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 1,
+        "items": [
+          { "id": 24364, "min": 1, "max": 1, "weight": 9 }, //Clue scroll (hard)
+          { "id": 995, "min": 5000, "max": 1000, "weight": 50 }, //Coins
+          { "id": 995, "min": 2000, "max": 8000, "weight": 50 }, //Coins
+          { "id": 995, "min": 500, "max": 2500, "weight": 50 }, //Coins
+          { "id": 995, "min": 200, "max": 2000, "weight": 50 }, //Coins
+          { "id": 995, "min": 400, "max": 4000, "weight": 50 }, //Coins
+          { "id": 13512, "min": 3, "max": 8, "weight": 10 } //Ensouled dragon head
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "allowed_groups": [
+    "OWNER",
+    "ADMINISTRATOR",
+    "DEVELOPER",
+    "MODERATOR",
+    "SUPPORT",
+    "YOUTUBER"
+  ],
+  "allowed_names": [
+    "Maddox",
+    "Maddox2",
+    "Miles",
+    "Ape",
+    "Steroids",
+    "Hitsy",
+    "August",
+    "Ethan"
+  ],
+  "deny_response": "PRIVATE_ACCESS"
+}

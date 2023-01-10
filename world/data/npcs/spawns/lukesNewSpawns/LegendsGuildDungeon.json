@@ -1,0 +1,442 @@
+[
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2693",
+		"y": "9776",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2697",
+		"y": "9773",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2697",
+		"y": "9779",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2700",
+		"y": "9770",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2700",
+		"y": "9774",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2700",
+		"y": "9777",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2701",
+		"y": "9781",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2703",
+		"y": "9734",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2703",
+		"y": "9770",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2703",
+		"y": "9774",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2703",
+		"y": "9779",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2705",
+		"y": "9757",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2705",
+		"y": "9760",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2705",
+		"y": "9766",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2706",
+		"y": "9753",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2706",
+		"y": "9763",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2706",
+		"y": "9772",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2707",
+		"y": "9756",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2707",
+		"y": "9761",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Shadow warrior",
+		"id": "2853",
+		"x": "2708",
+		"y": "9758",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2710",
+		"y": "9753",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2711",
+		"y": "9746",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2712",
+		"y": "9741",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2712",
+		"y": "9749",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2712",
+		"y": "9754",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2713",
+		"y": "9742",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2715",
+		"y": "9749",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2716",
+		"y": "9744",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2718",
+		"y": "9751",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2720",
+		"y": "9742",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2720",
+		"y": "9759",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2721",
+		"y": "9746",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2721",
+		"y": "9754",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2723",
+		"y": "9738",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2723",
+		"y": "9744",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2724",
+		"y": "9749",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2725",
+		"y": "9758",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2727",
+		"y": "9741",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2727",
+		"y": "9747",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pit Scorpion",
+		"id": "3026",
+		"x": "2728",
+		"y": "9744",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2730",
+		"y": "9769",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2731",
+		"y": "9763",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2731",
+		"y": "9774",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2734",
+		"y": "9770",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

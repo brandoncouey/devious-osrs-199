@@ -1,0 +1,45 @@
+[
+  { #Nex ()
+  "ids": [ 14647, 14648, 14649, 14650 ],
+  "handler": "io.ruin.model.activities.bosses.nex.NexCombat",
+  //Combat Info
+  "hitpoints": 3400,
+  "aggressive_level": 1800,
+  "max_damage": 45,
+  "attack_style": "STAB",
+  //Slayer Info
+  "slayer_level": 1,
+  "slayer_xp": 0.0,
+  "slayer_tasks": [],
+  //Combat Stats
+  "attack": 315,
+  "strength": 200,
+  "defence": 260,
+  "ranged": 350,
+  "magic": 230,
+  //Aggressive Stats
+  "stab_attack": 200,
+  "slash_attack": 200,
+  "crush_attack": 200,
+  "magic_attack": 100,
+  "ranged_attack": 150,
+  //Defensive Stats
+  "stab_defence": 40,
+  "slash_defence": 140,
+  "crush_defence": 60,
+  "magic_defence": 300,
+  "ranged_defence": 190,
+  //Immunites
+  "poison_immunity": true,
+  "venom_immunity": true,
+  //Speeds
+  "attack_ticks": 6,
+  "death_ticks": 5,
+  "respawn_ticks": 50,
+  //Animations
+  "spawn_animation": 10840,
+  "attack_animation": 10841,
+  "defend_animation": 10843,
+  "death_animation": 10849
+  }
+]

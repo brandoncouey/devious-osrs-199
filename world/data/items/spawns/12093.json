@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2333,
+    "amount": 0,
+    "x": 3042,
+    "y": 3952,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 2333,
+    "amount": 1,
+    "x": 3042,
+    "y": 3952,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Half a redberry pie",
+    "respawnSeconds": 60
+  }
+]

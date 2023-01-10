@@ -1,0 +1,120 @@
+[
+  {
+    "name": "null",
+    "id": 2979,
+    "x": 2335,
+    "y": 3799,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1
+  },
+
+  {
+    "name": "Maria Gunnars",
+    "id": 1882,
+    "x": 2311,
+    "y": 3781,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Cat",
+    "id": 1620,
+    "x": 2335,
+    "y": 3806,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Honour guard",
+    "id": 1890,
+    "x": 2316,
+    "y": 3814,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Yak",
+    "id": 5816,
+    "x": 2319,
+    "y": 3793,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Yak",
+    "id": 5816,
+    "x": 2321,
+    "y": 3792,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Yak",
+    "id": 5816,
+    "x": 2321,
+    "y": 3796,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 5
+  },
+  {
+    "name": "Yak",
+    "id": 5816,
+    "x": 2321,
+    "y": 3791,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Yak",
+    "id": 5816,
+    "x": 2325,
+    "y": 3792,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Yak",
+    "id": 5816,
+    "x": 2324,
+    "y": 3795,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  },
+  {
+    "name": "Honour guard",
+    "id": 1890,
+    "x": 2325,
+    "y": 3813,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Ice troll runt",
+    "id": 1874,
+    "x": 2332,
+    "y": 3826,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Morten Holdstrom",
+    "id": 1885,
+    "x": 2332,
+    "y": 3803,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 4
+  }
+]

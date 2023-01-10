@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1511,
+    "amount": 0,
+    "x": 3243,
+    "y": 3395,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1511,
+    "amount": 0,
+    "x": 3243,
+    "y": 3397,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1129,
+    "amount": 0,
+    "x": 3244,
+    "y": 3398,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1931,
+    "amount": 0,
+    "x": 3232,
+    "y": 3399,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 952,
+    "amount": 1,
+    "x": 3218,
+    "y": 3412,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Spade",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 946,
+    "amount": 1,
+    "x": 3218,
+    "y": 3417,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Knife",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 33,
+    "amount": 1,
+    "x": 3208,
+    "y": 3395,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Lit candle",
+    "respawnSeconds": 60
+  }
+]

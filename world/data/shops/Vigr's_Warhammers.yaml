@@ -1,0 +1,31 @@
+---
+identifier: "I43MvEw4moDftcDkwr9fKR3pwBuwOz"
+title: "Vigr's Warhammers"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: false
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 130
+  buysAt: 55
+  changePer: 3
+defaultStock:
+- id: 1337
+  amount: 5
+- id: 1335
+  amount: 4
+- id: 1339
+  amount: 3
+- id: 1341
+  amount: 3
+- id: 1343
+  amount: 2
+- id: 1345
+  amount: 1

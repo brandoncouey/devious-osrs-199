@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1931,
+    "amount": 1,
+    "x": 3074,
+    "y": 3431,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Pot",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1265,
+    "amount": 1,
+    "x": 3081,
+    "y": 3429,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze pickaxe",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1917,
+    "amount": 1,
+    "x": 3077,
+    "y": 3439,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1917,
+    "amount": 1,
+    "x": 3077,
+    "y": 3443,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1917,
+    "amount": 1,
+    "x": 3080,
+    "y": 3441,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Beer",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 2142,
+    "amount": 1,
+    "x": 3080,
+    "y": 3443,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Cooked meat",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 2142,
+    "amount": 1,
+    "x": 3077,
+    "y": 3441,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Cooked meat",
+    "respawnSeconds": 60
+  }
+]

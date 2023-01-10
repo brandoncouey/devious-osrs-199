@@ -1,0 +1,62 @@
+[
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3232,
+    "y": 3948,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 53,
+    "amount": 3,
+    "x": 3235,
+    "y": 3950,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Headless arrow",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 53,
+    "amount": 2,
+    "x": 3237,
+    "y": 3949,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Headless arrow",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 53,
+    "amount": 1,
+    "x": 3240,
+    "y": 3940,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Headless arrow",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3238,
+    "y": 3938,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3250,
+    "y": 3953,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  }
+]

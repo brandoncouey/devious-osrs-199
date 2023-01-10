@@ -1,0 +1,16 @@
+{
+  "allowed_groups": [
+    "ADMINISTRATOR",
+    "DEVELOPER",
+    "MODERATOR",
+	"BETA_TESTER",
+    "COMMUNITY_MANAGER",
+    "SUPPORT",
+    "YOUTUBER",
+    "OWNER"
+  ],
+  "allowed_names": [
+    "Test"
+  ],
+  "deny_response": "CLOSED_BETA"
+}

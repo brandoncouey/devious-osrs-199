@@ -1,0 +1,63 @@
+identifier: "STARDUSTSHOP22"
+title: "Stardust Shop"
+currency: "STARDUST"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: false
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 70
+  changePer: 1
+defaultStock:
+  - id: 12013
+    amount: 1
+    price: 500
+  - id: 12014
+    amount: 1
+    price: 500
+  - id: 12015
+    amount: 1
+    price: 500
+  - id: 12016
+    amount: 1
+    price: 500
+  - id: 25549
+    amount: 1
+    price: 1000
+  - id: 25551
+    amount: 1
+    price: 1000
+  - id: 25553
+    amount: 1
+    price: 1000
+  - id: 25555
+    amount: 1
+    price: 1000
+  - id: 989
+    amount: 100
+    price: 50
+  - id: 23951
+    amount: 2000
+    price: 100
+  - id: 24361
+    amount: 2000
+    price: 50
+  - id: 24362
+    amount: 2000
+    price: 75
+  - id: 24363
+    amount: 2000
+    price: 125
+  - id: 24364
+    amount: 2000
+    price: 250
+  - id: 776
+    amount: 2000
+    price: 200
+

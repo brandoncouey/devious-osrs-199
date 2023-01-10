@@ -1,0 +1,302 @@
+[
+	{
+		"name": "Ice giant",
+		"id": "8489",
+		"x": "3971",
+		"y": "9135",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8490",
+		"x": "3973",
+		"y": "9090",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8489",
+		"x": "3981",
+		"y": "9116",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4001",
+		"y": "9089",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4004",
+		"y": "9114",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8489",
+		"x": "4004",
+		"y": "9140",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4006",
+		"y": "9094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8488",
+		"x": "4007",
+		"y": "9093",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4010",
+		"y": "9099",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4018",
+		"y": "9105",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8488",
+		"x": "4019",
+		"y": "9109",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4025",
+		"y": "9114",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4029",
+		"y": "9118",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8490",
+		"x": "4030",
+		"y": "9112",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8488",
+		"x": "4030",
+		"y": "9121",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8489",
+		"x": "3971",
+		"y": "9059",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "3974",
+		"y": "9033",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "3975",
+		"y": "9032",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8488",
+		"x": "3976",
+		"y": "9032",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "3983",
+		"y": "9051",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8489",
+		"x": "3987",
+		"y": "9086",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "3994",
+		"y": "9040",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4002",
+		"y": "9056",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4006",
+		"y": "9080",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8488",
+		"x": "4009",
+		"y": "9076",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4010",
+		"y": "9066",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8490",
+		"x": "4012",
+		"y": "9065",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4024",
+		"y": "9025",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice giant",
+		"id": "8488",
+		"x": "4028",
+		"y": "9064",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "7857",
+		"x": "4030",
+		"y": "9050",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

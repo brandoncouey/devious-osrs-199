@@ -1,0 +1,512 @@
+[
+	{
+		"name": "Rebel Scout",
+		"id": "4560",
+		"x": "2116",
+		"y": "4732",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2120",
+		"y": "4708",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2121",
+		"y": "4714",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2122",
+		"y": "4695",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2122",
+		"y": "4720",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2123",
+		"y": "4701",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "4562",
+		"x": "2127",
+		"y": "4679",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2128",
+		"y": "4719",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2129",
+		"y": "4698",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2129",
+		"y": "4707",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2129",
+		"y": "4725",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "4562",
+		"x": "2132",
+		"y": "4712",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2134",
+		"y": "4702",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2136",
+		"y": "4718",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2137",
+		"y": "4725",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2139",
+		"y": "4697",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2141",
+		"y": "4709",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "4562",
+		"x": "2143",
+		"y": "4675",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2145",
+		"y": "4703",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Half-soulless",
+		"id": "9213",
+		"x": "2145",
+		"y": "4721",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "4562",
+		"x": "2146",
+		"y": "4691",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "4562",
+		"x": "2149",
+		"y": "4711",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Soulless",
+		"id": "3104",
+		"x": "2154",
+		"y": "4686",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Soulless",
+		"id": "3104",
+		"x": "2154",
+		"y": "4695",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Soulless",
+		"id": "3104",
+		"x": "2155",
+		"y": "4708",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Soulless",
+		"id": "3104",
+		"x": "2157",
+		"y": "4699",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Soulless",
+		"id": "3104",
+		"x": "2161",
+		"y": "4689",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "4562",
+		"x": "2161",
+		"y": "4720",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "4562",
+		"x": "2165",
+		"y": "4692",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Koftik",
+		"id": "4531",
+		"x": "2170",
+		"y": "4727",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iban",
+		"id": "9221",
+		"x": "2133",
+		"y": "4647",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2149",
+		"y": "4646",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2150",
+		"y": "4648",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2153",
+		"y": "4646",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2153",
+		"y": "4649",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2156",
+		"y": "4646",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2157",
+		"y": "4649",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2159",
+		"y": "4635",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2159",
+		"y": "4642",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2159",
+		"y": "4646",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2159",
+		"y": "4650",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2160",
+		"y": "4662",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2163",
+		"y": "4653",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Disciple of Iban",
+		"id": "9220",
+		"x": "2163",
+		"y": "4660",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Othainian",
+		"id": "9217",
+		"x": "2122",
+		"y": "4562",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Witch's cat",
+		"id": "9215",
+		"x": "2131",
+		"y": "4602",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Holthion",
+		"id": "9219",
+		"x": "2132",
+		"y": "4554",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Doomion",
+		"id": "9218",
+		"x": "2134",
+		"y": "4565",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "4562",
+		"x": "2150",
+		"y": "4591",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Scout",
+		"id": "4560",
+		"x": "2153",
+		"y": "4546",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Kardia",
+		"id": "9214",
+		"x": "2155",
+		"y": "4566",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

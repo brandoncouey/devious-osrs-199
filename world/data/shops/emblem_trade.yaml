@@ -1,0 +1,32 @@
+---
+identifier: "100b9508-08d3-11ec-9a03-0242aaga003"
+title: "Blood Money Uniques"
+currency: "BLOOD_MONEY"
+accessibleByRegular: true
+accessibleByIronMan: true
+canSellToStore: true
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+priceRules:
+  buysAt: 20
+  changePer: 3
+defaultStock:
+  - id: 786
+    amount: 100000000
+    price: 100000000
+  - id: 26072
+    amount: 100000000
+    price: 100000000
+  - id: 25991
+    amount: 100000000
+    price: 50000000
+  - id: 26078
+    amount: 100000000
+    price: 100000000
+  - id: 25994
+    amount: 100000000
+    price: 50000000
+  - id: 26132
+    amount: 100000000
+    price: 125000000

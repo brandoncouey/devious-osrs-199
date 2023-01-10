@@ -1,0 +1,1502 @@
+[
+	{
+		"name": "Islwyn",
+		"id": "8817",
+		"x": "2771",
+		"y": "6104",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dalldav",
+		"id": "1481",
+		"x": "2772",
+		"y": "6108",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Oronwen",
+		"id": "1478",
+		"x": "2772",
+		"y": "6123",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Elena",
+		"id": "3206",
+		"x": "2774",
+		"y": "6093",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Eluned",
+		"id": "8828",
+		"x": "2774",
+		"y": "6105",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Elf Archer",
+		"id": "5295",
+		"x": "2777",
+		"y": "6114",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Elf Warrior",
+		"id": "5294",
+		"x": "2777",
+		"y": "6117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mawrth",
+		"id": "5300",
+		"x": "2779",
+		"y": "6109",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iona",
+		"id": "5303",
+		"x": "2780",
+		"y": "6119",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Arvel",
+		"id": "5299",
+		"x": "2781",
+		"y": "6122",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Eudav",
+		"id": "1477",
+		"x": "2782",
+		"y": "6126",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Lady Kelyn Ithell",
+		"id": "4555",
+		"x": "2784",
+		"y": "6116",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Goreu",
+		"id": "5297",
+		"x": "2785",
+		"y": "6103",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Eoin",
+		"id": "5302",
+		"x": "2790",
+		"y": "6121",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Elf Warrior",
+		"id": "5293",
+		"x": "2791",
+		"y": "6111",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Liliwen",
+		"id": "2689",
+		"x": "2794",
+		"y": "6104",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tool Leprechaun",
+		"id": "0",
+		"x": "2794",
+		"y": "6108",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iestin",
+		"id": "4557",
+		"x": "2799",
+		"y": "6118",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Banker",
+		"id": "1479",
+		"x": "2800",
+		"y": "6110",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Baxtorian",
+		"id": "4008",
+		"x": "2801",
+		"y": "6116",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ilfeen",
+		"id": "8824",
+		"x": "2802",
+		"y": "6099",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Banker",
+		"id": "1480",
+		"x": "2802",
+		"y": "6110",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Elf Archer",
+		"id": "5296",
+		"x": "2784",
+		"y": "6111",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Gethin",
+		"id": "1482",
+		"x": "2789",
+		"y": "6102",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2695",
+		"y": "6170",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3441",
+		"x": "2696",
+		"y": "6169",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3441",
+		"x": "2696",
+		"y": "6171",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2697",
+		"y": "6171",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2697",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2697",
+		"y": "6204",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2698",
+		"y": "6201",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2698",
+		"y": "6203",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3441",
+		"x": "2699",
+		"y": "6201",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2699",
+		"y": "6204",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2700",
+		"y": "6205",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2701",
+		"y": "6200",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3441",
+		"x": "2701",
+		"y": "6203",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2703",
+		"y": "6160",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2707",
+		"y": "6155",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2710",
+		"y": "6154",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2710",
+		"y": "6170",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2712",
+		"y": "6169",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "3418",
+		"x": "2712",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "0",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2714",
+		"y": "6173",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2715",
+		"y": "6167",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2715",
+		"y": "6169",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "3418",
+		"x": "2715",
+		"y": "6197",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "0",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3441",
+		"x": "2716",
+		"y": "6168",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2716",
+		"y": "6171",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2716",
+		"y": "6172",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2717",
+		"y": "6166",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2717",
+		"y": "6168",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2718",
+		"y": "6167",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2718",
+		"y": "6170",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2719",
+		"y": "6148",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "3418",
+		"x": "2722",
+		"y": "6192",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "0",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "3418",
+		"x": "2723",
+		"y": "6184",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "0",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2727",
+		"y": "6163",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rod Fishing spot",
+		"id": "3418",
+		"x": "2730",
+		"y": "6192",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "0",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3441",
+		"x": "2739",
+		"y": "6206",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2742",
+		"y": "6163",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3421",
+		"x": "2743",
+		"y": "6194",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2744",
+		"y": "6150",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3422",
+		"x": "2744",
+		"y": "6193",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2744",
+		"y": "6194",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2746",
+		"y": "6145",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2746",
+		"y": "6206",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2688",
+		"y": "6092",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2688",
+		"y": "6108",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2689",
+		"y": "6083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2689",
+		"y": "6088",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3421",
+		"x": "2689",
+		"y": "6107",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2690",
+		"y": "6087",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2690",
+		"y": "6094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2690",
+		"y": "6095",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3422",
+		"x": "2690",
+		"y": "6106",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3421",
+		"x": "2690",
+		"y": "6108",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2691",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2691",
+		"y": "6105",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2692",
+		"y": "6081",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2692",
+		"y": "6082",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2692",
+		"y": "6088",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2692",
+		"y": "6090",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2692",
+		"y": "6123",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2693",
+		"y": "6081",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2693",
+		"y": "6083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2693",
+		"y": "6085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2693",
+		"y": "6090",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2694",
+		"y": "6083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2694",
+		"y": "6086",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2694",
+		"y": "6125",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2695",
+		"y": "6082",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2695",
+		"y": "6085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2695",
+		"y": "6087",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2695",
+		"y": "6088",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2695",
+		"y": "6091",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2695",
+		"y": "6121",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2697",
+		"y": "6086",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2697",
+		"y": "6087",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2698",
+		"y": "6081",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2698",
+		"y": "6121",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2698",
+		"y": "6124",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2699",
+		"y": "6082",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2699",
+		"y": "6085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2700",
+		"y": "6083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2700",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2701",
+		"y": "6085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2702",
+		"y": "6081",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2702",
+		"y": "6083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2702",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2703",
+		"y": "6119",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iestin",
+		"id": "4556",
+		"x": "2704",
+		"y": "6111",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ysgawyn",
+		"id": "4259",
+		"x": "2704",
+		"y": "6112",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2704",
+		"y": "6117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2705",
+		"y": "6121",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2712",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3422",
+		"x": "2713",
+		"y": "6085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2721",
+		"y": "6126",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2722",
+		"y": "6108",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2723",
+		"y": "6105",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "237",
+		"x": "2725",
+		"y": "6127",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2726",
+		"y": "6085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3422",
+		"x": "2726",
+		"y": "6104",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2727",
+		"y": "6081",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2727",
+		"y": "6102",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2729",
+		"y": "6083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2729",
+		"y": "6086",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3441",
+		"x": "2730",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2730",
+		"y": "6091",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2731",
+		"y": "6080",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2731",
+		"y": "6089",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "235",
+		"x": "2732",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2732",
+		"y": "6095",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2734",
+		"y": "6090",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2735",
+		"y": "6094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2735",
+		"y": "6097",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "234",
+		"x": "2738",
+		"y": "6098",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Grizzly bear cub",
+		"id": "3424",
+		"x": "2739",
+		"y": "6100",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2739",
+		"y": "6123",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Grizzly bear cub",
+		"id": "3425",
+		"x": "2740",
+		"y": "6097",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Grizzly bear",
+		"id": "3423",
+		"x": "2741",
+		"y": "6100",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2741",
+		"y": "6119",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dire Wolf",
+		"id": "3426",
+		"x": "2742",
+		"y": "6129",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2743",
+		"y": "6121",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "238",
+		"x": "2744",
+		"y": "6108",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3422",
+		"x": "2744",
+		"y": "6120",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dire Wolf",
+		"id": "3426",
+		"x": "2744",
+		"y": "6131",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Will o' the wisp",
+		"id": "3440",
+		"x": "2744",
+		"y": "6139",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3421",
+		"x": "2745",
+		"y": "6119",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "3420",
+		"x": "2745",
+		"y": "6120",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

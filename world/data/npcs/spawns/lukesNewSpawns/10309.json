@@ -1,0 +1,142 @@
+[
+	{
+		"name": "Hobgoblin",
+		"id": "3049",
+		"x": "2576",
+		"y": "4460",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Hobgoblin",
+		"id": "3049",
+		"x": "2576",
+		"y": "4462",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Golrie",
+		"id": "892",
+		"x": "2579",
+		"y": "4451",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Hobgoblin",
+		"id": "3049",
+		"x": "2579",
+		"y": "4458",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Hobgoblin",
+		"id": "3049",
+		"x": "2579",
+		"y": "4461",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Hobgoblin",
+		"id": "3049",
+		"x": "2579",
+		"y": "4463",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Hobgoblin",
+		"id": "3049",
+		"x": "2581",
+		"y": "4462",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Hobgoblin",
+		"id": "3049",
+		"x": "2582",
+		"y": "4461",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie",
+		"id": "49",
+		"x": "2603",
+		"y": "4446",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2604",
+		"y": "4446",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie",
+		"id": "27",
+		"x": "2605",
+		"y": "4449",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2606",
+		"y": "4437",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2607",
+		"y": "4444",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie",
+		"id": "28",
+		"x": "2612",
+		"y": "4447",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

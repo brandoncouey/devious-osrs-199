@@ -1,0 +1,42 @@
+[
+  {
+    "id": 424,
+    "amount": 1,
+    "x": 2618,
+    "y": 3325,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Pigeon cage",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 424,
+    "amount": 1,
+    "x": 2618,
+    "y": 3324,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Pigeon cage",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 424,
+    "amount": 1,
+    "x": 2618,
+    "y": 3323,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Pigeon cage",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1327,
+    "amount": 1,
+    "x": 2572,
+    "y": 3284,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Black scimitar",
+    "respawnSeconds": 60
+  }
+]

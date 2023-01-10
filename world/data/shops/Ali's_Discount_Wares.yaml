@@ -1,0 +1,82 @@
+---
+identifier: "Al69NkbqJtm4fzvJBcKMVDmzOKV4hc"
+title: "Ali's Discount Wares"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 55
+  changePer: 1
+defaultStock:
+- id: 555
+  amount: 20
+- id: 554
+  amount: 20
+- id: 556
+  amount: 20
+- id: 557
+  amount: 20
+- id: 558
+  amount: 100
+- id: 559
+  amount: 100
+- id: 561
+  amount: 100
+- id: 563
+  amount: 100
+- id: 562
+  amount: 100
+- id: 560
+  amount: 100
+- id: 565
+  amount: 100
+- id: 564
+  amount: 100
+- id: 566
+  amount: 100
+- id: 12728
+  amount: 3
+- id: 12730
+  amount: 3
+- id: 12732
+  amount: 3
+- id: 12734
+  amount: 3
+- id: 12736
+  amount: 5
+- id: 12738
+  amount: 5
+- id: 6382
+  amount: 25
+- id: 6384
+  amount: 25
+- id: 6388
+  amount: 25
+- id: 6390
+  amount: 25
+- id: 6386
+  amount: 25
+- id: 6392
+  amount: 25
+- id: 6394
+  amount: 25
+- id: 6396
+  amount: 25
+- id: 6398
+  amount: 25
+- id: 6400
+  amount: 25
+- id: 6402
+  amount: 25
+- id: 6404
+  amount: 25
+- id: 6406
+  amount: 25

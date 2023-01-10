@@ -1,0 +1,101 @@
+---
+identifier: "5b54f795-14cb-4944-8847-ed61478c0a7d"
+title: "Blood Money Shop"
+currency: "BLOOD_MONEY"
+accessibleByRegular: true
+accessibleByIronMan: false
+canSellToStore: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+priceRules:
+  buysAt: 20
+  changePer: 3
+defaultStock:
+  - id: 10551
+    amount: 1000
+    price: 150000
+  - id: 12954
+    amount: 1000
+    price: 150000
+  - id: 7462
+    amount: 1000
+    price: 150000
+  - id: 11840
+    amount: 1000
+    price: 1000000
+  - id: 4153
+    amount: 1000
+    price: 250000
+  - id: 11235
+    amount: 1000
+    price: 250000
+  - id: 11212
+    amount: 1000
+    price: 150
+  - id: 19478
+    amount: 1000
+    price: 1000000
+  - id: 19481
+    amount: 1000
+    price: 1500000
+  - id: 20849
+    amount: 1000
+    price: 1500
+  - id: 11230
+    amount: 1000
+    price: 1500
+  - id: 21905
+    amount: 1000
+    price: 1500
+  - id: 2577
+    amount: 1000
+    price: 1000000
+  - id: 6889
+    amount: 1000
+    price: 125000
+  - id: 6914
+    amount: 1000
+    price: 1000000
+  - id: 6920
+    amount: 1000
+    price: 1000000
+  - id: 6686
+    amount: 100000000
+    price: 100
+  - id: 12696
+    amount: 100000000
+    price: 100
+  - id: 2445
+    amount: 100000000
+    price: 100
+  - id: 3041
+    amount: 100000000
+    price: 100
+  - id: 2435
+    amount: 100000000
+    price: 100
+  - id: 10926
+    amount: 100000000
+    price: 100
+  - id: 12626
+    amount: 100000000
+    price: 100
+  - id: 2453
+    amount: 100000000
+    price: 100
+  - id: 12906
+    amount: 100000000
+    price: 100
+  - id: 19625
+    amount: 100000000
+    price: 20
+  - id: 12776
+    amount: 100000000
+    price: 400
+  - id: 12778
+    amount: 100000000
+    price: 400
+  - id: 11941
+    amount: 100000000
+    price: 5000

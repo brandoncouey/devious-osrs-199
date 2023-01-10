@@ -1,0 +1,60 @@
+[
+  {
+    "ids": [ 2145 ],
+    "guaranteed": [
+      { "id": 995, "min": 500, "max": 1000 },   //Coins
+      { "id": 526, "min": 1, "max": 1 }   //Bones
+    ],
+    "tables": [
+      {
+        "name": "Empty",
+        "weight": 1,
+        "items": [
+          { "id": 23522, "min": 1, "max": 1, "weight": 15 } //Mask of Ranul
+        ]
+      },
+      {
+        "name": "Weapons/Armour",
+        "weight": 250,
+        "items": [
+          { "id": 1392, "min": 3, "max": 3, "weight": 15 }   //Battlestaff (noted)
+        ]
+      },
+      {
+        "name": "Runes/Ammunition",
+        "weight": 250,
+        "items": [
+          { "id": 560, "min": 20, "max": 80, "weight": 10 },   //Death rune
+          { "id": 557, "min": 20, "max": 80, "weight": 10 },   //Air rune
+          { "id": 554, "min": 20, "max": 80, "weight": 10 },   //Fire rune
+          { "id": 557, "min": 20, "max": 80, "weight": 10 },   //Earth rune
+          { "id": 564, "min": 20, "max": 80, "weight": 10 },   //Cosmic rune
+          { "id": 9075, "min": 20, "max": 80, "weight": 5 },   //Astral rune
+          { "id": 565, "min": 20, "max": 80, "weight": 5 }  //Blood rune
+        ]
+      },
+      {
+        "name": "Resources",
+        "weight": 250,
+        "items": [
+          { "id": 222, "min": 8, "max": 12, "weight": 9 },   //Eye of newt
+          { "id": 3139, "min": 5, "max": 15, "weight": 9 },   //Potato Cactus
+          { "id": 240, "min": 10, "max": 15, "weight": 5 },   //White berries
+          { "id": 246, "min": 5, "max": 10, "weight": 5 }   //Wine of zammy
+        ]
+      },
+      {
+        "name": "Other",
+        "weight": 250,
+        "items": [
+          { "id": 11738, "min": 1, "max": 1, "weight": 6 }   //Herb Box
+        ]
+      },
+      {
+        "name": "Empty",
+        "weight": 250,
+        "items": []
+      }
+    ]
+  }
+]

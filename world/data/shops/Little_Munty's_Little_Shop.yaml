@@ -1,0 +1,41 @@
+---
+identifier: "rLw40zZ7u1tGFHPJ90O19Q3VudMAQu"
+title: "Little Munty's Little Shop"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: true
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 110
+  buysAt: 40
+  changePer: 1
+defaultStock:
+- id: 1265
+  amount: 20
+- id: 1931
+  amount: 50000
+- id: 1935
+  amount: 5
+- id: 20742
+  amount: 4
+- id: 1925
+  amount: 5
+- id: 22660
+  amount: 15
+- id: 1923
+  amount: 5
+- id: 590
+  amount: 2
+- id: 1759
+  amount: 30
+- id: 1755
+  amount: 2
+- id: 2347
+  amount: 5

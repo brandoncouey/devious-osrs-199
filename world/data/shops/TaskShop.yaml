@@ -1,0 +1,30 @@
+---
+identifier: "dailypointshop"
+title: "Edgeville's Task Point Shop"
+currency: "TASK_POINTS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: false
+generalStore: false
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+defaultStock:
+  - id: 30353
+    amount: 100000000
+    price: 1
+  - id: 12791
+    amount: 100000000
+    price: 200
+  - id: 6758
+    amount: 100000000
+    price: 125
+  - id: 30425
+    amount: 100000000
+    price: 750
+  - id: 10983
+    amount: 100000000
+    price: 650
+
+

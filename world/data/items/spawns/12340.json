@@ -1,0 +1,72 @@
+[
+  {
+    "id": 276,
+    "amount": 1,
+    "x": 3111,
+    "y": 3367,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Rubber tube",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 273,
+    "amount": 1,
+    "x": 3097,
+    "y": 3366,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Poison",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 952,
+    "amount": 1,
+    "x": 3120,
+    "y": 3359,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Spade",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 3121,
+    "y": 3359,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1139,
+    "amount": 1,
+    "x": 3122,
+    "y": 3360,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze med helm",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1735,
+    "amount": 1,
+    "x": 3126,
+    "y": 3356,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Shears",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 272,
+    "amount": 1,
+    "x": 3108,
+    "y": 3356,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Fish food",
+    "respawnSeconds": 60
+  }
+]

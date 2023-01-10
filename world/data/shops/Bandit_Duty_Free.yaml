@@ -1,0 +1,35 @@
+---
+identifier: "Oxg7e6HdRX552d79h2q7jVu75Tn8gp"
+title: "Bandit Duty Free"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: true
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 90
+  buysAt: 60
+  changePer: 3
+defaultStock:
+- id: 1931
+  amount: 5
+- id: 1935
+  amount: 2
+- id: 20742
+  amount: 5
+- id: 590
+  amount: 2
+- id: 1755
+  amount: 2
+- id: 2347
+  amount: 5
+- id: 1265
+  amount: 5
+- id: 1351
+  amount: 10

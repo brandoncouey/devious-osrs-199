@@ -1,0 +1,972 @@
+[
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2899",
+		"y": "9520",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2901",
+		"y": "9481",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5344",
+		"x": "2902",
+		"y": "9482",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5343",
+		"x": "2903",
+		"y": "9508",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5350",
+		"x": "2905",
+		"y": "9509",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5345",
+		"x": "2911",
+		"y": "9475",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5346",
+		"x": "2911",
+		"y": "9476",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5350",
+		"x": "2911",
+		"y": "9488",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5351",
+		"x": "2912",
+		"y": "9475",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5342",
+		"x": "2912",
+		"y": "9488",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5348",
+		"x": "2914",
+		"y": "9529",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2915",
+		"y": "9528",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5343",
+		"x": "2915",
+		"y": "9529",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "3019",
+		"x": "2920",
+		"y": "9486",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5347",
+		"x": "2923",
+		"y": "9507",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5346",
+		"x": "2925",
+		"y": "9482",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2932",
+		"y": "9480",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5351",
+		"x": "2932",
+		"y": "9507",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5343",
+		"x": "2936",
+		"y": "9487",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5344",
+		"x": "2937",
+		"y": "9491",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2937",
+		"y": "9494",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5342",
+		"x": "2937",
+		"y": "9503",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2938",
+		"y": "9496",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5342",
+		"x": "2886",
+		"y": "9356",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5350",
+		"x": "2886",
+		"y": "9360",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5346",
+		"x": "2888",
+		"y": "9376",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5342",
+		"x": "2888",
+		"y": "9381",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5347",
+		"x": "2889",
+		"y": "9363",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5344",
+		"x": "2891",
+		"y": "9366",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5345",
+		"x": "2892",
+		"y": "9384",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5348",
+		"x": "2894",
+		"y": "9358",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5343",
+		"x": "2895",
+		"y": "9349",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5345",
+		"x": "2896",
+		"y": "9362",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2898",
+		"y": "9365",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5343",
+		"x": "2899",
+		"y": "9368",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5351",
+		"x": "2901",
+		"y": "9355",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5346",
+		"x": "2908",
+		"y": "9354",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5344",
+		"x": "2910",
+		"y": "9349",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5350",
+		"x": "2916",
+		"y": "9347",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2917",
+		"y": "9353",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5347",
+		"x": "2923",
+		"y": "9355",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5348",
+		"x": "2928",
+		"y": "9348",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5351",
+		"x": "2928",
+		"y": "9354",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5344",
+		"x": "2886",
+		"y": "9293",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5343",
+		"x": "2886",
+		"y": "9294",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5346",
+		"x": "2887",
+		"y": "9312",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2892",
+		"y": "9312",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5351",
+		"x": "2897",
+		"y": "9321",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5350",
+		"x": "2897",
+		"y": "9322",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5345",
+		"x": "2917",
+		"y": "9304",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5342",
+		"x": "2917",
+		"y": "9305",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2924",
+		"y": "9292",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5350",
+		"x": "2930",
+		"y": "9294",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5343",
+		"x": "2931",
+		"y": "9317",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5347",
+		"x": "2933",
+		"y": "9283",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5351",
+		"x": "2933",
+		"y": "9294",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2934",
+		"y": "9285",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5350",
+		"x": "2934",
+		"y": "9309",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5351",
+		"x": "2934",
+		"y": "9317",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5348",
+		"x": "2937",
+		"y": "9299",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Undead one",
+		"id": "5349",
+		"x": "2937",
+		"y": "9301",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stunted demonic gorilla",
+		"id": "7098",
+		"x": "2901",
+		"y": "9122",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stunted demonic gorilla",
+		"id": "7098",
+		"x": "2901",
+		"y": "9126",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2902",
+		"y": "9122",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2903",
+		"y": "9127",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2903",
+		"y": "9135",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2904",
+		"y": "9131",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2905",
+		"y": "9117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2905",
+		"y": "9123",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2905",
+		"y": "9137",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2907",
+		"y": "9120",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2907",
+		"y": "9125",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2907",
+		"y": "9129",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2908",
+		"y": "9114",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2909",
+		"y": "9117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2909",
+		"y": "9132",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2910",
+		"y": "9124",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stunted demonic gorilla",
+		"id": "7098",
+		"x": "2910",
+		"y": "9143",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2911",
+		"y": "9112",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2912",
+		"y": "9121",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2912",
+		"y": "9127",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2912",
+		"y": "9137",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2913",
+		"y": "9123",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2914",
+		"y": "9112",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2914",
+		"y": "9117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2914",
+		"y": "9130",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stunted demonic gorilla",
+		"id": "7098",
+		"x": "2914",
+		"y": "9143",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2915",
+		"y": "9133",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2916",
+		"y": "9123",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2916",
+		"y": "9128",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stunted demonic gorilla",
+		"id": "7098",
+		"x": "2916",
+		"y": "9143",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2917",
+		"y": "9115",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2919",
+		"y": "9118",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2919",
+		"y": "9125",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7212",
+		"x": "2920",
+		"y": "9134",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stunted demonic gorilla",
+		"id": "7098",
+		"x": "2921",
+		"y": "9123",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stunted demonic gorilla",
+		"id": "7098",
+		"x": "2921",
+		"y": "9127",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

@@ -1,0 +1,312 @@
+[
+  {
+    "name": null,
+    "id": 281,
+    "x": 3136,
+    "y": 2827,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 281,
+    "x": 3147,
+    "y": 2850,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10605,
+    "x": 3153,
+    "y": 2831,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 1338,
+    "x": 3154,
+    "y": 2846,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10617,
+    "x": 3155,
+    "y": 2819,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 1338,
+    "x": 3156,
+    "y": 2850,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 1338,
+    "x": 3155,
+    "y": 2845,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10618,
+    "x": 3162,
+    "y": 2849,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10612,
+    "x": 3161,
+    "y": 2849,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10614,
+    "x": 3160,
+    "y": 2835,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10616,
+    "x": 3162,
+    "y": 2848,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 3024,
+    "x": 3165,
+    "y": 2860,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10634,
+    "x": 3165,
+    "y": 2818,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10615,
+    "x": 3168,
+    "y": 2850,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10613,
+    "x": 3169,
+    "y": 2838,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10607,
+    "x": 3169,
+    "y": 2829,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10606,
+    "x": 3169,
+    "y": 2854,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10608,
+    "x": 3177,
+    "y": 2846,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10609,
+    "x": 3173,
+    "y": 2833,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 3024,
+    "x": 3176,
+    "y": 2848,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 3024,
+    "x": 3184,
+    "y": 2849,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 3024,
+    "x": 3170,
+    "y": 2859,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 4184,
+    "x": 3184,
+    "y": 2820,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 3024,
+    "x": 3187,
+    "y": 2861,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 4184,
+    "x": 3192,
+    "y": 2825,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10634,
+    "x": 3193,
+    "y": 2841,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 4184,
+    "x": 3193,
+    "y": 2830,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 4184,
+    "x": 3193,
+    "y": 2815,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 1338,
+    "x": 3148,
+    "y": 2839,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10611,
+    "x": 3149,
+    "y": 2843,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  },
+  {
+    "name": null,
+    "id": 10583,
+    "x": 3153,
+    "y": 2840,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 1,
+    "world": "ECO"
+  }
+]

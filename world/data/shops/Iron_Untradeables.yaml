@@ -1,0 +1,140 @@
+---
+identifier: "5464df07-5091-4ddc-IRON-426db5ae2193"
+title: "PvM Points Shop"
+currency: "PVM_POINTS"
+accessibleByIronMan: true
+accessibleByRegular: false
+mentalOnly: false
+canSellToStore: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+defaultStock:
+  - id: 24125
+    amount: 100000000
+    price: 300
+  - id: 22330
+    amount: 100000000
+    price: 5000
+  - id: 13116
+    amount: 100000000
+    price: 1000
+  - id: 12018
+    amount: 100000000
+    price: 500
+  - id: 12863
+    amount: 100000000
+    price: 1100
+  - id: 10551
+    amount: 100000000
+    price: 5000
+  - id: 10548
+    amount: 100000000
+    price: 5000    
+  - id: 24699
+    amount: 100000000
+    price: 10000
+  - id: 25888
+    amount: 100000000
+    price: 25000
+  - id: 25886
+    amount: 100000000
+    price: 25000
+  - id: 25884
+    amount: 100000000
+    price: 25000
+  - id: 25890
+    amount: 100000000
+    price: 25000
+  - id: 25867
+    amount: 100000000
+    price: 25000
+  - id: 25896
+    amount: 100000000
+    price: 25000
+  - id: 25894
+    amount: 100000000
+    price: 25000
+  - id: 25892
+    amount: 100000000
+    price: 25000
+  - id: 25874
+    amount: 100000000
+    price: 25000
+  - id: 25872
+    amount: 100000000
+    price: 25000
+  - id: 25870
+    amount: 100000000
+    price: 25000
+  - id: 25876
+    amount: 100000000
+    price: 25000
+  - id: 24551
+    amount: 100000000
+    price: 25000
+  - id: 25882
+    amount: 100000000
+    price: 25000
+  - id: 25880
+    amount: 100000000
+    price: 25000
+  - id: 25878
+    amount: 100000000
+    price: 25000
+  - id: 23971
+    amount: 100000000
+    price: 12500
+  - id: 23975
+    amount: 100000000
+    price: 12500
+  - id: 23979
+    amount: 100000000
+    price: 12500
+  - id: 6746
+    amount: 100000000
+    price: 1250
+  - id: 13379
+    amount: 100000000
+    price: 2000
+  - id: 13381
+    amount: 100000000
+    price: 2000
+  - id: 13380
+    amount: 100000000
+    price: 2000
+  - id: 13377
+    amount: 100000000
+    price: 2000
+  - id: 13378
+    amount: 100000000
+    price: 2000
+  - id: 19564
+    amount: 100000000
+    price: 1
+  - id: 23680
+    amount: 100000000
+    price: 7500
+  - id: 23673
+    amount: 100000000
+    price: 7500
+  - id: 23762
+    amount: 100000000
+    price: 7500
+  - id: 2
+    amount: 100000000
+    price: 5
+  - id: 786
+    amount: 100000000
+    price: 750000
+  - id: 23991
+    amount: 100000000
+    price: 2500
+
+
+
+
+
+
+
+

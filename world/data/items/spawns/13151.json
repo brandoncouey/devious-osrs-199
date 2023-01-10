@@ -1,0 +1,22 @@
+[
+  {
+    "id": 5418,
+    "amount": 1,
+    "x": 3294,
+    "y": 6089,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Empty sack",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 5331,
+    "amount": 1,
+    "x": 3294,
+    "y": 6087,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Watering can",
+    "respawnSeconds": 60
+  }
+]

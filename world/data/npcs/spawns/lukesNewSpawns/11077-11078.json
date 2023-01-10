@@ -1,0 +1,492 @@
+[
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "2759",
+		"y": "4498",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "2761",
+		"y": "4495",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "2762",
+		"y": "4500",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2762",
+		"y": "4509",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2767",
+		"y": "4523",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2769",
+		"y": "4501",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2769",
+		"y": "4517",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2773",
+		"y": "4515",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2773",
+		"y": "4532",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "2782",
+		"y": "4491",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "2783",
+		"y": "4487",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2783",
+		"y": "4494",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2787",
+		"y": "4503",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "2789",
+		"y": "4499",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2789",
+		"y": "4516",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "2792",
+		"y": "4488",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2792",
+		"y": "4490",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2795",
+		"y": "4496",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2798",
+		"y": "4531",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2800",
+		"y": "4526",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "2803",
+		"y": "4526",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2804",
+		"y": "4525",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2806",
+		"y": "4502",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2807",
+		"y": "4513",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Corpse",
+		"id": "3614",
+		"x": "2808",
+		"y": "4518",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3620",
+		"x": "2781",
+		"y": "4462",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Loading crane",
+		"id": "3618",
+		"x": "2782",
+		"y": "4458",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3620",
+		"x": "2783",
+		"y": "4446",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3620",
+		"x": "2785",
+		"y": "4447",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3620",
+		"x": "2785",
+		"y": "4456",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Loading crane",
+		"id": "3618",
+		"x": "2787",
+		"y": "4446",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Loading crane",
+		"id": "3618",
+		"x": "2787",
+		"y": "4451",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Innocent-looking key",
+		"id": "3619",
+		"x": "2788",
+		"y": "4455",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3620",
+		"x": "2791",
+		"y": "4447",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3620",
+		"x": "2791",
+		"y": "4456",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3620",
+		"x": "2793",
+		"y": "4446",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Loading crane",
+		"id": "3618",
+		"x": "2793",
+		"y": "4458",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3622",
+		"x": "2697",
+		"y": "4498",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3623",
+		"x": "2715",
+		"y": "4516",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3621",
+		"x": "2727",
+		"y": "4509",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mine cart",
+		"id": "3624",
+		"x": "2739",
+		"y": "4528",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2713",
+		"y": "4438",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2716",
+		"y": "4443",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2719",
+		"y": "4442",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2724",
+		"y": "4442",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2728",
+		"y": "4445",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2729",
+		"y": "4447",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2735",
+		"y": "4435",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iron pickaxe",
+		"id": "3613",
+		"x": "2738",
+		"y": "4439",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

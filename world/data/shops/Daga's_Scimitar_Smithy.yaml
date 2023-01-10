@@ -1,0 +1,29 @@
+---
+identifier: "C4BLMy0WQTu8m58B96jyNTa4I573gF"
+title: "Daga's Scimitar Smithy"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: false
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 50
+  changePer: 2
+defaultStock:
+- id: 1321
+  amount: 10
+- id: 1323
+  amount: 10
+- id: 1325
+  amount: 8
+- id: 1329
+  amount: 6
+- id: 4587
+  amount: 4

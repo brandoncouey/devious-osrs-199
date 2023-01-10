@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Dummy",
+    "id": 2668,
+    "x": 2519,
+    "y": 3381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "Dummy",
+    "id": 2668,
+    "x": 2520,
+    "y": 3381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "Dummy",
+    "id": 2668,
+    "x": 2521,
+    "y": 3381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "Dummy",
+    "id": 2668,
+    "x": 2522,
+    "y": 3381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "Dummy",
+    "id": 2668,
+    "x": 2523,
+    "y": 3381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "Dummy",
+    "id": 2668,
+    "x": 2524,
+    "y": 3381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "Dummy",
+    "id": 2668,
+    "x": 2525,
+    "y": 3381,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "Hespori",
+    "id": 11192,
+    "x": 2510,
+    "y": 3364,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+  "name": "Herbiboar",
+  "id": 7785,
+  "x": 2528,
+  "y": 3366,
+  "z": 0,
+  "direction": "S",
+  "walkRange": 0,
+  "world": "ECO"
+  },
+  {
+    "name": "Zalcano",
+    "id": 9050,
+    "x": 2527,
+    "y": 3373,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "Spirit Pool",
+    "id": 10571,
+    "x": 2522,
+    "y": 3364,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO"
+  }
+]

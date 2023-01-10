@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1069,
+    "amount": 1,
+    "x": 3184,
+    "y": 3733,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Steel platelegs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3184,
+    "y": 3728,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3182,
+    "y": 3722,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 444,
+    "amount": 1,
+    "x": 3165,
+    "y": 3739,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Gold ore",
+    "respawnSeconds": 60
+  }
+]

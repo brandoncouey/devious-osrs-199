@@ -1,0 +1,72 @@
+[
+	{
+		"name": "Ghost",
+		"id": "87",
+		"x": "2712",
+		"y": "4898",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ghost",
+		"id": "89",
+		"x": "2712",
+		"y": "4908",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ghost",
+		"id": "85",
+		"x": "2714",
+		"y": "4892",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Evil Dave",
+		"id": "1987",
+		"x": "2721",
+		"y": "4910",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Evil Dave",
+		"id": "913",
+		"x": "2723",
+		"y": "4897",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ghost",
+		"id": "91",
+		"x": "2730",
+		"y": "4907",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ghost",
+		"id": "86",
+		"x": "2731",
+		"y": "4893",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

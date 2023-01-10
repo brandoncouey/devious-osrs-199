@@ -1,0 +1,22 @@
+[
+  {
+    "id": 401,
+    "amount": 1,
+    "x": 2755,
+    "y": 3071,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Seaweed",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 401,
+    "amount": 1,
+    "x": 2755,
+    "y": 3049,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Seaweed",
+    "respawnSeconds": 30
+  }
+]

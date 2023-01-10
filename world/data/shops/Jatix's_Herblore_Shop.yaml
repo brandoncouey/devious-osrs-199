@@ -1,0 +1,32 @@
+---
+identifier: "N6L4YdOnMNjKkI8ZJRid2Jpupti2E2"
+title: "Jatix's Herblore Shop"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 70
+  changePer: 3
+defaultStock:
+- id: 229
+  amount: 800
+- id: 11877
+  amount: 800
+- id: 227
+  amount: 750
+- id: 11879
+  amount: 750
+- id: 233
+  amount: 3
+- id: 221
+  amount: 800
+- id: 12859
+  amount: 100

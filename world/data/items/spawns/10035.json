@@ -1,0 +1,22 @@
+[
+  {
+    "id": 946,
+    "amount": 1,
+    "x": 2543,
+    "y": 3288,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Knife",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1755,
+    "amount": 1,
+    "x": 2543,
+    "y": 3287,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Chisel",
+    "respawnSeconds": 60
+  }
+]

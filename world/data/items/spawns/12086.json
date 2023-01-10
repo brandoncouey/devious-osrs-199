@@ -1,0 +1,22 @@
+[
+  {
+    "id": 542,
+    "amount": 1,
+    "x": 3059,
+    "y": 3488,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Monk\u0027s robe",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 544,
+    "amount": 1,
+    "x": 3059,
+    "y": 3487,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Monk\u0027s robe top",
+    "respawnSeconds": 60
+  }
+]

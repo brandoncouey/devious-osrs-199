@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 3303,
+    "y": 3502,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 3303,
+    "y": 3503,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 3311,
+    "y": 3503,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 3310,
+    "y": 3504,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 3302,
+    "y": 3507,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 3303,
+    "y": 3507,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 3300,
+    "y": 3508,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1511,
+    "amount": 1,
+    "x": 3302,
+    "y": 3510,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Logs",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1734,
+    "amount": 1,
+    "x": 3286,
+    "y": 3491,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Thread",
+    "respawnSeconds": 60
+  }
+]

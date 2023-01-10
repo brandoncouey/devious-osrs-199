@@ -1,0 +1,337 @@
+[
+  {
+    "name": "Herblore",
+    "id": 8532,
+    "x": 3545,
+    "y": 3096,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "shopOptions": {
+      "trade": "1f68200d-0ba3-4a2e-859d-ec1888679034"
+    }
+  },
+  {
+    "name": "Mac",
+    "id": 6481,
+    "x": 3542,
+    "y": 3115,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Bob Decanter",
+    "id": 5449,
+    "x": 3541,
+    "y": 3130,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Grand Exchange Clerk",
+    "id": 2149,
+    "x": 3551,
+    "y": 3125,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Cannon claimer",
+    "id": 2408,
+    "x": 3533,
+    "y": 3115,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 0
+  },
+  {
+    "name": "Grand Exchange Clerk",
+    "id": 2149,
+    "x": 3553,
+    "y": 3125,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 0
+  },
+  {
+    "name": "Grand Exchange Clerk",
+    "id": 2149,
+    "x": 3552,
+    "y": 3126,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0
+  },
+  {
+    "name": "Grand Exchange Clerk",
+    "id": 2149,
+    "x": 3552,
+    "y": 3124,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Estate agent",
+    "id": 3097,
+    "x": 3097,
+    "y": 3503,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Durdaddy",
+    "id": 405,
+    "x": 3541,
+    "y": 3116,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "06bf1d5a-e4d8-49f5-9aac-6229a965b98a"
+    }
+  },
+  {
+    "name": "Turael",
+    "id": 401,
+    "x": 3555,
+    "y": 3116,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "06bf1d5a-e4d8-49f5-9aac-6229a965b98a"
+    }
+  },
+  {
+    "name": "Watson",
+    "id": 7303,
+    "x": 3555,
+    "y": 3130,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Devious Guide",
+    "id": 306,
+    "x": 3534,
+    "y": 3116,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "shopOptions": {
+      "mental-supplies": "MENTALSUPPLIES"
+    }
+  },
+  {
+    "name": "Donation Manager",
+    "id": 2108,
+    "x": 3548,
+    "y": 3114,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0,
+    "shopOptions": {
+      "donator-store": "DONATOR_STORE",
+      "donator-store-2": "DONATOR_STORE2"
+    }
+  },
+  {
+
+    "name": "Sigmund The Merchant",
+    "id": 3894,
+    "x": 3085,
+    "y": 3510,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "95IlXZmMUl9MO3sTqMAUU3mMUfhHDS",
+      "sell-junk": "95IlXZmMUla65e1g6MAUU3mMUfhHDS"
+    }
+  },
+  {
+    "name": "Sigmund The Merchant",
+    "id": 3894,
+    "x": 3547,
+    "y": 3115,
+    "z": 1,
+    "direction": "W",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "95IlXZmMUl9MO3sTqMAUU3mMUfhHDS",
+      "sell-junk": "95IlXZmMUla65e1g6MAUU3mMUfhHDS"
+    }
+  },
+  {
+    "name": "Perdu",
+    "id": 7456,
+    "x": 3534,
+    "y": 3114,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Nieve",
+    "id": 6797,
+    "x": 3548,
+    "y": 3116,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "06bf1d5a-e4d8-49f5-9aac-6229a965b98a"
+    }
+  },
+  {
+    "name": "Fairy Fixit",
+    "id": 7333,
+    "x": 3527,
+    "y": 3114,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0,
+    "world": "ECO",
+    "shopOptions": {
+      "trade": "57466715-a9d7-4284-bfc2-190ce93e07f2"
+    }
+  },
+  {
+    "name": "Horvik",
+    "id": 2882,
+    "x": 3549,
+    "y": 3096,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "shopOptions": {
+      "trade": "GbU56FiI2KwFf9uLt5wSDlAbVUK5Jy"
+    }
+  },
+  {
+    "name": "mage shop",
+    "id": 7203,
+    "x": 3551,
+    "y": 3096,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "692511b8-9397-4f34-a546-ae89dcb7790b"
+    }
+  },
+  {
+    "name": "Garret",
+    "id": 2891,
+    "x": 3552,
+    "y": 3096,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "4ea4cb73-305a-445c-a7ab-131a90a1d8b5"
+    }
+  },
+  {
+    "name": "Death",
+    "id": 9855,
+    "x": 3179,
+    "y": 5726,
+    "z": 0,
+    "direction": "W",
+    "walkRange": 0,
+    "world": "ECO"
+  },
+  {
+    "name": "STARDUSTSHOP22",
+    "id": 10631,
+    "x": 3527,
+    "y": 3116,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "STARDUSTSHOP22"
+    }
+  },
+  {
+    "name": "Artimeus",
+    "id": 7204,
+    "x": 3527,
+    "y": 3114,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0,
+    "shopOptions": {
+      "pvm-store": "5464df07-5091-4ddc-8c5a-426db5ae2193",
+      "iron-pvm": "5464df07-5091-4ddc-IRON-426db5ae2193"
+    }
+  },
+  {
+    "name": "Vote Manager",
+    "id": 1815,
+    "x": 3549,
+    "y": 3115,
+    "z": 1,
+    "direction": "E",
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "aecef817-39c1-4a22-9ee9-2815da9dd3df"
+      }
+    },
+  {
+    "name": "Daily Manager",
+    "id": 15109,
+    "x": 3545,
+    "y": 3120,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "shopOptions": {
+      "open-shop": "dailypointshop"
+    }
+  },
+  {
+    "name": "Twiggy O\u0027Korn",
+    "id": 5527,
+    "x": 3095,
+    "y": 3227,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2,
+    "shopOptions": {
+      "rewards": "afd8d69d-37c8-44d9-bfec-680bfaf4dfa4"
+    }
+  },
+  {
+    "name": "Fountain of Uhld",
+    "id": 14750,
+    "x": 3525,
+    "y": 3103,
+    "z": 1,
+    "direction": "S",
+    "walkRange": 0
+  },
+  {
+    "name": "Blood Money Handler",
+    "id": 7045,
+    "x": 3541,
+    "y": 3097,
+    "z": 1,
+    "direction": "N",
+    "walkRange": 0,
+    "world": "ECO",
+    "shopOptions": {
+      "blood money shop": "5b54f795-14cb-4944-8847-ed61478c0a7d",
+      "iron - blood money": "BMIRON"
+    }
+  }
+]

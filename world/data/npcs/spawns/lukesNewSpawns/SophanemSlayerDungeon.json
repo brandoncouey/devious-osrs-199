@@ -1,0 +1,582 @@
+[
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3270",
+		"y": "9264",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3272",
+		"y": "9246",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3273",
+		"y": "9251",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3273",
+		"y": "9263",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3274",
+		"y": "9223",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3274",
+		"y": "9262",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3275",
+		"y": "9226",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3276",
+		"y": "9235",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3276",
+		"y": "9248",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3279",
+		"y": "9222",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3280",
+		"y": "9240",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3280",
+		"y": "9251",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3282",
+		"y": "9244",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3282",
+		"y": "9273",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3283",
+		"y": "9243",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3284",
+		"y": "9247",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3284",
+		"y": "9252",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3286",
+		"y": "9227",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3287",
+		"y": "9268",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3288",
+		"y": "9265",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3290",
+		"y": "9232",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3291",
+		"y": "9262",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3294",
+		"y": "9233",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3295",
+		"y": "9251",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3296",
+		"y": "9229",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3296",
+		"y": "9248",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3296",
+		"y": "9261",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3297",
+		"y": "9232",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3298",
+		"y": "9225",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3299",
+		"y": "9244",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3299",
+		"y": "9254",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3300",
+		"y": "9241",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3301",
+		"y": "9252",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3302",
+		"y": "9232",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3303",
+		"y": "9235",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3303",
+		"y": "9266",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3304",
+		"y": "9252",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "795",
+		"x": "3305",
+		"y": "9234",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3306",
+		"y": "9223",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3308",
+		"y": "9262",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3309",
+		"y": "9224",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3309",
+		"y": "9265",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3310",
+		"y": "9237",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3316",
+		"y": "9255",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3317",
+		"y": "9240",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3276",
+		"y": "9268",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3277",
+		"y": "9252",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3277",
+		"y": "9275",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3279",
+		"y": "9234",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3289",
+		"y": "9236",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3292",
+		"y": "9256",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3296",
+		"y": "9256",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Locust rider",
+		"id": "796",
+		"x": "3299",
+		"y": "9220",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3301",
+		"y": "9275",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3305",
+		"y": "9256",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3308",
+		"y": "9221",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scarab mage",
+		"id": "794",
+		"x": "3311",
+		"y": "9226",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maisa",
+		"id": "6164",
+		"x": "3218",
+		"y": "9246",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

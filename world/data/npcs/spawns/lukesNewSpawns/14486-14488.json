@@ -1,0 +1,922 @@
+[
+	{
+		"name": "Mutated Bloodveld",
+		"id": "7276",
+		"x": "3588",
+		"y": "9736",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mutated Bloodveld",
+		"id": "7276",
+		"x": "3592",
+		"y": "9745",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mutated Bloodveld",
+		"id": "7276",
+		"x": "3594",
+		"y": "9742",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mutated Bloodveld",
+		"id": "7276",
+		"x": "3596",
+		"y": "9750",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mutated Bloodveld",
+		"id": "7276",
+		"x": "3597",
+		"y": "9735",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mutated Bloodveld",
+		"id": "7276",
+		"x": "3599",
+		"y": "9747",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mutated Bloodveld",
+		"id": "7276",
+		"x": "3600",
+		"y": "9739",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "450",
+		"x": "3608",
+		"y": "9773",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "448",
+		"x": "3609",
+		"y": "9776",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Safalaan Hallow",
+		"id": "8280",
+		"x": "3611",
+		"y": "9737",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "451",
+		"x": "3611",
+		"y": "9771",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "449",
+		"x": "3612",
+		"y": "9774",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "448",
+		"x": "3616",
+		"y": "9751",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "452",
+		"x": "3616",
+		"y": "9756",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "448",
+		"x": "3617",
+		"y": "9759",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "451",
+		"x": "3619",
+		"y": "9748",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "450",
+		"x": "3620",
+		"y": "9755",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crawling Hand",
+		"id": "449",
+		"x": "3622",
+		"y": "9746",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Safalaan Hallow",
+		"id": "8311",
+		"x": "3594",
+		"y": "9674",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "3594",
+		"y": "9677",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "3598",
+		"y": "9673",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "3629",
+		"y": "9683",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "3629",
+		"y": "9690",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "3632",
+		"y": "9696",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Safalaan Hallow",
+		"id": "8279",
+		"x": "3633",
+		"y": "9690",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "3636",
+		"y": "9684",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Kael Forshaw",
+		"id": "8318",
+		"x": "3594",
+		"y": "9613",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ivan Strom",
+		"id": "5049",
+		"x": "3598",
+		"y": "9613",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Radigad Ponfit",
+		"id": "8285",
+		"x": "3598",
+		"y": "9616",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Vertida Sefalatis",
+		"id": "8313",
+		"x": "3599",
+		"y": "9611",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Veliaf Hurtz",
+		"id": "1034",
+		"x": "3600",
+		"y": "9614",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Safalaan Hallow",
+		"id": "8312",
+		"x": "3600",
+		"y": "9615",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Polmafi Ferdygris",
+		"id": "8290",
+		"x": "3601",
+		"y": "9612",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "3619",
+		"y": "9621",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Flaygian Screwte",
+		"id": "8314",
+		"x": "3623",
+		"y": "9643",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Kael Forshaw",
+		"id": "8317",
+		"x": "3624",
+		"y": "9630",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rat",
+		"id": "2854",
+		"x": "3627",
+		"y": "9618",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Safalaan Hallow",
+		"id": "6160",
+		"x": "3627",
+		"y": "9646",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Vertida Sefalatis",
+		"id": "3773",
+		"x": "3630",
+		"y": "9643",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Mekritus A'hara",
+		"id": "8315",
+		"x": "3634",
+		"y": "9623",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Andiess Juip",
+		"id": "8316",
+		"x": "3638",
+		"y": "9636",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Agility Trainer",
+		"id": "5926",
+		"x": "3527",
+		"y": "9909",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Agility Trainer",
+		"id": "5927",
+		"x": "3528",
+		"y": "9865",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Agility Trainer",
+		"id": "5926",
+		"x": "3533",
+		"y": "9912",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Agility Boss",
+		"id": "5924",
+		"x": "3540",
+		"y": "9873",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Agility Trainer",
+		"id": "5926",
+		"x": "3540",
+		"y": "9892",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Agility Trainer",
+		"id": "5926",
+		"x": "3540",
+		"y": "9902",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skullball Boss",
+		"id": "5923",
+		"x": "3549",
+		"y": "9867",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skullball Trainer",
+		"id": "5925",
+		"x": "3554",
+		"y": "9886",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skullball Trainer",
+		"id": "5925",
+		"x": "3560",
+		"y": "9908",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skullball Trainer",
+		"id": "5925",
+		"x": "3565",
+		"y": "9865",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skullball Trainer",
+		"id": "5925",
+		"x": "3572",
+		"y": "9908",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skullball Trainer",
+		"id": "5925",
+		"x": "3573",
+		"y": "9891",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skullball Trainer",
+		"id": "5925",
+		"x": "3577",
+		"y": "9875",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodveld",
+		"id": "484",
+		"x": "3564",
+		"y": "9741",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodveld",
+		"id": "484",
+		"x": "3566",
+		"y": "9735",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodveld",
+		"id": "484",
+		"x": "3572",
+		"y": "9741",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodveld",
+		"id": "484",
+		"x": "3574",
+		"y": "9737",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt rat",
+		"id": "1679",
+		"x": "3531",
+		"y": "9694",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt rat",
+		"id": "1681",
+		"x": "3532",
+		"y": "9696",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt rat",
+		"id": "1680",
+		"x": "3533",
+		"y": "9692",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt rat",
+		"id": "1679",
+		"x": "3534",
+		"y": "9690",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt rat",
+		"id": "1679",
+		"x": "3534",
+		"y": "9698",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt rat",
+		"id": "1679",
+		"x": "3535",
+		"y": "9695",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt rat",
+		"id": "1680",
+		"x": "3536",
+		"y": "9697",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt rat",
+		"id": "1679",
+		"x": "3537",
+		"y": "9692",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt rat",
+		"id": "1682",
+		"x": "3537",
+		"y": "9694",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt rat",
+		"id": "1679",
+		"x": "3539",
+		"y": "9695",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodworm",
+		"id": "1678",
+		"x": "3548",
+		"y": "9675",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "1686",
+		"x": "3548",
+		"y": "9709",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodworm",
+		"id": "1678",
+		"x": "3549",
+		"y": "9679",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "1685",
+		"x": "3549",
+		"y": "9713",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodworm",
+		"id": "1678",
+		"x": "3551",
+		"y": "9676",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "1687",
+		"x": "3551",
+		"y": "9714",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodworm",
+		"id": "1678",
+		"x": "3552",
+		"y": "9679",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodworm",
+		"id": "1678",
+		"x": "3552",
+		"y": "9682",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "1685",
+		"x": "3553",
+		"y": "9707",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "1688",
+		"x": "3554",
+		"y": "9713",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodworm",
+		"id": "1678",
+		"x": "3555",
+		"y": "9675",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bloodworm",
+		"id": "1678",
+		"x": "3555",
+		"y": "9679",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "1687",
+		"x": "3555",
+		"y": "9709",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt spider",
+		"id": "1683",
+		"x": "3566",
+		"y": "9693",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt spider",
+		"id": "1684",
+		"x": "3566",
+		"y": "9695",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt spider",
+		"id": "1684",
+		"x": "3567",
+		"y": "9691",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt spider",
+		"id": "1684",
+		"x": "3567",
+		"y": "9697",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt spider",
+		"id": "1683",
+		"x": "3567",
+		"y": "9698",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt spider",
+		"id": "1683",
+		"x": "3569",
+		"y": "9695",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt spider",
+		"id": "1683",
+		"x": "3570",
+		"y": "9691",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt spider",
+		"id": "1684",
+		"x": "3570",
+		"y": "9697",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt spider",
+		"id": "1684",
+		"x": "3571",
+		"y": "9692",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant crypt spider",
+		"id": "1684",
+		"x": "3572",
+		"y": "9694",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Crypt spider",
+		"id": "1683",
+		"x": "3572",
+		"y": "9697",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

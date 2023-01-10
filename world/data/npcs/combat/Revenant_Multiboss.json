@@ -1,0 +1,45 @@
+[
+  { #Rev dragon
+  "ids": [ 15108 ],
+  "handler": "io.ruin.model.activities.bosses.RevenantMultiboss",
+  //Combat Info
+  "hitpoints": 650,
+  "aggressive_level": 135,
+  "max_damage": 40,
+  "attack_style": "STAB",
+  //Slayer Info
+  "slayer_level": 1,
+  "slayer_xp": 500.0,
+  "slayer_tasks": [ "Revenants" ],
+  //Combat Stats
+  "attack": 180,
+  "strength": 220,
+  "defence": 150,
+  "ranged": 260,
+  "magic": 100,
+  //Aggressive Stats
+  "stab_attack": 0,
+  "slash_attack": 0,
+  "crush_attack": 0,
+  "magic_attack": 0,
+  "ranged_attack": 125,
+  //Defensive Stats
+  "stab_defence": 153,
+  "slash_defence": 152,
+  "crush_defence": 155,
+  "magic_defence": -120,
+  "ranged_defence": 158,
+  //Immunites
+  "poison_immunity": false,
+  "venom_immunity": false,
+  //Speeds
+  "attack_ticks": 4,
+  "death_ticks": 5,
+  "respawn_ticks": 600,
+  //Animations
+  "spawn_animation": 9281,
+  "attack_animation": 9277,
+  "defend_animation": 9282,
+  "death_animation": 9280
+  }
+]

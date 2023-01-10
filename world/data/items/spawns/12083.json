@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1944,
+    "amount": 1,
+    "x": 3016,
+    "y": 3295,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Egg",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1944,
+    "amount": 1,
+    "x": 3017,
+    "y": 3295,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Egg",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 3020,
+    "y": 3291,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 3026,
+    "y": 3289,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  }
+]

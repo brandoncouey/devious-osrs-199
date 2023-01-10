@@ -1,0 +1,62 @@
+[
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3182,
+    "y": 3848,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3179,
+    "y": 3850,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3179,
+    "y": 3852,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3185,
+    "y": 3851,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3185,
+    "y": 3856,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 528,
+    "amount": 1,
+    "x": 3187,
+    "y": 3855,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Burnt bones",
+    "respawnSeconds": 60
+  }
+]

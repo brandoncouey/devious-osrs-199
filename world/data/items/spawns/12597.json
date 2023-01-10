@@ -1,0 +1,132 @@
+[
+  {
+    "id": 1973,
+    "amount": 0,
+    "x": 3143,
+    "y": 3453,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1887,
+    "amount": 0,
+    "x": 3141,
+    "y": 3452,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1923,
+    "amount": 0,
+    "x": 3140,
+    "y": 3452,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 2313,
+    "amount": 0,
+    "x": 3142,
+    "y": 3447,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1955,
+    "amount": 0,
+    "x": 3141,
+    "y": 3447,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1955,
+    "amount": 0,
+    "x": 3140,
+    "y": 3447,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1955,
+    "amount": 0,
+    "x": 3141,
+    "y": 3447,
+    "z": 2,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1935,
+    "amount": 0,
+    "x": 3142,
+    "y": 3447,
+    "z": 2,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1931,
+    "amount": 0,
+    "x": 3144,
+    "y": 3449,
+    "z": 2,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1987,
+    "amount": 0,
+    "x": 3144,
+    "y": 3450,
+    "z": 2,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1573,
+    "amount": 1,
+    "x": 3152,
+    "y": 3401,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Doogle leaves",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1573,
+    "amount": 1,
+    "x": 3156,
+    "y": 3401,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Doogle leaves",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1573,
+    "amount": 1,
+    "x": 3157,
+    "y": 3400,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Doogle leaves",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1573,
+    "amount": 1,
+    "x": 3151,
+    "y": 3399,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Doogle leaves",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1573,
+    "amount": 1,
+    "x": 3152,
+    "y": 3399,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Doogle leaves",
+    "respawnSeconds": 60
+  }
+]

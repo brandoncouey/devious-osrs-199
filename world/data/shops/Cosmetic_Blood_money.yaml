@@ -1,0 +1,99 @@
+---
+identifier: "1b594438-0c10-11ec-9a03-0242ac130003"
+title: "Cosmetic Shop 1"
+currency: "COINS"
+accessibleByRegular: true
+accessibleByIronMan: true
+canSellToStore: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+priceRules:
+  buysAt: 20
+  changePer: 3
+defaultStock:
+  - id: 12888
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12889
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12890
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12891
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 19699
+    amount: 1000
+    price: 25000000
+    placeholderId: 0
+  - id: 21859
+    amount: 1000
+    price: 45000000
+    placeholderId: 0
+  - id: 20836
+    amount: 1000
+    price: 4000000
+    placeholderId: 0
+  - id: 20834
+    amount: 1000
+    price: 6000000
+    placeholderId: 0
+  - id: 12893
+    amount: 1000
+    price: 20000000
+    placeholderId: 0
+  - id: 12894
+    amount: 1000
+    price: 20000000
+    placeholderId: 0
+  - id: 12895
+    amount: 1000
+    price: 20000000
+    placeholderId: 0
+  - id: 12896
+    amount: 1000
+    price: 20000000
+    placeholderId: 0
+  - id: 13343
+    amount: 1000
+    price: 200000000
+    placeholderId: 0
+  - id: 2641
+    amount: 1000
+    price: 150000
+    placeholderId: 0
+  - id: 2639
+    amount: 1000
+    price: 150000
+    placeholderId: 0
+  - id: 12325
+    amount: 1000
+    price: 150000
+    placeholderId: 0
+  - id: 12323
+    amount: 1000
+    price: 150000
+    placeholderId: 0
+  - id: 12321
+    amount: 1000
+    price: 300000
+    placeholderId: 0
+  - id: 2643
+    amount: 1000
+    price: 300000
+    placeholderId: 0
+  - id: 11280
+    amount: 1000
+    price: 500000
+    placeholderId: 0
+  - id: 9920
+    amount: 1000
+    price: 1500000
+    placeholderId: 0
+

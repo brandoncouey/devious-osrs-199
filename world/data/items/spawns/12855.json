@@ -1,0 +1,42 @@
+[
+  {
+    "id": 559,
+    "amount": 2,
+    "x": 3232,
+    "y": 3575,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Body rune",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 559,
+    "amount": 2,
+    "x": 3223,
+    "y": 3583,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Body rune",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 559,
+    "amount": 2,
+    "x": 3229,
+    "y": 3566,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Body rune",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 995,
+    "amount": 2,
+    "x": 3232,
+    "y": 3563,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Coins",
+    "respawnSeconds": 60
+  }
+]

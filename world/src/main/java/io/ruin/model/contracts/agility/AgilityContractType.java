@@ -1,0 +1,13 @@
+package io.ruin.model.contracts.agility;
+
+/**
+ * @author Greco
+ * @since 11/24/2021
+ */
+public enum AgilityContractType {
+
+    NONE, GNOME, BARB, DRAYNOR_ROOFTOP, AL_KHARID_ROOFTOP, VARROCK_ROOFTOP,
+    CANIFIS_ROOFTOP, FALADOR_ROOFTOP, SEERS_ROOFTOP, POLLNIVNEACH_ROOFTOP,
+    RELLEKKA_ROOFTOP, ARDOUGNE_ROOFTOP, PRIFDDINAS_ROOFTOP, WILDERNESS
+
+}

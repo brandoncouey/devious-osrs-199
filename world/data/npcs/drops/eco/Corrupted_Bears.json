@@ -1,0 +1,76 @@
+[
+  {
+    "ids": [ 9046 ],
+    "guaranteed": [
+      { "id": 995, "min": 750, "max": 5000 },   //Coins
+      { "id": 11943, "min": 1, "max": 1 }   //Lava Dragon bones
+    ],
+    "tables": [
+      {
+        "name": "Runes/Ammunition",
+        "weight": 1,
+        "items": [
+          { "id": 554, "min": 50, "max": 50, "weight": 5 }, //Fire rune
+          { "id": 868, "min": 2, "max": 2, "weight": 5 }, //Rune knife
+          { "id": 9193, "min": 40, "max": 70, "weight": 4 },   //Dragonstone bolt tips
+          { "id": 9194, "min": 3, "max": 15, "weight": 4 },   //Onyx bolt tips
+          { "id": 560, "min": 60, "max": 120, "weight": 4 },   //Death rune
+          { "id": 556, "min": 75, "max": 75, "weight": 2 }, //Air rune
+          { "id": 563, "min": 10, "max": 10, "weight": 2 }, //Law rune
+          { "id": 565, "min": 15, "max": 15, "weight": 1 }, //Blood rune
+          { "id": 19582, "min": 10, "max": 10, "weight": 1 } //Dragon javelin heads
+        ]
+      },
+      {
+        "name": "Resources",
+        "weight": 1,
+        "items": [
+          { "id": 8783, "min": 15, "max": 25, "weight": 6 },   //Mahogany plank (noted)
+          { "id": 2362, "min": 8, "max": 12, "weight": 5 },   //Adamantite bar (noted)
+          { "id": 452, "min": 3, "max": 6, "weight": 4 },   //Runite ore (noted)
+          { "id": 2364, "min": 3, "max": 5, "weight": 4 },   //Runite bar (noted)
+          { "id": 1514, "min": 15, "max": 25, "weight": 4 },   //Magic logs (noted)
+          { "id": 1632, "min": 5, "max": 7, "weight": 4 },   //Uncut dragonstone (noted)
+          { "id": 5316, "min": 5, "max": 9, "weight": 4 },   //Magic seed
+          { "id": 392, "min": 30, "max": 50, "weight": 3 },   //Manta ray (noted)
+          { "id": 3025, "min": 5, "max": 8, "weight": 3 },   //Super restore(4) (noted)
+          { "id": 12696, "min": 3, "max": 5, "weight": 3 },   //Super combat(4) (noted)
+          { "id": 6686, "min": 5, "max": 8, "weight": 3 }, //Saradomin Brew(4) (noted)
+          { "id": 1748, "min": 10, "max": 15, "weight": 2 },   //Black dragonhide (noted)
+          { "id": 6571, "min": 1, "max": 1, "weight": 1 }  //Uncut Onyx
+        ]
+      },
+      {
+        "name": "Weapons/Armour",
+        "weight": 1,
+        "items": [
+          { "id": 1392, "min": 3, "max": 3, "weight": 5 },   //Battlestaff (noted)
+          { "id": 1163, "min": 1, "max": 1, "weight": 5 },   //Rune full helm
+          { "id": 1127, "min": 1, "max": 1, "weight": 5 },   //Rune platebody
+          { "id": 1079, "min": 1, "max": 1, "weight": 5 },   //Rune platelegs
+          { "id": 1201, "min": 1, "max": 1, "weight": 5 },   //Rune kiteshield
+          { "id": 1347, "min": 1, "max": 1, "weight": 5 },   //Rune warhammer
+          { "id": 4087, "min": 1, "max": 1, "weight": 2 },   //Dragon platelegs
+          { "id": 4585, "min": 1, "max": 1, "weight": 2 },   //Dragon plateskirt
+          { "id": 1215, "min": 1, "max": 1, "weight": 2 },   //Dragon dagger
+          { "id": 1305, "min": 1, "max": 1, "weight": 2 }   //Dragon longsword
+        ]
+      },
+      {
+        "name": "Unique",
+        "weight": 1,
+        "items": [
+          { "id": 995, "min": 196, "max": 196, "weight": 225 }, //Coins
+          { "id": 995, "min": 330, "max": 330, "weight": 225 }, //Coins
+          { "id": 995, "min": 690, "max": 690, "weight": 225 }, //Coins
+          { "id": 2361, "min": 1, "max": 1, "weight": 90 }, //Adamantite bar
+          { "id": 2361, "min": 2, "max": 2, "weight": 90 }, //Adamantite bar
+          { "id": 11941, "min": 1, "max": 1, "weight": 8 },   //Looting bag
+          { "id": 21892, "min": 1, "max": 1, "weight": 8 }, //Dragon platebody
+          { "id": 13511, "min": 1, "max": 1, "weight": 2 }, //Ensouled dragon head
+          { "id": 30264, "min": 1, "max": 1, "weight": 2 } //Corrupted Hide
+        ]
+      }
+    ]
+  }
+]

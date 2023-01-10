@@ -1,0 +1,432 @@
+[
+  {
+    "name": "Emblem Trader",
+    "id": 7943,
+    "x": 3246,
+    "y": 10169,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 6
+  },
+  {
+    "name": "MaleDictus",
+    "id": 15108,
+    "x": 3233,
+    "y": 10203,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant goblin",
+    "id": 7931,
+    "x": 3242,
+    "y": 10099,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant goblin",
+    "id": 7931,
+    "x": 3229,
+    "y": 10180,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant goblin",
+    "id": 7931,
+    "x": 3240,
+    "y": 10097,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant dragon",
+    "id": 7940,
+    "x": 3238,
+    "y": 10205,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant dragon",
+    "id": 7940,
+    "x": 3238,
+    "y": 10202,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3195,
+    "y": 10071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3199,
+    "y": 10071,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3211,
+    "y": 10196,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3211,
+    "y": 10196,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3252,
+    "y": 10142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3234,
+    "y": 10167,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3255,
+    "y": 10142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3188,
+    "y": 10195,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3183,
+    "y": 10195,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3161,
+    "y": 10115,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant demon",
+    "id": 7936,
+    "x": 3161,
+    "y": 10115,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant knight",
+    "id": 7939,
+    "x": 3211,
+    "y": 10218,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3173,
+    "y": 10154,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant pyrefiend",
+    "id": 7932,
+    "x": 3246,
+    "y": 10167,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant cyclops",
+    "id": 7934,
+    "x": 3165,
+    "y": 10192,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant cyclops",
+    "id": 7934,
+    "x": 3169,
+    "y": 10192,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3216,
+    "y": 10097,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3213,
+    "y": 10097,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant ork",
+    "id": 7937,
+    "x": 3223,
+    "y": 10132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant dark beast",
+    "id": 7938,
+    "x": 3205,
+    "y": 10165,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant hellhound",
+    "id": 7935,
+    "x": 3248,
+    "y": 10173,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant dragon",
+    "id": 7940,
+    "x": 3242,
+    "y": 10180,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Revenant imp",
+    "id": 7881,
+    "x": 3233,
+    "y": 10181,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7878,
+    "x": 3202,
+    "y": 10163,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7880,
+    "x": 3201,
+    "y": 10170,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7880,
+    "x": 3207,
+    "y": 10158,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7879,
+    "x": 3205,
+    "y": 10168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7878,
+    "x": 3214,
+    "y": 10166,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7871,
+    "x": 3215,
+    "y": 10130,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7879,
+    "x": 3217,
+    "y": 10168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7873,
+    "x": 3224,
+    "y": 10142,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7872,
+    "x": 3220,
+    "y": 10122,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7871,
+    "x": 3229,
+    "y": 10132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7873,
+    "x": 3229,
+    "y": 10126,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7873,
+    "x": 3231,
+    "y": 10136,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7872,
+    "x": 3235,
+    "y": 10132,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7936,
+    "x": 3235,
+    "y": 10161,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7937,
+    "x": 3236,
+    "y": 10168,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7939,
+    "x": 3251,
+    "y": 10166,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7932,
+    "x": 3246,
+    "y": 10162,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7934,
+    "x": 3247,
+    "y": 10156,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7937,
+    "x": 3252,
+    "y": 10151,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "id": 7938,
+    "x": 3252,
+    "y": 10143,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

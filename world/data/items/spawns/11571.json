@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1595,
+    "amount": 0,
+    "x": 2928,
+    "y": 3290,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 11065,
+    "amount": 0,
+    "x": 2928,
+    "y": 3289,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 2347,
+    "amount": 0,
+    "x": 2934,
+    "y": 3286,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1755,
+    "amount": 0,
+    "x": 2935,
+    "y": 3286,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1935,
+    "amount": 0,
+    "x": 2936,
+    "y": 3292,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1735,
+    "amount": 0,
+    "x": 2930,
+    "y": 3285,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1599,
+    "amount": 0,
+    "x": 2931,
+    "y": 3287,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1597,
+    "amount": 0,
+    "x": 2932,
+    "y": 3287,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1592,
+    "amount": 0,
+    "x": 2935,
+    "y": 3283,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 5523,
+    "amount": 0,
+    "x": 2935,
+    "y": 3282,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 231,
+    "amount": 1,
+    "x": 2907,
+    "y": 3295,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Snape grass",
+    "respawnSeconds": 15
+  },
+  {
+    "id": 231,
+    "amount": 1,
+    "x": 2906,
+    "y": 3297,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Snape grass",
+    "respawnSeconds": 15
+  },
+  {
+    "id": 231,
+    "amount": 1,
+    "x": 2917,
+    "y": 3274,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Snape grass",
+    "respawnSeconds": 15
+  }
+]

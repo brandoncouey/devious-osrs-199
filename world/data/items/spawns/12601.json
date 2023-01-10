@@ -1,0 +1,132 @@
+[
+  {
+    "id": 966,
+    "amount": 1,
+    "x": 3149,
+    "y": 3674,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tile",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 3148,
+    "y": 3671,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 3154,
+    "y": 3670,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1207,
+    "amount": 1,
+    "x": 3158,
+    "y": 3672,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Steel dagger",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1203,
+    "amount": 1,
+    "x": 3156,
+    "y": 3683,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Iron dagger",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 3154,
+    "y": 3659,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 966,
+    "amount": 1,
+    "x": 3165,
+    "y": 3660,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tile",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 837,
+    "amount": 1,
+    "x": 3174,
+    "y": 3663,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Crossbow",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 3182,
+    "y": 3670,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 966,
+    "amount": 1,
+    "x": 3184,
+    "y": 3672,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tile",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 3171,
+    "y": 3680,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 966,
+    "amount": 1,
+    "x": 3172,
+    "y": 3688,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tile",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1137,
+    "amount": 1,
+    "x": 3178,
+    "y": 3684,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Iron med helm",
+    "respawnSeconds": 60
+  }
+]

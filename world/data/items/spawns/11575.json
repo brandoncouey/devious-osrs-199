@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1919,
+    "amount": 0,
+    "x": 2907,
+    "y": 3538,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 3111,
+    "amount": 1,
+    "x": 2893,
+    "y": 3561,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Stone ball",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 3113,
+    "amount": 1,
+    "x": 2893,
+    "y": 3562,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Stone ball",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 3112,
+    "amount": 1,
+    "x": 2893,
+    "y": 3563,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Stone ball",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 3110,
+    "amount": 1,
+    "x": 2893,
+    "y": 3564,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Stone ball",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 3109,
+    "amount": 1,
+    "x": 2893,
+    "y": 3565,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Stone ball",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1905,
+    "amount": 1,
+    "x": 2906,
+    "y": 3538,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Asgarnian ale",
+    "respawnSeconds": 60
+  }
+]

@@ -1,0 +1,44 @@
+---
+identifier: "c0d4952f-03c0-4dd7-a836-1c6592cfef2e"
+title: "Pest Control Point Shop"
+currency: "PEST_CONTROL_POINTS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: false
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+defaultStock:
+  - id: 8841
+    amount: 1000000
+    price: 50
+  - id: 8839
+    amount: 1000000
+    price: 50
+  - id: 8840
+    amount: 1000000
+    price: 50
+  - id: 8842
+    amount: 1000000
+    price: 50
+  - id: 11663
+    amount: 1000000
+    price: 50
+  - id: 11664
+    amount: 1000000
+    price: 50
+  - id: 11665
+    amount: 1000000
+    price: 50
+  - id: 11739
+    amount: 1000000
+    price: 50
+  - id: 22993
+    amount: 1000000
+    price: 50
+  - id: 30415
+    amount: 1000000
+    price: 1000

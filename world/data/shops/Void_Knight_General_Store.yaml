@@ -1,0 +1,43 @@
+---
+identifier: "2cru9k6JEX1XoDX1tr81AAnRwhWC1i"
+title: "Void Knight General Store"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: true
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 130
+  buysAt: 40
+  changePer: 1
+defaultStock:
+- id: 1931
+  amount: 5
+- id: 1935
+  amount: 2
+- id: 1735
+  amount: 5
+- id: 1925
+  amount: 2
+- id: 22660
+  amount: 3
+- id: 1923
+  amount: 15
+- id: 1887
+  amount: 2
+- id: 590
+  amount: 2
+- id: 1755
+  amount: 2
+- id: 1335
+  amount: 2
+- id: 1351
+  amount: 10
+- id: 7934
+  amount: 25

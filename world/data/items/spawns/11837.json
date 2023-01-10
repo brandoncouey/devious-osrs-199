@@ -1,0 +1,92 @@
+[
+  {
+    "id": 526,
+    "amount": 0,
+    "x": 3004,
+    "y": 3923,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 526,
+    "amount": 0,
+    "x": 3002,
+    "y": 3922,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 526,
+    "amount": 0,
+    "x": 2995,
+    "y": 3922,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 526,
+    "amount": 0,
+    "x": 2992,
+    "y": 3920,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 526,
+    "amount": 0,
+    "x": 2994,
+    "y": 3924,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2992,
+    "y": 3920,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2995,
+    "y": 3922,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2994,
+    "y": 3924,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3002,
+    "y": 3922,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3004,
+    "y": 3923,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  }
+]

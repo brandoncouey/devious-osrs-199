@@ -1,0 +1,22 @@
+[
+  {
+    "id": 964,
+    "amount": 1,
+    "x": 2977,
+    "y": 3529,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Skull",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 964,
+    "amount": 1,
+    "x": 2978,
+    "y": 3531,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Skull",
+    "respawnSeconds": 30
+  }
+]

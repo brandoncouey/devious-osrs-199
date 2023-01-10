@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1984,
+    "amount": 1,
+    "x": 2549,
+    "y": 3332,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Rotten apple",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1984,
+    "amount": 1,
+    "x": 2535,
+    "y": 3333,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Rotten apple",
+    "respawnSeconds": 60
+  }
+]

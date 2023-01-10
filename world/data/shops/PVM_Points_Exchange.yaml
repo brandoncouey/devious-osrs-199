@@ -1,0 +1,93 @@
+---
+identifier: "347ca8b3-dd43-4a46-bf05-3a452e5e1f3c"
+title: "PVM Point Exchange"
+currency: "PVM_POINTS"
+accessibleByIronMan: false
+canSellToStore: false
+mentalOnly: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 0
+defaultStock:
+  - id: 21295
+    amount: 100
+    price: 90000
+    placeholderId: 0
+  - id: 20724
+    amount: 100
+    price: 30000
+    placeholderId: 0
+  - id: 30143
+    amount: 100
+    price: 2500
+  - id: 608
+    amount: 100
+    price: 2500
+  - id: 30141
+    amount: 100
+    price: 2500
+    placeholderId: 0
+  - id: 1505
+    amount: 100
+    price: 2500
+    placeholderId: 0
+  - id: 607
+    amount: 100
+    price: 2500
+    placeholderId: 0
+  - id: 6758
+    amount: 100
+    price: 2500
+    placeholderId: 0
+  - id: 6199
+    amount: 100
+    price: 1000
+    placeholderId: 0
+  - id: 20065
+    amount: 100
+    price: 2500
+    placeholderId: 0
+  - id: 20062
+    amount: 100
+    price: 2500
+    placeholderId: 0
+  - id: 22246
+    amount: 100
+    price: 2500
+    placeholderId: 0
+  - id: 8839
+    amount: 100
+    price: 650
+    placeholderId: 0
+  - id: 8840
+    amount: 100
+    price: 650
+    placeholderId: 0
+  - id: 11664
+    amount: 100
+    price: 500
+    placeholderId: 0
+  - id: 11665
+    amount: 100
+    price: 500
+    placeholderId: 0
+  - id: 11663
+    amount: 100
+    price: 500
+    placeholderId: 0
+  - id: 8842
+    amount: 100
+    price: 250
+    placeholderId: 0
+  - id: 10588
+    amount: 100
+    price: 30
+    placeholderId: 0
+  - id: 22114
+    amount: 200
+    price: 1000
+    placeholderId: 0
+  - id: 11200
+    amount: 200
+    price: 750
+    placeholderId: 0

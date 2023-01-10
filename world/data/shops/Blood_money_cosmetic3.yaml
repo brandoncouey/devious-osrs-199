@@ -1,0 +1,174 @@
+---
+identifier: "77c620c0-109c-11ec-82a8-0242ac130003"
+title: "Cosmetic Shop 3"
+currency: "COINS"
+accessibleByRegular: true
+accessibleByIronMan: true
+canSellToStore: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+defaultStock:
+  - id: 10400
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10402
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10420
+    amount: 1000
+    price: 10000000
+  - id: 10422
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10412
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10414
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10432
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10434
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12315
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12317
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12339
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12341
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12347
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12349
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12343
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 12345
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10416
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10418
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10436
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10438
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10404
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10406
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10424
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 10426
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 24348
+    amount: 1000
+    price: 1000000000
+    placeholderId: 0
+  - id: 24346
+    amount: 1000
+    price: 500000000
+    placeholderId: 0
+  - id: 24344
+    amount: 1000
+    price: 250000000
+    placeholderId: 0
+  - id: 24342
+    amount: 1000
+    price: 125000000
+    placeholderId: 0
+  - id: 24340
+    amount: 1000
+    price: 60000000
+    placeholderId: 0
+  - id: 24338
+    amount: 1000
+    price: 30000000
+    placeholderId: 0
+  - id: 9470
+    amount: 1000
+    price: 20000000
+    placeholderId: 0
+  - id: 10394
+    amount: 1000
+    price: 20000000
+    placeholderId: 0
+  - id: 12856
+    amount: 1000
+    price: 750000000
+    placeholderId: 0
+  - id: 12855
+    amount: 1000
+    price: 750000000
+    placeholderId: 0
+  - id: 12319
+    amount: 1000
+    price: 15000000
+    placeholderId: 0
+  - id: 12319
+    amount: 1000
+    price: 10000000
+    placeholderId: 0
+  - id: 20240
+    amount: 1000
+    price: 15000000
+    placeholderId: 0
+  - id: 20243
+    amount: 1000
+    price: 15000000
+    placeholderId: 0
+  - id: 13317
+    amount: 1000
+    price: 35000000
+    placeholderId: 0
+  - id: 13318
+    amount: 1000
+    price: 35000000
+    placeholderId: 0
+  - id: 13319
+    amount: 1000
+    price: 2500000
+    placeholderId: 0

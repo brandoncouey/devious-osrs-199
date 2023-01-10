@@ -1,0 +1,142 @@
+[
+	{
+		"name": "Centaur",
+		"id": "1844",
+		"x": "3024",
+		"y": "4506",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Centaur",
+		"id": "1843",
+		"x": "3025",
+		"y": "4503",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "1854",
+		"x": "3025",
+		"y": "4513",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Wood Dryad",
+		"id": "1846",
+		"x": "3027",
+		"y": "4520",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Butterfly",
+		"id": "1855",
+		"x": "3031",
+		"y": "4493",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "1853",
+		"x": "3032",
+		"y": "4505",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "1852",
+		"x": "3034",
+		"y": "4505",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stag",
+		"id": "1845",
+		"x": "3037",
+		"y": "4503",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fishing spot",
+		"id": "6731",
+		"x": "3042",
+		"y": "4510",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "1853",
+		"x": "3045",
+		"y": "4490",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Stag",
+		"id": "1845",
+		"x": "3050",
+		"y": "4494",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rabbit",
+		"id": "1852",
+		"x": "3059",
+		"y": "4503",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Lord Ieuan Amlodd",
+		"id": "4541",
+		"x": "3051",
+		"y": "4486",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Homunculus",
+		"id": "3588",
+		"x": "3038",
+		"y": "4395",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

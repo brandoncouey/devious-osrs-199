@@ -1,0 +1,22 @@
+[
+	{
+		"name": "Jardric",
+		"id": "8107",
+		"x": "3582",
+		"y": "3973",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dallas Jones",
+		"id": "7495",
+		"x": "3583",
+		"y": "3974",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1937,
+    "amount": 1,
+    "x": 3302,
+    "y": 3170,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Jug of water",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1965,
+    "amount": 1,
+    "x": 3285,
+    "y": 3175,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Cabbage",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1061,
+    "amount": 1,
+    "x": 3302,
+    "y": 3190,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Leather boots",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 3307,
+    "y": 3195,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  }
+]

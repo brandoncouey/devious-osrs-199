@@ -1,0 +1,22 @@
+[
+  {
+    "id": 2150,
+    "amount": 1,
+    "x": 2381,
+    "y": 3414,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Swamp toad",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 2150,
+    "amount": 1,
+    "x": 2382,
+    "y": 3412,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Swamp toad",
+    "respawnSeconds": 60
+  }
+]

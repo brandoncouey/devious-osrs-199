@@ -1,0 +1,92 @@
+[
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2907",
+    "y": "2720",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2907",
+    "y": "2729",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2911",
+    "y": "2726",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2918",
+    "y": "2724",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2923",
+    "y": "2724",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2923",
+    "y": "2719",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2917",
+    "y": "2719",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2913",
+    "y": "2720",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  },
+  {
+    "name": "Squirrel",
+    "id": "104",
+    "x": "2911",
+    "y": "2723",
+    "z": "0",
+    "direction": "W",
+    "walkRange": "1",
+    "world": "ECO"
+  }
+]

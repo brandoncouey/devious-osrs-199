@@ -1,0 +1,45 @@
+[
+  {
+    "ids": [ 9044 ],
+    "handler": "",
+    //Combat Info
+    "hitpoints": 300,
+    "aggressive_level": 1080,
+    "max_damage": 30,
+    "attack_style": "STAB",
+    //Slayer Info
+    "slayer_level": 0,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [ ],
+    //Combat Stats
+    "attack": 250,
+    "strength": 150,
+    "defence": 50,
+    "ranged": 1,
+    "magic": 1,
+    //Aggressive Stats
+    "stab_attack": 60,
+    "slash_attack": 60,
+    "crush_attack": 60,
+    "magic_attack": 60,
+    "ranged_attack": 60,
+    //Defensive Stats
+    "stab_defence": 5,
+    "slash_defence": 5,
+    "crush_defence": 5,
+    "magic_defence": 5,
+    "ranged_defence": 5,
+    //Immunites
+    "poison_immunity": true,
+    "venom_immunity": true,
+    //Speeds
+    "attack_ticks": 6,
+    "death_ticks": 2,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": 6252,
+    "attack_animation": 6254,
+    "defend_animation": 6255,
+    "death_animation": 6256
+  }
+]

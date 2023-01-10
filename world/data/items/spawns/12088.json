@@ -1,0 +1,72 @@
+[
+  {
+    "id": 559,
+    "amount": 5,
+    "x": 3021,
+    "y": 3637,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Body rune",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 562,
+    "amount": 5,
+    "x": 3021,
+    "y": 3640,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Chaos rune",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 558,
+    "amount": 5,
+    "x": 3023,
+    "y": 3640,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Mind rune",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 554,
+    "amount": 5,
+    "x": 3026,
+    "y": 3637,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Fire rune",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 555,
+    "amount": 5,
+    "x": 3028,
+    "y": 3637,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Water rune",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 556,
+    "amount": 5,
+    "x": 3030,
+    "y": 3637,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Air rune",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 557,
+    "amount": 5,
+    "x": 3032,
+    "y": 3637,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Earth rune",
+    "respawnSeconds": 30
+  }
+]

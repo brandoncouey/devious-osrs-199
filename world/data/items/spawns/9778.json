@@ -1,0 +1,122 @@
+[
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2480,
+    "y": 3220,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2483,
+    "y": 3221,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2476,
+    "y": 3224,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2471,
+    "y": 3217,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2470,
+    "y": 3225,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2465,
+    "y": 3227,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2457,
+    "y": 3224,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2459,
+    "y": 3222,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2455,
+    "y": 3219,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2453,
+    "y": 3230,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2456,
+    "y": 3230,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2456,
+    "y": 3235,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  }
+]

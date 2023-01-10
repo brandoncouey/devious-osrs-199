@@ -1,0 +1,522 @@
+[
+	{
+		"name": "Ice troll male",
+		"id": "5824",
+		"x": "2376",
+		"y": "10280",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll male",
+		"id": "5824",
+		"x": "2378",
+		"y": "10271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5825",
+		"x": "2381",
+		"y": "10285",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5825",
+		"x": "2382",
+		"y": "10275",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll grunt",
+		"id": "5826",
+		"x": "2383",
+		"y": "10281",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll male",
+		"id": "5824",
+		"x": "2386",
+		"y": "10268",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5825",
+		"x": "2388",
+		"y": "10272",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll grunt",
+		"id": "5826",
+		"x": "2388",
+		"y": "10277",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5825",
+		"x": "2388",
+		"y": "10283",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Honour guard",
+		"id": "1892",
+		"x": "2389",
+		"y": "10290",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5823",
+		"x": "2390",
+		"y": "10286",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Honour guard",
+		"id": "1892",
+		"x": "2391",
+		"y": "10290",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5825",
+		"x": "2393",
+		"y": "10280",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5823",
+		"x": "2393",
+		"y": "10286",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Honour guard",
+		"id": "1892",
+		"x": "2393",
+		"y": "10290",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll grunt",
+		"id": "5826",
+		"x": "2394",
+		"y": "10274",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Honour guard",
+		"id": "1892",
+		"x": "2395",
+		"y": "10290",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5823",
+		"x": "2396",
+		"y": "10286",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Honour guard",
+		"id": "1892",
+		"x": "2396",
+		"y": "10295",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll male",
+		"id": "5824",
+		"x": "2397",
+		"y": "10271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Honour guard",
+		"id": "1892",
+		"x": "2397",
+		"y": "10289",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bork Sigmundson",
+		"id": "5827",
+		"x": "2397",
+		"y": "10294",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5825",
+		"x": "2398",
+		"y": "10278",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll male",
+		"id": "5824",
+		"x": "2401",
+		"y": "10285",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5828",
+		"x": "2406",
+		"y": "10259",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll grunt",
+		"id": "5831",
+		"x": "2413",
+		"y": "10265",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5828",
+		"x": "2414",
+		"y": "10257",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll grunt",
+		"id": "5831",
+		"x": "2414",
+		"y": "10277",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll male",
+		"id": "5829",
+		"x": "2415",
+		"y": "10284",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5830",
+		"x": "2416",
+		"y": "10272",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5830",
+		"x": "2419",
+		"y": "10282",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll grunt",
+		"id": "5831",
+		"x": "2420",
+		"y": "10270",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5825",
+		"x": "2420",
+		"y": "10274",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll male",
+		"id": "5829",
+		"x": "2421",
+		"y": "10266",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Miner",
+		"id": "1992",
+		"x": "2376",
+		"y": "10198",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5828",
+		"x": "2378",
+		"y": "10216",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Miner",
+		"id": "1992",
+		"x": "2386",
+		"y": "10185",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Miner",
+		"id": "1992",
+		"x": "2386",
+		"y": "10197",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Miner",
+		"id": "1992",
+		"x": "2389",
+		"y": "10209",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Miner",
+		"id": "1992",
+		"x": "2401",
+		"y": "10189",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5830",
+		"x": "2401",
+		"y": "10217",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll male",
+		"id": "5829",
+		"x": "2401",
+		"y": "10220",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5828",
+		"x": "2402",
+		"y": "10225",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5830",
+		"x": "2403",
+		"y": "10223",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "1874",
+		"x": "2404",
+		"y": "10215",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Miner",
+		"id": "1992",
+		"x": "2407",
+		"y": "10214",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5828",
+		"x": "2408",
+		"y": "10227",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll female",
+		"id": "5830",
+		"x": "2409",
+		"y": "10223",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Miner",
+		"id": "1992",
+		"x": "2411",
+		"y": "10192",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll male",
+		"id": "5829",
+		"x": "2411",
+		"y": "10220",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Miner",
+		"id": "1992",
+		"x": "2420",
+		"y": "10199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ice troll runt",
+		"id": "5828",
+		"x": "2420",
+		"y": "10215",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

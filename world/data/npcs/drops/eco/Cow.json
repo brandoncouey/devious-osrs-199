@@ -1,0 +1,19 @@
+[
+  {
+    "ids": [ 2790, 2791, 2793, 2795, 5842, 6401 ],
+    "guaranteed": [
+      { "id": 2132, "min": 1, "max": 1 }, //Raw beef
+      { "id": 526, "min": 1, "max": 1 } //Bones
+    ],
+    "tables": [
+      {
+        "name": "Other",
+        "weight": 1,
+        "items": [
+          { "id": 1739, "min": 1, "max": 1,"weight": 10 }, //Cowhide
+          { "id": 30258, "min": 1, "max": 1, "weight": 5 } //Small Tooth
+        ]
+      }
+    ]
+  }
+]

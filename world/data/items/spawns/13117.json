@@ -1,0 +1,72 @@
+[
+  {
+    "id": 444,
+    "amount": 1,
+    "x": 3289,
+    "y": 3926,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Gold ore",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 444,
+    "amount": 1,
+    "x": 3290,
+    "y": 3928,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Gold ore",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 444,
+    "amount": 1,
+    "x": 3292,
+    "y": 3933,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Gold ore",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 444,
+    "amount": 1,
+    "x": 3287,
+    "y": 3932,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Gold ore",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1173,
+    "amount": 1,
+    "x": 3294,
+    "y": 3935,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Bronze sq shield",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 307,
+    "amount": 1,
+    "x": 3283,
+    "y": 3936,
+    "z": 3,
+    "world": "ECO",
+    "itemName": "Fishing rod",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1203,
+    "amount": 1,
+    "x": 3279,
+    "y": 3938,
+    "z": 3,
+    "world": "ECO",
+    "itemName": "Iron dagger",
+    "respawnSeconds": 60
+  }
+]

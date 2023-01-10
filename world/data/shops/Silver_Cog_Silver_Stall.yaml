@@ -1,0 +1,24 @@
+---
+identifier: "hA68FqjlElzlmzk6IQNnMbqEkotsQd"
+title: "Silver Cog Silvere Stall"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 150
+  buysAt: 80
+  changePer: 3
+defaultStock:
+- id: 1714
+  amount: 2
+- id: 442
+  amount: 1
+- id: 2355
+  amount: 1

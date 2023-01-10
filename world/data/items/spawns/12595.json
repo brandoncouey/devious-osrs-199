@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1735,
+    "amount": 0,
+    "x": 3192,
+    "y": 3272,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1944,
+    "amount": 0,
+    "x": 3169,
+    "y": 3291,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1944,
+    "amount": 0,
+    "x": 3172,
+    "y": 3301,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1944,
+    "amount": 0,
+    "x": 3175,
+    "y": 3305,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1944,
+    "amount": 0,
+    "x": 3185,
+    "y": 3297,
+    "z": 0,
+    "respawnSeconds": 0
+  }
+]

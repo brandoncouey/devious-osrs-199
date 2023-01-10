@@ -1,0 +1,172 @@
+[
+	{
+		"name": "Monk",
+		"id": "1962",
+		"x": "3783",
+		"y": "9223",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dr Fenkenstrain",
+		"id": "1955",
+		"x": "3784",
+		"y": "9225",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "1960",
+		"x": "3784",
+		"y": "9227",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brother Tranquility",
+		"id": "1964",
+		"x": "3786",
+		"y": "9224",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "1961",
+		"x": "3786",
+		"y": "9226",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "1963",
+		"x": "3787",
+		"y": "9222",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "583",
+		"x": "3792",
+		"y": "9254",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "564",
+		"x": "3797",
+		"y": "9253",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "587",
+		"x": "3798",
+		"y": "9258",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "589",
+		"x": "3799",
+		"y": "9247",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "570",
+		"x": "3803",
+		"y": "9249",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "596",
+		"x": "3805",
+		"y": "9255",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "585",
+		"x": "3809",
+		"y": "9253",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "591",
+		"x": "3814",
+		"y": "9250",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "594",
+		"x": "3817",
+		"y": "9259",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "566",
+		"x": "3819",
+		"y": "9253",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "598",
+		"x": "3823",
+		"y": "9254",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

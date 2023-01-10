@@ -1,0 +1,95 @@
+---
+identifier: "DONATOR_STORE2"
+title: "Devious's Donator store"
+currency: "DONATION_COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: false
+
+
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+defaultStock:
+  - id: 11847
+    amount: 1000
+    price: 40
+  - id: 1053
+    amount: 1000
+    price: 40
+  - id: 1055
+    amount: 1000
+    price: 40
+  - id: 1057
+    amount: 1000
+    price: 40
+  - id: 1038
+    amount: 1000
+    price: 40
+  - id: 1040
+    amount: 1000
+    price: 40
+  - id: 1042
+    amount: 1000
+    price: 40
+  - id: 1044
+    amount: 1000
+    price: 40
+  - id: 1046
+    amount: 1000
+    price: 40
+  - id: 1048
+    amount: 1000
+    price: 40
+  - id: 11862
+    amount: 1000
+    price: 40
+  - id: 11863
+    amount: 1000
+    price: 40
+  - id: 13173
+    amount: 1000
+    price: 200
+  - id: 1050
+    amount: 1000
+    price: 40
+  - id: 13343
+    amount: 1000
+    price: 40
+  - id: 13344
+    amount: 1000
+    price: 40
+  - id: 1419
+    amount: 1000
+    price: 40
+  - id: 4084
+    amount: 1000
+    price: 35
+  - id: 30378
+    amount: 1000
+    price: 25
+  - id: 30384
+    amount: 1000
+    price: 25
+  - id: 30383
+    amount: 1000
+    price: 25
+  - id: 30382
+    amount: 1000
+    price: 25
+  - id: 30381
+    amount: 1000
+    price: 25
+  - id: 30380
+    amount: 1000
+    price: 25
+  - id: 30379
+    amount: 1000
+    price: 25
+  - id: 30372
+    amount: 1000
+    price: 100
+  - id: 30373
+    amount: 1000
+    price: 100

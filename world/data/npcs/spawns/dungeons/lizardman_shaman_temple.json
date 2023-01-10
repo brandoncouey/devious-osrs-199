@@ -1,0 +1,227 @@
+[
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1295,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1303,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1311,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1318,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1325,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1330,
+    "y": 10077,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1331,
+    "y": 10085,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1292,
+    "y": 10082,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1292,
+    "y": 10087,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1296,
+    "y": 10096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1306,
+    "y": 10096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1309,
+    "y": 10096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1312,
+    "y": 10096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1321,
+    "y": 10096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1330,
+    "y": 10096,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1316,
+    "y": 9963,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1303,
+    "y": 9966,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1291,
+    "y": 9958,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1287,
+    "y": 9952,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1304,
+    "y": 9951,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1309,
+    "y": 9946,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1319,
+    "y": 9948,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1325,
+    "y": 9954,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1325,
+    "y": 9965,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Lizardman Shaman",
+    "id": 8565,
+    "x": 1332,
+    "y": 9971,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  }
+]

@@ -1,0 +1,95 @@
+{
+  "pollTitle": "Revenants \u0026 More",
+  "pollDescription": "This poll contains a lot of content related questions and will ultimately determine the direction we go when developing Revenant for the next days.",
+  "pollEndDate": "Poll ends on: May 20th, 2018",
+  "pollNumber": 1,
+  "totalVotes": 3,
+  "questions": [
+    {
+      "question": "Should Revenants be added to Revenant to match osrs?",
+      "votes": [
+        2,
+        0
+      ],
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "question": "Would you prefer us to fix bugs or work on some new content for the Server?",
+      "votes": [
+        2,
+        0,
+        0
+      ],
+      "answers": [
+        "Fix bugs",
+        "New bosses",
+        "New minigame",
+        "Doesn\u0027t matter"
+      ]
+    },
+    {
+      "question": "Should we add more Mid tier gear such as Black dhide to the ranger shop?\u0027",
+      "votes": [
+        1,
+        1
+      ],
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "question": "Should Corp drop rates be nerfed?",
+      "votes": [
+        2,
+        0
+      ],
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "question": "Should Wizard distentor\u0027s position be changed to outside the bank, near the well?",
+      "votes": [
+        2,
+        0
+      ],
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "question": "Should a boss teleport from Wizard distentor be added for Abyssal Sire?",
+      "votes": [
+        1,
+        1
+      ],
+      "answers": [
+        "Yes",
+        "No"
+      ]
+    },
+    {
+      "question": "Do you want to see a detailed Halloween event or more of a basic one?",
+      "votes": [
+        1,
+        0,
+        1
+      ],
+      "answers": [
+        "Detailed",
+        "Basic",
+        "Doesn\u0027t matter"
+      ]
+    }
+  ],
+  "limitVote": true,
+  "votedUids": [
+    "20130112154441.000000+060"
+  ]
+}

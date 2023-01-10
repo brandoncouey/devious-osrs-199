@@ -1,0 +1,43 @@
+---
+identifier: "3OAd2Uy9yOFvS6Jt95xQCYXPWVQOV6"
+title: "Aemad's Adventuring Supplies"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: true
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 130
+  buysAt: 40
+  changePer: 2
+defaultStock:
+- id: 227
+  amount: 500
+- id: 1935
+  amount: 100000
+- id: 11879
+  amount: 250
+- id: 1265
+  amount: 2
+- id: 1349
+  amount: 2
+- id: 2142
+  amount: 2
+- id: 590
+  amount: 2
+- id: 1759
+  amount: 30
+- id: 882
+  amount: 500
+- id: 954
+  amount: 20
+- id: 970
+  amount: 50
+- id: 946
+  amount: 2

@@ -1,0 +1,42 @@
+[
+  {
+    "id": 401,
+    "amount": 1,
+    "x": 2756,
+    "y": 3125,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Seaweed",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 401,
+    "amount": 1,
+    "x": 2753,
+    "y": 3119,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Seaweed",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 401,
+    "amount": 1,
+    "x": 2757,
+    "y": 3109,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Seaweed",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 401,
+    "amount": 1,
+    "x": 2756,
+    "y": 3074,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Seaweed",
+    "respawnSeconds": 30
+  }
+]

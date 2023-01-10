@@ -1,0 +1,84 @@
+---
+identifier: "Ch08RBITmh5CRAGFNR0m3RZTXCMkv3"
+title: "Gerrant's Fishy Business"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 70
+  changePer: 1
+defaultStock:
+  - id: 313
+    amount: 10000
+    price: 10
+  - id: 314
+    amount: 5000
+    price: 2
+  - id: 11881
+    amount: 1000
+    price: 500
+  - id: 11940
+    amount: 1000
+    price: 5
+  - id: 13431
+    amount: 1000
+    price: 10
+  - id: 3150
+    amount: 1000
+    price: 10
+  - id: 303
+    amount: 100
+    price: 200
+  - id: 305
+    amount: 100
+    price: 500
+  - id: 307
+    amount: 100
+    price: 250
+  - id: 309
+    amount: 100
+    price: 250
+  - id: 17591
+    amount: 5000
+    price: 250
+  - id: 311
+    amount: 100
+    price: 500
+  - id: 301
+    amount: 100
+    price: 200
+  - id: 3157
+    amount: 100
+    price: 250
+  - id: 11323
+    amount: 100
+    price: 250
+  - id: 317
+    amount: 5000
+    price: 25
+  - id: 327
+    amount: 5000
+    price: 35
+  - id: 345
+    amount: 5000
+    price: 45
+  - id: 321
+    amount: 5000
+    price: 55
+  - id: 335
+    amount: 5000
+    price: 65
+  - id: 349
+    amount: 5000
+    price: 75
+  - id: 371
+    amount: 5000
+    price: 75

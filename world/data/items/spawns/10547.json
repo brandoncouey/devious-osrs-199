@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1856,
+    "amount": 1,
+    "x": 2638,
+    "y": 3292,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Guide book",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1550,
+    "amount": 1,
+    "x": 2645,
+    "y": 3299,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Garlic",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1420,
+    "amount": 1,
+    "x": 2675,
+    "y": 3299,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Iron mace",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1755,
+    "amount": 1,
+    "x": 2683,
+    "y": 3318,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Chisel",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 2347,
+    "amount": 1,
+    "x": 2684,
+    "y": 3318,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Hammer",
+    "respawnSeconds": 60
+  }
+]

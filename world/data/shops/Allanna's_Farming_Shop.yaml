@@ -1,0 +1,54 @@
+---
+identifier: "hYUme7woHuBVr6pmwd2mdKKh45qLWF"
+title: "Allanna's Farming Shop"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 60
+  changePer: 2
+defaultStock:
+- id: 5341
+  amount: 5
+- id: 5343
+  amount: 5
+- id: 5329
+  amount: 5
+- id: 952
+  amount: 5
+- id: 5325
+  amount: 3
+- id: 5331
+  amount: 30
+- id: 5350
+  amount: 100
+- id: 5356
+  amount: 100
+- id: 13250
+  amount: 10
+- id: 6032
+  amount: 100
+- id: 19704
+  amount: 10
+- id: 1925
+  amount: 100
+- id: 22660
+  amount: 15
+- id: 5418
+  amount: 100
+- id: 13252
+  amount: 30
+- id: 5376
+  amount: 100
+- id: 13254
+  amount: 30
+- id: 6036
+  amount: 40

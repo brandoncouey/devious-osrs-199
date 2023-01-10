@@ -1,0 +1,22 @@
+---
+identifier: "57466715-a9d7-4284-bfc2-190ce93e07f2"
+title: "Fairy Fixit's Fairy Enchantment"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: false
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 60
+  changePer: 1
+defaultStock:
+- id: 20609
+  amount: 100
+- id: 772
+  amount: 100

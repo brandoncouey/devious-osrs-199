@@ -1,0 +1,42 @@
+[
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 2550,
+    "y": 3576,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 2553,
+    "y": 3576,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 2554,
+    "y": 3575,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 2556,
+    "y": 3573,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 30
+  }
+]

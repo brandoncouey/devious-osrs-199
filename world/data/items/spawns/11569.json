@@ -1,0 +1,84 @@
+[
+  {
+    "id": 1963,
+    "amount": 0,
+    "x": 2907,
+    "y": 3146,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1935,
+    "amount": 0,
+    "x": 2905,
+    "y": 3146,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 946,
+    "amount": 0,
+    "x": 2903,
+    "y": 3148,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 954,
+    "amount": 0,
+    "x": 2904,
+    "y": 3152,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 556,
+    "amount": 1,
+    "x": 2938,
+    "y": 3158,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Air rune",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1963,
+    "amount": 1,
+    "x": 2907,
+    "y": 3146,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Banana",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1935,
+    "amount": 1,
+    "x": 2905,
+    "y": 3146,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Jug",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 946,
+    "amount": 1,
+    "x": 2903,
+    "y": 3148,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Knife",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 954,
+    "amount": 1,
+    "x": 2904,
+    "y": 3152,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Rope",
+    "respawnSeconds": 60
+  }
+]

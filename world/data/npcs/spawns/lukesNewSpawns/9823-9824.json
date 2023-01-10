@@ -1,0 +1,1362 @@
+[
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2457",
+		"y": "6186",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2458",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2460",
+		"y": "6182",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2462",
+		"y": "6166",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2462",
+		"y": "6175",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2462",
+		"y": "6188",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2464",
+		"y": "6181",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2465",
+		"y": "6176",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2465",
+		"y": "6186",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2466",
+		"y": "6194",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2467",
+		"y": "6163",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2467",
+		"y": "6169",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2467",
+		"y": "6181",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2467",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2469",
+		"y": "6185",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2472",
+		"y": "6167",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2472",
+		"y": "6193",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2473",
+		"y": "6176",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2474",
+		"y": "6161",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2474",
+		"y": "6169",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2474",
+		"y": "6178",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2474",
+		"y": "6203",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2475",
+		"y": "6166",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2475",
+		"y": "6175",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2475",
+		"y": "6188",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2475",
+		"y": "6204",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2476",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "4533",
+		"x": "2477",
+		"y": "6182",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2477",
+		"y": "6185",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "4533",
+		"x": "2477",
+		"y": "6187",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2477",
+		"y": "6204",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2477",
+		"y": "6206",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2478",
+		"y": "6163",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "4533",
+		"x": "2478",
+		"y": "6184",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2478",
+		"y": "6199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "4533",
+		"x": "2479",
+		"y": "6183",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "4533",
+		"x": "2479",
+		"y": "6184",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2479",
+		"y": "6198",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "4533",
+		"x": "2480",
+		"y": "6185",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "4533",
+		"x": "2480",
+		"y": "6187",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2480",
+		"y": "6197",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2480",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "4533",
+		"x": "2481",
+		"y": "6184",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2481",
+		"y": "6187",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2481",
+		"y": "6204",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2482",
+		"y": "6166",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2482",
+		"y": "6190",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2482",
+		"y": "6191",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2482",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2483",
+		"y": "6190",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2483",
+		"y": "6193",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2483",
+		"y": "6195",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2483",
+		"y": "6198",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2483",
+		"y": "6199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2484",
+		"y": "6169",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2484",
+		"y": "6197",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2485",
+		"y": "6173",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2485",
+		"y": "6177",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2485",
+		"y": "6190",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2485",
+		"y": "6204",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2486",
+		"y": "6190",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2486",
+		"y": "6204",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2486",
+		"y": "6206",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2487",
+		"y": "6200",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2488",
+		"y": "6167",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2488",
+		"y": "6179",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2488",
+		"y": "6199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2488",
+		"y": "6200",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2488",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2489",
+		"y": "6172",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2489",
+		"y": "6194",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2489",
+		"y": "6199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2490",
+		"y": "6182",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2490",
+		"y": "6192",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2491",
+		"y": "6193",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2491",
+		"y": "6196",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2491",
+		"y": "6198",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2491",
+		"y": "6204",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2492",
+		"y": "6185",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Blessed spider",
+		"id": "8978",
+		"x": "2492",
+		"y": "6200",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Spider",
+		"id": "4561",
+		"x": "2492",
+		"y": "6202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tyras Guard",
+		"id": "8945",
+		"x": "2435",
+		"y": "6094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Warrior",
+		"id": "8948",
+		"x": "2435",
+		"y": "6112",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Niloof",
+		"id": "8941",
+		"x": "2437",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Lord Ieuan Amlodd",
+		"id": "8899",
+		"x": "2437",
+		"y": "6092",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Islwyn",
+		"id": "8819",
+		"x": "2438",
+		"y": "6110",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ilfeen",
+		"id": "8826",
+		"x": "2439",
+		"y": "6099",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Archer",
+		"id": "8947",
+		"x": "2439",
+		"y": "6117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Lady Carys Hefin",
+		"id": "8908",
+		"x": "2440",
+		"y": "6088",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Warrior",
+		"id": "8949",
+		"x": "2440",
+		"y": "6096",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Thorgel",
+		"id": "8943",
+		"x": "2441",
+		"y": "6083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tyras Guard",
+		"id": "8945",
+		"x": "2441",
+		"y": "6112",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Lady Tangwen Trahaearn",
+		"id": "8895",
+		"x": "2442",
+		"y": "6087",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tyras Guard",
+		"id": "8945",
+		"x": "2442",
+		"y": "6100",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tyras Guard",
+		"id": "8945",
+		"x": "2442",
+		"y": "6118",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Archer",
+		"id": "8946",
+		"x": "2444",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Baxtorian",
+		"id": "8809",
+		"x": "2444",
+		"y": "6092",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Lady Kelyn Ithell",
+		"id": "8915",
+		"x": "2444",
+		"y": "6097",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "General Hining",
+		"id": "8944",
+		"x": "2446",
+		"y": "6094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Archer",
+		"id": "8947",
+		"x": "2446",
+		"y": "6109",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Eluned",
+		"id": "8829",
+		"x": "2448",
+		"y": "6089",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Warrior",
+		"id": "8948",
+		"x": "2448",
+		"y": "6118",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Warrior",
+		"id": "8949",
+		"x": "2449",
+		"y": "6100",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Rebel Archer",
+		"id": "8946",
+		"x": "2449",
+		"y": "6110",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Lord Piquan Crwys",
+		"id": "8904",
+		"x": "2450",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tyras Guard",
+		"id": "8945",
+		"x": "2450",
+		"y": "6107",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Klank",
+		"id": "8940",
+		"x": "2451",
+		"y": "6094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Lady Ffion Meilyr",
+		"id": "8911",
+		"x": "2452",
+		"y": "6090",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Kamen",
+		"id": "8942",
+		"x": "2453",
+		"y": "6087",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Elena",
+		"id": "8796",
+		"x": "2454",
+		"y": "6091",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tyras Guard",
+		"id": "8945",
+		"x": "2457",
+		"y": "6084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Iestin",
+		"id": "8926",
+		"x": "2459",
+		"y": "6089",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5173",
+		"x": "2436",
+		"y": "5526",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5171",
+		"x": "2436",
+		"y": "5540",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5166",
+		"x": "2436",
+		"y": "5553",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5172",
+		"x": "2437",
+		"y": "5549",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ticket dwarf",
+		"id": "5176",
+		"x": "2438",
+		"y": "5535",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5174",
+		"x": "2439",
+		"y": "5520",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5165",
+		"x": "2439",
+		"y": "5525",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5166",
+		"x": "2439",
+		"y": "5532",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5167",
+		"x": "2439",
+		"y": "5539",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5170",
+		"x": "2439",
+		"y": "5544",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5168",
+		"x": "2439",
+		"y": "5549",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5167",
+		"x": "2483",
+		"y": "5539",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5164",
+		"x": "2484",
+		"y": "5522",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5172",
+		"x": "2484",
+		"y": "5531",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5168",
+		"x": "2484",
+		"y": "5544",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5167",
+		"x": "2484",
+		"y": "5552",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5170",
+		"x": "2485",
+		"y": "5535",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Ticket goblin",
+		"id": "5169",
+		"x": "2485",
+		"y": "5540",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5173",
+		"x": "2486",
+		"y": "5525",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5164",
+		"x": "2486",
+		"y": "5548",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5163",
+		"x": "2487",
+		"y": "5519",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5166",
+		"x": "2487",
+		"y": "5530",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dwarf",
+		"id": "5175",
+		"x": "2487",
+		"y": "5538",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Cave goblin",
+		"id": "5165",
+		"x": "2487",
+		"y": "5542",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2980,
+    "y": 3764,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 2978,
+    "y": 3763,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  }
+]

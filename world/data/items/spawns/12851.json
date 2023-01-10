@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1944,
+    "amount": 0,
+    "x": 3226,
+    "y": 3300,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1925,
+    "amount": 1,
+    "x": 3225,
+    "y": 3294,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bucket",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1944,
+    "amount": 1,
+    "x": 3229,
+    "y": 3299,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Egg",
+    "respawnSeconds": 60
+  }
+]

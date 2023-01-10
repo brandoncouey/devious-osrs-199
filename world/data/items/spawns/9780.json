@@ -1,0 +1,12 @@
+[
+  {
+    "id": 3216,
+    "amount": 1,
+    "x": 2487,
+    "y": 3371,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Barrel",
+    "respawnSeconds": 60
+  }
+]

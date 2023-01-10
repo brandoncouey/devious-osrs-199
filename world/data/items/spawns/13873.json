@@ -1,0 +1,12 @@
+[
+  {
+    "id": 303,
+    "amount": 1,
+    "x": 3511,
+    "y": 3188,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Small fishing net",
+    "respawnSeconds": 60
+  }
+]

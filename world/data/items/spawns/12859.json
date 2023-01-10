@@ -1,0 +1,92 @@
+[
+  {
+    "id": 995,
+    "amount": 8,
+    "x": 3220,
+    "y": 3829,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Coins",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 995,
+    "amount": 8,
+    "x": 3218,
+    "y": 3826,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Coins",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 8,
+    "x": 3213,
+    "y": 3822,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 8,
+    "x": 3215,
+    "y": 3821,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 8,
+    "x": 3217,
+    "y": 3818,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 8,
+    "x": 3218,
+    "y": 3816,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 239,
+    "amount": 1,
+    "x": 3217,
+    "y": 3814,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "White berries",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 239,
+    "amount": 1,
+    "x": 3215,
+    "y": 3810,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "White berries",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1191,
+    "amount": 1,
+    "x": 3247,
+    "y": 3795,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Iron kiteshield",
+    "respawnSeconds": 30
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 245,
+    "amount": 1,
+    "x": 2950,
+    "y": 3824,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Wine of zamorak",
+    "respawnSeconds": 60
+  }
+]

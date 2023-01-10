@@ -1,0 +1,45 @@
+[
+  {
+    "ids": [ 9048 ],
+    "handler": "io.ruin.model.activities.wilderness.monsters.DarkBeast",
+    //Combat Info
+    "hitpoints": 175,
+    "aggressive_level": 1080,
+    "max_damage": 30,
+    "attack_style": "CRUSH",
+    //Slayer Info
+    "slayer_level": 92,
+    "slayer_xp": 400.0,
+    "slayer_tasks": [ "Dark Beasts" ],
+    //Combat Stats
+    "attack": 250,
+    "strength": 200,
+    "defence": 100,
+    "ranged": 200,
+    "magic": 200,
+    //Aggressive Stats
+    "stab_attack": 50,
+    "slash_attack": 50,
+    "crush_attack": 50,
+    "magic_attack": 50,
+    "ranged_attack": 50,
+    //Defensive Stats
+    "stab_defence": 5,
+    "slash_defence": 5,
+    "crush_defence": 5,
+    "magic_defence": 5,
+    "ranged_defence": 5,
+    //Immunites
+    "poison_immunity": false,
+    "venom_immunity": false,
+    //Speeds
+    "attack_ticks": 4,
+    "death_ticks": 5,
+    "respawn_ticks": 50,
+    //Animations
+    "spawn_animation": 2730,
+    "attack_animation": 2731,
+    "defend_animation": 2732,
+    "death_animation": 2733
+  }
+]

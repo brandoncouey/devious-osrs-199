@@ -1,0 +1,34 @@
+[
+  {
+    "id": 946,
+    "amount": 0,
+    "x": 1369,
+    "y": 3635,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 2162,
+    "amount": 0,
+    "x": 1363,
+    "y": 3636,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 2162,
+    "amount": 0,
+    "x": 1371,
+    "y": 3633,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 2162,
+    "amount": 0,
+    "x": 1372,
+    "y": 3635,
+    "z": 0,
+    "respawnSeconds": 0
+  }
+]

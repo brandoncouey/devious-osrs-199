@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1935,
+    "amount": 0,
+    "x": 3211,
+    "y": 3212,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1931,
+    "amount": 0,
+    "x": 3209,
+    "y": 3214,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1923,
+    "amount": 0,
+    "x": 3208,
+    "y": 3214,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 946,
+    "amount": 0,
+    "x": 3205,
+    "y": 3212,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 558,
+    "amount": 0,
+    "x": 3206,
+    "y": 3208,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 882,
+    "amount": 0,
+    "x": 3205,
+    "y": 3227,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1205,
+    "amount": 0,
+    "x": 3213,
+    "y": 3216,
+    "z": 1,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1511,
+    "amount": 0,
+    "x": 3205,
+    "y": 3224,
+    "z": 2,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1511,
+    "amount": 0,
+    "x": 3205,
+    "y": 3226,
+    "z": 2,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1511,
+    "amount": 0,
+    "x": 3208,
+    "y": 3225,
+    "z": 2,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1511,
+    "amount": 0,
+    "x": 3209,
+    "y": 3224,
+    "z": 2,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 1957,
+    "amount": 1,
+    "x": 3211,
+    "y": 3247,
+    "z": 1,
+    "world": "ECO",
+    "itemName": "Onion",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1265,
+    "amount": 1,
+    "x": 3229,
+    "y": 3223,
+    "z": 2,
+    "world": "ECO",
+    "itemName": "Bronze pickaxe",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1265,
+    "amount": 1,
+    "x": 3229,
+    "y": 3215,
+    "z": 2,
+    "world": "ECO",
+    "itemName": "Bronze pickaxe",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 946,
+    "amount": 1,
+    "x": 3226,
+    "y": 3202,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Knife",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1203,
+    "amount": 1,
+    "x": 3248,
+    "y": 3245,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Iron dagger",
+    "respawnSeconds": 60
+  }
+]

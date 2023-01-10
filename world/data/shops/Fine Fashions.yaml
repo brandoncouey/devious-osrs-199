@@ -1,0 +1,58 @@
+---
+identifier: "In43md1yWyId9szFxBQs34r40RjMp1"
+title: "Fine Fashions"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 55
+  changePer: 1
+defaultStock:
+  - id: 656
+    amount: 5
+  - id: 658
+    amount: 5
+  - id: 660
+    amount: 5
+  - id: 662
+    amount: 5
+  - id: 664
+    amount: 5
+  - id: 636
+    amount: 5
+  - id: 638
+    amount: 5
+  - id: 640
+    amount: 5
+  - id: 642
+    amount: 5
+  - id: 644
+    amount: 5
+  - id: 646
+    amount: 5
+  - id: 648
+    amount: 5
+  - id: 650
+    amount: 5
+  - id: 652
+    amount: 5
+  - id: 654
+    amount: 5
+  - id: 626
+    amount: 5
+  - id: 628
+    amount: 5
+  - id: 630
+    amount: 5
+  - id: 632
+    amount: 5
+  - id: 634
+    amount: 5

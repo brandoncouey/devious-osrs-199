@@ -1,0 +1,60 @@
+---
+identifier: "fa44e4f4-08d2-11ec-9a03-0242ac130003"
+title: "Blood Money Range"
+currency: "BLOOD_MONEY"
+accessibleByRegular: true
+accessibleByIronMan: false
+canSellToStore: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+priceRules:
+  sellsAt: 110
+  buysAt: 20
+  changePer: 3
+defaultStock:
+  - id: 12883
+    amount: 1000
+    price: 50000
+    placeholderId: 0
+  - id: 2581
+    amount: 1000
+    price: 50000
+    placeholderId: 0
+  - id: 2577
+    amount: 1000
+    price: 150000
+    placeholderId: 0
+  - id: 12596
+    amount: 1000
+    price: 40000
+    placeholderId: 0
+  - id: 11235
+    amount: 1000
+    price: 50000
+    placeholderId: 0
+  - id: 19478
+    amount: 1000
+    price: 60000
+    placeholderId: 0
+  - id: 19481
+    amount: 1000
+    price: 125000
+    placeholderId: 0
+  - id: 20849
+    amount: 1000
+    price: 25
+    placeholderId: 0
+  - id: 11212
+    amount: 1000
+    price: 250
+    placeholderId: 0
+  - id: 11230
+    amount: 1000
+    price: 150
+    placeholderId: 0
+  - id: 21905
+    amount: 1000
+    price: 350
+    placeholderId: 0
+

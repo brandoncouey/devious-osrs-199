@@ -1,0 +1,32 @@
+[
+	{
+		"name": "Crunchy",
+		"id": "8001",
+		"x": "3035",
+		"y": "9937",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tim",
+		"id": "8002",
+		"x": "3035",
+		"y": "9941",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dunce",
+		"id": "7775",
+		"x": "3036",
+		"y": "9939",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

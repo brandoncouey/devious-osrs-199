@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1982,
+    "amount": 1,
+    "x": 3039,
+    "y": 3706,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tomato",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1985,
+    "amount": 1,
+    "x": 3039,
+    "y": 3707,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Cheese",
+    "respawnSeconds": 60
+  }
+]

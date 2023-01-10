@@ -1,0 +1,51 @@
+---
+identifier: "6aUIF5gq6Gb9R1ciqjpLtbdzdckl2l"
+title: "Khazard General Store"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: true
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 140
+  buysAt: 40
+  changePer: 1
+defaultStock:
+- id: 1265
+  amount: 5
+- id: 1931
+  amount: 3
+- id: 1935
+  amount: 2
+- id: 20742
+  amount: 5
+- id: 1735
+  amount: 2
+- id: 1925
+  amount: 2
+- id: 22660
+  amount: 15
+- id: 590
+  amount: 2
+- id: 1755
+  amount: 2
+- id: 2347
+  amount: 5
+- id: 954
+  amount: 30
+- id: 1933
+  amount: 30
+- id: 583
+  amount: 30
+- id: 1941
+  amount: 500
+- id: 946
+  amount: 2
+- id: 1351
+  amount: 5

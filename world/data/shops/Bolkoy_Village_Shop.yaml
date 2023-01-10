@@ -1,0 +1,43 @@
+---
+identifier: "OG6P1felWZ3tvY6ptUSWAglb4A8i35"
+title: "Bolkoy Village Shop"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: true
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 130
+  buysAt: 40
+  changePer: 3
+defaultStock:
+- id: 1931
+  amount: 3
+- id: 1265
+  amount: 5
+- id: 1935
+  amount: 2
+- id: 20742
+  amount: 5
+- id: 1735
+  amount: 2
+- id: 1925
+  amount: 2
+- id: 22660
+  amount: 15
+- id: 590
+  amount: 2
+- id: 1755
+  amount: 2
+- id: 2347
+  amount: 5
+- id: 882
+  amount: 30
+- id: 2142
+  amount: 2

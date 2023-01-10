@@ -1,0 +1,282 @@
+[
+	{
+		"name": "Bob",
+		"id": "7502",
+		"x": "3549",
+		"y": "10479",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Jardric",
+		"id": "8109",
+		"x": "3551",
+		"y": "10480",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bob",
+		"id": "7502",
+		"x": "3549",
+		"y": "10420",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Dallas Jones",
+		"id": "7496",
+		"x": "3551",
+		"y": "10421",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3409",
+		"y": "9637",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "3410",
+		"y": "9632",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3410",
+		"y": "9640",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "3411",
+		"y": "9620",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3411",
+		"y": "9644",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3414",
+		"y": "9643",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "3416",
+		"y": "9620",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3418",
+		"y": "9642",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3419",
+		"y": "9646",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3420",
+		"y": "9631",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Animated spade",
+		"id": "6470",
+		"x": "3420",
+		"y": "9657",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3421",
+		"y": "9629",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3423",
+		"y": "9625",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Possessed pickaxe",
+		"id": "6469",
+		"x": "3423",
+		"y": "9658",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Giant bat",
+		"id": "2834",
+		"x": "3425",
+		"y": "9637",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "6448",
+		"x": "3427",
+		"y": "9644",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Skeleton",
+		"id": "6448",
+		"x": "3428",
+		"y": "9658",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Animated spade",
+		"id": "6470",
+		"x": "3429",
+		"y": "9648",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3433",
+		"y": "9638",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3434",
+		"y": "9636",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Bat",
+		"id": "2827",
+		"x": "3436",
+		"y": "9636",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Boulder",
+		"id": "1496",
+		"x": "3419",
+		"y": "9564",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Desert eagle",
+		"id": "1491",
+		"x": "3422",
+		"y": "9568",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Desert eagle",
+		"id": "1491",
+		"x": "3428",
+		"y": "9565",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

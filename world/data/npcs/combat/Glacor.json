@@ -1,0 +1,45 @@
+[
+  { #Glacor (475)
+    "ids": [ 14678 ],
+    "handler": "io.ruin.model.activities.bosses.glacors.Glacor",
+    //Combat Info
+    "hitpoints": 150,
+    "aggressive_level": 642,
+    "max_damage": 38,
+    "attack_style": "SLASH",
+    //Slayer Info
+    "slayer_level": 1,
+    "slayer_xp": 0.0,
+    "slayer_tasks": [ ],
+    //Combat Stats
+    "attack": 240,
+    "strength": 250,
+    "defence": 220,
+    "ranged": 1,
+    "magic": 280,
+    //Aggressive Stats
+    "stab_attack": 160,
+    "slash_attack": 160,
+    "crush_attack": 160,
+    "magic_attack": 160,
+    "ranged_attack": 160,
+    //Defensive Stats
+    "stab_defence": 80,
+    "slash_defence": 80,
+    "crush_defence": 80,
+    "magic_defence": 130,
+    "ranged_defence": 130,
+    //Immunites
+    "poison_immunity": true,
+    "venom_immunity": true,
+    //Speeds
+    "attack_ticks": 6,
+    "death_ticks": 8,
+    "respawn_ticks": 15,
+    //Animations
+    "spawn_animation": -1,
+    "attack_animation": 10881,
+    "defend_animation": 10877,
+    "death_animation": 10878
+  }
+]

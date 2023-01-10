@@ -1,0 +1,25 @@
+---
+identifier: "95IlXZmMUla65e1g6MAUU3mMUfhHDS"
+title: "Sigmund the Merchant"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: true
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 50
+  buysAt: 130
+  changePer: 3
+defaultStock:
+  - id: 527
+    amount: 100000000
+    price: 15
+  - id: 5305
+    amount: 100000000
+    price: 1

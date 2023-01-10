@@ -1,0 +1,70 @@
+---
+identifier: "BMIRON"
+title: "Blood Money Ironman"
+currency: "BLOOD_MONEY"
+accessibleByRegular: false
+accessibleByIronMan: true
+canSellToStore: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+priceRules:
+  buysAt: 20
+  changePer: 3
+defaultStock:
+  - id: 6686
+    amount: 100000000
+    price: 250
+  - id: 12696
+    amount: 100000000
+    price: 250
+  - id: 2445
+    amount: 100000000
+    price: 250
+  - id: 3041
+    amount: 100000000
+    price: 250
+  - id: 2435
+    amount: 100000000
+    price: 250
+  - id: 10926
+    amount: 100000000
+    price: 250
+  - id: 12626
+    amount: 100000000
+    price: 250
+  - id: 2453
+    amount: 100000000
+    price: 250
+  - id: 12906
+    amount: 100000000
+    price: 250
+  - id: 3145
+    amount: 100000000
+    price: 200
+  - id: 13442
+    amount: 100000000
+    price: 250
+  - id: 19625
+    amount: 100000000
+    price: 20
+  - id: 12776
+    amount: 100000000
+    price: 400
+  - id: 12778
+    amount: 100000000
+    price: 400
+  - id: 11941
+    amount: 100000000
+    price: 50
+  - id: 775
+    amount: 1000000
+    price: 25000
+  - id: 7409
+    amount: 1000000
+    price: 25000
+  - id: 10075
+    amount: 1000000
+    price: 25000
+
+

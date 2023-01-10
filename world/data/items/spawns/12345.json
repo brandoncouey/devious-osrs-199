@@ -1,0 +1,162 @@
+[
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3106,
+    "y": 3687,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3112,
+    "y": 3689,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3112,
+    "y": 3696,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3106,
+    "y": 3695,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3106,
+    "y": 3682,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3110,
+    "y": 3684,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3099,
+    "y": 3687,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3098,
+    "y": 3692,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3115,
+    "y": 3688,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3109,
+    "y": 3691,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3108,
+    "y": 3694,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3114,
+    "y": 3698,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3103,
+    "y": 3699,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3110,
+    "y": 3698,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3119,
+    "y": 3693,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  },
+  {
+    "id": 877,
+    "amount": 1,
+    "x": 3103,
+    "y": 3690,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bronze bolts",
+    "respawnSeconds": 30
+  }
+]

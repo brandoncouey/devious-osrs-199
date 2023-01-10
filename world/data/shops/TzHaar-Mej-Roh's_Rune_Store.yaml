@@ -1,0 +1,55 @@
+---
+identifier: "35b90463-33c1-42e6-a1c5-14ba417e3248"
+title: "TzHaar-Mej-Roh's Rune Store"
+currency: "TOKKUL"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+generalStore: false
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 150
+  buysAt: 15
+  changePer: 2
+defaultStock:
+- id: 554
+  amount: 5000
+  price: 2
+- id: 555
+  amount: 5000
+  price: 2
+- id: 556
+  amount: 5000
+  price: 2
+- id: 557
+  amount: 5000
+  price: 2
+- id: 558
+  amount: 5000
+  price: 1
+- id: 559
+  amount: 5000
+  price: 1
+- id: 562
+  amount: 2500
+  price: 54
+- id: 560
+  amount: 2500
+  price: 108
+- id: 21707
+  amount: 50
+  price: 258
+- id: 21701
+  amount: 50
+  price: 258
+- id: 21698
+  amount: 50
+  price: 258
+- id: 21704
+  amount: 50
+  price: 258

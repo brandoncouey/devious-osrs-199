@@ -1,0 +1,21 @@
+---
+identifier: "MENTALSUPPLIES"
+title: "Mental Shop"
+currency: "BLOOD_MONEY"
+accessibleByIronMan: true
+
+accessibleByRegular: true
+mentalOnly: true
+canSellToStore: false
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 30
+  changePer: 1
+defaultStock:
+  - id: 30416
+    amount: 100000
+    price: 20000000

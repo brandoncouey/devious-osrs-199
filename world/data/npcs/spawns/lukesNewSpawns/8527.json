@@ -1,0 +1,572 @@
+[
+	{
+		"name": "Fishing spot",
+		"id": "635",
+		"x": "2113",
+		"y": "5074",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "50% Luke",
+		"id": "604",
+		"x": "2120",
+		"y": "5096",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2140",
+		"y": "5093",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "613",
+		"x": "2141",
+		"y": "5083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "614",
+		"x": "2142",
+		"y": "5081",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2142",
+		"y": "5097",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2142",
+		"y": "5103",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "618",
+		"x": "2143",
+		"y": "5078",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2143",
+		"y": "5094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie swab",
+		"id": "623",
+		"x": "2144",
+		"y": "5071",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "615",
+		"x": "2145",
+		"y": "5080",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "612",
+		"x": "2145",
+		"y": "5086",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "607",
+		"x": "2145",
+		"y": "5087",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2146",
+		"y": "5098",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie swab",
+		"id": "620",
+		"x": "2147",
+		"y": "5071",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "608",
+		"x": "2147",
+		"y": "5085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "617",
+		"x": "2148",
+		"y": "5078",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "616",
+		"x": "2148",
+		"y": "5080",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "611",
+		"x": "2148",
+		"y": "5087",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2148",
+		"y": "5103",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Captain Donnie",
+		"id": "606",
+		"x": "2150",
+		"y": "5078",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "610",
+		"x": "2150",
+		"y": "5085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "609",
+		"x": "2150",
+		"y": "5086",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2151",
+		"y": "5094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie swab",
+		"id": "619",
+		"x": "2152",
+		"y": "5073",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie swab",
+		"id": "621",
+		"x": "2153",
+		"y": "5071",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "611",
+		"x": "2153",
+		"y": "5084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "610",
+		"x": "2153",
+		"y": "5086",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "609",
+		"x": "2154",
+		"y": "5085",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2154",
+		"y": "5101",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "613",
+		"x": "2155",
+		"y": "5080",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "614",
+		"x": "2156",
+		"y": "5078",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "612",
+		"x": "2157",
+		"y": "5084",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2157",
+		"y": "5098",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie swab",
+		"id": "622",
+		"x": "2158",
+		"y": "5071",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "618",
+		"x": "2158",
+		"y": "5076",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "615",
+		"x": "2158",
+		"y": "5079",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "608",
+		"x": "2158",
+		"y": "5083",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie protester",
+		"id": "607",
+		"x": "2159",
+		"y": "5086",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2159",
+		"y": "5104",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "616",
+		"x": "2160",
+		"y": "5078",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fever spider",
+		"id": "626",
+		"x": "2160",
+		"y": "5094",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie swab",
+		"id": "624",
+		"x": "2161",
+		"y": "5071",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fishing spot",
+		"id": "635",
+		"x": "2162",
+		"y": "5061",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "617",
+		"x": "2162",
+		"y": "5079",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fishing spot",
+		"id": "635",
+		"x": "2173",
+		"y": "5074",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Davey",
+		"id": "605",
+		"x": "2132",
+		"y": "5100",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Captain Braindeath",
+		"id": "603",
+		"x": "2144",
+		"y": "5109",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brewer",
+		"id": "634",
+		"x": "2148",
+		"y": "5096",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brewer",
+		"id": "627",
+		"x": "2149",
+		"y": "5093",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brewer",
+		"id": "628",
+		"x": "2151",
+		"y": "5094",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brewer",
+		"id": "633",
+		"x": "2152",
+		"y": "5096",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brewer",
+		"id": "629",
+		"x": "2154",
+		"y": "5094",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brewer",
+		"id": "630",
+		"x": "2158",
+		"y": "5094",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brewer",
+		"id": "631",
+		"x": "2158",
+		"y": "5096",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brewer",
+		"id": "632",
+		"x": "2160",
+		"y": "5094",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Pirate Pete",
+		"id": "602",
+		"x": "2162",
+		"y": "5115",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

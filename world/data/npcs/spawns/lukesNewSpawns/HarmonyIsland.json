@@ -1,0 +1,442 @@
+[
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3779",
+		"y": "2826",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "545",
+		"x": "3784",
+		"y": "2824",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "569",
+		"x": "3784",
+		"y": "2843",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "544",
+		"x": "3785",
+		"y": "2827",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Brother Tranquility",
+		"id": "1954",
+		"x": "3787",
+		"y": "2824",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "1956",
+		"x": "3787",
+		"y": "2827",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3789",
+		"y": "2817",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "580",
+		"x": "3792",
+		"y": "2830",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Tool Leprechaun",
+		"id": "0",
+		"x": "3792",
+		"y": "2840",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "568",
+		"x": "3793",
+		"y": "2851",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3794",
+		"y": "2821",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "578",
+		"x": "3795",
+		"y": "2845",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "576",
+		"x": "3796",
+		"y": "2858",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "575",
+		"x": "3799",
+		"y": "2855",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "584",
+		"x": "3800",
+		"y": "2835",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "571",
+		"x": "3803",
+		"y": "2843",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "599",
+		"x": "3803",
+		"y": "2848",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3808",
+		"y": "2823",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Sorebones",
+		"id": "561",
+		"x": "3808",
+		"y": "2845",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "572",
+		"x": "3810",
+		"y": "2833",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Sorebones",
+		"id": "562",
+		"x": "3810",
+		"y": "2843",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "563",
+		"x": "3811",
+		"y": "2826",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Sorebones",
+		"id": "561",
+		"x": "3812",
+		"y": "2846",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3812",
+		"y": "2861",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3813",
+		"y": "2822",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Sorebones",
+		"id": "562",
+		"x": "3813",
+		"y": "2844",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Sorebones",
+		"id": "561",
+		"x": "3815",
+		"y": "2844",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "567",
+		"x": "3815",
+		"y": "2859",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "574",
+		"x": "3817",
+		"y": "2824",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3818",
+		"y": "2862",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Sorebones",
+		"id": "561",
+		"x": "3819",
+		"y": "2839",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Sorebones",
+		"id": "561",
+		"x": "3819",
+		"y": "2851",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3819",
+		"y": "2870",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3821",
+		"y": "2824",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Sorebones",
+		"id": "562",
+		"x": "3821",
+		"y": "2837",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "573",
+		"x": "3824",
+		"y": "2857",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "565",
+		"x": "3827",
+		"y": "2833",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Puffin",
+		"id": "548",
+		"x": "3831",
+		"y": "2828",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "543",
+		"x": "3786",
+		"y": "2824",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "1957",
+		"x": "3786",
+		"y": "2827",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Monk",
+		"id": "1958",
+		"x": "3788",
+		"y": "2826",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "590",
+		"x": "3794",
+		"y": "2873",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "592",
+		"x": "3804",
+		"y": "2873",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Zombie pirate",
+		"id": "595",
+		"x": "3794",
+		"y": "2874",
+		"z": "2",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

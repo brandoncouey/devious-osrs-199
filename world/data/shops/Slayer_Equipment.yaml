@@ -1,0 +1,76 @@
+---
+identifier: "06bf1d5a-e4d8-49f5-9aac-6229a965b98a"
+title: "Slayer Equipment"
+currency: "COINS"
+accessibleByIronMan: true
+accessibleByRegular: true
+mentalOnly: false
+canSellToStore: true
+
+
+restockRules:
+  restockTicks: 30
+  restockPerTick: 1
+priceRules:
+  sellsAt: 100
+  buysAt: 60
+  changePer: 1
+defaultStock:
+- id: 4155
+  amount: 50
+- id: 4156
+  amount: 100
+- id: 4158
+  amount: 50
+- id: 4160
+  amount: 50000
+- id: 4161
+  amount: 5000
+- id: 4162
+  amount: 50
+- id: 4164
+  amount: 50
+- id: 4166
+  amount: 50
+- id: 4168
+  amount: 50
+- id: 4170
+  amount: 50
+- id: 4551
+  amount: 50
+- id: 6664
+  amount: 5000
+- id: 6696
+  amount: 5000
+- id: 6720
+  amount: 50
+- id: 7051
+  amount: 50
+- id: 7159
+  amount: 50
+- id: 7421
+  amount: 50
+- id: 7432
+  amount: 5000
+- id: 8923
+  amount: 50
+- id: 10952
+  amount: 50
+- id: 11874
+  amount: 3000
+- id: 11885
+  amount: 800
+- id: 11876
+  amount: 5000
+- id: 11887
+  amount: 100
+- id: 2890
+  amount: 5000
+- id: 23037
+  amount: 50
+- id: 4278
+  amount: 100000000
+  price: 0
+- id: 24266
+  amount: 100000000
+  price: 1250000

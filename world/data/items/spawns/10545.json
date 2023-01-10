@@ -1,0 +1,22 @@
+[
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 2648,
+    "y": 3156,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 2651,
+    "y": 3155,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  }
+]

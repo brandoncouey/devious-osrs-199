@@ -1,0 +1,80 @@
+---
+identifier: "100b9508-08d3-11ec-9a03-0242ac130003"
+title: "Blood Money Supplies"
+currency: "BLOOD_MONEY"
+accessibleByRegular: true
+accessibleByIronMan: false
+canSellToStore: false
+restockRules:
+  restockTicks: 52
+  restockPerTick: 1
+priceRules:
+  buysAt: 20
+  changePer: 3
+defaultStock:
+  - id: 6686
+    amount: 100000000
+    price: 100
+  - id: 12696
+    amount: 100000000
+    price: 100
+  - id: 2445
+    amount: 100000000
+    price: 100
+  - id: 3041
+    amount: 100000000
+    price: 100
+  - id: 2435
+    amount: 100000000
+    price: 100
+  - id: 10926
+    amount: 100000000
+    price: 100
+  - id: 12626
+    amount: 100000000
+    price: 100
+  - id: 2453
+    amount: 100000000
+    price: 100
+  - id: 12906
+    amount: 100000000
+    price: 100
+  - id: 13442
+    amount: 100000000
+    price: 100
+  - id: 3145
+    amount: 100000000
+    price: 200    
+  - id: 19625
+    amount: 100000000
+    price: 20
+  - id: 12776
+    amount: 100000000
+    price: 400
+  - id: 12778
+    amount: 100000000
+    price: 400
+  - id: 11941
+    amount: 100000000
+    price: 5000
+  - id: 6731
+    amount: 100000000
+    price: 20000
+  - id: 6733
+    amount: 100000000
+    price: 20000
+  - id: 6735
+    amount: 100000000
+    price: 20000
+  - id: 6737
+    amount: 100000000
+    price: 20000
+  - id: 12601
+    amount: 100000000
+    price: 20000
+  - id: 12605
+    amount: 100000000
+    price: 20000
+  - id: 12603
+    amount: 100000000
+    price: 20000  

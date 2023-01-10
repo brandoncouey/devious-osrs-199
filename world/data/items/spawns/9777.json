@@ -1,0 +1,32 @@
+[
+  {
+    "id": 185,
+    "amount": 1,
+    "x": 2467,
+    "y": 3176,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Superantipoison(1)",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 11656,
+    "amount": 1,
+    "x": 2438,
+    "y": 3185,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Glassblowing book",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 600,
+    "amount": 1,
+    "x": 2438,
+    "y": 3187,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Astronomy book",
+    "respawnSeconds": 60
+  }
+]

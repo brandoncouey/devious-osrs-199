@@ -1,0 +1,5792 @@
+[
+	{
+		"name": "Bugs",
+		"id": "1472",
+		"x": "2640",
+		"y": "9391",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Fycie",
+		"id": "1471",
+		"x": "2650",
+		"y": "9393",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2627",
+		"y": "9254",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2629",
+		"y": "9252",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2629",
+		"y": "9255",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2629",
+		"y": "9258",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2629",
+		"y": "9261",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2631",
+		"y": "9251",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2631",
+		"y": "9261",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2632",
+		"y": "9258",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2633",
+		"y": "9252",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2634",
+		"y": "9253",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2635",
+		"y": "9255",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2624",
+		"y": "9271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2627",
+		"y": "9227",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2627",
+		"y": "9233",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2627",
+		"y": "9269",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2627",
+		"y": "9271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2629",
+		"y": "9232",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2629",
+		"y": "9235",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2629",
+		"y": "9241",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2629",
+		"y": "9270",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2630",
+		"y": "9234",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2630",
+		"y": "9243",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2630",
+		"y": "9269",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2631",
+		"y": "9242",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2637",
+		"y": "9198",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2638",
+		"y": "9195",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2639",
+		"y": "9193",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2640",
+		"y": "9199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2642",
+		"y": "9193",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2642",
+		"y": "9200",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2643",
+		"y": "9195",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2644",
+		"y": "9199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2645",
+		"y": "9192",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2646",
+		"y": "9197",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2657",
+		"y": "9153",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2657",
+		"y": "9155",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2660",
+		"y": "9153",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2660",
+		"y": "9156",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2663",
+		"y": "9154",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2664",
+		"y": "9157",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2665",
+		"y": "9199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2665",
+		"y": "9203",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2666",
+		"y": "9153",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2666",
+		"y": "9156",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2666",
+		"y": "9202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2667",
+		"y": "9197",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2667",
+		"y": "9205",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2668",
+		"y": "9200",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2669",
+		"y": "9198",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2670",
+		"y": "9206",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2671",
+		"y": "9199",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2671",
+		"y": "9205",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2672",
+		"y": "9202",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2627",
+		"y": "9201",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2628",
+		"y": "9199",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2631",
+		"y": "9201",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2648",
+		"y": "9184",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2652",
+		"y": "9200",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2653",
+		"y": "9177",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2655",
+		"y": "9175",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2657",
+		"y": "9202",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2657",
+		"y": "9203",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2663",
+		"y": "9173",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2664",
+		"y": "9169",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2664",
+		"y": "9180",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2665",
+		"y": "9185",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2666",
+		"y": "9173",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2666",
+		"y": "9184",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2629",
+		"y": "9113",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2631",
+		"y": "9110",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2631",
+		"y": "9115",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2633",
+		"y": "9117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2634",
+		"y": "9109",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2634",
+		"y": "9114",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2636",
+		"y": "9108",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2636",
+		"y": "9117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2638",
+		"y": "9103",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2638",
+		"y": "9113",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2639",
+		"y": "9109",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2639",
+		"y": "9118",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2640",
+		"y": "9114",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2642",
+		"y": "9111",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2642",
+		"y": "9117",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2643",
+		"y": "9108",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2644",
+		"y": "9110",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2644",
+		"y": "9115",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2657",
+		"y": "9150",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2659",
+		"y": "9151",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2660",
+		"y": "9147",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2660",
+		"y": "9149",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2663",
+		"y": "9148",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2665",
+		"y": "9149",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2665",
+		"y": "9151",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2667",
+		"y": "9147",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2626",
+		"y": "9139",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2627",
+		"y": "9137",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2629",
+		"y": "9138",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2631",
+		"y": "9136",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2637",
+		"y": "9094",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2638",
+		"y": "9089",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2638",
+		"y": "9093",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2639",
+		"y": "9137",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2640",
+		"y": "9088",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2640",
+		"y": "9135",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2645",
+		"y": "9088",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2645",
+		"y": "9135",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2645",
+		"y": "9137",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2646",
+		"y": "9135",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2652",
+		"y": "9119",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2652",
+		"y": "9127",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2652",
+		"y": "9129",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2652",
+		"y": "9134",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2653",
+		"y": "9120",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2653",
+		"y": "9130",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2653",
+		"y": "9136",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2654",
+		"y": "9117",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2654",
+		"y": "9126",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2656",
+		"y": "9116",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2657",
+		"y": "9138",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2658",
+		"y": "9139",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2659",
+		"y": "9116",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2661",
+		"y": "9113",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2662",
+		"y": "9107",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2663",
+		"y": "9107",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2664",
+		"y": "9106",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2665",
+		"y": "9105",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2666",
+		"y": "9094",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2666",
+		"y": "9098",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2666",
+		"y": "9102",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2667",
+		"y": "9089",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2667",
+		"y": "9101",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2668",
+		"y": "9091",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2668",
+		"y": "9093",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2668",
+		"y": "9094",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2668",
+		"y": "9100",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2666",
+		"y": "9042",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2666",
+		"y": "9044",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2667",
+		"y": "9041",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2668",
+		"y": "9039",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2669",
+		"y": "9045",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2670",
+		"y": "9040",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2671",
+		"y": "9039",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2671",
+		"y": "9045",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2673",
+		"y": "9043",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2673",
+		"y": "9046",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2674",
+		"y": "9045",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2626",
+		"y": "9040",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2627",
+		"y": "9071",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2628",
+		"y": "9072",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2629",
+		"y": "9040",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2632",
+		"y": "9042",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2633",
+		"y": "9045",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2633",
+		"y": "9053",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2635",
+		"y": "9054",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2636",
+		"y": "9058",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2636",
+		"y": "9069",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2637",
+		"y": "9067",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2638",
+		"y": "9058",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2639",
+		"y": "9056",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2639",
+		"y": "9064",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2639",
+		"y": "9068",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2641",
+		"y": "9086",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2642",
+		"y": "9055",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2647",
+		"y": "9054",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2647",
+		"y": "9087",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2648",
+		"y": "9057",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2649",
+		"y": "9054",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2649",
+		"y": "9087",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2650",
+		"y": "9047",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2650",
+		"y": "9061",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2651",
+		"y": "9045",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2651",
+		"y": "9050",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2651",
+		"y": "9069",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2651",
+		"y": "9070",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2652",
+		"y": "9061",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2653",
+		"y": "9071",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2655",
+		"y": "9082",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2656",
+		"y": "9076",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2657",
+		"y": "9044",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2658",
+		"y": "9078",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2658",
+		"y": "9080",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2659",
+		"y": "9043",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2669",
+		"y": "9082",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2669",
+		"y": "9084",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2671",
+		"y": "9082",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2672",
+		"y": "9076",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2672",
+		"y": "9079",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2674",
+		"y": "9050",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2675",
+		"y": "9040",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2675",
+		"y": "9049",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2677",
+		"y": "9064",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2677",
+		"y": "9071",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2677",
+		"y": "9073",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2678",
+		"y": "9044",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2678",
+		"y": "9049",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2678",
+		"y": "9056",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2678",
+		"y": "9058",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2678",
+		"y": "9070",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2678",
+		"y": "9071",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2679",
+		"y": "9042",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2679",
+		"y": "9046",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2679",
+		"y": "9063",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2679",
+		"y": "9070",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2680",
+		"y": "9056",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2680",
+		"y": "9063",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2606",
+		"y": "9273",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2607",
+		"y": "9271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2609",
+		"y": "9270",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2612",
+		"y": "9274",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2614",
+		"y": "9272",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2615",
+		"y": "9274",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2617",
+		"y": "9273",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2618",
+		"y": "9220",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2619",
+		"y": "9218",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2619",
+		"y": "9272",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2620",
+		"y": "9224",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2620",
+		"y": "9227",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2620",
+		"y": "9229",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2621",
+		"y": "9271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2622",
+		"y": "9227",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2617",
+		"y": "9207",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2617",
+		"y": "9214",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2618",
+		"y": "9213",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2619",
+		"y": "9206",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2620",
+		"y": "9202",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2622",
+		"y": "9202",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2623",
+		"y": "9200",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Kineer",
+		"id": "7117",
+		"x": "2568",
+		"y": "9123",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2565",
+		"y": "9046",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2567",
+		"y": "9050",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2575",
+		"y": "9054",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2577",
+		"y": "9052",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2577",
+		"y": "9056",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2578",
+		"y": "9059",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2579",
+		"y": "9061",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2582",
+		"y": "9053",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2582",
+		"y": "9059",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2582",
+		"y": "9060",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2583",
+		"y": "9055",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2584",
+		"y": "9058",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2586",
+		"y": "9054",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2561",
+		"y": "9040",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2564",
+		"y": "9038",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Snake",
+		"id": "2845",
+		"x": "2582",
+		"y": "9068",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2582",
+		"y": "9070",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2583",
+		"y": "9068",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2583",
+		"y": "9073",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2584",
+		"y": "9072",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2590",
+		"y": "9076",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2591",
+		"y": "9079",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2592",
+		"y": "9081",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2594",
+		"y": "9052",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2595",
+		"y": "9047",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2596",
+		"y": "9048",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2597",
+		"y": "9050",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2599",
+		"y": "9045",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2602",
+		"y": "9079",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2603",
+		"y": "9078",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2606",
+		"y": "9080",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2607",
+		"y": "9044",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2608",
+		"y": "9040",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2610",
+		"y": "9043",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2610",
+		"y": "9049",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2610",
+		"y": "9079",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2611",
+		"y": "9081",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2612",
+		"y": "9041",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2612",
+		"y": "9077",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2613",
+		"y": "9053",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2613",
+		"y": "9058",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2613",
+		"y": "9079",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2614",
+		"y": "9076",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2615",
+		"y": "9037",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2616",
+		"y": "9038",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2616",
+		"y": "9059",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2616",
+		"y": "9065",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2618",
+		"y": "9068",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2619",
+		"y": "9073",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2620",
+		"y": "9074",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2622",
+		"y": "9074",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2555",
+		"y": "9261",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2557",
+		"y": "9259",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2559",
+		"y": "9265",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2504",
+		"y": "9068",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2504",
+		"y": "9072",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2504",
+		"y": "9076",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2506",
+		"y": "9070",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2506",
+		"y": "9076",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2509",
+		"y": "9075",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2510",
+		"y": "9072",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2522",
+		"y": "9044",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2523",
+		"y": "9042",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2526",
+		"y": "9042",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2526",
+		"y": "9045",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2530",
+		"y": "9042",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2531",
+		"y": "9040",
+		"z": "0",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2504",
+		"y": "9059",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2506",
+		"y": "9047",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2506",
+		"y": "9051",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2506",
+		"y": "9056",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2506",
+		"y": "9061",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2508",
+		"y": "9045",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2511",
+		"y": "9045",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2520",
+		"y": "9070",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2527",
+		"y": "9069",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2534",
+		"y": "9069",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2536",
+		"y": "9068",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2538",
+		"y": "9041",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2538",
+		"y": "9069",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2541",
+		"y": "9042",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2544",
+		"y": "9069",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2545",
+		"y": "9069",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2546",
+		"y": "9040",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2547",
+		"y": "9066",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2548",
+		"y": "9059",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2550",
+		"y": "9057",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2551",
+		"y": "9038",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2552",
+		"y": "9050",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Scorpion",
+		"id": "5242",
+		"x": "2554",
+		"y": "9051",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2558",
+		"y": "9038",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2433",
+		"y": "9184",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2435",
+		"y": "9184",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2436",
+		"y": "9164",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2436",
+		"y": "9182",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2437",
+		"y": "9160",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2437",
+		"y": "9185",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2438",
+		"y": "9168",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2438",
+		"y": "9179",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2438",
+		"y": "9181",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2439",
+		"y": "9157",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2439",
+		"y": "9170",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2439",
+		"y": "9183",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2440",
+		"y": "9166",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2440",
+		"y": "9180",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2440",
+		"y": "9184",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2441",
+		"y": "9161",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2441",
+		"y": "9177",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2442",
+		"y": "9158",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2442",
+		"y": "9167",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2442",
+		"y": "9173",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2442",
+		"y": "9179",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2443",
+		"y": "9163",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2443",
+		"y": "9170",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2443",
+		"y": "9176",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2444",
+		"y": "9157",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2444",
+		"y": "9160",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2444",
+		"y": "9165",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2445",
+		"y": "9169",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2445",
+		"y": "9171",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2447",
+		"y": "9158",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2447",
+		"y": "9164",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2447",
+		"y": "9167",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2448",
+		"y": "9158",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2449",
+		"y": "9160",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2449",
+		"y": "9164",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2449",
+		"y": "9170",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2452",
+		"y": "9162",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2452",
+		"y": "9165",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2452",
+		"y": "9166",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2370",
+		"y": "9266",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2372",
+		"y": "9268",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2377",
+		"y": "9273",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2378",
+		"y": "9218",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2378",
+		"y": "9232",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2378",
+		"y": "9235",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2378",
+		"y": "9251",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2380",
+		"y": "9245",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2380",
+		"y": "9257",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2380",
+		"y": "9271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2382",
+		"y": "9223",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2383",
+		"y": "9272",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2385",
+		"y": "9222",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2385",
+		"y": "9228",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2385",
+		"y": "9260",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2385",
+		"y": "9273",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2387",
+		"y": "9237",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2388",
+		"y": "9273",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2389",
+		"y": "9235",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2389",
+		"y": "9272",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2391",
+		"y": "9223",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2392",
+		"y": "9270",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2393",
+		"y": "9241",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2393",
+		"y": "9248",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2394",
+		"y": "9225",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2394",
+		"y": "9259",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2394",
+		"y": "9272",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2396",
+		"y": "9230",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2396",
+		"y": "9246",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2397",
+		"y": "9236",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2397",
+		"y": "9257",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2398",
+		"y": "9271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2398",
+		"y": "9273",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2399",
+		"y": "9234",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2400",
+		"y": "9222",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2402",
+		"y": "9270",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2403",
+		"y": "9262",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2404",
+		"y": "9222",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2405",
+		"y": "9247",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2405",
+		"y": "9273",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2406",
+		"y": "9245",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2406",
+		"y": "9271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2407",
+		"y": "9218",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2409",
+		"y": "9217",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2409",
+		"y": "9233",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2409",
+		"y": "9258",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2409",
+		"y": "9275",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2411",
+		"y": "9260",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2411",
+		"y": "9273",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2413",
+		"y": "9232",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2413",
+		"y": "9237",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2414",
+		"y": "9241",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2415",
+		"y": "9254",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2415",
+		"y": "9271",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2416",
+		"y": "9256",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2417",
+		"y": "9272",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2419",
+		"y": "9245",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2420",
+		"y": "9250",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2371",
+		"y": "9183",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2372",
+		"y": "9157",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2376",
+		"y": "9156",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2376",
+		"y": "9180",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2377",
+		"y": "9159",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2378",
+		"y": "9176",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2378",
+		"y": "9210",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2380",
+		"y": "9213",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2384",
+		"y": "9171",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2386",
+		"y": "9169",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2387",
+		"y": "9206",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2388",
+		"y": "9200",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2390",
+		"y": "9193",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2392",
+		"y": "9169",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2392",
+		"y": "9173",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2395",
+		"y": "9164",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2395",
+		"y": "9196",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2396",
+		"y": "9175",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2398",
+		"y": "9162",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2399",
+		"y": "9177",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2399",
+		"y": "9193",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2400",
+		"y": "9163",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2402",
+		"y": "9175",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2402",
+		"y": "9192",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2403",
+		"y": "9161",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2404",
+		"y": "9177",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2406",
+		"y": "9208",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2406",
+		"y": "9212",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2407",
+		"y": "9163",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2407",
+		"y": "9199",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2408",
+		"y": "9165",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2408",
+		"y": "9176",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2409",
+		"y": "9210",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2411",
+		"y": "9178",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2411",
+		"y": "9197",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2412",
+		"y": "9164",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2412",
+		"y": "9193",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2413",
+		"y": "9178",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2415",
+		"y": "9163",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal Monkey Archer",
+		"id": "7119",
+		"x": "2415",
+		"y": "9196",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2417",
+		"y": "9179",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2419",
+		"y": "9178",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2420",
+		"y": "9159",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2421",
+		"y": "9177",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2423",
+		"y": "9174",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2423",
+		"y": "9176",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2424",
+		"y": "9159",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2425",
+		"y": "9173",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2427",
+		"y": "9158",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2427",
+		"y": "9160",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2427",
+		"y": "9172",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2427",
+		"y": "9189",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2428",
+		"y": "9186",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2430",
+		"y": "9160",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2430",
+		"y": "9174",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2431",
+		"y": "9172",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2337",
+		"y": "9232",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2338",
+		"y": "9239",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2338",
+		"y": "9247",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2339",
+		"y": "9230",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2340",
+		"y": "9231",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2340",
+		"y": "9233",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2340",
+		"y": "9237",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2340",
+		"y": "9243",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2340",
+		"y": "9249",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2341",
+		"y": "9236",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2341",
+		"y": "9252",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2342",
+		"y": "9228",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2344",
+		"y": "9252",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2347",
+		"y": "9253",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2348",
+		"y": "9227",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2350",
+		"y": "9229",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2350",
+		"y": "9253",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2352",
+		"y": "9230",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2352",
+		"y": "9252",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2353",
+		"y": "9228",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2354",
+		"y": "9232",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2355",
+		"y": "9229",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2355",
+		"y": "9232",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2355",
+		"y": "9235",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2355",
+		"y": "9255",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2357",
+		"y": "9238",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2357",
+		"y": "9241",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2357",
+		"y": "9252",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2358",
+		"y": "9244",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2358",
+		"y": "9248",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2358",
+		"y": "9257",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2359",
+		"y": "9241",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2359",
+		"y": "9250",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2360",
+		"y": "9252",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2360",
+		"y": "9256",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2361",
+		"y": "9249",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2361",
+		"y": "9254",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2363",
+		"y": "9257",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2365",
+		"y": "9261",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2327",
+		"y": "9153",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2331",
+		"y": "9156",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2332",
+		"y": "9166",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2333",
+		"y": "9157",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2333",
+		"y": "9165",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2334",
+		"y": "9161",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2336",
+		"y": "9165",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2336",
+		"y": "9172",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2337",
+		"y": "9167",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2339",
+		"y": "9173",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2340",
+		"y": "9167",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2342",
+		"y": "9165",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2343",
+		"y": "9178",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2344",
+		"y": "9167",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2344",
+		"y": "9176",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2346",
+		"y": "9166",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2346",
+		"y": "9180",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2347",
+		"y": "9163",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2350",
+		"y": "9180",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2352",
+		"y": "9179",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2353",
+		"y": "9163",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2355",
+		"y": "9180",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2356",
+		"y": "9157",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2356",
+		"y": "9181",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2357",
+		"y": "9156",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2357",
+		"y": "9161",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2358",
+		"y": "9153",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2358",
+		"y": "9158",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2360",
+		"y": "9180",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2361",
+		"y": "9183",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2365",
+		"y": "9153",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2365",
+		"y": "9184",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2367",
+		"y": "9155",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2311",
+		"y": "9147",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2312",
+		"y": "9150",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2314",
+		"y": "9145",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2316",
+		"y": "9145",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2318",
+		"y": "9144",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2318",
+		"y": "9145",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2320",
+		"y": "9145",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2320",
+		"y": "9149",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2321",
+		"y": "9140",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2322",
+		"y": "9143",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2322",
+		"y": "9147",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2323",
+		"y": "9139",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2324",
+		"y": "9141",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2325",
+		"y": "9135",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2326",
+		"y": "9137",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2329",
+		"y": "9138",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2330",
+		"y": "9136",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2332",
+		"y": "9139",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2333",
+		"y": "9138",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2335",
+		"y": "9140",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2337",
+		"y": "9142",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2339",
+		"y": "9140",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2339",
+		"y": "9144",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2341",
+		"y": "9139",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2343",
+		"y": "9143",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2343",
+		"y": "9145",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2346",
+		"y": "9144",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2348",
+		"y": "9144",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2349",
+		"y": "9147",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2356",
+		"y": "9148",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2358",
+		"y": "9150",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2361",
+		"y": "9148",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	},
+	{
+		"name": "Maniacal monkey",
+		"id": "7118",
+		"x": "2361",
+		"y": "9151",
+		"z": "1",
+		"direction": "W",
+		"walkRange": "1",
+		"world": "ECO"
+	}
+]

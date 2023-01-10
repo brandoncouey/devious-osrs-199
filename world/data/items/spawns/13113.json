@@ -1,0 +1,162 @@
+[
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3273,
+    "y": 3664,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 3275,
+    "y": 3664,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3273,
+    "y": 3660,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3269,
+    "y": 3660,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3271,
+    "y": 3658,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 966,
+    "amount": 1,
+    "x": 3271,
+    "y": 3656,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tile",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3278,
+    "y": 3657,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3279,
+    "y": 3659,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3280,
+    "y": 3657,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3280,
+    "y": 3658,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 526,
+    "amount": 1,
+    "x": 3281,
+    "y": 3658,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Bones",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 1281,
+    "amount": 1,
+    "x": 3283,
+    "y": 3658,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Steel sword",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 966,
+    "amount": 1,
+    "x": 3278,
+    "y": 3664,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tile",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 966,
+    "amount": 1,
+    "x": 3281,
+    "y": 3663,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tile",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 960,
+    "amount": 1,
+    "x": 3291,
+    "y": 3652,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Plank",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 966,
+    "amount": 1,
+    "x": 3289,
+    "y": 3651,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Tile",
+    "respawnSeconds": 60
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "id": 564,
+    "amount": 0,
+    "x": 2947,
+    "y": 3899,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 555,
+    "amount": 0,
+    "x": 2960,
+    "y": 3899,
+    "z": 0,
+    "respawnSeconds": 0
+  },
+  {
+    "id": 555,
+    "amount": 5,
+    "x": 2960,
+    "y": 3899,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Water rune",
+    "respawnSeconds": 60
+  },
+  {
+    "id": 564,
+    "amount": 3,
+    "x": 2947,
+    "y": 3899,
+    "z": 0,
+    "world": "ECO",
+    "itemName": "Cosmic rune",
+    "respawnSeconds": 60
+  }
+]
