@@ -15,7 +15,7 @@
 *.properties
 *.txt
 .idea/
-Cache/
+/Cache/
 buildSrc/build/source-roots/buildSrc/source-roots.txt
 buildSrc/build/pluginUnderTestMetadata/plugin-under-test-metadata.properties
 buildSrc/build/libs/buildSrc.jar
