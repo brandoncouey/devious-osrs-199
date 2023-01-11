@@ -302,8 +302,8 @@ public class ObjectDef {
 
                 params.put(key, value);
             }
-        } else
-            System.err.println("MISSING OBJECT OPCODE " + i + " FOR ID " + id);
+        }
+            //System.err.println("MISSING OBJECT OPCODE " + i + " FOR ID " + id);
     }
 
     public boolean isClippedDecoration() {
