@@ -11,8 +11,6 @@
 *.len
 *.at
 *.tab_i
-*.jar
-*.properties
 *.txt
 .idea/
 /Cache/
