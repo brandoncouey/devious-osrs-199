@@ -93,8 +93,16 @@ public class Nightmare extends NPC {
 
     @Override
     public int hit(Hit... hits) {
-        if (queuedHits == null)
-            queuedHits = new ArrayList<>();
+        final ArrayList<Hit> queuedHits;
+        synchronized (queuedHitsMutex) {
+            final ArrayList<Hit> thisQueuedHits = this.queuedHits;
+            if (thisQueuedHits == null) {
+                this.queuedHits = queuedHits = new ArrayList<>();
+            } else {
+                queuedHits = thisQueuedHits;
+            }
+        }
+
         int damage = 0;
         boolean process = true;
         boolean dead = false;
@@ -107,7 +115,9 @@ public class Nightmare extends NPC {
                 process = false;
             } else if ((attacker instanceof TotemPlugin) && stage < 2) {
                 process = false;
-                queuedHits.add(hit);
+                synchronized (queuedHitsMutex) {
+                    queuedHits.add(hit);
+                }
             } else if (attacker instanceof TotemPlugin) {
                 if (stage >= 2) {
                     dead = true;
@@ -124,8 +134,11 @@ public class Nightmare extends NPC {
             }
 
             if (process && hit.defend(this)) {
-                if (!isLocked(LockType.FULL_NULLIFY_DAMAGE))
-                    queuedHits.add(hit);
+                if (!isLocked(LockType.FULL_NULLIFY_DAMAGE)) {
+                    synchronized (queuedHitsMutex) {
+                        queuedHits.add(hit);
+                    }
+                }
                 damage += hit.damage;
             }
 

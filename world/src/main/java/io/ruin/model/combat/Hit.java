@@ -446,10 +446,4 @@ public class Hit {
         return true;
     }
 
-    /**
-     * Removed
-     */
-
-    public boolean removed;
-
 }
