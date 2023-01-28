@@ -934,11 +934,11 @@ public class CommandHandler implements Incoming {
             }
             case "donate":
             case "store": {
-                player.openUrl(World.type.getWorldName() + " Store", World.type.getWebsiteUrl() + "/pages/donate/");
+                player.openUrl(World.type.getWorldName() + " Store", "https://deviousps.com/store/");
                 return true;
             }
             case "updates": {
-                player.openUrl(World.type.getWorldName() + " Updates", "https://deviousps.com/forums");
+                player.openUrl(World.type.getWorldName() + " Updates", "https://deviousps.com/community/");
                 return true;
             }
             case "rules": {
@@ -946,11 +946,11 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             case "vote": {
-                player.openUrl(World.type.getWorldName() + " Voting", World.type.getWebsiteUrl() + "/voting");
+                player.openUrl(World.type.getWorldName() + " Voting", "https://deviousps.com/vote");
                 return true;
             }
             case "guides": {
-                player.openUrl(World.type.getWorldName() + " Guides", "https://deviousps.com/forums");
+                player.openUrl(World.type.getWorldName() + " Guides", "https://deviousps.com/community/");
                 return true;
             }
             case "support": {
