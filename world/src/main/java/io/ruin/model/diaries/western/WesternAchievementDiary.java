@@ -198,7 +198,7 @@ public final class WesternAchievementDiary extends StatefulAchievementDiary<West
         return achievements.containsAll(EASY_TASKS);
     }
 
-    public final void display() {
+    public void display() {
         player.sendScroll("<col=8B0000>Western Diary",
                 "<col=501061><strong><u>Easy",
                 hasCompletedAchieve("MINE_IRON") ? "<col=24d124>Mine an Iron Ore near Piscatoris. (" + (getAbsoluteAchievementStage(MINE_IRON)) + "/" + getMaximum(MINE_IRON) + ")</col>" : "<col=911c25>Mine some iron ore near piscatoris. (" + (getAbsoluteAchievementStage(MINE_IRON)) + "/" + getMaximum(MINE_IRON) + ")",

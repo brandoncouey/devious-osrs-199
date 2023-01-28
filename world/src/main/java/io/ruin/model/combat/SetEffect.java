@@ -24,6 +24,17 @@ public enum SetEffect {
             new Piece(Equipment.SLOT_CHEST, 4757, 4988, 4989, 4990, 4991),
             new Piece(Equipment.SLOT_LEGS, 4759, 4994, 4995, 4996, 4997),
             new Piece(Equipment.SLOT_WEAPON, 4755, 4982, 4983, 4984, 4985)),
+
+    KARILS((player, target, hit) -> {
+        if (Random.rollDie(4)) {
+            target.graphics(401,0 ,0);
+            target.hit(new Hit(player, null, null).randDamage(1, 25));
+        }
+    }, (player, hit) -> hit.attackStyle.isMelee(),
+            new Piece(Equipment.SLOT_HAT, 4732, 4928, 4929, 4930, 4931),
+            new Piece(Equipment.SLOT_CHEST, 4736, 4940, 4941, 4942, 4943),
+            new Piece(Equipment.SLOT_LEGS, 4738, 4946, 4947, 4948, 4949),
+            new Piece(Equipment.SLOT_WEAPON, 4734, 4934, 4935, 4936, 4937)),
     DHAROK((player, target, hit) -> {
         hit.boostDamage(Math.max(0, (player.getMaxHp() - player.getHp()) * 0.01))
                 .boostAttack(Math.max(0, (player.getMaxHp() - player.getHp()) * 0.005));

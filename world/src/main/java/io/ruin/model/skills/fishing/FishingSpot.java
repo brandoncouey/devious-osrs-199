@@ -190,7 +190,7 @@ public class FishingSpot {
                             if (Random.rollPercent(20))
                                 amount++;
                         }
-                        if (player.isMember() && npc.getId() == CAGE) {
+                        if (player.isADonator() && npc.getId() == CAGE) {
                             player.getInventory().add(c.notedid, amount);
                         } else
                             player.getInventory().add(c.id, amount);

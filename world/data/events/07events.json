@@ -1,0 +1,33 @@
+{
+  "PVP_EVENTS": [
+    {
+      "task": "MOST_MONEY_PKED",
+      "startMilis": 1658379016426000,
+      "endMilis": 1658379016426000,
+      "rewarded": false,
+      "results": {},
+      "progress": {}
+    }
+  ],
+  "PVM_EVENTS": [],
+  "SKILLING_EVENTS": [
+    {
+      "task": "MOST_MAGIC_LOGS_BURNED",
+      "startMilis": 1658379016426000,
+      "endMilis": 1658379016426000,
+      "rewarded": false,
+      "results": {},
+      "progress": {}
+    }
+  ],
+  "MINIGAME_EVENTS": [
+    {
+      "task": "FASTEST_JAD_KILL",
+      "startMilis": 1658379016324000,
+      "endMilis": 1658379016324000,
+      "rewarded": false,
+      "results": {},
+      "progress": {}
+    }
+  ]
+}

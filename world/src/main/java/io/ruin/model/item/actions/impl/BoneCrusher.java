@@ -32,7 +32,11 @@ public class BoneCrusher {
         if (player.boneCrusher && player.getInventory().contains(BONE_CRUSHER) && hasCharges(player)) {
             Bone bone = Bone.get(item.getId());
             if (Objects.nonNull(bone)) {
-                player.getStats().addXp(StatType.Prayer, bone.exp / 2, true);
+                if (player.isADonator()) {
+                    player.getStats().addXp(StatType.Prayer, bone.exp, true);
+                } else {
+                    player.getStats().addXp(StatType.Prayer, bone.exp / 2, true);
+                }
                 if (Random.rollDie(50, 1)) {
                     player.getStats().get(StatType.Prayer).restore(1, 0.0);
                     player.getStats().get(StatType.Prayer).alter(player.getStats().get(StatType.Prayer).currentLevel);

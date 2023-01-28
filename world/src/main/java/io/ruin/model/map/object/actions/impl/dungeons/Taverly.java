@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
 import io.ruin.model.entity.shared.StepType;
@@ -102,7 +102,7 @@ public class Taverly {
             player.getMovement().force(dir == Direction.WEST ? -2 : 2, 0, 0, 0, 15, 30, dir);
             event.delay(1);
             player.unlock();
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.STRANGE_FLOOR);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.STRANGE_FLOOR);
         }));
 
         /**

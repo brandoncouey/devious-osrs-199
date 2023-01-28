@@ -1213,7 +1213,10 @@
     "y": 3291,
     "z": 0,
     "direction": "S",
-    "walkRange": 1
+    "walkRange": 1,
+    "shopOptions": {
+      "trade": "a1e55885-3aa4-4d63-8a5e-5808c01f54e0"
+    }
   },
   {
     "name": "Guard dog",

@@ -12,90 +12,220 @@ priceRules:
   buysAt: 20
   changePer: 3
 defaultStock:
-  - id: 10551
-    amount: 1000
-    price: 150000
-  - id: 12954
-    amount: 1000
-    price: 150000
-  - id: 7462
-    amount: 1000
-    price: 150000
-  - id: 11840
-    amount: 1000
-    price: 1000000
-  - id: 4153
-    amount: 1000
-    price: 250000
-  - id: 11235
-    amount: 1000
-    price: 250000
-  - id: 11212
-    amount: 1000
-    price: 150
-  - id: 19478
-    amount: 1000
-    price: 1000000
-  - id: 19481
-    amount: 1000
-    price: 1500000
-  - id: 20849
-    amount: 1000
-    price: 1500
-  - id: 11230
-    amount: 1000
-    price: 1500
-  - id: 21905
-    amount: 1000
-    price: 1500
-  - id: 2577
-    amount: 1000
-    price: 1000000
-  - id: 6889
-    amount: 1000
-    price: 125000
-  - id: 6914
-    amount: 1000
-    price: 1000000
+  #dh set
+  - id: 4716
+    amount: 10000
+    price: 5000
+  - id: 4720
+    amount: 10000
+    price: 5000
+  - id: 4722
+    amount: 10000
+    price: 5000
+  - id: 4718
+    amount: 10000
+    price: 5000
+    #torag set
+  - id: 4745
+    amount: 10000
+    price: 5000
+  - id: 4749
+    amount: 10000
+    price: 5000
+  - id: 4751
+    amount: 10000
+    price: 5000
+  - id: 4747
+    amount: 10000
+    price: 5000
+    #verac
+  - id: 4753
+    amount: 10000
+    price: 5000
+  - id: 4757
+    amount: 10000
+    price: 5000
+  - id: 4759
+    amount: 10000
+    price: 5000
+  - id: 4755
+    amount: 10000
+    price: 5000
+    #ahrim
+  - id: 4708
+    amount: 10000
+    price: 5000
+  - id: 4712
+    amount: 10000
+    price: 5000
+  - id: 4714
+    amount: 10000
+    price: 5000
+  - id: 4710
+    amount: 10000
+    price: 5000
+    #karils
+  - id: 4732
+    amount: 10000
+    price: 5000
+  - id: 4736
+    amount: 10000
+    price: 5000
+  - id: 4738
+    amount: 10000
+    price: 5000
+  - id: 4734
+    amount: 10000
+    price: 5000
+    #infinity
+  - id: 6918
+    amount: 10000
+    price: 5000
+  - id: 6916
+    amount: 10000
+    price: 5000
+  - id: 6924
+    amount: 10000
+    price: 5000
+  - id: 6922
+    amount: 10000
+    price: 5000
   - id: 6920
-    amount: 1000
-    price: 1000000
-  - id: 6686
-    amount: 100000000
-    price: 100
-  - id: 12696
-    amount: 100000000
-    price: 100
-  - id: 2445
-    amount: 100000000
-    price: 100
-  - id: 3041
-    amount: 100000000
-    price: 100
-  - id: 2435
-    amount: 100000000
-    price: 100
-  - id: 10926
-    amount: 100000000
-    price: 100
-  - id: 12626
-    amount: 100000000
-    price: 100
-  - id: 2453
-    amount: 100000000
-    price: 100
-  - id: 12906
-    amount: 100000000
-    price: 100
-  - id: 19625
-    amount: 100000000
-    price: 20
-  - id: 12776
-    amount: 100000000
-    price: 400
-  - id: 12778
-    amount: 100000000
-    price: 400
+    amount: 10000
+    price: 5000
+  #fury
+  - id: 6585
+    amount: 10000
+    price: 5000
+    #fighter hat
+  - id: 10548
+    amount: 10000
+    price: 5000
+    #fighter torso
+  - id: 10551
+    amount: 10000
+    price: 5000
+    #rune gloves
+  - id: 7460
+    amount: 10000
+    price: 5000
+    #dragon gloves
+  - id: 7461
+    amount: 10000
+    price: 5000
+    #barrows gloves
+  - id: 7462
+    amount: 10000
+    price: 5000
+    #berserker ring
+  - id: 6737
+    amount: 10000
+    price: 5000
+    #warrior ring
+  - id: 6735
+    amount: 10000
+    price: 5000
+    #Archers ring
+  - id: 6733
+    amount: 10000
+    price: 5000
+    #Seers ring
+  - id: 6731
+    amount: 10000
+    price: 5000
+    #dragon boots
+  - id: 11840
+    amount: 10000
+    price: 5000
+    #ranger boots
+  - id: 2577
+    amount: 10000
+    price: 5000
+    #rune defender
+  - id: 8850
+    amount: 10000
+    price: 5000
+    #dragon defender
+  - id: 12954
+    amount: 10000
+    price: 5000
+    #mages book
+  - id: 6889
+    amount: 10000
+    price: 5000
+    #tome of fire
+  - id: 20716
+    amount: 10000
+    price: 5000
+    #burnt pages
+  - id: 20718
+    amount: 100000
+    price: 5000
+    #granite maul
+  - id: 4153
+    amount: 10000
+    price: 5000
+    #dark bow
+  - id: 11235
+    amount: 10000
+    price: 5000
+    #dragon crossbow
+  - id: 21902
+    amount: 10000
+    price: 5000
+    #master wand
+  - id: 6914
+    amount: 10000
+    price: 5000
+    #light ballista
+  - id: 19478
+    amount: 10000
+    price: 5000
+    #heavy ballista
+  - id: 19481
+    amount: 10000
+    price: 5000
+    #BGS
+  - id: 11804
+    amount: 10000
+    price: 5000
+    #sgs
+  - id: 11806
+    amount: 10000
+    price: 5000
+    #zgs
+  - id: 11808
+    amount: 10000
+    price: 5000
+    #ags
+  - id: 11802
+    amount: 10000
+    price: 5000
+    #dragon arrow
+  - id: 11212
+    amount: 100000
+    price: 5000
+    #dragon arrow p++
+  - id: 11229
+    amount: 100000
+    price: 5000
+    #dragon bolt
+  - id: 21905
+    amount: 100000
+    price: 5000
+    #dragon bolt p++
+  - id: 21928
+    amount: 100000
+    price: 5000
+    #dragon dart
+  - id: 11230
+    amount: 100000
+    price: 5000
+    #dragon dart p++
+  - id: 11234
+    amount: 100000
+    price: 5000
+    #Looting bag
   - id: 11941
-    amount: 100000000
+    amount: 10000
     price: 5000

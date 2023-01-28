@@ -3,7 +3,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 import io.ruin.api.utils.Random;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -176,7 +176,7 @@ public class ArdougneCourse {
             p.getMovement().restoreEnergy(Random.get(1, 2));
             AgilityPet.rollForPet(p, 15000);
             PlayerCounter.ARDOUGNE_ROOFTOP.increment(p, 1);
-            p.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.ARDOUGNE_ROOFTOP);
+            p.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.ARDOUGNE_ROOFTOP);
             MarkOfGrace.rollMark(p, 90, MARK_SPAWNS);
 
             e.delay(1);

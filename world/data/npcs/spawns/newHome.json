@@ -28,7 +28,10 @@
     "y": 3130,
     "z": 1,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "Yfx1X30YFes787f3zcYDP3HPASHQje11gO"
+    }
   },
   {
     "name": "Grand Exchange Clerk",
@@ -82,7 +85,10 @@
     "y": 3503,
     "z": 1,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "a1e55885-3aa4-4d63-8a5e-5808c01f54e0"
+    }
   },
   {
     "name": "Durdaddy",
@@ -263,19 +269,6 @@
     }
   },
   {
-    "name": "Artimeus",
-    "id": 7204,
-    "x": 3527,
-    "y": 3114,
-    "z": 1,
-    "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "pvm-store": "5464df07-5091-4ddc-8c5a-426db5ae2193",
-      "iron-pvm": "5464df07-5091-4ddc-IRON-426db5ae2193"
-    }
-  },
-  {
     "name": "Vote Manager",
     "id": 1815,
     "x": 3549,
@@ -290,9 +283,9 @@
   {
     "name": "Daily Manager",
     "id": 15109,
-    "x": 3545,
-    "y": 3120,
-    "z": 1,
+    "x": 3101,
+    "y": 3506,
+    "z": 0,
     "direction": "N",
     "walkRange": 0,
     "shopOptions": {

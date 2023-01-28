@@ -1,6 +1,6 @@
 package io.ruin.model.skills.agility;
 
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Bounds;
@@ -79,11 +79,11 @@ public class Shortcuts {
         // Dwarven Mine narrow crevice
         ObjectAction.register(16543, 3034, 9806, 0, "squeeze-through", (player, obj) -> {
             squeezeThroughCrack(player, obj, new Position(3028, 9806, 0), 42);
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.NARROW_CREVICE);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.NARROW_CREVICE);
         }); // crack
         ObjectAction.register(16543, 3029, 9806, 0, "squeeze-through", (player, obj) -> {
             squeezeThroughCrack(player, obj, new Position(3035, 9806, 0), 42);
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.NARROW_CREVICE);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.NARROW_CREVICE);
         }); // crack
 
         // Camelot loose railing
@@ -199,7 +199,7 @@ public class Shortcuts {
         // Falador Agility Shortcut
         ObjectAction.register(24222, "climb-over", (p, obj) -> {
             CrumblingWall.shortcut(p, obj, 5);
-            p.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.WESTERN_WALL);
+            p.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.WESTERN_WALL);
         });
 
 

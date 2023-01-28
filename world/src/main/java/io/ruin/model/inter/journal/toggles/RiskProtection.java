@@ -88,7 +88,7 @@ public class RiskProtection extends JournalToggle {
 
     @Override
     public JournalTab.TabComponent getComponent() {
-        return JournalTab.TabComponent.RISK_PROTECTION;
+        return null/*JournalTab.TabComponent.RISK_PROTECTION*/;
     }
 
     private String get(Player player) {

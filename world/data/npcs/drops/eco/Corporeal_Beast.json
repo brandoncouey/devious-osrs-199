@@ -12,7 +12,7 @@
           { "id": 1403, "min": 1, "max": 1, "weight": 6 }, //Mystic water staff
           { "id": 1407, "min": 1, "max": 1, "weight": 6 }, //Mystic earth staff
           { "id": 1401, "min": 1, "max": 1, "weight": 6 }, //Mystic fire staff
-          { "id": 22330, "min": 1, "max": 1, "weight": 5 }, //PVM BOX
+
           { "id": 4091, "min": 1, "max": 1, "weight": 3 }, //Mystic robe top (blue)
           { "id": 4093, "min": 1, "max": 1, "weight": 3 }, //Mystic robe bottom (blue)
           { "id": 9245, "min": 175, "max": 175, "weight": 1 }, //Onyx bolts (e)

@@ -1,7 +1,7 @@
 package io.ruin.model.activities.warriorsguild;
 
 import io.ruin.cache.ItemDef;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -102,7 +102,7 @@ public class WarriorsGuild {
                 event.delay(2);
                 obj.restore().skipClipping(false);
                 opened.remove();
-                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.WARRIOR_GUILD);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.WARRIOR_GUILD);
                 player.unlock();
             }));
         }

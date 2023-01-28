@@ -67,7 +67,7 @@ public class Killer {
         if (killerSpree == 40)
             player.getInventory().add(13307, 1000000);
         player.sendMessage("You are currently on a killing spree of " + killerSpree + "!");
-        if (!player.isMember()) {
+        if (!player.isADonator()) {
             if (killerSpree > 1)
                 player.sendMessage("You are currently on a killing spree of " + killerSpree + "!");
             if (killerSpree % 5 == 0 || killerSpree > 15) {
@@ -75,7 +75,7 @@ public class Killer {
                         + (player.getAppearance().isMale() ? "him" : "her") + " for a bounty reward of " + (nondonator + bountyValue(killerSpree)) + " Blood money!";
                 Broadcast.WORLD.sendPlain(KillingSpree.imgTag(killerSpree) + Color.DARK_GREEN.tag() + " " + spreeMessage);
                 KillingSpreeEmbedMessage.sendDiscordMessage(spreeMessage);
-            } else if (player.isMember()) {
+            } else if (player.isADonator()) {
                 // player.sendMessage("You are currently on a killing spree of " + killerSpree + "!");
                 if (killerSpree % 5 == 0 || killerSpree > 15) {
                     String spreeMessage = player.getName() + " is on a killing spree of " + killerSpree + ". Kill "
@@ -174,9 +174,6 @@ public class Killer {
             player.sendFilteredMessage("<col=6f0000> You receive 50,000 agility experience and 10 marks of grace for killing a player inside the Agility course.");
         }
 
-        if (Random.rollDie(5, 1)) {
-            player.getInventory().addOrDrop(30290, 1);
-        }
         WildernessRating.adjustEloRatings(pKilled, player);
     }
 

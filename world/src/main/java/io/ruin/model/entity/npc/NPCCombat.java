@@ -4,22 +4,19 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.cache.NPCDef;
-import io.ruin.data.impl.items.item_info;
 import io.ruin.data.impl.npcs.npc_combat;
-import io.ruin.model.World;
 import io.ruin.model.achievements.listeners.experienced.DemonSlayer;
 import io.ruin.model.activities.bosses.nex.Nex;
-import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.activities.tasks.DailyTaskKills;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
 import io.ruin.model.content.PvmPoints;
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
 import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
 import io.ruin.model.diaries.western.WesternDiaryEntry;
@@ -392,13 +389,6 @@ public abstract class NPCCombat extends Combat {
         vorkathHead(dropPosition, pKiller);
 
         /*
-         * Gives players PVM Points
-         */
-
-        if (!pKiller.player.DonatorSlayerDungeons) {
-            PvmPoints.addPoints(pKiller, npc);
-        }
-        /*
          * Summer Loot
          */
         //SummerTokens.npcKill(pKiller, npc, dropPosition);
@@ -458,7 +448,7 @@ public abstract class NPCCombat extends Combat {
             boolean dropItem = true;
             for (Item equipment : pKiller.getEquipment().getItems()) {
                 if (item.getId() == 1751 || item.getId() == 22124) {
-                    if (pKiller.isMember()) {
+                    if (pKiller.isADonator()) {
                         if (item.getDef().notedId > -1)
                             item.setId(item.getDef().notedId);
                     }
@@ -468,7 +458,7 @@ public abstract class NPCCombat extends Combat {
              * Donator Benefit: [Noted dragon bones in wilderness]
              */
             if (item.getId() == 534 || item.getId() == 536 || item.getId() == 6812 || item.getId() == 11943 || item.getId() == 22124) {
-                if (pKiller.isMember() && pKiller.wildernessLevel > 0) {
+                if (pKiller.isADonator() && pKiller.wildernessLevel > 0) {
                     item.setId(item.getDef().notedId);
                 }
             }
@@ -477,7 +467,7 @@ public abstract class NPCCombat extends Combat {
              * Donator Benefit: [Noted herbs in wilderness]
              */
             if (item.getDef().name.toLowerCase().contains("grimy")) {
-                if (pKiller.isMember() && pKiller.wildernessLevel > 0) {
+                if (pKiller.isADonator() && pKiller.wildernessLevel > 0) {
                     if (item.getDef().notedId > -1)
                         item.setId(item.getDef().notedId);
                 }
@@ -542,7 +532,7 @@ public abstract class NPCCombat extends Combat {
                 }
             }
 
-            if (item.getId() == 22330 || item.getId() == 6831
+            if (item.getId() == 6831
                     || item.getId() == 24361  || item.getId() == 24362
                     || item.getId() == 24363  || item.getId() == 24364
                     || item.getId() == 24365  || item.getId() == 24366) {
@@ -589,10 +579,9 @@ public abstract class NPCCombat extends Combat {
         else
             message += item.getDef().descriptiveName;
         if (item.lootBroadcast != null) {
-            item.lootBroadcast.sendNews(pKiller, message + " from " + npc.getDef().descriptiveName + " at KC: " + npc.getDef().killCounter.apply(pKiller).getKills() + " on World " + World.id);
+            item.lootBroadcast.sendNews(pKiller, message + " from " + npc.getDef().descriptiveName + " at KC: " + npc.getDef().killCounter.apply(pKiller).getKills());
         } else {
-            System.out.println("Failed to broadcast loot, Drop is bugged, Contact Maddox");
-            Broadcast.WORLD.sendNews(pKiller, message + " from " + npc.getDef().descriptiveName + " at KC: " + npc.getDef().killCounter.apply(pKiller).getKills() + " on World " + World.id);
+            Broadcast.WORLD.sendNews(pKiller, message + " from " + npc.getDef().descriptiveName + " at KC: " + npc.getDef().killCounter.apply(pKiller).getKills());
         }
         RareDropEmbedMessage.sendDiscordMessage(message, npc.getDef().descriptiveName, item.getId(), npc.getDef().killCounter.apply(pKiller).getKills());
     }
@@ -854,7 +843,7 @@ public abstract class NPCCombat extends Combat {
             player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.SLAY_BUG);
         }
         if (npc.getDef().name.equalsIgnoreCase("giant mole")) {
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.KILL_GIANT_MOLE);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.KILL_GIANT_MOLE);
         }
         if (npc.getDef().name.equalsIgnoreCase("lava dragon")) {
             player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.KILL_LAVA_DRAGON);
@@ -885,11 +874,11 @@ public abstract class NPCCombat extends Combat {
             player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.VENENATIS);
         }
         if (npc.getDef().name.equalsIgnoreCase("skeletal wyvern") && (player.getPosition().regionId() == 12181 || player.getPosition().regionId() == 12437)) {
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.KILL_WYVERN);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.KILL_WYVERN);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("white knight")) {
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.FARMING_SHOP);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.FARMING_SHOP);
         }
 
         if (npc.getId() == 6611 || npc.getId() == 6612) {
@@ -903,68 +892,68 @@ public abstract class NPCCombat extends Combat {
             player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_BRINE_RAT);
         }
         if (npc.getDef().name.equalsIgnoreCase("bronze dragon") && player.getPosition().regionId() == 10643) {
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.KILL_METAL_DRAGON);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_METAL_DRAGON);
         }
         if (npc.getDef().name.equalsIgnoreCase("iron dragon") && player.getPosition().regionId() == 10643) {
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.KILL_METAL_DRAGON);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_METAL_DRAGON);
         }
         if (npc.getDef().name.equalsIgnoreCase("steel dragon") && player.getPosition().regionId() == 10643) {
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.KILL_METAL_DRAGON);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_METAL_DRAGON);
         }
         if (npc.getDef().name.equalsIgnoreCase("iron dragon") && player.getPosition().regionId() == 10899) {
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.KILL_METAL_DRAGON);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_METAL_DRAGON);
         }
         if (npc.getDef().name.equalsIgnoreCase("steel dragon") && player.getPosition().regionId() == 10899) {
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.KILL_METAL_DRAGON);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_METAL_DRAGON);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("Rock Crab") && (player.getPosition().regionId() == 10554 || player.getPosition().regionId() == 10553)) {
             player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_ROCK_CRAB);
         }
         if (npc.getDef().name.equalsIgnoreCase("black dragon") && player.getPosition().regionId() == 11161) {
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.KILL_BLACK_DRAGON);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.KILL_BLACK_DRAGON);
         }
         if (npc.getDef().name.equalsIgnoreCase("dust devil") && player.getPosition().inBounds(new Bounds(3168, 9344, 3327, 9407, 0)) && player.getEquipment().wearsSlayerHelm()) {
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.KILL_DUST_DEVIL);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.KILL_DUST_DEVIL);
         }
         if (npc.getDef().name.contains("Lizard") && player.getPosition().inBounds(new Bounds(3143, 2753, 3504, 3179, 0))) {
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.KILL_LIZARDS_DESERT);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.KILL_LIZARDS_DESERT);
         }
         if (npc.getId() == 1838 || npc.getId() == 1839) {
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.KILL_DUCK);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.KILL_DUCK);
         }
         if (npc.getDef().name.contains("snake") && player.getPosition().inBounds(new Bounds(3143, 2753, 3504, 3179, 0))) {
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.KILL_SNAKES_DESERT);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.KILL_SNAKES_DESERT);
         }
         if (npc.getDef().name.equalsIgnoreCase("bandit") && player.getPosition().inBounds(new Bounds(3143, 2753, 3504, 3179, 0))) {
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.KILL_BANDIT);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.KILL_BANDIT);
         }
         if (npc.getDef().name.equalsIgnoreCase("vulture") && player.getPosition().inBounds(new Bounds(3143, 2753, 3504, 3179, 0))) {
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.KILL_VULTURE);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.KILL_VULTURE);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("Warped Jelly")) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.KILL_JELLIES);
+            //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.KILL_JELLIES);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("sand crab")) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.KILL_SANDCRAB);
+            //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.KILL_SANDCRAB);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("lizardman shaman")) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.KILL_LIZARDSHAMAN);
+            //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.KILL_LIZARDSHAMAN);
         }
 
         if (npc.getId() == 7278 && player.getPosition().regionId() == 6813) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.KILL_NECHRYAEL);
+            //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.KILL_NECHRYAEL);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("Abyssal demon") && player.getPosition().regionId() == 6813) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.KILL_ABYSSAL);
+            //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.KILL_ABYSSAL);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("skotizo")) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.KILL_SKOTIZO);
+            //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.KILL_SKOTIZO);
         }
 
 

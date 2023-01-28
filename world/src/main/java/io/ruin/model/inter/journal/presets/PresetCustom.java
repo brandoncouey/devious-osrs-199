@@ -69,7 +69,7 @@ public class PresetCustom extends Preset {
     }
 
     private void sendEmpty(Player player) {
-        send(player, "<img=" + (getImageId()) + "> Empty", Color.BRONZE);
+        send(player, "<img=" + (getImageId()) + "> Empty", Color.OPAL);
     }
 
     private void sendCustom(Player player, PresetCustom preset) {
@@ -78,7 +78,7 @@ public class PresetCustom extends Preset {
             System.arraycopy(preset.equipItems, 0, newItems, 0, 14);
             preset.equipItems = newItems;
         }
-        send(player, "<img=" + getImageId() + "> " + preset.name, Color.BRONZE);
+        send(player, "<img=" + getImageId() + "> " + preset.name, Color.OPAL);
     }
 
     private int getImageId() {

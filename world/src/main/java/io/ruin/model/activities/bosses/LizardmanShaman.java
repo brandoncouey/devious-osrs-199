@@ -43,7 +43,7 @@ public class LizardmanShaman extends NPCCombat {
             for (Killer k : npc.getCombat().killers.values()) {
                 if (Random.rollDie(750, 1)) {
                     new GroundItem(13576, 1).owner(k.player).position(npc.getPosition()).spawn();
-                    Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap("[WORLD" + World.id + "] ") + k.player.getName() + " received a " + Color.DARK_RED.wrap("Dragon Warhammer from a Lizardman Shaman"));
+                    Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap(k.player.getName() + " received a " + "Dragon Warhammer from a Lizardman Shaman"));
                 }
             }
         };

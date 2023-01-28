@@ -29,9 +29,9 @@ public class Event {
             public void execute() throws Pausable {
                 try {
                     consumer.accept(Event.this);
-                } catch (Pausable p) {
+                } catch(Pausable p) {
                     throw p;
-                } catch (Throwable t) {
+                } catch(Throwable t) {
                     Server.logError("", t);
                 }
             }
@@ -39,7 +39,7 @@ public class Event {
     }
 
     public final boolean tick() {
-        if (delayTicks > 0) {
+        if(delayTicks > 0) {
             if (--delayTicks > 0)
                 return true;
             if (cancelCondition != null && cancelCondition.get()) {
@@ -48,7 +48,7 @@ public class Event {
         }
         try {
             return !continuation.run();
-        } catch (NotPausable e) {
+        } catch(NotPausable e) {
             Server.logError("", e);
             return false;
         }
@@ -60,7 +60,7 @@ public class Event {
     }
 
     public final void waitForMovement(Entity entity) throws Pausable {
-        while (!entity.getMovement().isAtDestination())
+        while(!entity.getMovement().isAtDestination())
             delay(1);
     }
 
@@ -69,7 +69,7 @@ public class Event {
     }
 
     public final void waitForTile(Entity entity, int x, int y) throws Pausable {
-        while (!entity.isAt(x, y))
+        while(!entity.isAt(x, y))
             delay(1);
     }
 

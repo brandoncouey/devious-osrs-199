@@ -573,7 +573,10 @@
     "y": 3501,
     "z": 0,
     "direction": "S",
-    "walkRange": 2
+    "walkRange": 2,
+    "shopOptions": {
+      "trade": "a1e55885-3aa4-4d63-8a5e-5808c01f54e0"
+    }
   },
   {
     "name": "Man",

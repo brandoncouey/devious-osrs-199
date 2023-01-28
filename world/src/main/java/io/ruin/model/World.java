@@ -13,18 +13,17 @@ import io.ruin.model.activities.pvminstances.PVMInstance;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.EntityList;
 import io.ruin.model.entity.npc.NPC;
-import io.ruin.model.entity.player.GameMode;
+import io.ruin.model.entity.npc.actions.Lottery;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerFile;
-import io.ruin.model.entity.player.XpMode;
+import io.ruin.model.events.EventManager;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
 import io.ruin.model.object.owned.OwnedObject;
 import io.ruin.model.object.owned.impl.DwarfCannon;
-import io.ruin.model.skills.events.ShootingStars;
+import io.ruin.model.trivia.TriviaBot;
 import io.ruin.process.event.EventWorker;
-import io.ruin.services.LatestUpdate;
 import io.ruin.services.discord.DiscordConnection;
 import io.ruin.utility.Broadcast;
 import lombok.Getter;
@@ -62,6 +61,16 @@ public class World extends EventWorker {
 
     public static LeagueType leagueType;
 
+    public static final String[] OWNERS = new String[] { "brad", "float32" };
+
+    public static final String COMMUNITY_MANAGER = "";
+
+    public static final String[] ADMINISTRATORS = new String[] {  };
+
+    public static final String[] DEVELOPERS = new String[] {  };
+
+    public static final String[] MODERATORS = new String[] { "nova" };
+
     public static boolean isDev() {
         return stage == WorldStage.DEV;
     }
@@ -93,12 +102,12 @@ public class World extends EventWorker {
 
     public static final Bounds HOME_BOUNDS = new Bounds(3535, 3118, 3546, 3124, 1);
     //public static final Position HOME = new Position(3541, 3123, 1);
-    public static final Position HOME = new Position(3087, 3493, 0);
+    public static final Position HOME = new Position(3094, 3499, 0);
     public static final Position FUN_PK = new Position(3568, 3122, 1);
     public static final Position HOMEPVP = new Position(3095, 3497, 0);
     public static final Position DZ = new Position(3811, 2845, 1);
     public static final Position SZ = new Position(3122, 3473, 0);
-    public static final Position EDGEHOME = new Position(3087, 3490, 0);
+    public static final Position EDGEHOME = new Position(3094, 3499, 0);
     public static final Position DEATHS_DOMAIN = new Position(3174, 5727, 0);
 
     /**
@@ -187,6 +196,11 @@ public class World extends EventWorker {
     public static int bmMultiplier = 0;
 
     public static boolean weekendExpBoost = false;
+
+    protected static void pulse() {
+        TriviaBot.pulse();
+        EventManager.getInstance().checkEvents();
+    }
 
     public static void toggleDoubleDrops() {
         doubleDrops = !doubleDrops;
@@ -325,15 +339,15 @@ public class World extends EventWorker {
         if (updating)
             return false;
         updating = true;
-        Broadcast.GLOBAL.sendNews(Color.RED.wrap("[WORLD " + World.id +  "] is now being Updated!"));
+        Broadcast.GLOBAL.sendNews(Color.RED.wrap("The world is now being updated!"));
         System.out.println("System Update: " + minutes + " minutes");
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle("The Server is now being updated.");
         eb.setDescription("The Server is now being updated.");
         eb.setColor(new java.awt.Color(0xB00D03));
         eb.addField("Notification!", "<@&991831182310379601>", true);
-        DiscordConnection.jda.getTextChannelById("994599921980289055").sendMessageEmbeds(eb.build()).queue();
-        Guild guild = DiscordConnection.jda.getGuildById("991831182310379601"); //Guild you got from a listener, or from the JDA pool
+        //DiscordConnection.jda.getTextChannelById("994599921980289055").sendMessageEmbeds(eb.build()).queue();
+        /*Guild guild = //DiscordConnection.jda.getGuildById("991831182310379601"); //Guild you got from a listener, or from the JDA pool
         if (guild != null) {
             guild.findMembers(member -> {
                 if (member.getRoles().contains(guild.getRoleById("991831182310379601"))) {
@@ -346,7 +360,7 @@ public class World extends EventWorker {
                 }
                 return false;
             });
-        }
+        }*/
         for (Player player : players)
             player.getPacketSender().sendSystemUpdate(minutes * 60);
         startEvent(e -> {
@@ -432,11 +446,17 @@ public class World extends EventWorker {
         Server.afterData.add(() -> {
             List<String> announcements;
             announcements = Arrays.asList(
-                    "Need help? Join the \"help\" cc!",
-                    "Make sure to vote to gain access to exclusive items!",
-                    "Looking to support Devious? Type ::store ingame!",
-                    "Please take the time to vote for us. It helps us out and takes two seconds! ::vote",
-                    "Join ::discord to get closer to the community!"
+                    "<shad=000000><col=155b98>Need help? Join the \"help\" cc!",
+                    "<shad=000000><col=155b98>Remember to '::vote' for rewards every 12 hours!",
+                    "<shad=000000><col=155b98>Looking to support Devious? Type ::donate!",
+                    "<shad=000000><col=155b98>Type `::discord` to join our discord!",
+                    "<shad=000000><col=155b98>Did you know? Donator's have a boosted drop rate.",
+                    "<shad=000000><col=155b98>Did you know? Completing slayer tasks in the wilderness grant x2.5 experience.",
+                    "<shad=000000><col=155b98>Did you know? You can donate to Devious with OSRS/RS3 gold.",
+                    "<shad=000000><col=155b98>Did you know? Voting helps increase Devious's player count.",
+                    "<shad=000000><col=155b98>Did you know? You can right click a skill in the skills tab and teleport directly to train it.",
+                    "<shad=000000><col=155b98>Did you know? Voting within the last 12 hours will grant additional XP at the AFK-Zone.",
+                    "<shad=000000><col=155b98>Did you know? You can make additional gp by sitting at the AFK-Zone."
             );
 
             Collections.shuffle(announcements);
@@ -444,7 +464,7 @@ public class World extends EventWorker {
                 int offset = 0;
                 while (true) {
                     e.delay(500); //5 minutes
-                    Broadcast.WORLD.sendNews(Icon.ANNOUNCEMENT, "Announcements", announcements.get(offset));
+                    Broadcast.WORLD.sendMessage(announcements.get(offset));
                     if (++offset >= announcements.size())
                         offset = 0;
                 }
@@ -502,4 +522,5 @@ public class World extends EventWorker {
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
     }
+
 }

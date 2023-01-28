@@ -11,8 +11,7 @@ object GameEventProcessor {
 
     private val activeEvents = mutableListOf<GameEvent>()
 
-    @JvmStatic
-    fun pulse() {
+    @JvmStatic fun pulse() {
         val copy = activeEvents.toList()
         copy.forEach {
             if (it.waiting) {
@@ -30,15 +29,13 @@ object GameEventProcessor {
     /**
      * Finds any/all active events related to the [Entity] specified and kills off the job(s) concerning.
      */
-    @JvmStatic
-    fun killFor(entity: Entity) {
-        val relevant = activeEvents.filter { it.ctx == entity }
+    @JvmStatic fun killFor(entity: Entity) {
+        val relevant  = activeEvents.filter { it.ctx == entity }
         relevant.forEach(GameEvent::kill)
         activeEvents.removeAll(relevant)
     }
 
-    @JvmStatic
-    fun resumeWith(ctx: Player, value: Any?): Boolean {
+    @JvmStatic fun resumeWith(ctx: Player, value: Any?): Boolean {
         val event = activeEvents.find { it.ctx == ctx } ?: return false
         return event.resume(value)
     }

@@ -1,0 +1,8 @@
+{
+  "PERK_CONTRIBUTION": {
+    "DROP_RATE": 1
+  },
+  "PERK_MINUTES_REMAINING": {
+    "DROP_RATE": 10
+  }
+}

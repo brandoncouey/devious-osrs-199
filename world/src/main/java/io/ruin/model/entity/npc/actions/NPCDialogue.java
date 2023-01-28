@@ -5,12 +5,11 @@ import io.ruin.data.impl.teleports;
 import io.ruin.model.activities.pvminstances.InstanceDialogue;
 import io.ruin.model.activities.pvminstances.InstanceType;
 import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
-import io.ruin.model.object.owned.impl.DwarfCannon;
 import io.ruin.model.shop.ShopManager;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.skills.slayer.Slayer;
@@ -18,7 +17,6 @@ import io.ruin.utility.Misc;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 public class NPCDialogue {
 
@@ -67,25 +65,6 @@ public class NPCDialogue {
             player.slayerTaskRemaining += Random.get(50, 100);
             player.dialogue(new io.ruin.model.inter.dialogue.NPCDialogue(npc, "Your new slayer amount is " + player.slayerTaskRemaining + ", Come back soon."));
         }), new Option("View Slayer Point Store", () -> ShopManager.openIfExists(player, "SLAYERPOINTSHOPPOG")))));
-        NPCAction.register(2408, "talk-to", (player, npc) -> {
-            if (player.cannonLost) {
-                boolean hasSpace = player.getInventory().hasFreeSlots(DwarfCannon.CANNON_PARTS.length);
-                player.dialogue(
-                        new PlayerDialogue("I've lost my cannon, can i have another one?"),
-                        !hasSpace ? new io.ruin.model.inter.dialogue.NPCDialogue(npc, "Come back when you at least 4 inventory spaces.") : new io.ruin.model.inter.dialogue.NPCDialogue(npc, "Yeah sure, here you go. Try not to do it again."),
-                        !hasSpace ? new MessageDialogue("You need at least 4 inventory spaces to claim your cannon back.") : new ItemDialogue().one(DwarfCannon.BARRELS, "The Drunken dwarf gives you another cannon.").action(() -> {
-                            IntStream.of(DwarfCannon.CANNON_PARTS).forEach(player.getInventory()::add);
-                            player.cannonLost = false;
-                        })
-                );
-            } else {
-                player.dialogue(
-                        new PlayerDialogue("Hello there! Are you alright?"),
-                        new io.ruin.model.inter.dialogue.NPCDialogue(npc, "Of courshe! Why why why hic* why shouldn't I be?"),
-                        new PlayerDialogue("I don't know... You look a bit drunk."),
-                        new io.ruin.model.inter.dialogue.NPCDialogue(npc, "Noooooo, hic* that's the liquor doing the talking."));
-            }
-        });
         NPCAction.register(11061, "talk-to", (player, npc) -> {
             OptionScroll.open(player, "Select a npc to instance.", true, Arrays.stream(InstanceType.values()).map(instanceType -> new Option(instanceType.getName(), () -> InstanceDialogue.open(player, InstanceType.valueOf(instanceType.name())))).collect(Collectors.toList()));
         });
@@ -121,20 +100,20 @@ public class NPCDialogue {
         NPCAction.register(8764, "talk-to", (player, npc) -> player.dialogue(new OptionsDialogue("Ahoy there matey, where might you be going?",
                 new Option("Take me to Ardougne.", () -> {
                     player.getMovement().teleport(2683, 3271, 0);
-                    player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.SAIL_TO_ARDOUGNE);
+                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.SAIL_TO_ARDOUGNE);
                 }),
                 new Option("Take me to Rimmington", () -> player.getMovement().teleport(2915, 3235, 0)))));
 
         NPCAction.register(3648, "talk-to", (player, npc) -> player.dialogue(new OptionsDialogue("The boat for port sarim is leaving!",
                 new Option("Let's go!.", () -> {
                     player.getMovement().teleport(3029, 3217, 0);
-                    player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.SAIL_TO_PORT_SARIM);
+                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.SAIL_TO_PORT_SARIM);
                 }))));
 
         NPCAction.register(3648, "pay-fare", (player, npc) -> player.dialogue(new OptionsDialogue("The boat for port sarim is leaving!",
                 new Option("Let's go!.", () -> {
                     player.getMovement().teleport(3029, 3217, 0);
-                    player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.SAIL_TO_PORT_SARIM);
+                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.SAIL_TO_PORT_SARIM);
                 }))));
 
         NPCAction.register(1883, "talk-to", (player, npc) -> player.dialogue(
@@ -161,13 +140,13 @@ public class NPCDialogue {
             ModernTeleport.teleport(player, 1504, 3400, 0);
         });
 
-        NPCAction.register(5519, 1, (player, npc) -> player.getDiaryManager().getArdougneDiary().claimReward(npc));
-        NPCAction.register(5520, 1, (player, npc) -> player.getDiaryManager().getDesertDiary().claimReward(npc));
-        NPCAction.register(5524, 1, (player, npc) -> player.getDiaryManager().getFaladorDiary().claimReward(npc));
+        NPCAction.register(5519, 1, (player, npc) -> player.getDiaryManager().getPvpDiary().claimReward(npc));
+        NPCAction.register(5520, 1, (player, npc) -> player.getDiaryManager().getMinigamesDiary().claimReward(npc));
+        NPCAction.register(5524, 1, (player, npc) -> player.getDiaryManager().getSkillingDiary().claimReward(npc));
         NPCAction.register(5526, 1, (player, npc) -> player.getDiaryManager().getFremennikDiary().claimReward(npc));
         NPCAction.register(5517, 1, (player, npc) -> player.getDiaryManager().getKandarinDiary().claimReward(npc));
-        NPCAction.register(7650, 1, (player, npc) -> player.getDiaryManager().getKaramjaDiary().claimReward(npc));
-        NPCAction.register(8538, 1, (player, npc) -> player.getDiaryManager().getKourendDiary().claimReward(npc));
+        NPCAction.register(7650, 1, (player, npc) -> player.getDiaryManager().getPvmDiary().claimReward(npc));
+        NPCAction.register(8538, 1, (player, npc) -> player.getDiaryManager().getDeviousDiary().claimReward(npc));
         NPCAction.register(5523, 1, (player, npc) -> player.getDiaryManager().getLumbridgeDraynorDiary().claimReward(npc));
         NPCAction.register(5521, 1, (player, npc) -> player.getDiaryManager().getMorytaniaDiary().claimReward(npc));
         NPCAction.register(5525, 1, (player, npc) -> player.getDiaryManager().getVarrockDiary().claimReward(npc));

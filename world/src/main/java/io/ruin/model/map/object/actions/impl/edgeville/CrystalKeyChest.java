@@ -2,7 +2,7 @@ package io.ruin.model.map.object.actions.impl.edgeville;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.utility.Broadcast;
@@ -144,7 +144,7 @@ public class CrystalKeyChest {
                     for (Item item : loot)
                         player.getInventory().addOrDrop(item.getId(), item.getAmount());
                 }
-                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.CRYSTAL_CHEST);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.CRYSTAL_CHEST);
                 event.delay(1);
                 player.unlock();
             });

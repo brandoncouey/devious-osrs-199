@@ -25,7 +25,7 @@ public class VyrewatchSentinel extends NPCCombat {
             for (Killer k : npc.getCombat().killers.values()) {
             if (Random.rollDie(300, 1)) {
                 new GroundItem(24777, 1).owner(k.player).position(npc.getPosition()).spawn();
-                Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap("[WORLD" + World.id + "] ") + k.player.getName() + " received a " + Color.DARK_RED.wrap("Blood Shard from a Vyrewatch Sentinel"));
+                Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap(k.player.getName() + " received a " + "Blood Shard from a Vyrewatch Sentinel"));
             }
             }
         };

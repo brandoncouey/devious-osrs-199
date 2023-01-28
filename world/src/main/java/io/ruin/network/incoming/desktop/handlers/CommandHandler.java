@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.Lists;
 import com.google.gson.GsonBuilder;
+import io.ruin.Configuration;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.utils.*;
 import io.ruin.cache.EnumMap;
@@ -109,6 +110,7 @@ import io.ruin.model.skills.slayer.Slayer;
 import io.ruin.model.skills.slayer.SlayerTask;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
+import io.ruin.model.trivia.TriviaBot;
 import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.services.*;
@@ -362,6 +364,45 @@ public class CommandHandler implements Incoming {
                     player.sendMessage(i + ": <img=" + i + ">");
                 return true;
             }
+            case "answer": {
+                if (args.length < 1) {
+                    player.sendMessage("Incorrect Syntax: ::answer (your answer)");
+                    return false;
+                }
+
+                var triviaAnswer = String.join(" ", args);
+
+                if (TriviaBot.acceptingQuestion()) {
+                    TriviaBot.attemptAnswer(player, triviaAnswer);
+                } else {
+                    player.sendMessage("There are no active trivia questions at the moment.");
+                }
+                return true;
+            }
+
+            case "item":
+            case "pickup": {
+                if (!World.isDev()) {
+                    if (!Configuration.isAdmin(player.getName()))
+                        return false;
+                }
+                int[] ids = NumberUtils.toIntArray(args[0]);
+                int amount = args.length > 1 ? NumberUtils.intValue(args[1]) : 1;
+                for (int id : ids) {
+                    if (id != -1)
+                        player.getInventory().add(id, amount);
+                }
+                return true;
+            }
+
+            case "reloadwhitelist": {
+                if (player.isOwner() || player.isAdmin() || player.isModerator()) {
+                    WhitelistLogins.load();
+                    player.sendMessage("Successfully reloaded whitelist logins.");
+                }
+                return true;
+            }
+
             case "home": {
                 if (World.isPVPWorld() && player.getCombat().isDefending(10)) {
                         player.sendMessage("You can't teleport so soon while in combat.");
@@ -401,21 +442,21 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             case "prev": {
-                if (!player.isMember()) {
+                if (!player.isADonator()) {
                     player.sendMessage("You must be a donator to use this feature.");
                     return true;
                 }
-                if (player.isMember()) {
+                if (player.isADonator()) {
                     ModernTeleport.teleport(player, player.previousTeleportX, player.previousTeleportY, player.previousTeleportZ);
                     return true;
                 }
             }
             case "teleports": {
-                if (!player.isMember()) {
+                if (!player.isADonator()) {
                     player.sendMessage("You must be a donator to use this feature.");
                     return true;
                 }
-                if (player.isMember()) {
+                if (player.isADonator()) {
                     TeleportInterface.open(player);
                     return true;
                 }
@@ -445,14 +486,14 @@ public class CommandHandler implements Incoming {
                 if (player.lmsSession != null) {
                     return false;
                 }
-                if (!player.isMember()) {
+                if (!player.isADonator()) {
                     player.sendMessage("You must be a member to use this command");
                     return false;
                 }
                 if (World.isPVPWorld() && player.pvpAttackZone) {
                     return false;
                 }
-                if (player.isMember() && player.wildernessLevel <= 0 && !player.getPosition().inBounds(Tournament_WAIT) && !player.getPosition().inBounds(Tournament_BOUNDS)) {
+                if (player.isADonator() && player.wildernessLevel <= 0 && !player.getPosition().inBounds(Tournament_WAIT) && !player.getPosition().inBounds(Tournament_BOUNDS)) {
                     player.getBank().open();
                 }
                 return true;
@@ -571,7 +612,7 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             case "customtitle": {
-                if (!player.isMember()) {
+                if (!player.isADonator()) {
                     player.dialogue(new NPCDialogue(2108, "Please purchase a Membership Token from ::store to restore your membership status"));
                     return true;
                 }
@@ -602,7 +643,7 @@ public class CommandHandler implements Incoming {
             case "dzone":
             case "donatorszone":
             case "donorzone":
-                if (!player.isMember()) {
+                if (!player.isADonator()) {
                     player.dialogue(new NPCDialogue(2108, "Please purchase a Membership Token from ::store to restore your membership status"));
                     return false;
                 } else if (player.wildernessLevel > 0) {
@@ -712,7 +753,7 @@ public class CommandHandler implements Incoming {
                     bypassFilter = true;
                     delaySeconds = 0;
                 } else {
-                    if (player.isMember() && player.storeAmountSpent >= 10) {
+                    if (player.isADonator()) {
                         bypassFilter = true;
                         delaySeconds = 10;
                     } else {
@@ -723,6 +764,7 @@ public class CommandHandler implements Incoming {
 
                 PlayerGroup clientGroup = player.getClientGroup();
                 String title = "";
+                Color color = Color.RED;
                 if (player.titleId != -1 && player.titleId < Title.PRESET_TITLES.length) { //normal titles
                     title = Title.PRESET_TITLES[player.titleId].getPrefix();
                     if (player.titleId == 21) { //custom title
@@ -730,35 +772,43 @@ public class CommandHandler implements Incoming {
                     }
                 }
 
-                if (player.isAdmin()) {
-                    message = Color.PURPLE.wrap(("<shad>") + "[Yell] W:" + World.id + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + ("<shad>") + Color.PURPLE.wrap(title)) + ("<shad>") + Color.PURPLE.wrap(player.getName() + ":") + " " + ("<shad>") + Color.PURPLE.wrap(message);
-                } else if (player.isOwner()) {
-                    message = Color.PURPLE.wrap(("<shad>") + "[Yell] W:" + World.id + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + ("<shad>") + Color.PURPLE.wrap(title)) + ("<shad>") + Color.PURPLE.wrap(player.getName() + ":") + " " + ("<shad>") + Color.PURPLE.wrap(message);
-                } else if (player.isModerator()) {
-                    message = Color.CYAN.wrap(("<shad>") + "[Yell] W:" + World.id + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + ("<shad>") + Color.BLUE.wrap(title)) + ("<shad>") + Color.BLUE.wrap(player.getName() + ":") + " " + ("<shad>") + Color.BLUE.wrap(message);
-                } else if (player.isManager()) {
-                    message = Color.SILVER.wrap(("<shad>") + "[Yell] W:" + World.id + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + ("<shad>") + Color.SILVER.wrap(player.getName() + ":") + " " + ("<shad>") + Color.SILVER.wrap(message));
-                } else if (player.isSupport()) {
-                    message = Color.BLUE.wrap(("<shad>") + "[Yell] W:" + World.id + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + ("<shad>") + Color.BLUE.wrap(title)) + ("<shad>") + Color.BLUE.wrap(player.getName() + ":") + " " + ("<shad>") + Color.BLUE.wrap(message);
-                } else if (player.isYoutuber()) {
-                    message = Color.RED.wrap("[Yell] W:" + World.id + ("<img=50>") + ("<shad>") + Color.RED.wrap(title)) + ("<shad>") + Color.RED.wrap(player.getName() + ":") + " " + ("<shad>") + Color.RED.wrap(message);
-                } else if (player.isEmeraldDonator()) {
-                    message = Color.ADAMANT.wrap(("<shad>") + "[Yell] W:" + World.id + ("<img=176>") + Color.ADAMANT.wrap(title)) + ("<shad>") + Color.ADAMANT.wrap(player.getName() + ":") + " " + Color.COOL_BLUE.wrap(message);
-                } else if (player.isRubyDonator()) {
-                    message = Color.RUNE.wrap(("<shad>") + "[Yell] W:" + World.id + ("<img=177>") + Color.RUNE.wrap(title)) + ("<shad>") + Color.RUNE.wrap(player.getName() + ":") + " " + Color.COOL_BLUE.wrap(message);
-                } else if (player.isSapphireDonator()) {
-                    message = Color.MITHRIL.wrap(("<shad>") + "[Yell] W:" + World.id + ("<img=175>") + Color.MITHRIL.wrap(title)) + ("<shad>") + Color.MITHRIL.wrap(player.getName() + ":") + " " + Color.COOL_BLUE.wrap(message);
-                } else if (player.isDiamondDonator()) {
-                    message = Color.DRAGON.wrap(("<shad>") + "[Yell] W:" + World.id + ("<img=178>") + Color.DRAGON.wrap(title)) + ("<shad>") + Color.DRAGON.wrap(player.getName() + ":") + " " + Color.COOL_BLUE.wrap(message);
-                } else if (player.isRedTopazDonator()) {
-                    message = Color.GOLD.wrap(("<shad>") + "[Yell] W:" + World.id + ("<img=174>") + Color.GOLD.wrap(title)) + ("<shad>") + Color.GOLD.wrap(player.getName() + ":") + " " + Color.COOL_BLUE.wrap(message);
-                } else if (player.isJadeDonator()) {
-                    message = Color.IRON.wrap(("<shad>") + "[Yell] W:" + World.id + ("<img=172>") + Color.IRON.wrap(title)) + ("<shad>") + Color.IRON.wrap(player.getName() + ":") + " " + Color.COOL_BLUE.wrap(message);
-                } else if (player.isOpalDonator()) {
-                    message = Color.BRONZE.wrap(("<shad>") + "[Yell] W:" + World.id + ("<img=171>") + Color.BRONZE.wrap(title)) + ("<shad>") + Color.BRONZE.wrap(player.getName() + ":") + " " + Color.COOL_BLUE.wrap(message);
-                } else {
-                    player.sendMessage("You do not have the ability to yell.");
+                if (!player.canYell()) {
+                    player.sendMessage("You do not have the ability to yell. You can purchase the ability to yell by `::donate`.");
+                    return false;
                 }
+
+                if (player.isOwner()) {
+                    color = Color.PURPLE;
+                } else if (player.isAdmin()) {
+                    color = Color.YELLOW;
+                } else if (player.isModerator()) {
+                    color = Color.SILVER;
+                } else if (player.isSupport()) {
+                    color = Color.CYAN;
+                } else if (player.isYoutuber()) {
+                    color = Color.RED;
+                } else if (player.isZenyteDonator()) {
+                    color = Color.ORANGE;
+                } else if (player.isOnyxDonator()) {
+                    color = Color.BLACK;
+                } else if (player.isDragonstoneDonator()) {
+                    color = Color.PURPLE;
+                } else if (player.isDiamondDonator()) {
+                    color = Color.WHITE;
+                } else if (player.isRubyDonator()) {
+                    color = Color.RED;
+                } else if (player.isEmeraldDonator()) {
+                    color = Color.GREEN;
+                } else if (player.isSapphireDonator()) {
+                    color = Color.BLUE;
+                } else if (player.isRedTopazDonator()) {
+                    color = Color.REDTOPAZ;
+                } else if (player.isJadeDonator()) {
+                    color = Color.JADE;
+                } else if (player.isOpalDonator()) {
+                    color = Color.OPAL;
+                }
+                message = "<shad=000000>" + color.tag() + "[" + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + player.getName() + "]</shad></col>: " + message;
                 player.yellDelay = ms + (delaySeconds * 1000L);
                 if (shadow) {
                     player.sendMessage(message);
@@ -873,7 +923,7 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             case "donboss": {
-                if (player.isMember())
+                if (player.isADonator())
                     teleport(player, TeleportList.Teleport.DONATION_BOSS.getPosition());
                 return true;
             }
@@ -927,22 +977,22 @@ public class CommandHandler implements Incoming {
             }
             case "hiscores":
             case "scores": {
-                player.openUrl(World.type.getWorldName() + " Hiscores", World.type.getWebsiteUrl() + "/highscores/");
+                player.openUrl(World.type.getWorldName() + " Hiscores", World.type.getWebsiteUrl() + "/scores/");
                 return true;
             }
             case "discord": {
-                player.openUrl("Official " + World.type.getWorldName() + " Discord Server", "https://discord.gg/njBRBgKSh7");
+                player.openUrl("Official " + World.type.getWorldName() + " Discord Server", "https://discord.deviousps.com");
                 return true;
             }
             case "thread": {
                 int id;
                 try {
-                    id = Integer.valueOf(args[0]);
+                    id = Integer.parseInt(args[0]);
                 } catch (Exception e) {
                     player.sendMessage("Invalid topic # entered, please try again.");
                     return true;
                 }
-                player.openUrl(World.type.getWorldName() + " Thread #" + id, "https://deviousps.com/forums" + id);
+                player.openUrl(World.type.getWorldName() + " Thread #" + id, "https://deviousps.com/community/index.php?showtopic=" + id);
                 return true;
             }
             case "member": {
@@ -975,6 +1025,8 @@ public class CommandHandler implements Incoming {
 
                 return true;
             }
+            default:
+                throw new IllegalStateException("Unexpected value: " + command);
         }
         return false;
     }
@@ -1482,7 +1534,7 @@ public class CommandHandler implements Incoming {
 
             case "dboss": {
                 new NPC(NpcID.AVATAR_OF_DESTRUCTION_10532).spawn(3811, 2870, 1, Direction.WEST, 1).getCombat().setAllowRespawn(false);
-                Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.RED.wrap("[Devious] ") + player.getName() + " has just spawned the Donator boss " + World.id);
+                Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.RED.wrap("[Devious] ") + player.getName() + " has just spawned the Donator boss!");
                 Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.BABY_BLUE.wrap("[DONATOR BOSS] ") + "Avatar of destruction Has just spawned! use ::donboss to get there!</shad>");
                 return true;
             }
@@ -1984,54 +2036,28 @@ public class CommandHandler implements Incoming {
                 return true;
             }
 
-            case "item":
-            case "pickup": {
-                if (!World.isDev()) {
-                    if (!player.getName().equalsIgnoreCase("Ethan"))
-                        return false;
-                }
-                int[] ids = NumberUtils.toIntArray(args[0]);
-                int amount = args.length > 1 ? NumberUtils.intValue(args[1]) : 1;
-                for (int id : ids) {
-                    if (id != -1)
-                        player.getInventory().add(id, amount);
-                    if (!World.isDev()) {
-                        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                        Date date = new Date();
-                        EmbedBuilder eb = new EmbedBuilder();
-                        eb.setTitle("An Item Was Spawned Ingame!");
-                        eb.addField("Username: ", player.getName(), true);
-                        eb.addField("When: ", formatter.format(date), true);
-                        eb.addField("Item: ", ItemDef.get(id).name, true);
-                        eb.setImage(("https://static.runelite.net/cache/item/icon/" + id + ".png"));
-                        eb.addField("Amount: ", String.valueOf(amount), true);
-                        eb.setColor(new java.awt.Color(0xB00D03));
-                        jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
-                    }
-                }
-                return true;
-            }
+
             case "diary": {
                 Config.FREMMY_MEDIUM_COMPLETED.set(player, 1);
                 Config.FREMMY_EASY_COMPLETED.set(player, 1);
                 Config.FREMMY_HARD_COMPLETED.set(player, 1);
                 Config.FREMMY_ELITE_COMPLETED.set(player, 1);
-                Config.ARDOUGNE_EASY_COMPLETED.set(player, 1);
-                Config.ARDOUGNE_MEDIUM_COMPLETED.set(player, 1);
-                Config.ARDOUGNE_HARD_COMPLETED.set(player, 1);
-                Config.ARDOUGNE_ELITE_COMPLETED.set(player, 1);
-                Config.DESERT_EASY_COMPLETED.set(player, 1);
-                Config.DESERT_MEDIUM_COMPLETED.set(player, 1);
-                Config.DESERT_HARD_COMPLETED.set(player, 1);
-                Config.DESERT_ELITE_COMPLETED.set(player, 1);
-                Config.FALADOR_EASY_COMPLETED.set(player, 1);
-                Config.FALADOR_MEDIUM_COMPLETED.set(player, 1);
-                Config.FALADOR_HARD_COMPLETED.set(player, 1);
-                Config.FALADOR_ELITE_COMPLETED.set(player, 1);
-                Config.KARAMJA_EASY_COMPLETED.set(player, 1);
-                Config.KARAMJA_MEDIUM_COMPLETED.set(player, 1);
-                Config.KARAMJA_HARD_COMPLETED.set(player, 1);
-                Config.KARAMJA_ELITE_COMPLETED.set(player, 1);
+                Config.PVP_EASY_COMPLETED.set(player, 1);
+                Config.PVP_MEDIUM_COMPLETED.set(player, 1);
+                Config.PVP_HARD_COMPLETED.set(player, 1);
+                Config.PVP_ELITE_COMPLETED.set(player, 1);
+                Config.MINIGAMES_EASY_COMPLETED.set(player, 1);
+                Config.MINIGAMES_MEDIUM_COMPLETED.set(player, 1);
+                Config.MINIGAMES_HARD_COMPLETED.set(player, 1);
+                Config.MINIGAMES_ELITE_COMPLETED.set(player, 1);
+                Config.SKILLING_EASY_COMPLETED.set(player, 1);
+                Config.SKILLING_MEDIUM_COMPLETED.set(player, 1);
+                Config.SKILLING_HARD_COMPLETED.set(player, 1);
+                Config.SKILLING_ELITE_COMPLETED.set(player, 1);
+                Config.PVM_EASY_COMPLETED.set(player, 1);
+                Config.PVM_MEDIUM_COMPLETED.set(player, 1);
+                Config.PVM_HARD_COMPLETED.set(player, 1);
+                Config.PVM_ELITE_COMPLETED.set(player, 1);
                 Config.KANDARIN_ELITE_COMPLETED.set(player, 1);
                 Config.KANDARIN_HARD_COMPLETED.set(player, 1);
                 Config.KANDARIN_MEDIUM_COMPLETED.set(player, 1);
@@ -2044,10 +2070,10 @@ public class CommandHandler implements Incoming {
                 Config.MORYTANIA_MEDIUM_COMPLETED.set(player, 1);
                 Config.MORYTANIA_HARD_COMPLETED.set(player, 1);
                 Config.MORYTANIA_ELITE_COMPLETED.set(player, 1);
-                Config.KOUREND_EASY_COMPLETED.set(player, 1);
-                Config.KOUREND_MEDIUM_COMPLETED.set(player, 1);
-                Config.KOUREND_HARD_COMPLETED.set(player, 1);
-                Config.KOUREND_ELITE_COMPLETED.set(player, 1);
+                Config.DEVIOUS_EASY_COMPLETED.set(player, 1);
+                Config.DEVIOUS_MEDIUM_COMPLETED.set(player, 1);
+                Config.DEVIOUS_HARD_COMPLETED.set(player, 1);
+                Config.DEVIOUS_ELITE_COMPLETED.set(player, 1);
                 Config.VARROCK_EASY_COMPLETED.set(player, 1);
                 Config.VARROCK_MEDIUM_COMPLETED.set(player, 1);
                 Config.VARROCK_HARD_COMPLETED.set(player, 1);
@@ -2066,7 +2092,7 @@ public class CommandHandler implements Incoming {
             case "fi":
             case "fitem": {
                 if (!World.isDev()) {
-                    if (!player.getName().equalsIgnoreCase("Ethan"))
+                    if (!Configuration.isAdmin(player.getName()))
                         return false;
                 }
                 int l = command.length() + 1;
@@ -4515,7 +4541,7 @@ public class CommandHandler implements Incoming {
     }
 
     private static void teleport(Player player, int x, int y, int z) {
-        if (player.wildernessLevel != 0 || player.pvpAttackZone) {
+        if (player.wildernessLevel >= 20  || player.pvpAttackZone) {
             player.sendMessage("You can't use this command from where you are standing.");
             return;
         }

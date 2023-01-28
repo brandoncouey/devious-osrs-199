@@ -60,7 +60,6 @@
           { "id": 1514, "min": 15, "max": 20, "weight": 2 }, //Magic logs (noted)
           { "id": 3024, "min": 3, "max": 3, "weight": 1 }, //Super restore(4)
           { "id": 3052, "min": 3, "max": 3, "weight": 2 }, //Grimy snapdragon (noted)
-          { "id": 22330, "min": 1, "max": 1, "weight": 2 }, //PVM BOX
           { "id": 24365, "min": 1, "max": 1, "weight": 1 } //Clue scroll (elite)
         ]
       },

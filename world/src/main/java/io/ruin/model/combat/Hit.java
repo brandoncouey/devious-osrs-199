@@ -9,9 +9,11 @@ import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.skills.magic.spells.TargetSpell;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.function.Consumer;
 
+@ToString
 public class Hit {
 
     public static double PVP_MAGIC_ACCURACY_MODIFIER = 1.22;
@@ -445,5 +447,11 @@ public class Hit {
 
         return true;
     }
+
+    /**
+     * Removed
+     */
+
+    public boolean removed;
 
 }

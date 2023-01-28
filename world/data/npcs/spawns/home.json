@@ -26,6 +26,19 @@
     }
   },
   {
+    "name": "Forester",
+    "id": 4076,
+    "x": 3081,
+    "y": 3472,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "shopOptions": {
+      "trade": "x5X81TOGzsw0mi4MEW8WF3MxJj5LR0"
+    }
+  },
+  {
     "name": "Archery Shop",
     "id": 1157,
     "x": 3075,
@@ -109,25 +122,16 @@
     "walkRange": 0
   },
   {
-    "name": "Sawmill operator",
-    "id": 9140,
-    "x": 3083,
-    "y": 3474,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0,
-    "shopOptions": {
-      "trade": "a1e55885-3aa4-4d63-8a5e-5808c01f54e0"
-    }
-  },
-  {
     "name": "Estate agent",
     "id": 3097,
     "x": 3097,
     "y": 3503,
     "z": 0,
     "direction": "S",
-    "walkRange": 0
+    "walkRange": 0,
+    "shopOptions": {
+      "trade": "a1e55885-3aa4-4d63-8a5e-5808c01f54e0"
+    }
   },
   {
     "name": "Man",
@@ -208,15 +212,6 @@
     "shopOptions": {
       "trade": "06bf1d5a-e4d8-49f5-9aac-6229a965b98a"
     }
-  },
-  {
-    "name": "Drunken dwarf",
-    "id": 2408,
-    "x": 2027,
-    "y": 3585,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
   },
   {
     "name": "Grace",
@@ -316,7 +311,7 @@
   },
   {
     "name": "Banker",
-    "id": 3888,
+    "id": 2117,
     "x": 2006,
     "y": 3580,
     "z": 0,
@@ -325,7 +320,7 @@
   },
   {
     "name": "Banker",
-    "id": 3888,
+    "id": 2117,
     "x": 2006,
     "y": 3578,
     "z": 0,
@@ -334,7 +329,7 @@
   },
   {
     "name": "Banker",
-    "id": 3888,
+    "id": 2117,
     "x": 2006,
     "y": 3576,
     "z": 0,
@@ -343,7 +338,7 @@
   },
   {
     "name": "Banker",
-    "id": 3888,
+    "id": 2117,
     "x": 2006,
     "y": 3575,
     "z": 0,
@@ -370,7 +365,7 @@
   },
   {
     "name": "Grand Exchange Clerk",
-    "id": 3888,
+    "id": 2117,
     "x": 2021,
     "y": 3576,
     "z": 0,
@@ -388,7 +383,7 @@
   },
   {
     "name": "Grand Exchange Clerk",
-    "id": 3888,
+    "id": 2117,
     "x": 2021,
     "y": 3578,
     "z": 0,

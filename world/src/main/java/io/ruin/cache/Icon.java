@@ -3,11 +3,11 @@ package io.ruin.cache;
 public enum Icon {
     RED_INFO_BADGE(15),
     YELLOW_INFO_BADGE(15),
-    MYSTERY_BOX(267),
+    MYSTERY_BOX(270),
     BLUE_INFO_BADGE(15),
     GREEN_INFO_BADGE(15),
-    WILDERNESS(46),
-    ANNOUNCEMENT(55),
+    WILDERNESS(9),
+    ANNOUNCEMENT(58),
     NORMAL(31),
     IRONMAN(2),
     UIM(3),
@@ -15,7 +15,7 @@ public enum Icon {
     GIM(41),
     HGIM(42),
     HCIM_DEATH(32),
-    DONATOR(142);
+    DONATOR(43);
 
     public final int imgId;
 

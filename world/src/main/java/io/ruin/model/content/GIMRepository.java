@@ -78,7 +78,6 @@ public class GIMRepository {
                 gimData.add(imData);
                 imData.init();
             } catch (Exception e) {
-                System.out.println(file.getName());
                 e.printStackTrace();
             }
         }

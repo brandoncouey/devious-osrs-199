@@ -1,6 +1,6 @@
 package io.ruin.model.reputation;
 
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -60,7 +60,7 @@ public class ReputationKills {
             case 5779:
                 player.faladorRep += 5;
                 player.sendMessage("+5 Falador Reputation");
-                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.KILL_GIANT_MOLE);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.KILL_GIANT_MOLE);
                 if (player.faladorRep < 10000) {
                     player.giantmoleRep += 1;
                 }

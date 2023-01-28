@@ -1,7 +1,7 @@
 package io.ruin.model.skills.agility.shortcut;
 
 import io.ruin.model.World;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
@@ -40,7 +40,7 @@ public enum LogBalance {
             player.getAppearance().removeCustomRenders();
             player.unlock();
             if (obj.id == 16548 || obj.id == 16546) {
-                player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.CROSS_THE_LOG);
+                player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.CROSS_THE_LOG);
             }
             if (player.getPosition().regionId() == 10294 && obj.id == 23274) {
                 player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CROSS_BALANCE);

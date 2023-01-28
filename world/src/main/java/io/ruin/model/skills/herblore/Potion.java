@@ -3,9 +3,9 @@ package io.ruin.model.skills.herblore;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.tasks.DailyTask;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -163,7 +163,7 @@ public enum Potion {
         if (potionName.contains("combat potion")) {
             if (player.getPosition().inBounds(new Bounds(3133, 2752, 3518, 3131, 0))
                     || player.getPosition().inBounds(new Bounds(3266, 3136, 3388, 3323, 0))) {
-                player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.COMBAT_POTION);
+                player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.COMBAT_POTION);
             }
         }
         if (potionName.contains("weapon poison")) {
@@ -177,7 +177,7 @@ public enum Potion {
                 player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.SUPER_COMBAT);
             }
             if (player.getPosition().inBounds(new Bounds(2612, 3271, 2613, 3280, 0))) {
-                player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.SUPER_COMBAT_ARD);
+                player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.SUPER_COMBAT_ARD);
             }
         }
     }
@@ -334,7 +334,7 @@ public enum Potion {
 
                 if (secondaryPluralName.equalsIgnoreCase("zulrah scales")) {
                     if (player.getPosition().regionId() == 10802) {
-                        player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.ANTI_VENOM);
+                        player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.ANTI_VENOM);
                     }
                 }
             });

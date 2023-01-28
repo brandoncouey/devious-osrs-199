@@ -72,7 +72,6 @@
           { "id": 207, "min": 1, "max": 1, "weight": 10 }, //Grimy ranarr weed
           { "id": 13493, "min": 1, "max": 1, "weight": 10 }, //Ensouled dagannoth head
           { "id": 24364, "min": 1, "max": 1, "weight": 10 }, //Clue scroll (hard)
-          { "id": 22330, "min": 1, "max": 1, "weight": 10 }, //PVM BOX
           { "id": 314, "min": 1, "max": 453, "weight": 3 }, //Feather
           { "id": 9431, "min": 1, "max": 1, "weight": 3 }, //Runite limbs
           { "id": 24365, "min": 1, "max": 1, "weight": 1 } //Clue scroll (elite)

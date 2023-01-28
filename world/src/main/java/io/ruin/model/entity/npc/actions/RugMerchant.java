@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions;
 
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.NPCDialogue;
@@ -57,7 +57,7 @@ public class RugMerchant {
             event.delay(3);
             player.sendMessage("You travel to Pollnivneach.");
             player.getMovement().teleport(3348, 2944, 0);
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.TRAVEL_POLLNIVNEACH);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.TRAVEL_POLLNIVNEACH);
         });
     }
 
@@ -72,7 +72,7 @@ public class RugMerchant {
             event.delay(3);
             player.sendMessage("You travel to Nardah.");
             player.getMovement().teleport(3399, 2916, 0);
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.CAST_BARRAGE);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.CAST_BARRAGE);
         });
     }
 

@@ -135,11 +135,11 @@ public class EdgevilleBlacklist extends JournalEntry {
     }
 
     private void sendEmpty(Player player) {
-        send(player, "Empty - Add User", Color.BRONZE);
+        send(player, "Empty - Add User", Color.OPAL);
     }
 
     private void sendCustom(Player player, EdgevilleBlacklist blacklist) {
-        send(player, blacklist.name, Color.BRONZE);
+        send(player, blacklist.name, Color.OPAL);
     }
 
     public static boolean canAttack(Player player, Player pTarget) {

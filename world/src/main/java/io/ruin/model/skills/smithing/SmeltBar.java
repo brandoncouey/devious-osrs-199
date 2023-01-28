@@ -2,7 +2,7 @@ package io.ruin.model.skills.smithing;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemID;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -98,7 +98,7 @@ public class SmeltBar {
                     player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
                 }
                 if (player.getPosition().regionId() == 5946) {
-                    player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.LOVAKENGJ);
+                    //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.LOVAKENGJ);
                 }
                 event.delay(2);
             }

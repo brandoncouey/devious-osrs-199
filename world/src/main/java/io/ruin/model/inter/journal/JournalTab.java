@@ -25,6 +25,7 @@ import io.ruin.model.inter.journal.toggles.*;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.collectionlog.CollectionLogInfo;
+import io.ruin.utility.Misc;
 import lombok.Getter;
 
 import java.text.SimpleDateFormat;
@@ -125,53 +126,43 @@ public class JournalTab {
             player.getPacketSender().sendClientScript(3970, "iii", 0, 0, (int) TimeUnit.MILLISECONDS.toMinutes(player.playTime * Server.tickMs()));
         }),
 
-        PLAYERS(Tab.QUEST, t1++, player -> "Players Online: " + Color.GREEN.wrap(String.valueOf(World.players.count()))),
-        STAFF(Tab.QUEST, t1++, player -> "Staff Online: " + Color.GREEN.wrap(String.valueOf(getStaffOnlineCount())), (SimpleAction) JournalTab::sendStaffOnline),
-        UPTIME(Tab.QUEST, t1++, player -> "Uptime: " + Color.GREEN.wrap(TimeUtils.fromMs(Server.currentTick() * Server.tickMs(), false))),
-        SERVER_TIME(Tab.QUEST, t1++, player -> "In Wild: " + Color.GREEN.wrap(String.valueOf(Wilderness.players.size()))),
+        PLAYERS(Tab.QUEST, t1++, player -> "Players Online: " + Color.SHADED.wrap(String.valueOf(World.players.count()))),
+        STAFF(Tab.QUEST, t1++, player -> "Staff Online: " + Color.SHADED.wrap(String.valueOf(getStaffOnlineCount())), (SimpleAction) JournalTab::sendStaffOnline),
+        UPTIME(Tab.QUEST, t1++, player -> "Uptime: " + Color.SHADED.wrap(TimeUtils.fromMs(Server.currentTick() * Server.tickMs(), false))),
+        EMPTY2(Tab.QUEST, t1++),
 
         PLAYER_INFORMATION(Tab.QUEST, t1++),
+
+
         RANK(Tab.QUEST, t1++, player -> {
-            if (player.isStaff() && player.isDonator()) {
-                return "Rank: " + Color.GREEN.wrap(player.getPrimaryGroup().title);
+            if (player.isStaff() && player.isADonator()) {
+                return "Rank: " + Color.SHADED.wrap(player.getPrimaryGroup().title);
             }
-            if (player.isDonator() && !player.isYoutuber()) {
-                return "Rank: " + Color.GREEN.wrap(player.getSecondaryGroup().title);
+            if (player.isADonator() && !player.isYoutuber()) {
+                return "Rank: " + Color.SHADED.wrap(player.getSecondaryGroup().title);
             }
-            return "Rank: " + Color.GREEN.wrap(player.getPrimaryGroup().title);
-        }),
-        DR_BONUS(Tab.QUEST, t1++, player -> "Drop chance: " + Color.GREEN.wrap(DoubleDrops.getChance(player) + "%")),
-        MEMBER_REMAINING(Tab.QUEST, t1++, player -> {
-            if (player.memberTimeLeft < System.currentTimeMillis()) {
-                player.memberStatus = 0;
-                return "Membership left: " + Color.RED.wrap("INACTIVE");
-            }
-            if (player.memberTimeLeft > System.currentTimeMillis()) {
-                return "Membership left: " + Color.GREEN.wrap("" + getRemainingTime(player));
-            }
-            return null;
+            return "Rank: " + Color.SHADED.wrap(player.getPrimaryGroup().title);
         }),
         TOTAL_PURCHASE(Tab.QUEST, t1++, player -> "Total Donated: " + Color.GREEN.wrap("$" + player.storeAmountSpent)),
-        GAME_MODE(Tab.QUEST, t1++, player -> "Mode: " + Color.GREEN.wrap(player.getGameMode().toString())),
-        XP_MODE(Tab.QUEST, t1++, player -> "Xp Mode: " + Color.GREEN.wrap(String.valueOf(player.xpMode))),
-        //   XP_BONUS(Tab.QUEST, t1++, player -> "Your CombatXP Bonus: " + Color.GREEN.wrap(player.xpMode.getCombatRate() + "X")),
-        //   SKILL_XP_BONUS(Tab.QUEST, t1++, player -> "Your SkillXP Bonus: " + Color.GREEN.wrap(player.xpMode.getSkillRate() + "X")),
-        //PLAYTIME(Tab.QUEST, t1++, player -> "Time Played: " + Color.GREEN.wrap(TimeUtils.fromMs(player.playTime * Server.tickMs(), false))),
-        KDR(Tab.QUEST, t1++, player -> "KDR: " + Color.GREEN.wrap(getKdr(player))),
-        CREDITS(Tab.QUEST, t1++, player -> "PVM Points: " + Color.GREEN.wrap(Integer.toString(player.PvmPoints))),
-        //   AFK_Points(Tab.QUEST, t1++, player -> "AFK Points: " + Color.GREEN.wrap(Integer.toString(player.afkPoints))),
-        PEST_POINTS(Tab.QUEST, t1++, player -> "Pest Points: " + Color.GREEN.wrap(Integer.toString(player.pestPoints))),
-        //SLAYER_POINTS(Tab.QUEST, t1++, player -> "Slayer Points: " + Color.GREEN.wrap(Integer.toString(Config.SLAYER_POINTS.get(player)))),
-     //   WINTERTODT_POINTS(Tab.QUEST, t1++, player -> "Wintertodt Points: " + Color.GREEN.wrap(Integer.toString(player.wintertodtstorePoints))),
-        PK_BONUS(Tab.QUEST, t1++, player -> "Mage Arena Points: " + Color.GREEN.wrap(String.valueOf(player.mageArenaPoints))),
+        GAME_MODE(Tab.QUEST, t1++, player -> "Game Mode: " + Color.SHADED.wrap(Misc.formatStringFormal(player.getGameMode().toString()))),
+        XP_MODE(Tab.QUEST, t1++, player -> "XP Mode: " + Color.SHADED.wrap(Misc.formatStringFormal(String.valueOf(player.xpMode)))),
+        XP_BONUS(Tab.QUEST, t1++, player -> "XP Rate: " + Color.SHADED.wrap("x" + player.xpMode.getCombatRate())),
+        DR_BONUS(Tab.QUEST, t1++, player -> "Drop chance: " + Color.SHADED.wrap(DoubleDrops.getChance(player) + "%")),
+        KDR(Tab.QUEST, t1++, player -> "K/D: " + Color.SHADED.wrap(getKdr(player))),
+        //CREDITS(Tab.QUEST, t1++, player -> "PvM Points: " + Color.SHADED.wrap(Integer.toString(player.PvmPoints))),
+        AFK_Points(Tab.QUEST, t1++, player -> "AFK Points: " + Color.SHADED.wrap(Integer.toString(player.afkPoints))),
+        PEST_POINTS(Tab.QUEST, t1++, player -> "Pest Points: " + Color.SHADED.wrap(Integer.toString(player.pestPoints))),
+        SLAYER_POINTS(Tab.QUEST, t1++, player -> "Slayer Points: " + Color.SHADED.wrap(Integer.toString(Config.SLAYER_POINTS.get(player)))),
+        TRIVIA_POINTS(Tab.QUEST, t1++, player -> "Trivia Points: " + Color.SHADED.wrap(Integer.toString(Config.TRIVIA_POINTS.get(player)))),
+        PK_BONUS(Tab.QUEST, t1++, player -> "Mage Arena Points: " + Color.SHADED.wrap(String.valueOf(player.mageArenaPoints))),
 
         /**
          * Activity tab
          */
         EMPTY_6(Tab.QUEST, t1++),
-        WELL(Tab.QUEST, t1++, player -> "Well Status: " + WellChecker().replace("_", " ").toLowerCase(), (SimpleAction) WellofGoodwill::checkFull),
-        PLAYERS_DUEL(Tab.QUEST, t1++, player -> "Duel Arena: " + Color.GREEN.wrap(String.valueOf(Duel.players.size())) + " players."),
-        PLAYERS_TOURNY(Tab.QUEST, t1++, player -> "Tournament: " + Color.GREEN.wrap(String.valueOf(PVPInstance.players.size())) + " players."),
+        WELL(Tab.QUEST, t1++, player -> "Well Status: " + (WellofGoodwill.isActive() ? Color.GREEN.wrap("Active") : Color.RED.wrap("In-Active"))),
+        //PLAYERS_DUEL(Tab.QUEST, t1++, player -> "Duel Arena: " + Color.SHADED.wrap(String.valueOf(Duel.players.size())) + " players."),
+        PLAYERS_TOURNY(Tab.QUEST, t1++, player -> "Tournament: " + Color.SHADED.wrap(String.valueOf(PVPInstance.players.size())) + " players."),
         XP_BOOST(Tab.QUEST, t1++, player -> "DMM Chest: " + DeadmanChestEvent.INSTANCE.timeRemaining(), (SimpleAction) JournalTab::checkLocation),
 
 
@@ -182,9 +173,9 @@ public class JournalTab {
          * Misc tab.
          */
         DROP_TABLES(Tab.MISCELLANEOUS, t4++, player -> "View drop tables", (SimpleAction) Bestiary::open),
-        EMPTY(Tab.MISCELLANEOUS, t4++, player -> "View Box drop tables", (SimpleAction) Bestiary::openBoxLoot),
+        EMPTY23(Tab.MISCELLANEOUS, t4++, player -> "View Box drop tables", (SimpleAction) Bestiary::openBoxLoot),
         BOSS_TABLE(Tab.MISCELLANEOUS, t4++, player -> "View World Boss drop tables", (SimpleAction) Bestiary::openBossLoot),
-        EMPTY3(Tab.MISCELLANEOUS, t4++, player -> "Join discord", (SimpleAction) player -> player.openUrl("https://discord.gg/V72BAnsmfW")),
+        DISCORD(Tab.MISCELLANEOUS, t4++, player -> "Join discord", (SimpleAction) player -> player.openUrl("https://discord.deviousps.com")),
         //EMPTY3(Tab.MISCELLANEOUS, t4++),
 
         COMBAT(Tab.MISCELLANEOUS, t4++),
@@ -206,16 +197,16 @@ public class JournalTab {
         BC_SUPPLY_CHEST(Tab.MISCELLANEOUS, t4++, new BroadcastSupplyChest()),
         BC_ANNOUNCEMENTS(Tab.MISCELLANEOUS, t4++, new BroadcastAnnouncements()),
         BC_TOURNAMENTS(Tab.MISCELLANEOUS, t4++, new BroadcastTournaments()),
-        OTHER(Tab.MISCELLANEOUS, t4++),
         OTHER2(Tab.MISCELLANEOUS, t4++),
+        //OTHER(Tab.MISCELLANEOUS, t4++),
 
         BREAK_VIALS(Tab.MISCELLANEOUS, t4++, new BreakVials()),
         DISCARD_BUCKETS(Tab.MISCELLANEOUS, t4++, new DiscardBuckets()),
         HIDE_ICON(Tab.MISCELLANEOUS, t4++, new HideIcon()),
-        RISK_PROTECTION(Tab.MISCELLANEOUS, t4++, RiskProtection.INSTANCE),
+        //RISK_PROTECTION(Tab.MISCELLANEOUS, t4++, RiskProtection.INSTANCE),
         HIDE_YELLS(Tab.MISCELLANEOUS, t4++, new HideYells()),
-        EMPTY_7(Tab.MISCELLANEOUS, t4++),
-        // EXP_LOCK(Tab.MISCELLANEOUS, t4++, player -> "Experience lock", (SimpleAction) p -> ExperienceLock.open(p)),
+        //EMPTY_7(Tab.MISCELLANEOUS, t4++),
+        EXP_LOCK(Tab.MISCELLANEOUS, t4++, new ExperienceLock()),
         ;
 
         private final Tab tab;
@@ -270,22 +261,11 @@ public class JournalTab {
             if (getTab().equals(Tab.MISCELLANEOUS)) {
                 player.getPacketSender().sendString(getTab().getId(), getComponentId(), getText().send(player));
             } else {
-                player.getPacketSender().sendString(getTab().getId(), getComponentId(), " - " + getText().send(player));
+                player.getPacketSender().sendString(getTab().getId(), getComponentId(), "" + getText().send(player));
             }
         }
     }
 
-    public static String WellChecker() {
-            return WellofGoodwill.perkName;
-    }
-
-    public static String WellBoost() {
-        if (WellofGoodwill.getMinutesRemaining() <= 0) {
-            return "EMPTY";
-        } else {
-            return WellofGoodwill.getMinutesRemaining() + " Mins Left!";
-        }
-    }
     public static void checkLocation(Player player) {
         player.sendMessage("The chest is located at " + DeadmanChestEvent.INSTANCE.location());
     }
@@ -346,7 +326,7 @@ public class JournalTab {
     }
 
     public static void send(Player player, TabComponent c) {
-        player.getPacketSender().sendString(c.getTab().getId(), c.getComponentId(), " - " + c.getText().send(player));
+        player.getPacketSender().sendString(c.getTab().getId(), c.getComponentId(), "" + c.getText().send(player));
     }
 
     private static void handleSummaryClick(Player player, int slot) {
@@ -392,7 +372,6 @@ public class JournalTab {
                     "<col=0000FF>Bonus BM PVM:  X2",
                     "<col=0000FF>Noted Grimy Herbs in Wilderness",
                     "<col=0000FF>Bonus BM PVM:  X2",
-                    "<col=0000FF>Bonus PVM Points:  X2",
                     "",
                     "<col=8B0000>---------------- <img=171> $10 - Bronze Donator ----------------",
                     "<col=0000FF>Drop Rate Bonus: 10%",

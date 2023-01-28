@@ -79,7 +79,7 @@ public class BattlePass {
         player.levels.add(new Level(15, 555, 20000, 0));            // Water rune
         player.levels.add(new Level(16, 30306, 1, 0));            // Seasonal Box
         player.levels.add(new Level(17, 30256, 1, 0));            // $10 bond
-        player.levels.add(new Level(18, 30290, 5, 0));            // PvP Box
+        player.levels.add(new Level(18, 995, 125000, 0));            // Coins
         player.levels.add(new Level(19, 995, 150000, 0));        // Coins
         player.levels.add(new Level(20, 30256, 5, 0));            // Vote Multipass
         player.levels.add(new Level(21, 22125, 50, 0));            // Superior Dragon bones
@@ -98,7 +98,7 @@ public class BattlePass {
         player.levels.add(new Level(34, 30256, 3, 0));            // Vote multipass
         player.levels.add(new Level(35, 995, 2000000, 0));        // Coins
         player.levels.add(new Level(36, 30256, 1, 0));            // $10 bond
-        player.levels.add(new Level(37, 22330, 25, 0));            // Pvm Box
+        player.levels.add(new Level(37, 995, 2500000, 0));            // Coins
         player.levels.add(new Level(38, 6829, 3, 0));            // Vote Box
         player.levels.add(new Level(39, 6199, 1, 0));            // Mystery Box
         player.levels.add(new Level(40, 22125, 50, 0));            // Superior dragon bone

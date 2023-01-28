@@ -12,7 +12,7 @@ import java.util.List;
 
 public enum InstanceType {
     GIANT_MOLE("Giant Mole", new Bounds(1728, 5120, 1791, 5247, -1), 300_000, 2000, 60, new Position(1752, 5236, 0), new Position(2985, 3316, 0)),
-    DAGANNOTH_KINGS("Dagannoth Kings", 11589, 400_000, 2_000, 60, new Position(2899, 4449, 0), new Position(1912, 4367, 0)),
+    DAGANNOTH_KINGS("Dagannoth Kings", 11589, 400_000, 2_000, 60, new Position(2900, 4449, 0), new Position(1912, 4367, 0)),
     KRAKEN("Kraken", 9116, 420, 420, 60, new Position(2280, 10022, 0), new Position(2280, 10016, 0)),
     KBD("King Black Dragon", 9033, 500_000, 2_500, 60, new Position(2271, 4680, 0), new Position(3067, 10253, 0)),
     THERMONUCLEAR_SMOKE_DEVIL("Thermonuclear Smoke Devil", new Bounds(2344, 9432, 2376, 9456, 0), 400_000, 1_500, 60, new Position(2376, 9452, 0), new Position(2379, 9452, 0)),

@@ -15,7 +15,7 @@ public class ExperienceLock extends JournalToggle {
     public void handle(Player player) {
         player.experienceLock = !player.experienceLock;
         player.sendMessage("Your experience has been " + (player.experienceLock ? "locked" : "unlocked") + ".");
-
+        send(player);
     }
 
     @Override
@@ -25,11 +25,11 @@ public class ExperienceLock extends JournalToggle {
 
     @Override
     public JournalTab.TabComponent getComponent() {
-        return JournalTab.TabComponent.XP_MODE;
+        return JournalTab.TabComponent.EXP_LOCK;
     }
 
     private String get(Player player) {
-        boolean enabled = player.experienceLock = true;
+        boolean enabled = player.experienceLock;
 
         if (enabled) {
             return Color.GREEN.wrap("On");

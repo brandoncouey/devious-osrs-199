@@ -1,7 +1,7 @@
 package io.ruin.model.shop;
 
 import com.google.common.collect.Maps;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -174,10 +174,10 @@ public class ShopManager {
         if (shop != null)
             shop.open(player);
         if (uuid.equalsIgnoreCase("aecef817-39c1-4a22-9ee9-2815da9dd3df")) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.VOTE_STORE);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.VOTE_STORE);
         }
         if (uuid.equalsIgnoreCase("1woleAXnpl2ZwTVj7hmvcHvgmSRiYGX3FHtr") || uuid.equalsIgnoreCase("IRONMANDONATOR") || uuid.equalsIgnoreCase("DONATOR_STORE")) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.DONATION_STORE);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.DONATION_STORE);
         }
     }
 

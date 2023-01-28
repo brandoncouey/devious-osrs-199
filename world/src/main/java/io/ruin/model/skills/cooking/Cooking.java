@@ -2,7 +2,7 @@ package io.ruin.model.skills.cooking;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.diaries.western.WesternDiaryEntry;
 import io.ruin.model.entity.player.Player;
@@ -104,7 +104,7 @@ public class Cooking {
                     player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.SUMMER_PIE);
                 }
                 if (food.cookedID == 379 && player.getPosition().regionId() == 6713) {
-                    player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.COOK_LOBSTER);
+                    //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.COOK_LOBSTER);
                 }
                 e.delay(4);
             }

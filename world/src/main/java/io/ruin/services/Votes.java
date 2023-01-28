@@ -46,7 +46,6 @@ public class Votes implements Runnable {
                 player.getInventory().addOrDrop(30256, 2);
                 player.expBonus.delaySeconds(900 * 60);
                 player.getPacketSender().sendMessage("You have added 15 minutes of Double XP for your contribution.", null, 102);
-                player.getInventory().addOrDrop(13307, 5000);
                 Broadcast.WORLD.sendNews(player.getName() + " Just voted for Devious!, " + amount + " votes left until Vote Boss Spawns!");
 
                 System.out.println("[Vote] Vote claimed by " + name + ". (sid: " + siteId + ", ip: " + ipAddress + ")");

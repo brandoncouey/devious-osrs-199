@@ -20,23 +20,19 @@ public class GauntletPortal {
 
     public static void toGauntlet(Player player) {
         player.lock();
-//        player.getPacketSender().priffadeOut();
         player.dialogue(
                 new MessageDialogue("<col=880000>Welcome to The Gauntlet.")
         );
         player.getMovement().teleport(3036, 6124, 1);
-//        //        player.getPacketSender().priffadeIn();
         player.unlock();
     }
 
     public static void leaveGauntlet(Player player) {
         player.lock();
-//        player.getPacketSender().priffadeOut();
         player.dialogue(
                 new MessageDialogue("Welcome to the Almodd District")
         );
         player.getMovement().teleport(3228, 6116, 0);
-//        //        player.getPacketSender().priffadeIn();
         player.unlock();
     }
 

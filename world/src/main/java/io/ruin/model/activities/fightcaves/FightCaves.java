@@ -3,7 +3,7 @@ package io.ruin.model.activities.fightcaves;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.ActivityTimer;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.DeathListener;
@@ -105,7 +105,7 @@ public class FightCaves {
                     e.delay(1);
             }
             beginWave();
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.ATTEMPT_FIGHT_CAVES);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.ATTEMPT_FIGHT_CAVES);
         });
     }
 
@@ -143,7 +143,7 @@ public class FightCaves {
                     player.getInventory().addOrDrop(6570, 1);
                     player.getInventory().addOrDrop(6529, tokkul + 4000);
                     player.getCollectionLog().collect(6570);
-                    player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.COMPLETE_FIGHT_CAVES);
+                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.COMPLETE_FIGHT_CAVES);
                 }
             }
             player.fightCaves = null;
@@ -360,7 +360,7 @@ public class FightCaves {
     }
 
     private static int getStartingWave(Player player) {
-        if (player.isMember()) {
+        if (player.isADonator()) {
             return 63;
         } else {
             return 50;

@@ -16,28 +16,38 @@ priceRules:
   buysAt: 50
   changePer: 0
 defaultStock:
+  - id: 2347
+    amount: 1000
   - id: 8794
     amount: 1000
-  - id: 8790
-    amount: 1000
+  - id: 8791
+    amount: 100000
   - id: 4819
-    amount: 1000
+    amount: 100000
   - id: 4820
-    amount: 1000
+    amount: 100000
   - id: 1539
-    amount: 1000
-  - id: 8784
-    amount: 1000
+    amount: 100000
+  - id: 8785
+    amount: 10000
     price: 25000
-  - id: 3420
-    amount: 1000
-  - id: 8786
-    amount: 1000
+  - id: 3421
+    amount: 10000
+  - id: 8787
+    amount: 10000
   - id: 21804
-    amount: 1000
+    amount: 10000
   - id: 8788
-    amount: 1000
+    amount: 10000
   - id: 8792
-    amount: 1000
+    amount: 10000
+  - id: 961
+    amount: 1000000
+  - id: 8779
+    amount: 1000000
+  - id: 8781
+    amount: 1000000
+  - id: 8783
+    amount: 1000000
 
 

@@ -36,7 +36,6 @@ class RevBossLoot : LootTable() {
             LootItem(22636, 1, 1, 1).broadcast(Broadcast.GLOBAL), //morrigans javelin
             LootItem(22647, 1, 1, 1).broadcast(Broadcast.GLOBAL), //zuriels staff
             LootItem(30250, 1, 1, 1).broadcast(Broadcast.GLOBAL), //$10 bond
-            LootItem(30290, 1, 10, 1).broadcast(Broadcast.GLOBAL), //PVP Box
             LootItem(22650, 1, 1, 1).broadcast(Broadcast.GLOBAL), //Zuriel Hood
             LootItem(22653, 1, 1, 1).broadcast(Broadcast.GLOBAL), //Zuriel Robe top
             LootItem(22656, 1, 1, 1).broadcast(Broadcast.GLOBAL), //Zuriel Robe bottom

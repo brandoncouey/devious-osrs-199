@@ -89,24 +89,4 @@ public class PVMBox {
         });
     }
 
-    static {
-        ItemAction.registerInventory(22330, "open", (player, item) -> {
-            player.lock();
-            player.closeDialogue();
-            Item reward = MYSTERY_BOX_TABLE.rollItem();
-
-            item.remove(1);
-            player.getInventory().add(reward);
-            if (reward.lootBroadcast != null)
-                Broadcast.GLOBAL.sendNews(Icon.MYSTERY_BOX, "PVM Box", "" + player.getName() + " just received " + reward.getDef().descriptiveName + "!");
-            player.unlock();
-        });
-
-        /*
-         * Mystery box gifting
-         */
-        ItemAction.registerInventory(22330, "gift", PVMBox::gift);
-
-    }
-
 }

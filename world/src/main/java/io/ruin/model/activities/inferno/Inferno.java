@@ -9,7 +9,7 @@ import io.ruin.model.World;
 import io.ruin.model.activities.ActivityTimer;
 import io.ruin.model.activities.miscpvm.PassiveCombat;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -189,7 +189,7 @@ public class Inferno {
                     player.getInventory().addOrDrop(6529, 16440);
                     Broadcast.WORLD.sendNews(player, player.getName() + " has defeated the Inferno.");
                     player.getCollectionLog().collect(21295);
-                    player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.COMPLETE_INFERNO);
+                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.COMPLETE_INFERNO);
                 }
             }
             player.inferno = null;
@@ -622,7 +622,7 @@ public class Inferno {
     }
 
     private static int getStartingWave(Player player) {
-        if (player.isMember()) {
+        if (player.isADonator()) {
             return 69;
         } else {
             return 60;

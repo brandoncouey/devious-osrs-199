@@ -93,7 +93,7 @@ public class BestiarySearchResult extends JournalEntry {
 
     @Override
     public void send(Player player) {
-        send(player, "<img=109> " + name, Color.BRONZE);
+        send(player, "<img=109> " + name, Color.OPAL);
     }
 
     @Override

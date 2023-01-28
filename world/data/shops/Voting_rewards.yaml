@@ -34,9 +34,6 @@ defaultStock:
   - id: 12846
     amount: 1000
     price: 15
-  - id: 21295
-    amount: 1000
-    price: 500
   - id: 21047
     amount: 1000
     price: 15

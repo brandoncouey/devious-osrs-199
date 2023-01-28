@@ -3,10 +3,10 @@ package io.ruin.model.map.object.actions.impl;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.godwars.GodwarsAltars;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -33,13 +33,13 @@ public class PrayerAltar {
             return;
         }
         if (player.getPrayer().isActive(Prayer.CHIVALRY) && player.getPosition().inBounds(new Bounds(2613, 3304, 2621, 3310, 0))) {
-            player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.PRAY_WITH_CHIVALRY);
+            player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.PRAY_WITH_CHIVALRY);
         }
         if (prayer.currentLevel <= 14 && player.getPosition().regionId() == 13099) {
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.PRAY_SOPHANEM);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.PRAY_SOPHANEM);
         }
         if (player.getPosition().regionId() == 11574) {
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.ALTAR_OF_GUTHIX);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.ALTAR_OF_GUTHIX);
         }
         if (player.wildernessLevel >= 38) {
             player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_ALTAR);
@@ -57,7 +57,7 @@ public class PrayerAltar {
         book.setActive(player);
         TabCombat.updateAutocast(player, false);
         if (altar) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.SPELL_BOOK);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.SPELL_BOOK);
             player.animate(645);
             player.sendMessage("You are now using the " + book.name + " spellbook.");
         }
@@ -71,7 +71,7 @@ public class PrayerAltar {
         World.sendGraphics(624, 0, 0, 3095, 3505, 0);
         bone.altarCounter.increment(player, 1);
         if (bone.id == 536 && player.getPosition().regionId() == 12342) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.DBONE_ALTAR);
+            //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.DBONE_ALTAR);
         }
     }
 

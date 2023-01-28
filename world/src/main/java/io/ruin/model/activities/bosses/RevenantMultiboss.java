@@ -176,10 +176,8 @@ public class RevenantMultiboss extends NPCCombat {
                     new LootItem(13307, Random.get(100_000, 500_000), 3) // Blood Money
             )
             .addTable(20,
-                    new LootItem(22330, 4, 8).broadcast(Broadcast.GLOBAL), // PvM Box
                     new LootItem(6829, Random.get(4, 8), 1).broadcast(Broadcast.GLOBAL), // Vote box
                     new LootItem(30256, Random.get(10, 20), 2).broadcast(Broadcast.GLOBAL), //Vote ticket
-                    new LootItem(30290, 1, 1, 1).broadcast(Broadcast.GLOBAL), //PVP Box
                     new LootItem(4585, 1, 1, 30), //D Skirt
                     new LootItem(1215, 1, 1, 30), //D Dagger
                     new LootItem(1305, 1, 1, 30) //D long

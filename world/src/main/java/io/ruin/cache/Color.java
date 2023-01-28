@@ -8,7 +8,7 @@ public enum Color {
     RED("FF0000"),
     YELLOW("f4d03f"),
     YELLOW2("f4d03f"),
-    GREEN("27ae60"),
+    GREEN("249b31"),
     BLACK("000000"),
     GREY("808080"),
     TEAL("008080"),
@@ -19,10 +19,10 @@ public enum Color {
     CRIMSON("DC143C"),
     MAROON("800000"),
 
-    BLUE("0000FF"),
-    BRONZE("CD7F32"),
-    IRON("CBCDCD"),
-    GOLD("DAA520"),
+    BLUE("1e55e8"),
+    OPAL("c8ee9f"),
+    JADE("adde78"),
+    REDTOPAZ("db1e73"),
     MITHRIL("4c4c70"),
     ADAMANT("3f503f"),
     RUNE("516d78"),
@@ -42,6 +42,7 @@ public enum Color {
     PINK("FFC0CB"),
 
     WHITE("FFFFFF"),
+    SHADED("cbcbcb"),
     WHEAT("F5DEB3"),
     SILVER("C0C0C0"),
 

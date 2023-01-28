@@ -17,14 +17,14 @@ public class BoxOfHealth {
     }
 
     private static void heal(Player player) {
-        if (player.storeAmountSpent > 249 || player.isAdmin()) {
+        if (player.isADonator() || player.isAdmin()) {
             player.lastBoxHeal = System.currentTimeMillis();
             player.animate(833);
             player.graphics(1039);
             player.getCombat().restore();
             player.sendMessage("You have been fully restored!");
         } else {
-            player.sendMessage("You must be at least a Adamant Donator to use this box!");
+            player.sendMessage("You must be a donator to use this box!");
         }
     }
 

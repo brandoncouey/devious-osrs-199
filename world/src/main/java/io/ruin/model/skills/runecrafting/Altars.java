@@ -3,9 +3,9 @@ package io.ruin.model.skills.runecrafting;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
@@ -20,6 +20,8 @@ import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.skills.MaxCapePerks;
+import io.ruin.model.skills.magic.SpellBook;
 import io.ruin.model.stat.StatType;
 
 import java.util.ArrayList;
@@ -169,11 +171,11 @@ public enum Altars {
             }
 
             if (altar.runeID == NATURE.runeID && amount >= 56) {
-                player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.CRAFT_NATURES);
+                player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.CRAFT_NATURES);
             }
 
             if (altar.runeID == DEATH.runeID) {
-                player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.CRAFT_DEATH);
+                player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.CRAFT_DEATH);
             }
 
             if (altar.runeID == EARTH.runeID && amount >= 100) {
@@ -197,11 +199,11 @@ public enum Altars {
             }
 
             if (altar.runeID == BLOOD.runeID) {
-                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.BLOOD_RUNE);
+               // player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.BLOOD_RUNE);
             }
 
             if (altar.runeID == SOUL.runeID) {
-                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.SOUL_RUNE);
+                //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.SOUL_RUNE);
             }
 
             player.unlock();
@@ -387,6 +389,8 @@ public enum Altars {
     private static final int BINDING_NECKLACE = 5521;
 
     static {
+
+
         for (Altars altar : values()) {
             /**
              * Altar
@@ -434,5 +438,10 @@ public enum Altars {
         }
         ObjectAction.register(31807, "enter", (player, obj) -> player.getMovement().teleport(2445, 2818, 0));
         ObjectAction.register(31606, "enter", (player, obj) -> player.getMovement().teleport(1939, 8968, 1));
+
+        ObjectAction.register(31858, "venerate", (player, obj) -> MaxCapePerks.switchBook(player, SpellBook.MODERN));
+        ObjectAction.register(31858, "ancient", (player, obj) -> MaxCapePerks.switchBook(player, SpellBook.ANCIENT));
+        ObjectAction.register(31858, "lunar", (player, obj) -> MaxCapePerks.switchBook(player, SpellBook.LUNAR));
+        ObjectAction.register(31858, "arceuus", (player, obj) -> MaxCapePerks.switchBook(player, SpellBook.ARCEUUS));
     }
 }

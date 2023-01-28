@@ -1,7 +1,7 @@
 package io.ruin.model.skills.hunter.creature.impl;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -78,7 +78,7 @@ public class Bird extends Creature {
         }
         trap.getObject().setId(caughtObject);
         if (npc.getDef().name.equalsIgnoreCase("copper longtail")) {
-            trap.getOwner().getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.CATCH_COPPER);
+            //trap.getOwner().getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CATCH_COPPER);
         }
     }
 

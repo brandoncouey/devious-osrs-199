@@ -4,9 +4,9 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.NPCDef;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import io.ruin.model.diaries.western.WesternDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
@@ -281,22 +281,22 @@ public enum PickPocket {
                     player.getInventory().add(pickpocket.lootTable.rollItem());
                 }
                 if (npc.getId() == 5730) {
-                    player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.PICKPOCKET_ARD);
+                    player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.PICKPOCKET_ARD);
                 }
                 if (npc.getId() == 3295) {
-                    player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.PICKPOCKET_HERO);
+                    player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.PICKPOCKET_HERO);
                 }
                 if (npc.getId() == 3550) {
-                    player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.PICKPOCKET_THUG);
+                    player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.PICKPOCKET_THUG);
                 }
                 if (npc.getId() == 3269) {
-                    player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.PICKPOCKET_GUARD);
+                    player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.PICKPOCKET_GUARD);
                 }
                 if (pickpocket.identifier.equalsIgnoreCase("elf's")) {
                     player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.PICKPOCKET_ELF);
                 }
                 if (npc.getId() == 3271) {
-                    player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.PICKPOCKET_GUARD);
+                    player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.PICKPOCKET_GUARD);
                 }
                 if (npc.getId() == 5832) {
                     player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.PICKPOCKET_MARTIN);

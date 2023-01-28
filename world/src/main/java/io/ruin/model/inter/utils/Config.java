@@ -3,7 +3,6 @@ package io.ruin.model.inter.utils;
 import io.ruin.cache.Varpbit;
 import io.ruin.model.entity.player.Player;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class Config {
@@ -154,6 +153,8 @@ public class Config {
     public static final Config CALLISTO_ADEPT = varpbit(12500, true);
     public static final Config SKOTIZO_VETERAN = varpbit(12503, true);
     public static final Config CHAOS_ELEMENTAL_ADEPT = varpbit(12515, true);
+
+    public static final Config CLANCHAT_TAB_ID = varpbit(13071, true).defaultValue(0).forceSend();
     public static final Config HOARDER = varpbit(12517, true);
     public static final Config THE_FLINCHER = varpbit(12518, true);
     public static final Config CHAOS_FANATIC_ADEPT = varpbit(12520, true);
@@ -597,35 +598,35 @@ public class Config {
     public static final Config KARAMJA_HARD = varpbit(6289, true);
     public static final Config KARAMJA_ELITE = varpbit(6290, true);
 
-    public static final Config KARAMJA_EASY_COMPLETED = varpbit(3577, true);
-    public static final Config KARAMJA_MEDIUM_COMPLETED = varpbit(3598, true);
-    public static final Config KARAMJA_HARD_COMPLETED = varpbit(3610, true);
-    public static final Config KARAMJA_ELITE_COMPLETED = varpbit(4567, true);
+    public static final Config PVM_EASY_COMPLETED = varpbit(3577, true);
+    public static final Config PVM_MEDIUM_COMPLETED = varpbit(3598, true);
+    public static final Config PVM_HARD_COMPLETED = varpbit(3610, true);
+    public static final Config PVM_ELITE_COMPLETED = varpbit(4567, true);
 
-    public static final Config ARDOUGNE_EASY_COMPLETED = varpbit(4499, true);
-    public static final Config ARDOUGNE_MEDIUM_COMPLETED = varpbit(4500, true);
-    public static final Config ARDOUGNE_HARD_COMPLETED = varpbit(4501, true);
-    public static final Config ARDOUGNE_ELITE_COMPLETED = varpbit(4502, true);
+    public static final Config PVP_EASY_COMPLETED = varpbit(4499, true);
+    public static final Config PVP_MEDIUM_COMPLETED = varpbit(4500, true);
+    public static final Config PVP_HARD_COMPLETED = varpbit(4501, true);
+    public static final Config PVP_ELITE_COMPLETED = varpbit(4502, true);
 
     public static final Config ARDOUGNE_EASY = varpbit(6291, true);
     public static final Config ARDOUGNE_MEDIUM = varpbit(6292, true);
     public static final Config ARDOUGNE_HARD = varpbit(6293, true);
     public static final Config ARDOUGNE_ELITE = varpbit(6294, true);
 
-    public static final Config DESERT_EASY_COMPLETED = varpbit(4523, true);
-    public static final Config DESERT_MEDIUM_COMPLETED = varpbit(4524, true);
-    public static final Config DESERT_HARD_COMPLETED = varpbit(4525, true);
-    public static final Config DESERT_ELITE_COMPLETED = varpbit(4526, true);
+    public static final Config MINIGAMES_EASY_COMPLETED = varpbit(4523, true);
+    public static final Config MINIGAMES_MEDIUM_COMPLETED = varpbit(4524, true);
+    public static final Config MINIGAMES_HARD_COMPLETED = varpbit(4525, true);
+    public static final Config MINIGAMES_ELITE_COMPLETED = varpbit(4526, true);
 
     public static final Config DESERT_EASY = varpbit(6295, true);
     public static final Config DESERT_MEDIUM = varpbit(6296, true);
     public static final Config DESERT_HARD = varpbit(6297, true);
     public static final Config DESERT_ELITE = varpbit(6298, true);
 
-    public static final Config FALADOR_EASY_COMPLETED = varpbit(4503, true);
-    public static final Config FALADOR_MEDIUM_COMPLETED = varpbit(4504, true);
-    public static final Config FALADOR_HARD_COMPLETED = varpbit(4505, true);
-    public static final Config FALADOR_ELITE_COMPLETED = varpbit(4506, true);
+    public static final Config SKILLING_EASY_COMPLETED = varpbit(4503, true);
+    public static final Config SKILLING_MEDIUM_COMPLETED = varpbit(4504, true);
+    public static final Config SKILLING_HARD_COMPLETED = varpbit(4505, true);
+    public static final Config SKILLING_ELITE_COMPLETED = varpbit(4506, true);
 
     public static final Config FALADOR_EASY = varpbit(6299, true);
     public static final Config FALADOR_MEDIUM = varpbit(6300, true);
@@ -703,10 +704,10 @@ public class Config {
     public static final Config WESTERN_PROV_HARD = varpbit(6329, true);
     public static final Config WESTERN_PROV_ELITE = varpbit(6330, true);
 
-    public static final Config KOUREND_EASY_COMPLETED = varpbit(7929, true);
-    public static final Config KOUREND_MEDIUM_COMPLETED = varpbit(7930, true);
-    public static final Config KOUREND_HARD_COMPLETED = varpbit(7931, true);
-    public static final Config KOUREND_ELITE_COMPLETED = varpbit(7932, true);
+    public static final Config DEVIOUS_EASY_COMPLETED = varpbit(7929, true);
+    public static final Config DEVIOUS_MEDIUM_COMPLETED = varpbit(7930, true);
+    public static final Config DEVIOUS_HARD_COMPLETED = varpbit(7931, true);
+    public static final Config DEVIOUS_ELITE_COMPLETED = varpbit(7932, true);
 
     public static final Config KOUREND_EASY = varpbit(7933, true);
     public static final Config KOUREND_MEDIUM = varpbit(7934, true);
@@ -1423,6 +1424,7 @@ public class Config {
     public static final Config SLAYER_TASK_1 = varp(262, false);
     public static final Config SLAYER_TASK_2 = varp(263, false);
     public static final Config SLAYER_POINTS = varpbit(4068, true);
+    public static final Config TRIVIA_POINTS = varpbit(4069, true);
 
     public static final Config[] BLOCKED_TASKS = {
             varpbit(3209, false),

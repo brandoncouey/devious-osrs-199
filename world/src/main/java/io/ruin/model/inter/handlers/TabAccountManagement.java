@@ -72,7 +72,7 @@ public class TabAccountManagement {
     }
 
     public static String getDonatorRank(Player player) {
-        if (player.isMember()) {
+        if (player.isADonator()) {
             return SecondaryGroup.DIAMOND.tag() + " Diamond";
         } else if (player.isGroups(SecondaryGroup.RUBY)) {
             return SecondaryGroup.RUBY.tag() + " Ruby";

@@ -194,7 +194,6 @@ public class AvatarOfCreation extends NPCCombat {
                     new LootItem(12696, 25, 2) //super combat pooition noted x25
             )
             .addTable(20,
-                    new LootItem(22330, 3, 3).broadcast(Broadcast.GLOBAL), // PvM Box
                     new LootItem(6829, Random.get(2, 3), 1).broadcast(Broadcast.GLOBAL), // Vote box
                     new LootItem(30256, Random.get(10, 20), 2).broadcast(Broadcast.GLOBAL) //Vote ticket
             )

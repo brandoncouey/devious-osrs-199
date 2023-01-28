@@ -2,11 +2,11 @@ package io.ruin.model.inter.teleports;
 
 import io.ruin.model.activities.bosses.nex.Nex;
 import io.ruin.model.activities.wilderness.Wilderness;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
 import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.diaries.western.WesternDiaryEntry;
@@ -21,12 +21,17 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.Position;
+import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 
 import java.util.ArrayList;
 
 public class TeleportInterface {
-    public static final int INTERFACE_ID = 803;
+    public static final int INTERFACE_ID = 1039;
+
+    public static final int BUTTON_OFFSET = 9;
+
+    public static final int TELEPORTS = 21;
 
     public static void open(Player player) {
         Bounds tournamentLobby = new Bounds(3106, 3510, 3112, 3518, 2);
@@ -86,25 +91,9 @@ public class TeleportInterface {
         }
 
         player.openInterface(InterfaceType.MAIN, INTERFACE_ID);
-
         player.teleportSelectedCategory = -1;
-
         player.searchTeleports = null;
-
-        sendCategories(player);
-        showTeleports(player, 0);
-    }
-
-    private static void sendCategories(Player player) {
-        int index = 0;
-        for (TeleportList.Category cat : TeleportList.categories) {
-            player.getPacketSender().sendClientScript(10184, "iiiisi", index, cat.getSpriteId(), cat.getSw(), cat.getSh(), cat.getName(), 0);
-
-            index++;
-        }
-
-        player.getPacketSender().sendClientScript(10186, "iii", (803 << 16) | 7, (803 << 16) | 8, index * 24);
-        player.getPacketSender().sendAccessMask(INTERFACE_ID, 7, 0, index * 3, 1 << 1);
+        showTeleports(player, 1);
     }
 
     private static void showTeleports(Player player, int category) {
@@ -113,19 +102,36 @@ public class TeleportInterface {
 
         player.searchTeleports = null;
 
-        player.getPacketSender().sendClientScript(10187, "i", (803 << 16) | 13);
-
         TeleportList.Category cat = TeleportList.categories[category];
 
-        if (player.teleportSelectedCategory != -1) {
-            TeleportList.Category prev = TeleportList.categories[player.teleportSelectedCategory];
-
-            player.getPacketSender().sendClientScript(10184, "iiiisi", prev.ordinal(), prev.getSpriteId(), prev.getSw(), prev.getSh(), prev.getName(), category);
+        if (cat.getTeleports() == null) {
+            return;
+        }
+        for (int index = 0; index < 21; index++) {
+            player.getPacketSender().setHidden(INTERFACE_ID, (55 + (index * 10)), true);
         }
 
-        player.getPacketSender().sendClientScript(10184, "iiiisi", category, cat.getSpriteId(), cat.getSw(), cat.getSh(), cat.getName(), category);
+        int teleports = 0;
+        for (TeleportList.Teleport teleport : cat.getTeleports()) {
+            player.getPacketSender().setHidden(INTERFACE_ID, (55 + (teleports * 10)), false);
+            player.getPacketSender().setHidden(INTERFACE_ID, (57 + (teleports * 10)), !teleport.isWild());
+            if (teleport.isWild()) {
+                player.getPacketSender().sendString(INTERFACE_ID, (59 + (teleports * 10)), "Wilderness level:");
+                player.getPacketSender().sendString(INTERFACE_ID, (60 + (teleports * 10)), Integer.toString(Wilderness.getLevel(teleport.getPosition())));
+                player.getPacketSender().sendString(INTERFACE_ID, (62 + (teleports * 10)), "<col=ff0000>Dangerous</col>");
+            }
+            if (cat.equals(TeleportList.Category.MINIGAMES) || cat.equals(TeleportList.Category.CITIES) || cat.equals(TeleportList.Category.SKILLING)) {
+                player.getPacketSender().sendString(INTERFACE_ID, (59 + (teleports * 10)), "");
+                player.getPacketSender().sendString(INTERFACE_ID, (60 + (teleports * 10)), "");
+                player.getPacketSender().sendString(INTERFACE_ID, (62 + (teleports * 10)), "<col=00ff00>Safe</col>");
+            } else {
+                player.getPacketSender().sendString(INTERFACE_ID, (62 + (teleports * 10)), "<col=ff0000>Dangerous</col>");
+            }
+            player.getPacketSender().sendString(INTERFACE_ID, (58 + (teleports * 10)), teleport.getName());
+            teleports++;
+        }
 
-        if (category == 0) {
+       /* if (category == 0) {
             if (player.favoriteTeleports.isEmpty()) {
                 player.getPacketSender().sendString(803, 17, "Your favorite teleports are currently empty.");
             } else {
@@ -158,7 +164,7 @@ public class TeleportInterface {
                 player.getPacketSender().sendString(803, 17, "");
             }
 
-        }
+        }*/
 
         player.teleportSelectedCategory = category;
     }
@@ -169,16 +175,16 @@ public class TeleportInterface {
         if (teleport == null)
             return;
         if (teleport.equals(TeleportList.Teleport.ARDOUGNE)) {
-            player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.TELEPORT_ARDOUGNE);
+            player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.TELEPORT_ARDOUGNE);
         }
         if (teleport.equals(TeleportList.Teleport.DONATION_BOSS)) {
-            if (!player.isMember()) {
+            if (!player.isADonator()) {
                 player.sendMessage("You cannot teleport here without being a member.");
                 return;
             }
         }
         if (teleport.equals(TeleportList.Teleport.FALADOR)) {
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TELEPORT_FALADOR);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.TELEPORT_FALADOR);
         }
         if (teleport.equals(TeleportList.Teleport.NEITIZNOT)) {
             player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TRAVEL_NEITIZNOT);
@@ -214,13 +220,13 @@ public class TeleportInterface {
             player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.TELEPORT_APE_ATOLL);
         }
         if (teleport.equals(TeleportList.Teleport.CATACOMBS_OF_KOUREND)) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.CATACOMBS);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CATACOMBS);
         }
         if (teleport.equals(TeleportList.Teleport.AERIAL_FISHING)) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.MOLCH_ISLAND);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.MOLCH_ISLAND);
         }
         if (teleport.equals(TeleportList.Teleport.GREAT_KOUREND)) {
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.KOUREND);
+            //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.KOUREND);
         }
         if (teleport.equals(TeleportList.Teleport.TROLLHEIM_TROLLS)) {
             player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TROLLHEIM_TELEPORT);
@@ -346,21 +352,83 @@ public class TeleportInterface {
     }
 
     static {
+        ObjectAction.register(13641, "Direct-portal", (player, obj) -> TeleportInterface.open(player));
         NPCAction.register(7046, 1, (player, npc) -> TeleportInterface.open(player));
         NPCAction.register(7046, 2, (player, npc) -> ModernTeleport.teleport(player, player.previousTeleportX, player.previousTeleportY, player.previousTeleportZ));
         InterfaceHandler.register(INTERFACE_ID, h -> {
-            h.actions[7] = (SlotAction) (player, slot) -> showTeleports(player, slot / 3);
-            h.actions[13] = (SlotAction) (player, slot) -> {
-                if ((slot - 1) % 5 == 0) {
-                    handleTeleport(player, (slot - 1) / 5);
-                } else if ((slot - 2) % 5 == 0) {
-                    handleFavorite(player, (slot - 2) / 5);
-                }
-            };
-            h.actions[15] = (SimpleAction) (p) -> {
+            h.actions[18] = (SlotAction) (player, slot) -> showTeleports(player, 1);//Global
+            h.actions[22] = (SlotAction) (player, slot) -> showTeleports(player, 2);//Wilderness
+            h.actions[26] = (SlotAction) (player, slot) -> showTeleports(player, 3);//Monsters
+            h.actions[30] = (SlotAction) (player, slot) -> showTeleports(player, 4);//Skilling
+            h.actions[34] = (SlotAction) (player, slot) -> showTeleports(player, 5);//Bosses
+            h.actions[38] = (SlotAction) (player, slot) -> showTeleports(player, 6);
+            h.actions[50] = (SimpleAction) (p) -> {
                 p.stringInput("Search teleports (name, npc, location):", s -> {
                     search(p, s);
                 });
+            };
+            h.actions[56] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 0);
+            };
+            h.actions[66] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 1);
+            };
+            h.actions[76] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 2);
+            };
+            h.actions[86] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 3);
+            };
+            h.actions[96] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 4);
+            };
+            h.actions[106] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 5);
+            };
+            h.actions[116] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 6);
+            };
+            h.actions[126] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 7);
+            };
+            h.actions[136] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 8);
+            };
+            h.actions[146] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 9);
+            };
+            h.actions[156] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 10);
+            };
+            h.actions[166] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 11);
+            };
+            h.actions[176] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 12);
+            };
+            h.actions[186] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 13);
+            };
+            h.actions[196] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 14);
+            };
+            h.actions[206] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 15);
+            };
+            h.actions[216] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 16);
+            };
+            h.actions[226] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 17);
+            };
+            h.actions[236] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 18);
+            };
+            h.actions[246] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 19);
+            };
+            h.actions[256] = (SlotAction) (player, slot) -> {
+                handleTeleport(player, 20);
             };
         });
     }

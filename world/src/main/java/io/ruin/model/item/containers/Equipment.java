@@ -4,7 +4,7 @@ import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.duelarena.DuelRule;
 import io.ruin.model.combat.RangedWeapon;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.handlers.EquipmentStats;
 import io.ruin.model.item.Item;
@@ -47,15 +47,17 @@ public class Equipment extends ItemContainer {
             }
         }
         if (selectedItem.getId() == 1409) {
-            player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.IBANS_STAFF);
+            player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.IBANS_STAFF);
         }
-        if(selectedDef.maxType && !MaxCape.unlocked(player)) {
-            player.sendMessage("You don't have the required stats to wear this.");
-            return;
-        }
-        if(selectedDef.compType && !CompletionistCape.doneAchieves(player)) {
-            player.sendMessage("You don't have the required stats to wear this.");
-            return;
+        if (!player.isOwner()) {
+            if (selectedDef.maxType && !MaxCape.unlocked(player)) {
+                player.sendMessage("You don't have the required stats to wear this.");
+                return;
+            }
+            if (selectedDef.compType && !CompletionistCape.doneAchieves(player)) {
+                player.sendMessage("You don't have the required stats to wear this.");
+                return;
+            }
         }
 
         if(player.getDuel().isBlocked(selectedDef)) {

@@ -44,17 +44,5 @@ public class PVPBox {
             new LootItem(22610, 1, 1).broadcast(Broadcast.GLOBAL) //Vesta Spear
     );
 
-    static {
-        ItemAction.registerInventory(30290, "open", (player, item) -> {
-            player.lock();
-            player.closeDialogue();
-            Item reward = MYSTERY_BOX_TABLE.rollItem();
-            item.remove(1);
-            player.getInventory().add(reward);
-            if (reward.lootBroadcast != null)
-                Broadcast.GLOBAL.sendNews(Icon.MYSTERY_BOX, "PVP Box", "" + player.getName() + " just received " + reward.getDef().descriptiveName + "!");
-            player.unlock();
-        });
-    }
 
 }

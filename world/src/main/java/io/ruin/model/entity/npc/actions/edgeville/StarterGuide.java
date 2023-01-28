@@ -29,6 +29,7 @@ import io.ruin.model.map.Direction;
 import io.ruin.network.central.CentralClient;
 import io.ruin.services.Referral;
 import io.ruin.utility.Broadcast;
+import io.ruin.utility.Misc;
 import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
@@ -44,27 +45,29 @@ public class StarterGuide {
     private static final NPC GUIDE = SpawnListener.first(306);
 
     private static final Item[] REGULAR_STARTER = new Item[] {
-           new Item(COINS_995, 500000), // gp
+           new Item(COINS_995, 100000), // gp
             new Item(558, 500), // Mind Rune
-            new Item(556, 1500), // Air Rune
+            new Item(556, 2000), // Air Rune
             new Item(554, 1000), // Fire Rune
             new Item(555, 1000), // Water Rune
             new Item(557, 1000), // Earth Rune
-            new Item(562, 1000), // Chaos Rune
-            new Item(560, 500), // Death Rune
+            new Item(562, 500), // Chaos Rune
+            new Item(560, 250), // Death Rune
             new Item(1381, 1), // Air Staff
             new Item(362, 50), // Tuna
+            new Item(841, 1), // Shortbow
+            new Item(884, 500), // Iron Arrow
             new Item(863, 300), // Iron Knives
             new Item(867, 150), // Adamant Knives
             new Item(1169, 1), // Coif
             new Item(1129, 1), // Leather body
             new Item(1095, 1), // Leather Chaps
-            new Item(13385, 1), // Xeric Hat
             new Item(12867, 1), // Blue d hide set
-            new Item(13024, 1), // Rune set
-            new Item(13387, 1), // Xerican Top
+            new Item(13012, 1), // Addy set
             new Item(1323, 1), // Iron scim
-            new Item(1333, 1), // Rune scim
+            new Item(1331, 1), // Addy scim
+            new Item(1712, 1), // Amulet of glory (4)
+            new Item(2552, 1), // RIng of dueling (8)
 
     };
 
@@ -97,53 +100,140 @@ public class StarterGuide {
 
 
     static {
+
+        InterfaceHandler.register(1040, h -> {
+
+            h.actions[21] = (SimpleAction) p -> { // Easy
+                if (!p.newPlayer && p.xpMode == EASY) {
+                    p.sendMessage("You are already on that XP Mode.");
+                    return;
+                }
+                if (!p.newPlayer) {
+                    p.dialogue(new OptionsDialogue("Change XP Mode to Easy?",
+                            new Option("Yes, I want [Easy] as my XP Mode", () -> setXpMode(p, EASY)),
+                            new Option("Nevermind", () -> changeXPMode(p))));
+                    return;
+                }
+                setXpMode(p, EASY);
+                p.getPacketSender().sendString(1040, 15, "Current Mode: " + "Easy");
+            };
+            h.actions[24] = (SimpleAction) p -> { // Normal
+                if (!p.newPlayer && p.xpMode == NORMAL) {
+                    p.sendMessage("You are already on that XP Mode.");
+                    return;
+                }
+                if (!p.newPlayer && XpMode.NORMAL.ordinal() > p.xpMode.ordinal()) {
+                    p.sendMessage("<col=ff0000>You cannot change your XP mode to a harder mode.");
+                    return;
+                }
+                if (!p.newPlayer) {
+                    p.dialogue(new OptionsDialogue("Change XP Mode to Normal?",
+                            new Option("Yes, I want [Normal] as my XP Mode", () -> setXpMode(p, NORMAL)),
+                            new Option("Nevermind", () -> changeXPMode(p))));
+                    return;
+                }
+                setXpMode(p, NORMAL);
+                p.getPacketSender().sendString(1040, 15, "Current Mode: " + "Normal");
+            };
+            h.actions[27] = (SimpleAction) p -> { // Medium
+                if (!p.newPlayer && p.xpMode == MEDIUM) {
+                    p.sendMessage("You are already on that XP Mode.");
+                    return;
+                }
+                if (!p.newPlayer && XpMode.MEDIUM.ordinal() > p.xpMode.ordinal()) {
+                    p.sendMessage("<col=ff0000>You cannot change your XP mode to a harder mode.");
+                    return;
+                }
+                if (!p.newPlayer) {
+                    p.dialogue(new OptionsDialogue("Change XP Mode to Medium?",
+                            new Option("Yes, I want [Medium] as my XP Mode", () -> setXpMode(p, MEDIUM)),
+                            new Option("Nevermind", () -> changeXPMode(p))));
+                    return;
+                }
+                setXpMode(p, MEDIUM);
+                p.getPacketSender().sendString(1040, 15, "Current Mode: " + "Medium");
+            };
+            h.actions[30] = (SimpleAction) p -> { // Hard
+                if (!p.newPlayer && p.xpMode == HARD) {
+                    p.sendMessage("You are already on that XP Mode.");
+                    return;
+                }
+                if (!p.newPlayer && XpMode.HARD.ordinal() > p.xpMode.ordinal()) {
+                    p.sendMessage("<col=ff0000>You cannot change your XP mode to a harder mode.");
+                    return;
+                }
+                if (!p.newPlayer) {
+                    p.dialogue(new OptionsDialogue("Change XP Mode to Hard?",
+                            new Option("Yes, I want [Hard] as my XP Mode", () -> setXpMode(p, HARD)),
+                            new Option("Nevermind", () -> changeXPMode(p))));
+                    return;
+                }
+                setXpMode(p, HARD);
+                p.getPacketSender().sendString(1040, 15, "Current Mode: " + "Hard");
+            };
+            h.actions[33] = (SimpleAction) p -> { // Realistic
+                if (!p.newPlayer && p.xpMode == REALISTIC) {
+                    p.sendMessage("You are already on that XP Mode.");
+                    return;
+                }
+                if (!p.newPlayer) {
+                    p.sendMessage("<col=ff0000>You cannot change your XP mode to a harder mode.");
+                    return;
+                }
+                setXpMode(p, REALISTIC);
+                p.getPacketSender().sendString(1040, 15, "Current Mode: " + "Realistic");
+            };
+
+        });
+
+
         InterfaceHandler.register(1032, h -> {
 
-
-            h.actions[56] = (SimpleAction) p -> p.closeInterface(InterfaceType.MAIN);
-
+            h.actions[80] = (SimpleAction) p ->  {
+                p.openInterface(InterfaceType.MAIN, 1040);
+                p.getPacketSender().sendString(1040, 15, "Current Mode: " + "Normal");
+            };
 
             h.actions[18] = (SimpleAction) p -> { // Regular
                 setXpMode(p, MEDIUM);
                 Config.IRONMAN_MODE.set(p, 0);
-                p.getPacketSender().sendItems(10011, REGULAR_STARTER);
-                p.getPacketSender().sendClientScript(11322);
-                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 48, "Regular");
+                sendItems(p, REGULAR_STARTER);
+                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 73, "Regular");
                         getInfo(p);
             };
 
-            h.actions[24] = (SimpleAction) p -> { // Ironman
+            h.actions[21] = (SimpleAction) p -> { // Ironman
                 Config.IRONMAN_MODE.set(p, 1);
-                p.getPacketSender().sendItems(1032, 43, 0, IRONMAN_STARTER);
-                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 48, "Ironman");
+                sendItems(p, IRONMAN_STARTER);
+                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 73, "Ironman");
                 getInfo(p);
             };
 
-            h.actions[27] = (SimpleAction) p -> { // Ultimate Ironman
-                p.getPacketSender().sendItems(1032, 43, 0, ULTIMATE_IRONMAN_STARTER);
-                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 48, "Ultimate Ironman");
+            h.actions[24] = (SimpleAction) p -> { // Ultimate Ironman
+                sendItems(p, ULTIMATE_IRONMAN_STARTER);
+                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 73, "Ultimate Ironman");
                 Config.IRONMAN_MODE.set(p, 2);
                 getInfo(p);
             };
 
-            h.actions[30] = (SimpleAction) p -> { // Hardcore Ironman
-                p.getPacketSender().sendItems(1032, 43, 0, HARDCORE_IRONMAN_STARTER);
-                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 48, "Hardcore Ironman");
+            h.actions[27] = (SimpleAction) p -> { // Hardcore Ironman
+                sendItems(p, HARDCORE_IRONMAN_STARTER);
+                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 73, "Hardcore Ironman");
                 Config.IRONMAN_MODE.set(p, 3);
                 getInfo(p);
             };
 
 
-            h.actions[33] = (SimpleAction) p -> { // Group Ironman
-                p.getPacketSender().sendItems(1032, 43, 0, GROUP_IRONMAN_STARTER);
-                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 48, "Group Ironman");
+            h.actions[30] = (SimpleAction) p -> { // Group Ironman
+                sendItems(p, GROUP_IRONMAN_STARTER);
+                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 73, "Group Ironman");
                 Config.IRONMAN_MODE.set(p, 4);
                 getInfo(p);
             };
 
-            h.actions[36] = (SimpleAction) p -> { // HC Group Ironman
-                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 48, "Hardcore Group Ironman");
-                p.getPacketSender().sendItems(1032, 43, 0, HARDCORE_GROUP_IRONMAN_STARTER);
+            h.actions[33] = (SimpleAction) p -> { // HC Group Ironman
+                p.getPacketSender().sendString(Interface.STARTER_INTERFACE, 73, "Hardcore Group Ironman");
+                sendItems(p, HARDCORE_GROUP_IRONMAN_STARTER);
                 Config.IRONMAN_MODE.set(p, 5);
                 getInfo(p);
             };
@@ -158,20 +248,24 @@ public class StarterGuide {
                 if (p.newPlayer && !p.inTutorial) {
                     player.startEvent(e -> {
                         Config.IRONMAN_MODE.set(player, 0);
-                        setXpMode(p, MEDIUM);
-                        p.getPacketSender().sendItems(10011, REGULAR_STARTER);
-                        p.getPacketSender().sendClientScript(11322);
-                        player.getPacketSender().sendAccessMask(1032, 43, 0,
-                                127, 1150);
+                        setXpMode(p, NORMAL);
+                        sendItems(p, REGULAR_STARTER);
                         player.lock(LockType.FULL_ALLOW_LOGOUT);
-                        player.openInterface(InterfaceType.MAIN, Interface.STARTER_INTERFACE);
                         CentralClient.sendClanRequest(player.getUserId(), "help");
-                        player.getPacketSender().sendString(Interface.STARTER_INTERFACE, 48, "Regular");
+                        player.openInterface(InterfaceType.MAIN, Interface.STARTER_INTERFACE);
+                        player.getPacketSender().sendString(Interface.STARTER_INTERFACE, 73, "Normal");
                         getInfo(player);
                         while (player.isVisibleInterface(Interface.STARTER_INTERFACE)) {
                             e.delay(1);
                         }
-                        player.unlock();
+                        if (!p.choseXpMode) {
+                            p.openInterface(InterfaceType.MAIN, 1040);
+                            p.getPacketSender().sendString(1040, 15, "Current Mode: " + Misc.formatStringFormal(p.xpMode.name()));
+                        }
+                        while (player.isVisibleInterface(1040)) {
+                            e.delay(1);
+                        }
+                        p.choseXpMode = true;
                         tutorial(player);
                     });
                 }
@@ -191,11 +285,14 @@ public class StarterGuide {
             player.LastipAddress = player.ipAddress;
         });
     }
+    public static void openXPModeSelection(Player player) {
+        player.openInterface(InterfaceType.MAIN, 1040);
+    }
     private static void optionsDialogue(Player player, NPC npc) {
         player.dialogue(new NPCDialogue(npc, "Hello " + player.getName() + ", is there something I could assist you with?"),
                 new OptionsDialogue(
                         new Option("View help pages", () -> Help.open(player)),
-                        //new Option("Replay tutorial", () -> ecoTutorial(player)),
+                        new Option("Change XP Mode", () -> changeXPMode(player)),
                         new Option("Change home point", () -> {
                             npc.startEvent(event -> {
                                 if (!player.dzHome) {
@@ -309,30 +406,29 @@ public class StarterGuide {
                             });
                 }
                 event.waitForDialogue(player);
-                Broadcast.WORLD.sendNews(player.getName() + " has just joined " + World.type.getWorldName() + "!");
+                Broadcast.WORLD.sendNews(player.getName() + " has just joined " + World.type.getWorldName() + " for the first time!");
+                for (Player p : World.players) {
+                    p.getPacketSender().sendMessage(player.getName() + " has just joined " + World.type.getWorldName() + " for the first time!", "", 14);
+                }
                     player.dialogue(new NPCDialogue(guide,
 
                 "Greetings, " + player.getName() + "! Welcome to " + World.type.getWorldName() + ".<br>" +
                                             "Would you like a run down on how the server works?"),
                             new OptionsDialogue("Play the tutorial?",
-                                    new Option("Yes!", () -> startTutorial(guide, player)),
-                                    new Option("No, I know what I'm doing!", () -> {
-                                       /* player.dialogue(new OptionsDialogue("Were you referred by a Content Creator?",
-                                                new Option("Yes!", () -> referralCode(guide, player)),
-                                                new Option("No, I know what I'm doing!", () -> {
-                                player.closeDialogue();
-                                player.inTutorial = false;
-                                player.logoutListener = null;
-                                player.newPlayer = false;
-                                player.finishedIntro = true;
-                                player.setTutorialStage(0);
-                                player.unlock();
-                                guide.addEvent(evt -> {
-                                    evt.delay(2);
-                                    World.sendGraphics(86, 50, 0, guide.getPosition());
-                                    guide.remove();
-                                });
-                            })));*/
+                                    new Option("Yes, Show me the ropes!", () -> startTutorial(guide, player)),
+                                    new Option("No, I'm an experienced player.", () -> {
+                                    player.closeDialogue();
+                                    player.inTutorial = false;
+                                    player.logoutListener = null;
+                                    player.newPlayer = false;
+                                    player.finishedIntro = true;
+                                    player.setTutorialStage(0);
+                                    player.unlock();
+                                    guide.addEvent(evt -> {
+                                        evt.delay(2);
+                                        World.sendGraphics(86, 50, 0, guide.getPosition());
+                                        guide.remove();
+                                    });
                 })));
         }
     });
@@ -458,9 +554,9 @@ public class StarterGuide {
                     "If you have any other questions, there are always<br>" +
                             "helpful users in the help clan chat"));
             e.waitForDialogue(player);
-            player.dialogue(new OptionsDialogue("Were you referred by a Content Creator?",
+            /*player.dialogue(new OptionsDialogue("Were you referred by a Content Creator?",
                     new Option("Yes!", () -> referralCode(guide, player)),
-                    new Option("No, I know what I'm doing!", () -> {
+                    new Option("No, I know what I'm doing!", () -> {*/
             guide.animate(863);
             player.inTutorial = false;
             player.unlock();
@@ -473,12 +569,58 @@ public class StarterGuide {
             });
             player.finishedIntro = true;
             player.getPacketSender().resetCamera();
-        })));
+       // })));
     });
     }
 
 
     private static void giveEcoStarter(Player player) {
+        final int mode = Config.IRONMAN_MODE.get(player);
+        switch (mode) {
+            case 0:
+                for (Item item : REGULAR_STARTER) {
+                    player.getInventory().add(item);
+                }
+                break;
+            case 1:
+                for (Item item : IRONMAN_STARTER) {
+                    player.getInventory().add(item);
+                }
+                break;
+            case 2:
+                for (Item item : ULTIMATE_IRONMAN_STARTER) {
+                    player.getInventory().add(item);
+                }
+                break;
+            case 3:
+                for (Item item : HARDCORE_IRONMAN_STARTER) {
+                    player.getInventory().add(item);
+                }
+                break;
+            case 4:
+                for (Item item : GROUP_IRONMAN_STARTER) {
+                    player.getInventory().add(item);
+                }
+                break;
+            case 5:
+                for (Item item : HARDCORE_GROUP_IRONMAN_STARTER) {
+                    player.getInventory().add(item);
+                }
+                break;
+        }
+    }
+
+    public static void changeXPMode(Player player) {
+        player.startEvent(e -> {
+            player.openInterface(InterfaceType.MAIN, 1040);
+            player.getPacketSender().sendString(1040, 15, "Current Mode: " + "Easy");
+            player.sendMessage("<col=ff0000>You can only change to an easier XP Mode!");
+            player.choseXpMode = false;
+            while (player.isVisibleInterface(1040)) {
+                e.delay(1);
+            }
+            player.choseXpMode = true;
+        });
 
     }
 
@@ -642,7 +784,16 @@ public class StarterGuide {
     }
 
     private static void getInfo(Player player) {
-        player.getPacketSender().sendString(Interface.STARTER_INTERFACE, 50, getCombatRate(player) + "<br>" + getSkillRate(player) + "<br>" + getDropRate(player) + "<br>" + getBonusDropRate(player) + "<br>" + getRestrictions(player));
+        player.getPacketSender().sendString(Interface.STARTER_INTERFACE, 74, getCombatRate(player) + "<br>" + getSkillRate(player) + "<br>" + getDropRate(player) + "<br>" + getBonusDropRate(player) + "<br>" + getRestrictions(player));
+    }
+
+    private static void sendItems(Player player, Item[] items) {
+        for (int index = 0; index < 27; index++) {
+            player.getPacketSender().sendItems(1032, (41 + index), 0, new Item(-1));
+        }
+        for (int index = 0; index < items.length; index++) {
+            player.getPacketSender().sendItems(1032, (41 + index), 0, items[index]);
+        }
     }
 
     public static void setXpMode(Player player, XpMode xpMode) {

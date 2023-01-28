@@ -1,7 +1,7 @@
 package io.ruin.model.skills.agility.shortcut;
 
 import io.ruin.model.World;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
@@ -33,7 +33,7 @@ public enum CreviceShortcut {
             if (World.isEco())
                 player.getStats().addXp(StatType.Agility, xp, true);
             if (player.getRegions().equals(12185)) {
-                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.NARROW_CREVICE);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.NARROW_CREVICE);
             }
             player.unlock();
         })

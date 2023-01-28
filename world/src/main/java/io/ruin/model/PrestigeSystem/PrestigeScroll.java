@@ -63,7 +63,7 @@ static {
         if (player.xpMode == XpMode.HARD) {
             points += 20;
         }
-        if (player.isMember()) {
+        if (player.isADonator()) {
             points += 5;
         }
         if(player.getSecondaryGroup() == SecondaryGroup.DIAMOND) {

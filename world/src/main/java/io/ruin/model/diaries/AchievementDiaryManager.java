@@ -1,12 +1,12 @@
 package io.ruin.model.diaries;
 
-import io.ruin.model.diaries.ardougne.ArdougneAchievementDiary;
-import io.ruin.model.diaries.desert.DesertAchievementDiary;
-import io.ruin.model.diaries.falador.FaladorAchievementDiary;
+import io.ruin.model.diaries.pvp.PvPAchievementDiary;
+import io.ruin.model.diaries.minigames.MinigamesAchievementDiary;
+import io.ruin.model.diaries.skilling.SkillingAchievementDiary;
 import io.ruin.model.diaries.fremennik.FremennikAchievementDiary;
 import io.ruin.model.diaries.kandarin.KandarinAchievementDiary;
-import io.ruin.model.diaries.karamja.KaramjaAchievementDiary;
-import io.ruin.model.diaries.kourend.KourendAchievementDiary;
+import io.ruin.model.diaries.pvm.PvMAchievementDiary;
+import io.ruin.model.diaries.devious.DeviousAchievementDiary;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorAchievementDiary;
 import io.ruin.model.diaries.morytania.MorytaniaAchievementDiary;
 import io.ruin.model.diaries.varrock.VarrockAchievementDiary;
@@ -18,52 +18,53 @@ public final class AchievementDiaryManager {
 
     private final Player player;
     private final VarrockAchievementDiary varrockDiary;
-    private final ArdougneAchievementDiary ardougneDiary;
-    private final FaladorAchievementDiary faladorDiary;
+    private final PvPAchievementDiary pvpDiary;
+    private final SkillingAchievementDiary skillingDiary;
     private final LumbridgeDraynorAchievementDiary lumbridgeDraynorDiary;
-    private final KaramjaAchievementDiary karamjaDiary;
+    private final PvMAchievementDiary pvmDiary;
     private final WildernessAchievementDiary wildernessDiary;
     private final MorytaniaAchievementDiary morytaniaDiary;
     private final KandarinAchievementDiary kandarinDiary;
     private final FremennikAchievementDiary fremennikDiary;
     private final WesternAchievementDiary westernDiary;
-    private final DesertAchievementDiary desertDiary;
-    private final KourendAchievementDiary kourendDiary;
+    private final MinigamesAchievementDiary minigamesDiary;
+    private final DeviousAchievementDiary deviousDiary;
 
     public AchievementDiaryManager(Player player) {
         this.player = player;
         varrockDiary = new VarrockAchievementDiary(player);
-        ardougneDiary = new ArdougneAchievementDiary(player);
-        faladorDiary = new FaladorAchievementDiary(player);
         lumbridgeDraynorDiary = new LumbridgeDraynorAchievementDiary(player);
-        karamjaDiary = new KaramjaAchievementDiary(player);
-        wildernessDiary = new WildernessAchievementDiary(player);
         morytaniaDiary = new MorytaniaAchievementDiary(player);
         kandarinDiary = new KandarinAchievementDiary(player);
         fremennikDiary = new FremennikAchievementDiary(player);
         westernDiary = new WesternAchievementDiary(player);
-        desertDiary = new DesertAchievementDiary(player);
-        kourendDiary = new KourendAchievementDiary(player);
+
+        deviousDiary = new DeviousAchievementDiary(player);
+        minigamesDiary = new MinigamesAchievementDiary(player);
+        pvmDiary = new PvMAchievementDiary(player);
+        pvpDiary = new PvPAchievementDiary(player);
+        skillingDiary = new SkillingAchievementDiary(player);
+        wildernessDiary = new WildernessAchievementDiary(player);
     }
 
     public VarrockAchievementDiary getVarrockDiary() {
         return varrockDiary;
     }
 
-    public ArdougneAchievementDiary getArdougneDiary() {
-        return ardougneDiary;
+    public PvPAchievementDiary getPvpDiary() {
+        return pvpDiary;
     }
 
-    public FaladorAchievementDiary getFaladorDiary() {
-        return faladorDiary;
+    public SkillingAchievementDiary getSkillingDiary() {
+        return skillingDiary;
     }
 
     public LumbridgeDraynorAchievementDiary getLumbridgeDraynorDiary() {
         return lumbridgeDraynorDiary;
     }
 
-    public KaramjaAchievementDiary getKaramjaDiary() {
-        return karamjaDiary;
+    public PvMAchievementDiary getPvmDiary() {
+        return pvmDiary;
     }
 
     public WildernessAchievementDiary getWildernessDiary() {
@@ -86,12 +87,12 @@ public final class AchievementDiaryManager {
         return westernDiary;
     }
 
-    public KourendAchievementDiary getKourendDiary() {
-        return kourendDiary;
+    public DeviousAchievementDiary getDeviousDiary() {
+        return deviousDiary;
     }
 
-    public DesertAchievementDiary getDesertDiary() {
-        return desertDiary;
+    public MinigamesAchievementDiary getMinigamesDiary() {
+        return minigamesDiary;
     }
 
     public Player getPlayer() {

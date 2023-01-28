@@ -155,6 +155,42 @@ public enum DragonfireShield {
 
     public static final Projectile PROJECTILE = new Projectile(1166, 31, 16, 0, 30, 2, 0, 11);
 
+    public static void specialAttack(Player player, Entity target) {
+        if(player.dragonfireShieldCooldown.isDelayed()) {
+            player.dragonfireShieldSpecial = false;
+            player.sendMessage("<col=007f00>Your shield is still on cooldown from its last use!");
+            return;
+        }
+        if (!wearingDragonfireShield(player)) {
+            player.dragonfireShieldSpecial = false;
+            return;
+        }
+        if(player.isLocked()) {
+            player.dragonfireShieldSpecial = false;
+            return;
+        }
+        if(player.getDuel().stage >= 4) {
+            player.sendMessage("You can't use the dragonfire special inside the duel arena!");
+            return;
+        }
+        if(player.joinedTournament) {
+            player.sendMessage("You can't use the dragonfire special inside the tournament.");
+            return;
+        }
+        if(target == null) {
+            player.dragonfireShieldSpecial = false;
+            return;
+        }
+        int shieldId = player.getEquipment().getId(Equipment.SLOT_SHIELD);
+        if(!consumeCharge(player, shieldId))
+            return;
+
+        if(shieldId == 21633 || shieldId == 21634)
+            ancientWyvernSpecial(player, target);
+        else
+            dragonfireShieldSpecial(player, target);
+    }
+
     public static void specialAttack(Player player, Entity target , Item item) {
         if(player.dragonfireShieldCooldown.isDelayed()) {
             player.dragonfireShieldSpecial = false;
@@ -193,6 +229,23 @@ public enum DragonfireShield {
             ancientWyvernSpecial(player, target);
         else
             dragonfireShieldSpecial(player, target);
+    }
+
+    private static boolean consumeCharge(Player player, int shieldId) {
+        Item shield = player.getEquipment().findItem(shieldId);
+        if(shield == null)
+            return false;
+        int charges = AttributeExtensions.getCharges(shield);
+        if(charges <= 0) {
+            setShieldToRegular(shield);
+            return false;
+        } else if(charges == 1) {
+            player.sendMessage("<col=007f00>Your shield has degraded upon using its final charge.");
+            setShieldToRegular(shield);
+        } else {
+            AttributeExtensions.deincrementCharges(shield, 1);
+        }
+        return true;
     }
 
     private static boolean consumeCharge(Player player, Item shield) {

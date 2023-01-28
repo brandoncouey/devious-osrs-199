@@ -4,3 +4,6 @@ out
 *.iml
 /_saved
 /build/
+*.json
+data/
+data/**

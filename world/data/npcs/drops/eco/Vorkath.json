@@ -16,7 +16,6 @@
           { "id": 1305, "min": 1, "max": 1, "weight": 4 },   //Dragon longsword
           { "id": 4087, "min": 1, "max": 1, "weight": 4 },   //Dragon platelegs
           { "id": 4585, "min": 1, "max": 1, "weight": 4 },   //Dragon plateskirt
-          { "id": 22330, "min": 1, "max": 1, "weight": 15 }, //PVM BOX
           { "id": 1392, "min": 15, "max": 25, "weight": 15 },   //Battlestaff (noted)
           { "id": 22111, "min": 1, "max": 1, "weight": 1 }   //Dragonbone necklace
         ]

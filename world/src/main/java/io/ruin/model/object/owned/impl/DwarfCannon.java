@@ -12,6 +12,9 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.listeners.LoginListener;
+import io.ruin.model.inter.dialogue.ItemDialogue;
+import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.dialogue.PlayerDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
 import io.ruin.model.item.actions.ItemObjectAction;
@@ -68,6 +71,7 @@ public class DwarfCannon extends OwnedObject {
     private CannonDirection cannonDirection = CannonDirection.NORTH;
 
     private static final Bounds[] AREA_RESTRICTIONS = {
+            new Bounds(3071, 3471, 3191, 3519, -1),
             new Bounds(1600, 9984, 1727, 10111, -1), //catacomes of kourend
             new Bounds(1728, 5312, 1791, 5375, -1), //ancient cavern
             new Bounds(3281, 3158, 3304, 3178, -1), //alkarid palace
@@ -112,6 +116,24 @@ public class DwarfCannon extends OwnedObject {
             new Bounds(1426, 10069, 1454, 10089, 3),
 
     };
+
+
+    static {
+
+        ObjectAction.register(11868, 1, (player, obj) -> {
+            if (player.cannonLost) {
+                boolean hasSpace = player.getInventory().hasFreeSlots(DwarfCannon.CANNON_PARTS.length);
+                if (!hasSpace) {
+                    player.sendMessage("You need atleast 4 inventory spaces to recover your cannon.");
+                    return;
+                }
+                IntStream.of(DwarfCannon.CANNON_PARTS).forEach(player.getInventory()::add);
+                player.cannonLost = false;
+            } else {
+                player.sendMessage("You do not have a lost dwarf cannon.");
+            }
+        });
+    }
 
     public DwarfCannon(Player owner, int id) {
         super(owner, IDENTIFIER, id, owner.getPosition(), 10, 0);

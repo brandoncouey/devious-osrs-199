@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -63,7 +63,7 @@ public class KaramjaBoats {
             player.getMovement().teleport(2683, 3271, 0);
             player.getPacketSender().clearFade();
             player.dialogue(new MessageDialogue("You board the ship, and arrive in Ardougne."));
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.SAIL_TO_ARDOUGNE);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.SAIL_TO_ARDOUGNE);
         });
     }
 
@@ -84,7 +84,7 @@ public class KaramjaBoats {
             player.getMovement().teleport(3029, 3217, 0);
             player.getPacketSender().clearFade();
             player.dialogue(new MessageDialogue("You board the ship, and arrive in Port Sarim."));
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.SAIL_TO_PORT_SARIM);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.SAIL_TO_PORT_SARIM);
         });
     }
 
@@ -115,7 +115,7 @@ public class KaramjaBoats {
             player.getMovement().teleport(2674, 3144, 0);
             player.getPacketSender().clearFade();
             player.dialogue(new MessageDialogue("You board the ship, and arrive in Port Khazard."));
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TRAVEL_PORT_KHAZARD);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.TRAVEL_PORT_KHAZARD);
         });
     }
 

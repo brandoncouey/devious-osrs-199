@@ -2,7 +2,7 @@ package io.ruin.model.map.object.actions.impl.edgeville;
 
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.actions.edgeville.Nurse;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -13,7 +13,7 @@ public class RejuvenationPool {
 
     private static void drink(Player player, GameObject obj) {
         boolean delayCheck = obj.id != 40004;
-        if (delayCheck && System.currentTimeMillis() - player.rejuvenationPool < 1000 * 30 && !player.isMember()) {
+        if (delayCheck && System.currentTimeMillis() - player.rejuvenationPool < 1000 * 30 && !player.isADonator()) {
             player.dialogue(new MessageDialogue("You can only drink from the " + ObjectDef.get(obj.id).name + " once every minute."));
             return;
         }
@@ -25,7 +25,7 @@ public class RejuvenationPool {
         }
         player.startEvent(event -> {
             player.lock();
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.FOUNTAIN);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.FOUNTAIN);
             player.animate(833);
             Nurse.heal(player, null);
             event.delay(1);

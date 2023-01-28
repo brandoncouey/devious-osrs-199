@@ -56,7 +56,7 @@ public class WorldList {
             out.position(0);
             out.addInt(pos - 4);
             out.position(pos);
-            String result = PostWorker.post("https://www.deviousps.com/integration/world_updater.php?k=" + AUTH_TOKEN, out.toByteArray());
+            String result = PostWorker.post("https://deviousps.com/integration/world_updater.php?k=" + AUTH_TOKEN, out.toByteArray());
             if (result == null || !result.equals("1")) {
                 throw new IOException("Failed to update world list!");
             }

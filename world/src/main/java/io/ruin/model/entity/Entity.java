@@ -708,7 +708,8 @@ public abstract class Entity {
     public HitsUpdate hitsUpdate;
 
     public int hitNoExp(Hit... hits) {
-        final ArrayList<Hit> queuedHits;
+        System.out.println("We are hitting - no exp");
+        /*final ArrayList<Hit> queuedHits;
         synchronized (queuedHitsMutex) {
             final ArrayList<Hit> thisQueuedHits = this.queuedHits;
             if (thisQueuedHits == null) {
@@ -741,45 +742,33 @@ public abstract class Entity {
         }
         if(baseHit.attacker != null && isPlayer()) {
             getCombat().updateAttacker(baseHit.attacker);
-        }
-        return damage;
+        }*/
+        return 1;
     }
 
     public int hit(Hit... hits) {
-        final ArrayList<Hit> queuedHits;
-        synchronized (queuedHitsMutex) {
-            final ArrayList<Hit> thisQueuedHits = this.queuedHits;
-            if (thisQueuedHits == null) {
-                this.queuedHits = queuedHits = new ArrayList<>();
-            } else {
-                queuedHits = thisQueuedHits;
-            }
-        }
-
+        if(queuedHits == null)
+            queuedHits = new ArrayList<>();
         int damage = 0;
-        for (Hit hit : hits) {
-            if (hit.defend(this)) {
-                if (!isLocked(LockType.FULL_NULLIFY_DAMAGE)) {
-                    synchronized (queuedHitsMutex) {
-                        queuedHits.add(hit);
-                    }
-                }
+        for(Hit hit : hits) {
+            if(hit.defend(this)) {
+                if (!isLocked(LockType.FULL_NULLIFY_DAMAGE))
+                    queuedHits.add(hit);
                 damage += hit.damage;
             }
         }
-
         Hit baseHit = hits[0];
-        if (baseHit.type.resetActions && baseHit.resetActions) {
-            if (player != null)
+        if(baseHit.type.resetActions && baseHit.resetActions) {
+            if(player != null)
                 player.resetActions(true, false, false);
             else
                 npc.resetActions(false, false);
         }
-        if (baseHit.attacker != null) {
-            if (baseHit.attacker.player != null && baseHit.attackStyle != null) {
-                if (player != null) //important that this happens here for things that hit multiple targets\
+        if(baseHit.attacker != null) {
+            if(baseHit.attacker.player != null && baseHit.attackStyle != null) {
+                if(player != null) //important that this happens here for things that hit multiple targets
                     baseHit.attacker.player.getCombat().skull(player);
-                if (baseHit.attackSpell == null)
+                if(baseHit.attackSpell == null)
                     CombatUtils.addXp(baseHit.attacker.player, this, baseHit.attackStyle, baseHit.attackType, damage);
             }
             getCombat().updateLastDefend(baseHit.attacker);
@@ -790,7 +779,39 @@ public abstract class Entity {
 
     protected void processHits() {
         checkPoison();
-
+        checkPoison();
+        if(queuedHits != null && !queuedHits.isEmpty()) {
+            //noinspection ForLoopReplaceableByForEach (foreach will cause concurrentmodification exceptions!)
+            for(int i = 0; i < queuedHits.size(); i++) {
+                Hit hit = queuedHits.get(i);
+                if(hit.isNullified() || getCombat().isDead() || isLocked(LockType.FULL_NULLIFY_DAMAGE)) {
+                    hit.removed = true;
+                    continue;
+                }
+                if(hit.finish(this)) {
+                    hit.removed = true;
+                    if(!hit.isHidden())
+                        hitsUpdate.add(hit, getHp(), getMaxHp());
+                    if(hit.attacker != null && hit.attackStyle != null) {
+                        //todo - honestly this retaliate system is so bad...
+                        if(!isLocked() && !getCombat().retaliating && getCombat().allowRetaliate(hit.attacker)) {
+                            getCombat().retaliating = true;
+                            addEvent(e -> {
+                                //e.delay(1);
+                                if(!getCombat().isDead() && !hit.attacker.getCombat().isDead()) {
+                                    getCombat().setTarget(hit.attacker);
+                                    getCombat().faceTarget();
+                                }
+                                getCombat().retaliating = false;
+                            });
+                        }
+                    }
+                }
+            }
+            queuedHits.removeIf(hit -> hit.removed);
+        }
+    }
+/*
         synchronized (queuedHitsMutex) {
             final ArrayList<Hit> queuedHits = this.queuedHits;
             if (queuedHits == null) return;
@@ -828,16 +849,11 @@ public abstract class Entity {
                     }
                 }
             }
-        }
-    }
+        }*/
 
     public void clearHits() {
-        synchronized (queuedHitsMutex) {
-            final ArrayList<Hit> queuedHits = this.queuedHits;
-            if (queuedHits != null) {
-                queuedHits.clear();
-            }
-        }
+        if(queuedHits != null)
+            queuedHits.clear();
     }
 
     /**

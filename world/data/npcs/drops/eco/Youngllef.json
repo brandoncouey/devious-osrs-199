@@ -60,15 +60,13 @@
         "name": "Unique",
         "weight": 1,
         "items": [
-          { "id": 22330, "min": 1, "max": 3, "weight": 15 }, //Coins
-          { "id": 23053, "min": 1, "max": 1, "weight": 10 }, //Coins
           { "id": 4207, "min": 1, "max": 1, "weight": 10 }, //Coins
           { "id": 23971, "min": 1, "max": 1, "weight": 3 }, //Adamantite bar
           { "id": 23975, "min": 1, "max": 1, "weight": 3 }, //Adamantite bar
           { "id": 23979, "min": 1, "max": 1, "weight": 3 },   //Looting bag
           { "id": 25894, "min": 1, "max": 1, "weight": 1 }, //PVP box
           { "id": 23995, "min": 1, "max": 1, "weight": 1 }, //Zuriels staff
-          { "id": 30250, "min": 1, "max": 1, "weight": 1 } //Vesta long sword
+          { "id": 13899, "min": 1, "max": 1, "weight": 1 } //Vesta long sword
         ]
       }
     ]

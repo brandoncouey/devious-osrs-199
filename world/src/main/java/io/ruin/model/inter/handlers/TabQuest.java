@@ -53,7 +53,7 @@ public class TabQuest {
         COMPONENT_16(16, player -> "Total Spent: " + Color.GREEN.wrap("$" + player.storeAmountSpent)),
         COMPONENT_17(17, player -> "Base XP: " + Color.GREEN.wrap(String.valueOf(getXpBonus(player)))),
         COMPONENT_18(18, player -> "Double Drop Chance: " + Color.GREEN.wrap(DoubleDrops.getChance(player) + "%")),
-        COMPONENT_49(49, player -> "PVM Points: " + Color.GREEN.wrap(Integer.toString(player.PvmPoints))),
+        //COMPONENT_49(49, player -> "PVM Points: " + Color.GREEN.wrap(Integer.toString(player.PvmPoints))),
 
         COMPONENT_50(50, player -> "Achievements", (SimpleAction) player -> sendAchievements(player)),
         COMPONENT_51(51, player -> "Drop Tables", (SimpleAction) player -> sendBestiary(player)),

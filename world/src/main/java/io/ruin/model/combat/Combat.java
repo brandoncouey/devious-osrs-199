@@ -25,8 +25,7 @@ public abstract class Combat {
         return dead;
     }
 
-    @Getter
-    @Setter
+    @Getter @Setter
     public boolean truelyDead;
 
     /**
@@ -71,7 +70,7 @@ public abstract class Combat {
     }
 
     public boolean hasAttackDelay() {
-        if (isAttacking(lastAttackTickDelay + attackDelayTicks))
+        if(isAttacking(lastAttackTickDelay + attackDelayTicks))
             return true;
         attackDelayTicks = 0;
         return false;
@@ -87,29 +86,20 @@ public abstract class Combat {
 
     public Entity lastAttacker;
 
-    public Entity currentAttacker;
-
     public void updateLastDefend(Entity attacker) {
         lastDefendTick = Server.currentTick();
         lastAttacker = attacker;
-    }
-
-    public void updateAttacker(Entity attacker) {
-        lastDefendTick = Server.currentTick();
-        currentAttacker = attacker;
     }
 
     public boolean isDefending(long timeoutTicks) {
         return Server.currentTick() - lastDefendTick < timeoutTicks;
     }
 
-    public static final Bounds REV_BOUNDS = new Bounds(3145, 10056, 3267, 10232, 0);
-
     private static final Bounds EDGEVILLE_BOUNDS = new Bounds(2993, 3523, 3124, 3597, -1);
 
     public boolean allowPj(Entity attacker) {
         return attacker == lastAttacker ||
-                !isDefending(attacker.getPosition().inBounds(EDGEVILLE_BOUNDS) ? 8 : 8);
+                !isDefending(attacker.getPosition().inBounds(EDGEVILLE_BOUNDS) ? 16 : 8);
     }
 
     /**
@@ -119,13 +109,13 @@ public abstract class Combat {
     public HashMap<Integer, Killer> killers = new HashMap<>();
 
     public void addKiller(Entity attacker, int damage) {
-        if (attacker.player == null)
+        if(attacker.player == null)
             return;
-        if (killers == null)
+        if(killers == null)
             killers = new HashMap<>();
         int userId = attacker.player.getUserId();
         Killer k = killers.get(userId);
-        if (k == null)
+        if(k == null)
             k = new Killer();
         k.player = attacker.player;
         k.damage += damage;
@@ -133,18 +123,18 @@ public abstract class Combat {
     }
 
     public void resetKillers() {
-        if (killers != null)
+        if(killers != null)
             killers.clear();
     }
 
     public Killer getKiller() {
-        if (killers == null) {
+        if(killers == null) {
             Server.logWarning("getKiller(): killers were null, no killer was selected!");
             return null;
         }
         Killer highestKiller = null;
-        for (Killer killer : killers.values()) {
-            if (highestKiller == null || killer.damage > highestKiller.damage)
+        for(Killer killer : killers.values()) {
+            if(highestKiller == null || killer.damage > highestKiller.damage)
                 highestKiller = killer;
         }
         return highestKiller;

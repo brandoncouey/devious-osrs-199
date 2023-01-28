@@ -83,6 +83,7 @@ public class Punishment {
 
     public static void unjail(Player p1, Player p2) {
         p2.jailOresAssigned = 0; //this will automatically finish their sentence lol
+        p2.jailerName = null;
         p1.sendMessage("You unjailed " + p2.getName() + ".");
         logPunishment(p1, p2, -2, "unjailed");
     }
@@ -189,7 +190,7 @@ public class Punishment {
             }
         }
         if (!World.isDev()) {
-            DiscordConnection.jda.getTextChannelById(DiscordConnection.CHANNEL_PUNISHMENTS).sendMessageEmbeds(builder.build()).queue();
+            //DiscordConnection.jda.getTextChannelById(DiscordConnection.CHANNEL_PUNISHMENTS).sendMessageEmbeds(builder.build()).queue();
         }
     }
 

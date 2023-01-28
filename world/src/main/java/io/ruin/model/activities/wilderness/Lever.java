@@ -2,12 +2,9 @@ package io.ruin.model.activities.wilderness;
 
 import io.ruin.model.activities.pvminstances.InstanceDialogue;
 import io.ruin.model.activities.pvminstances.InstanceType;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.player.Player;
-import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.inter.dialogue.OptionsDialogue;
-import io.ruin.model.inter.utils.Option;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -41,7 +38,7 @@ public class Lever {
          */
         ObjectAction.register(1814, 2561, 3311, 0, "pull", (player, obj) -> {
             pull(player, obj, 3154, 3924, "...and teleport into the wilderness.");
-            player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.WILDERNESS_LEVER);
+            player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.WILDERNESS_LEVER);
 
             player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.WILDERNESS_LEVER);
         });

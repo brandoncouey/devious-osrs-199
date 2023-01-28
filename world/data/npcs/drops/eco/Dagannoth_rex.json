@@ -40,7 +40,7 @@
         "weight": 1,
         "items": [
           { "id": 2456, "min": 1, "max": 1, "weight": 6 }, //Antifire potion(2)
-          { "id": 22330, "min": 1, "max": 1, "weight": 5 }, //PVM BOX
+
           { "id": 141, "min": 1, "max": 1, "weight": 3 }, //Prayer potion(2)
           { "id": 147, "min": 1, "max": 1, "weight": 3 }, //Super attack(2)
           { "id": 159, "min": 1, "max": 1, "weight": 3 }, //Super strength(2)

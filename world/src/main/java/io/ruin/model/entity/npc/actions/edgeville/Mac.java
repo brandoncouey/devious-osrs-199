@@ -58,7 +58,7 @@ public class Mac {
                 .flatMap(Stream::of)
                 .collect(Collectors.toList());
 
-        List<ShopItem> capes200m = Stream.of(types)
+        List<ShopItem> capes104M = Stream.of(types)
                 .map(statType -> {
                     ShopItem cape200m = ShopItem.builder()
                             .id(statType.masterCapeId)
@@ -66,7 +66,7 @@ public class Mac {
                             .amount(100)
                             .price(200000)
                             .requirementCheckType(RequirementCheckType.REQUIRED_TO_BUY)
-                            .additionalRequirements(player -> player.getStats().get(statType).experience < 200_000_000 ? "You need 200m xp in " + statType.descriptiveName + " to buy that" : "")
+                            .additionalRequirements(player -> player.getStats().get(statType).experience < 104_000_000 ? "You need 104m xp in " + statType.descriptiveName + " to buy that" : "")
                             .build();
 
                     return new ShopItem[]{cape200m};
@@ -127,7 +127,7 @@ public class Mac {
                 .currency(Currency.COINS)
                 .canSellToStore(false)
                 .accesibleByRegular(true)
-                .defaultStock(capes200m)
+                .defaultStock(capes104M)
                 .generatedByBuilder(true)
                 .accessibleByIronMan(true)
                 .build();

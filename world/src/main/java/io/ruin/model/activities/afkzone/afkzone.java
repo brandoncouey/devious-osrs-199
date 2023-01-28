@@ -39,7 +39,6 @@ public class afkzone {
                     return;
                 }
                 p.animate(2282);
-                p.getInventory().addOrDrop(13307, 2); // 6k an hour
                 Item rolled = rollHerbs();
                 p.getInventory().add(rolled);
                 p.getStats().addXp(StatType.Herblore, 3.0, true);
@@ -65,7 +64,6 @@ public class afkzone {
                 }
                 int anim = secateurs == 1 ? 3342 : 2279;
                 p.animate(anim);
-                p.getInventory().addOrDrop(13307, 2); // 6k an hour
                 p.getStats().addXp(StatType.Farming, 3.0, true);
                 e.delay(3);
             }
@@ -81,7 +79,6 @@ public class afkzone {
                     return;
                 }
                 p.animate(624);
-                p.getInventory().addOrDrop(13307, 2); // 6k an hour
                 Item rolled = rollOres();
                 p.getInventory().add(rolled);
                 p.getStats().addXp(StatType.Mining, 2.0, true);
@@ -100,7 +97,6 @@ public class afkzone {
                     return;
                 }
                 p.animate(618);
-                p.getInventory().addOrDrop(13307, 2); // 6k an hour
                 p.getStats().addXp(StatType.Fishing, 3.0, true);
                 e.delay(3);
             }
@@ -116,7 +112,6 @@ public class afkzone {
                     return;
                 }
                 p.animate(867);
-                p.getInventory().addOrDrop(13307, 2); // 6k an hour
                 p.getStats().addXp(StatType.Woodcutting, 3.0, true);
                 e.delay(3);
             }
@@ -128,7 +123,6 @@ public class afkzone {
         p.startEvent(e -> {
             while (true) {
                 p.animate(422);
-                p.getInventory().addOrDrop(13307, 2); // 6k an hour
                 e.delay(3);
             }
         });

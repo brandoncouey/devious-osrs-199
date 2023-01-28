@@ -36,11 +36,11 @@ public class TwiggyOKorn {
                                 new NPCDialogue(npc, "Would you like to view the achievement rewards shop?"),
                                 new OptionsDialogue("View the Achievement Rewards?",
                                         new Option("Yes", () -> {
-                                            if (!player.getDiaryManager().getKourendDiary().hasDoneAll()) {
+                                            if (!player.getDiaryManager().getDeviousDiary().hasDoneAll()) {
                                                 player.sendMessage("You need to complete the Kourend Diary Before you can Access the shop!");
                                                 return;
                                             }
-                                            if (!player.getDiaryManager().getArdougneDiary().hasDoneAll()) {
+                                            if (!player.getDiaryManager().getPvpDiary().hasDoneAll()) {
                                                 player.sendMessage("You need to complete the Ardougne Diary Before you can Access the shop!");
                                                 return;
                                             }
@@ -48,7 +48,7 @@ public class TwiggyOKorn {
                                                 player.sendMessage("You need to complete the Western Diary Before you can Access the shop!");
                                                 return;
                                             }
-                                            if (!player.getDiaryManager().getFaladorDiary().hasDoneAll()) {
+                                            if (!player.getDiaryManager().getSkillingDiary().hasDoneAll()) {
                                                 player.sendMessage("You need to complete the Falador Diary Before you can Access the shop!");
                                                 return;
                                             }
@@ -60,7 +60,7 @@ public class TwiggyOKorn {
                                                 player.sendMessage("You need to complete the Kandarin Diary Before you can Access the shop!");
                                                 return;
                                             }
-                                            if (!player.getDiaryManager().getKaramjaDiary().hasDoneAll()) {
+                                            if (!player.getDiaryManager().getPvmDiary().hasDoneAll()) {
                                                 player.sendMessage("You need to complete the Karamja Diary Before you can Access the shop!");
                                                 return;
                                             }

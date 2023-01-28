@@ -4,9 +4,20 @@ package io.ruin;
 import io.ruin.model.World;
 import io.ruin.model.activities.wellofgoodwill.WellofGoodwill;
 
+import java.util.Arrays;
+
 public class Configuration {
 
-    public static final String[] OWNERS = {"Ethan", "Brad"};
+    public static final String[] OWNERS = {"float32", "brad"};
+
+    public static final String[] ADMINS = {};
+
+    public static boolean isAdmin(String username) {
+        for (String n : OWNERS) {
+            if (n.equalsIgnoreCase(username)) return true;
+        }
+        return false;
+    }
 
     public static int GLOBAL_XP_MULTIPLIER() {
         int percentage = 100;

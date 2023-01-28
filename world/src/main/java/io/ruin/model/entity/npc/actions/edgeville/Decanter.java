@@ -7,6 +7,7 @@ import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.actions.SimpleAction;
+import io.ruin.model.shop.ShopManager;
 import io.ruin.model.skills.herblore.Potion;
 
 /*
@@ -20,6 +21,7 @@ public class Decanter {
     }
 
     static {
+        NPCAction.register(5449, "trade", (player, npc) -> ShopManager.openIfExists(player, "Yfx1X30YFes787f3zcYDP3HPASHQje11gO"));
         NPCAction.register(5449, "decant", Decanter::decantPotions);
         InterfaceHandler.register(Interface.POTION_DECANTING, h -> {
             h.actions[3] = (SimpleAction) p -> Potion.decant(p, 1);

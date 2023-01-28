@@ -12,16 +12,16 @@ import java.util.concurrent.CompletableFuture;
  * Descending order from highest priority group
  */
 public enum SecondaryGroup {
-    ZENYTE(200, 17, 53, 75),
-    ONYX(190, 17, 52, 75),
-    DRAGONSTONE(180, 17, 51, 75),
-    DIAMOND(17, 17, 50, 75),
-    RUBY(16, 13, 49, 50),
-    EMERALD(150, 14, 48, 45),
-    SAPPHIRE(140, 15, 47, 40),
-    RED_TOPAZ(13, 16, 46, 30),
-    JADE(12, 19, 45, 20),
-    OPAL(11, 18, 44, 10),
+    ZENYTE(200, 200, 55, 75),
+    ONYX(190, 190, 54, 75),
+    DRAGONSTONE(180, 180, 53, 75),
+    DIAMOND(17, 17, 49, 75),
+    RUBY(16, 13, 48, 50),
+    EMERALD(150, 14, 47, 45),
+    SAPPHIRE(140, 15, 46, 40),
+    RED_TOPAZ(13, 16, 45, 30),
+    JADE(12, 19, 44, 20),
+    OPAL(11, 18, 43, 10),
     NONE(2, 0, 0, 0);
 
     public final int id;

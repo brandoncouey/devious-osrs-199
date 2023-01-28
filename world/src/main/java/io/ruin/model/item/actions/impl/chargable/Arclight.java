@@ -4,7 +4,7 @@ import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -73,7 +73,7 @@ public class Arclight {
             player.dialogue(new MessageDialogue("At least 3 ancient shards are required to empower Darklight."));
             return;
         }
-        player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.ARCLIGHT);
+        //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.ARCLIGHT);
         player.getInventory().remove(SHARD, 3);
         item.setId(ARCLIGHT);
         item.putAttribute(AttributeTypes.CHARGES, 1000);

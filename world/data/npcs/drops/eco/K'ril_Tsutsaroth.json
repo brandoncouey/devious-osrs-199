@@ -57,8 +57,7 @@
           { "id": 565, "min": 80, "max": 90, "weight": 75 }, //Blood rune
           { "id": 2486, "min": 7, "max": 13, "weight": 75 }, //Grimy lantadyme (noted)
           { "id": 5302, "min": 3, "max": 3, "weight": 75 }, //Lantadyme seed
-          { "id": 24365, "min": 1, "max": 1, "weight": 20 }, //Clue scroll (elite)
-          { "id": 22330, "min": 1, "max": 1, "weight": 50 } //PVM BOX
+          { "id": 24365, "min": 1, "max": 1, "weight": 20 } //Clue scroll (elite)
         ]
       },
 	  {

@@ -4,6 +4,7 @@ import io.ruin.Server;
 import io.ruin.api.protocol.Response;
 import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.protocol.login.LoginRequest;
+import io.ruin.api.utils.WhitelistLogins;
 import io.ruin.data.impl.login_set;
 import io.ruin.model.World;
 import io.ruin.model.inter.Interface;
@@ -78,6 +79,11 @@ public class PlayerLogin extends LoginRequest {
                     deny(Response.INVALID_LOGIN);
                     return;
                 }
+            }
+            if (!WhitelistLogins.isAllowed(info.name)) {
+                deny(Response.INVALID_LOGIN);
+                System.out.println("Not allowed! ::" +info.name);
+                return;
             }
 
             player.setIndex(index);

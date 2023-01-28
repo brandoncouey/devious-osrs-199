@@ -25,7 +25,7 @@ public class CoinBox {
         item.remove();
         int amount = Random.get(150) == 5 ? Random.get(2000000, 100000000) : Random.get(2000000, 4000000);
         player.getInventory().add(COINS_995, amount);
-        player.sendMessage("You have received " + Color.GOLD.wrap(NumberUtils.formatNumber(amount) + "") + " coins from the Coinbox");
+        player.sendMessage("You have received " + Color.REDTOPAZ.wrap(NumberUtils.formatNumber(amount) + "") + " coins from the Coinbox");
         player.unlock();
     }
 }

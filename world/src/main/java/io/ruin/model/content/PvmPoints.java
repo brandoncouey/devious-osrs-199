@@ -32,7 +32,7 @@ public class PvmPoints {
         } else {
             points = 1;
         }
-        if (player.isMember())
+        if (player.isADonator())
             points = points * 2;
         player.PvmPoints += points;
         if (player.PvmPoints < (points + player.PvmPoints)) {

@@ -70,18 +70,18 @@ public class Bonds {
     }
 
     public static String getRemainingTime(Player player) {
-        return toDuration(player.memberTimeLeft - System.currentTimeMillis());
+        return toDuration(System.currentTimeMillis() - System.currentTimeMillis());
     }
 
     static {
         ItemAction.registerInventory(30307, 1, (player, item) -> {
             player.getInventory().remove(30307, 1);
-            if (player.memberTimeLeft < System.currentTimeMillis()) {
+            /*if (player.memberTimeLeft < System.currentTimeMillis()) {
                 player.memberTimeLeft = System.currentTimeMillis() + DAYS.toMillis(3);
             } else {
                 player.memberTimeLeft += DAYS.toMillis(3);
             }
-            player.memberStatus = 1;
+            player.memberStatus = 1;*/
             player.sendMessage("You have added 3 Days to your current membership time. Your new remaining time is: " + getRemainingTime(player));
         });
         ItemAction.registerInventory(30248, 1, ((player, item) -> redeem(player, 5, item)));
@@ -93,12 +93,12 @@ public class Bonds {
         ItemAction.registerInventory(30254, 1, ((player, item) -> redeem(player, 500, item)));
         ItemPlayerAction.register(30307, (player, item, other) -> {
             player.getInventory().remove(30307, 1);
-            if (other.memberTimeLeft < System.currentTimeMillis()) {
+           /* if (other.memberTimeLeft < System.currentTimeMillis()) {
                 other.memberTimeLeft = System.currentTimeMillis() + DAYS.toMillis(3);
             } else {
                 other.memberTimeLeft += DAYS.toMillis(3);
             }
-            other.memberStatus = 1;
+            other.memberStatus = 1;*/
             other.sendMessage("You have been gifted 3 Days of Membership from " + player.getName());
             player.sendMessage("You have gifted 3 Days of Membership to " + other.getName());
         });

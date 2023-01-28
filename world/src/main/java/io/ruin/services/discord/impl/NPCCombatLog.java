@@ -19,6 +19,6 @@ public class NPCCombatLog {
         eb.addField("NPC ID: ", String.valueOf(npc.getId()), true);
         eb.addField("NPC Name: ", npc.getDef().name, true);
         eb.setColor(new java.awt.Color(0xB00D03));
-        DiscordConnection.jda.getTextChannelById("991831248337125376").sendMessage(eb.build()).queue();
+        //DiscordConnection.jda.getTextChannelById("991831248337125376").sendMessage(eb.build()).queue();
     }
 }

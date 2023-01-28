@@ -11,6 +11,7 @@ import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.IPAddress;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.ServerWrapper;
+import io.ruin.api.utils.WhitelistLogins;
 import io.ruin.model.World;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.entity.player.Player;
@@ -118,8 +119,6 @@ public class LoginDecoder extends MessageDecoder<Channel> {
         }
 
 
-
-
         int[] keys = new int[]{ rsaBuffer.readInt(), rsaBuffer.readInt(), rsaBuffer.readInt(), rsaBuffer.readInt() };
         long reportedSeed = rsaBuffer.readLong();
         int[] previousXteaKeys;
@@ -159,9 +158,6 @@ public class LoginDecoder extends MessageDecoder<Channel> {
         String name = in.readString();
         Pattern pattern = Pattern.compile("[A-Za-z0-9_ ]+");
         if (name == null || name.length() > 12 || name.length() < 3 || (name = name.trim()).isEmpty() || !pattern.matcher(name).matches() || password == null || (password = password.trim()).isEmpty()) {
-            /**
-             * Invalid login
-             */
             Response.INVALID_LOGIN.send(channel);
             return null;
         }

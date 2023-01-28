@@ -1,19 +1,19 @@
 package io.ruin.model.diaries;
 
-import io.ruin.model.diaries.ardougne.ArdougneAchievementDiary;
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
-import io.ruin.model.diaries.desert.DesertAchievementDiary;
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
-import io.ruin.model.diaries.falador.FaladorAchievementDiary;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPAchievementDiary;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesAchievementDiary;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingAchievementDiary;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.fremennik.FremennikAchievementDiary;
 import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
 import io.ruin.model.diaries.kandarin.KandarinAchievementDiary;
 import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
-import io.ruin.model.diaries.karamja.KaramjaAchievementDiary;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
-import io.ruin.model.diaries.kourend.KourendAchievementDiary;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMAchievementDiary;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousAchievementDiary;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorAchievementDiary;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import io.ruin.model.diaries.morytania.MorytaniaAchievementDiary;
@@ -26,6 +26,7 @@ import io.ruin.model.diaries.wilderness.WildernessAchievementDiary;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.utils.Config;
 
 import java.util.HashSet;
@@ -46,19 +47,19 @@ public abstract class AchievementDiary<T extends Enum<T>> {
 
     static {
         LoginListener.register(p -> p.DiaryRecorder.forEach((s, integer) -> {
-            for (ArdougneDiaryEntry value : ArdougneDiaryEntry.values()) {
+            for (PvPDiaryEntry value : PvPDiaryEntry.values()) {
                 if (s.equalsIgnoreCase(value.name())) {
-                    p.getDiaryManager().getArdougneDiary().setAchievementStage(value, integer, false);
+                    p.getDiaryManager().getPvpDiary().setAchievementStage(value, integer, false);
                 }
             }
-            for (DesertDiaryEntry value : DesertDiaryEntry.values()) {
+            for (MinigamesDiaryEntry value : MinigamesDiaryEntry.values()) {
                 if (s.equalsIgnoreCase(value.name())) {
-                    p.getDiaryManager().getDesertDiary().setAchievementStage(value, integer, false);
+                    p.getDiaryManager().getMinigamesDiary().setAchievementStage(value, integer, false);
                 }
             }
-            for (FaladorDiaryEntry value : FaladorDiaryEntry.values()) {
+            for (SkillingDiaryEntry value : SkillingDiaryEntry.values()) {
                 if (s.equalsIgnoreCase(value.name())) {
-                    p.getDiaryManager().getFaladorDiary().setAchievementStage(value, integer, false);
+                    p.getDiaryManager().getSkillingDiary().setAchievementStage(value, integer, false);
                 }
             }
             for (FremennikDiaryEntry value : FremennikDiaryEntry.values()) {
@@ -71,12 +72,12 @@ public abstract class AchievementDiary<T extends Enum<T>> {
                     p.getDiaryManager().getKandarinDiary().setAchievementStage(value, integer, false);
                 }
             }
-            for (KaramjaDiaryEntry value : KaramjaDiaryEntry.values()) {
+            for (PvMDiaryEntry value : PvMDiaryEntry.values()) {
                 if (s.equalsIgnoreCase(value.name())) {
-                    p.getDiaryManager().getKaramjaDiary().setAchievementStage(value, integer, false);
+                    p.getDiaryManager().getPvmDiary().setAchievementStage(value, integer, false);
                 }
             }
-            for (LumbridgeDraynorDiaryEntry value : LumbridgeDraynorDiaryEntry.values()) {
+            /*for (LumbridgeDraynorDiaryEntry value : LumbridgeDraynorDiaryEntry.values()) {
                 if (s.equalsIgnoreCase(value.name())) {
                     p.getDiaryManager().getLumbridgeDraynorDiary().setAchievementStage(value, integer, false);
                 }
@@ -105,7 +106,7 @@ public abstract class AchievementDiary<T extends Enum<T>> {
                 if (s.equalsIgnoreCase(value.name())) {
                     p.getDiaryManager().getKourendDiary().setAchievementStage(value, integer, false);
                 }
-            }
+            }*/
         }));
     }
 
@@ -152,119 +153,121 @@ public abstract class AchievementDiary<T extends Enum<T>> {
     }
 
     public void uponCompletion(T achievement) {
+        player.openInterface(InterfaceType.UNUSED_OVERLAY2, 660);
+        player.getPacketSender().sendClientScript(3343, "iss", 0xff981f, "Achievement Diary", "Well done! You have completed a task in " + getName() + "!");
         player.sendMessage("<col=8B0000>Well done! You have completed a task in the " + getName() + ". Your Achievement");
         player.sendMessage("<col=8B0000>Diary has been updated.");
 
-        for (ArdougneDiaryEntry easy : ArdougneAchievementDiary.EASY_TASKS) {
+        for (PvPDiaryEntry easy : PvPAchievementDiary.EASY_TASKS) {
             if (easy.name().equalsIgnoreCase(achievement.name())) {
                 player.easyArdy += 1;
                 Config.ARDOUGNE_EASY.set(player, player.easyArdy);
                 if (player.easyArdy == 4) {
-                    Config.ARDOUGNE_EASY_COMPLETED.set(player, 1);
+                    Config.PVP_EASY_COMPLETED.set(player, 1);
                 }
             }
         }
 
-        for (ArdougneDiaryEntry medium : ArdougneAchievementDiary.MEDIUM_TASKS) {
+        for (PvPDiaryEntry medium : PvPAchievementDiary.MEDIUM_TASKS) {
             if (medium.name().equalsIgnoreCase(achievement.name())) {
                 player.medArdy += 1;
                 Config.ARDOUGNE_MEDIUM.set(player, player.medArdy);
                 if (player.medArdy == 4) {
-                    Config.ARDOUGNE_MEDIUM_COMPLETED.set(player, 1);
+                    Config.PVP_MEDIUM_COMPLETED.set(player, 1);
                 }
             }
         }
 
-        for (ArdougneDiaryEntry hard : ArdougneAchievementDiary.HARD_TASKS) {
+        for (PvPDiaryEntry hard : PvPAchievementDiary.HARD_TASKS) {
             if (hard.name().equalsIgnoreCase(achievement.name())) {
                 player.hardArdy += 1;
                 Config.ARDOUGNE_HARD.set(player, player.hardArdy);
                 if (player.hardArdy == 4) {
-                    Config.ARDOUGNE_HARD_COMPLETED.set(player, 1);
+                    Config.PVP_HARD_COMPLETED.set(player, 1);
                 }
             }
         }
 
-        for (ArdougneDiaryEntry elite : ArdougneAchievementDiary.ELITE_TASKS) {
+        for (PvPDiaryEntry elite : PvPAchievementDiary.ELITE_TASKS) {
             if (elite.name().equalsIgnoreCase(achievement.name())) {
                 player.eliteArdy += 1;
                 Config.ARDOUGNE_ELITE.set(player, player.eliteArdy);
                 if (player.eliteArdy == 3) {
-                    Config.ARDOUGNE_ELITE_COMPLETED.set(player, 1);
+                    Config.PVP_ELITE_COMPLETED.set(player, 1);
                     player.getInventory().addOrDrop(30307, 1);
                 }
             }
         }
-        for (DesertDiaryEntry easy : DesertAchievementDiary.EASY_TASKS) {
+        for (MinigamesDiaryEntry easy : MinigamesAchievementDiary.EASY_TASKS) {
             if (easy.name().equalsIgnoreCase(achievement.name())) {
                 player.desertEasy += 1;
                 Config.DESERT_EASY.set(player, player.desertEasy);
                 if (player.desertEasy == 5) {
-                    Config.DESERT_EASY_COMPLETED.set(player, 1);
+                    Config.MINIGAMES_EASY_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (DesertDiaryEntry medium : DesertAchievementDiary.MEDIUM_TASKS) {
+        for (MinigamesDiaryEntry medium : MinigamesAchievementDiary.MEDIUM_TASKS) {
             if (medium.name().equalsIgnoreCase(achievement.name())) {
                 player.desertMedium += 1;
                 Config.DESERT_MEDIUM.set(player, player.desertMedium);
                 if (player.desertMedium == 7) {
-                    Config.DESERT_MEDIUM_COMPLETED.set(player, 1);
+                    Config.MINIGAMES_MEDIUM_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (DesertDiaryEntry hard : DesertAchievementDiary.HARD_TASKS) {
+        for (MinigamesDiaryEntry hard : MinigamesAchievementDiary.HARD_TASKS) {
             if (hard.name().equalsIgnoreCase(achievement.name())) {
                 player.desertHard += 1;
                 Config.DESERT_HARD.set(player, player.desertHard);
                 if (player.desertHard == 2) {
-                    Config.DESERT_HARD_COMPLETED.set(player, 1);
+                    Config.MINIGAMES_HARD_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (DesertDiaryEntry elite : DesertAchievementDiary.ELITE_TASKS) {
+        for (MinigamesDiaryEntry elite : MinigamesAchievementDiary.ELITE_TASKS) {
             if (elite.name().equalsIgnoreCase(achievement.name())) {
                 player.desertElite += 1;
                 Config.DESERT_ELITE.set(player, player.desertElite);
                 if (player.desertElite == 1) {
-                    Config.DESERT_ELITE_COMPLETED.set(player, 1);
+                    Config.MINIGAMES_ELITE_COMPLETED.set(player, 1);
                     player.getInventory().addOrDrop(30307, 1);
                 }
             }
         }
-        for (FaladorDiaryEntry easy : FaladorAchievementDiary.EASY_TASKS) {
+        for (SkillingDiaryEntry easy : SkillingAchievementDiary.EASY_TASKS) {
             if (easy.name().equalsIgnoreCase(achievement.name())) {
                 player.faladorEasy += 1;
                 Config.FALADOR_EASY.set(player, player.faladorEasy);
                 if (player.faladorEasy == 7) {
-                    Config.FALADOR_EASY_COMPLETED.set(player, 1);
+                    Config.SKILLING_EASY_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (FaladorDiaryEntry medium : FaladorAchievementDiary.MEDIUM_TASKS) {
+        for (SkillingDiaryEntry medium : SkillingAchievementDiary.MEDIUM_TASKS) {
             if (medium.name().equalsIgnoreCase(achievement.name())) {
                 player.faladorMedium += 1;
                 Config.FALADOR_MEDIUM.set(player, player.faladorMedium);
                 if (player.faladorMedium == 6) {
-                    Config.FALADOR_MEDIUM_COMPLETED.set(player, 1);
+                    Config.SKILLING_MEDIUM_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (FaladorDiaryEntry hard : FaladorAchievementDiary.HARD_TASKS) {
+        for (SkillingDiaryEntry hard : SkillingAchievementDiary.HARD_TASKS) {
             if (hard.name().equalsIgnoreCase(achievement.name())) {
                 player.faladorHard += 1;
                 Config.FALADOR_HARD.set(player, player.faladorHard);
                 if (player.faladorHard == 4) {
-                    Config.FALADOR_HARD_COMPLETED.set(player, 1);
+                    Config.SKILLING_HARD_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (FaladorDiaryEntry elite : FaladorAchievementDiary.ELITE_TASKS) {
+        for (SkillingDiaryEntry elite : SkillingAchievementDiary.ELITE_TASKS) {
             if (elite.name().equalsIgnoreCase(achievement.name())) {
                 player.faladorElite += 1;
                 Config.FALADOR_ELITE.set(player, player.faladorElite);
                 if (player.faladorElite == 3) {
-                    Config.FALADOR_ELITE_COMPLETED.set(player, 1);
+                    Config.SKILLING_ELITE_COMPLETED.set(player, 1);
                     player.getInventory().addOrDrop(30307, 1);
                 }
             }
@@ -343,39 +346,39 @@ public abstract class AchievementDiary<T extends Enum<T>> {
                 }
             }
         }
-        for (KaramjaDiaryEntry easy : KaramjaAchievementDiary.EASY_TASKS) {
+        for (PvMDiaryEntry easy : PvMAchievementDiary.EASY_TASKS) {
             if (easy.name().equalsIgnoreCase(achievement.name())) {
                 player.karamjaEasy += 1;
                 Config.KARAMJA_EASY.set(player, player.karamjaEasy);
                 if (player.karamjaEasy == 5) {
-                    Config.KARAMJA_EASY_COMPLETED.set(player, 1);
+                    Config.PVM_EASY_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (KaramjaDiaryEntry medium : KaramjaAchievementDiary.MEDIUM_TASKS) {
+        for (PvMDiaryEntry medium : PvMAchievementDiary.MEDIUM_TASKS) {
             if (medium.name().equalsIgnoreCase(achievement.name())) {
                 player.karamjaMedium += 1;
                 Config.KARAMJA_MEDIUM.set(player, player.karamjaMedium);
                 if (player.karamjaMedium == 3) {
-                    Config.KARAMJA_MEDIUM_COMPLETED.set(player, 1);
+                    Config.PVM_MEDIUM_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (KaramjaDiaryEntry hard : KaramjaAchievementDiary.HARD_TASKS) {
+        for (PvMDiaryEntry hard : PvMAchievementDiary.HARD_TASKS) {
             if (hard.name().equalsIgnoreCase(achievement.name())) {
                 player.karamjaHard += 1;
                 Config.KARAMJA_HARD.set(player, player.karamjaHard);
                 if (player.karamjaHard == 3) {
-                    Config.KARAMJA_HARD_COMPLETED.set(player, 1);
+                    Config.PVM_HARD_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (KaramjaDiaryEntry elite : KaramjaAchievementDiary.ELITE_TASKS) {
+        for (PvMDiaryEntry elite : PvMAchievementDiary.ELITE_TASKS) {
             if (elite.name().equalsIgnoreCase(achievement.name())) {
                 player.karamjaElite += 1;
                 Config.KARAMJA_ELITE.set(player, player.karamjaElite);
                 if (player.karamjaElite == 3) {
-                    Config.KARAMJA_ELITE_COMPLETED.set(player, 1);
+                    Config.PVM_ELITE_COMPLETED.set(player, 1);
                     player.getInventory().addOrDrop(30307, 1);
                 }
             }
@@ -566,39 +569,39 @@ public abstract class AchievementDiary<T extends Enum<T>> {
             }
         }
 
-        for (KourendDiaryEntry easy : KourendAchievementDiary.EASY_TASKS) {
+        for (DeviousDiaryEntry easy : DeviousAchievementDiary.EASY_TASKS) {
             if (easy.name().equalsIgnoreCase(achievement.name())) {
                 player.kourendEasy += 1;
                 Config.KOUREND_EASY.set(player, player.kourendEasy);
                 if (player.kourendEasy == 8) {
-                    Config.KOUREND_EASY_COMPLETED.set(player, 1);
+                    Config.DEVIOUS_EASY_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (KourendDiaryEntry medium : KourendAchievementDiary.MEDIUM_TASKS) {
+        for (DeviousDiaryEntry medium : DeviousAchievementDiary.MEDIUM_TASKS) {
             if (medium.name().equalsIgnoreCase(achievement.name())) {
                 player.kourendMedium += 1;
                 Config.KOUREND_MEDIUM.set(player, player.kourendMedium);
                 if (player.kourendMedium == 8) {
-                    Config.KOUREND_MEDIUM_COMPLETED.set(player, 1);
+                    Config.DEVIOUS_MEDIUM_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (KourendDiaryEntry hard : KourendAchievementDiary.HARD_TASKS) {
+        for (DeviousDiaryEntry hard : DeviousAchievementDiary.HARD_TASKS) {
             if (hard.name().equalsIgnoreCase(achievement.name())) {
                 player.kourendHard += 1;
                 Config.KOUREND_HARD.set(player, player.kourendHard);
                 if (player.kourendHard == 8) {
-                    Config.KOUREND_HARD_COMPLETED.set(player, 1);
+                    Config.DEVIOUS_HARD_COMPLETED.set(player, 1);
                 }
             }
         }
-        for (KourendDiaryEntry elite : KourendAchievementDiary.ELITE_TASKS) {
+        for (DeviousDiaryEntry elite : DeviousAchievementDiary.ELITE_TASKS) {
             if (elite.name().equalsIgnoreCase(achievement.name())) {
                 player.kourendElite += 1;
                 Config.KOUREND_ELITE.set(player, player.kourendElite);
                 if (player.kourendElite == 8) {
-                    Config.KOUREND_ELITE_COMPLETED.set(player, 1);
+                    Config.DEVIOUS_ELITE_COMPLETED.set(player, 1);
                     player.getInventory().addOrDrop(30307, 1);
                 }
             }

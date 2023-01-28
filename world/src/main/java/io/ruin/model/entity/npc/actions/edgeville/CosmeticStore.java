@@ -36,21 +36,21 @@ public class CosmeticStore {
         SpawnListener.register(Cosmetitian, npc -> npc.skipReachCheck = p -> p.equals(3093, 3511));
 
         NPCAction.register(Cosmetitian, "buy-cosmetics 1", (player, npc) -> {
-            if (!player.isMember()) {
+            if (!player.isADonator()) {
                 player.dialogue(new MessageDialogue("You must be a Member to buy cosmetics from this store"));
                 return;
 
             } else ShopManager.openIfExists(player, CosmeticStore1);
         });
         NPCAction.register(Cosmetitian, "buy-cosmetics 2", (player, npc) -> {
-            if (!player.isMember()) {
+            if (!player.isADonator()) {
                 player.dialogue(new MessageDialogue("You must be a Member to buy cosmetics from this store"));
                 return;
 
             } else ShopManager.openIfExists(player, CosmeticStore2);
         });
         NPCAction.register(Cosmetitian, "buy-cosmetics 3", (player, npc) -> {
-            if (!player.isMember()) {
+            if (!player.isADonator()) {
                 player.dialogue(new MessageDialogue("You must be a Member to buy cosmetics from this store"));
                 return;
 

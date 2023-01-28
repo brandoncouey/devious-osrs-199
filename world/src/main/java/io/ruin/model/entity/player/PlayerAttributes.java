@@ -1592,6 +1592,9 @@ public abstract class PlayerAttributes extends Entity {
     public boolean inTutorial = false;
 
     @Expose
+    public boolean choseXpMode = false;
+
+    @Expose
     public boolean krakenWarning = true;
 
     @Expose
@@ -2324,10 +2327,6 @@ public abstract class PlayerAttributes extends Entity {
     @Expose
     public int storeAmountSpent;
 
-    @Expose
-    public int memberStatus = 0;
-    @Expose
-    public long memberTimeLeft = System.currentTimeMillis();
     @Expose
     public List<Item> claimedStoreItems;
 

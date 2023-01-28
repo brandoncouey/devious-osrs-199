@@ -1,7 +1,7 @@
 package io.ruin.model.skills.construction.actions;
 
 import io.ruin.model.World;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
@@ -128,7 +128,7 @@ public class Chapel {
                 boneType.altarCounter.increment(player, 1);
                 event.delay(3);
                 if (boneType.id == 536 && player.getPosition().regionId() == 6967) {
-                    player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.DBONE_ALTAR);
+                    //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.DBONE_ALTAR);
                 }
             }
         });

@@ -13,6 +13,8 @@ import io.ruin.model.inter.journal.Journal;
 import io.ruin.model.inter.journal.JournalEntry;
 import io.ruin.model.inter.utils.Config;
 
+
+//enum 595
 public enum Achievement {
 
     /**

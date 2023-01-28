@@ -86,7 +86,7 @@ public class ShootingStars {
                     }
                     ACTIVE = next;
                    // String revsMessage = "A superior revenant has been awoken in the north of the Revenant Cave";
-                    String eventMessage = "There's been a sighting of a star around " + getLocation() + " in World: " + World.id + "!";
+                    String eventMessage = "There's been a sighting of a star around " + getLocation() + "!";
                     broadcastEvent(eventMessage);
                     addStar();
                     /* stop event after 15 minutes */

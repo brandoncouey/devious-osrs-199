@@ -20,6 +20,10 @@ public class StatList {
     @Expose
     private Stat[] stats;
     @Expose
+    private boolean[] announced104m;
+    @Expose
+    private boolean[] announced200m;
+    @Expose
     private StatCounter[] counters;
     public static final Bounds DZ_UPPER = new Bounds(3777, 2816, 3843, 2879, 1);
     public static final Bounds DZ_LOWER = new Bounds(3777, 2816, 3843, 2879, 0);
@@ -39,6 +43,8 @@ public class StatList {
         if (stats == null) {
             StatType[] types = StatType.values();
             stats = new Stat[types.length];
+            announced104m = new boolean[types.length];
+            announced200m = new boolean[types.length];
             for (int id = 0; id < types.length; id++) {
                 StatType type = types[id];
                 if (type == StatType.Hitpoints)
@@ -163,7 +169,7 @@ public class StatList {
         /*
          * 50% experience boost from scroll
          */
-        if (player.isMember())
+        if (player.isADonator())
             amount *= 1.25;
         if (player.expBonus.isDelayed())
             amount *= 2.00;
@@ -246,24 +252,35 @@ public class StatList {
         }
         World.sendGraphics(1388, 50, 0, player.getPosition().getX(), player.getPosition().getY(), player.getPosition().getZ());
         player.sendMessage("You've just advanced " + type.descriptiveName + " level. You have reached level " + newLevel + ".");
-        //player.openDialogue(false,
-               // new MessageDialogue("You've just advanced " + type.descriptiveName + " level. You have reached level " + newLevel + "."));
         if (newLevel == 99) {
             player.sendMessage(Color.ORANGE_RED.tag() + "Congratulations on achieving level 99 in " + type.name() + "!");
             player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a skillcape from Mac who can be found at home.");
             if (!player.getGameMode().isIronMan()) {
-                Broadcast.GLOBAL.sendNews(Icon.NORMAL, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved level 99 in " + type.name() + "!");
+                Broadcast.GLOBAL.sendNews(Color.ORANGE.tag() + player.getName() + " has just achieved level 99 in " + type.name() + " on " + player.xpMode.name().toLowerCase() + " mode!");
             } else if (player.getGameMode().isHardcoreIronman()) {
-                Broadcast.GLOBAL.sendNews(Icon.HCIM, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved level 99 in " + type.name() + "!");
+                Broadcast.GLOBAL.sendNews(Icon.HCIM, Color.ORANGE.tag() + player.getName() + " has just achieved level 99 in " + type.name() + " on " + player.xpMode.name().toLowerCase() + " mode!");
             } else if (player.getGameMode().isUltimateIronman()) {
-                Broadcast.GLOBAL.sendNews(Icon.UIM, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved level 99 in " + type.name() + "!");
+                Broadcast.GLOBAL.sendNews(Icon.UIM, Color.ORANGE.tag() + player.getName() + " has just achieved level 99 in " + type.name() + " on " + player.xpMode.name().toLowerCase() + " mode!");
             } else if (player.getGameMode().isGroupIronman()) {
-                Broadcast.GLOBAL.sendNews(Icon.GIM, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved level 99 in " + type.name() + "!");
+                Broadcast.GLOBAL.sendNews(Icon.GIM, Color.ORANGE.tag() + player.getName() + " has just achieved level 99 in " + type.name() + " on " + player.xpMode.name().toLowerCase() + " mode!");
             } else if (player.getGameMode().isHardcoreGroupIronman()) {
-                Broadcast.GLOBAL.sendNews(Icon.HGIM, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved level 99 in " + type.name() + "!");
+                Broadcast.GLOBAL.sendNews(Icon.HGIM, Color.ORANGE.tag() + player.getName() + " has just achieved level 99 in " + type.name() + " on " + player.xpMode.name().toLowerCase() + " mode!");
             } else {
-                Broadcast.GLOBAL.sendNews(Icon.IRONMAN, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved level 99 in " + type.name() + "!");
+                Broadcast.GLOBAL.sendNews(Icon.IRONMAN, Color.ORANGE.tag() + player.getName() + " has just achieved level 99 in " + type.name() + " on " + player.xpMode.name().toLowerCase() + " mode!");
             }
+        }
+        if (totalLevel == 250) {
+            player.sendMessage("Congratulations on 250 total level! Your statistics will now appear on the highscores!");
+        }
+        if (stat.experience >= 104000000 && !announced104m[statId]) {
+            player.sendMessage(Color.ORANGE_RED.tag() + "Congratulations on achieving 104M experience in " + type.name() + "!");
+            player.sendMessage(Color.ORANGE_RED.tag() + "You may now purchase a master skillcape from Mac who can be found at home.");
+            Broadcast.GLOBAL.sendNews(Color.ORANGE.tag() + player.getName() + " has just achieved 104M experience in " + type.name() + " on " + player.xpMode.name().toLowerCase() + " mode!");
+            announced104m[statId] = true;
+        }
+        if (stat.experience >= 200000000 && !announced200m[statId]) {
+            Broadcast.GLOBAL.sendNews(Color.ORANGE.tag() + player.getName() + " has just achieved 200M experience in " + type.name() + " on " + player.xpMode.name().toLowerCase() + " mode!");
+            announced200m[statId] = true;
         }
         if (statId <= 6)
             player.getCombat().updateLevel();
@@ -295,7 +312,7 @@ public class StatList {
             if (CompletionistCape.doneAchieves(player) && !player.achievedComp) {
                 CompletionistCape.compDone(player);
             }
-            if (totalLevel == 2277 && announcedmax == false) {
+            if (totalLevel == 2277 && !announcedmax) {
                 player.sendMessage(Color.ORANGE_RED.tag() + "Congratulations on achieving 2277 Total!");
                 if (!player.getGameMode().isIronMan()) {
                     announcedmax = true;

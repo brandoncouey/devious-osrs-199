@@ -97,6 +97,8 @@ public abstract class MessageDecoder<T> extends ByteToMessageDecoder {
                  */
                 handle((T) ctx.channel(), new InBuffer(payload), opcode);
             }
+        } catch (Exception e) {
+            //System.out.println("Unable to e.getMessage());
         } finally {
             opcode = size = -1;
         }

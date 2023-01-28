@@ -113,16 +113,12 @@ public class DisplayHandler implements Incoming {
         ps.sendInterface(Interface.EQUIPMENT, Interface.DEFAULT_SCREEN, 12 + tabChildOffset, 1);
         ps.sendInterface(Interface.PRAYER, Interface.DEFAULT_SCREEN, 13 + tabChildOffset, 1);
         ps.sendInterface(Interface.MAGIC_BOOK, Interface.DEFAULT_SCREEN, 14 + tabChildOffset, 1);
-
-        //Send Clan System
-        ps.sendInterface(Interface.CLAN_CHAT, Interface.DEFAULT_SCREEN, 15 + tabChildOffset, 1);
-
-        //Send GIM Group System
-        if (player.getGameMode().isGroupIronman() || player.getGameMode().isHardcoreGroupIronman()) {
-            ps.sendInterface(/*Interface.ACCOUNT_MANAGEMENT*/ 723, Interface.DEFAULT_SCREEN, 16 + tabChildOffset, 1);
+        if(player.getGameMode().isGroupIronman() || player.getGameMode().isHardcoreGroupIronman()) {
+            ps.sendInterface(727, Interface.DEFAULT_SCREEN, 15 + tabChildOffset, 1);
         } else {
-            ps.sendInterface(Interface.ACCOUNT_MANAGEMENT, Interface.DEFAULT_SCREEN, 16 + tabChildOffset, 1);
+            ps.sendInterface(707, Interface.DEFAULT_SCREEN, 15 + tabChildOffset, 1);
         }
+        ps.sendInterface(Interface.ACCOUNT_MANAGEMENT, Interface.DEFAULT_SCREEN, 16 + tabChildOffset, 1);
         ps.sendInterface(Config.FRIENDS_AND_IGNORE_TOGGLE.get(player) == 0
                         ? Interface.FRIENDS_LIST : Interface.IGNORE_LIST,
                 Interface.DEFAULT_SCREEN, 17 + tabChildOffset, 1);

@@ -5,7 +5,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.cache.Color;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LogoutListener;
 import io.ruin.model.inter.Widget;
@@ -855,7 +855,7 @@ public class PyramidPlunder {
             player.nextPlunderRoomId++;
             player.inPyramidPlunder = true;
             handleTime(player);
-            player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.PASS_GATE_ROBES);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.PASS_GATE_ROBES);
             player.getPacketSender().sendWidget(Widget.PYRAMID_PLUNDER, (60 * 5));
         });
     }

@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions;
 
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
@@ -19,7 +19,7 @@ public class MonkOfEntrana {
                                 event.delay(3);
                                 player.sendMessage("You board the ship and travel to Entrana.");
                                 player.getMovement().teleport(2834, 3335, 0);
-                                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TRAVEL_ENTRANA);
+                                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.TRAVEL_ENTRANA);
                             });
                         }),
                         new Option("Nevermind"
@@ -34,7 +34,7 @@ public class MonkOfEntrana {
                 event.delay(3);
                 player.sendMessage("You board the ship and travel to Entrana.");
                 player.getMovement().teleport(2834, 3335, 0);
-                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TRAVEL_ENTRANA);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.TRAVEL_ENTRANA);
             });
         });
         NPCAction.register(1166, "talk-to", (player, npc) ->
@@ -49,7 +49,7 @@ public class MonkOfEntrana {
                                 event.delay(3);
                                 player.sendMessage("You board the ship and travel to Entrana.");
                                 player.getMovement().teleport(2834, 3335, 0);
-                                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TRAVEL_ENTRANA);
+                                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.TRAVEL_ENTRANA);
                             });
                         }),
                         new Option("Nevermind"
@@ -64,7 +64,7 @@ public class MonkOfEntrana {
                 event.delay(3);
                 player.sendMessage("You board the ship and travel to Entrana.");
                 player.getMovement().teleport(2834, 3335, 0);
-                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TRAVEL_ENTRANA);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.TRAVEL_ENTRANA);
             });
         });
         NPCAction.register(1167, "talk-to", (player, npc) ->
@@ -79,7 +79,7 @@ public class MonkOfEntrana {
                                 event.delay(3);
                                 player.sendMessage("You board the ship and travel to Entrana.");
                                 player.getMovement().teleport(2834, 3335, 0);
-                                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TRAVEL_ENTRANA);
+                                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.TRAVEL_ENTRANA);
                             });
                         }),
                         new Option("Nevermind"
@@ -94,7 +94,7 @@ public class MonkOfEntrana {
                 event.delay(3);
                 player.sendMessage("You board the ship and travel to Entrana.");
                 player.getMovement().teleport(2834, 3335, 0);
-                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.TRAVEL_ENTRANA);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.TRAVEL_ENTRANA);
             });
         });
 

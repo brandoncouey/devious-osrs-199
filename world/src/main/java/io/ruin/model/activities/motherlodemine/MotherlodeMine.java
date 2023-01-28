@@ -6,7 +6,7 @@ import io.ruin.cache.ItemID;
 import io.ruin.model.World;
 import io.ruin.model.achievements.Achievement;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -16,7 +16,6 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
-import io.ruin.model.item.Item;
 import io.ruin.model.map.*;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -486,7 +485,7 @@ public class MotherlodeMine { //why do we have two motherlode mine classes? Remo
             }
             player.getStats().addXp(StatType.Smithing, player.getStats().get(StatType.Smithing).fixedLevel * 1.5, true);
             fixWheel(wheel, strut);
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.REPAIR_STRUT);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.REPAIR_STRUT);
             /* add event for it to break again later */
             World.startEvent(worldEvent -> {
                 worldEvent.delay(100);

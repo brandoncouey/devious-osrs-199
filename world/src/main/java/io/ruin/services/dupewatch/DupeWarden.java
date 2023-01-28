@@ -95,7 +95,7 @@ public class DupeWarden {
             eb.addField("Coordinates: ", "X:" + player.getPosition().getX() + " Y:" + player.getPosition().getY() + " Z:" + player.getPosition().getZ(), true);
             eb.addField("Date: ", formatter.format(date), true);
             eb.setColor(new java.awt.Color(0xB00D03));
-            DiscordConnection.jda.getTextChannelById("991831245841506424").sendMessage(eb.build()).queue();
+            //DiscordConnection.jda.getTextChannelById("991831245841506424").sendMessage(eb.build()).queue();
         }
         long oldinv = this.inv;
         long oldequip = this.equip;

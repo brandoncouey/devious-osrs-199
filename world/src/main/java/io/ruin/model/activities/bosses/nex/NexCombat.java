@@ -61,7 +61,7 @@ public class NexCombat extends NPCCombat {
                 new GroundItem(rolled2.getId(), amount2).owner(player).position(npc.getPosition()).spawn();
                 if (rolled2.getId() == 30000 || rolled2.getId() == 30001 || rolled2.getId() == 30002 || rolled2.getId() == 30003 || rolled2.getId() == 30004 || rolled2.getId() == 30005
                         || rolled2.getId() == 30006 || rolled2.getId() == 30007 || rolled2.getId() == 30008 || rolled2.getId() == 30317 || rolled2.getId() == 26233 || rolled2.getId() == 30287) {
-                    Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap("[NEX]-[WORLD" + World.id + "] ") + player.getName() + " received " + Color.DARK_RED.wrap(rolled2.getDef().name) + " from Nex with KC: " + killer.player.nexKills.getKills());
+                    Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap(player.getName() + " received " + rolled2.getDef().name) + " from Nex with KC: " + killer.player.nexKills.getKills());
                     RareDropEmbedMessage.sendDiscordMessage(message2, npc.getDef().descriptiveName, rolled2.getId(), killer.player.nexKills.getKills());
                 }
             }
@@ -95,7 +95,7 @@ public class NexCombat extends NPCCombat {
                             k.player.getCollectionLog().collect(rolled);
                             if (rolled.getId() == 30000 || rolled.getId() == 30001 || rolled.getId() == 30002 || rolled.getId() == 30003 || rolled.getId() == 30004 || rolled.getId() == 30005
                                     || rolled.getId() == 30006 || rolled.getId() == 30007 || rolled.getId() == 30008 || rolled.getId() == 30289  || rolled.getId() == 30317 || rolled.getId() == 26233 || rolled.getId() == 30287) {
-                                Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap("[NEX]-[WORLD" + World.id + "] ") + k.player.getName() + " received " + Color.DARK_RED.wrap(rolled.getDef().name) + " from Nex with KC: " + k.player.nexKills.getKills());
+                                Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap(k.player.getName() + " received " + rolled.getDef().name) + " from Nex with KC: " + k.player.nexKills.getKills());
                                 RareDropEmbedMessage.sendDiscordMessage(message, npc.getDef().descriptiveName, rolled2.getId(), killer.player.nexKills.getKills());
                             }
                             if (Random.rollDie(500, 2)) {

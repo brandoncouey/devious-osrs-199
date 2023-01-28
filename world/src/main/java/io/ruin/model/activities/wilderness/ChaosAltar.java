@@ -2,7 +2,7 @@ package io.ruin.model.activities.wilderness;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -158,7 +158,7 @@ public class ChaosAltar {
                 bone.altarCounter.increment(player, 1);
                 event.delay(2);
                 if (bone.id == 536 && player.getPosition().regionId() == 6967) {
-                    player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.DBONE_ALTAR);
+                    //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.DBONE_ALTAR);
                 }
             }
         });

@@ -17,13 +17,13 @@ public class TabAchievements {
     public static void handleSlots(Player player, int slot) {
         switch (slot) {
             case 0:
-                player.getDiaryManager().getKaramjaDiary().display();
+                player.getDiaryManager().getPvmDiary().display();
                 return;
             case 1:
-                player.getDiaryManager().getArdougneDiary().display();
+                player.getDiaryManager().getPvpDiary().display();
                 return;
             case 2:
-                player.getDiaryManager().getFaladorDiary().display();
+                player.getDiaryManager().getSkillingDiary().display();
                 return;
             case 3:
                 player.getDiaryManager().getFremennikDiary().display();
@@ -32,7 +32,7 @@ public class TabAchievements {
                 player.getDiaryManager().getKandarinDiary().display();
                 return;
             case 5:
-                player.getDiaryManager().getDesertDiary().display();
+                player.getDiaryManager().getMinigamesDiary().display();
                 return;
             case 6:
                 player.getDiaryManager().getLumbridgeDraynorDiary().display();
@@ -50,7 +50,7 @@ public class TabAchievements {
                 player.getDiaryManager().getWesternDiary().display();
                 return;
             case 11:
-                player.getDiaryManager().getKourendDiary().display();
+                player.getDiaryManager().getDeviousDiary().display();
         }
     }
 }

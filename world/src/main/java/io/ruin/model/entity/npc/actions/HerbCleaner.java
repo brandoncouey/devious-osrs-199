@@ -9,6 +9,7 @@ import io.ruin.model.inter.InterfaceHandler;
 import io.ruin.model.inter.actions.SimpleAction;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.shop.ShopManager;
 import io.ruin.model.skills.herblore.Herb;
 import io.ruin.model.skills.herblore.Potion;
 

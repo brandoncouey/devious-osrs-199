@@ -1,7 +1,7 @@
 package io.ruin.model.skills.mining;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -23,7 +23,7 @@ public class MiningGuild {
             return;
         }
         if (player.getEquipment().contains(12013) && player.getEquipment().contains(12014) && player.getEquipment().contains(12015) && player.getEquipment().contains(12016) || player.getEquipment().contains(25549) && player.getEquipment().contains(25551) && player.getEquipment().contains(25553) && player.getEquipment().contains(25555)) {
-            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.WEAR_PROSPECTOR);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.WEAR_PROSPECTOR);
         }
         Ladder.climb(player, x, y, 0, false, true, false);
     }
@@ -54,7 +54,7 @@ public class MiningGuild {
             door.restore().skipClipping(false);
             opened.remove();
             if (player.getEquipment().contains(12013) && player.getEquipment().contains(12014) && player.getEquipment().contains(12015) && player.getEquipment().contains(12016) || player.getEquipment().contains(25549) && player.getEquipment().contains(25551) && player.getEquipment().contains(25553) && player.getEquipment().contains(25555)) {
-                player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.WEAR_PROSPECTOR);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.WEAR_PROSPECTOR);
             }
             player.unlock();
         });

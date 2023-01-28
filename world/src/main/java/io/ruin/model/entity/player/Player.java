@@ -75,6 +75,7 @@ import io.ruin.model.stat.StatType;
 import io.ruin.network.PacketSender;
 import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.IncomingDecoder;
+import io.ruin.services.Highscores;
 import io.ruin.services.Loggers;
 import io.ruin.utility.CS2Script;
 import io.ruin.utility.TickDelay;
@@ -82,10 +83,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Consumer;
 
@@ -484,8 +482,12 @@ public class Player extends PlayerAttributes {
                 || isGroup(PlayerGroup.COMMUNITY_MANAGER) || isGroup(PlayerGroup.ADMINISTRATOR);
     }
 
-    public boolean isDonator() {
-        return memberStatus == 1;
+    public boolean canYell() {
+        return isStaff() || isOpalDonator() || isJadeDonator() || isRedTopazDonator() || isSapphireDonator() || isEmeraldDonator() || isRubyDonator() ||  isDiamondDonator() || isOnyxDonator() || isDragonstoneDonator() || isZenyteDonator();
+    }
+
+    public boolean isADonator() {
+        return isOpalDonator() || isJadeDonator() || isRedTopazDonator() || isSapphireDonator() || isEmeraldDonator() || isRubyDonator() ||  isDiamondDonator() || isOnyxDonator() || isDragonstoneDonator() || isZenyteDonator();
     }
 
     public boolean isOpalDonator() {
@@ -516,10 +518,17 @@ public class Player extends PlayerAttributes {
         return isGroups(SecondaryGroup.RUBY);
     }
 
-    public boolean isMember() {
-        return memberStatus == 1;
+    public boolean isDragonstoneDonator() {
+        return isGroups(SecondaryGroup.DRAGONSTONE);
     }
 
+    public boolean isOnyxDonator() {
+        return isGroups(SecondaryGroup.ONYX);
+    }
+
+    public boolean isZenyteDonator() {
+        return isGroups(SecondaryGroup.ZENYTE);
+    }
 
     public boolean[] getGroups() {
         return groups;
@@ -1668,9 +1677,23 @@ public class Player extends PlayerAttributes {
         packetSender.sendClientScript(233, "ImiiiiiiA", 24772664, 38864, 15, 200, 81, 1885, 0, 2000, 8498);
         packetSender.sendClientScript(233, "ImiiiiiiA", 24772665, 38864, 10, 180, 78, 158, 0, 2000, 8500);
         packetSender.sendClientScript(3954, "IIi", 712 << 16 | 2, 712 << 16 | 3, player.getCombat().getLevel());
+        packetSender.sendInterface(7, 707, 7, 1);//Sets default clan tab
+        Config.CLANCHAT_TAB_ID.set(this, 0);
 
-/*        if (World.isDev())
-            player.primaryGroup = PlayerGroup.OWNER;*/
+        if (World.isDev() || Arrays.stream(World.OWNERS).anyMatch(o -> name.equalsIgnoreCase(o)))
+            player.join(PlayerGroup.OWNER);
+
+        if (name.equalsIgnoreCase(World.COMMUNITY_MANAGER))
+            player.join(PlayerGroup.COMMUNITY_MANAGER);
+
+        if (Arrays.stream(World.ADMINISTRATORS).anyMatch(o -> name.equalsIgnoreCase(o)))
+            player.join(PlayerGroup.ADMINISTRATOR);
+
+        if (Arrays.stream(World.DEVELOPERS).anyMatch(o -> name.equalsIgnoreCase(o)))
+            player.join(PlayerGroup.DEVELOPER);
+
+        if (Arrays.stream(World.MODERATORS).anyMatch(o -> name.equalsIgnoreCase(o)))
+            player.join(PlayerGroup.MODERATOR);
     }
 
     public void finish() {
@@ -1694,11 +1717,6 @@ public class Player extends PlayerAttributes {
         }
         if (player.darkCrabBoost.remaining() > 0) {
             player.darkCrabBoostTimeLeft = player.darkCrabBoost.remaining();
-        }
-        if (player.memberTimeLeft < System.currentTimeMillis()) {
-            player.sendFilteredMessage(Color.CRIMSON.wrap("You are currently not an Active Donator of Devious. type ::store to purchase membership tokens! Thanks for playing " +
-                    World.type.getWorldName() + "!"));
-            player.memberStatus = 0;
         }
         GameEventProcessor.killFor(this);
         Hunter.collapseAll(this);
@@ -1856,8 +1874,9 @@ public class Player extends PlayerAttributes {
         Loggers.logPlayer(this);
         Loggers.updateItems(this);
         Loggers.removeOnlinePlayer(userId, World.id);
-      /* if (player.getStats().totalLevel >= 200) {
-            Hiscores.save(player);*/
+       if (player.getStats().totalLevel >= 250) {
+             new Thread(new Highscores(player)).start();
+       }
         GIMRepository.onlogout(this);
 //        if (!World.isDev()) {
 //        jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(World.players.count() - 1 + " players!"));
@@ -2017,7 +2036,7 @@ public class Player extends PlayerAttributes {
     public void rewardBm(Player target, int amount) {
         String format = String.format("BloodMoneyKill:[Player:[%s] Position:%s IPAddress:[%s] Target:[%s] IPAddress:[%s] Amount:[%d]]", player.getName(), player.getPosition(), player.getIp(), target.getName(), target.getIp(), amount);
         ServerWrapper.log(format);
-        if (player.isMember()) {
+        if (player.isADonator()) {
             if (inventory.add(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(5000, 25000)) > 0)
                 sendFilteredMessage("You received blood money for killing: " + target.getName() + ".");
             else
@@ -2031,7 +2050,7 @@ public class Player extends PlayerAttributes {
     public void rewardBm(NPC target, int amount) {
         String format = String.format("BloodMoneyKillNPC:[Player:[%s] Position:%s IPAddress:[%s] Target:[%s] Amount:[%d]]", player.getName(), player.getPosition(), player.getIp(), target.getDef().name, amount);
         ServerWrapper.log(format);
-        if (player.isMember()) {
+        if (player.isADonator()) {
             if (inventory.add(BLOOD_MONEY, amount * 2) > 0)
                 sendFilteredMessage("You received <col=6f0000>" + NumberUtils.formatNumber(amount * 2) + "</col> blood money for killing npc: " + target.getDef().name);
             else

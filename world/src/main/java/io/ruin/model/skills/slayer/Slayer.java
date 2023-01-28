@@ -7,7 +7,7 @@ import io.ruin.cache.NPCDef;
 import io.ruin.cache.NpcID;
 import io.ruin.model.World;
 import io.ruin.model.activities.wilderness.Wilderness;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -84,7 +84,7 @@ public class Slayer {
         if (player.currentSlayerMaster == 7663)
             player.slayerTaskDangerous = true;
         if (player.currentSlayerMaster == NpcID.DURADEL)
-            player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.DURADEL);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.DURADEL);
     }
 
     public static SlayerTask getTask(Player player) {
@@ -135,7 +135,8 @@ public class Slayer {
             }
 
             player.slayerTaskRemaining--;
-            player.getStats().addXp(StatType.Slayer, npc.getCombat().getInfo().slayer_xp, true);
+            double xp = Wilderness.getLevel(npc.getPosition()) > 0 ? (npc.getCombat().getInfo().slayer_xp * 2.5d) : npc.getCombat().getInfo().slayer_xp;
+            player.getStats().addXp(StatType.Slayer, xp, true);
             slayerDrops(player, npc);
 
             if (player.slayerTaskRemaining <= 0) {

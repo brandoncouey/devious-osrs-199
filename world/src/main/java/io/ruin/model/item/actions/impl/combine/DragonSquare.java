@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.combine;
 
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
@@ -38,7 +38,7 @@ public class DragonSquare {
                 player.getInventory().remove(LEFT, 1);
                 player.getInventory().add(FULL, 1);
                 player.sendMessage("You forge the shield halves together to complete it.");
-                player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.DRAGON_SQUARE);
+                player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.DRAGON_SQUARE);
             }
             player.unlock();
         });

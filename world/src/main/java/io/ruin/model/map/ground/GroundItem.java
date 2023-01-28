@@ -100,10 +100,10 @@ public class GroundItem {
         if(appearMinutes != 0) {
             boolean allowAppear = appearMinutes > 0 && activeOwner != -1 && ItemDef.get(id).tradeable;
             World.startTask(t -> {
-                t.sleep(Math.abs(appearMinutes) * 10000L);
+                t.sleep(Math.abs(appearMinutes) * 60000L);
                 if(allowAppear)
                     t.sync(this::appear);
-                t.sleep(getDespawnTime() * 10000L);
+                t.sleep(getDespawnTime() * 60000L);
                 t.sync(this::disappear);
             });
         }
@@ -114,7 +114,7 @@ public class GroundItem {
         Tile.get(x, y, z, true).addItem(this);
         World.startTask(t -> {
             t.sync(this::appear);
-            t.sleep(getDespawnTime() * 10000L);
+            t.sleep(getDespawnTime() * 60000L);
             t.sync(this::disappear);
         });
         return this;
@@ -216,7 +216,7 @@ public class GroundItem {
         player.privateSound(2582);
         if(respawnMinutes > 0) {
             World.startTask(t -> {
-                t.sleep(respawnMinutes * 10000L);
+                t.sleep(respawnMinutes * 60000L);
                 t.sync(() -> this.spawnWithRespawn(respawnMinutes));
             });
         }

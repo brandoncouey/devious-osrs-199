@@ -21,9 +21,9 @@ public class Referral {
             player.dialogue(new MessageDialogue("You must have at least 1 inventory space to do this."));
             return;
         }
-        player.lock();
-        player.dialogue(new MessageDialogue("Attempting to claim referral reward for: " + referralCode + ", please wait...").hideContinue());
-        Server.gameDb.execute(new DatabaseStatement() {
+       /* player.lock();
+        player.dialogue(new MessageDialogue("Attempting to claim referral reward for: " + referralCode + ", please wait...").hideContinue());*/
+        /*Server.gameDb.execute(new DatabaseStatement() {
             @Override
             public void execute(Connection connection) throws SQLException {
                 PreparedStatement statement = null;
@@ -66,7 +66,7 @@ public class Referral {
                     player.unlock();
                 });
             }
-        });
+        });*/
     }
 
     public static void checkClaimed(Player player, String referralCode, Consumer<Boolean> consumer) {

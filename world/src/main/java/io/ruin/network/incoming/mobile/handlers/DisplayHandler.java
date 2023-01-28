@@ -91,7 +91,7 @@ public class DisplayHandler implements Incoming {
 
     public static void sendDisplay(Player player, int displayMode) {
 
-        if (!player.isDonator() || !player.isStaff()) {
+        if (!player.isADonator() || !player.isStaff()) {
             Config.TELEPORTING_MINIMAP_ORB.set(player, 1);
         } else {
             Config.TELEPORTING_MINIMAP_ORB.set(player, 0);

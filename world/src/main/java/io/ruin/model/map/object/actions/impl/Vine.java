@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.model.World;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.map.object.GameObject;
@@ -29,7 +29,7 @@ public class Vine {
             if (vines.id != -1) {
                 World.startEvent(e -> {
                     vines.remove();
-                    player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.CHOP_VINE);
+                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.CHOP_VINE);
                     event.delay(4);
                     vines.restore();
                 });

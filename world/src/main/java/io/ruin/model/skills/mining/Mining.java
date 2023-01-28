@@ -4,10 +4,10 @@ import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.tasks.DailyTask;
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.diaries.western.WesternDiaryEntry;
@@ -154,13 +154,13 @@ public class Mining {
                     Region region;
                     region = player.getPosition().getRegion();
                     if (rockData == Rock.COPPER & region.id == 11826) {
-                        player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.MIND_TIARA);
+                        player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.MIND_TIARA);
                     }
                     if (rockData == Rock.CLAY & region.id == 13617) {
-                        player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.MINE_CLAY);
+                        player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.MINE_CLAY);
                     }
                     if (rockData == Rock.GOLD & region.id == 11571) {
-                        player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.GOLD_ORE);
+                        player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.GOLD_ORE);
                     }
                     if (rockData == Rock.COAL & region.id == 10553) {
                         player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.MINE_COAL_FREM);
@@ -169,7 +169,7 @@ public class Mining {
                         player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.ADDY_ORE);
                     }
                     if (rockData == Rock.GOLD & region.id == 10802) {
-                        player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.MINE_GOLD);
+                        player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.MINE_GOLD);
                     }
                     if (rockData == Rock.IRON & region.id == 13107) {
                         player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.MINE_IRON_LUM);

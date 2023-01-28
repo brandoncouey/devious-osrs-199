@@ -68,14 +68,14 @@ object DeadmanChestEvent {
     fun execute() {
             chest.spawn()
             currentChest = chest
-            Broadcast.GLOBAL.sendNews("A Deadman Supply Chest has spawned ${location.hint} in " + World.id)
+            Broadcast.GLOBAL.sendNews("A Deadman Supply Chest has spawned ${location.hint}")
     }
 
     fun location(): String {
         return location.hint
     }
     fun Player.location() = event {
-        player.messageBox("A Deadman Supply Chest has spawned ${location.hint} in " + World.id)
+        player.messageBox("A Deadman Supply Chest has spawned ${location.hint} ")
     }
     /**
      * Displays the remaining hours & minutes left until the next [DeadmanChest] spawns.

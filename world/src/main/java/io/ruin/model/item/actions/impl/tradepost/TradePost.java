@@ -3,7 +3,7 @@ package io.ruin.model.item.actions.impl.tradepost;
 import io.ruin.api.utils.NumberUtils;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.SpawnListener;
@@ -801,7 +801,7 @@ public class TradePost {
             }));
             NPCAction.register(trader, "sets", (player, npc) -> ItemSet.open(player));
             NPCAction.register(trader, "exchange", ((player, npc) -> {
-                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.GE);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.GE);
                 if (player.getGameMode().isIronMan()) {
                     player.sendMessage("Your gamemode prevents you from accessing the trading post!");
                     return;

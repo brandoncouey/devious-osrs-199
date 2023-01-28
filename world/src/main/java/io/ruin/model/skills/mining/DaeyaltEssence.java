@@ -15,12 +15,12 @@ public class DaeyaltEssence {
                 player.getMovement().teleport(3633, 3339, 0);
             });
         });
-        ObjectAction.register(39092, "climb-down", ((player, obj) -> {
+        /*ObjectAction.register(39092, "climb-down", ((player, obj) -> {
             player.startEvent(e -> {
                 player.animate(827);
                 e.delay(1);
                 player.getMovement().teleport(3697, 9764, 2);
             });
-        }));
+        }));*/
     }
 }

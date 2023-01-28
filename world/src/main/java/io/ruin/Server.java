@@ -1,14 +1,12 @@
 package io.ruin;
 
 import io.ruin.api.database.Database;
+import io.ruin.api.database.DatabaseUtils;
 import io.ruin.api.database.DummyDatabase;
 import io.ruin.api.filestore.FileStore;
 import io.ruin.api.netty.NettyServer;
 import io.ruin.api.process.ProcessWorker;
-import io.ruin.api.utils.FileUtils;
-import io.ruin.api.utils.PackageLoader;
-import io.ruin.api.utils.ServerWrapper;
-import io.ruin.api.utils.ThreadUtils;
+import io.ruin.api.utils.*;
 import io.ruin.cache.*;
 import io.ruin.data.DataFile;
 import io.ruin.data.impl.login_set;
@@ -16,8 +14,10 @@ import io.ruin.data.yaml.YamlLoader;
 import io.ruin.model.World;
 import io.ruin.model.achievements.Achievement;
 import io.ruin.model.activities.gambling.GambleManager;
+import io.ruin.model.activities.wellofgoodwill.WellofGoodwill;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.content.GIMRepository;
+import io.ruin.model.entity.npc.actions.Lottery;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.impl.pets.Pets;
 import io.ruin.model.item.containers.TournamentSuppliesInterface;
@@ -97,7 +97,6 @@ public class Server extends ServerWrapper {
         println("Loading server settings...");
         Properties properties = new Properties();
         File systemProps = new File("server.properties");
-//        log.info("Looking for system.properties in {}", systemProps.getAbsolutePath());
         try (InputStream in = new FileInputStream(systemProps)) {
             properties.load(in);
         } catch (IOException e) {
@@ -156,22 +155,20 @@ public class Server extends ServerWrapper {
 
         if (!OfflineMode.enabled) {
             println("Connecting to SQL databases...");
-            storeDB = new Database(properties.getProperty("database_host"), "store", properties.getProperty("database_user"), properties.getProperty("database_password"));
-            voteDB = new Database(properties.getProperty("database_host"), "vote", properties.getProperty("database_user"), properties.getProperty("database_password"));
-
-            hsDb = new Database(properties.getProperty("database_host"), "scores", properties.getProperty("database_user"), properties.getProperty("database_password"));
+            storeDB = new Database(properties.getProperty("database_host"), "psdeviou_store", properties.getProperty("database_user"), properties.getProperty("database_password"));
+            voteDB = new Database(properties.getProperty("database_host"), "psdeviou_vote", properties.getProperty("database_user"), properties.getProperty("database_password"));
+            hsDb = new Database(properties.getProperty("database_host"), "psdeviou_scores", properties.getProperty("database_user"), properties.getProperty("database_password"));
 //            discordDb = new Database(properties.getProperty("database_host"), "discordauth", properties.getProperty("database_user"), properties.getProperty("database_password"));
 
-            /*DatabaseUtils.connect(new Database[]{gameDb, siteDb, hsDb, storeDB, voteDB *//*gameDb*//*}, errors -> {
+            DatabaseUtils.connect(new Database[]{/*hsDb, */storeDB, voteDB}, errors -> {
                 if (!errors.isEmpty()) {
                     for (Throwable t : errors)
                         logError("Database error", t);
                     System.exit(1);
                 }
-            });*/
+            });
             Loggers.clearOnlinePlayers(World.id);
-           // LatestUpdate.fetch();
-//            Giveaway.updateTotalAmount();
+
             if (!OfflineMode.enabled) {
 //                new DiscordConnection().initialize();
             }
@@ -182,8 +179,9 @@ public class Server extends ServerWrapper {
         Achievement.staticInit();
 
         ShopManager.registerUI();
-
-
+        WellofGoodwill.load();
+        Lottery.load();
+        WhitelistLogins.load();
         TournamentSuppliesInterface.registerTournamentSupplies();
 
         /*
@@ -238,10 +236,7 @@ public class Server extends ServerWrapper {
         /*
          * Central server
          */
-        if (!OfflineMode.enabled)
-            Broadcast.GLOBAL.sendNews(Color.RED.wrap("[WORLD " + World.id +  "] is now Online!"));
-            CentralClient.start();
-        //log.info("Data path = {}", Server.dataFolder.getAbsolutePath());
+         CentralClient.start();
         ServerWrapper.println("Started server in " + (System.currentTimeMillis() - startTime) + "ms.");
 
         /*

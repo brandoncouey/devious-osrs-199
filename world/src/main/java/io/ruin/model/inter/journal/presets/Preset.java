@@ -49,7 +49,7 @@ public class Preset extends JournalEntry {
 
     @Override
     public void send(Player player) {
-        send(player, name, Color.BRONZE);
+        send(player, name, Color.OPAL);
     }
 
     /**

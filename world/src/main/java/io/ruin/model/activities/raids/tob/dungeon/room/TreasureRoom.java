@@ -216,8 +216,8 @@ public class TreasureRoom extends TheatreRoom {  ///Room 7
                     player.sendMessage(Color.COOL_BLUE.wrap("You got " + reward.getDef().name + " X " + reward.getAmount()));
                     player.getCollectionLog().collect(reward.getId());
                     if (reward.getId() == 22477 || reward.getId() == 22326 || reward.getId() == 30350 ||  reward.getId() == 22327 || reward.getId() == 22328 || reward.getId() == 22324 || reward.getId() == 25744 || reward.getId() == 25742 || reward.getId() == 22481 || reward.getId() == 22486) {
-                        Broadcast.GLOBAL.sendNews(Color.RED.wrap("[TOB]-[WORLD" + World.id +  "] ") + player.getName() +
-                                " received " + Color.DARK_RED.wrap(reward.getDef().name) +
+                        Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap(player.getName() +
+                                " received " + reward.getDef().name) +
                                 " from TOB at KC: " + player.theatreOfBloodKills.getKills());
 
                     }

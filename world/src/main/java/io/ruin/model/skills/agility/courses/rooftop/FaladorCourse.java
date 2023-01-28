@@ -3,7 +3,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 import io.ruin.api.utils.Random;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -282,7 +282,7 @@ public class FaladorCourse {
             AgilityPet.rollForPet(p, 15000);
             PlayerCounter.FALADOR_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 50, MARK_SPAWNS);
-            p.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.FALADOR_ROOFTOP);
+            p.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.FALADOR_ROOFTOP);
             p.unlock();
             if(p.agilityContractType == AgilityContractType.FALADOR_ROOFTOP)
                 AgilityContract.advanceAgilityContract(p);

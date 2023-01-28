@@ -25,6 +25,6 @@ public class ServerOffline {
         thumbnail.setUrl("https://deviousps.com/data/assets/logo/fav.png");
         embedMessage.setThumbnail(thumbnail);
         embed.setColor(new java.awt.Color(0xB00D03));
-        DiscordConnection.jda.getTextChannelById("994599921980289055").sendMessage(embed.build()).queue();
+        //DiscordConnection.jda.getTextChannelById("994599921980289055").sendMessage(embed.build()).queue();
     }
 }

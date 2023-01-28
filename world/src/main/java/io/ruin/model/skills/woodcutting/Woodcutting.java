@@ -6,10 +6,10 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.contracts.woodcutting.WoodcuttingContract;
-import io.ruin.model.diaries.desert.DesertDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
 import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.player.Player;
@@ -118,10 +118,10 @@ public class Woodcutting {
                         }
                     } else {
                         player.sendFilteredMessage("You get some " + treeData.treeName + ".");
-                        if (player.isMember()) {
+                        if (player.isADonator()) {
                             player.getInventory().add(ItemDef.get(id).notedId, 1);
                             if (treeData.log == Tree.TEAK.log && player.getPosition().regionId() == 13872) {
-                                player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.CHOP_TEAK);
+                                player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.CHOP_TEAK);
                             }
                             if (treeData.log == Tree.MAHOGANY.log && player.getPosition().regionId() == 10300) {
                                 player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.CHOP_MAHOGANY);
@@ -139,12 +139,12 @@ public class Woodcutting {
                                 player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MAGIC_LOG_WILD);
                             }
                             if (treeData.log == Tree.YEW.log && player.getPosition().regionId() == 6198) {
-                                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.CHOP_YEW);
+                               // player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_YEW);
                             }
                             if (treeData.log == Tree.YEW.log && player.getPosition().regionId() == 6454) {
-                                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.CHOP_YEW);
+                               // player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_YEW);
                             }
-                            if (player.storeAmountSpent >= 20 && Random.rollPercent(50)) {
+                            if (player.isADonator() && Random.rollPercent(50)) {
                                 player.getInventory().add(ItemDef.get(treeData.log).notedId, 1);
                                 player.sendMessage("You receive some noted logs due to your donator rank!");
                             }
@@ -167,7 +167,7 @@ public class Woodcutting {
                         } else {
                             player.getInventory().add(treeData.log, 1);
                             if (treeData.log == Tree.TEAK.log && player.getPosition().regionId() == 13872) {
-                                player.getDiaryManager().getDesertDiary().progress(DesertDiaryEntry.CHOP_TEAK);
+                                player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.CHOP_TEAK);
                             }
                             if (treeData.log == Tree.MAHOGANY.log && player.getPosition().regionId() == 10300) {
                                 player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.CHOP_MAHOGANY);
@@ -185,12 +185,12 @@ public class Woodcutting {
                                 player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MAGIC_LOG_WILD);
                             }
                             if (treeData.log == Tree.YEW.log && player.getPosition().regionId() == 6198) {
-                                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.CHOP_YEW);
+                                //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_YEW);
                             }
                             if (treeData.log == Tree.YEW.log && player.getPosition().regionId() == 6454) {
-                                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.CHOP_YEW);
+                               // player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_YEW);
                             }
-                            if (player.storeAmountSpent >= 20 && Random.rollPercent(50)) {
+                            if (player.isADonator() && Random.rollPercent(50)) {
                                 player.getInventory().add(ItemDef.get(treeData.log).notedId, 1);
                                 player.sendMessage("You receive some noted logs due to your donator rank!");
                             }

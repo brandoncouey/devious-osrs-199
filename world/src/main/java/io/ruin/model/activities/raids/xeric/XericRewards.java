@@ -3,7 +3,7 @@ package io.ruin.model.activities.raids.xeric;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.model.World;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -23,7 +23,7 @@ public class XericRewards {
     static {
         ObjectAction.register(30028, "search", (player, obj) -> { // reward chest
             openRewards(player);
-            player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.COX);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.COX);
         });
         InterfaceHandler.register(Interface.RAID_REWARDS, h -> {
             h.actions[5] = (DefaultAction) (p, option, slot, itemId) -> {
@@ -152,8 +152,8 @@ public class XericRewards {
                     Config.RAIDS_BEAM.set(lucker, 2);
                     raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Special loot:")));
                 }
-                Broadcast.GLOBAL.sendNews(Color.RED.wrap("[COX]-[WORLD" + World.id +  "] ") + lucker.getName() +
-                        " received " + Color.DARK_RED.wrap(item.getDef().name) +
+                Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap(lucker.getName() +
+                        " received " + item.getDef().name) +
                         " from COX at KC: " + lucker.chambersofXericKills.getKills());
             }
         }
@@ -168,8 +168,8 @@ public class XericRewards {
                 p.getRaidRewards().add(rolled2.getId(), amount);
                 Loggers.logRaidsUnique(p.getName(), rolled2.getDef().name, p.chambersofXericKills.getKills());
                 Config.RAIDS_BEAM.set(p, 1);
-                Broadcast.GLOBAL.sendNews(Color.RED.wrap("[COX]-[WORLD" + World.id +  "] ") + p.getName() +
-                        " received " + Color.DARK_RED.wrap(rolled2.getDef().name) +
+                Broadcast.GLOBAL.sendNews(Color.RED.wrap(p.getName() +
+                        " received " + rolled2.getDef().name) +
                         " from COX at KC: " + p.chambersofXericKills.getKills());
             }
             for (int i = 0; i < 2; i++) {

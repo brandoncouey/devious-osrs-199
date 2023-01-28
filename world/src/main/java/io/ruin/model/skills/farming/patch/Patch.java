@@ -184,7 +184,7 @@ public abstract class Patch {
             return false;
         int actualStageMem = (int) Math.floor(getTimeElapsed() / (plantedCrop.getStageTimeMems()));
         int actualStage = (int) Math.floor(getTimeElapsed() / (plantedCrop.getStageTime()));
-        if (player.isMember()) {
+        if (player.isADonator()) {
             return stage < plantedCrop.getTotalStages() && actualStageMem > stage && !isDead();
         } else
             return stage < plantedCrop.getTotalStages() && actualStage > stage && !isDead();

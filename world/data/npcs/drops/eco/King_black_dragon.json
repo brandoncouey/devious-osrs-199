@@ -36,7 +36,6 @@
         "name": "Other",
         "weight": 1,
         "items": [
-          { "id": 22330, "min": 1, "max": 1, "weight": 10 }, //PVM BOX
           { "id": 1731, "min": 1, "max": 1, "weight": 15 }, //Amulet of power
           { "id": 1516, "min": 150, "max": 150, "weight": 15 }, //Yew logs (noted)
           { "id": 385, "min": 4, "max": 4, "weight": 15 }, //Shark

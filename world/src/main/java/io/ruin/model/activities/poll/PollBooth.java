@@ -143,6 +143,7 @@ public class PollBooth {
     }
 
     public static void init() {
+        if (true) return;//TODO disabled
         final File pollFile = new File("data//poll/poll.json");
         if (!pollFile.exists()) {
             return;

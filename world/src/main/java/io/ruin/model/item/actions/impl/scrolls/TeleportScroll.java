@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.scrolls;
 
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -43,7 +43,7 @@ public enum TeleportScroll {
             player.getMovement().teleport(bounds);
 
             if (scroll.getId() == 12409) {
-                player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.KILL_KET_ZEK);
+                player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_KET_ZEK);
             }
         });
     }

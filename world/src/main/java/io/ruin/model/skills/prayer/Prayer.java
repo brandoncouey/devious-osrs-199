@@ -4,7 +4,6 @@ import io.ruin.api.utils.StringUtils;
 import io.ruin.cache.Color;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
-import io.ruin.model.inter.journal.toggles.RiskProtection;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.stat.StatType;
 
@@ -58,7 +57,7 @@ public enum Prayer {
         p.level = 25;
         p.drain = 2;
         p.activationCheck = player -> {
-            RiskProtection.monitorRiskProtection(player);
+            //RiskProtection.monitorRiskProtection(player);
             if (player.getCombat().highRiskSkull) {
                 player.sendMessage(Color.ORANGE_RED.wrap("Warning:") + " The Protect Item prayer is disabled when marked with a high-risk skull.");
                 return false;

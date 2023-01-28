@@ -151,7 +151,7 @@ public class WildernessRewardBox {
     }
 
     private static double donatorBonus(Player player) {
-        if (player.isMember()) {
+        if (player.isADonator()) {
             return 0.75;
         } else {
             return 1.00;

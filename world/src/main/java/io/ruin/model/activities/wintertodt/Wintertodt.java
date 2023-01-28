@@ -3,7 +3,7 @@ package io.ruin.model.activities.wintertodt;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.combat.Hit;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -163,7 +163,7 @@ public class Wintertodt {
         if (Random.rollDie(2500, 1)) player.getInventory().add(20693, 1);
         /* reset the players points now that the game has ended. */
         player.wintertodtPoints = 0;
-        player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.WINTERTODT);
+        //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.WINTERTODT);
     }
 
     private static void pyromancerText() {

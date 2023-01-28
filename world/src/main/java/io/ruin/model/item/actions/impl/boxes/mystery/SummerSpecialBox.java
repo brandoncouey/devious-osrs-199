@@ -21,9 +21,6 @@ public class SummerSpecialBox {
             new LootItem(990, 50, 20),     // Crystal Key
             new LootItem(30256, 20, 20),      // Vote Multipass x20
             new LootItem(20360, 15, 18).broadcast(Broadcast.WORLD), //Medium Clue geode x15
-            new LootItem(22330, 20, 15).broadcast(Broadcast.WORLD), //Pvm Box
-            new LootItem(6831, 20, 15).broadcast(Broadcast.WORLD), //Slayer Box
-            new LootItem(30290, 10, 15).broadcast(Broadcast.WORLD), //Pvp Box
             new LootItem(290, 2, 10).broadcast(Broadcast.WORLD), //Lux Box
             new LootItem(30294, 10, 10).broadcast(Broadcast.WORLD), //Scatch Card
             new LootItem(30307, 1, 10).broadcast(Broadcast.WORLD), //$10 Bond

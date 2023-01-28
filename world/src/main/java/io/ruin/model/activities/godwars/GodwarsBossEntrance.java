@@ -12,7 +12,7 @@ public class GodwarsBossEntrance {
     private static final int ECUMENICAL_KEY = 11942;
 
     public static int kcRequirement(Player player) {
-        if (player.isMember()) {
+        if (player.isADonator()) {
             return 0;
         } else {
             return 40;

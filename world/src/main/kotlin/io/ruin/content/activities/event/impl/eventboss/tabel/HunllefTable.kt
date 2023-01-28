@@ -36,7 +36,6 @@ class HunllefTable : LootTable() {
         )
         addTable(
             5,
-            LootItem(22330, 1, 3, 15).broadcast(Broadcast.GLOBAL), //PVM Box
             LootItem(23971, 1, 1, 7).broadcast(Broadcast.GLOBAL), //Crystal helm
             LootItem(23975, 1, 1, 7).broadcast(Broadcast.GLOBAL), //Crystal body
             LootItem(23979, 1, 1, 7).broadcast(Broadcast.GLOBAL), //Crystal legs

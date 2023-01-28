@@ -66,8 +66,7 @@
           { "id": 22622, "min": 1, "max": 1, "weight": 1 }, //Adamantite bar
           { "id": 22636, "min": 2, "max": 2, "weight": 1 }, //Adamantite bar
           { "id": 22647, "min": 1, "max": 1, "weight": 1 },   //Looting bag
-          { "id": 30250, "min": 1, "max": 1, "weight": 1 }, //PVP box
-          { "id": 30290, "min": 1, "max": 1, "weight": 1 } //Zuriels staff
+          { "id": 13899, "min": 1, "max": 1, "weight": 1 } //VLS
         ]
       }
     ]

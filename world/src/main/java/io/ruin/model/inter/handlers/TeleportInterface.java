@@ -64,6 +64,8 @@ public class TeleportInterface {
     //Teleport button component
     private static final int TELEPORT_BUTTON = 155;
 
+
+
     /**
      * Holds data about teleports.
      */
@@ -377,22 +379,6 @@ public class TeleportInterface {
         Teleport selectedTeleport = player.getTeleports().getSelectedTeleport();
         boolean wilderness = selectedTeleport != null && selectedTeleport.wilderness;
         return wilderness ? Color.RED.wrap("Wild!") : Color.GREEN.wrap("Safe");
-    }
-
-    static {
-        if (false) {
-            InterfaceHandler.register(Interface.TELEPORTS, (interfaceHandler -> {
-                for (int component = 35; component < 41; component++) {
-                    int finalComponent = component;
-                    interfaceHandler.actions[component] = (SimpleAction) player -> player.getTeleports().selectCatagory(finalComponent);
-                }
-                for (int component : BUTTON_COMPONENTS) {
-                    int finalComponent = component;
-                    interfaceHandler.actions[component] = (SimpleAction) player -> player.getTeleports().clickButton(finalComponent);
-                }
-                interfaceHandler.actions[TELEPORT_BUTTON] = (SimpleAction) player -> player.getTeleports().teleport();
-            }));
-        }
     }
 
 }

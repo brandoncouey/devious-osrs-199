@@ -128,7 +128,6 @@ public class DailyTask {
 
     /*private void complete(Player player) {
         PlayerCounter.DAILY_TASKS_COMPLETED.increment(player, 1);
-        player.getInventory().addOrDrop(13307, difficulty().getBmReward());
         player.dailyTaskPoints += difficulty().getPointsReward();
         player.sendMessage(Color.DARK_GREEN.wrap("Congratulations, you have completed the task \"" + shortDescription() + "\"! You receive " + NumberUtils.formatNumber(difficulty().getBmReward()) + " blood money and " + difficulty().getPointsReward() + " task points. You now have a total of " + NumberUtils.formatNumber(player.dailyTaskPoints) + " task points."));
         if (isComplete(player, 0) && isComplete(player, 1) && isComplete(player, 2)) {

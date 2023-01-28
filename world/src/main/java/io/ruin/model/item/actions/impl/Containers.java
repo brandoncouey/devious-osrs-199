@@ -2,7 +2,7 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.ObjectDef;
-import io.ruin.model.diaries.falador.FaladorDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
@@ -76,7 +76,7 @@ public enum Containers {
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> {
                         fillContainer(player, item, container, WaterSource.WATERPUMP);
                         if (player.getPosition().regionId() == 11828) {
-                            player.getDiaryManager().getFaladorDiary().progress(FaladorDiaryEntry.FILL_BUCKET);
+                            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.FILL_BUCKET);
                         }
                     });
             if (objDef.name.equalsIgnoreCase("water pump"))

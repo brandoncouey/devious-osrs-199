@@ -242,11 +242,11 @@ public class Shop {
 
         int scamcheck = getBuyPrice(requestedItem);
 
-        if (scamcheck == 1) {
+        /*if (scamcheck == 1) {
             requestedItem.remove();
             player.sendMessage("You threw all your " + requestedItem.getDef().name + " away for nothing.");
             return;
-        }
+        }*/
 
         if (requestedItem.getDef().free) {
             player.sendMessage(ShopManager.CANNOT_SELL_TO_SHOP);

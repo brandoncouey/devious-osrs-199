@@ -3,7 +3,7 @@ package io.ruin.model.item.actions.impl.storage;
 import com.google.gson.annotations.Expose;
 import io.ruin.cache.Color;
 import io.ruin.model.combat.Killer;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceHandler;
@@ -45,7 +45,7 @@ public class DeathStorage extends ItemContainer {
             player.dialogue(new NPCDialogue(npc, "I've collected your items would you like to buy them back?"),
                     new OptionsDialogue(
                             new Option("Yes, please.", () -> {
-                                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.SPEAK_TO_DEATH);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.SPEAK_TO_DEATH);
                                 player.getDeathStorage().open();
                             }),
                             new Option("No thanks.", () -> {

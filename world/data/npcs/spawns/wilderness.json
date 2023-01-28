@@ -18,6 +18,60 @@
     "walkRange": 1
   },
   {
+    "name": "Grizzly Bear",
+    "id": 2838,
+    "x": 3070,
+    "y": 3605,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Grizzly Bear",
+    "id": 2838,
+    "x": 3073,
+    "y": 3605,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 3
+  },
+  {
+    "name": "Grizzly Bear",
+    "id": 2838,
+    "x": 3045,
+    "y": 3592,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Grizzly Bear",
+    "id": 2838,
+    "x": 3050,
+    "y": 3614,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Grizzly Bear",
+    "id": 2838,
+    "x": 3077,
+    "y": 3602,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
+    "name": "Grizzly Bear",
+    "id": 2838,
+    "x": 3081,
+    "y": 3618,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 2
+  },
+  {
     "name": "Glacor",
     "id": 14678,
     "x": 2977,

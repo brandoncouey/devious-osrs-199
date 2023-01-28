@@ -1,6 +1,6 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
-import io.ruin.model.diaries.karamja.KaramjaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -101,7 +101,7 @@ public class JeweleryTeleports {
                 }
 
                 if (x == 2918 && y == 3176) {
-                    player.getDiaryManager().getKaramjaDiary().progress(KaramjaDiaryEntry.TELEPORT_TO_KARAMJA);
+                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.TELEPORT_TO_KARAMJA);
                 }
 
                 if (name.equalsIgnoreCase("Digsite")) {

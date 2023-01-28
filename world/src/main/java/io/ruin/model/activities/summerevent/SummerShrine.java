@@ -54,7 +54,6 @@ public class SummerShrine {
             player.animate(791);
             player.getInventory().remove(TOKENS, tokensAvailable);
             int rolls = 0;
-            System.out.println(tokensAvailable);
             if (tokensAvailable > 1)
                 rolls++;
             if (tokensAvailable >= 250)

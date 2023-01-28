@@ -33,7 +33,6 @@ public class afkHerbs {
                 }
                 p.animate(2282);
                 if (Random.rollPercent(10)) {
-                    p.getInventory().addOrDrop(13307, 2);
                 }
                 Item rolled = rollRegular();
                 p.getInventory().add(rolled);

@@ -20,7 +20,7 @@ public class EventWorker extends TaskWorker {
 
     public static Event startEvent(EventConsumer eventConsumer) {
         Event event = new Event(eventConsumer);
-        if (!CoreWorker.isPast(CoreWorker.Stage.LOGIC)) {
+        if(!CoreWorker.isPast(CoreWorker.Stage.LOGIC)) {
             if (!event.tick())
                 return event;
         }

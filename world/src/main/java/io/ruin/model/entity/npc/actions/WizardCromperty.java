@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions;
 
-import io.ruin.model.diaries.ardougne.ArdougneDiaryEntry;
+import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.diaries.western.WesternDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 
@@ -17,7 +17,7 @@ public class WizardCromperty {
                 event.delay(3);
                 player.sendMessage("The wizard teleports you to the essence mine.");
                 player.getMovement().teleport(2910, 4830, 0);
-                player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.TELEPORT_ESSENCE_ARD);
+                player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.TELEPORT_ESSENCE_ARD);
             });
         });
         NPCAction.register(8480, "teleport", (player, npc) -> {
@@ -30,7 +30,7 @@ public class WizardCromperty {
                 event.delay(3);
                 player.sendMessage("The wizard teleports you to the essence mine.");
                 player.getMovement().teleport(2910, 4830, 0);
-                player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.TELEPORT_ESSENCE_ARD);
+                player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.TELEPORT_ESSENCE_ARD);
             });
         });
         NPCAction.register(8481, "talk-to", (player, npc) -> {
@@ -43,7 +43,7 @@ public class WizardCromperty {
                 event.delay(3);
                 player.sendMessage("The wizard teleports you to the essence mine.");
                 player.getMovement().teleport(2910, 4830, 0);
-                player.getDiaryManager().getArdougneDiary().progress(ArdougneDiaryEntry.TELEPORT_ESSENCE_ARD);
+                player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.TELEPORT_ESSENCE_ARD);
             });
         });
         NPCAction.register(4913, "talk-to", (player, npc) -> {

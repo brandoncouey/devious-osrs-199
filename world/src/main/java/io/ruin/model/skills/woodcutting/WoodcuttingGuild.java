@@ -1,7 +1,7 @@
 package io.ruin.model.skills.woodcutting;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.diaries.kourend.KourendDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
@@ -94,7 +94,7 @@ public class WoodcuttingGuild {
                     GameObject southGate = Tile.getObject(28852, 1657, 3504, 0);
                     openGate(player, northGate, southGate, 1658, 3505);
                 }
-                player.getDiaryManager().getKourendDiary().progress(KourendDiaryEntry.WOODCUTTING_GUILD);
+                //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.WOODCUTTING_GUILD);
             });
         }
 
