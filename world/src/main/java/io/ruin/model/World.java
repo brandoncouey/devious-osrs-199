@@ -346,8 +346,8 @@ public class World extends EventWorker {
         eb.setDescription("The Server is now being updated.");
         eb.setColor(new java.awt.Color(0xB00D03));
         eb.addField("Notification!", "<@&991831182310379601>", true);
-        //DiscordConnection.jda.getTextChannelById("994599921980289055").sendMessageEmbeds(eb.build()).queue();
-        /*Guild guild = //DiscordConnection.jda.getGuildById("991831182310379601"); //Guild you got from a listener, or from the JDA pool
+        //DiscordConnection.//jda.getTextChannelById("994599921980289055").sendMessageEmbeds(eb.build()).queue();
+        /*Guild guild = //DiscordConnection.//jda.getGuildById("991831182310379601"); //Guild you got from a listener, or from the JDA pool
         if (guild != null) {
             guild.findMembers(member -> {
                 if (member.getRoles().contains(guild.getRoleById("991831182310379601"))) {

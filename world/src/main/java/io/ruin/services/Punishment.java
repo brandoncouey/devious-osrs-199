@@ -190,7 +190,7 @@ public class Punishment {
             }
         }
         if (!World.isDev()) {
-            //DiscordConnection.jda.getTextChannelById(DiscordConnection.CHANNEL_PUNISHMENTS).sendMessageEmbeds(builder.build()).queue();
+            //DiscordConnection.//jda.getTextChannelById(DiscordConnection.CHANNEL_PUNISHMENTS).sendMessageEmbeds(builder.build()).queue();
         }
     }
 

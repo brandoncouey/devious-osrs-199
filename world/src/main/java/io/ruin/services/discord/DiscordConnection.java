@@ -36,7 +36,7 @@ public class DiscordConnection extends ListenerAdapter {
                 while (true) {
                     t.sleep(60000L);
                     if (!World.isPVPWorld()) {
-                        jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(World.players.count() + " players!"));
+                        //jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(World.players.count() + " players!"));
                     }
                 }
             });

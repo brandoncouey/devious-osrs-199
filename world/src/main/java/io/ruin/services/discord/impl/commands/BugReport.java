@@ -34,7 +34,7 @@ public class BugReport {
 //        eb.addField("Description: ", b, true);
 //        eb.addField("Date: ", formatter.format(date), true);
 //        eb.setColor(new java.awt.Color(0xB00D03));
-//        //DiscordConnection.jda.getTextChannelById("991831233468305449").sendMessage(eb.build()).queue();
+//        //DiscordConnection.//jda.getTextChannelById("991831233468305449").sendMessage(eb.build()).queue();
 
         // 156.13
         // 156.19
