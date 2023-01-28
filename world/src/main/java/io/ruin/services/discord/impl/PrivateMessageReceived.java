@@ -4,8 +4,8 @@ package io.ruin.services.discord.impl;/*
  * Created on - 3/24/2020
  */
 
-import net.dv8tion.jda.api.events.message.priv.PrivateMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.//jda.api.events.message.priv.PrivateMessageReceivedEvent;
+import net.dv8tion.//jda.api.hooks.ListenerAdapter;
 
 public class PrivateMessageReceived extends ListenerAdapter {
 

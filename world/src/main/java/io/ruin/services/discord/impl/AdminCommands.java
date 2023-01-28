@@ -10,9 +10,9 @@ import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerGroup;
 import lombok.SneakyThrows;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.//jda.api.EmbedBuilder;
+import net.dv8tion.//jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.//jda.api.hooks.ListenerAdapter;
 
 import java.awt.*;
 

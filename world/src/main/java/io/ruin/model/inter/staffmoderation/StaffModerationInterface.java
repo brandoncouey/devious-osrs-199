@@ -20,7 +20,7 @@ import io.ruin.services.Punishment;
 import io.ruin.utility.Broadcast;
 import lombok.Getter;
 import lombok.Setter;
-import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.//jda.api.EmbedBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -85,7 +85,7 @@ public class StaffModerationInterface {
                                 eb.addField("Target: ", p2.getName(), true);
                                 eb.addField("When: ", formatter.format(date), true);
                                 eb.setColor(new java.awt.Color(0xB00D03));
-                                jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
+                                //jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
 
                             }
                         break;
@@ -101,7 +101,7 @@ public class StaffModerationInterface {
                                 eb.addField("Target: ", p2.getName(), true);
                                 eb.addField("When: ", formatter.format(date), true);
                                 eb.setColor(new java.awt.Color(0xB00D03));
-                                jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
+                                //jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
 
                             }
                         break;
@@ -117,7 +117,7 @@ public class StaffModerationInterface {
                                 eb.addField("Target: ", p2.getName(), true);
                                 eb.addField("When: ", formatter.format(date), true);
                                 eb.setColor(new java.awt.Color(0xB00D03));
-                                jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
+                                //jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
 
                             }
                         break;
@@ -201,7 +201,7 @@ public class StaffModerationInterface {
                                 eb.addField("Target: ", p2.getName(), true);
                                 eb.addField("When: ", formatter.format(date), true);
                                 eb.setColor(new java.awt.Color(0xB00D03));
-                                jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
+                                //jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
 
                             }
                         break;

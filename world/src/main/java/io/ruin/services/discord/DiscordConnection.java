@@ -5,11 +5,11 @@ import io.ruin.process.task.TaskWorker;
 import io.ruin.services.discord.impl.AdminCommands;
 import io.ruin.services.discord.impl.DiscordAuth;
 import io.ruin.services.discord.impl.UserCommands;
-import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.JDABuilder;
-import net.dv8tion.jda.api.OnlineStatus;
-import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.//jda.api.JDA;
+import net.dv8tion.//jda.api.JDABuilder;
+import net.dv8tion.//jda.api.OnlineStatus;
+import net.dv8tion.//jda.api.entities.Activity;
+import net.dv8tion.//jda.api.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
 
@@ -36,7 +36,7 @@ public class DiscordConnection extends ListenerAdapter {
                 while (true) {
                     t.sleep(60000L);
                     if (!World.isPVPWorld()) {
-                        jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(World.players.count() + " players!"));
+                        //jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(World.players.count() + " players!"));
                     }
                 }
             });

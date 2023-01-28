@@ -7,9 +7,9 @@ import io.ruin.model.activities.wilderness.Hotspot;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.services.discord.DiscordConnection;
 import lombok.SneakyThrows;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.//jda.api.EmbedBuilder;
+import net.dv8tion.//jda.api.events.message.guild.GuildMessageReceivedEvent;
+import net.dv8tion.//jda.api.hooks.ListenerAdapter;
 
 import java.awt.*;
 import java.sql.Connection;
@@ -172,7 +172,7 @@ public class UserCommands extends ListenerAdapter {
             eb.addField("Hunter: ", String.valueOf(Hunter), true);
             eb.addField("Construction: ", String.valueOf(Construction), true);
             eb.setColor(new java.awt.Color(0xB00D03));
-            //DiscordConnection.jda.getTextChannelById("991831233468305449").sendMessage(eb.build()).queue();
+            //DiscordConnection.//jda.getTextChannelById("991831233468305449").sendMessage(eb.build()).queue();
 
             st.close();
         } catch (Exception e) {
@@ -188,7 +188,7 @@ public class UserCommands extends ListenerAdapter {
         EmbedBuilder eb = new EmbedBuilder();
         eb.setTitle("That user: " + user + ", Does not exist!");
         eb.setColor(new java.awt.Color(0xB00D03));
-        //DiscordConnection.jda.getTextChannelById("991831233468305449").sendMessage(eb.build()).queue();
+        //DiscordConnection.//jda.getTextChannelById("991831233468305449").sendMessage(eb.build()).queue();
     }
 
     public static int TotalLevel;

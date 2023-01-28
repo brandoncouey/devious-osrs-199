@@ -118,8 +118,8 @@ import io.ruin.services.discord.DiscordConnection;
 import io.ruin.utility.Broadcast;
 import io.ruin.utility.IdHolder;
 import io.ruin.utility.TeleportConstants;
-import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Role;
+import net.dv8tion.//jda.api.EmbedBuilder;
+import net.dv8tion.//jda.api.entities.Role;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -223,7 +223,7 @@ public class CommandHandler implements Incoming {
                     builder.setTitle("OSRS Donation");
                     builder.addField("Name", player.getName(), true);
                     builder.addField("Amount", Integer.toString(amount), true);
-                    jda.getTextChannelById(DiscordConnection.CHANNEL_OSRS_DONATIONS).sendMessage(builder.build()).queue();
+                    //jda.getTextChannelById(DiscordConnection.CHANNEL_OSRS_DONATIONS).sendMessage(builder.build()).queue();
                 });
                 return true;
             }
@@ -714,8 +714,8 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             case "discordyt": {
-                Role test = jda.getGuildById("942793835061313587").getRoleById("946225047427764235");
-                jda.getGuildById("942793835061313587").addRoleToMember("945054506058649601", test).queue();
+                Role test = //jda.getGuildById("942793835061313587").getRoleById("946225047427764235");
+                //jda.getGuildById("942793835061313587").addRoleToMember("945054506058649601", test).queue();
                 return true;
             }
 
@@ -963,7 +963,7 @@ public class CommandHandler implements Incoming {
                 eb.addField("When: ", formatter.format(date), true);
                 eb.addField("World: ", String.valueOf(World.id), true);
                 eb.setColor(new java.awt.Color(0xB00D03));
-                jda.getTextChannelById("1024375637647044660").sendMessage(eb.build()).queue();
+                //jda.getTextChannelById("1024375637647044660").sendMessage(eb.build()).queue();
                 for (Player p : World.players) {
                     if (p.isStaff()) {
                         p.sendMessage(Color.RED, player.getName() + " has requested immediate assistance!");
@@ -1699,7 +1699,7 @@ public class CommandHandler implements Incoming {
                         eb.addField("Amount: ", String.valueOf(amount), true);
                         eb.setImage(("https://static.runelite.net/cache/item/icon/" + id + ".png"));
                         eb.setColor(new java.awt.Color(0xB00D03));
-                        jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                        //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
                     }
                 }
 
@@ -2129,7 +2129,7 @@ public class CommandHandler implements Incoming {
                             eb.addField("Amount: ", String.valueOf(1), true);
                             eb.setImage(("https://static.runelite.net/cache/item/icon/" + exactMatch.id + ".png"));
                             eb.setColor(new java.awt.Color(0xB00D03));
-                            jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                            //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
                         }
                     }
                     return true;
@@ -2150,7 +2150,7 @@ public class CommandHandler implements Incoming {
                                 eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
                                 eb.addField("Amount: ", String.valueOf(amt), true);
                                 eb.setColor(new java.awt.Color(0xB00D03));
-                                jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                                //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
                             }
                         } else if (item.getDef().notedId != -1 && amt > 1) {
                             player.getInventory().add(item.getDef().notedId, amt);
@@ -2165,7 +2165,7 @@ public class CommandHandler implements Incoming {
                                 eb.addField("Amount: ", String.valueOf(amt), true);
                                 eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
                                 eb.setColor(new java.awt.Color(0xB00D03));
-                                jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                                //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
                             }
                         } else {
                             player.getInventory().add(itemId, amt);
@@ -2181,7 +2181,7 @@ public class CommandHandler implements Incoming {
                                 eb.addField("Amount: ", String.valueOf(amt), true);
                                 eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
                                 eb.setColor(new java.awt.Color(0xB00D03));
-                                jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                                //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
                             }
                         }
                     });
@@ -2210,7 +2210,7 @@ public class CommandHandler implements Incoming {
                         eb.addField("When: ", formatter.format(date), true);
                         eb.addField("Godmode: ", "Enabled", true);
                         eb.setColor(new java.awt.Color(0xB00D03));
-                        jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                        //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
                     }
                 } else {
                     player.setInvincible(false);
@@ -2224,7 +2224,7 @@ public class CommandHandler implements Incoming {
                         eb.addField("When: ", formatter.format(date), true);
                         eb.addField("Godmode: ", "Disabled", true);
                         eb.setColor(new java.awt.Color(0xB00D03));
-                        jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                        //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
                     }
                 }
                 return true;
@@ -2248,7 +2248,7 @@ public class CommandHandler implements Incoming {
                     eb.addField("When: ", formatter.format(date), true);
                     eb.addField("SetStrength: ", String.valueOf(str), true);
                     eb.setColor(new java.awt.Color(0xB00D03));
-                    jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                    //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
                 }
                 return true;
             }
