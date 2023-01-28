@@ -316,22 +316,23 @@ public class StatList {
                 player.sendMessage(Color.ORANGE_RED.tag() + "Congratulations on achieving 2277 Total!");
                 if (!player.getGameMode().isIronMan()) {
                     announcedmax = true;
-                    Broadcast.GLOBAL.sendNews(Icon.NORMAL, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved 2277 Total.");
+                    Broadcast.GLOBAL.sendNews(Color.ORANGE.tag() + player.getName() + " has just achieved 2277 total level on " + player.xpMode.name().toLowerCase() + " mode!");
                 } else if (player.getGameMode().isHardcoreIronman()) {
                     announcedmax = true;
-                    Broadcast.GLOBAL.sendNews(Icon.HCIM, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved 2277 Total.");
+                    Broadcast.GLOBAL.sendNews(Icon.HCIM, Color.ORANGE.tag() + player.getName() + " has just achieved 2277 total level on " + player.xpMode.name().toLowerCase() + " mode!");
                 } else if (player.getGameMode().isUltimateIronman()) {
                     announcedmax = true;
-                    Broadcast.GLOBAL.sendNews(Icon.UIM, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved 2277 Total.");
+                    Broadcast.GLOBAL.sendNews(Icon.UIM, Color.ORANGE.tag() + player.getName() + " has just achieved 2277 total level on " + player.xpMode.name().toLowerCase() + " mode!");
                 } else if (player.getGameMode().isGroupIronman()) {
                     announcedmax = true;
                     Broadcast.GLOBAL.sendNews(Icon.GIM, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved 2277 Total.");
+                    Broadcast.GLOBAL.sendNews(Icon.GIM, Color.ORANGE.tag() + player.getName() + " has just achieved 2277 total level on " + player.xpMode.name().toLowerCase() + " mode!");
                 } else if (player.getGameMode().isHardcoreGroupIronman()) {
                     announcedmax = true;
-                    Broadcast.GLOBAL.sendNews(Icon.HGIM, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved 2277 Total.");
+                    Broadcast.GLOBAL.sendNews(Icon.HGIM, Color.ORANGE.tag() + player.getName() + " has just achieved 2277 total level on " + player.xpMode.name().toLowerCase() + " mode!");
                 } else {
                     announcedmax = true;
-                    Broadcast.GLOBAL.sendNews(Icon.IRONMAN, "<col=ff0000>[" + player.xpMode.getCombatRate() + "x] </col>" + player.getName() + " has just achieved 2277 Total.");
+                    Broadcast.GLOBAL.sendNews(Icon.IRONMAN, Color.ORANGE.tag() + player.getName() + " has just achieved 2277 total level on " + player.xpMode.name().toLowerCase() + " mode!");
                 }
             }
         }
