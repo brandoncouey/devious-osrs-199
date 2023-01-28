@@ -11,8 +11,8 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.process.task.TaskWorker;
 import io.ruin.services.discord.DiscordConnection;
-import net.dv8tion.//jda.api.EmbedBuilder;
-import net.dv8tion.//jda.api.entities.MessageEmbed;
+import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.MessageEmbed;
 
 import java.util.Date;
 
@@ -190,7 +190,7 @@ public class Punishment {
             }
         }
         if (!World.isDev()) {
-            //DiscordConnection.//jda.getTextChannelById(DiscordConnection.CHANNEL_PUNISHMENTS).sendMessageEmbeds(builder.build()).queue();
+            //DiscordConnection.jda.getTextChannelById(DiscordConnection.CHANNEL_PUNISHMENTS).sendMessageEmbeds(builder.build()).queue();
         }
     }
 

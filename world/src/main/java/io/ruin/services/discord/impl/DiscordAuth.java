@@ -1,6 +1,6 @@
 package io.ruin.services.discord.impl;
 
-import net.dv8tion.//jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 
 public class DiscordAuth extends ListenerAdapter {

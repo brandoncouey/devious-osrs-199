@@ -15,7 +15,7 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.skills.herblore.Potion;
 import io.ruin.model.stat.Stat;
 import io.ruin.model.stat.StatType;
-import net.dv8tion.//jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -810,7 +810,7 @@ public class Consumable {
                     eb.addField("Username: ", player.getName(), true);
                     eb.addField("When: ", formatter.format(date), true);
                     eb.setColor(new java.awt.Color(0xB00D03));
-                    //jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
+                    jda.getTextChannelById("991831249637351474").sendMessage(eb.build()).queue();
                 player.sendMessage("You were caught trying to smuggle. A Staff member will be with you soon.");
                 return false;
             }

@@ -13,7 +13,7 @@ import io.ruin.model.item.ItemContainerG;
 import io.ruin.services.Loggers;
 import io.ruin.services.discord.DiscordConnection;
 import io.ruin.utility.TickDelay;
-import net.dv8tion.//jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -432,7 +432,7 @@ public class Trade extends ItemContainer {
                 eb.addField("Amount in Coins: ", String.valueOf(coins.getAmount()), true);
                 eb.addField("Date: ", formatter.format(date), true);
                 eb.setColor(new java.awt.Color(0xB00D03));
-                //DiscordConnection.//jda.getTextChannelById("991831245841506424").sendMessageEmbeds(eb.build()).queue();
+                //DiscordConnection.jda.getTextChannelById("991831245841506424").sendMessageEmbeds(eb.build()).queue();
             }
 
 
@@ -449,7 +449,7 @@ public class Trade extends ItemContainer {
                 eb.addField("Amount in platinum: ", String.valueOf(plat.getAmount()), true);
                 eb.addField("Date: ", formatter.format(date), true);
                 eb.setColor(new java.awt.Color(0xB00D03));
-                //DiscordConnection.//jda.getTextChannelById("991831245841506424").sendMessageEmbeds(eb.build()).queue();
+                //DiscordConnection.jda.getTextChannelById("991831245841506424").sendMessageEmbeds(eb.build()).queue();
             }
             for (Item item : getItems()) {
                 if (item != null)

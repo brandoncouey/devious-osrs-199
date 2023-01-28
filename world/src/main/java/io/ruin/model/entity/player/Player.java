@@ -1879,7 +1879,7 @@ public class Player extends PlayerAttributes {
        }
         GIMRepository.onlogout(this);
 //        if (!World.isDev()) {
-//        //jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(World.players.count() - 1 + " players!"));
+//        jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(World.players.count() - 1 + " players!"));
 //        }
     }
 

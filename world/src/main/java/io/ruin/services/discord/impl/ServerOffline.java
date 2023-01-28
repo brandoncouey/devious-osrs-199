@@ -3,7 +3,7 @@ package io.ruin.services.discord.impl;
 import io.ruin.services.discord.DiscordConnection;
 import io.ruin.services.discord.util.Embed;
 import io.ruin.services.discord.util.Thumbnail;
-import net.dv8tion.//jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.awt.*;
 import java.text.SimpleDateFormat;
@@ -25,6 +25,6 @@ public class ServerOffline {
         thumbnail.setUrl("https://deviousps.com/data/assets/logo/fav.png");
         embedMessage.setThumbnail(thumbnail);
         embed.setColor(new java.awt.Color(0xB00D03));
-        //DiscordConnection.//jda.getTextChannelById("994599921980289055").sendMessage(embed.build()).queue();
+        //DiscordConnection.jda.getTextChannelById("994599921980289055").sendMessage(embed.build()).queue();
     }
 }
