@@ -82,16 +82,11 @@ public class PlayerLogin extends LoginRequest {
             }
             if (!WhitelistLogins.isAllowed(info.name)) {
                 deny(Response.INVALID_LOGIN);
-                System.out.println("Not allowed! ::" +info.name);
                 return;
             }
 
             player.setIndex(index);
             player.init(info);
-
-            //reconstruct players if their before the char fuck up
-            //PlayerRestore.reconstructPlayer(player);
-
             World.players.set(index, player);
             LOADING[index] = false;
             player.getPacketSender().sendLogin(info);

@@ -60,9 +60,9 @@ public class TabQuest {
         COMPONENT_52(52, player -> "Settings", (SimpleAction) player -> sendToggles(player)),
 
         COMPONENT_19(19, player -> "Website", (SimpleAction) player -> player.openUrl("https://deviousps.com")),
-        COMPONENT_20(20, player -> "Community", (SimpleAction) player -> player.openUrl("https://deviousps.com/forums")),
-        COMPONENT_21(21, player -> "Discord", (SimpleAction) player -> player.openUrl("https://discord.gg/Devious")),//TODO: Change to our link
-        COMPONENT_22(22, player -> "Store", (SimpleAction) player -> player.openUrl("https://deviousps.com/pages/donate/"));
+        COMPONENT_20(20, player -> "Community", (SimpleAction) player -> player.openUrl("https://deviousps.com/community")),
+        COMPONENT_21(21, player -> "Discord", (SimpleAction) player -> player.openUrl("https://discord.deviousps.com")),//TODO: Change to our link
+        COMPONENT_22(22, player -> "Store", (SimpleAction) player -> player.openUrl("https://deviousps.com/store/"));
 
         private final int componentId;
         private final TextField text;

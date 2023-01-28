@@ -120,7 +120,7 @@ public class TabOptions {
      * Bond Interface
      */
     public static void openBonds(Player player) {
-        player.sendURL("https://deviousps.com/pages/donate/");
+        player.sendURL("https://deviousps.com/store/");
     }
 
     /**

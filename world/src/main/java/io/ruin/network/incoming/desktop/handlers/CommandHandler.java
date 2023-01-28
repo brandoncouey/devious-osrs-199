@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.Lists;
 import com.google.gson.GsonBuilder;
+import com.sun.security.auth.NTSidPrimaryGroupPrincipal;
 import io.ruin.Configuration;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.utils.*;
@@ -713,11 +714,6 @@ public class CommandHandler implements Incoming {
                 player.getAppearance().update();
                 return true;
             }
-            case "discordyt": {
-                Role test = //jda.getGuildById("942793835061313587").getRoleById("946225047427764235");
-                //jda.getGuildById("942793835061313587").addRoleToMember("945054506058649601", test).queue();
-                return true;
-            }
 
             case "yell": {
                 boolean shadow = false;
@@ -779,36 +775,50 @@ public class CommandHandler implements Incoming {
 
                 if (player.isOwner()) {
                     color = Color.PURPLE;
+                    message = "<shad=000000>" + color.tag() + "[" + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isAdmin()) {
                     color = Color.YELLOW;
+                    message = "<shad=000000>" + color.tag() + "[" + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isModerator()) {
                     color = Color.SILVER;
+                    message = "<shad=000000>" + color.tag() + "[" + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isSupport()) {
                     color = Color.CYAN;
+                    message = "<shad=000000>" + color.tag() + "[" + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isYoutuber()) {
                     color = Color.RED;
+                    message = "<shad=000000>" + color.tag() + "[" + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isZenyteDonator()) {
                     color = Color.ORANGE;
+                    message = "<shad=000000>" + color.tag() + "[<img=55>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isOnyxDonator()) {
                     color = Color.BLACK;
+                    message = "<shad=000000>" + color.tag() + "[<img=54>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isDragonstoneDonator()) {
                     color = Color.PURPLE;
+                    message = "<shad=000000>" + color.tag() + "[<img=53>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isDiamondDonator()) {
                     color = Color.WHITE;
+                    message = "<shad=000000>" + color.tag() + "[<img=49>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isRubyDonator()) {
                     color = Color.RED;
+                    message = "<shad=000000>" + color.tag() + "[<img=48>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isEmeraldDonator()) {
                     color = Color.GREEN;
+                    message = "<shad=000000>" + color.tag() + "[<img=47>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isSapphireDonator()) {
                     color = Color.BLUE;
+                    message = "<shad=000000>" + color.tag() + "[<img=46>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isRedTopazDonator()) {
                     color = Color.REDTOPAZ;
+                    message = "<shad=000000>" + color.tag() + "[<img=45>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isJadeDonator()) {
                     color = Color.JADE;
+                    message = "<shad=000000>" + color.tag() + "[<img=44>" + player.getName() + "]</shad></col>: " + message;
                 } else if (player.isOpalDonator()) {
                     color = Color.OPAL;
+                    message = "<shad=000000>" + color.tag() + "[<img=43>" + player.getName() + "]</shad></col>: " + message;
                 }
-                message = "<shad=000000>" + color.tag() + "[" + (clientGroup.clientImgId != -1 ? clientGroup.tag() : "") + player.getName() + "]</shad></col>: " + message;
                 player.yellDelay = ms + (delaySeconds * 1000L);
                 if (shadow) {
                     player.sendMessage(message);
@@ -1797,6 +1807,7 @@ public class CommandHandler implements Incoming {
                 forPlayerInt(player, query, "::storeup playerName amount", (p2, amount) -> {
                     p2.storeAmountSpent += amount;
                     p2.sendMessage(player.getName() + " has added $" + amount + " to your store amount");
+                    SecondaryGroup.getGroup(p2);
                     player.sendMessage("Gave $" + amount + " store amount to " + p2.getName() + ".");
                 });
                 return true;
@@ -1806,6 +1817,7 @@ public class CommandHandler implements Incoming {
                 forPlayerInt(player, query, "::storedown playerName amount", (p2, amount) -> {
                     p2.storeAmountSpent -= amount;
                     p2.sendMessage(player.getName() + " has removed $" + amount + " from your store amount");
+                    SecondaryGroup.getGroup(p2);
                     player.sendMessage("removed $" + amount + " store amount from " + p2.getName() + ".");
                 });
                 return true;

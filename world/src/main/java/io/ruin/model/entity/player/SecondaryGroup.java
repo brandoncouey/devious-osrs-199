@@ -71,20 +71,6 @@ public enum SecondaryGroup {
         });
     }
 
-    public void removePKMode(Player player, String type) {
-        removePKMode(player, type, null);
-    }
-
-    public void removePKMode(Player player, String type, Runnable successAction) {
-        CompletableFuture.runAsync(() -> {
-            Map<Object, Object> map = new HashMap<>();
-            map.put("userId", player.getUserId());
-            map.put("type", type);
-//            String result = XenPost.post("remove_group", map);
-//            if(successAction != null && "1".equals(result))
-//                successAction.run();
-        });
-    }
 
     public String tag() {
         return "<img=" + clientImgId + ">";
