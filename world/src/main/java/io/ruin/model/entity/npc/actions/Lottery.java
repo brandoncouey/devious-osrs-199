@@ -3,6 +3,7 @@ package io.ruin.model.entity.npc.actions;
 import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.utils.JsonUtils;
+import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.api.utils.TimeUtils;
 import io.ruin.cache.Color;
@@ -111,11 +112,11 @@ public class Lottery {
 
     public String getBroadcastMessage() {
         if (CURRENT_07_POT > 0 && CURRENT_EDGEVILLE_GP_POT > 0) {
-            return "Edgeville Lottery Pot - " + CURRENT_07_POT + "M 07 GP and "  + CURRENT_EDGEVILLE_GP_POT + "M! Get entered to WIN!";
+            return "Devious Lottery Pot - " + CURRENT_07_POT + "M 07 GP and "  + CURRENT_EDGEVILLE_GP_POT + "M! Get entered to WIN!";
         } else if (CURRENT_07_POT > 0) {
-            return "Edgeville Lottery Pot - " + CURRENT_07_POT + "M 07 GP! Get entered to WIN!";
+            return "Devious Lottery Pot - " + CURRENT_07_POT + "M 07 GP! Get entered to WIN!";
         } else if (CURRENT_EDGEVILLE_GP_POT > 0) {
-            return "Edgeville Lottery Pot - " + CURRENT_EDGEVILLE_GP_POT + "M! Get entered to WIN!";
+            return "Devious Lottery Pot - " + CURRENT_EDGEVILLE_GP_POT + "M! Get entered to WIN!";
         }
         return "";
     }
@@ -206,7 +207,6 @@ public class Lottery {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public static void load() {
@@ -216,8 +216,7 @@ public class Lottery {
                 byte[] bytes = Files.readAllBytes(file.toPath());
                 String json = new String(bytes);
                 lottery = JsonUtils.GSON_EXPOSE_PRETTY.fromJson(json, Lottery.class);
-                System.out.println(lottery.getUnclaimedWinners().size());
-                System.out.println("Successfully loaded lottery.");
+                Server.println("Successfully loaded lottery...");
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -240,7 +239,7 @@ public class Lottery {
 
     @Data
     @RequiredArgsConstructor
-    public class UnclaimedLotteryPrize {
+    public static class UnclaimedLotteryPrize {
         @Expose private final String winner;
         @Expose private final int edgevillePot;
         @Expose private final int osrsPot;

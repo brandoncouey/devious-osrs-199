@@ -32,7 +32,7 @@ public class MenagerieRoom extends Room {
 
     static {
         InterfaceHandler.register(Interface.PET_HOUSE, h -> {
-            h.actions[7] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[7] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (!player.isInOwnHouse())
                     return;
                 Room room = player.getCurrentRoom();

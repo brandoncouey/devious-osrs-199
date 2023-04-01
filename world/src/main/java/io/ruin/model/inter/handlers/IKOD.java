@@ -18,6 +18,7 @@ import io.ruin.model.item.actions.impl.combine.ItemCombining;
 import io.ruin.model.item.attributes.AttributeExtensions;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.services.Loggers;
+import io.ruin.utility.PlayerLog;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -379,9 +380,9 @@ public class IKOD {
         for (Item dropItem : loseItems)
             dropConsumer.accept(dropItem);
         if (killer == null)
-            Loggers.logDangerousDeath(player.getUserId(), player.getName(), player.getIp(), -1, "", "", keepItems, loseItems);
+            PlayerLog.log(PlayerLog.Type.KILLED, player.getName(), "Died and kept items [" + keepItems + "] and lost items [" + loseItems + "].");
         else
-            Loggers.logDangerousDeath(player.getUserId(), player.getName(), player.getIp(), killer.player.getUserId(), killer.player.getName(), killer.player.getIp(), keepItems, loseItems);
+            PlayerLog.log(PlayerLog.Type.KILLED, player.getName(), "IP [" + player.getIp() + "] Died from [" + killer.player.getName() + " - " + killer.player.getIp() + ") and kept items [" + keepItems + "] and lost items [" + loseItems + "].");
     }
 
     public static int getKeepCount(boolean skulled, boolean ultimateIronman, boolean protectingItem) {
@@ -426,7 +427,7 @@ public class IKOD {
 
         InterfaceHandler.register(Interface.ITEMS_KEPT_ON_DEATH, h -> {
 
-            h.actions[12] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[12] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 switch (slot) {
                     case 0:
                         p.protect = !p.protect;

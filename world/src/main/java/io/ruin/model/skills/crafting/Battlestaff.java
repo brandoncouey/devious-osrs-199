@@ -33,10 +33,6 @@ public enum Battlestaff {
         player.graphics(gfxId);
         orb.remove();
         player.getStats().addXp(StatType.Crafting, exp, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
     }
 
     private static final int BATTLE_STAFF = 1391;

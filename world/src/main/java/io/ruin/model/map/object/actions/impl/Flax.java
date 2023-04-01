@@ -2,7 +2,7 @@ package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -22,7 +22,7 @@ public class Flax {
             player.sendMessage("You pick some flax.");
             if (Random.rollDie(6, 1))
                 removeFlax(flax);
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.PICK_FLAX_SEERS);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.PICK_FLAX_SEERS);
             player.unlock();
         });
     }

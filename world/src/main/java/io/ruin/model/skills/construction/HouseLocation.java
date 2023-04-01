@@ -13,7 +13,7 @@ import lombok.Getter;
 import java.util.Locale;
 @Getter
 public enum HouseLocation {
-    EDGEVILLE(15478, 1, 10000, new Position(3097, 3504, 0)), // same as rimmington
+    EDGEVILLE(15477, 1, 10000, new Position(3099, 3503, 0)), // same as taverly
     TAVERLEY(15477, 10, 10000, new Position(2893, 3465, 0)),
     POLLNIVNEACH(15479, 20, 15000, new Position(3340, 3003, 0)),
     GREAT_KOUREND(28822, 25, 17500, new Position(1742, 3517, 0)),

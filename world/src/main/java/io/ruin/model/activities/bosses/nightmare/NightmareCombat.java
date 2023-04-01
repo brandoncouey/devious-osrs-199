@@ -66,7 +66,7 @@ public class NightmareCombat extends NPCCombat {
                     new GroundItem(rolled.getId(), amount).owner(k.player).position(npc.getPosition()).spawn();
                     k.player.getCollectionLog().collect(rolled);
                     if (rolled.getId() == 24420 || rolled.getId() == 24421 || rolled.getId() == 24419 || rolled.getId() == 24417 || rolled.getId() == 24514 || rolled.getId() == 24517 || rolled.getId() == 24511 || rolled.getId() == 24422) {
-                        Broadcast.WORLD.sendNews("<shad=000000>" + Color.RAID_PURPLE.wrap(k.player.getName() + " has just received " + rolled.getDef().name) + " from Nightmare!" + "</shad>");
+                        Broadcast.WORLD.sendNews("<shad=000000>" + Color.ORANGE.wrap(k.player.getName() + " has just received " + rolled.getDef().name + " from Nightmare at KC: " + k.player.nightmareofAshihamaKills + "!" + "</shad>"));
                     }
                 }
             }

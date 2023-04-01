@@ -111,10 +111,6 @@ public enum LogCutting {
                 player.getInventory().add(log.item);
                 player.sendFilteredMessage("You carefully cut the wood into " + log.name + ".");
                 player.getStats().addXp(StatType.Fletching, log.exp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 player.animate(1248);
                 event.delay(2);
             }

@@ -1,9 +1,10 @@
 package io.ruin.model.item.actions.impl.jewellery;
 
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.pvm.PvMDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
+import io.ruin.model.inter.handlers.OptionScroll;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -16,6 +17,8 @@ public class JeweleryTeleports {
     public final boolean dragonstone;
 
     public final Teleport[] teleports;
+
+    private OptionScroll scroll;
 
     public JeweleryTeleports(String type, boolean dragonstone, Teleport... teleports) {
         this.type = type;
@@ -35,7 +38,12 @@ public class JeweleryTeleports {
                 Teleport teleport = teleports[i];
                 options[i] = new Option(teleport.name, () -> teleport.select(player, item, charges, replacementId, this));
             }
-            player.dialogue(new OptionsDialogue("Where would you like to teleport to?", options));
+            if (options.length > 5) {
+                scroll = new OptionScroll("Where would you like to teleport to?", true, options);
+                scroll.open(player);
+            } else {
+                player.dialogue(new OptionsDialogue("Where would you like to teleport to?", options));
+            }
         });
         for (Teleport teleport : teleports) {
             if (charges == 0)
@@ -105,7 +113,7 @@ public class JeweleryTeleports {
                 }
 
                 if (name.equalsIgnoreCase("Digsite")) {
-                    player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.DIGSITE);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.DIGSITE);
                 }
             });
         }

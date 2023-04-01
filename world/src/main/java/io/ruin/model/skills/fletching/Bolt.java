@@ -67,10 +67,6 @@ public enum Bolt {
         tipItem.remove(amount);
         player.getInventory().add(tipped, amount);
         player.getStats().addXp(StatType.Fletching, experience * amount, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
         boolean broad = boltItem.getId() == BROAD.id;
         if (broad)
             player.sendFilteredMessage("You attach feathers to " + amount + " broad bolts.");

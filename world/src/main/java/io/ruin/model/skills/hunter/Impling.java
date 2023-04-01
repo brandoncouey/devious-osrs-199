@@ -101,10 +101,6 @@ public enum Impling {
 
                 despawnImpling(npc);
                 player.getStats().addXp(StatType.Hunter, player.getPosition().inBounds(PURO_PURO) ? impling.puroExp : impling.worldExp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 PlayerCounter.IMPLINGS_CAUGHT.increment(player, 1);
             }
             player.unlock();

@@ -12,6 +12,7 @@ import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.item.Item;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.services.Loggers;
+import io.ruin.utility.PlayerLog;
 import io.ruin.utility.TimedList;
 
 import java.util.concurrent.TimeUnit;
@@ -26,18 +27,6 @@ public class LoyaltyChest {
     private static final long LOYALTY_SPREE_TIMER = TimeUnit.HOURS.toMillis(36);
     private static final int LOYALTY_CHEST = 32758;
 
-    private static final Item[] PVP_REWARDS = {
-            new Item(BLOOD_MONEY, 250),
-            new Item(BLOOD_MONEY, 500),
-            new Item(BLOOD_MONEY, 750),
-            new Item(BLOOD_MONEY, 1000),
-            new Item(BLOOD_MONEY, 1250),
-            new Item(BLOOD_MONEY, 1500),
-            new Item(BLOOD_MONEY, 1750),
-            new Item(BLOOD_MONEY, 2000),
-            new Item(BLOOD_MONEY, 2250),
-            new Item(BLOOD_MONEY, 3000)
-    };
 
     private static final Item[] ECO_REWARDS = {
             new Item(COINS_995, 10000),
@@ -164,7 +153,7 @@ public class LoyaltyChest {
             player.getInventory().addOrDrop(rewardItem);
             player.sendFilteredMessage(Color.COOL_BLUE.wrap("You have opened the loyalty chest a total of " + player.loyaltyChestCount + " time" + (player.loyaltyChestCount > 1 ? "s" : "") + " and are on a spree of " + player.loyaltyChestSpree + "."));
             player.sendFilteredMessage("You receive " + Color.COOL_BLUE.wrap(rewardItem.getDef().descriptiveName) + " for your loyalty towards " + Color.COOL_BLUE.wrap(World.type.getWorldName() + "") + ". Thank you for playing!");
-            Loggers.logLoyaltyChest(player.getUserId(), player.getName(), player.getIp(), player.loyaltyChestSpree, rewardItem);
+            PlayerLog.log(PlayerLog.Type.LOYALTY_CHEST, player.getName(), "IP=" + player.getIp() + ", ChestSpree=" + player.loyaltyChestSpree + ", Reward=" + rewardItem);
             player.unlock();
         });
     }

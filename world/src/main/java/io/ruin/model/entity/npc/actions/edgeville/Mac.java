@@ -137,7 +137,6 @@ public class Mac {
         NPCAction.register(6481, "buy-capes", (p, n) -> ShopManager.openIfExists(p, MAC_SHOP_UUID));
         NPCAction.register(6481, "buy-capes 2", (p, n) -> ShopManager.openIfExists(p, MAC_SHOP2_UUID));
         NPCAction.register(6481, "buy-master capes", (p, n) -> ShopManager.openIfExists(p, MAC_MASTER_UUID));
-        NPCAction.register(6481, "reset-levels", Mac::resetLevels);
 
     }
 

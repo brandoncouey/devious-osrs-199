@@ -57,10 +57,6 @@ public enum SpinningWheel {
         player.getInventory().remove(item.before, 1);
         player.getInventory().add(item.after, 1);
         player.getStats().addXp(StatType.Crafting, item.exp, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
     }
 
     private static void spinningOptions(Player player) {

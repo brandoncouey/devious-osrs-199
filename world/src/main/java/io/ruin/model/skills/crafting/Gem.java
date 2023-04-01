@@ -1,6 +1,5 @@
 package io.ruin.model.skills.crafting;
 
-import io.ruin.api.utils.Random;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -42,12 +41,8 @@ public enum Gem {
         player.animate(animId);
         uncutItem.setId(cutId);
         player.getStats().addXp(StatType.Crafting, xp, true);
-        if(player.currentTaskMedium == DailyTask.PossibleTasksMedium.SAPPHIRES){
-            DailyTask.increaseMedium(player, DailyTask.PossibleTasksMedium.SAPPHIRES);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
+        if(DailyTask.hasMediumTask(player, DailyTask.MediumTasks.SAPPHIRES)){
+            DailyTask.increaseMedium(player, DailyTask.MediumTasks.SAPPHIRES);
         }
     }
 

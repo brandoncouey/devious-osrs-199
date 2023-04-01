@@ -234,24 +234,6 @@
     "walkRange": 1
   },
   {
-    "name": "Dark wizard",
-    "id": 510,
-    "x": 3085,
-    "y": 3234,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 1
-  },
-  {
-    "name": "Dark wizard",
-    "id": 512,
-    "x": 3088,
-    "y": 3237,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2
-  },
-  {
     "name": "Gull",
     "id": 4289,
     "x": 3079,

@@ -5,7 +5,8 @@ import io.ruin.cache.NPCDef;
 import io.ruin.data.impl.npcs.npc_combat;
 import io.ruin.model.World;
 import io.ruin.model.activities.miscpvm.PassiveCombat;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LogoutListener;
@@ -219,7 +220,7 @@ public class PestControlGame {
 					}
 					p.pestPoints += rewardedPoints;
 					p.getInventory().addOrDrop(new Item(COINS_995, Random.get(3000, 7000)));
-					p.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.PEST_CONTROL);
+					p.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.PEST_CONTROL);
 					p.dialogue(new NPCDialogue(SQUIRE_ID,
 							"Congratulations! You managed to destroy all the portals!<br>" +
 									"We've awarded you " + rewardedPoints + " Void Knight Commendation<br>points." +

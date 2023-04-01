@@ -6,6 +6,7 @@ import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.actions.edgeville.Nurse;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 
@@ -28,6 +29,15 @@ public class RejuvenationPool {
             player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.FOUNTAIN);
             player.animate(833);
             Nurse.heal(player, null);
+            Config.POISONED.set(player, 0);
+            player.poisonLevel = 0;
+            player.poisonTicks = 0;
+            player.poisonDamage = 0;
+            player.getStats().restore(true);
+            player.getMovement().restoreEnergy(100);
+            player.curePoison(1);
+            player.cureVenom(1);
+            player.getCombat().restore();
             event.delay(1);
             if (delayCheck)
                 player.rejuvenationPool = System.currentTimeMillis();

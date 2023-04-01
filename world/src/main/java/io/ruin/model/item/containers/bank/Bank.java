@@ -192,23 +192,23 @@ public class Bank extends ItemContainerG<BankItem> {
     }
 
     public void deposit(ItemContainer container, boolean message) {
-        if(!player.isVisibleInterface(12))
-            return;
+        if (player.isVisibleInterface(12) || player.isVisibleInterface(Interface.DEPOSIT_BOX)) {
 
-        if(container.isEmpty()) {
-            if(message)
-                player.sendMessage("You have nothing to deposit.");
-            return;
-        }
-        sortAfter(() -> {
-            boolean deposited = false;
-            for(Item item : container.getItems()) {
-                if(item != null && deposit(item, item.getAmount(), false) > 0)
-                    deposited = true;
+            if (container.isEmpty()) {
+                if (message)
+                    player.sendMessage("You have nothing to deposit.");
+                return;
             }
-            if(!deposited && message)
-                player.sendMessage("Your bank cannot hold your items.");
-        });
+            sortAfter(() -> {
+                boolean deposited = false;
+                for (Item item : container.getItems()) {
+                    if (item != null && deposit(item, item.getAmount(), false) > 0)
+                        deposited = true;
+                }
+                if (!deposited && message)
+                    player.sendMessage("Your bank cannot hold your items.");
+            });
+        }
     }
 
     /**
@@ -642,7 +642,7 @@ public class Bank extends ItemContainerG<BankItem> {
         InterfaceHandler.register(Interface.BANK, h -> {
             h.action(WidgetInfo.BANK_TAB_CONTAINER, new InterfaceAction() {
                 @Override
-                public void handleClick(Player player, int option, int slot, int itemId) {
+                public void handleClick(Player player, int childId, int option, int slot, int itemId) {
                     player.getBank().selectTab(option, slot);
                 }
 
@@ -654,7 +654,7 @@ public class Bank extends ItemContainerG<BankItem> {
             });
             h.action(WidgetInfo.BANK_ITEM_CONTAINER, new InterfaceAction() {
                 @Override
-                public void handleClick(Player player, int option, int slot, int itemId) {
+                public void handleClick(Player player, int childId, int option, int slot, int itemId) {
                     BankItem item = player.getBank().get(slot, itemId);
                     if (item == null)
                         return;
@@ -762,11 +762,18 @@ public class Bank extends ItemContainerG<BankItem> {
                         break;
                 }
             };
-            h.simpleAction(36, p -> Config.BANK_DEFAULT_QUANTITY.set(p, 4));
+            h.simpleAction(36, p -> {
+                Config.BANK_DEFAULT_QUANTITY.set(p, 4);
+            });
             h.simpleAction(38, Config.BANK_ALWAYS_PLACEHOLDERS::toggle);
-            h.simpleAction(WidgetInfo.BANK_DEPOSIT_INVENTORY, p -> p.getBank().deposit(p.getInventory(), true));
-            h.simpleAction(WidgetInfo.BANK_DEPOSIT_EQUIPMENT, p -> p.getBank().deposit(p.getEquipment(), true));
-            h.action(WidgetInfo.BANK_INCINERATOR_CONFIRM, (DefaultAction) (p, option, slot, itemId) -> p.getBank().incinerate(slot, itemId));
+            h.simpleAction(WidgetInfo.BANK_DEPOSIT_INVENTORY, p -> {
+                p.getBank().deposit(p.getInventory(), true);
+            });
+            h.simpleAction(WidgetInfo.BANK_DEPOSIT_EQUIPMENT, p ->  {
+                p.getBank().deposit(p.getEquipment(), true);
+            });
+            h.action(WidgetInfo.BANK_INCINERATOR_CONFIRM, (DefaultAction) (p, childId, option, slot, itemId) -> { p.getBank().incinerate(slot, itemId);
+            });
             h.simpleAction(50, p -> {
                 // TOGGLE: inventory item options.
             });
@@ -791,7 +798,7 @@ public class Bank extends ItemContainerG<BankItem> {
 
             h.actions[3] = new InterfaceAction() {
                 @Override
-                public void handleClick(Player player, int option, int slot, int itemId) {
+                public void handleClick(Player player, int childId, int option, int slot, int itemId) {
                     Item item = player.getInventory().get(slot, itemId);
                     if (item == null)
                         return;
@@ -946,7 +953,7 @@ public class Bank extends ItemContainerG<BankItem> {
                     }
                 }
             };
-            h.actions[13] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[13] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 Item item = player.getLootingBag().get(slot, itemId);
                 if(item == null)
                     return;
@@ -974,10 +981,11 @@ public class Bank extends ItemContainerG<BankItem> {
          */
         InterfaceHandler.register(Interface.DEPOSIT_BOX, h -> {
 
-            h.actions[1] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[2] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 Item item = player.getInventory().get(slot, itemId);
-                if (item == null)
+                if (item == null) {
                     return;
+                }
                 if (option == 1) {
                     player.getBank().deposit(item, 1, true);
                     return;
@@ -999,9 +1007,15 @@ public class Bank extends ItemContainerG<BankItem> {
                 }
             };
 
-            h.actions[4] = (SimpleAction) p -> p.getBank().deposit(p.getInventory(), true);
-            h.actions[6] = (SimpleAction) p -> p.getBank().deposit(p.getEquipment(), true);
-            h.actions[8] = (SimpleAction) p -> p.getBank().deposit(p.getLootingBag(), true);
+            h.actions[4] = (SimpleAction) p ->  {
+                p.getBank().deposit(p.getInventory(), true);
+            };
+            h.actions[6] = (SimpleAction) p -> {
+                p.getBank().deposit(p.getEquipment(), true);
+            };
+            h.actions[8] = (SimpleAction) p -> {
+                p.getBank().deposit(p.getLootingBag(), true);
+            };
 
             h.closedAction = (p, i) -> {
                 p.getPacketSender().sendClientScript(915, "i", 3);

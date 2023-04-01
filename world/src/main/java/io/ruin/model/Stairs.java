@@ -1,6 +1,6 @@
 package io.ruin.model;
 
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
@@ -103,7 +103,7 @@ public class Stairs {
         else
             player.getMovement().teleport(obj.getPosition().getX() + newX, obj.getPosition().getY() + newY, up);
         if (obj.id == 11797 && player.getRegions().equals(12595)) {
-            player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.CHAMPIONS_GUILD);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHAMPIONS_GUILD);
         }
     }
 

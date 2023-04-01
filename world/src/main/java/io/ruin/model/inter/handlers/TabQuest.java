@@ -50,7 +50,7 @@ public class TabQuest {
             return hasTwoFactor ? Color.GREEN.wrap(text) : Color.RED.wrap(text);
         }, (SimpleAction) player -> player.openUrl("https://deviousps.com/forums/index.php?account/security")), //need to hookup tfa to the website somehow
         COMPONENT_15(15, player -> "Time Played: " + Color.GREEN.wrap(TimeUtils.fromMs(player.playTime * Server.tickMs(), false))),
-        COMPONENT_16(16, player -> "Total Spent: " + Color.GREEN.wrap("$" + player.storeAmountSpent)),
+        COMPONENT_16(16, player -> "Total Spent: " + Color.GREEN.wrap("$" + player.amountDonated)),
         COMPONENT_17(17, player -> "Base XP: " + Color.GREEN.wrap(String.valueOf(getXpBonus(player)))),
         COMPONENT_18(18, player -> "Double Drop Chance: " + Color.GREEN.wrap(DoubleDrops.getChance(player) + "%")),
         //COMPONENT_49(49, player -> "PVM Points: " + Color.GREEN.wrap(Integer.toString(player.PvmPoints))),

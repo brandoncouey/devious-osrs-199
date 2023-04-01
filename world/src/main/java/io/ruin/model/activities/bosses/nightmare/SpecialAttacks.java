@@ -22,8 +22,7 @@ public enum SpecialAttacks {
     GRASPING_CLAWS(8598, Nightmare.NO_TELEPORT) {
         @Override
         public void run(Nightmare nm) {
-//			nm.forceText("Grasping claws " + System.currentTimeMillis());
-            ArrayList<Position> tiles = new ArrayList<Position>();
+            ArrayList<Position> tiles = new ArrayList<>();
             for (int x = 23; x < 41; x++) {
                 l:
                 for (int y = 6; y < 24; y++) {
@@ -43,8 +42,8 @@ public enum SpecialAttacks {
             }
             nm.addEvent(event -> {
                 event.delay(2);
-                for (Position t : tiles) {
-                    for (Player p : World.players) {
+                for (Player p : World.players) {
+                    for (Position t : tiles) {
                         if (p.getPosition().equals(t)) {
                             p.hit(new Hit().randDamage(50));
                         }

@@ -216,6 +216,7 @@ public class WorldDecoder extends MessageDecoder<World> {
             }
             ClanChat active = player.getActiveClanChat();
             if (active == null) {
+                player.sendMessage("You currently not in a chat-channel.");
                 return;
             }
             active.message(player, rankId, message);

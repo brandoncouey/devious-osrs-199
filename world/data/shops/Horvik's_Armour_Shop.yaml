@@ -24,8 +24,6 @@ defaultStock:
     amount: 100000
   - id: 1434
     amount: 100000
-  - id: 5698
-    amount: 100000
   - id: 7158
     amount: 100000  
   - id: 21009

@@ -3,11 +3,15 @@ package io.ruin.model.diaries.pvp;
 import io.ruin.model.diaries.StatefulAchievementDiary;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.Item;
+import io.ruin.utility.Misc;
+import io.ruin.utility.Utils;
 
-import java.util.EnumSet;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static io.ruin.model.diaries.pvp.PvPDiaryEntry.*;
 
@@ -21,7 +25,7 @@ public final class PvPAchievementDiary extends StatefulAchievementDiary<PvPDiary
 
     public static final Set<PvPDiaryEntry> ELITE_TASKS = EnumSet.of(STEAL_GEM_ARD, PICKPOCKET_HERO, SUPER_COMBAT_ARD);
 
-    public static final String NAME = "Ardougne area";
+    public static final String NAME = "Player vs Player";
 
     public PvPAchievementDiary(Player player) {
         super(NAME, player);
@@ -53,51 +57,17 @@ public final class PvPAchievementDiary extends StatefulAchievementDiary<PvPDiary
         return achievements.containsAll(EASY_TASKS);
     }
 
-    public boolean hasCompletedAchieve(String difficulty) {
-        for (PvPDiaryEntry value : values()) {
+    public boolean hasCompletedAchieve(String achievementName) {
+        for (PvPDiaryEntry value : PvPDiaryEntry.values()) {
             player.DiaryRecorder.forEach((s, integer) -> {
                 if (s.equalsIgnoreCase(value.toString()) && integer == 1000) {
                     achievements.add(PvPDiaryEntry.valueOf(s));
                 }
             });
         }
-        switch (difficulty) {
-            //EASY
-            case "STEAL_CAKE":
-                return achievements.contains(STEAL_CAKE);
-            case "WILDERNESS_LEVER":
-                return achievements.contains(WILDERNESS_LEVER);
-            case "TELEPORT_ESSENCE":
-                return achievements.contains(TELEPORT_ESSENCE_ARD);
-            case "CROSS_LOG":
-                return achievements.contains(CROSS_THE_LOG);
-            //MEDIUM
-            case "TELEPORT_ARD":
-                return achievements.contains(TELEPORT_ARDOUGNE);
-            case "PICKPOCKET_ARD":
-                return achievements.contains(PICKPOCKET_ARD);
-            case "IBANS":
-                return achievements.contains(IBANS_STAFF);
-            case "DRAGON_SQUARE":
-                return achievements.contains(DRAGON_SQUARE);
-            //HARD
-            case "STEAL_FUR":
-                return achievements.contains(STEAL_FUR);
-            case "PRAY_WITH_CHIVALRY":
-                return achievements.contains(PRAY_WITH_CHIVALRY);
-            case "CRAFT_DEATH":
-                return achievements.contains(CRAFT_DEATH);
-            case "ARDOUGNE_ROOFTOP":
-                return achievements.contains(ARDOUGNE_ROOFTOP);
-            //ELITE
-            case "STEAL_GEM":
-                return achievements.contains(STEAL_GEM_ARD);
-            case "PICKPOCKET_HERO":
-                return achievements.contains(PICKPOCKET_HERO);
-            case "SUPER_COMBAT":
-                return achievements.contains(SUPER_COMBAT_ARD);
-        }
-        return achievements.containsAll(EASY_TASKS);
+        Optional<PvPDiaryEntry> achievement = PvPDiaryEntry.fromName(achievementName);
+        if (achievement.isEmpty()) return false;
+        return achievements.contains(achievement.get());
     }
 
     int REWARD = 13121;
@@ -198,36 +168,179 @@ public final class PvPAchievementDiary extends StatefulAchievementDiary<PvPDiary
         return ELITE_TASKS;
     }
 
+    public int getEasyAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        EASY_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getMediumAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        MEDIUM_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getHardAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        HARD_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getEliteAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        ELITE_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
 
-    public void display() {
-        player.sendScroll("<col=8B0000>Ardougne Diary",
-                "<col=501061><strong><u>Easy",
-                hasCompletedAchieve("STEAL_CAKE") ? "<col=24d124>Steal from the Baker's Stall. (" + (getAbsoluteAchievementStage(STEAL_CAKE)) + "/" + getMaximum(STEAL_CAKE) + ")</col>" : "<col=911c25>Steal from the Baker's Stall. (" + (getAbsoluteAchievementStage(STEAL_CAKE)) + "/" + getMaximum(STEAL_CAKE) + ")",
-                hasCompletedAchieve("WILDERNESS_LEVER") ? "<col=24d124>Use the lever to teleport to the Wilderness.</col>" : "<col=911c25>Use the lever to teleport to the Wilderness.",
-                hasCompletedAchieve("TELEPORT_ESSENCE") ? "<col=24d124>Have Wizard Cromperty teleport you to the Essence Mine.</col>" : "<col=911c25>Have Wizard Cromperty teleport you to the Essence Mine.",
-                hasCompletedAchieve("CROSS_LOG") ? "<col=24d124>Cross the river using the Log Balance shortcut.</col>" : "<col=911c25>Cross the river using the Log Balance shortcut.",
-                "",
-                "<col=501061><strong><u>Medium",
-                hasCompletedAchieve("TELEPORT_ARD") ? "<col=24d124>Teleport to Ardougne.</col>" : "<col=911c25>Teleport to Ardougne.",
-                hasCompletedAchieve("PICKPOCKET_ARD") ? "<col=24d124>Pickpocket the Master Farmer. (" + (getAbsoluteAchievementStage(PICKPOCKET_ARD)) + "/" + getMaximum(PICKPOCKET_ARD) + ")</col>" : "<col=911c25>Pickpocket the Master Farmer. (" + (getAbsoluteAchievementStage(PICKPOCKET_ARD)) + "/" + getMaximum(PICKPOCKET_ARD) + ")",
-                hasCompletedAchieve("IBANS") ? "<col=24d124>Equip an Iban's Staff.</col>" : "<col=911c25>Equip an Iban's Staff.",
-                hasCompletedAchieve("DRAGON_SQUARE") ? "<col=24d124>Create a Dragon Square Shield in West Ardougne.</col>" : "<col=911c25>Create a Dragon Square Shield in West Ardougne.",
-                "",
-                "<col=501061><strong><u>Hard",
-                hasCompletedAchieve("STEAL_FUR") ? "<col=24d124>Steal from the Fur Stall. (" + (getAbsoluteAchievementStage(STEAL_FUR)) + "/" + getMaximum(STEAL_FUR) + ")</col>" : "<col=911c25>Steal from the Fur Stall. (" + (getAbsoluteAchievementStage(STEAL_FUR)) + "/" + getMaximum(STEAL_FUR) + ")",
-                hasCompletedAchieve("PRAY_WITH_CHIVALRY") ? "<col=24d124>Pray in the Church with Chivalry active.</col>" : "<col=911c25>Pray in the Church with Chivalry active.",
-                hasCompletedAchieve("CRAFT_DEATH") ? "<col=24d124>Craft a Death Rune.</col>" : "<col=911c25>Craft a Death Rune.",
-                hasCompletedAchieve("ARDOUGNE_ROOFTOP") ? "<col=24d124>Complete the Ardougne Rooftop Agility Course. (" + (getAbsoluteAchievementStage(ARDOUGNE_ROOFTOP)) + "/" + getMaximum(ARDOUGNE_ROOFTOP) + ")</col>" : "<col=911c25>Complete the Ardougne Rooftop Agility Course. (" + (getAbsoluteAchievementStage(ARDOUGNE_ROOFTOP)) + "/" + getMaximum(ARDOUGNE_ROOFTOP) + ")",
-                "",
-                "<col=501061><strong><u>Elite",
-                hasCompletedAchieve("STEAL_GEM") ? "<col=24d124>Steal from the Gem Stall. (" + (getAbsoluteAchievementStage(STEAL_GEM_ARD)) + "/" + getMaximum(STEAL_GEM_ARD) + ")</col>" : "<col=911c25>Steal from the Gem Stall. (" + (getAbsoluteAchievementStage(STEAL_GEM_ARD)) + "/" + getMaximum(STEAL_GEM_ARD) + ")",
-                hasCompletedAchieve("PICKPOCKET_HERO") ? "<col=24d124>Pickpocket Heroes. (" + (getAbsoluteAchievementStage(PICKPOCKET_HERO)) + "/" + getMaximum(PICKPOCKET_HERO) + ")</col>" : "<col=911c25>Pickpocket Heroes. (" + (getAbsoluteAchievementStage(PICKPOCKET_HERO)) + "/" + getMaximum(PICKPOCKET_HERO) + ")",
-                hasCompletedAchieve("SUPER_COMBAT") ? "<col=24d124>Create Super Combat Potions on the bridge in the zoo. (" + (getAbsoluteAchievementStage(SUPER_COMBAT_ARD)) + "/" + getMaximum(SUPER_COMBAT_ARD) + ")</col>" : "<col=911c25>Create Super Combat Potions on the bridge in the zoo. (" + (getAbsoluteAchievementStage(SUPER_COMBAT_ARD)) + "/" + getMaximum(SUPER_COMBAT_ARD) + ")");
+
+    public final void display(String difficulty) {
+        player.currentAchievementDifficultyViewing = difficulty;
+        player.getPacketSender().sendString(1041, 14, "PvP Achievement Diary");
+        for (int i = 0; i < 32; i++) {
+            player.getPacketSender().setHidden(1041, 74 + (i * 5), true);
+        }
+        AtomicInteger index = new AtomicInteger();
+
+        Set<PvPDiaryEntry> TASKS = EASY_TASKS;
+        List<Item> rewards = easyRewards;
+
+        switch (difficulty) {
+            case "MEDIUM":
+                TASKS = MEDIUM_TASKS;
+                rewards = mediumRewards;
+                spriteId = 3400;
+                break;
+            case "HARD":
+                TASKS = HARD_TASKS;
+                rewards = hardRewards;
+                spriteId = 3401;
+                break;
+            case "ELITE":
+                TASKS = ELITE_TASKS;
+                rewards = eliteRewards;
+                spriteId = 3402;
+                break;
+        }
+
+        int finalSpriteId = spriteId;
+        TASKS.forEach(e -> {
+            if (!hasCompletedAchieve(e.name())) {
+                player.getPacketSender().setSprite(1041, 76 + (index.get() * 5), finalSpriteId);
+                player.getPacketSender().sendString(1041, 77 + (index.get() * 5), Misc.formatStringFormal(e.getName()));
+                player.getPacketSender().sendString(1041, 78 + (index.get() * 5), e.getDescription().replace("%progress%", "<col=deb31f>" + Utils.formatMoneyString(player.getDiaryManager().getPvpDiary().getAchievementStage(e).isPresent() ? player.getDiaryManager().getPvpDiary().getAchievementStage(e).getAsInt() : 0)).replace("%amount%", Utils.formatMoneyString(e.getMaximumStages()) + "</col>"));
+                player.getPacketSender().setHidden(1041, 74 + (index.get() * 5), false);
+                index.getAndIncrement();
+            }
+        });
+        TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name())) {
+                player.getPacketSender().setSprite(1041, 76 + (index.get() * 5), finalSpriteId);
+                player.getPacketSender().sendString(1041, 77 + (index.get() * 5), "<col=404040><str>" + Misc.formatStringFormal(e.name()));
+                player.getPacketSender().sendString(1041, 78 + (index.get() * 5), e.getDescription().replace("%progress%", "<col=deb31f>" + Utils.formatMoneyString(player.getDiaryManager().getPvpDiary().getAchievementStage(e).isPresent() ? player.getDiaryManager().getPvpDiary().getAchievementStage(e).getAsInt() : 0)).replace("%amount%", Utils.formatMoneyString(e.getMaximumStages()) + "</col>"));
+                player.getPacketSender().setHidden(1041, 74 + (index.get() * 5), false);
+                index.getAndIncrement();
+            }
+        });
+        player.getPacketSender().sendString(1041, 24, getEasyAmountCompleted() + "/" + EASY_TASKS.size());
+        player.getPacketSender().sendString(1041, 37, getMediumAmountCompleted() + "/" + MEDIUM_TASKS.size());
+        player.getPacketSender().sendString(1041, 50, getHardAmountCompleted() + "/" + HARD_TASKS.size());
+        player.getPacketSender().sendString(1041, 63, getEliteAmountCompleted() + "/" + ELITE_TASKS.size());
+        int count = 0;
+        for (Item reward : rewards) {
+            player.getPacketSender().sendItems(1041, (248 + count), 0, reward);
+            count++;
+        }
+        player.openInterface(InterfaceType.MAIN, 1041);
     }
 
     @Override
-    public int getMaximum(PvPDiaryEntry achievement) {
+    public int getStage(PvPDiaryEntry achievement) {
         return achievement.getMaximumStages();
     }
 
+    public void claimRewards() {
+        if (!hasCompleted(player.currentAchievementDifficultyViewing)) {
+            player.sendMessage("You must complete all of the " + Misc.formatStringFormal(player.currentAchievementDifficultyViewing)  + " " + NAME + " achievement diaries to claim your rewards.");
+            return;
+        }
+        switch (player.currentAchievementDifficultyViewing) {
+            case "EASY":
+                for (Item item : easyRewards) {
+                    if (new HashSet<>(player.claimedAchievementRewards).containsAll(easyRewards)) {
+                        player.sendMessage("You've already claimed all of your rewards.");
+                        return;
+                    }
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "MEDIUM":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(mediumRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : mediumRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "HARD":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(hardRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : hardRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "ELITE":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(eliteRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : eliteRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+        }
+    }
 }

@@ -44,7 +44,7 @@ public class BugReport {
 
     static {
         InterfaceHandler.register(156, h -> {
-            h.actions[23] = (DefaultAction) (player, bug, report, bite) -> handleBugReportButton(player);
+            h.actions[23] = (DefaultAction) (player, childId, bug, report, bite) -> handleBugReportButton(player);
         });
     }
 }

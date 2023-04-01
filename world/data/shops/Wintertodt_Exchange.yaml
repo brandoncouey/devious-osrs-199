@@ -16,9 +16,6 @@ priceRules:
   buysAt: 40
   changePer: 3
 defaultStock:
-- id: 20703
-  amount: 100000000
-  price: 25
 - id: 20704
   amount: 100000000
   price: 250

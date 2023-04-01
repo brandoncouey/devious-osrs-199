@@ -27,6 +27,9 @@ public class Husk extends NPC {
         npc.hitListener = new HitListener().postDefend(hit -> {
             hit.damage = npc.getHp();
         });
+        if (getCombat().getInfo().hitpoints <= 0) {
+            remove();
+        }
         if (getPosition().distance(nm.getBase()) > 64) {
             // stop bug where husks are appearing outside instance following the player. no idea how.
             remove();

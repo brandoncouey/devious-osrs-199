@@ -21,14 +21,14 @@ public class TabPrayer {
         InterfaceHandler.register(Interface.PRAYER, h -> {
             for (Prayer prayer : Prayer.values()) {
                 if (prayer == Prayer.RIGOUR) {
-                    h.actions[prayer.ordinal() + 5] = (DefaultAction) (p, option, slot, itemId) -> {
+                    h.actions[prayer.ordinal() + 5] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                         if (option == 1)
                             p.getPrayer().toggle(prayer);
                         else
                             refundPrayer(p, prayer);
                     };
                 } else if (prayer == Prayer.AUGURY) {
-                    h.actions[prayer.ordinal() + 5] = (DefaultAction) (p, option, slot, itemId) -> {
+                    h.actions[prayer.ordinal() + 5] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                         if (option == 1)
                             p.getPrayer().toggle(prayer);
                         else

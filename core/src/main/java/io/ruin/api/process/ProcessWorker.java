@@ -52,21 +52,25 @@ public class ProcessWorker {
      */
 
     private void process() {
-        long startTime = System.nanoTime();
-        if (!queuedTasks.isEmpty())
-            queuedTasks.removeIf(this::finish);
-        lastExecutionMs = TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS);
-        if (lastExecutionMs > period)
-            slowExecutions++;
-        if (lastExecutionMs > slowestExecutionMs)
-            slowestExecutionMs = lastExecutionMs;
-        executions++;
+        try {
+            long startTime = System.nanoTime();
+            if (!queuedTasks.isEmpty())
+                queuedTasks.removeIf(this::finish);
+            lastExecutionMs = TimeUnit.MILLISECONDS.convert(System.nanoTime() - startTime, TimeUnit.NANOSECONDS);
+            if (lastExecutionMs > period)
+                slowExecutions++;
+            if (lastExecutionMs > slowestExecutionMs)
+                slowestExecutionMs = lastExecutionMs;
+            executions++;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     private boolean finish(Supplier<Boolean> task) {
         try {
             return task.get();
-        } catch (Throwable t) {
+        } catch (Exception t) {
             ServerWrapper.logError("", t);
             return false;
         }

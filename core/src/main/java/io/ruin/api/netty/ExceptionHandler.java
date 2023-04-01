@@ -6,11 +6,13 @@ import io.ruin.api.utils.ServerWrapper;
 
 public class ExceptionHandler extends ChannelInboundHandlerAdapter {
 
+
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-        if (!cause.getStackTrace()[0].getMethodName().equals("read0"))
+        System.out.println(cause.getMessage());
+        /*if (!cause.getStackTrace()[0].getMethodName().equals("read0"))
             ServerWrapper.logError("Netty issue", cause);
-        ctx.close();
+        ctx.close();*/
     }
 
 }

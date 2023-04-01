@@ -30,7 +30,7 @@ public class FontOfConsumption {
                 int reward = roll(player);
                 item.setId(reward);
                 if (item.getId() != 7979) {
-                    Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.RAID_PURPLE.wrap("[UNSIRED] ") + player.getName() + " has just received " + Color.DARK_RED.wrap(item.getDef().name) + " From the Font of Consumption!" + "</shad>");
+                    Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.ORANGE.wrap(player.getName() + " has just received " +item.getDef().name + " From the Font of Consumption!" + "</shad>"));
                 }
                 player.dialogue(new ItemDialogue().one(reward, "The Font consumes the Unsired and returns you a<br>reward."));
                 player.unlock();

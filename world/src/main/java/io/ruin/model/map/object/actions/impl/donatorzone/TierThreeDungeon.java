@@ -47,7 +47,7 @@ public class TierThreeDungeon {
     }
 
     public static void enterDZInstance(Player player) {
-        if (player.storeAmountSpent < 250) {
+        if (player.amountDonated < 250) {
             player.dialogue(new NPCDialogue(2108, "Unfortunately your store amount is to low to enter this portal"));
             return;
         }

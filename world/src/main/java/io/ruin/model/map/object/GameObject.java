@@ -110,6 +110,7 @@ public class GameObject extends AttributesHolder {
     }
 
     public void setId(int newId) {
+        if (tile == null || tile.region == null || tile.region.players == null) return;
         ArrayList<Player> players = tile.region.players;
         if (spawned && newId == -1) {
             tile.removeObject(this);

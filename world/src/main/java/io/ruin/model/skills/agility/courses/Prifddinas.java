@@ -166,10 +166,6 @@ public class Prifddinas {
             player.getMovement().restoreEnergy(Random.get(1, 2));
             PlayerCounter.PRIFDDINAS_COURSE.increment(player, 1);
             AgilityPet.rollForPet(player, 12000);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
         }));
 
     }

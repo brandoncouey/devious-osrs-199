@@ -65,11 +65,11 @@ public class World extends EventWorker {
 
     public static final String COMMUNITY_MANAGER = "";
 
-    public static final String[] ADMINISTRATORS = new String[] {  };
+    public static final String[] ADMINISTRATORS = new String[] { "nova" };
 
     public static final String[] DEVELOPERS = new String[] {  };
 
-    public static final String[] MODERATORS = new String[] { "nova" };
+    public static final String[] MODERATORS = new String[] {  };
 
     public static boolean isDev() {
         return stage == WorldStage.DEV;
@@ -86,6 +86,7 @@ public class World extends EventWorker {
     public static boolean isPVP() {
         return type == WorldType.PVP;
     }
+
     public static boolean isPVPWorld() {
         return settings == 0x5;
     }
@@ -102,12 +103,12 @@ public class World extends EventWorker {
 
     public static final Bounds HOME_BOUNDS = new Bounds(3535, 3118, 3546, 3124, 1);
     //public static final Position HOME = new Position(3541, 3123, 1);
-    public static final Position HOME = new Position(3094, 3499, 0);
+    public static final Position HOME = new Position(3083, 3504, 0);
     public static final Position FUN_PK = new Position(3568, 3122, 1);
     public static final Position HOMEPVP = new Position(3095, 3497, 0);
     public static final Position DZ = new Position(3811, 2845, 1);
     public static final Position SZ = new Position(3122, 3473, 0);
-    public static final Position EDGEHOME = new Position(3094, 3499, 0);
+    public static final Position EDGEHOME = new Position(3083, 3504, 0);
     public static final Position DEATHS_DOMAIN = new Position(3174, 5727, 0);
 
     /**
@@ -130,6 +131,14 @@ public class World extends EventWorker {
                 return player;
         }
         return null;
+    }
+
+    public static void sendStaffMessage(String message) {
+        for (Player player : World.players) {
+            if (player.isStaff()) {
+                player.sendMessage("<col=ff0000><shad=000000>[Staff Message]: " + message);
+            }
+        }
     }
 
     public static Player getPlayer(int userId, boolean onlineReq) {

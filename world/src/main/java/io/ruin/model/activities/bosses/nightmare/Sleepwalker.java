@@ -2,6 +2,8 @@ package io.ruin.model.activities.bosses.nightmare;
 
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.route.routes.DumbRoute;
 
 public class Sleepwalker extends NPC {
@@ -15,9 +17,22 @@ public class Sleepwalker extends NPC {
     @Override
     public int hit(Hit... hits) {
         for (Hit h : hits) {
-            h.damage = 10;
-            h.minDamage = 10;
-            h.maxDamage = 10;
+            if (h.attacker instanceof Player) {
+                Player pa = (Player) h.attacker;
+                if (pa.getEquipment().get(Equipment.SLOT_WEAPON) != null) {
+                    int weaponId = pa.getEquipment().get(Equipment.SLOT_WEAPON).getId();
+                    if (weaponId == 23360) {
+                        h.damage = 10;
+                        h.minDamage = 10;
+                        h.maxDamage = 10;
+                    }
+                }
+            }
+            if (h.damage > 10) {
+                h.damage = 10;
+                h.minDamage = 10;
+                h.maxDamage = 10;
+            }
         }
         return super.hit(hits);
     }

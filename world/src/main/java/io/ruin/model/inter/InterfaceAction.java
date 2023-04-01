@@ -7,7 +7,7 @@ import io.ruin.model.map.object.GameObject;
 
 public interface InterfaceAction {
 
-    default void handleClick(Player player, int option, int slot, int itemId) {
+    default void handleClick(Player player, int childId, int option, int slot, int itemId) {
     }
 
     default void handleDrag(Player player, int fromSlot, int fromItemId, int toInterfaceId, int toChildId, int toSlot, int toItemId) {

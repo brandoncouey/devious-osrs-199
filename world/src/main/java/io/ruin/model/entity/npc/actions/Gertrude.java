@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions;
 
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ActionDialogue;
@@ -33,7 +33,7 @@ public class Gertrude {
                     if (player.getInventory().contains(995, 200000)) {
                         player.getInventory().remove(995, 200000);
                         player.getInventory().add(1555, 1);
-                        player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.PURCHASE_KITTEN);
+                        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.PURCHASE_KITTEN);
                         player.sendMessage("You purchase a kitten for 200,000 gp.");
                     } else {
                         player.sendMessage("You do not have enough gp to purchase a kitten.");

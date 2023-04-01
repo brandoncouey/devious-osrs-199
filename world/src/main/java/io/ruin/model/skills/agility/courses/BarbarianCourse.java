@@ -4,7 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -171,13 +171,9 @@ public class BarbarianCourse {
                 player.getStats().addXp(StatType.Agility, 13.7, true);
 
             }
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.BARBARIAN_AGILITY);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.BARBARIAN_AGILITY);
             player.lastAgilityObjId = -1;
             player.unlock();
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             if(player.agilityContractType == AgilityContractType.BARB)
                 AgilityContract.advanceAgilityContract(player);
         }));

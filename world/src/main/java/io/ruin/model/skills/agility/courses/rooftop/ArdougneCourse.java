@@ -183,10 +183,6 @@ public class ArdougneCourse {
             p.unlock();
             if(p.agilityContractType == AgilityContractType.ARDOUGNE_ROOFTOP)
                 AgilityContract.advanceAgilityContract(p);
-            if (Random.rollDie(50, 1)) {
-                p.getInventory().addOrDrop(6828);
-                p.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
         }));
     }
 }

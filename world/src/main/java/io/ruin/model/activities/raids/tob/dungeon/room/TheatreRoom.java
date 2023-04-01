@@ -60,7 +60,6 @@ public abstract class TheatreRoom extends DynamicMap {
      * @param player
      */
     public void assignMapListener(Player player) {
-            System.out.println("Assigned map listener.");
         player.tobcannon = true;
         player.openInterface(InterfaceType.PRIMARY_OVERLAY, Interface.TOB_PARTY_MEMBERS_OVERLAY);
         player.deathEndListener = (DeathListener.Simple) () -> handleDeath(player);
@@ -187,7 +186,6 @@ public abstract class TheatreRoom extends DynamicMap {
        }
 
     public void exited(Player player, boolean logout) {
-        System.out.println("I'm printing that I exited a listening map.");
         if (logout) {
             player.getMovement().teleport(3675, 3219, 0);
             player.tobcannon = false;

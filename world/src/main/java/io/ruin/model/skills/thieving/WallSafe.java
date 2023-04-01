@@ -59,10 +59,6 @@ public class WallSafe {
                 player.sendFilteredMessage("You get some loot.");
                 player.privateSound(1238);
                 player.getStats().addXp(StatType.Thieving, 70, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                player.getInventory().add(getLoot(player));
                 if (Achievement.QUICK_HANDS.isFinished(player) && Random.rollPercent(10))
                     player.getInventory().add(getLoot(player));

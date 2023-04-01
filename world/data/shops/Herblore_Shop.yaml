@@ -14,78 +14,90 @@ priceRules:
   changePer: 1
 defaultStock:
   - id: 233
-    amount: 100000000
+    amount: 100000
     price: 100
   - id: 1939
-    amount: 100000000
+    amount: 100000
+    price: 15
+  - id: 10142
+    amount: 100000
+    price: 15
+  - id: 10143
+    amount: 100000
+    price: 15
+  - id: 10144
+    amount: 100000
+    price: 15
+  - id: 10145
+    amount: 100000
     price: 15
   - id: 12859
-    amount: 100000000
+    amount: 100000
     price: 85
   - id: 5935
-    amount: 100000000
+    amount: 100000
     price: 85
   - id: 5936
-    amount: 100000000
+    amount: 100000
   - id: 228
-    amount: 100000000
+    amount: 100000
   - id: 11880
-    amount: 100000000
+    amount: 100000
   - id: 236
-    amount: 100000000
+    amount: 100000
   - id: 226
-    amount: 100000000
+    amount: 100000
   - id: 224
-    amount: 100000000
+    amount: 100000
     price: 125
   - id: 1976
-    amount: 100000000
+    amount: 100000
     price: 50
   - id: 240
-    amount: 100000000
+    amount: 100000
     price: 50
   - id: 2153
-    amount: 100000000
+    amount: 100000
     price: 50
   - id: 9737
-    amount: 100000000
+    amount: 100000
     price: 30
   - id: 232
-    amount: 100000000
+    amount: 100000
     price: 50
   - id: 2971
-    amount: 100000000
+    amount: 100000
     price: 50
   - id: 244
-    amount: 100000000
+    amount: 100000
     price: 75
   - id: 6050
-    amount: 100000000
+    amount: 100000
     price: 75
   - id: 246
-    amount: 100000000
+    amount: 100000
     price: 75
   - id: 6017
-    amount: 100000000
+    amount: 100000
     price: 50
   - id: 3139
-    amount: 100000000
+    amount: 100000
     price: 75
   - id: 248
-    amount: 100000000
+    amount: 100000
     price: 35
   - id: 6694
-    amount: 100000000
+    amount: 100000
     price: 100
   - id: 6019
-    amount: 100000000
+    amount: 100000
     price: 40
   - id: 6052
-    amount: 100000000
+    amount: 100000
     price: 100
   - id: 10938
-    amount: 100000000
+    amount: 100000
     price: 65
   - id: 1526
-    amount: 100000000
+    amount: 100000
     price: 65

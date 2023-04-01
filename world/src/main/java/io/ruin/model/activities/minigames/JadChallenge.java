@@ -92,7 +92,7 @@ public class JadChallenge {
             return;
         }
         if (wave == 6) {
-            Broadcast.WORLD.sendNews(Color.RAID_PURPLE.wrap(player.getName() + " Has just completed the six jad challenge!"));
+            Broadcast.WORLD.sendNews(Color.ORANGE.wrap(player.getName() + " Has just completed the six jad challenge!"));
             player.getInventory().add(6529, Random.get(250, 750));
         }
         player.sixjadBestTime = timer.stop(player, player.sixjadBestTime);

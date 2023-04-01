@@ -1,7 +1,7 @@
 package io.ruin.model.skills.agility;
 
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Bounds;
 import io.ruin.model.map.MapListener;
@@ -16,7 +16,7 @@ public class Shortcuts {
     static {
 
         MapListener.registerBounds(new Bounds(3188, 3352, 3198, 3363, 0)).onEnter(player -> {
-            player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.CHAMPIONS_GUILD);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHAMPIONS_GUILD);
         });
 
         /**

@@ -13,6 +13,7 @@ import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.dialogue.PlayerDialogue;
+import io.ruin.model.inter.presets.PresetInterfaceHandler;
 import io.ruin.model.inter.utils.Option;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemObjectAction;
@@ -42,6 +43,7 @@ public class BankActions {
                 if (NPCAction.register(def.id, "bank", (p, n) -> p.getBank().open())) {
                     NPCAction.register(def.id, "talk-to", BankActions::talk);
                     NPCAction.register(def.id, "collect", (p, n) -> TradePost.openCoffer(p));
+                    NPCAction.register(def.id, "View-presets", (p, n) -> PresetInterfaceHandler.updatePresetView(p));
                     bankerIds.add(def.id);
                 }
             });

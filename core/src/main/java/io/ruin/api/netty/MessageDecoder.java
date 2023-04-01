@@ -40,7 +40,11 @@ public abstract class MessageDecoder<T> extends ByteToMessageDecoder {
             int count = 0;
             Message message;
             while ((message = messages.poll()) != null) {
-                handle(t, message.buffer, message.opcode);
+                try {
+                    handle(t, message.buffer, message.opcode);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 if (limit > 0 && ++count > limit)
                     return false;
             }
@@ -78,27 +82,22 @@ public abstract class MessageDecoder<T> extends ByteToMessageDecoder {
             return;
         }
         if (buffer.readableBytes() < size) {
-            /**
-             * Not enough bytes
-             */
             return;
         }
         try {
             byte[] payload = new byte[size];
             buffer.readBytes(payload);
             if (messages != null) {
-                /**
-                 * Queue
-                 */
                 add(new Message(opcode, payload));
             } else {
-                /**
-                 * Handle
-                 */
-                handle((T) ctx.channel(), new InBuffer(payload), opcode);
+                try {
+                    handle((T) ctx.channel(), new InBuffer(payload), opcode);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         } catch (Exception e) {
-            //System.out.println("Unable to e.getMessage());
+            e.printStackTrace();
         } finally {
             opcode = size = -1;
         }

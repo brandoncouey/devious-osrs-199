@@ -3,7 +3,8 @@ package io.ruin.model.skills.agility.courses.rooftop;
 import io.ruin.api.utils.Random;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.StepType;
@@ -209,14 +210,10 @@ public class CanifisCourse {
             PlayerCounter.CANIFIS_ROOFTOP.increment(player, 1);
             AgilityPet.rollForPet(player, 18000);
             MarkOfGrace.rollMark(player, 40, MARK_SPAWNS);
-            player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.CANAFIS_ROOFTOP);
+            player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.CANAFIS_ROOFTOP);
             player.unlock();
             if(player.agilityContractType == AgilityContractType.DRAYNOR_ROOFTOP)
                 AgilityContract.advanceAgilityContract(player);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
         }));
         Tile.get(3508, 3480, 2, true).flagUnmovable();
     }

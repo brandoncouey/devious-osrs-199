@@ -103,10 +103,6 @@ public enum Mould {
                 goldBar.remove();
                 player.getInventory().add(mould.jewellery, 1);
                 player.getStats().addXp(StatType.Crafting, mould.exp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 event.delay(1);
             }
         });
@@ -174,10 +170,6 @@ public enum Mould {
                     player.getInventory().add(MOLTEN_GLASS, 1);
                 }
                 player.getStats().addXp(StatType.Crafting, 10, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 event.delay(2);
             }
             player.resetAnimation();
@@ -202,48 +194,48 @@ public enum Mould {
             /*
              * Rings
              */
-            h.actions[GOLD_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, GOLD_RING, amount.get());
-            h.actions[SAPPHIRE_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, SAPPHIRE_RING, amount.get());
-            h.actions[EMERALD_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, EMERALD_RING, amount.get());
-            h.actions[RUBY_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, RUBY_RING, amount.get());
-            h.actions[DIAMOND_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DIAMOND_RING, amount.get());
-            h.actions[DRAGONSTONE_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DRAGONSTONE_RING, amount.get());
-            h.actions[ONYX_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ONYX_RING, amount.get());
-            h.actions[ZENYTE_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ZENYTE_RING, amount.get());
-            h.actions[SLAYER_RING.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, SLAYER_RING, amount.get());
+            h.actions[GOLD_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, GOLD_RING, amount.get());
+            h.actions[SAPPHIRE_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, SAPPHIRE_RING, amount.get());
+            h.actions[EMERALD_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, EMERALD_RING, amount.get());
+            h.actions[RUBY_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, RUBY_RING, amount.get());
+            h.actions[DIAMOND_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, DIAMOND_RING, amount.get());
+            h.actions[DRAGONSTONE_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, DRAGONSTONE_RING, amount.get());
+            h.actions[ONYX_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, ONYX_RING, amount.get());
+            h.actions[ZENYTE_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, ZENYTE_RING, amount.get());
+            h.actions[SLAYER_RING.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, SLAYER_RING, amount.get());
             /*
              * Necklaces
              */
-            h.actions[GOLD_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, GOLD_RING, amount.get());
-            h.actions[SAPPHIRE_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, SAPPHIRE_NECKLACES, amount.get());
-            h.actions[EMERALD_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, EMERALD_NECKLACES, amount.get());
-            h.actions[RUBY_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, RUBY_NECKLACES, amount.get());
-            h.actions[DIAMOND_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DIAMOND_NECKLACES, amount.get());
-            h.actions[DRAGONSTONE_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DRAGONSTONE_NECKLACES, amount.get());
-            h.actions[ONYX_NECKLACES.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ONYX_NECKLACES, amount.get());
-            h.actions[ZENYTE_NECKLACE.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ZENYTE_NECKLACE, amount.get());
+            h.actions[GOLD_NECKLACES.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, GOLD_RING, amount.get());
+            h.actions[SAPPHIRE_NECKLACES.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, SAPPHIRE_NECKLACES, amount.get());
+            h.actions[EMERALD_NECKLACES.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, EMERALD_NECKLACES, amount.get());
+            h.actions[RUBY_NECKLACES.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, RUBY_NECKLACES, amount.get());
+            h.actions[DIAMOND_NECKLACES.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, DIAMOND_NECKLACES, amount.get());
+            h.actions[DRAGONSTONE_NECKLACES.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, DRAGONSTONE_NECKLACES, amount.get());
+            h.actions[ONYX_NECKLACES.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, ONYX_NECKLACES, amount.get());
+            h.actions[ZENYTE_NECKLACE.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, ZENYTE_NECKLACE, amount.get());
             /*
              * Amulets
              */
-            h.actions[GOLD_AMULETS.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, GOLD_AMULETS, amount.get());
-            h.actions[SAPPHIRE_AMULETS.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, SAPPHIRE_AMULETS, amount.get());
-            h.actions[EMERALD_AMULETS.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, EMERALD_AMULETS, amount.get());
-            h.actions[RUBY_AMULETS.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, RUBY_AMULETS, amount.get());
-            h.actions[DIAMOND_AMULETS.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DIAMOND_AMULETS, amount.get());
-            h.actions[DRAGONSTONE_AMULETS.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DRAGONSTONE_AMULETS, amount.get());
-            h.actions[ONYX_AMULETS.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ONYX_AMULETS, amount.get());
-            h.actions[ZENYTE_AMULETS.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ZENYTE_AMULETS, amount.get());
+            h.actions[GOLD_AMULETS.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, GOLD_AMULETS, amount.get());
+            h.actions[SAPPHIRE_AMULETS.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, SAPPHIRE_AMULETS, amount.get());
+            h.actions[EMERALD_AMULETS.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, EMERALD_AMULETS, amount.get());
+            h.actions[RUBY_AMULETS.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, RUBY_AMULETS, amount.get());
+            h.actions[DIAMOND_AMULETS.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, DIAMOND_AMULETS, amount.get());
+            h.actions[DRAGONSTONE_AMULETS.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, DRAGONSTONE_AMULETS, amount.get());
+            h.actions[ONYX_AMULETS.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, ONYX_AMULETS, amount.get());
+            h.actions[ZENYTE_AMULETS.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, ZENYTE_AMULETS, amount.get());
             /*
              * Bracelets
              */
-            h.actions[GOLD_BRACELET.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, GOLD_BRACELET, amount.get());
-            h.actions[SAPPHIRE_BRACELET.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, SAPPHIRE_BRACELET, amount.get());
-            h.actions[EMERALD_BRACELET.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, EMERALD_BRACELET, amount.get());
-            h.actions[RUBY_BRACELET.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, RUBY_BRACELET, amount.get());
-            h.actions[DIAMOND_BRACELET.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DIAMOND_BRACELET, amount.get());
-            h.actions[DRAGONSTONE_BRACELET.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, DRAGONSTONE_BRACELET, amount.get());
-            h.actions[ONYX_BRACELET.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ONYX_BRACELET, amount.get());
-            h.actions[ZENYTE_BRACELET.child] = (DefaultAction) (p, option, slot, itemId) -> option(p, ZENYTE_BRACELET, amount.get());
+            h.actions[GOLD_BRACELET.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, GOLD_BRACELET, amount.get());
+            h.actions[SAPPHIRE_BRACELET.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, SAPPHIRE_BRACELET, amount.get());
+            h.actions[EMERALD_BRACELET.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, EMERALD_BRACELET, amount.get());
+            h.actions[RUBY_BRACELET.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, RUBY_BRACELET, amount.get());
+            h.actions[DIAMOND_BRACELET.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, DIAMOND_BRACELET, amount.get());
+            h.actions[DRAGONSTONE_BRACELET.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, DRAGONSTONE_BRACELET, amount.get());
+            h.actions[ONYX_BRACELET.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, ONYX_BRACELET, amount.get());
+            h.actions[ZENYTE_BRACELET.child] = (DefaultAction) (p, childId, option, slot, itemId) -> option(p, ZENYTE_BRACELET, amount.get());
         });
     }
 }

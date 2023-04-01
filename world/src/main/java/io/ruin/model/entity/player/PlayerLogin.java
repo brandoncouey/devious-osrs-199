@@ -80,11 +80,6 @@ public class PlayerLogin extends LoginRequest {
                     return;
                 }
             }
-            if (!WhitelistLogins.isAllowed(info.name)) {
-                deny(Response.INVALID_LOGIN);
-                return;
-            }
-
             player.setIndex(index);
             player.init(info);
             World.players.set(index, player);

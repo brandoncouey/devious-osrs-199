@@ -48,10 +48,6 @@ public enum Amethyst {
                 player.getInventory().add(crystal.itemID, crystal.amount);
                 player.animate(6295);
                 player.getStats().addXp(StatType.Crafting, crystal.exp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 event.delay(2);
             }
         });

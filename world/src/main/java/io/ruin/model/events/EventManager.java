@@ -54,10 +54,10 @@ public class EventManager {
 
     private interface DefaultAction extends InterfaceAction {
 
-        void handle(Player player, int option, int slot, int itemId);
+        void handle(Player player, int childId, int option, int slot, int itemId);
 
-        default void handleClick(Player player, int option, int slot, int itemId) {
-            handle(player, option, slot, itemId);
+        default void handleClick(Player player, int childId, int option, int slot, int itemId) {
+            handle(player, childId, option, slot, itemId);
         }
     }
 
@@ -66,39 +66,39 @@ public class EventManager {
 
 
         InterfaceHandler.register(MAIN_INTERFACE_ID, i -> {
-            i.actions[17] = (DefaultAction) (p, option, slot, itemId) -> {
+            i.actions[17] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 //Pvp Events
                 EventManager.getInstance().show(p, Event.Type.PVP);
             };
 
-            i.actions[20] = (DefaultAction) (p, option, slot, itemId) -> {
+            i.actions[20] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 //PvM Events
                 EventManager.getInstance().show(p, Event.Type.PVM);
             };
 
-            i.actions[23] = (DefaultAction) (p, option, slot, itemId) -> {
+            i.actions[23] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 //Skilling Events
                 EventManager.getInstance().show(p, Event.Type.SKILLING);
             };
 
-            i.actions[26] = (DefaultAction) (p, option, slot, itemId) -> {
+            i.actions[26] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 //Minigame Events
                 EventManager.getInstance().show(p, Event.Type.MINIGAME);
             };
 
-            i.actions[112] = (DefaultAction) (p, option, slot, itemId) -> {
+            i.actions[112] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 //Add Rewards
                 getInstance().addRewards(p);
             };
 
-            i.actions[115] = (DefaultAction) (p, option, slot, itemId) -> {
+            i.actions[115] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 //Leaderboards
                 getInstance().viewLeaderboards(p);
             };
 
             for (int index = 0; index < EVENT_SLOT_INDEX.length; index++) {
                 int finalIndex = index;
-                i.actions[EVENT_SLOT_INDEX[index]] = (DefaultAction) (p, option, slot, itemId) -> {
+                i.actions[EVENT_SLOT_INDEX[index]] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                     getInstance().display(p, finalIndex);
                 };
             }
@@ -582,7 +582,7 @@ public class EventManager {
                 byte[] bytes = Files.readAllBytes(file.toPath());
                 String json = new String(bytes);
                 instance = JsonUtils.GSON_EXPOSE_PRETTY.fromJson(json, EventManager.class);
-                System.out.println("Successfully loaded 07 events!");
+                Server.println("Successfully loaded 07 events!");
             } catch (Exception e) {
                 e.printStackTrace();
             }

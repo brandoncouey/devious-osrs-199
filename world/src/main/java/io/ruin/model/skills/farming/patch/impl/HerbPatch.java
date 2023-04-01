@@ -54,10 +54,6 @@ public class HerbPatch extends Patch {
                 player.getInventory().add(getPlantedCrop().getProduceId(), 1);
                 player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP() * FarmingSet.FarmingSet(player), true);
                 player.sendFilteredMessage("You pick a " + ItemDef.get(getPlantedCrop().getProduceId()).name + ".");
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 getPlantedCrop().getCounter().increment(player, 1);
                 removeProduce();
                 event.delay(1);

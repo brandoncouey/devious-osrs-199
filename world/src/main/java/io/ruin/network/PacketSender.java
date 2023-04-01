@@ -51,8 +51,6 @@ public class PacketSender {
         if (player instanceof AIPlayer) {
             return;
         }
-        if (!Thread.currentThread().getName().equals("server-worker #1")) // Ignorable doesn't do anything wrong...
-            Server.logError(player.getName() + " wrote packet off main thread!", new Throwable());
         player.getChannel().write(out.encode(cipher).toBuffer());
     }
 
@@ -88,7 +86,7 @@ public class PacketSender {
     }
 
     public void sendLogout() {
-        //new Exception("SENDING LOGOUT FOR " + player.getName()).printStackTrace();
+        //System.err.println("SENDING LOGOUT FOR " + player.getName());
         OutBuffer out = new OutBuffer(1).sendFixedPacket(29);
         player.getChannel().writeAndFlush(out.encode(cipher).toBuffer())
                 .addListener(ChannelFutureListener.CLOSE);
@@ -204,7 +202,7 @@ public class PacketSender {
 
     public void sendModelInformation(int parentId, int childId, int zoom, int rotationX, int rotationY) {
         if (!InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID sendModelInformation " + parentId + ":" + childId).printStackTrace();
+            System.err.println("INVALID sendModelInformation " + parentId + ":" + childId);
             return;
         }
         OutBuffer out = new OutBuffer(11).sendFixedPacket(36)
@@ -248,9 +246,9 @@ public class PacketSender {
 
     public void sendInterface(int interfaceId, int parentId, int childId, int overlayType) {
         if (!InterfaceDef.valid(interfaceId) || !InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID sendInterface " + interfaceId
+            System.err.println("INVALID sendInterface " + interfaceId
                     + " -> " + parentId + ":" + childId
-                    + " (overlayType=" + overlayType + ")").printStackTrace();
+                    + " (overlayType=" + overlayType + ")");
             return;
         }
         player.setVisibleInterface(interfaceId, parentId, childId);
@@ -263,7 +261,7 @@ public class PacketSender {
 
     public void sendModel(int parentId, int childId, int modelId) {
         if (!InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID sendModel " + parentId + ":" + childId + " (modelId=" + modelId + ")").printStackTrace();
+            System.err.println("INVALID sendModel " + parentId + ":" + childId + " (modelId=" + modelId + ")");
             return;
         }
         OutBuffer out = new OutBuffer(7).sendFixedPacket(74)
@@ -274,7 +272,7 @@ public class PacketSender {
 
     public void removeInterface(int parentId, int childId) {
         if (!InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID removeInterface " + parentId + ":" + childId).printStackTrace();
+            System.err.println("INVALID removeInterface " + parentId + ":" + childId);
             return;
         }
         player.removeVisibleInterface(parentId, childId);
@@ -285,7 +283,7 @@ public class PacketSender {
 
     public void moveInterface(int fromParentId, int fromChildId, int toParentId, int toChildId) {
         if (!InterfaceDef.valid(fromParentId, fromChildId) || !InterfaceDef.valid(toParentId, toChildId)) {
-            new Exception("INVALID moveInterface " + fromParentId + "," + fromChildId + " -> " + toParentId + "," + toChildId).printStackTrace();
+            System.err.println("INVALID moveInterface " + fromParentId + "," + fromChildId + " -> " + toParentId + "," + toChildId);
             return;
         }
         player.moveVisibleInterface(fromParentId, fromChildId, toParentId, toChildId);
@@ -297,7 +295,8 @@ public class PacketSender {
 
     public void sendString(int interfaceId, int childId, String string) {
         if (!InterfaceDef.valid(interfaceId, childId)) {
-            new Exception("INVALID sendString " + interfaceId + ":" + childId + " (\"" + string + "\")").printStackTrace();
+            
+            System.err.println("INVALID sendString " + interfaceId + ":" + childId + " (\"" + string + "\")");
             return;
         }
         OutBuffer out = new OutBuffer(3 + 4 + Protocol.strLen(string))
@@ -309,7 +308,7 @@ public class PacketSender {
 
     public void setHidden(int interfaceId, int childId, boolean hide) {
         if (!InterfaceDef.valid(interfaceId, childId)) {
-            new Exception("INVALID setHidden " + interfaceId + ":" + childId + " (hide=" + hide + ")").printStackTrace();
+            System.err.println("INVALID setHidden " + interfaceId + ":" + childId + " (hide=" + hide + ")");
             return;
         }
         OutBuffer out = new OutBuffer(6).sendFixedPacket(8)
@@ -320,7 +319,7 @@ public class PacketSender {
 
     public void sendItem(int parentId, int childId, int itemId, int amount) {
         if (!InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID sendItem " + parentId + ":" + childId + " (itemId=" + itemId + ", amount=" + amount + ")").printStackTrace();
+            System.err.println("INVALID sendItem " + parentId + ":" + childId + " (itemId=" + itemId + ", amount=" + amount + ")");
             return;
         }
         OutBuffer out = new OutBuffer(11).sendFixedPacket(11)
@@ -332,7 +331,7 @@ public class PacketSender {
 
     public void setAlignment(int parentId, int childId, int x, int y) {
         if (!InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID setAlignment " + parentId + ":" + childId + " (x=" + x + ", y=" + y + ")").printStackTrace();
+            System.err.println("INVALID setAlignment " + parentId + ":" + childId + " (x=" + x + ", y=" + y + ")");
             return;
         }
         OutBuffer out = new OutBuffer(9).sendFixedPacket(68)
@@ -365,7 +364,7 @@ public class PacketSender {
     public void sendAccessMask(boolean debug, int interfaceId, int childParentId, int minChildId, int maxChildId, int... masks) {
         if (!InterfaceDef.valid(interfaceId, childParentId/*Math.max(childParentId, Math.max(minChildId, maxChildId))*/)) {
             if (debug)
-                new Exception("INVALID sendAccessMask " + interfaceId + ":" + childParentId + " (" + minChildId + ".." + maxChildId + ")").printStackTrace();
+                System.err.println("INVALID sendAccessMask " + interfaceId + ":" + childParentId + " (" + minChildId + ".." + maxChildId + ")");
             return;
         }
         int mask = AccessMasks.combine(masks);
@@ -375,6 +374,10 @@ public class PacketSender {
                 .addLEShort(maxChildId)
                 .addLEShortA(minChildId);
         write(out);
+    }
+
+    public void setSprite(int widgetId, int childId, int spriteId) {
+        sendClientScript(11323, (widgetId << 16 | childId), spriteId);
     }
 
     public void sendClientScript(int id, Object... params) {
@@ -408,6 +411,28 @@ public class PacketSender {
     }
 
     public void sendClientScript(int id, String type, Object... params) {
+        OutBuffer out = new OutBuffer(3 + Protocol.strLen(type) + (params.length * 4))
+                .sendVarShortPacket(92)
+                .writeStringCp1252NullTerminated(type);
+        for (int i = type.length() - 1; i >= 0; i--) {
+            Object param = params[i];
+            if (param instanceof String)
+                out.addString((String) param);
+            else
+                out.addInt((Integer) param);
+        }
+        out.addInt(id);
+        write(out);
+    }
+
+    public void sendClientScriptNT(int id, Object... params) {
+        String type = "";
+        char[] chars = new char[params.length];
+        for (int i = 0; i < params.length; i++) {
+            chars[i] = params[i] instanceof String ? 's' : 'i';
+            type += params[i] instanceof String ? params[i].toString().length() + 1 : 4;
+        }
+        type = new String(chars);
         OutBuffer out = new OutBuffer(3 + Protocol.strLen(type) + (params.length * 4))
                 .sendVarShortPacket(92)
                 .writeStringCp1252NullTerminated(type);
@@ -824,11 +849,11 @@ public class PacketSender {
         );
     }
 
-    public void sendAreaSound(int id, int type, int delay, int x, int y, int distance) {
+    public void sendAreaSound(int id, int radius, int delay, int x, int y, int distance) {
         sendMapPacket(x, y, player.getHeight(), offsetHash ->
                 new OutBuffer(6).sendFixedPacket(88)
                         .addShort(id)
-                        .addByte(distance << 4 | type)
+                        .addByte(distance << 4 | radius)
                         .addByteS(offsetHash)
                         .addByteS(delay)
         );
@@ -987,7 +1012,7 @@ public class PacketSender {
 
     public void sendPlayerHead(int parentId, int childId) {
         if (!InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID sendPlayerHead " + parentId + ":" + childId).printStackTrace();
+            System.err.println("INVALID sendPlayerHead " + parentId + ":" + childId);
             return;
         }
         OutBuffer out = new OutBuffer(5).sendFixedPacket(77)
@@ -997,7 +1022,7 @@ public class PacketSender {
 
     public void sendNpcHead(int parentId, int childId, int npcId) {
         if (!InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID sendNpcHead " + parentId + ":" + childId + " (npcId=" + npcId + ")").printStackTrace();
+            System.err.println("INVALID sendNpcHead " + parentId + ":" + childId + " (npcId=" + npcId + ")");
             return;
         }
         OutBuffer out = new OutBuffer(7).sendFixedPacket(85)
@@ -1008,7 +1033,7 @@ public class PacketSender {
 
     public void animateInterface(int parentId, int childId, int animationId) {
         if (!InterfaceDef.valid(parentId, childId)) {
-            new Exception("INVALID animateInterface " + parentId + ":" + childId + " (animationId=" + animationId + ")").printStackTrace();
+            System.err.println("INVALID animateInterface " + parentId + ":" + childId + " (animationId=" + animationId + ")");
             return;
         }
         OutBuffer out = new OutBuffer(7).sendFixedPacket(63)
@@ -1120,6 +1145,10 @@ public class PacketSender {
                 .addByte(intensity)
                 .addByte(intensity);
         write(out);
+    }
+
+    public void sendDefaultMessage(String message) {
+        sendClientScript(11324, "s", message);
     }
 
     public void resetCamera() {

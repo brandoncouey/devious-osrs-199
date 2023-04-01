@@ -3,7 +3,7 @@ package io.ruin.cache;
 public enum Icon {
     RED_INFO_BADGE(15),
     YELLOW_INFO_BADGE(15),
-    MYSTERY_BOX(270),
+    MYSTERY_BOX(71),
     BLUE_INFO_BADGE(15),
     GREEN_INFO_BADGE(15),
     WILDERNESS(9),

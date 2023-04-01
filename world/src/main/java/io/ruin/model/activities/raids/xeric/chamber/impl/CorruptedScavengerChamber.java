@@ -17,6 +17,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
+import io.ruin.utility.Misc;
 
 public class CorruptedScavengerChamber extends Chamber {
 
@@ -69,12 +70,24 @@ public class CorruptedScavengerChamber extends Chamber {
     static {
         ObjectAction.register(CLOSED_CHEST, 1, (player, obj) -> player.startEvent(event -> {
             while (true) {
-                if (obj.id != CLOSED_CHEST)
+                if (obj.id != CLOSED_CHEST) {
                     return;
+                }
 
                 player.animate(832);
-                if (Random.get() > (player.getStats().get(StatType.Thieving).currentLevel / 2.0 / 100.0)) {
+                int thievingLevel = player.getStats().get(StatType.Thieving).currentLevel;
+
+                if (thievingLevel >= 99 && Misc.random(0, 1) == 1) {
                     event.delay(1);
+                    player.sendMessage("You fail to open the chest.");
+                    return;
+                } else if (thievingLevel >= 65 && Misc.random(0, 2) == 1) {
+                    event.delay(1);
+                    player.sendMessage("You fail to open the chest.");
+                    return;
+                } else if (Misc.random(0, 3) == 1) {
+                    event.delay(1);
+                    player.sendMessage("You fail to open the chest.");
                     return;
                 }
 
@@ -104,6 +117,7 @@ public class CorruptedScavengerChamber extends Chamber {
                         break;
                 }
                 obj.set("GRUB_CHEST_TYPE", nextType);
+                player.sendMessage("You successfully open the chest.");
                 World.startEvent(worldEvent -> {
                     worldEvent.delay(12);
                     obj.restore();

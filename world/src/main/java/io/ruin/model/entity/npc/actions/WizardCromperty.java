@@ -1,7 +1,7 @@
 package io.ruin.model.entity.npc.actions;
 
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.pvp.PvPDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 
 public class WizardCromperty {
@@ -56,7 +56,7 @@ public class WizardCromperty {
                 event.delay(3);
                 player.sendMessage("Brimstail teleports you to the essence mine.");
                 player.getMovement().teleport(2910, 4830, 0);
-                player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.TELEPORT_ESSENCE_MINE);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TELEPORT_ESSENCE_MINE);
             });
         });
         NPCAction.register(4913, "teleport", (player, npc) -> {
@@ -69,7 +69,7 @@ public class WizardCromperty {
                 event.delay(3);
                 player.sendMessage("Brimstail teleports you to the essence mine.");
                 player.getMovement().teleport(2910, 4830, 0);
-                player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.TELEPORT_ESSENCE_MINE);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TELEPORT_ESSENCE_MINE);
             });
         });
     }

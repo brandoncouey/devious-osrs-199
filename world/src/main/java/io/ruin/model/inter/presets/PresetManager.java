@@ -1,7 +1,6 @@
 package io.ruin.model.inter.presets;
 
 import com.google.gson.annotations.Expose;
-import io.ruin.cache.Color;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
@@ -20,63 +19,72 @@ public class PresetManager {
     @Setter
     @Expose
     private Preset[] presets = new Preset[13];
+
     @Getter
     @Setter
-    @Expose
     private int selectedPreset = 0;
+
     @Getter
     @Setter
     @Expose
     private int previousSelectedPreset = -1;
-    private static boolean modifiedInventory;
-    private static boolean modifiedEquipment;
+
+    private boolean modifiedInventory;
+
+    private boolean modifiedEquipment;
 
 
     // TODO: Add modifying levels to edit actions
 
     public PresetManager() {
-        presets[0] = new Preset(1, new PresetItem[14], new PresetItem[28],
-                "Preset #1", SpellBook.MODERN, false);
-        presets[1] = new Preset(2, new PresetItem[14], new PresetItem[28],
-                "Preset #2", SpellBook.MODERN, false);
-        presets[2] = new Preset(3, new PresetItem[14], new PresetItem[28],
-                "Preset #3", SpellBook.MODERN, false);
-        presets[3] = new Preset(4, new PresetItem[14], new PresetItem[28],
-                "Preset #4", SpellBook.MODERN, false);
-        presets[4] = new Preset(5, new PresetItem[14], new PresetItem[28],
-                "Preset #5", SpellBook.MODERN, false);
-        presets[5] = new Preset(6, new PresetItem[14], new PresetItem[28],
-                "Preset #6", SpellBook.MODERN, false);
-        presets[6] = new Preset(7, new PresetItem[14], new PresetItem[28],
-                "Preset #7", SpellBook.MODERN, false);
-        presets[7] = new Preset(8, new PresetItem[14], new PresetItem[28],
-                "Preset #8", SpellBook.MODERN, false);
-        presets[8] = new Preset(9, new PresetItem[14], new PresetItem[28],
-                "Preset #9", SpellBook.MODERN, false);
-        presets[9] = new Preset(10, new PresetItem[14], new PresetItem[28],
-                "Preset #10", SpellBook.MODERN, false);
-        presets[10] = new Preset(11, new PresetItem[14], new PresetItem[28],
-                "Preset #11", SpellBook.MODERN, false);
-        presets[11] = new Preset(12, new PresetItem[14], new PresetItem[28],
-                "Preset #12", SpellBook.MODERN, false);
-        presets[12] = new Preset(13, new PresetItem[14], new PresetItem[28],
-                "Preset #13", SpellBook.MODERN, false);
+        for (int i = 0; i < 13; i++) {
+            presets[i] = getEmptyPreset(i);
+        }
     }
 
-    public static void activatePreset(Player player, Preset preset) {
-//        player.getStats().set(StatType.Hitpoints, preset.getHitpointsLevel());
-//        player.getStats().set(StatType.Attack, preset.getAttackLevel());
-//        player.getStats().set(StatType.Strength, preset.getStrengthLevel());
-//        player.getStats().set(StatType.Defence, preset.getDefenceLevel());
-//        player.getStats().set(StatType.Ranged, preset.getRangedLevel());
-//        player.getStats().set(StatType.Magic, preset.getMagicLevel());
-//        player.getStats().set(StatType.Prayer, preset.getPrayerLevel());
+    public Preset getEmptyPreset(int id) {
+        return new Preset(id, new PresetItem[14], new PresetItem[28],
+                "Preset " + id, SpellBook.MODERN, false);
+    }
 
+    public void delete(Player player) {
+        presets[selectedPreset] = getEmptyPreset(selectedPreset);
+        PresetInterfaceHandler.updatePresetView(player);
+    }
+
+
+    public void save(Player player) {
+        Preset preset = presets[selectedPreset];
+        if (preset == null) {
+            preset = getEmptyPreset(selectedPreset);
+        }
+        //Saves Inventory
+        for (int i = 0; i < preset.getInventory().length; i++) {
+            if (player.getInventory().get(i) == null) {
+                preset.getInventory()[i] = new PresetItem(-1, 0);
+            } else {
+                preset.getInventory()[i] = new PresetItem(player.getInventory().get(i).getId(), player.getInventory().get(i).getAmount(), player.getInventory().get(i).copyOfAttributes());
+            }
+        }
+        //Saves Equipment
+        for (int i = 0; i < preset.getEquipment().length; i++) {
+            if (player.getEquipment().get(i) == null) {
+                preset.getEquipment()[i] = new PresetItem(-1, 0);
+            } else {
+                preset.getEquipment()[i] = new PresetItem(player.getEquipment().get(i).getId(), player.getEquipment().get(i).getAmount(), player.getEquipment().get(i).copyOfAttributes());
+            }
+        }
+        preset.setSpellBook(SpellBook.values()[Config.MAGIC_BOOK.get(player)]);
+        PresetInterfaceHandler.updatePresetView(player);
+    }
+
+    public static void equipPreset(Player player) {
+        Preset preset = player.getPresetManager().getPreset(player.getPresetManager().getSelectedPreset());
         player.getBank().deposit(player.getInventory(), true, true);
         player.getBank().deposit(player.getEquipment(), true, true);
 
-        modifiedEquipment = false;
-        modifiedInventory = false;
+        player.getPresetManager().modifiedEquipment = false;
+        player.getPresetManager().modifiedInventory = false;
 
         if (!itemContainerEmpty(player.getInventory().getItems())) {
             player.sendFilteredMessage("Your inventory has not been fully banked so your preset has not been loaded.");
@@ -91,17 +99,14 @@ public class PresetManager {
             return;
         }
 
-        PresetItem[] updatedInventory = loadInventory(player, preset.getInventory());
-        preset.setInventory(updatedInventory);
+        loadInventory(player, preset.getInventory());
+        loadEquipment(player, preset.getEquipment());
 
-        PresetItem[] updatedEquipment = loadEquipment(player, preset.getEquipment());
-        preset.setEquipment(updatedEquipment);
-
-        if (modifiedEquipment) {
+        if (player.getPresetManager().modifiedEquipment) {
             player.sendMessage("Your preset equipment has been modified since you did not have all items in your bank.");
         }
 
-        if (modifiedInventory) {
+        if (player.getPresetManager().modifiedInventory) {
             player.sendMessage("Your preset inventory has been modified since you did not have all items in your bank.");
         }
 
@@ -126,15 +131,17 @@ public class PresetManager {
         PresetItem[] updatedItems = new PresetItem[28];
         for (int slot = 0; slot < presetInventory.length; slot++) {
             PresetItem item = presetInventory[slot];
+
             if (item == null || item.getId() == -1) {
                 updatedItems[slot] = new PresetItem(-1, 1, null);
                 player.getInventory().set(slot, null);
                 continue;
             }
 
-            BankItem foundItem = getBankItem(player, item);
+            int originalId = item.getId();
+            BankItem foundItem = getBankItem(player, new PresetItem(ItemDef.get(originalId).isNote() ? item.getId() - 1 : item.getId(), item.getAmount(), item.getAttributes()));
 
-            if (foundItem != null && item.hasAttributes()) {
+            /*if (foundItem != null && item.hasAttributes()) {
                 if (!foundItem.hasAttributes()) {
                     item.setAttributes(new HashMap<>());
                 } else {
@@ -147,11 +154,11 @@ public class PresetManager {
                         }
                     }
                 }
-            }
+            }*/
 
             if (foundItem == null) {
                 updatedItems[slot] = new PresetItem(-1, 1, null);
-                modifiedInventory = true;
+                player.getPresetManager().modifiedInventory = true;
             } else {
                 int amountInBank = foundItem.getAmount();
                 if (amountInBank < item.getAmount()) {
@@ -165,15 +172,16 @@ public class PresetManager {
                         foundItem.setId(itemDef.placeholderMainId);
                         foundItem.setAmount(0);
                     } else {
-                        player.getBank().remove(item.getId(), item.getAmount(), false, foundItem.copyOfAttributes());
+                        player.getBank().remove(foundItem.getId(), item.getAmount(), false, foundItem.copyOfAttributes());
                     }
                 } else {
-                    player.getBank().remove(item.getId(), item.getAmount(), false, foundItem.copyOfAttributes());
+                    player.getBank().remove(foundItem.getId(), item.getAmount(), false, foundItem.copyOfAttributes());
                 }
-
                 player.getBank().sort();
-                player.getInventory().set(slot, new Item(item.getId(), item.getAmount(), item.getAttributes()));
+                player.getInventory().set(slot, new Item(originalId, item.getAmount(), item.getAttributes()));
             }
+
+
         }
         return updatedItems;
     }
@@ -207,7 +215,7 @@ public class PresetManager {
 
             if (foundItem == null) {
                 updatedItems[slot] = new PresetItem(-1, 1, null);
-                modifiedEquipment = true;
+                player.getPresetManager().modifiedEquipment = true;
             } else {
                 ItemDef itemDef = ItemDef.get(foundItem.getId());
 
@@ -221,7 +229,7 @@ public class PresetManager {
                             player.sendMessage("You do not meet the requirements for " + itemDef.name + ". So it has been removed from the preset.");
                             updatedItems[slot] = new PresetItem(-1, 1, null);
                             canEquip = false;
-                            modifiedEquipment = true;
+                            player.getPresetManager().modifiedEquipment = true;
                         }
                     }
                 }

@@ -1,10 +1,9 @@
 package io.ruin.model.skills.agility.courses;
 
-import io.ruin.api.utils.Random;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -145,10 +144,10 @@ public class GnomeStrongholdCourse {
                 if (p.lastAgilityObjId == 23135) {
                     p.getStats().addXp(StatType.Agility, 46.5, true);
                     PlayerCounter.GNOME_STRONGHOLD_COURSE.increment(p, 1);
-                    p.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.GNOME_AGILITY);
+                    p.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.GNOME_AGILITY);
                     AgilityPet.rollForPet(p, 17000);
-                    if(p.currentTaskEasy == DailyTask.PossibleTasksEasy.GNOME_COURSE){
-                        DailyTask.increase(p, DailyTask.PossibleTasksEasy.GNOME_COURSE);
+                    if(DailyTask.hasEasyTask(p, DailyTask.EasyTasks.GNOME_COURSE)){
+                        DailyTask.increase(p, DailyTask.EasyTasks.GNOME_COURSE);
                     }
                 } else {
                     p.getStats().addXp(StatType.Agility, 7.5, true);
@@ -158,10 +157,6 @@ public class GnomeStrongholdCourse {
                 p.unlock();
                 if(p.agilityContractType == AgilityContractType.GNOME)
                     AgilityContract.advanceAgilityContract(p);
-                if (Random.rollDie(50, 1)) {
-                    p.getInventory().addOrDrop(6828);
-                    p.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
             });
         };
         ObjectAction.register(23138, "squeeze-through", pipeAction);

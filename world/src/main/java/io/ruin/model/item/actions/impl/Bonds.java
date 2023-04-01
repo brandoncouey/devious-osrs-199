@@ -1,12 +1,8 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.api.utils.SkipLoad;
-import io.ruin.cache.Color;
-import io.ruin.model.World;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
-import io.ruin.model.inter.Interface;
-import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.ItemDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
@@ -34,9 +30,9 @@ public class Bonds {
                         "This will consume the bond forever."),
                 new OptionsDialogue(
                         new Option("Yes!", (player1 -> {
-                            player.storeAmountSpent += amount;
+                            player.amountDonated += amount;
                             player.getInventory().remove(item);
-                            player.sendMessage("You have redeemed a $" + amount + " Bond. Your new total is: $" + player.storeAmountSpent);
+                            player.sendMessage("You have redeemed a $" + amount + " Bond. Your new total is: $" + player.amountDonated);
                         })),
                         new Option("I'll keep it for now.", player::closeDialogue)
                 ));

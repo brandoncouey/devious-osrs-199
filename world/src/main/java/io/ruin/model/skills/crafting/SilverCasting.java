@@ -72,10 +72,6 @@ public enum SilverCasting {
                     silverBar.remove();
                     player.getInventory().add(silverCasting.result, silverCasting.amount);
                     player.getStats().addXp(StatType.Crafting, silverCasting.exp, true);
-                    if (Random.rollDie(50, 1)) {
-                        player.getInventory().addOrDrop(6828, 1);
-                        player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                    }
                     event.delay(1);
                 }
             });
@@ -95,10 +91,6 @@ public enum SilverCasting {
                     silverBar.remove();
                     player.getInventory().add(silverCasting.result, 1);
                     player.getStats().addXp(StatType.Crafting, silverCasting.exp, true);
-                    if (Random.rollDie(50, 1)) {
-                        player.getInventory().addOrDrop(6828, 1);
-                        player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                    }
                     event.delay(1);
                 }
             });
@@ -119,86 +111,86 @@ public enum SilverCasting {
         });
 
         InterfaceHandler.register(Interface.SILVER_CASTING, h -> {
-            h.actions[32] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[32] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 //1
                 player.SilverCraftingAmount = 1;
             };
-            h.actions[33] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[33] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 //5
                 player.SilverCraftingAmount = 5;
             };
-            h.actions[34] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[34] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 //10
                 player.SilverCraftingAmount = 10;
             };
-            h.actions[35] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[35] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 //x
                 player.integerInput("How many would you like to make (Stores amount for next time)", integer -> {
                     player.SilverCraftingAmount = integer;
                 });
             };
-            h.actions[36] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[36] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 //all
                 player.SilverCraftingAmount = Integer.MAX_VALUE;
             };
-            h.actions[6] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[6] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, OPAL_RING, player.SilverCraftingAmount, false);
             };
-            h.actions[7] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[7] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, JADE_RING, player.SilverCraftingAmount, false);
             };
-            h.actions[8] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[8] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, TOPAZ_RING, player.SilverCraftingAmount, false);
             };
-            h.actions[11] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[11] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, OPAL_NECKLACE, player.SilverCraftingAmount, false);
             };
-            h.actions[12] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[12] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, JADE_NECKLACE, player.SilverCraftingAmount, false);
             };
-            h.actions[13] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[13] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, TOPAZ_NECKLACE, player.SilverCraftingAmount, false);
             };
-            h.actions[15] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[15] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, OPAL_AMULET, player.SilverCraftingAmount, false);
             };
-            h.actions[16] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[16] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, JADE_AMULET, player.SilverCraftingAmount, false);
             };
-            h.actions[17] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[17] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, TOPAZ_AMULET, player.SilverCraftingAmount, false);
             };
 
-            h.actions[19] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[19] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, OPAL_BRACELET, player.SilverCraftingAmount, false);
             };
-            h.actions[20] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[20] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, JADE_BRACELET, player.SilverCraftingAmount, false);
             };
-            h.actions[21] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[21] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, TOPAZ_BRACELET, player.SilverCraftingAmount, false);
             };
 
-            h.actions[23] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[23] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, HOLY, player.SilverCraftingAmount, true);
             };
-            h.actions[24] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[24] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, UNHOLY, player.SilverCraftingAmount, true);
             };
-            h.actions[25] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[25] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, SILVER_SICKLE, player.SilverCraftingAmount, true);
             };
 
-            h.actions[27] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[27] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, SILVER_CROSSBOW_BOLT, player.SilverCraftingAmount, true);
             };
-            h.actions[28] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[28] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, TIARA, player.SilverCraftingAmount, true);
             };
-            h.actions[29] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[29] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, SILVTHRILROD, player.SilverCraftingAmount, true);
             };
-            h.actions[30] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[30] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 option(player, DEMONICSIGIL, player.SilverCraftingAmount, true);
             };
 
@@ -206,7 +198,7 @@ public enum SilverCasting {
             /**
              * Right side
              */
-            h.actions[6] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[6] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (slot == 0)
                     option(player, HOLY, option, true);
                 if (slot == 1)

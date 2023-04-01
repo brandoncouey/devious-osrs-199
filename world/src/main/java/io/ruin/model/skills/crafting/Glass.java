@@ -55,10 +55,6 @@ public enum Glass {
                 player.getInventory().remove(MOLTEN_GLASS, 1);
                 player.getInventory().add(glass.itemID, 1);
                 player.getStats().addXp(StatType.Crafting, glass.exp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 event.delay(2);
             }
         });

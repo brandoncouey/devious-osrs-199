@@ -3,26 +3,30 @@ package io.ruin.model.diaries.pvm;
 import io.ruin.model.diaries.StatefulAchievementDiary;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.Item;
+import io.ruin.utility.Misc;
+import io.ruin.utility.Utils;
 
-import java.util.EnumSet;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static io.ruin.model.diaries.pvm.PvMDiaryEntry.*;
 
 
 public final class PvMAchievementDiary extends StatefulAchievementDiary<PvMDiaryEntry> {
 
-    public static final Set<PvMDiaryEntry> EASY_TASKS = EnumSet.of(MINE_GOLD, TELEPORT_TO_KARAMJA, SAIL_TO_ARDOUGNE, SAIL_TO_PORT_SARIM, ATTEMPT_FIGHT_CAVES);
+    public static final Set<PvMDiaryEntry> EASY_TASKS = EnumSet.of(MINE_GOLD, TELEPORT_TO_KARAMJA, SAIL_TO_ARDOUGNE, SAIL_TO_PORT_SARIM);
 
     public static final Set<PvMDiaryEntry> MEDIUM_TASKS = EnumSet.of(DURADEL, CHOP_VINE, TRAVEL_PORT_KHAZARD);
 
-    public static final Set<PvMDiaryEntry> HARD_TASKS = EnumSet.of(COMPLETE_FIGHT_CAVES, KILL_KET_ZEK, KILL_METAL_DRAGON);
+    public static final Set<PvMDiaryEntry> HARD_TASKS = EnumSet.of(KILL_METAL_DRAGON);
 
-    public static final Set<PvMDiaryEntry> ELITE_TASKS = EnumSet.of(CRAFT_NATURES, ANTI_VENOM, COMPLETE_INFERNO);
+    public static final Set<PvMDiaryEntry> ELITE_TASKS = EnumSet.of(CRAFT_NATURES, ANTI_VENOM);
 
-    public static final String NAME = "Karamja area";
+    public static final String NAME = "Player vs Monster";
 
     public PvMAchievementDiary(Player player) {
         super(NAME, player);
@@ -157,79 +161,191 @@ public final class PvMAchievementDiary extends StatefulAchievementDiary<PvMDiary
         return ELITE_TASKS;
     }
 
-    public boolean hasCompletedAchieve(String difficulty) {
-        for (PvMDiaryEntry value : values()) {
+    public boolean hasCompletedAchieve(String achievementName) {
+        for (PvMDiaryEntry value : PvMDiaryEntry.values()) {
             player.DiaryRecorder.forEach((s, integer) -> {
                 if (s.equalsIgnoreCase(value.toString()) && integer == 1000) {
                     achievements.add(PvMDiaryEntry.valueOf(s));
                 }
             });
         }
-        switch (difficulty) {
-            //EASY
-            case "MINE_GOLD":
-                return achievements.contains(MINE_GOLD);
-            case "TELEPORT_TO_KARAMJA":
-                return achievements.contains(TELEPORT_TO_KARAMJA);
-            case "SAIL_TO_ARDOUGNE":
-                return achievements.contains(SAIL_TO_ARDOUGNE);
-            case "SAIL_TO_PORT_SARIM":
-                return achievements.contains(SAIL_TO_PORT_SARIM);
-            case "ATTEMPT_FIGHT_CAVES":
-                return achievements.contains(ATTEMPT_FIGHT_CAVES);
-            //MEDIUM
-            case "DURADEL":
-                return achievements.contains(DURADEL);
-            case "CHOP_VINE":
-                return achievements.contains(CHOP_VINE);
-            case "TRAVEL_PORT_KHAZARD":
-                return achievements.contains(TRAVEL_PORT_KHAZARD);
-            //HARD
-            case "COMPLETE_FIGHT_CAVES":
-                return achievements.contains(COMPLETE_FIGHT_CAVES);
-            case "KILL_KET_ZEK":
-                return achievements.contains(KILL_KET_ZEK);
-            case "KILL_METAL_DRAGON":
-                return achievements.contains(KILL_METAL_DRAGON);
-            //ELITE
-            case "CRAFT_NATURES":
-                return achievements.contains(CRAFT_NATURES);
-            case "ANTI_VENOM":
-                return achievements.contains(ANTI_VENOM);
-            case "COMPLETE_INFERNO":
-                return achievements.contains(COMPLETE_INFERNO);
-        }
-        return achievements.containsAll(EASY_TASKS);
+        Optional<PvMDiaryEntry> achievement = PvMDiaryEntry.fromName(achievementName);
+        if (achievement.isEmpty()) return false;
+        return achievements.contains(achievement.get());
     }
 
-    public final void display() {
-        player.sendScroll("<col=8B0000>Karamja Diary",
-                "<col=501061><strong><u>Easy",
-                hasCompletedAchieve("MINE_GOLD") ? "<col=24d124>Mine Gold Ore at the Horseshoe Mine. (" + (getAbsoluteAchievementStage(MINE_GOLD)) + "/" + getMaximum(MINE_GOLD) + ")</col>" : "<col=911c25>Mine Gold Ore at the Horseshoe Mine. (" + (getAbsoluteAchievementStage(MINE_GOLD)) + "/" + getMaximum(MINE_GOLD) + ")",
-                hasCompletedAchieve("TELEPORT_TO_KARAMJA") ? "<col=24d124>Teleport to Karamja using an Amulet of Glory.</col>" : "<col=911c25>Teleport to Karamja using an Amulet of Glory.",
-                hasCompletedAchieve("SAIL_TO_ARDOUGNE") ? "<col=24d124>Travel by boat from Brimhaven to Ardougne.</col>" : "<col=911c25>Travel by boat from Brimhaven to Ardougne.",
-                hasCompletedAchieve("SAIL_TO_PORT_SARIM") ? "<col=24d124>Travel by boat from Karamja to Port Sarim.</col>" : "<col=911c25>Travel by boat from Karamja to Port Sarim.",
-                hasCompletedAchieve("ATTEMPT_FIGHT_CAVES") ? "<col=24d124>Attempt the Tzhaar Fight Caves.</col>" : "<col=911c25>Attempt the Tzhaar Fight Caves.",
-                "",
-                "<col=501061><strong><u>Medium",
-                hasCompletedAchieve("DURADEL") ? "<col=24d124>Be assigned a Slayer Task by Duradel.</col>" : "<col=911c25>Be assigned a Slayer Task by Duradel.",
-                hasCompletedAchieve("CHOP_VINE") ? "<col=24d124>Chop the Vines in Brimhaven Dungeon.</col>" : "<col=911c25>Chop the Vines in Brimhaven Dungeon.",
-                hasCompletedAchieve("TRAVEL_PORT_KHAZARD") ? "<col=24d124>Travel by boat from Cairn Isle to Port Khazard.</col>" : "<col=911c25>Travel by boat from Cairn Isle to Port Khazard.",
-                "",
-                "<col=501061><strong><u>Hard",
-                hasCompletedAchieve("COMPLETE_FIGHT_CAVES") ? "<col=24d124>Complete the Tzhaar Fight Caves.</col>" : "<col=911c25>Complete the Tzhaar Fight Caves.",
-                hasCompletedAchieve("KILL_KET_ZEK") ? "<col=24d124>Teleport to Tai Bwo Wannai.</col>" : "<col=911c25>Teleport to Tai Bwo Wannai.",
-                hasCompletedAchieve("KILL_METAL_DRAGON") ? "<col=24d124>Kill a Metal Dragon in the Brimhaven Dungeon.</col>" : "<col=911c25>Kill a Metal Dragon in the Brimhaven Dungeon.",
-                "",
-                "<col=501061><strong><u>Elite",
-                hasCompletedAchieve("CRAFT_NATURES") ? "<col=24d124>Craft 56 Nature Runes at once.</col>" : "<col=911c25>Craft 56 Nature Runes at once.",
-                hasCompletedAchieve("ANTI_VENOM") ? "<col=24d124>Create an Antivenom in the Horseshoe mine.</col>" : "<col=911c25>Create an Antivenom in the Horseshoe mine.",
-                hasCompletedAchieve("COMPLETE_INFERNO") ? "<col=24d124>Complete the Inferno.</col>" : "<col=911c25>Complete the Inferno.");
+    public int getEasyAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        EASY_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getMediumAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        MEDIUM_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getHardAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        HARD_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getEliteAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        ELITE_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+
+    public final void display(String difficulty) {
+        player.currentAchievementDifficultyViewing = difficulty;
+        player.getPacketSender().sendString(1041, 14, "PvM Achievement Diary");
+        for (int i = 0; i < 32; i++) {
+            player.getPacketSender().setHidden(1041, 74 + (i * 5), true);
+        }
+        AtomicInteger index = new AtomicInteger();
+
+        Set<PvMDiaryEntry> TASKS = EASY_TASKS;
+        List<Item> rewards = easyRewards;
+
+        switch (difficulty) {
+            case "MEDIUM":
+                TASKS = MEDIUM_TASKS;
+                rewards = mediumRewards;
+                spriteId = 3400;
+                break;
+            case "HARD":
+                TASKS = HARD_TASKS;
+                rewards = hardRewards;
+                spriteId = 3401;
+                break;
+            case "ELITE":
+                TASKS = ELITE_TASKS;
+                rewards = eliteRewards;
+                spriteId = 3402;
+                break;
+        }
+
+        int finalSpriteId = spriteId;
+        TASKS.forEach(e -> {
+            if (!hasCompletedAchieve(e.name())) {
+                player.getPacketSender().setSprite(1041, 76 + (index.get() * 5), finalSpriteId);
+                player.getPacketSender().sendString(1041, 77 + (index.get() * 5), Misc.formatStringFormal(e.getName()));
+                player.getPacketSender().sendString(1041, 78 + (index.get() * 5), e.getDescription().replace("%progress%", "<col=deb31f>" + Utils.formatMoneyString(player.getDiaryManager().getPvmDiary().getAchievementStage(e).isPresent() ? player.getDiaryManager().getPvmDiary().getAchievementStage(e).getAsInt() : 0)).replace("%amount%", Utils.formatMoneyString(e.getMaximumStages()) + "</col>"));
+                player.getPacketSender().setHidden(1041, 74 + (index.get() * 5), false);
+                index.getAndIncrement();
+            }
+        });
+        TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name())) {
+                player.getPacketSender().setSprite(1041, 76 + (index.get() * 5), finalSpriteId);
+                player.getPacketSender().sendString(1041, 77 + (index.get() * 5), "<col=404040><str>" + Misc.formatStringFormal(e.name()));
+                player.getPacketSender().sendString(1041, 78 + (index.get() * 5), e.getDescription().replace("%progress%", "<col=deb31f>" + Utils.formatMoneyString(player.getDiaryManager().getPvmDiary().getAchievementStage(e).isPresent() ? player.getDiaryManager().getPvmDiary().getAchievementStage(e).getAsInt() : 0)).replace("%amount%", Utils.formatMoneyString(e.getMaximumStages()) + "</col>"));
+                player.getPacketSender().setHidden(1041, 74 + (index.get() * 5), false);
+                index.getAndIncrement();
+            }
+        });
+        player.getPacketSender().sendString(1041, 24, getEasyAmountCompleted() + "/" + EASY_TASKS.size());
+        player.getPacketSender().sendString(1041, 37, getMediumAmountCompleted() + "/" + MEDIUM_TASKS.size());
+        player.getPacketSender().sendString(1041, 50, getHardAmountCompleted() + "/" + HARD_TASKS.size());
+        player.getPacketSender().sendString(1041, 63, getEliteAmountCompleted() + "/" + ELITE_TASKS.size());
+        int count = 0;
+        for (Item reward : rewards) {
+            player.getPacketSender().sendItems(1041, (248 + count), 0, reward);
+            count++;
+        }
+        player.openInterface(InterfaceType.MAIN, 1041);
     }
 
     @Override
-    public int getMaximum(PvMDiaryEntry achievement) {
+    public int getStage(PvMDiaryEntry achievement) {
         return achievement.getMaximumStages();
     }
 
+    public void claimRewards() {
+        if (!hasCompleted(player.currentAchievementDifficultyViewing)) {
+            player.sendMessage("You must complete all of the " + Misc.formatStringFormal(player.currentAchievementDifficultyViewing)  + " " + NAME + " achievement diaries to claim your rewards.");
+            return;
+        }
+        switch (player.currentAchievementDifficultyViewing) {
+            case "EASY":
+                for (Item item : easyRewards) {
+                    if (new HashSet<>(player.claimedAchievementRewards).containsAll(easyRewards)) {
+                        player.sendMessage("You've already claimed all of your rewards.");
+                        return;
+                    }
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "MEDIUM":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(mediumRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : mediumRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "HARD":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(hardRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : hardRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "ELITE":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(eliteRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : eliteRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+        }
+    }
 }

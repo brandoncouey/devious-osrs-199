@@ -60,16 +60,6 @@
 		"world": "ECO"
 	},
 	{
-		"name": "Brian O'Richard",
-		"id": "3189",
-		"x": "3049",
-		"y": "4977",
-		"z": "1",
-		"direction": "W",
-		"walkRange": "1",
-		"world": "ECO"
-	},
-	{
 		"name": "Grace",
 		"id": "5919",
 		"x": "3050",

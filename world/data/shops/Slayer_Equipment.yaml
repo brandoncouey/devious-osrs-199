@@ -69,8 +69,11 @@ defaultStock:
 - id: 23037
   amount: 50
 - id: 4278
-  amount: 100000000
+  amount: 100000
   price: 0
 - id: 24266
-  amount: 100000000
+  amount: 100000
   price: 1250000
+- id: 24942
+  amount: 10000
+  price: 1000

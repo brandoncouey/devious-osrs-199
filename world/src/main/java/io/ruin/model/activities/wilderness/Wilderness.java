@@ -567,7 +567,6 @@ public class Wilderness {
                 return;
         }
 
-        player.rewardBm(npc, bloodMoney);
     }
 
     public static void bloodMoneyDropPVP(Player player, NPC npc) {
@@ -579,19 +578,18 @@ public class Wilderness {
             return;
         }
         if (npc.getDef().combatLevel >= 274) {
-            bloodMoney = Random.get(4500, 10000);
+            bloodMoney = Random.get(650, 2500);
         } else if (npc.getDef().combatLevel > 99 && npc.getDef().id != 7118 && npc.getDef().id != 5282) {
-            bloodMoney = Random.get(2500, 4250);
+            bloodMoney = Random.get(450, 750);
         } else if (npc.getDef().id == 7118 && (npc.getDef().combatLevel > 99 || npc.getDef().id == 5282)) {
-            bloodMoney = Random.get(500, 750);
+            bloodMoney = Random.get(375, 550);
     } else if (npc.getDef().combatLevel > 50 && npc.getDef().name.contains("dust devil")) {
-            bloodMoney = Random.get(1, 2);
+            bloodMoney = Random.get(5, 100);
         } else if (npc.getDef().combatLevel > 50 && !npc.getDef().name.contains("dust devil")) {
-            bloodMoney = Random.get(500, 750);
+            bloodMoney = Random.get(150, 350);
     } else if (npc.getDef().combatLevel <= 50) {
-            bloodMoney = Random.get(1, 2);
+            bloodMoney = Random.get(5, 50);
         }
-
         player.rewardBm(npc, bloodMoney);
     }
 

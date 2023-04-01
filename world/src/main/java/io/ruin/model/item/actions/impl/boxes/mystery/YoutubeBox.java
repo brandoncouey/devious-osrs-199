@@ -63,7 +63,6 @@ public class YoutubeBox {
             item.remove(1);
             player.getInventory().add(30294, 5);
             player.getInventory().add(290, 1);
-            player.getInventory().add(13307, 75000);
             player.unlock();
         });
 

@@ -159,6 +159,24 @@ public class Wintertodt {
         player.sendMessage("Your subdued Wintertodt count is: <col=ff0000>" + PlayerCounter.WINTERTODT_SUBDUED.get(player) + "</col>.");
         if (Random.rollDie(200, 1)) player.wintertodtPoints *= 2;
         player.wintertodtstorePoints += player.wintertodtPoints;
+        if (player.wintertodtPoints >= 500) {
+            player.getInventory().add(20703, 1);
+        }
+        if (player.wintertodtPoints >= 750) {
+            if (Misc.random(3) == 2) {
+                player.getInventory().add(20703, 1);
+            }
+        }
+        if (player.wintertodtPoints >= 900) {
+            if (Misc.random(3) == 2) {
+                player.getInventory().add(20703, 1);
+            }
+        }
+        if (player.wintertodtPoints >= 1200) {
+            if (Misc.random(3) == 2) {
+                player.getInventory().add(20703, 1);
+            }
+        }
         player.sendMessage("You completed wintertodt! you now have " + player.wintertodtstorePoints + " Total Wintertodt Points!");
         if (Random.rollDie(2500, 1)) player.getInventory().add(20693, 1);
         /* reset the players points now that the game has ended. */

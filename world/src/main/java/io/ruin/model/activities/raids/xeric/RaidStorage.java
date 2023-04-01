@@ -69,7 +69,7 @@ public class RaidStorage extends ItemContainer {
                     p.getPrivateRaidStorage().sendUpdates();
                 }
             };
-            h.actions[6] = (DefaultAction) (p, option, slot, id) -> {
+            h.actions[6] = (DefaultAction) (p, childId, option, slot, id) -> {
                 if (!ChambersOfXeric.isRaiding(p))
                     return;
                 switch (option) {
@@ -94,7 +94,7 @@ public class RaidStorage extends ItemContainer {
 
         InterfaceHandler.register(Interface.RAID_SHARED_STORAGE, h -> {
             h.actions[5] = (SimpleAction) RaidStorage::openPrivateStorage;
-            h.actions[7] = (DefaultAction) (p, option, slot, id) -> { // this interface works in a rather odd way - the slot is actually an index to enum 1666...
+            h.actions[7] = (DefaultAction) (p, childId, option, slot, id) -> { // this interface works in a rather odd way - the slot is actually an index to enum 1666...
                 if (!ChambersOfXeric.isRaiding(p))
                     return;
                 RaidStorage storage = p.raidsParty.getRaid().getStorage();
@@ -119,7 +119,7 @@ public class RaidStorage extends ItemContainer {
         });
         InterfaceHandler.register(Interface.RAID_STORAGE_INVENTORY, h -> {
             h.actions[8] = (SimpleAction) p -> Config.RAIDS_STORAGE_WARNING_DISMISSED.set(p, 1);
-            h.actions[1] = (DefaultAction) (p, option, slot, id) -> {
+            h.actions[1] = (DefaultAction) (p, childId, option, slot, id) -> {
                 if (Config.RAIDS_STORAGE_PRIVATE_INVENTORY.get(p) == 0) { // storing into shared storage
                     if (!ChambersOfXeric.isRaiding(p))
                         return;

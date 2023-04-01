@@ -3,7 +3,7 @@ package io.ruin.model.map.object.actions.impl;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.activities.tasks.DailyTask;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -79,12 +79,12 @@ public class PickWorldObjects {
             event.delay(1);
             player.getInventory().add(1779, 1);
             player.sendMessage("You pick some flax.");
-            if(player.currentTaskEasy == DailyTask.PossibleTasksEasy.FLAX){
-                DailyTask.increase(player, DailyTask.PossibleTasksEasy.FLAX);
+            if(DailyTask.hasEasyTask(player, DailyTask.EasyTasks.FLAX)){
+                DailyTask.increase(player, DailyTask.EasyTasks.FLAX);
             }
             if (Random.rollDie(6, 1))
                 removeFlax(flax);
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.PICK_FLAX_SEERS);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.PICK_FLAX_SEERS);
             player.unlock();
         });
     }

@@ -29,13 +29,16 @@ public class IncomingDecoder extends MessageDecoder<Player> {
     @Override
     protected void handle(Player player, InBuffer in, int opcode) {
         Incoming handler = Incoming.HANDLERS[opcode];
-        //System.out.println("INCOMING " + opcode + " handler " + handler);
         if (handler == null) {
             if (player.debug)
                 player.sendFilteredMessage("Unhandled incoming opcode: " + opcode);
             return;
         }
-        handler.handle(player, in, opcode);
+        try {
+            handler.handle(player, in, opcode);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

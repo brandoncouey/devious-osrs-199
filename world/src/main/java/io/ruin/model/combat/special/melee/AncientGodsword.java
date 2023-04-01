@@ -4,6 +4,7 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.AttackType;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.combat.HitType;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.Player;
@@ -24,10 +25,14 @@ public class AncientGodsword implements Special {
         int damage = target.hit(new Hit(player, attackStyle, attackType).randDamage(maxDamage).boostDamage(0.15).boostAttack(1.0)); //100% aka double
         if (damage > 0) {
             target.addEvent(event -> {
+                event.setCancelCondition(target::dead);
                 event.delay(8);
-                target.hit(new Hit().randDamage(25, 25).ignorePrayer().ignoreDefence());
-                target.graphics(377);
-                event.delay(8);
+                if (target.getPosition().isWithinDistance(player.getPosition(), 6)) {
+                    target.hit(new Hit().fixedDamage(25).ignorePrayer().ignoreDefence());
+                    player.hit(new Hit(HitType.HEAL).fixedDamage(25));
+                    target.graphics(377);
+                    event.delay(8);
+                }
             });
         }
         return true;

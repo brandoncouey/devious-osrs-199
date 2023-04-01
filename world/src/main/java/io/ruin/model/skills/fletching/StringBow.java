@@ -1,9 +1,7 @@
 package io.ruin.model.skills.fletching;
 
-import io.ruin.api.utils.Random;
 import io.ruin.model.activities.tasks.DailyTask;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -49,22 +47,18 @@ public enum StringBow {
         player.sendFilteredMessage("You add a string to the bow.");
         player.animate(animation);
         player.getStats().addXp(StatType.Fletching, exp, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
-        if(player.currentTaskEasy == DailyTask.PossibleTasksEasy.SHORTBOWS){
-            DailyTask.increase(player, DailyTask.PossibleTasksEasy.SHORTBOWS);
+        if(DailyTask.hasEasyTask(player, DailyTask.EasyTasks.SHORTBOWS)){
+            DailyTask.increase(player, DailyTask.EasyTasks.SHORTBOWS);
         }
         if (player.getPosition().regionId() == 10806 && strung == 853) {
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.STRING_MAPLE_SHORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.STRING_MAPLE_SHORT);
         }
         if (player.getPosition().regionId() == 11061 && strung == 859) {
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.FLETCH_MAGIC_BOW);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.FLETCH_MAGIC_BOW);
         }
         if (player.getPosition().regionId() == 9525 || player.getPosition().regionId() == 9526 ||
                 player.getPosition().regionId() == 9781 || player.getPosition().regionId() == 9782 && strung == 843) {
-            player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.FLETCH_OAK_SHORT_WEST);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.FLETCH_OAK_SHORT_WEST);
         }
     }
 

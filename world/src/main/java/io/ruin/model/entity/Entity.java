@@ -6,6 +6,7 @@ import io.ruin.cache.AnimDef;
 import io.ruin.cache.ObjectDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.duelarena.DuelRule;
+import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.Combat;
 import io.ruin.model.combat.CombatUtils;
 import io.ruin.model.combat.Hit;
@@ -33,6 +34,7 @@ import io.ruin.utility.TickDelay;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.function.Consumer;
 
 // TODO replace entity.player != null checks with isPlayer (and one for npc)
@@ -206,7 +208,7 @@ public abstract class Entity {
 
     public void checkMulti() {
         Tile tile = Tile.get(getAbsX(), getAbsY(), getHeight());
-        boolean inMulti = ignoreMulti || (tile != null && tile.multi);
+        boolean inMulti = ignoreMulti || (tile != null && tile.multi) || Wilderness.getLevel(getPosition()) >= 55;
         if (multi == inMulti)
             return;
         multi = inMulti;
@@ -746,6 +748,37 @@ public abstract class Entity {
         return 1;
     }
 
+    public int hit(List<Hit> hits) {
+        if (hits.size() == 0) return 0;
+        if(queuedHits == null)
+            queuedHits = new ArrayList<>();
+        int damage = 0;
+        for(Hit hit : hits) {
+            if(hit.defend(this)) {
+                if (!isLocked(LockType.FULL_NULLIFY_DAMAGE))
+                    queuedHits.add(hit);
+                damage += hit.damage;
+            }
+        }
+        Hit baseHit = hits.get(0);
+        if(baseHit.type.resetActions && baseHit.resetActions) {
+            if(player != null)
+                player.resetActions(true, false, false);
+            else
+                npc.resetActions(false, false);
+        }
+        if(baseHit.attacker != null) {
+            if(baseHit.attacker.player != null && baseHit.attackStyle != null) {
+                if(player != null) //important that this happens here for things that hit multiple targets
+                    baseHit.attacker.player.getCombat().skull(player);
+                if(baseHit.attackSpell == null)
+                    CombatUtils.addXp(baseHit.attacker.player, this, baseHit.attackStyle, baseHit.attackType, damage);
+            }
+            getCombat().updateLastDefend(baseHit.attacker);
+        }
+        return damage;
+    }
+
     public int hit(Hit... hits) {
         if(queuedHits == null)
             queuedHits = new ArrayList<>();
@@ -773,12 +806,10 @@ public abstract class Entity {
             }
             getCombat().updateLastDefend(baseHit.attacker);
         }
-
         return damage;
     }
 
     protected void processHits() {
-        checkPoison();
         checkPoison();
         if(queuedHits != null && !queuedHits.isEmpty()) {
             //noinspection ForLoopReplaceableByForEach (foreach will cause concurrentmodification exceptions!)
@@ -904,12 +935,12 @@ public abstract class Entity {
         publicSound(id, 1, 0);
     }
 
-    public void publicSound(int id, int type, int delay) {
+    public void publicSound(int id, int radius, int delay) {
         int x = getAbsX();
         int y = getAbsY();
         int distance = 15; //idk how to calc
         for (Player p : localPlayers())
-            p.getPacketSender().sendAreaSound(id, type, delay, x, y, distance);
+            p.getPacketSender().sendAreaSound(id, radius, delay, x, y, distance);
     }
 
     /**

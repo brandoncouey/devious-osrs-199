@@ -5,18 +5,21 @@ import io.ruin.model.activities.raids.tob.party.TheatreParty;
 import io.ruin.model.activities.raids.tob.party.TheatrePartyManager;
 import io.ruin.model.item.actions.ItemAction;
 
+import java.util.Optional;
+
 public class EscapeCrystal {
 
     static {
         ItemAction.registerInventory(25961, "activate", (player, item) -> {
-            TheatreParty tobparty = TheatrePartyManager.instance().getPartyForPlayer(player.getUserId()).get();
+            Optional<TheatreParty> tobParty = TheatrePartyManager.instance().getPartyForPlayer(player.getUserId());
+            if (tobParty.isEmpty()) return;
             player.getMovement().startTeleport(e -> {
                 if (player.theatreOfBloodStage == 6) {
                     player.sendMessage("There is no need to use this. As you've completed the TOB Run.");
                     return;
                 }
-                if (player.getUserId() == tobparty.getLeaderId() && tobparty.getUsers().size() > 1) {
-                    tobparty.forPlayers(p -> {
+                if (player.getUserId() == tobParty.get().getLeaderId() && tobParty.get().getUsers().size() > 1) {
+                    tobParty.get().forPlayers(p -> {
                         p.getMovement().teleport(3665, 3219, 0);
                         p.tobDeaths = 0;
                         p.sendMessage("Everyone has died! The raid has ended.");
@@ -30,7 +33,7 @@ public class EscapeCrystal {
                             p.getInventory().findItem(25961).remove();
                         p.tobreward = false;
                     });
-                    TheatrePartyManager.instance().deregister(tobparty);
+                    TheatrePartyManager.instance().deregister(tobParty.get());
                 } else {
                     player.getMovement().teleport(3665, 3219, 0);
                     TheatreParty.updatePartyStatus(player, PartyStatus.NO_PARTY);
@@ -41,7 +44,7 @@ public class EscapeCrystal {
                     player.getCombat().setDead(false);
                     player.unlock();
                 }
-                tobparty.leave(player.getUserId(), false);
+                tobParty.get().leave(player.getUserId(), false);
             });
         });
     }

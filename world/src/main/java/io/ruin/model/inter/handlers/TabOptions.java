@@ -27,7 +27,7 @@ public class TabOptions {
             /**
              * Display
              */
-            h.actions[82] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[82] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 //System.out.println("CHANGE DISPLAY MODE " + slot);
                 DisplayHandler.setDisplayMode(p, slot);
             };

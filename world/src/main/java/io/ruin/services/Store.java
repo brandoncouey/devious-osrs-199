@@ -90,7 +90,7 @@ public class Store implements Runnable {
                         break;
                     case 1083: // 10 bond
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += 1;
+                        player.amountDonated += 1;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         Broadcast.WORLD.sendNews("[News]" + player.getName() + " has purchased " + quantity + "x Membership Tokens!");
                         break;
@@ -123,126 +123,126 @@ public class Store implements Runnable {
                     case 1090:
                         player.getInventory().add(30308, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1091:
                         player.getInventory().add(25734, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1092:
                         player.getInventory().add(25733, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1093:
                         player.getInventory().add(25738, quantity);
 
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1094:
                         player.getInventory().add(24517, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1095:
                         player.getInventory().add(24511, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1096:
                         player.getInventory().add(24514, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1097:
                         player.getInventory().add(23971, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1098:
                         player.getInventory().add(23975, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1099:
                         player.getInventory().add(23979, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1100:
                         player.getInventory().add(25741, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1101:
                         player.getInventory().add(24417, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1102:
                         player.getInventory().add(24419, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1103:
                         player.getInventory().add(24420, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1104:
                         player.getInventory().add(24421, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1105:
                         player.getInventory().add(24664, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1106:
                         player.getInventory().add(24666, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1107:
                         player.getInventory().add(24668, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
 
                     case 1108:
                         player.getInventory().add(25471, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1115:
                         player.getInventory().add(21295, quantity);
                         player.getInventory().add(30307, paid);
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.sendMessage("Thank you for donating, Your items have been placed in your Inventory");
                         break;
                     case 1117:
-                        player.storeAmountSpent += paid;
+                        player.amountDonated += paid;
                         player.getBattlePass().purchaseBattlePass();
                         player.getInventory().add(30307, paid);
                         player.sendMessage("Thank you for donating, Your Battle Pass has been activated!");

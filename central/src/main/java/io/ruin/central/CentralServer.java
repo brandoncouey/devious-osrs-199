@@ -25,14 +25,17 @@ public class CentralServer extends ServerWrapper {
 
     public static void main(String[] args) throws Exception {
         worker.queue(() -> {
-            CentralServer.process();
+            try {
+                CentralServer.process();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return false;
         });
         WorldList.start();
         try {
             Properties properties = new Properties();
-            NettyServer nettyServer = NettyServer.start("Central Server", PORT, pipeline -> new DefaultDecoder(), 5,
-                    Boolean.parseBoolean(properties.getProperty("offline_mode")));
+            NettyServer nettyServer = NettyServer.start("Central Server", PORT, pipeline -> new DefaultDecoder());
             Runtime.getRuntime().addShutdownHook(new Thread(() -> {
                 System.out.println();
                 System.out.println("Gracefully shutting down central server...");

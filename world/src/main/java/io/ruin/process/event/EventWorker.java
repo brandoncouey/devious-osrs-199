@@ -10,7 +10,11 @@ public class EventWorker extends TaskWorker {
     private static final ConcurrentLinkedQueue<Event> EVENTS = new ConcurrentLinkedQueue<>();
 
     public static void process() {
-        EVENTS.removeIf(event -> !event.tick());
+        try {
+            EVENTS.removeIf(event -> !event.tick());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public static Event createEvent(EventConsumer eventConsumer) {

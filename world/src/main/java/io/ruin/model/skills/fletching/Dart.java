@@ -66,10 +66,6 @@ public enum Dart {
         player.getInventory().add(finishedId, toMake);
         player.getStats().addXp(StatType.Fletching, xp * toMake, true);
         player.sendFilteredMessage("You make " + toMake + " " + pluralName + ".");
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
     }
 
     static {

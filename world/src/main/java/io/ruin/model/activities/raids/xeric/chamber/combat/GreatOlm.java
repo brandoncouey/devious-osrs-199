@@ -295,10 +295,12 @@ public class GreatOlm extends NPCCombat {
     }
 
     private void preRightClawDefend(Hit hit) {
-        if (!hit.attackStyle.isMagic()) {
-            if (hit.attacker.player != null)
-                hit.attacker.player.sendMessage("The claw resists your non-magic attack!");
-            hit.block();
+        if (hit != null && hit.attackStyle != null) {
+            if (!hit.attackStyle.isMagic()) {
+                if (hit.attacker.player != null)
+                    hit.attacker.player.sendMessage("The claw resists your non-magic attack!");
+                hit.block();
+            }
         }
     }
 

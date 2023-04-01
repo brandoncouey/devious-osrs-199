@@ -180,10 +180,10 @@ public class MageArena {
 
     static {
         InterfaceHandler.register(197, h -> {
-            h.actions[9] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[9] = (DefaultAction) (p, childId, option, slot, itemId) -> {
 
             };
-            h.actions[11] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[11] = (DefaultAction) (p, childId, option, slot, itemId) -> {
 
 
             };

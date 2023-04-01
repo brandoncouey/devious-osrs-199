@@ -28,6 +28,8 @@ import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatType;
 import io.ruin.services.Loggers;
+import io.ruin.utility.Misc;
+import io.ruin.utility.ServerLog;
 
 import java.time.Duration;
 import java.time.Instant;
@@ -191,7 +193,7 @@ public class ChambersOfXeric {
         if (raidStage < 2) {
             raidStage = 2;
             String time = getTimeSinceStart();
-            party.forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Upper level complete! Duration: " + Color.RED.wrap(time) + ".")));
+            party.forPlayers(p -> p.sendMessage(Color.ORANGE.wrap("Upper level complete! Duration: " + time + ".")));
             Party.updatePartyStage(player, Party.REACHED_LOWER_LEVEL);
         }
     }
@@ -894,11 +896,12 @@ public class ChambersOfXeric {
         String time = getTimeSinceStart();
         String[] playerNames = party.getMembers().stream().map(player -> player.getName()).collect(Collectors.toList()).toArray(new String[1]);
         party.forPlayers(p -> {
-            p.sendMessage(Color.RAID_PURPLE.wrap("Congratulations - your raid is complete! Duration: " + Color.RED.wrap(time) + "."));
+            p.sendMessage(Color.ORANGE.wrap("Congratulations - your raid is complete! Duration: " + time + "."));
             p.chambersofXericKills.increment(p);
             Party.updatePartyStage(p, Party.GET_OUT);
         });
         Loggers.logRaidsCompletion(playerNames, time, party.getPoints());
+        ServerLog.log(ServerLog.Type.COX_RAIDS_COMPLETION, "Players=" + Arrays.toString(playerNames) + ", Time=" + time + ", Points=" + party.getPoints());
         XericRewards.giveRewards(this);
         party.forPlayers(p -> {
             p.sendMessage("You Were rewarded 50 Raid points, you now have " + p.raidPoints);

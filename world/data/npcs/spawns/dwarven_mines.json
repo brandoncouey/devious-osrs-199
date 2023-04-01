@@ -162,15 +162,6 @@
     "walkRange": 7
   },
   {
-    "name": "Cave horror",
-    "id": 1048,
-    "x": 3033,
-    "y": 9845,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 3
-  },
-  {
     "name": "Dwarf",
     "id": 290,
     "x": 3033,

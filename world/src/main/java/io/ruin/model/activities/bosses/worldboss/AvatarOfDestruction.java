@@ -54,8 +54,8 @@ public class AvatarOfDestruction extends NPCCombat {
                     if (Random.get(1, 100) <= doubleDropChance)
                         amount++;
                     new GroundItem(rolled.getId(), amount).owner(k.player).position(npc.getPosition()).spawn();
-                    if (rolled.getId() == 6199 || rolled.getId() == 290 || rolled.getId() == 30307 || rolled.getId() == 30307 || rolled.getId() == 30307 || rolled.getId() == 30307 || rolled.getId() == 11944) {
-                        Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.RAID_PURPLE.wrap("[RARE DROP] ") + k.player.getName() + " has just received " + Color.DARK_RED.wrap(rolled.getDef().name) + " from The Donator Boss!" + "</shad>");
+                    if (rolled.getId() == 6199 || rolled.getId() == 290 || rolled.getId() == 30307 || rolled.getId() == 11944) {
+                        Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.ORANGE.wrap(k.player.getName() + " has just received " + Color.DARK_RED.wrap(rolled.getDef().name) + " from The Donator Boss!" + "</shad>"));
                     }
                 }
             }
@@ -201,7 +201,6 @@ public class AvatarOfDestruction extends NPCCombat {
                     new LootItem(4088, Random.get(2, 3), 3), //Dragon platelegs
                     new LootItem(22804, Random.get(50, 125), 3), // Dragon Knife
                     new LootItem(19484, Random.get(50, 125), 3), // Dragon Javelin
-                    new LootItem(13307, Random.get(50_000, 1_000_000), 3), // Coins
                     new LootItem(5300, 1, 3), //Snapdragon Seed
                     new LootItem(1514, Random.get(15, 20), 3), // Magic Logs
                     new LootItem(3024, 3, 2), // Super Restore(4)

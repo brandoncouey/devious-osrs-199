@@ -12,6 +12,19 @@ import io.ruin.model.inter.utils.Option;
 
 public class Nurse {
 
+    public static void restoreOnly(Player player) {
+        Config.POISONED.set(player, 0);
+        player.poisonLevel = 0;
+        player.poisonTicks = 0;
+        player.poisonDamage = 0;
+        player.curePoison(1);
+        player.cureVenom(1);
+        player.resetFreeze();
+        player.resetStun();
+        player.cureVenom(0);
+        player.getStats().restore(false);
+    }
+
     public static void heal(Player player, NPC npc) {
         heal(player, npc, true);
     }

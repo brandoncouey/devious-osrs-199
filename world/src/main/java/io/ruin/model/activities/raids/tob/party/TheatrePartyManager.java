@@ -65,14 +65,7 @@ public final class TheatrePartyManager {
      * @return
      */
     public Optional<TheatreParty> register(Player leader) {
-        System.out.println("Registering a party for leader with ID: " + leader.getUserId());
-        boolean exists = getPartyForPlayer(leader.getUserId()).isPresent();
-        System.out.println("leader.getUserId() = " + leader.getUserId());
         int slot = findSlot();
-//        if (exists) {
-//            leader.sendMessage("Your already in a party.");
-//            return Optional.empty();
-//        }
         if (slot == -1) {
             leader.sendMessage("You can't create a party right now.");
             return Optional.empty();
@@ -87,6 +80,7 @@ public final class TheatrePartyManager {
     public void deregister(TheatreParty party) {
         for (int indx = 0; indx < party.getUsers().size(); indx++) {
             Player usr = World.getPlayer(party.getUsers().get(indx));
+            usr.getInventory().remove(25961, 28);
             if (usr != null) {
                 Config.TOB_PARTY_LEADER.set(usr, -1);
             }
@@ -340,6 +334,9 @@ public final class TheatrePartyManager {
                                 new Position(3642, 3204, 0),
                                 new Position(3683, 3234, 0), 0)
                 )
+                .onExit((p, logout) -> {
+                    p.getInventory().remove(25961, 28);
+                })
                 .onEnter(player -> {
                     player.openInterface(InterfaceType.PRIMARY_OVERLAY, Interface.TOB_PARTY_MEMBERS_OVERLAY);
                     TheatrePartyManager.instance().sendBlankPartyMembers(player.getUserId());

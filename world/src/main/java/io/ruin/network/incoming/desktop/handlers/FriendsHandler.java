@@ -9,6 +9,7 @@ import io.ruin.network.incoming.Incoming;
 import io.ruin.services.Loggers;
 import io.ruin.services.Punishment;
 import io.ruin.utility.IdHolder;
+import io.ruin.utility.PlayerLog;
 
 @IdHolder(ids = {5, 93, 55, 27, 91, 79})//@IdHolder(ids = {84, 80, 48, 56, 93, 67})
 public class FriendsHandler implements Incoming {
@@ -67,8 +68,7 @@ public class FriendsHandler implements Incoming {
                 return;
             }
             CentralClient.sendPrivateMessage(player.getUserId(), player.getClientGroupId(), name, message);
-            Loggers.logPrivateChat(player.getUserId(), player.getName(), player.getIp(), name, message);
-            return;
+            PlayerLog.log(PlayerLog.Type.PRIVATE_MESSAGE, player.getName(), "IP=" + player.getIp() + ", To=" + name + ", Message=" + message);
         }
     }
 

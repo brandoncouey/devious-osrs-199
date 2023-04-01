@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions.canifis;
 
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -32,7 +32,7 @@ public class DragontoothBoat {
             player.getMovement().teleport(3792, 3560, 0);
             player.getPacketSender().clearFade();
             player.dialogue(new MessageDialogue("You board the ship, and arrive on Dragontooth Island."));
-            player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.TRAVEL_DRAGONTOOTH);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TRAVEL_DRAGONTOOTH);
         });
     }
 

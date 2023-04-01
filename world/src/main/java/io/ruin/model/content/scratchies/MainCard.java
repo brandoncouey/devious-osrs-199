@@ -16,7 +16,6 @@ import io.ruin.utility.Broadcast;
 public class MainCard extends ItemContainer {
 
     public static final LootTable DonScrathCard = new LootTable().addTable(1,
-            new LootItem(13307, 100000, 10), //Blood Money
             new LootItem(11806, 1, 6).broadcast(Broadcast.WORLD), //Saradomin godsword
             new LootItem(11802, 1, 6).broadcast(Broadcast.WORLD), //Armadyl godsword
             new LootItem(11804, 1, 6).broadcast(Broadcast.WORLD), //Bandos godsword
@@ -348,10 +347,10 @@ public class MainCard extends ItemContainer {
         });
 
         InterfaceHandler.register(1015, h -> {
-            h.actions[13] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[13] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.closeInterfaces();
             };
-            h.actions[21] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[21] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.tonel) {
                     return;
                 }
@@ -366,7 +365,7 @@ public class MainCard extends ItemContainer {
                 player.tonel = true;
                 checkCard(player);
             };
-            h.actions[22] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[22] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.ttwol)
                     return;
                 int itemid = 0;
@@ -380,7 +379,7 @@ public class MainCard extends ItemContainer {
                 player.ttwol = true;
                 checkCard(player);
             };
-            h.actions[23] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[23] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.tthreel)
                     return;
                 int itemid = 0;
@@ -394,7 +393,7 @@ public class MainCard extends ItemContainer {
                 player.tthreel = true;
                 checkCard(player);
             };
-            h.actions[24] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[24] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.tfourl)
                     return;
                 int itemid = 0;
@@ -408,7 +407,7 @@ public class MainCard extends ItemContainer {
                 player.tfourl = true;
                 checkCard(player);
             };
-            h.actions[25] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[25] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.tfivel)
                     return;
                 int itemid = 0;
@@ -422,7 +421,7 @@ public class MainCard extends ItemContainer {
                 player.tfivel = true;
                 checkCard(player);
             };
-            h.actions[26] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[26] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.tsixl)
                     return;
                 int itemid = 0;
@@ -436,7 +435,7 @@ public class MainCard extends ItemContainer {
                 player.tsixl = true;
                 checkCard(player);
             };
-            h.actions[27] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[27] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.tsevenl)
                     return;
                 int itemid = 0;
@@ -450,7 +449,7 @@ public class MainCard extends ItemContainer {
                 player.tsevenl = true;
                 checkCard(player);
             };
-            h.actions[28] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[28] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.teightl)
                     return;
                 int itemid = 0;
@@ -464,7 +463,7 @@ public class MainCard extends ItemContainer {
                 player.teightl = true;
                 checkCard(player);
             };
-            h.actions[29] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[29] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.tninel)
                     return;
                 int itemid = 0;
@@ -478,7 +477,7 @@ public class MainCard extends ItemContainer {
                 player.tninel = true;
                 checkCard(player);
             };
-            h.actions[30] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[30] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.tonel && player.ttwol && player.tthreel && player.tfourl && player.tfivel && player.tsixl && player.tsevenl && player.teightl && player.tninel) {
                     if (player.getInventory().count(player.card) > 0) {
                         player.closeInterfaces();

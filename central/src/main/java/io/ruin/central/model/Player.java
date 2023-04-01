@@ -113,8 +113,8 @@ public class Player {
     }
 
     public void sendReceivePM(String fromName, int fromRank, String message) {
-        OutBuffer out = new OutBuffer(255).sendVarShortPacket(21)
-                .addString(fromName);
+        OutBuffer out = new OutBuffer(255).sendVarShortPacket(21);
+        out.addString(fromName);
         for (int i = 0; i < 5; ++i) {
             out.addByte(Random.get(255));
         }

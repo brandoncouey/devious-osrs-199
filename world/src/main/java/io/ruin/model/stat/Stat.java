@@ -71,8 +71,6 @@ public class Stat {
     }
 
     public int alter(int newLevel) {
-        if (newLevel < 0)
-            Server.logError("", new Throwable("Not a real error, just want to see where newLevel (" + newLevel + ") is set to less than 0!"));
         if (!updated && currentLevel != newLevel)
             updated = true;
         currentLevel = Math.max(0, newLevel);

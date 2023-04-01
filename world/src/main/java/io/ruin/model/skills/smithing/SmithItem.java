@@ -50,10 +50,6 @@ public class SmithItem {
                 player.getInventory().add(makeId, makeAmount);
                 RingOfForging.onSmith(player, player.smithBar, this);
                 player.getStats().addXp(StatType.Smithing, xp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 if (++made >= amount)
                     return;
 

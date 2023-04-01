@@ -3,9 +3,7 @@ package io.ruin.model.skills.thieving;
 import io.ruin.api.utils.Random;
 import io.ruin.model.World;
 import io.ruin.model.diaries.pvp.PvPDiaryEntry;
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
 import io.ruin.model.diaries.devious.DeviousDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -65,7 +63,7 @@ public enum Stall {
                     new LootItem(1755, 1, 1),                    //Chisel
                     new LootItem(1592, 1, 1),                    //Ring mould
                     new LootItem(1597, 1, 1),                    //Necklace mould
-                    new LootItem(COINS_995, 1500, 1900, 3) //Coins
+                    new LootItem(COINS_995, 1000, 1250, 3) //Coins
             )),
     MONKEY_FOOD_STALL(1, 7, 16.0, 11000, "food stall",
             PlayerCounter.MONKEY_FOOD_STALL_THIEVES,
@@ -87,7 +85,7 @@ public enum Stall {
                     new LootItem(1931, 1, 1),                    //Pot
                     new LootItem(2347, 1, 1),                    //Hammer
                     new LootItem(560, 1, 1),                     //Tinderbox
-                    new LootItem(COINS_995, 2500, 3500, 4) //Coins
+                    new LootItem(COINS_995, 1450, 1950, 4) //Coins
             )),
     TEA_STALL(5, 5, 16.0, 11000, "tea stall",
             PlayerCounter.TEA_STALL_THIEVES,
@@ -218,7 +216,7 @@ public enum Stall {
                     new LootItem(554, 50, 5),                      //Fire rune
                     new LootItem(555, 50, 5),                      //Water rune
                     new LootItem(563, 25, 1),                      //Law rune
-                    new LootItem(COINS_995, 4000, 5700, 10) //Coins
+                    new LootItem(COINS_995, 1950, 2650, 10) //Coins
             )),
     SCIMITAR_STALL(95, 7, 125.0, 11000, "scimitar stall",
             PlayerCounter.SCIMITAR_STALL_THIEVES,
@@ -228,9 +226,11 @@ public enum Stall {
             null,
             new LootTable().addTable(1,
                     new LootItem(1323, 1, 30),                      //Iron scimitar
+                    new LootItem(1325, 1, 10),                      //Steel scimitar
+                    new LootItem(1331, 1, 6),                      //Adamant scimitar
                     new LootItem(1333, 1, 4),                      //Rune scimitar
                     new LootItem(4587, 1, 1),                      //Dragon scimitar
-                    new LootItem(COINS_995, 6300, 7000, 70) //Coins
+                    new LootItem(COINS_995, 500, 1250, 70) //Coins
             )),
     GEM_STALL(75, 10, 160.0, 11000, "gem stall",
             PlayerCounter.GEM_STALL_THIEVES,
@@ -322,7 +322,6 @@ public enum Stall {
             player.lock();
             player.animate(832);
             event.delay(1);
-           // replaceStall(stall, object, replacementID, player);
             Item loot;
             if (stall.name.contains("vegetable") || stall.name.contains("baker's") || stall.name.contains("seed") || stall.name.contains("crafting")) {
                 if (player.isADonator()) {
@@ -340,10 +339,6 @@ public enum Stall {
                 Pets.ROCKY.unlock(player);
             stall.counter.increment(player, 1);
             player.getStats().addXp(StatType.Thieving, stall.experience, true);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             BotPrevention.attemptBlock(player);
             player.unlock();
             switch (stall) {
@@ -357,10 +352,10 @@ public enum Stall {
                     player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.STEAL_GEM_ARD);
                     break;
                 case FISH_STALL:
-                    player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.STEAL_FISH);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.STEAL_FISH);
                     break;
                 case TEA_STALL:
-                    player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.TEA_STALL);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TEA_STALL);
                     break;
                 case SILVER_STALL:
                     if (player.getPosition().regionId() == 6968) {

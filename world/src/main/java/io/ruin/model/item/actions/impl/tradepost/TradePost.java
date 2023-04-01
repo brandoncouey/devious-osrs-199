@@ -215,7 +215,6 @@ public class TradePost {
                     message += NumberUtils.formatNumber(amount) + " x " + ItemDef.get(itemId).name + " for the price of " + price + " coins each";
                 else
                     message += ItemDef.get(itemId).descriptiveName + " for the price of " + price + " coins each";
-                TradePostEmbedMessage.sendDiscordMessage(message, ItemDef.get(itemId).id);
             }
         });
     }

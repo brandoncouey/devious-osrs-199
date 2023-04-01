@@ -6,6 +6,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.model.map.object.actions.ObjectAction;
+import io.ruin.model.map.object.actions.ObjectExamine;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.utility.DebugMessage;
 import io.ruin.utility.IdHolder;
@@ -73,6 +74,11 @@ public class ObjectActionHandler implements Incoming {
                             .add("varpbitId", def.varpBitId)
                             .add("varpId", def.varpId);
                     player.sendFilteredMessage("[ObjectAction] " + debug.toString());
+                } else {
+                    if (ObjectExamine.examines.containsKey(id)) {
+                        player.sendMessage(ObjectExamine.examines.get(id));
+                    }
+                    return;
                 }
             }
             return;

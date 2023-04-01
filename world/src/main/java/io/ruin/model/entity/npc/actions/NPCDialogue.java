@@ -4,7 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.data.impl.teleports;
 import io.ruin.model.activities.pvminstances.InstanceDialogue;
 import io.ruin.model.activities.pvminstances.InstanceType;
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.dialogue.*;
@@ -123,11 +123,11 @@ public class NPCDialogue {
                 new io.ruin.model.inter.dialogue.NPCDialogue(npc, "Yes join me on my boat."),
                 new ActionDialogue(() -> {
                     teleports.teleport(player, 2310, 3781, 0);
-                    player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TRAVEL_NEITIZNOT);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TRAVEL_NEITIZNOT);
                 })));
         NPCAction.register(1883, "neitiznot", (player, npc) -> {
             teleports.teleport(player, 2310, 3781, 0);
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TRAVEL_NEITIZNOT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TRAVEL_NEITIZNOT);
         });
 
         NPCAction.register(10726, "talk-to", (player, npc) -> player.dialogue(new io.ruin.model.inter.dialogue.NPCDialogue(npc, "Good day, traveller.")));
@@ -143,14 +143,8 @@ public class NPCDialogue {
         NPCAction.register(5519, 1, (player, npc) -> player.getDiaryManager().getPvpDiary().claimReward(npc));
         NPCAction.register(5520, 1, (player, npc) -> player.getDiaryManager().getMinigamesDiary().claimReward(npc));
         NPCAction.register(5524, 1, (player, npc) -> player.getDiaryManager().getSkillingDiary().claimReward(npc));
-        NPCAction.register(5526, 1, (player, npc) -> player.getDiaryManager().getFremennikDiary().claimReward(npc));
-        NPCAction.register(5517, 1, (player, npc) -> player.getDiaryManager().getKandarinDiary().claimReward(npc));
         NPCAction.register(7650, 1, (player, npc) -> player.getDiaryManager().getPvmDiary().claimReward(npc));
         NPCAction.register(8538, 1, (player, npc) -> player.getDiaryManager().getDeviousDiary().claimReward(npc));
-        NPCAction.register(5523, 1, (player, npc) -> player.getDiaryManager().getLumbridgeDraynorDiary().claimReward(npc));
-        NPCAction.register(5521, 1, (player, npc) -> player.getDiaryManager().getMorytaniaDiary().claimReward(npc));
-        NPCAction.register(5525, 1, (player, npc) -> player.getDiaryManager().getVarrockDiary().claimReward(npc));
-        NPCAction.register(5518, 1, (player, npc) -> player.getDiaryManager().getWesternDiary().claimReward(npc));
         NPCAction.register(5514, 1, (player, npc) -> player.getDiaryManager().getWildernessDiary().claimReward(npc));
 
 

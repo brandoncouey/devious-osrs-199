@@ -1,7 +1,7 @@
 package io.ruin.model.skills.agility.shortcut;
 
 import com.google.common.collect.Lists;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.map.Direction;
@@ -73,7 +73,7 @@ public enum PipeShortcut {
             player.getStats().addXp(StatType.Agility, exp, true);
             player.unlock();
             if (object.id == 16511 && player.getPosition().regionId() == 12698) {
-                player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.OBSTACLE_PIPE);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.OBSTACLE_PIPE);
             }
         });
     }

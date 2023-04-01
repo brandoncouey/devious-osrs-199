@@ -13,7 +13,6 @@ import io.ruin.utility.Broadcast
 class HunllefTable : LootTable() {
     init {
         guaranteedItems(
-            LootItem(13307, 50_000, 100_000, 100), //coins
             LootItem(995, 5_000_000, 10_000_000, 100), //coins
             LootItem(23962, 100, 500, 100) //coins
         )

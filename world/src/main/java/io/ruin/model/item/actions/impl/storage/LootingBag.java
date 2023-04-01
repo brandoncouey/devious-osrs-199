@@ -116,7 +116,7 @@ public class LootingBag extends ItemContainer {
             h.actions[2] = (SimpleAction) p -> {
                 p.closeInterface(InterfaceType.INVENTORY_OVERLAY);
             };
-            h.actions[5] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[5] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 LootingBag bag = player.getLootingBag();
                 if (!bag.deposit) {
                     Item item = bag.get(slot, itemId);

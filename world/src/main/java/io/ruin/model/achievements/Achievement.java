@@ -156,38 +156,38 @@ public enum Achievement {
             case 6291: {//ARDOUNGNE EASY
                 switch (value) {
                     case 0:
-                        Config.ARDOUGNE_EASY.set(player, 0);
+                        Config.PVP_EASYU.set(player, 0);
                         return;
                     case 1:
-                        Config.ARDOUGNE_EASY.set(player, 1);
+                        Config.PVP_EASYU.set(player, 1);
                         return;
                     case 2:
-                        Config.ARDOUGNE_EASY.set(player, 2);
+                        Config.PVP_EASYU.set(player, 2);
                         return;
                     case 3:
-                        Config.ARDOUGNE_EASY.set(player, 3);
+                        Config.PVP_EASYU.set(player, 3);
                         return;
                     case 4:
-                        Config.ARDOUGNE_EASY.set(player, 4);
+                        Config.PVP_EASYU.set(player, 4);
                         return;
                 }
             }
             case 6292: {//ARDOUGNE MEDIUM
                 switch (value) {
                     case 0:
-                        Config.ARDOUGNE_MEDIUM.set(player, 0);
+                        Config.PVP_MEDIUMU.set(player, 0);
                         return;
                     case 1:
-                        Config.ARDOUGNE_MEDIUM.set(player, 1);
+                        Config.PVP_MEDIUMU.set(player, 1);
                         return;
                     case 2:
-                        Config.ARDOUGNE_MEDIUM.set(player, 2);
+                        Config.PVP_MEDIUMU.set(player, 2);
                         return;
                     case 3:
-                        Config.ARDOUGNE_MEDIUM.set(player, 3);
+                        Config.PVP_MEDIUMU.set(player, 3);
                         return;
                     case 4:
-                        Config.ARDOUGNE_MEDIUM.set(player, 4);
+                        Config.PVP_MEDIUMU.set(player, 4);
                         return;
 
                 }
@@ -195,19 +195,19 @@ public enum Achievement {
             case 6293: {//ARDOUGNE HARD
                 switch (value) {
                     case 0:
-                        Config.ARDOUGNE_HARD.set(player, 0);
+                        Config.PVP_HARDU.set(player, 0);
                         return;
                     case 1:
-                        Config.ARDOUGNE_HARD.set(player, 1);
+                        Config.PVP_HARDU.set(player, 1);
                         return;
                     case 2:
-                        Config.ARDOUGNE_HARD.set(player, 2);
+                        Config.PVP_HARDU.set(player, 2);
                         return;
                     case 3:
-                        Config.ARDOUGNE_HARD.set(player, 3);
+                        Config.PVP_HARDU.set(player, 3);
                         return;
                     case 4:
-                        Config.ARDOUGNE_HARD.set(player, 4);
+                        Config.PVP_HARDU.set(player, 4);
                         return;
 
                 }
@@ -215,19 +215,19 @@ public enum Achievement {
             case 6294: {//ARDOUGNE ELITE
                 switch (value) {
                     case 0:
-                        Config.ARDOUGNE_ELITE.set(player, 0);
+                        Config.PVP_ELITEU.set(player, 0);
                         return;
                     case 1:
-                        Config.ARDOUGNE_ELITE.set(player, 1);
+                        Config.PVP_ELITEU.set(player, 1);
                         return;
                     case 2:
-                        Config.ARDOUGNE_ELITE.set(player, 2);
+                        Config.PVP_ELITEU.set(player, 2);
                         return;
                     case 3:
-                        Config.ARDOUGNE_ELITE.set(player, 3);
+                        Config.PVP_ELITEU.set(player, 3);
                         return;
                     case 4:
-                        Config.ARDOUGNE_ELITE.set(player, 4);
+                        Config.PVP_ELITEU.set(player, 4);
                         return;
 
                 }

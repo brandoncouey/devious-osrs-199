@@ -58,10 +58,6 @@ public enum Herb {
                     return;
                 item.setId(herb.cleanId);
                 player.getStats().addXp(StatType.Herblore, herb.xp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 player.sendFilteredMessage("You clean the " + herbName + ".");
             });
             SkillItem skillItem = new SkillItem(herb.unfId).addAction((player, amount, event) -> {

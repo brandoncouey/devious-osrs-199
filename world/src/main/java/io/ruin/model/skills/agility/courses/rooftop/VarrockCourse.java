@@ -4,7 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -244,17 +244,13 @@ public class VarrockCourse {
             AgilityPet.rollForPet(p, 14000);
             PlayerCounter.VARROCK_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 30, MARK_SPAWNS);
-            p.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.ROOFTOP);
+            p.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.ROOFTOP);
             p.unlock();
-            if(p.currentTaskMedium == DailyTask.PossibleTasksMedium.VARROCK_COURSE){
-                DailyTask.increaseMedium(p, DailyTask.PossibleTasksMedium.VARROCK_COURSE);
+            if(DailyTask.hasMediumTask(p, DailyTask.MediumTasks.VARROCK_COURSE)){
+                DailyTask.increaseMedium(p, DailyTask.MediumTasks.VARROCK_COURSE);
             }
             if(p.agilityContractType == AgilityContractType.VARROCK_ROOFTOP)
                 AgilityContract.advanceAgilityContract(p);
-            if (Random.rollDie(50, 1)) {
-                p.getInventory().addOrDrop(6828);
-                p.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
         }));
     }
 

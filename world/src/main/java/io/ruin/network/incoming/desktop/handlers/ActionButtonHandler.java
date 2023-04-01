@@ -1,5 +1,6 @@
 package io.ruin.network.incoming.desktop.handlers;
 
+import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.cache.ItemDef;
 import io.ruin.event.GameEventProcessor;
@@ -133,7 +134,7 @@ public class ActionButtonHandler {
                     .add("slot", slot)
                     .add("item", itemId);
             player.sendFilteredMessage("[ActionButton] " + debug.toString());
-            System.out.println("[ActionButton] " + debug);
+            Server.println("[ActionButton] " + debug);
         }
         if (player.inTutorial && interfaceId != Interface.LOGOUT && !dialogue && interfaceId != Interface.IRON_MAN_SETTINGS && interfaceId != Interface.APPEARANCE_CUSTOMIZATION)
             return;
@@ -143,7 +144,7 @@ public class ActionButtonHandler {
         }
         InterfaceAction action = InterfaceHandler.getAction(player, interfaceId, childId);
         if (action != null)
-            action.handleClick(player, option, slot, itemId);
+            action.handleClick(player, childId, option, slot, itemId);
     }
 
 }

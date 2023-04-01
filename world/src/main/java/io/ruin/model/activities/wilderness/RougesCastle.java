@@ -43,10 +43,6 @@ public class RougesCastle {
     );
 
     public static final LootTable PVP_TABLE = new LootTable().addTable(1,
-            new LootItem(BLOOD_MONEY, 1, 10, 10), //Blood money
-            new LootItem(BLOOD_MONEY, 10, 25, 4), //Blood money
-            new LootItem(BLOOD_MONEY, 25, 50, 2), //Blood money
-            new LootItem(BLOOD_MONEY, 50, 100, 1), //Blood money
 
             new LootItem(12702, 4, 8, 4), //Super combat potion(1)
             new LootItem(12700, 4, 8, 3), //Super combat potion(2)

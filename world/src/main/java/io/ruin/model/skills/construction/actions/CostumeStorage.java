@@ -1414,7 +1414,7 @@ public enum CostumeStorage {
 
     static {
         InterfaceHandler.register(675, h -> {
-            h.actions[7] = (DefaultAction) (player, option, slot, itemId) -> handleClueScrollTiers(player, option);
+            h.actions[7] = (DefaultAction) (player, childId, option, slot, itemId) -> handleClueScrollTiers(player, option);
 
             //8 = deposit mode
 

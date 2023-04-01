@@ -306,15 +306,6 @@
     "walkRange": 0
   },
   {
-    "name": "Monk",
-    "id": 2579,
-    "x": 3048,
-    "y": 3483,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 0
-  },
-  {
     "name": "Raccoon",
     "id": 1420,
     "x": 3032,

@@ -3,7 +3,7 @@ package io.ruin.model.activities.barrows;
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
 import io.ruin.model.activities.tasks.DailyTask;
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
 import io.ruin.model.inter.InterfaceType;
@@ -121,7 +121,7 @@ public class Barrows {
             player.animate(535);
             player.getPacketSender().shakeCamera(0, 3);
             ItemContainer loot = BarrowsRewards.loot(player);
-            player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.LOOT_CHEST);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.LOOT_CHEST);
             player.getPacketSender().sendClientScript(917, "ii", -1, -1);
             player.openInterface(InterfaceType.MAIN, Interface.BARROWS_LOOT);
             player.getPacketSender().sendAccessMask(Interface.BARROWS_LOOT, 3, 0, 8, 1024);
@@ -138,8 +138,8 @@ public class Barrows {
                 Config.BARROWS_NOVICE.set(player, 1);
                 Config.COMBAT_ACHIVEMENTS_OVERVIEW_EASY.increment(player, 1);
             }
-            if(player.currentTaskHard == DailyTask.PossibleTasksHard.BARROWS_CHESTS){
-                DailyTask.increaseHard(player, DailyTask.PossibleTasksHard.BARROWS_CHESTS);
+            if(DailyTask.hasHardTask(player, DailyTask.HardTasks.BARROWS_CHESTS)){
+                DailyTask.increaseHard(player, DailyTask.HardTasks.BARROWS_CHESTS);
             }
             player.sendMessage("Your Barrows chest count is: <col=FF0000>" + (++player.barrowsChestsOpened) + "</col>.");
             for (BarrowsBrother brother : BarrowsBrother.values())

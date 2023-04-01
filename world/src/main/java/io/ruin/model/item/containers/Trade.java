@@ -12,10 +12,12 @@ import io.ruin.model.item.ItemContainer;
 import io.ruin.model.item.ItemContainerG;
 import io.ruin.services.Loggers;
 import io.ruin.services.discord.DiscordConnection;
+import io.ruin.utility.PlayerLog;
 import io.ruin.utility.TickDelay;
 import net.dv8tion.jda.api.EmbedBuilder;
 
 import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Date;
 
 import static io.ruin.cache.ItemID.COINS_995;
@@ -467,8 +469,7 @@ public class Trade extends ItemContainer {
             }
             sendMessage("Your trade with " + targetTrade.player.getName() + " was successful.");
             if (targetTrade.targetTrade != null && (itemCount > 0 || targetTrade.itemCount > 0))
-                //Loggers.logTrade(player.getUserId(), player.getName(), player.getIp(), targetTrade.player.getUserId(), targetTrade.player.getName(), targetTrade.player.getIp(), items, targetTrade.items);
-                Loggers.logTrade(player, targetTrade.player, items, targetTrade.items);
+                PlayerLog.log(PlayerLog.Type.TRADING, player.getName(), "Successfully traded items [" + Arrays.toString(items) + "] \nto " + targetTrade.player.getName() + " for items [" + Arrays.toString(targetTrade.items));
         }
         stage = 0;
         accepted = false;
@@ -487,7 +488,7 @@ public class Trade extends ItemContainer {
          */
         InterfaceHandler.register(Interface.TRADE_SCREEN, h -> {
             h.actions[10] = (SimpleTradeAction) p -> p.getTrade().accept(true);
-            h.actions[25] = (TradeAction) (p, option, slot, itemId) -> {
+            h.actions[25] = (TradeAction) (p, childId, option, slot, itemId) -> {
                 Item item = p.getTrade().get(slot, itemId);
                 if (item == null)
                     return;
@@ -504,7 +505,7 @@ public class Trade extends ItemContainer {
                 else
                     item.examine(p);
             };
-            h.actions[28] = (TradeAction) (p, option, slot, itemId) -> {
+            h.actions[28] = (TradeAction) (p, childId, option, slot, itemId) -> {
                 Item item = p.getTrade().targetTrade.get(slot, itemId);
                 if (item == null)
                     return;
@@ -515,7 +516,7 @@ public class Trade extends ItemContainer {
          * First screen (inventory)
          */
         InterfaceHandler.register(Interface.TRADE_INVENTORY, h -> {
-            h.actions[0] = (TradeAction) (p, option, slot, itemId) -> {
+            h.actions[0] = (TradeAction) (p, childId, option, slot, itemId) -> {
                 Item item = p.getInventory().get(slot, itemId);
                 if (item == null)
                     return;
@@ -547,11 +548,11 @@ public class Trade extends ItemContainer {
 
     private interface TradeAction extends InterfaceAction {
 
-        void handle(Player player, int option, int slot, int itemId);
+        void handle(Player player, int childId, int option, int slot, int itemId);
 
-        default void handleClick(Player player, int option, int slot, int itemId) {
+        default void handleClick(Player player, int childId, int option, int slot, int itemId) {
             if (player.getTrade().targetTrade != null) //active check!!
-                handle(player, option, slot, itemId);
+                handle(player, childId, option, slot, itemId);
         }
 
     }
@@ -560,7 +561,7 @@ public class Trade extends ItemContainer {
 
         void handle(Player player);
 
-        default void handle(Player player, int option, int slot, int itemId) {
+        default void handle(Player player, int childId, int option, int slot, int itemId) {
             handle(player);
         }
 

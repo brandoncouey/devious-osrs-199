@@ -126,7 +126,7 @@ public class EquipmentStats {
             h.actions[20] = (OptionAction) (player, option) -> TabEquipment.itemAction(player, option, Equipment.SLOT_AMMO);
         });
         InterfaceHandler.register(Interface.EQUIPMENT_STATS_INVENTORY, h -> {
-            h.actions[0] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[0] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 Item item = player.getInventory().get(slot, itemId);
                 if (item == null)
                     return;

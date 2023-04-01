@@ -175,31 +175,21 @@ public class LoginDecoder extends MessageDecoder<Channel> {
         int check = in.readUnsignedByte();
         in.readUnsignedByte();
         if (check != 8) {
-            /*
-             * Invalid login
-             */
             Response.INVALID_LOGIN.send(channel);
             return null;
         }
         int osType = in.readUnsignedByte();
         int bit64 = in.readUnsignedByte();
         int osVersionType = in.readUnsignedByte();
-        //there is more, but we don't need it.
 
         /* skipping lots of data */
         if (tfaTrustHash != 0) {
-            /**
-             * Check if 2fa trust hash matches
-             */
             int osTypeStored = (tfaTrustHash >> 24) & 0xff;
             int bit64Stored = (tfaTrustHash >> 16) & 0xff;
             int osVersionTypeStored = (tfaTrustHash >> 8) & 0xff;
             if (osTypeStored != osType || bit64Stored != bit64 || osVersionTypeStored != osVersionType)
                 tfaTrustHash = 0; //device doesn't match up
         } else if (tfaTrust) {
-            /**
-             * Create a new 2fa trust hash
-             */
             tfaTrustHash = osType << 24 | bit64 << 16 | osVersionType << 8 | Random.get(1, 254);
         }
         return new LoginInfo(channel, name, password, email, macAddress, uuid, tfaCode, tfaTrust, tfaTrustHash, worldId, keys);

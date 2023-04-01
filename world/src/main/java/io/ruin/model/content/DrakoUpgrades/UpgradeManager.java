@@ -251,7 +251,7 @@ public class UpgradeManager {
         IntStream.of(ITEM_COMPONENTS).forEach((i -> {
             boolean hide = items.stream().noneMatch(item -> i == ITEM_COMPONENTS[item.getComponent()]);
             if (hide) {
-                player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, i, 0, new Item(-1));
+               player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, i, 0, new Item(-1));
             }
         }));
         items.forEach(i -> {
@@ -270,18 +270,17 @@ public class UpgradeManager {
 
     private static void sendInfo(boolean clear, Player player) {
         if (player.getInventory().contains(component)) {
-            player.getPacketSender().sendString(Interface.UPGRADE_INTERFACE, 106, clear ? "0%" : "100%");
+            player.getPacketSender().sendString(Interface.UPGRADE_INTERFACE, 62, clear ? "0%" : "100%");
         } else {
-            player.getPacketSender().sendString(Interface.UPGRADE_INTERFACE, 106, clear ? "0%" : UpgradeManager.getSelectedItem().getChance() + "%");
+            player.getPacketSender().sendString(Interface.UPGRADE_INTERFACE, 62, clear ? "0%" : UpgradeManager.getSelectedItem().getChance() + "%");
         }
     }
 
     private static void clearRequired(Player player) {
-        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 112, 0, new Item(-1));
-        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 116, 0, new Item(-1));
-        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 120, 0, new Item(-1));
-
-        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 104, 0, new Item(-1));
+        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 40, 0, new Item(-1));
+        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 41, 0, new Item(-1));
+        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 42, 0, new Item(-1));
+        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 43, 0, new Item(-1));
     }
 
     private static void sendRequired(Player player) {
@@ -289,24 +288,21 @@ public class UpgradeManager {
         Item[] requiredIds = selectedItem.getRequired();
 
 
-/*        IntStream.of(ITEM_COMPONENTS).forEach((i -> {
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, i, 0, new Item(-1));
-        }));*/
 
-        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 104, 0, new Item(selectedItem.itemid));
+        player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 56, 0, new Item(selectedItem.itemid));
 
         if (requiredIds.length == 1) {
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 112, 0, requiredIds[0]);
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 116, 0, new Item(-1));
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 120, 0, new Item(-1));
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 41, 0, requiredIds[0]);
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 42, 0, new Item(-1));
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 43, 0, new Item(-1));
         } else if (requiredIds.length == 2) {
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 112, 0, requiredIds[0]);
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 116, 0, requiredIds[1]);
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 120, 0, new Item(-1));
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 41, 0, requiredIds[0]);
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 42, 0, requiredIds[1]);
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 43, 0, new Item(-1));
         } else if (requiredIds.length == 3) {
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 112, 0, requiredIds[0]);
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 116, 0, requiredIds[1]);
-            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 120, 0, requiredIds[2]);
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 41, 0, requiredIds[0]);
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 42, 0, requiredIds[1]);
+            player.getPacketSender().sendItems(Interface.UPGRADE_INTERFACE, 43, 0, requiredIds[2]);
         } else {
             System.out.println("Ben fucked up...");
         }
@@ -404,14 +400,14 @@ public class UpgradeManager {
             UpgradeManager.sendInterface(player);
         });
 
-        InterfaceHandler.register(Interface.UPGRADE_INTERFACE, interfaceHandler -> {
+        /*InterfaceHandler.register(Interface.UPGRADE_INTERFACE, interfaceHandler -> {
             interfaceHandler.actions[23] = (SimpleAction) p -> selectCategory(0, p);
             interfaceHandler.actions[28] = (SimpleAction) p -> selectCategory(1, p);
             interfaceHandler.actions[33] = (SimpleAction) p -> selectCategory(2, p);
             interfaceHandler.actions[38] = (SimpleAction) p -> selectCategory(3, p);
             interfaceHandler.actions[43] = (SimpleAction) p -> selectCategory(4, p);
             interfaceHandler.actions[UPGRADE_BUTTON] = (SimpleAction) UpgradeManager::upgrade;
-        });
+        });*/
     }
 
 }

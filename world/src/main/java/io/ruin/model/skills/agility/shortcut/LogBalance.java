@@ -2,7 +2,7 @@ package io.ruin.model.skills.agility.shortcut;
 
 import io.ruin.model.World;
 import io.ruin.model.diaries.pvp.PvPDiaryEntry;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -43,7 +43,7 @@ public enum LogBalance {
                 player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.CROSS_THE_LOG);
             }
             if (player.getPosition().regionId() == 10294 && obj.id == 23274) {
-                player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CROSS_BALANCE);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CROSS_BALANCE);
             }
         });
     }

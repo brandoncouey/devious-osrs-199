@@ -13,7 +13,7 @@ import io.ruin.model.stat.StatType;
 public class PrestigeScroll {
 static {
     ItemAction.registerInventory(30353, 1, (player, item) -> {
-        DailyTask.open(player);
+        DailyTask.openDailyTasksViewer(player);
     });
     ItemAction.registerInventory(30353, 2, (player, item) -> {
         DailyTask.assignTask(player);

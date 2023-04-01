@@ -225,10 +225,6 @@ public abstract class Creature {
             event.delay(2);
             addLoot(player);
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             if (counter != null)
                 counter.increment(player, 1);
             obj.trap.getTrapType().onRemove(player, obj);

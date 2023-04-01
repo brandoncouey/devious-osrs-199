@@ -15,7 +15,7 @@ import io.ruin.model.map.MapListener;
 public class DuelArena {
 
     public static final Bounds BOUNDS = new Bounds(3325, 3200, 3391, 3286, 0);
-    public static final Bounds CUSTOM_EDGE = new Bounds(3074, 3462, 3087, 3470, 0);
+    public static final Bounds CUSTOM_EDGE = new Bounds(3030, 3457, 3060, 3509, 0);
 
     private static void entered(Player player) {
         player.attackPlayerListener = DuelArena::allowAttack;
@@ -116,6 +116,9 @@ public class DuelArena {
 
     static {
         MapListener.registerBounds(BOUNDS)
+                .onEnter(DuelArena::entered)
+                .onExit(DuelArena::exited);
+        MapListener.registerBounds(CUSTOM_EDGE)
                 .onEnter(DuelArena::entered)
                 .onExit(DuelArena::exited);
     }

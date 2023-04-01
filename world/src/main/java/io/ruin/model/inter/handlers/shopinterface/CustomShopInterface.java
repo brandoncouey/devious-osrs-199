@@ -16,7 +16,7 @@ import java.util.Arrays;
 public class CustomShopInterface {
     static {
         InterfaceHandler.register(Interface.CUSTOM_SHOP, h -> {
-            h.actions[16] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[16] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.getGameMode().isIronMan()) {
                     //      player.closeInterface(InterfaceType.MAIN);
                     player.sendMessage("You can't access this shop.");
@@ -28,7 +28,7 @@ public class CustomShopInterface {
                     open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
                 }
             };
-            h.actions[18] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[18] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.getGameMode().isIronMan()) {
                     //    player.closeInterface(InterfaceType.MAIN);
                     player.sendMessage("You can't access this shop.");
@@ -40,7 +40,7 @@ public class CustomShopInterface {
                     open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
                 }
             };
-            h.actions[20] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[20] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.getGameMode().isIronMan()) {
                     //    player.closeInterface(InterfaceType.MAIN);
                     player.sendMessage("You can't access this shop.");
@@ -52,7 +52,7 @@ public class CustomShopInterface {
                     open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
                 }
             };
-            h.actions[22] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[22] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.getGameMode().isIronMan()) {
                     //    player.closeInterface(InterfaceType.MAIN);
                     player.sendMessage("You can't access this shop.");
@@ -64,7 +64,7 @@ public class CustomShopInterface {
                     open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
                 }
             };
-            h.actions[24] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[24] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.getGameMode().isIronMan()) {
                     //    player.closeInterface(InterfaceType.MAIN);
                     player.sendMessage("You can't access this shop.");
@@ -76,7 +76,7 @@ public class CustomShopInterface {
                     open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
                 }
             };
-            h.actions[26] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[26] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.getGameMode().isIronMan()) {
                     //    player.closeInterface(InterfaceType.MAIN);
                     player.sendMessage("You can't access this shop.");
@@ -88,7 +88,7 @@ public class CustomShopInterface {
                     open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
                 }
             };
-            h.actions[28] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[28] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.getGameMode().isIronMan()) {
                     //    player.closeInterface(InterfaceType.MAIN);
                     player.sendMessage("You can't access this shop.");
@@ -100,7 +100,7 @@ public class CustomShopInterface {
                     open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
                 }
             };
-            h.actions[30] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[30] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (player.getGameMode().isIronMan()) {
                     //    player.closeInterface(InterfaceType.MAIN);
                     player.sendMessage("You can't access this shop.");
@@ -112,14 +112,14 @@ public class CustomShopInterface {
                     open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
                 }
             };
-            h.actions[35] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[35] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPacketSender().sendString(836, 14, "Vote Store");
                 player.setShopIdentifier(10);
                 handleEnteringShop(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.VOTE_STORE);
                 open(player, io.ruin.model.inter.handlers.shopinterface.CustomShop.getItemsFromShop(player));
 
             };
-            h.actions[41] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[41] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (option == 1) {
                     priceCheck(player, slot, itemId);
                 } else {
@@ -135,9 +135,9 @@ public class CustomShopInterface {
             };
         });
 
-       /* InterfaceHandler.register(Interface.PLAYER_SHOP_INVENTORY, h -> h.actions[0] = (DefaultAction) (player, option, slot, itemId) -> {
+       /* InterfaceHandler.register(Interface.PLAYER_SHOP_INVENTORY, h -> h.actions[0] = (DefaultAction) (player, childId, option, slot, itemId) -> {
             if(player.isVisibleInterface(Interface.CUSTOM_SHOP)) {
-                attemptSell(player, option, slot, itemId);
+                attemptSell(player, childId, option, slot, itemId);
             }
         });*/
     }

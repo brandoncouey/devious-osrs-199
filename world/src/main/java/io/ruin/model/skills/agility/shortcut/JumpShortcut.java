@@ -1,7 +1,7 @@
 package io.ruin.model.skills.agility.shortcut;
 
 import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.map.Direction;
@@ -93,13 +93,13 @@ public enum JumpShortcut {
             p.getStats().addXp(StatType.Agility, xp, true);
             p.unlock();
             if (obj.id == 16518) {
-                p.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.JUMP_FENCE);
+                p.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.JUMP_FENCE);
             }
             if (obj.id == 24222) {
                 p.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.WESTERN_WALL);
             }
             if (obj.id == 16518 && p.getRegions().equals(12852)) {
-                p.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.JUMP_FENCE);
+                p.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.JUMP_FENCE);
             }
         });
     }

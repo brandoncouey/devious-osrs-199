@@ -1,7 +1,7 @@
 package io.ruin.model.item.actions.impl;
 
 import io.ruin.model.World;
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
@@ -124,7 +124,7 @@ public enum TeleportTab {
                     e.delay(3);
                     player.getMovement().teleport(3659, 3522, 0);
                     player.animate(-1);
-                    player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.ECTOPHIAL);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.ECTOPHIAL);
                     player.unlock();
                 });
             } else {

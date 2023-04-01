@@ -84,6 +84,7 @@ public class TheatreParty {
      */
     public void leave(int userId, boolean resign) {
         TheatrePartyManager.instance().forUserId(userId).ifPresent(player -> {
+            player.getInventory().remove(25961, 28);
             getUsers().remove((Integer) player.getUserId());
             if (resign) {
                 player.getMovement().teleport(TheatrePartyManager.OUTSIDE);

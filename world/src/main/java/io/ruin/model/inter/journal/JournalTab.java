@@ -5,10 +5,8 @@ import io.ruin.api.utils.TimeUtils;
 import io.ruin.cache.Color;
 import io.ruin.content.areas.wilderness.DeadmanChestEvent;
 import io.ruin.model.World;
-import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.pvp.PVPInstance;
 import io.ruin.model.activities.wellofgoodwill.WellofGoodwill;
-import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.entity.player.DoubleDrops;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.listeners.LoginListener;
@@ -18,12 +16,8 @@ import io.ruin.model.inter.actions.SlotAction;
 import io.ruin.model.inter.battlepass.BattlePass;
 import io.ruin.model.inter.combatachievements.CombatAchievements;
 import io.ruin.model.inter.journal.bestiary.Bestiary;
-import io.ruin.model.inter.journal.main.DeadmanChestEntry;
-import io.ruin.model.inter.journal.main.WildernessCount;
-import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.journal.toggles.*;
 import io.ruin.model.inter.utils.Config;
-import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.collectionlog.CollectionLogInfo;
 import io.ruin.utility.Misc;
 import lombok.Getter;
@@ -44,7 +38,11 @@ public class JournalTab {
         QUEST(Interface.SERVER_JOURNAL),
         ACHIEVEMENT(Interface.ACHIEVEMENT),
         ACTIVITIES(Interface.ACTIVITIES),
-        MISCELLANEOUS(Interface.MISCELLANEOUS);
+        MISCELLANEOUS(Interface.MISCELLANEOUS),
+
+        SERVER_EVENTS(1052),
+
+        ;
 
         private final int id;
 
@@ -143,7 +141,7 @@ public class JournalTab {
             }
             return "Rank: " + Color.SHADED.wrap(player.getPrimaryGroup().title);
         }),
-        TOTAL_PURCHASE(Tab.QUEST, t1++, player -> "Total Donated: " + Color.GREEN.wrap("$" + player.storeAmountSpent)),
+        TOTAL_PURCHASE(Tab.QUEST, t1++, player -> "Total Donated: " + Color.GREEN.wrap("$" + player.amountDonated)),
         GAME_MODE(Tab.QUEST, t1++, player -> "Game Mode: " + Color.SHADED.wrap(Misc.formatStringFormal(player.getGameMode().toString()))),
         XP_MODE(Tab.QUEST, t1++, player -> "XP Mode: " + Color.SHADED.wrap(Misc.formatStringFormal(String.valueOf(player.xpMode)))),
         XP_BONUS(Tab.QUEST, t1++, player -> "XP Rate: " + Color.SHADED.wrap("x" + player.xpMode.getCombatRate())),
@@ -271,24 +269,21 @@ public class JournalTab {
     }
 
     public static void setTab(Player player, Tab tab) {
-        int index = tab.ordinal() != 0 ? tab.ordinal() + 1 : tab.ordinal();
-        if (tab == Tab.MISCELLANEOUS) {
-            index = tab.ordinal();
-        } else if (tab == Tab.ACTIVITIES) {
-            index = 0;
-        } else if (tab == Tab.QUEST) {
-            index = 1;
-        }
-        //Config.QUEST_TOTAL_TABS.set(player, 1);
         if (tab == Tab.SUMMARY) {
             Config.QUEST_ACTIVE_TAB.set(player, 0);
         } else {
             if (tab == Tab.MISCELLANEOUS) {
+                Config.QUEST_ACTIVE_TAB.set(player, 4);
+            } else if (tab == Tab.SERVER_EVENTS) {
                 Config.QUEST_ACTIVE_TAB.set(player, 3);
+                WellofGoodwill.sendTab(player);
             } else
                 Config.QUEST_ACTIVE_TAB.set(player, tab.ordinal());
         }
         player.getPacketSender().sendInterface(tab.getId(), 629, 33, 1);
+        if (tab == Tab.SERVER_EVENTS) {
+            WellofGoodwill.sendTab(player);
+        }
         updateTab(player, tab);
     }
 
@@ -515,8 +510,8 @@ public class JournalTab {
             interfaceHandler.actions[3] = (SimpleAction) player -> setTab(player, Tab.SUMMARY);
             interfaceHandler.actions[8] = (SimpleAction) player -> setTab(player, Tab.QUEST);
             interfaceHandler.actions[13] = (SimpleAction) player -> setTab(player, Tab.ACHIEVEMENT);
-            //interfaceHandler.actions[3] = (SimpleAction) player -> setTab(player, Tab.ACTIVITIES);
-            interfaceHandler.actions[18] = (SimpleAction) player -> setTab(player, Tab.MISCELLANEOUS);
+            interfaceHandler.actions[18] = (SimpleAction) player -> setTab(player, Tab.SERVER_EVENTS);
+            interfaceHandler.actions[23] = (SimpleAction) player -> setTab(player, Tab.MISCELLANEOUS);
         });
         LoginListener.register(player -> {
             setTab(player, Tab.SUMMARY);

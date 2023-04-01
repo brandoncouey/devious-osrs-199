@@ -69,10 +69,6 @@ public enum Pottery {
                 player.sendMessage("You make the clay into a " + pottery.name);
                 player.animate(883);
                 player.privateSound(2588);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 event.delay(5);
             }
         });
@@ -96,10 +92,6 @@ public enum Pottery {
                 unfiredPottery.setId(pottery.fired);
                 player.getStats().addXp(StatType.Crafting, pottery.firedExp, true);
                 player.sendMessage("You remove the " + pottery.name + " from the oven.");
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 event.delay(1);
             }
         });

@@ -1,11 +1,13 @@
 package io.ruin.model.map;
 
 import com.google.gson.annotations.Expose;
+import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
+@ToString
 public class Position {
 
     @Expose

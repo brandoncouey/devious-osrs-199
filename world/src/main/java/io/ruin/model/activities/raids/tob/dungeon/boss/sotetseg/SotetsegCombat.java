@@ -4,7 +4,10 @@ import io.ruin.model.World;
 import io.ruin.model.activities.raids.tob.dungeon.boss.sotetseg.attacks.SmallBallAttack;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPCCombat;
+import io.ruin.model.entity.npc.actions.edgeville.Nurse;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.DeathListener;
+import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Direction;
 import io.ruin.model.map.route.routes.DumbRoute;
 
@@ -17,6 +20,11 @@ public class SotetsegCombat extends NPCCombat {
 
     @Override
     public void init() {
+        npc.deathEndListener = (DeathListener.Simple) () -> {
+            for (Player p : npc.getPosition().getRegion().players) {
+                Nurse.restoreOnly(p);
+            }
+        };
 /*
 //        npc.setMaxHp((int) ((double) npc.getMaxHp() * 0.75));
        /* npc.hitListener = new HitListener().postDamage(hit -> {

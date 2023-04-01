@@ -190,19 +190,12 @@ public class FishingSpot {
                             if (Random.rollPercent(20))
                                 amount++;
                         }
-                        if (player.isADonator() && npc.getId() == CAGE) {
-                            player.getInventory().add(c.notedid, amount);
-                        } else
-                            player.getInventory().add(c.id, amount);
+                        player.getInventory().add(c.id, amount);
 
                         if (npc.getId() != MINNOWS)
                             PlayerCounter.TOTAL_FISH.increment(player, 1);
 
                         player.getStats().addXp(StatType.Fishing, c.xp * anglerBonus(player), true);
-                        if (Random.rollDie(50, 1)) {
-                            player.getInventory().addOrDrop(6828, 1);
-                            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                        }
                         if (!player.getPosition().inBounds(DZONE2)) {
                             FishingClueBottle.roll(player, c, barehand);
                         }
@@ -212,10 +205,6 @@ public class FishingSpot {
                         if (c.barbarianXp > 0) {
                             player.getStats().addXp(StatType.Agility, c.barbarianXp, true);
                             player.getStats().addXp(StatType.Strength, c.barbarianXp, true);
-                            if (Random.rollDie(50, 1)) {
-                                player.getInventory().addOrDrop(6828, 1);
-                                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                            }
                             if (barehand) {
                                 if (c == FishingCatch.BARBARIAN_TUNA)
                                     player.animate(firstBarehandAnim ? 6710 : 6711);

@@ -232,7 +232,7 @@ public enum SlayerUnlock {
     }
 
 
-    private static void buyItem(Player player, int option, int slot, int itemId) {
+    private static void buyItem(Player player, int childId, int option, int slot, int itemId) {
         int itemID, itemPrice, itemAmount;
         ShopItem item = ShopItem.values()[slot];
         itemID = item.id;

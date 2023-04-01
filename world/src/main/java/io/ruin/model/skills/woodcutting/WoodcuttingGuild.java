@@ -123,10 +123,6 @@ public class WoodcuttingGuild {
             ItemObjectAction.register(egg.itemID, 29088, (player, item, obj) -> {
                 item.setId(BirdNest.SEED_ONE.itemID);
                 player.getStats().addXp(StatType.Prayer, 100.0, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 player.sendFilteredMessage("You offer your bird's egg to the shrine and receive a reward.");
                 player.animate(3705);
                 egg.projectile.send(obj.x + 1, obj.y + 1, obj.x + 2, obj.y + 1);

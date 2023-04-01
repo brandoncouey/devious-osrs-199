@@ -64,6 +64,10 @@ public class Config {
     public static final Config DEFENCE_WHAT_DEFENCE = varpbit(12486, true);
     public static final Config BIG_BLACK_AND_FIERY = varpbit(12490, true);
     public static final Config THE_DEMONIC_PUNCHING_BAG = varpbit(12491, true);
+
+    public static final Config UNKNOWNWTF = varpbit(10037, true);
+    public static final Config UNKNOWNWTF2 = varpbit(9334, true);
+
     public static final Config BRYOPHYTA_NOVICE = varpbit(12493, true);
     public static final Config PROTECTION_FROM_MOSS = varpbit(12495, true);
     public static final Config PROTECTION_IS_KEY = varpbit(12497, true);
@@ -407,6 +411,10 @@ public class Config {
     public static final Config MULTI_STYLE_SPECIALIST = varpbit(12829, true);
     public static final Config HARD_MORE_COMPLETED_IT = varpbit(12839, true);
     public static final Config THEATRE_OF_BLOOD_SM_SPEED_CHASER = varpbit(12854, true);
+    public static final Config UNKN_2854 = varpbit(2854, true);
+    public static final Config UNKN_2606 = varpbit(2606, true);
+
+
 
     /**
      * Combat Achieve GrandMaster
@@ -593,65 +601,65 @@ public class Config {
      */
 
 
-    public static final Config KARAMJA_EASY = varpbit(2423, true);
-    public static final Config KARAMJA_MEDIUM = varpbit(6288, true);
-    public static final Config KARAMJA_HARD = varpbit(6289, true);
-    public static final Config KARAMJA_ELITE = varpbit(6290, true);
+    public static final Config WILDERNESS_EASY = varpbit(2423, true);
+    public static final Config WILDERNESS_MEDIUM = varpbit(6288, true);
+    public static final Config WILDERNESS_HARD = varpbit(6289, true);
+    public static final Config WILDERNESS_ELITE = varpbit(6290, true);
 
-    public static final Config PVM_EASY_COMPLETED = varpbit(3577, true);
-    public static final Config PVM_MEDIUM_COMPLETED = varpbit(3598, true);
-    public static final Config PVM_HARD_COMPLETED = varpbit(3610, true);
-    public static final Config PVM_ELITE_COMPLETED = varpbit(4567, true);
+    public static final Config WILDERNESS_EASY_COMPLETED = varpbit(3577, true);
+    public static final Config WILDERNESS_MEDIUM_COMPLETED = varpbit(3598, true);
+    public static final Config WILDERNESS_HARD_COMPLETED = varpbit(3610, true);
+    public static final Config WILDERNESS_ELITE_COMPLETED = varpbit(4567, true);
 
-    public static final Config PVP_EASY_COMPLETED = varpbit(4499, true);
-    public static final Config PVP_MEDIUM_COMPLETED = varpbit(4500, true);
-    public static final Config PVP_HARD_COMPLETED = varpbit(4501, true);
-    public static final Config PVP_ELITE_COMPLETED = varpbit(4502, true);
+    public static final Config DEVIOUS_EASY_COMPLETED = varpbit(4499, true);
+    public static final Config DEVIOUS_MEDIUM_COMPLETED = varpbit(4500, true);
+    public static final Config DEVIOUS_HARD_COMPLETED = varpbit(4501, true);
+    public static final Config DEVIOUS_ELITE_COMPLETED = varpbit(4502, true);
 
-    public static final Config ARDOUGNE_EASY = varpbit(6291, true);
-    public static final Config ARDOUGNE_MEDIUM = varpbit(6292, true);
-    public static final Config ARDOUGNE_HARD = varpbit(6293, true);
-    public static final Config ARDOUGNE_ELITE = varpbit(6294, true);
+    public static final Config DEVIOUS_EASY = varpbit(6291, true);
+    public static final Config DEVIOUS_MEDIUM = varpbit(6292, true);
+    public static final Config DEVIOUS_HARD = varpbit(6293, true);
+    public static final Config DEVIOUS_ELITE = varpbit(6294, true);
 
-    public static final Config MINIGAMES_EASY_COMPLETED = varpbit(4523, true);
-    public static final Config MINIGAMES_MEDIUM_COMPLETED = varpbit(4524, true);
-    public static final Config MINIGAMES_HARD_COMPLETED = varpbit(4525, true);
-    public static final Config MINIGAMES_ELITE_COMPLETED = varpbit(4526, true);
+    public static final Config SKILLING_EASY_COMPLETED = varpbit(4523, true);
+    public static final Config SKILLING_MEDIUM_COMPLETED = varpbit(4524, true);
+    public static final Config SKILLING_HARD_COMPLETED = varpbit(4525, true);
+    public static final Config SKILLING_ELITE_COMPLETED = varpbit(4526, true);
 
-    public static final Config DESERT_EASY = varpbit(6295, true);
-    public static final Config DESERT_MEDIUM = varpbit(6296, true);
-    public static final Config DESERT_HARD = varpbit(6297, true);
-    public static final Config DESERT_ELITE = varpbit(6298, true);
+    public static final Config SKILLING_EASY = varpbit(6295, true);
+    public static final Config SKILLING_MEDIUM = varpbit(6296, true);
+    public static final Config SKILLING_HARD = varpbit(6297, true);
+    public static final Config SKILLING_ELITE = varpbit(6298, true);
 
-    public static final Config SKILLING_EASY_COMPLETED = varpbit(4503, true);
-    public static final Config SKILLING_MEDIUM_COMPLETED = varpbit(4504, true);
-    public static final Config SKILLING_HARD_COMPLETED = varpbit(4505, true);
-    public static final Config SKILLING_ELITE_COMPLETED = varpbit(4506, true);
+    public static final Config PVM_EASY_COMPLETED = varpbit(4503, true);
+    public static final Config PVM_MEDIUM_COMPLETED = varpbit(4504, true);
+    public static final Config PVM_HARD_COMPLETED = varpbit(4505, true);
+    public static final Config PVM_ELITE_COMPLETED = varpbit(4506, true);
 
-    public static final Config FALADOR_EASY = varpbit(6299, true);
-    public static final Config FALADOR_MEDIUM = varpbit(6300, true);
-    public static final Config FALADOR_HARD = varpbit(6301, true);
-    public static final Config FALADOR_ELITE = varpbit(6302, true);
+    public static final Config PVM_EASY = varpbit(6299, true);
+    public static final Config PVM_MEDIUM = varpbit(6300, true);
+    public static final Config PVM_HARD = varpbit(6301, true);
+    public static final Config PVM_ELITE = varpbit(6302, true);
 
-    public static final Config FREMMY_EASY_COMPLETED = varpbit(4531, true);
-    public static final Config FREMMY_MEDIUM_COMPLETED = varpbit(4532, true);
-    public static final Config FREMMY_HARD_COMPLETED = varpbit(4533, true);
-    public static final Config FREMMY_ELITE_COMPLETED = varpbit(4534, true);
+    public static final Config PVP_EASY_COMPLETED = varpbit(4531, true);
+    public static final Config PVP_MEDIUM_COMPLETED = varpbit(4532, true);
+    public static final Config PVP_HARD_COMPLETED = varpbit(4533, true);
+    public static final Config PVP_ELITE_COMPLETED = varpbit(4534, true);
 
-    public static final Config FREMMY_EASY = varpbit(6303, true);
-    public static final Config FREMMY_MEDIUM = varpbit(6304, true);
-    public static final Config FREMMY_HARD = varpbit(6305, true);
-    public static final Config FREMMY_ELITE = varpbit(6306, true);
+    public static final Config PVP_EASY = varpbit(6303, true);
+    public static final Config PVP_MEDIUM = varpbit(6304, true);
+    public static final Config PVP_HARD = varpbit(6305, true);
+    public static final Config PVP_ELITE = varpbit(6306, true);
 
-    public static final Config KANDARIN_EASY_COMPLETED = varpbit(4515, true);
-    public static final Config KANDARIN_MEDIUM_COMPLETED = varpbit(4516, true);
-    public static final Config KANDARIN_HARD_COMPLETED = varpbit(4517, true);
-    public static final Config KANDARIN_ELITE_COMPLETED = varpbit(4518, true);
+    public static final Config MINIGAMES_EASY_COMPLETED = varpbit(4515, true);
+    public static final Config MINIGAMES_MEDIUM_COMPLETED = varpbit(4516, true);
+    public static final Config MINIGAMES_HARD_COMPLETED = varpbit(4517, true);
+    public static final Config MINIGAMES_ELITE_COMPLETED = varpbit(4518, true);
 
-    public static final Config KANDARIN_EASY = varpbit(6307, true);
-    public static final Config KANDARIN_MEDIUM = varpbit(6308, true);
-    public static final Config KANDARIN_HARD = varpbit(6309, true);
-    public static final Config KANDARIN_ELITE = varpbit(6310, true);
+    public static final Config MINIGAMES_EASY = varpbit(6307, true);
+    public static final Config MINIGAMES_MEDIUM = varpbit(6308, true);
+    public static final Config MINIGAMES_HARD = varpbit(6309, true);
+    public static final Config MINIGAMES_ELITE = varpbit(6310, true);
 
     public static final Config LUMBRIDGE_EASY_COMPLETED = varpbit(4535, true);
     public static final Config LUMBRIDGE_MEDIUM_COMPLETED = varpbit(4536, true);
@@ -684,15 +692,15 @@ public class Config {
     public static final Config VARROCK_ELITE = varpbit(6322, true);
 
 
-    public static final Config WILDERNESS_EASY_COMPLETED = varpbit(4507, true);
-    public static final Config WILDERNESS_MEDIUM_COMPLETED = varpbit(4508, true);
-    public static final Config WILDERNESS_HARD_COMPLETED = varpbit(4509, true);
-    public static final Config WILDERNESS_ELITE_COMPLETED = varpbit(4510, true);
+    public static final Config WILDERNESSU_EASY_COMPLETED = varpbit(4507, true);
+    public static final Config WILDERNESSU_MEDIUM_COMPLETED = varpbit(4508, true);
+    public static final Config WILDERNESSU_HARD_COMPLETED = varpbit(4509, true);
+    public static final Config WILDERNESSU_ELITE_COMPLETED = varpbit(4510, true);
 
-    public static final Config WILDERNESS_EASY = varpbit(6323, true);
-    public static final Config WILDERNESS_MEDIUM = varpbit(6324, true);
-    public static final Config WILDERNESS_HARD = varpbit(6325, true);
-    public static final Config WILDERNESS_ELITE = varpbit(6326, true);
+    public static final Config PVP_EASYU = varpbit(6323, true);
+    public static final Config PVP_MEDIUMU = varpbit(6324, true);
+    public static final Config PVP_HARDU = varpbit(6325, true);
+    public static final Config PVP_ELITEU = varpbit(6326, true);
 
     public static final Config WESTERN_PROV_EASY_COMPLETED = varpbit(4511, true);
     public static final Config WESTERN_PROV_MEDIUM_COMPLETED = varpbit(4512, true);
@@ -704,15 +712,15 @@ public class Config {
     public static final Config WESTERN_PROV_HARD = varpbit(6329, true);
     public static final Config WESTERN_PROV_ELITE = varpbit(6330, true);
 
-    public static final Config DEVIOUS_EASY_COMPLETED = varpbit(7929, true);
-    public static final Config DEVIOUS_MEDIUM_COMPLETED = varpbit(7930, true);
-    public static final Config DEVIOUS_HARD_COMPLETED = varpbit(7931, true);
-    public static final Config DEVIOUS_ELITE_COMPLETED = varpbit(7932, true);
+    public static final Config DEVIOUSU_EASY_COMPLETED = varpbit(7929, true);
+    public static final Config DEVIOUSU_MEDIUM_COMPLETED = varpbit(7930, true);
+    public static final Config DEVIOUSU_HARD_COMPLETED = varpbit(7931, true);
+    public static final Config DEVIOUSU_ELITE_COMPLETED = varpbit(7932, true);
 
-    public static final Config KOUREND_EASY = varpbit(7933, true);
-    public static final Config KOUREND_MEDIUM = varpbit(7934, true);
-    public static final Config KOUREND_HARD = varpbit(7935, true);
-    public static final Config KOUREND_ELITE = varpbit(7936, true);
+    public static final Config SKILLING_EASYU = varpbit(7933, true);
+    public static final Config SKILLING_MEDIUMU = varpbit(7934, true);
+    public static final Config SKILLING_HARDU = varpbit(7935, true);
+    public static final Config SKILLING_ELITEU = varpbit(7936, true);
     /**
      * Quests
      */

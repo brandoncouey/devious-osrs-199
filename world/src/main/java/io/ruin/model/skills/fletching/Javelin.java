@@ -35,10 +35,6 @@ public enum Javelin {
         head.remove(amount);
         player.getInventory().add(outcome, amount);
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
         if (amount == 1)
             player.sendFilteredMessage("You attach javelin head a to your javelin shaft.");
         else

@@ -59,11 +59,11 @@ object Settings {
                 p.selectedSettingChild = -1
             }
 
-            h.actions[23] = DefaultAction { p, _, slot, _ ->
+            h.actions[23] = DefaultAction { p, _, _, slot, _ ->
                 p.selectedSettingMenu = slot
             }
 
-            h.actions[19] = DefaultAction { p, _, slot, _ ->
+            h.actions[19] = DefaultAction { p, _, _, slot, _ ->
                 p.selectedSettingChild = slot
                 when (p.selectedSettingMenu) {
                     3 -> {
@@ -122,7 +122,7 @@ object Settings {
                 }
             }
 
-            h.actions[28] = DefaultAction { p, _, slot, _ ->
+            h.actions[28] = DefaultAction { p, _, _, slot, _ ->
                 val dropSlot = (slot - 2) / 3
                 when (p.selectedSettingMenu) {
                     3 -> {

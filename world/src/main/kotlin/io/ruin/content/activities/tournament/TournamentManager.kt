@@ -51,7 +51,7 @@ object TournamentManager {
                 player.join()
             }
         }
-        whenObjClick(7325, 1) { player, _ ->
+        whenObjClick(29066, 1) { player, _ ->
             if (Lobby.players.contains(player)) {
                 player.leave()
             }
@@ -110,17 +110,14 @@ object TournamentManager {
                     Broadcast.WORLD.sendNews("In 15 minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
                 }
                 10 -> {
-                    TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "10")
                    // Broadcast.WORLD.sendNews("In 10 minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
                 }
                 5 -> {
-                        TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "5")
                         Broadcast.WORLD.sendNews("In five minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
 /*                    broadcast("In five minutes a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")*/
                 }
                 1 -> {
                     if (Lobby.players.size >= 4) {
-                        TournamentEmbedMessage.sendDiscordMessage(activeTournament?.name, "1")
                         Broadcast.WORLD.sendNews("In one minute a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")
                         /*broadcast("In one minute a ${activeTournament?.name} Tournament is starting! Type ::tournament to sign up now!")*/
                     }
@@ -244,7 +241,7 @@ object TournamentManager {
                     player.stats.get(StatType.Hitpoints).fixedLevel,
                     player.stats.get(StatType.Hitpoints).experience.toInt()
                 )
-                teleport(3078, 3496, 0)
+                teleport(3056, 3461, 0)
                 message("You have successfully joined the lobby. There is a total of ${Lobby.players.size} contestants inside the lobby.")
                 unlock()
             }
@@ -257,7 +254,7 @@ object TournamentManager {
     fun Player.leave() {
         lock()
         remove()
-        teleport(3086, 3491, 0)
+        teleport(3056, 3465, 0)
         unlock()
     }
 
@@ -268,7 +265,7 @@ object TournamentManager {
 
     private fun onLogout(player: Player) {
         player.remove()
-        player.teleport(3078, 3496, 0)
+        player.teleport(3056, 3465, 0)
     }
 
     private fun Player.remove() {

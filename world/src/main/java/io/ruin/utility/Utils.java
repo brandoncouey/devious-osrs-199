@@ -25,6 +25,10 @@ public final class Utils {
         return simple.format(result) + " CST";
     }
 
+    public static int getPercent(int percent, int variable) {
+        return (int) ((0.01 * percent) * variable);
+    }
+
     public static String formatString(String toFormat) {
         if (toFormat == null)
             return "";

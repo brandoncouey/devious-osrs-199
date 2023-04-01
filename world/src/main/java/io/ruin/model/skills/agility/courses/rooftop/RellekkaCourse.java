@@ -3,7 +3,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 import io.ruin.api.utils.Random;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -146,15 +146,11 @@ public class RellekkaCourse {
             PlayerCounter.RELLEKKA_ROOFTOP.increment(p, 1);
             MarkOfGrace.rollMark(p, 80, MARK_SPAWNS);
             AgilityPet.rollForPet(p, 16000);
-            p.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.RELLEKKA_ROOFTOP);
+            p.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.RELLEKKA_ROOFTOP);
             e.delay(1);
             p.unlock();
             if(p.agilityContractType == AgilityContractType.RELLEKKA_ROOFTOP)
                 AgilityContract.advanceAgilityContract(p);
-            if (Random.rollDie(50, 1)) {
-                p.getInventory().addOrDrop(6828);
-                p.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
         }));
     }
 }

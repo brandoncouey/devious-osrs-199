@@ -2,6 +2,7 @@ package io.ruin.model.activities.raids.xeric;
 
 import io.ruin.api.utils.Random;
 import io.ruin.cache.Color;
+import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
@@ -17,6 +18,8 @@ import io.ruin.model.item.loot.LootTable;
 import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.services.Loggers;
 import io.ruin.utility.Broadcast;
+import io.ruin.utility.Misc;
+import io.ruin.utility.PlayerLog;
 
 public class XericRewards {
 
@@ -26,7 +29,7 @@ public class XericRewards {
             player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.COX);
         });
         InterfaceHandler.register(Interface.RAID_REWARDS, h -> {
-            h.actions[5] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[5] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 if (slot < 0 || slot >= p.getRaidRewards().getItems().length)
                     return;
                 if (option == 1)
@@ -47,6 +50,7 @@ public class XericRewards {
         if (item == null)
             return;
         if (item.move(item.getId(), item.getAmount(), p.getInventory()) > 0) {
+            PlayerLog.log(PlayerLog.Type.COX_REWARDS, p.getName(), "Collected Reward " + item + ".");
             p.getCollectionLog().collect(item);
             p.getRaidRewards().sendUpdates();
         } else {
@@ -54,7 +58,7 @@ public class XericRewards {
         }
     }
 
-    private static void openRewards(Player player) {
+    public static void openRewards(Player player) {
         player.openInterface(InterfaceType.MAIN, Interface.RAID_REWARDS);
         player.getRaidRewards().sendUpdates();
         new Unlock(Interface.RAID_REWARDS, 5, 0, 2).unlockMultiple(player, 0, 9);
@@ -128,62 +132,37 @@ public class XericRewards {
             );
 
     public static void giveRewards(ChambersOfXeric raid) {
-        raid.getParty().forPlayers(p -> p.getRaidRewards().clear()); // clear previous loot (if any)
-        //uniques
-        int uniqueBudget = raid.getParty().getPoints();
-        int uniques = 0;
-        for (int i = 0; i < 3; i++) { // up to 3 uniques
-            if (uniqueBudget <= 0)
-                break;
-            int pointsToUse = Math.min(350000, uniqueBudget); // max of 350k points per unique attempt
-            uniqueBudget -= pointsToUse;
-            double chance = pointsToUse / 2000 / 100.0; // 1% chance per 4200 points - OSRS = 8675
-            if (Random.get() < chance) {
-                uniques++;
-                Player lucker = getPlayerToReceiveUnique(raid);
-                Item item = rollUnique();
-                int amount = item.getAmount();
-                if (World.doubleRaids)
-                    amount++;
-                lucker.getRaidRewards().add(item.getId(), amount);
-                Loggers.logRaidsUnique(lucker.getName(), item.getDef().name, lucker.chambersofXericKills.getKills());
-                Config.RAIDS_BEAM.set(lucker, 1);
-                if (uniques >= 1) {
-                    Config.RAIDS_BEAM.set(lucker, 2);
-                    raid.getParty().forPlayers(p -> p.sendMessage(Color.RAID_PURPLE.wrap("Special loot:")));
+        for (Player player : raid.getParty().getMembers()) {
+            if (player == null) continue;
+            player.getRaidRewards().clear();
+
+            int playerPoints = Config.RAIDS_PERSONAL_POINTS.get(player);
+            if (playerPoints > 131071)
+                playerPoints = 131071;
+            double chance = playerPoints / 8675d; // 1% chance per 4200 points - OSRS = 8675
+            if (chance > 8.0d)
+                chance = 8.d;
+            if (Misc.randomDouble(0d, 100d) < chance) {
+                final Item item = rollUnique();
+                player.getRaidRewards().add(item);
+                Loggers.logRaidsUnique(player.getName(), item.getDef().name, player.chambersofXericKills.getKills());
+                Config.RAIDS_BEAM.set(player, 1);
+                Broadcast.GLOBAL.sendNews(Color.ORANGE.wrap(player.getName() +
+                        " received " + item.getDef().name +
+                        " from COX at KC: " + player.chambersofXericKills.getKills()));
+            } else {
+                for (int i = 0; i < 2; i++) {
+                    Item rolled = rollRegular();
+                    int pointsPerItem = rolled.getAmount();
+                    int amount =  playerPoints / pointsPerItem;
+                    if (amount > 1 && !rolled.getDef().stackable && !rolled.getDef().isNote())
+                        rolled.setId(rolled.getDef().notedId);
+                    player.getRaidRewards().add(new Item(rolled.getId(), amount));
                 }
-                Broadcast.GLOBAL.sendNews(Color.RAID_PURPLE.wrap(lucker.getName() +
-                        " received " + item.getDef().name) +
-                        " from COX at KC: " + lucker.chambersofXericKills.getKills());
             }
         }
-        //regular drops
-        raid.getParty().getMembers().stream().filter(p -> p.getRaidRewards().isEmpty()).forEach(p -> {
-            int playerPoints = Math.max(131071, Config.RAIDS_PERSONAL_POINTS.get(p));
-            if (playerPoints == 0)
-                return;
-            if (p.lootit == true) {
-                Item rolled2 = rollUnique();
-                int amount = 1;
-                p.getRaidRewards().add(rolled2.getId(), amount);
-                Loggers.logRaidsUnique(p.getName(), rolled2.getDef().name, p.chambersofXericKills.getKills());
-                Config.RAIDS_BEAM.set(p, 1);
-                Broadcast.GLOBAL.sendNews(Color.RED.wrap(p.getName() +
-                        " received " + rolled2.getDef().name) +
-                        " from COX at KC: " + p.chambersofXericKills.getKills());
-            }
-            for (int i = 0; i < 2; i++) {
-                Item rolled = rollRegular();
-                double pointsPerItem = rolled.getAmount();
-                int amount = (int) Math.ceil(playerPoints / pointsPerItem);
-                rolled.setAmount(amount);
-                if (amount > 1 && !rolled.getDef().stackable && !rolled.getDef().isNote())
-                    rolled.setId(rolled.getDef().notedId);
-                p.getRaidRewards().add(rolled);
-            }
-        });
-
     }
+
 
     private static Item rollRegular() {
         return regularTable.rollItem();
@@ -193,15 +172,4 @@ public class XericRewards {
         return uniqueTable.rollItem();
     }
 
-
-    private static Player getPlayerToReceiveUnique(ChambersOfXeric raid) {
-        int roll = Random.get(raid.getParty().getPoints());
-        for (Player player : raid.getParty().getMembers()) {
-            roll -= Config.RAIDS_PERSONAL_POINTS.get(player);
-            if (roll <= 0) {
-                return player;
-            }
-        }
-        return Random.get(raid.getParty().getMembers()); // shouldn't happen, but just in case
-    }
 }

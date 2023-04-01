@@ -28,7 +28,7 @@ public class CostumeRoom {
             ObjectAction.register(open, "search", (player, obj) -> CostumeStorage.FANCY_DRESS_BOX.openFancyDress(player));
             ItemObjectAction.register(open, (player, item, obj) -> depositCostume(player, item, b, CostumeStorage.FANCY_DRESS_BOX));
 //            InterfaceHandler.register(675, h -> {
-//                h.actions[10] = (DefaultAction) (player, option, slot, itemId) -> {
+//                h.actions[10] = (DefaultAction) (player, childId, option, slot, itemId) -> {
 //                    depositCostume(player, itemId, b, CostumeStorage.FANCY_DRESS_BOX); // Error because of ItemID and not Item
 //                };
 //            });

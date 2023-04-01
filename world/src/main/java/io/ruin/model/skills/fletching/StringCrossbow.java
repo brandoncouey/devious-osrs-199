@@ -37,10 +37,6 @@ public enum StringCrossbow {
         player.sendMessage("You add a string to the crossbow");
         player.animate(animation);
         player.getStats().addXp(StatType.Fletching, exp, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
     }
 
     private static final int CROSSBOW_STRING = 9438;

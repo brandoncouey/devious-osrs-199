@@ -1,8 +1,8 @@
 package io.ruin.model.activities.tasks;
 
-import io.ruin.model.activities.tasks.DailyTask.PossibleTasksEasy;
-import io.ruin.model.activities.tasks.DailyTask.PossibleTasksHard;
-import io.ruin.model.activities.tasks.DailyTask.PossibleTasksMedium;
+import io.ruin.model.activities.tasks.DailyTask.EasyTasks;
+import io.ruin.model.activities.tasks.DailyTask.HardTasks;
+import io.ruin.model.activities.tasks.DailyTask.MediumTasks;
 import io.ruin.model.entity.player.Player;
 
 
@@ -12,7 +12,7 @@ public class DailyTaskKills {
         switch (npcId) {
             case 100:
             case 102:
-                DailyTask.increase(player, PossibleTasksEasy.ROCK_CRABS);
+                DailyTask.increase(player, EasyTasks.ROCK_CRABS);
                 break;
                 // 3185, 7259, 7260, 5943
             case 3185:
@@ -20,7 +20,7 @@ public class DailyTaskKills {
             case 7260:
             case 5943:
             case 5942:
-                DailyTask.increase(player, PossibleTasksEasy.DAGANNOTHS);
+                DailyTask.increase(player, EasyTasks.DAGANNOTHS);
                 break;
             case 7251:
             case 7252:
@@ -34,7 +34,7 @@ public class DailyTaskKills {
             case 2082:
             case 2083:
             case 2084:
-                DailyTask.increase(player, PossibleTasksEasy.FIRE_GIANTS);
+                DailyTask.increase(player, EasyTasks.FIRE_GIANTS);
                 break;
             case 2098:
             case 2099:
@@ -44,7 +44,7 @@ public class DailyTaskKills {
             case 2103:
             case 7261:
             case 12269:
-                DailyTask.increase(player, PossibleTasksEasy.HILL_GIANTS);
+                DailyTask.increase(player, EasyTasks.HILL_GIANTS);
                 break;
                 //3049, 3286, 3287, 3288, 3289, 4805
             case 3049:
@@ -55,12 +55,12 @@ public class DailyTaskKills {
             case 4805:
             case 3050:
             case 2241:
-                DailyTask.increase(player, PossibleTasksEasy.HOBGOBLINS);
+                DailyTask.increase(player, EasyTasks.HOBGOBLINS);
                 break;
             case 241:
             case 242:
             case 243:
-                DailyTask.increase(player, PossibleTasksEasy.BABY_BLUE_DRAGONS);
+                DailyTask.increase(player, EasyTasks.BABY_BLUE_DRAGONS);
                 break;
             case 891:
             case 2090:
@@ -71,7 +71,7 @@ public class DailyTaskKills {
             case 3852:
             case 7262:
             case 8736:
-                DailyTask.increase(player, PossibleTasksEasy.MOSS_GIANTS);
+                DailyTask.increase(player, EasyTasks.MOSS_GIANTS);
                 break;
                 //2005, 2006, 2007, 2008, 2018, 3982, 7656, 7657, 7664
             //7247, 7865, 7866, 7867
@@ -89,29 +89,29 @@ public class DailyTaskKills {
             case 7866:
             case 7867:
             case 2006:
-                DailyTask.increase(player, PossibleTasksEasy.LESSER_DEMONS);
+                DailyTask.increase(player, EasyTasks.LESSER_DEMONS);
                 break;
             case 6593:
-                DailyTask.increaseMedium(player, PossibleTasksMedium.LAVA_DRAGONS);
+                DailyTask.increaseMedium(player, MediumTasks.LAVA_DRAGONS);
                 break;
             case 5779:
             case 6499:
-                DailyTask.increaseMedium(player, PossibleTasksMedium.GIANT_MOLE);
+                DailyTask.increaseMedium(player, MediumTasks.GIANT_MOLE);
                 break;
             case 8031:
             case 8027:
             case 8091:
-                DailyTask.increaseMedium(player, PossibleTasksMedium.RUNE_DRAGON);
+                DailyTask.increaseMedium(player, MediumTasks.RUNE_DRAGON);
                 break;
             case 1047:
             case 1048:
             case 1049:
             case 1050:
             case 1051:
-                DailyTask.increaseMedium(player, PossibleTasksMedium.CAVE_HORROR);
+                DailyTask.increaseMedium(player, MediumTasks.CAVE_HORROR);
                 break;
             case 239:
-                DailyTask.increaseHard(player, PossibleTasksHard.KING_BLACK_DRAGON);
+                DailyTask.increaseHard(player, HardTasks.KING_BLACK_DRAGON);
                 //Achievements.Achievement.increase(player, AchievementType._13, 1);
                 break;
             case 7881:
@@ -140,7 +140,7 @@ public class DailyTaskKills {
                 break;
             case 6611:
             case 6612:
-                DailyTask.increaseHard(player, PossibleTasksHard.VETION);
+                DailyTask.increaseHard(player, HardTasks.VETION);
                 break;
             case 5862:
             case 5863:
@@ -150,7 +150,7 @@ public class DailyTaskKills {
             case 2043:
             case 2044:
                 //Achievements.Achievement.increase(player, AchievementType._29, 1);
-                DailyTask.increaseHard(player, PossibleTasksHard.ZULRAH);
+                DailyTask.increaseHard(player, HardTasks.ZULRAH);
                 break;
             case 7144:
             case 7145:
@@ -159,10 +159,10 @@ public class DailyTaskKills {
             case 7148:
             case 7149:
             case 7152:
-                DailyTask.increaseHard(player, PossibleTasksHard.DEMONIC_GORILLAS);
+                DailyTask.increaseHard(player, HardTasks.DEMONIC_GORILLAS);
                 break;
             case 7286: //skot
-                DailyTask.increaseHard(player, PossibleTasksHard.SKOTIZO);
+                DailyTask.increaseHard(player, HardTasks.SKOTIZO);
                 break;
             case 252:
             case 253:
@@ -176,7 +176,7 @@ public class DailyTaskKills {
             case 7862:
             case 7863:
             case 259: // black drag
-                DailyTask.increaseMedium(player, PossibleTasksMedium.BLACK_DRAGONS);
+                DailyTask.increaseMedium(player, MediumTasks.BLACK_DRAGONS);
                 break;
             case 265:
             case 266:
@@ -188,35 +188,35 @@ public class DailyTaskKills {
             case 5881:
             case 5882:
             case 268: //blue drag
-                DailyTask.increaseMedium(player, PossibleTasksMedium.BLUE_DRAGONS);
+                DailyTask.increaseMedium(player, MediumTasks.BLUE_DRAGONS);
                 break;
             case 7410:
             case 416:
             case 7241:
             case 415: //abyssal demon
-                DailyTask.increaseHard(player, PossibleTasksHard.ABYSSAL_DEMONS);
+                DailyTask.increaseHard(player, HardTasks.ABYSSAL_DEMONS);
                 break;
             case 4005: //dark beast
             case 7250:
-                DailyTask.increaseHard(player, PossibleTasksHard.DARK_BESTS);
+                DailyTask.increaseHard(player, HardTasks.DARK_BESTS);
                 break;
             case 2215: //bandos
-                DailyTask.increaseHard(player, PossibleTasksHard.GENERAL_GRAARDOR);
+                DailyTask.increaseHard(player, HardTasks.GENERAL_GRAARDOR);
                 //Achievements.Achievement.increase(player, AchievementType._26, 1);
                 break;
             case 3162: //arma
-                DailyTask.increaseHard(player, PossibleTasksHard.KREE_ARRA);
+                DailyTask.increaseHard(player, HardTasks.KREE_ARRA);
                 break;
             case 3129: //zamorak
-                DailyTask.increaseHard(player, PossibleTasksHard.TSUTSAROTH);
+                DailyTask.increaseHard(player, HardTasks.TSUTSAROTH);
                 break;
             case 2205: //saradomin
-                DailyTask.increaseHard(player, PossibleTasksHard.ZILYANA);
+                DailyTask.increaseHard(player, HardTasks.ZILYANA);
                 break;
             case 2919: //mith dragon
             case 8088:
             case 8089:
-                DailyTask.increaseMedium(player, PossibleTasksMedium.MITHRIL_DRAGONS);
+                DailyTask.increaseMedium(player, MediumTasks.MITHRIL_DRAGONS);
                 break;
         }
     }

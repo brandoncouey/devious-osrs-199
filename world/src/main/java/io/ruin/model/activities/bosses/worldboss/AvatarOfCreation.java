@@ -51,8 +51,8 @@ public class AvatarOfCreation extends NPCCombat {
                     if (Random.get(1, 100) <= doubleDropChance)
                         amount++;
                     new GroundItem(rolled.getId(), amount).owner(k.player).position(npc.getPosition()).spawn();
-                    if (rolled.getId() == 30256 || rolled.getId() == 6829 || rolled.getId() == 30307 || rolled.getId() == 30307 || rolled.getId() == 30307 || rolled.getId() == 11944) {
-                        Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.RAID_PURPLE.wrap("[RARE DROP] ") + k.player.getName() + " has just received " + Color.DARK_RED.wrap(rolled.getDef().name) + " from The Vote Boss!" + "</shad>");
+                    if (rolled.getId() == 30256 || rolled.getId() == 6829 || rolled.getId() == 30307 || rolled.getId() == 11944) {
+                        Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.ORANGE.wrap(k.player.getName() + " has just received " + rolled.getDef().name + " from The Vote Boss!" + "</shad>"));
                     }
                 }
             }

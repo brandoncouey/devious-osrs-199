@@ -93,10 +93,6 @@ public class SmeltBar {
                 if (bar == SmithBar.GOLD && player.getEquipment().hasId(776)) // goldsmith gauntlets
                     xp *= 2.5;
                 player.getStats().addXp(StatType.Smithing, xp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 if (player.getPosition().regionId() == 5946) {
                     //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.LOVAKENGJ);
                 }
@@ -141,10 +137,6 @@ public class SmeltBar {
                         player.getInventory().remove(ItemID.STEEL_BAR, 1);
                         player.getInventory().add(ItemID.CANNONBALL, balls_per_bar);
                         player.getStats().addXp(StatType.Smithing, 6.4 * balls_per_bar, true);
-                        if (Random.rollDie(50, 1)) {
-                            player.getInventory().addOrDrop(6828, 1);
-                            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                        }
                         player.sendMessage("You remove the cannonballs from the mould.");
                     }
                 });

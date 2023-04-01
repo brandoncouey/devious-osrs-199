@@ -9,6 +9,9 @@ import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
+import io.ruin.model.inter.InterfaceHandler;
+import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.DefaultAction;
 import io.ruin.model.inter.dialogue.*;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
@@ -24,6 +27,7 @@ import io.ruin.model.map.route.routes.DumbRoute;
 import io.ruin.model.stat.StatType;
 import io.ruin.utility.Broadcast;
 import io.ruin.utility.Misc;
+import io.ruin.utility.Utils;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -615,7 +619,42 @@ public enum Pets {
         player.getCollectionLog().collect(itemId);
     }
 
+    public static void open(Player player) {
+        for (int i = 0; i < 36; i++) {
+            Pets pet = Pets.values()[i];
+            player.getPacketSender().sendString(1048, 19 + (i * 3), Misc.formatStringFormal(pet.name()));
+        }
+        select(player, 0);
+        player.openInterface(InterfaceType.MAIN, 1048);
+    }
+
+    public static void select(Player player, int index) {
+        Pets pet = Pets.values()[index];
+        player.getPacketSender().sendString(1048, 132, Misc.formatStringFormal(pet.name()));
+        player.getPacketSender().sendString(1048, 137, Misc.formatStringFormal(pet.name()));//TODO Description
+        player.getPacketSender().sendNpcHead(1048, 136, pet.npcId);//TODO test component? may null out
+    }
+
+    public static void spawnFromInterface(Player player) {
+
+    }
+
+
+
     static {
+
+        InterfaceHandler.register(1048, h -> {
+            for (int i = 0; i < 36; i++) {
+                h.actions[18 + (i * 3)] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                    Pets.select(player, (childId - 18) / 3);
+                };
+            }
+
+            h.actions[138] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                Pets.spawnFromInterface(player);
+            };
+
+        });
         for (Pets pet : values()) {
             ItemDef itemDef = ItemDef.get(pet.itemId);
             if (itemDef == null) continue;

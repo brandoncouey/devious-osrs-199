@@ -56,8 +56,6 @@ public class PlayerMovement extends Movement {
     }
 
     public void drainEnergy(int percent) {
-        if (player.wildernessLevel <= 0)
-            return;
         int oldEnergy = getEnergy();
         double drain = percent * 100D;
         player.energyUnits = Math.max(0, player.energyUnits - drain);
@@ -65,8 +63,6 @@ public class PlayerMovement extends Movement {
     }
 
     private void drainEnergy() {
-        if (player.wildernessLevel <= 0)
-            return;
         int oldEnergy = getEnergy();
         double weight = player.getInventory().weight + player.getEquipment().weight;
         if (weight < 0D)
@@ -124,9 +120,9 @@ public class PlayerMovement extends Movement {
         player.sendMessage("You begin to rest.");
         player.startPersistableEvent(e -> {
             while (true) {
-                e.delay(1);
+                e.delay(2);
                 player.animate(7627);
-                player.getMovement().restoreEnergy(5);
+                player.getMovement().restoreEnergy(2);
             }
         }).setCancelCondition(() -> player.getMovement().hasMoved());
     }

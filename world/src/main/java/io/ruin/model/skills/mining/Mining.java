@@ -6,11 +6,8 @@ import io.ruin.model.World;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
 import io.ruin.model.diaries.pvm.PvMDiaryEntry;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -33,6 +30,7 @@ public class Mining {
     private static final Bounds HOSIDIUS_MINING = new Bounds(2504, 3365, 2510, 3378, 0);
 
     private static void mine(Rock rockData, Player player, GameObject rock, int emptyId, PlayerCounter counter) {
+        boolean isAfkMining = player.getPosition().getRegion().id == 12342;
         Pickaxe pickaxe = Pickaxe.find(player);
         if (pickaxe == null) {
             player.dialogue(new MessageDialogue("You need a pickaxe to mine this rock. You do not have a pickaxe which " +
@@ -136,10 +134,6 @@ public class Mining {
                         player.getStats().addXp(StatType.Mining, rockData.experience * xpBonus(player), true);
                     else
                         player.getStats().addXp(StatType.Mining, rockyOutcrop ? rockData.multiExp[random] : rockData.experience * xpBonus(player), true);
-                    if (Random.rollDie(50, 1)) {
-                        player.getInventory().addOrDrop(6828, 1);
-                        player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                    }
                     player.sendFilteredMessage("You manage to mine " + (rockData == Rock.GEM_ROCK ? "a " : "some ") +
                             (rockData == Rock.GEM_ROCK ? ItemDef.get(itemId).name.toLowerCase() : rockData.rockName) + ".");
 
@@ -148,8 +142,8 @@ public class Mining {
                         player.getInventory().addOrDrop(Geode.getRandomGeode(), 1);
                         PlayerCounter.MINED_GEODE.increment(player, 1);
                     }
-                    if(player.currentTaskMedium == DailyTask.PossibleTasksMedium.COAL){
-                        DailyTask.increaseMedium(player, DailyTask.PossibleTasksMedium.COAL);
+                    if(DailyTask.hasMediumTask(player, DailyTask.MediumTasks.COAL)){
+                        DailyTask.increaseMedium(player, DailyTask.MediumTasks.COAL);
                     }
                     Region region;
                     region = player.getPosition().getRegion();
@@ -163,25 +157,25 @@ public class Mining {
                         player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.GOLD_ORE);
                     }
                     if (rockData == Rock.COAL & region.id == 10553) {
-                        player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.MINE_COAL_FREM);
+                        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.MINE_COAL_FREM);
                     }
                     if (rockData == Rock.ADAMANT & region.id == 9631) {
-                        player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.ADDY_ORE);
+                        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.ADDY_ORE);
                     }
                     if (rockData == Rock.GOLD & region.id == 10802) {
                         player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.MINE_GOLD);
                     }
                     if (rockData == Rock.IRON & region.id == 13107) {
-                        player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.MINE_IRON_LUM);
+                        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.MINE_IRON_LUM);
                     }
                     if (rockData == Rock.IRON & region.id == 13108) {
-                        player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.MINE_IRON);
+                        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.MINE_IRON);
                     }
                     if (rockData == Rock.IRON & region.id == 9272) {
-                        player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.MINE_IRON);
+                        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.MINE_IRON);
                     }
                     if (rockData == Rock.GOLD & region.id == 9882) {
-                        player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.MINING_GOLD);
+                        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.MINING_GOLD);
                     }
                     if (rockData == Rock.IRON & region.id == 12343) {
                         player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MINE_IRON_WILD);

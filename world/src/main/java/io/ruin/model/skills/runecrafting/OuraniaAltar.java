@@ -52,10 +52,6 @@ public class OuraniaAltar {
                         player.getInventory().add(altar.runeID, 1);
                         player.getInventory().remove(Essence.PURE.id, 1);
                         player.getStats().addXp(StatType.Runecrafting, altar.experience, true);
-                        if (Random.rollDie(50, 1)) {
-                            player.getInventory().addOrDrop(6828, 1);
-                            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                        }
                         altar.counter.increment(player, 1);
                     });
 

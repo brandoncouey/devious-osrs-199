@@ -195,9 +195,6 @@ public abstract class ItemContainerG<I extends Item> {
         }
 
         if (def.stackable && !hasAttributes) {
-            /**
-             * Regular stackable item
-             */
             Item stackItem = findItem(id);
             if (stackItem != null) {
                 stackItem.incrementAmount(amount);
@@ -209,9 +206,6 @@ public abstract class ItemContainerG<I extends Item> {
         if ((amount == 1 && !hasAttributes) || stack) {
             int freeSlot = freeSlot();
             if (freeSlot == -1) {
-                /**
-                 * No free slot
-                 */
                 return 0;
             }
             set(freeSlot, newItem(id, amount, attributes));
@@ -222,9 +216,6 @@ public abstract class ItemContainerG<I extends Item> {
         while (amount-- > 0) { //move one at a time
             int freeSlot = freeSlot();
             if (freeSlot == -1) {
-                /**
-                 * No free slot
-                 */
                 break;
             }
             set(freeSlot, newItem(id, 1, attributes));
@@ -439,6 +430,31 @@ public abstract class ItemContainerG<I extends Item> {
     public int getSlot(int id, boolean acceptNoted) {
         Item item = findItem(id, acceptNoted);
         return item == null ? -1 : item.getSlot();
+    }
+
+    public Item getItemByNames(String... names) {
+        for (Item item : items) {
+            if (item == null) continue;
+            for (String name : names) {
+                if (item.getDef().name.contains(name)) {
+                    return item;
+                }
+            }
+            return null;
+        }
+        return null;
+    }
+    public Item getItemWithId(int id) {
+        ItemDef definition = ItemDef.get(id);
+        if (definition == null) {
+            System.err.println("Failed to get amount for non-existing item: " + id + " | " + new Throwable().getStackTrace()[1].toString());
+            return null;
+        }
+        for (I item : items) {
+            if (item != null && item.getId() == id)
+                return item;
+        }
+        return null;
     }
 
     public int getAmount(int id) {

@@ -7,6 +7,7 @@ import io.ruin.model.item.attributes.AttributeExtensions;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class PresetItem {
@@ -23,6 +24,11 @@ public class PresetItem {
     @Setter
     private Map<String, String> attributes;
 
+    public PresetItem(int id, int amount) {
+        this.id = id;
+        this.amount = amount;
+        this.attributes = new HashMap<>();
+    }
     public PresetItem(int id, int amount, Map<String, String> attributes) {
         this.id = id;
         this.amount = amount;

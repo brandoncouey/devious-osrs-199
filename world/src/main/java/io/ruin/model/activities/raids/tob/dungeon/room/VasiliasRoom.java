@@ -5,6 +5,7 @@ import io.ruin.cache.Color;
 import io.ruin.cache.Icon;
 import io.ruin.cache.NpcID;
 import io.ruin.model.activities.raids.tob.dungeon.RoomType;
+import io.ruin.model.activities.raids.tob.dungeon.boss.vasilias.VasiliasNPC;
 import io.ruin.model.activities.raids.tob.party.PartyStatus;
 import io.ruin.model.activities.raids.tob.party.TheatreParty;
 import io.ruin.model.activities.raids.tob.party.TheatrePartyManager;
@@ -28,7 +29,7 @@ import java.util.List;
  */
 public class VasiliasRoom extends TheatreRoom {//Room 3
 
-    private NPC vasilias;
+    private VasiliasNPC vasilias;
 
     public VasiliasRoom(TheatreParty party) {
         super(party);
@@ -38,7 +39,8 @@ public class VasiliasRoom extends TheatreRoom {//Room 3
     public void onLoad() {
         buildSw(13122, 1);
         new GameObject(13441, convertX(3298), convertY(4276), 0, 11, 0);
-        vasilias = new NPC(NpcID.NYLOCAS_VASILIAS_8356).spawn(convertX(3294), convertY(4247), 0, Direction.EAST, 0);
+        vasilias = new VasiliasNPC(NpcID.NYLOCAS_VASILIAS_8356, party);
+        vasilias.spawn(convertX(3294), convertY(4247), 0, Direction.EAST, 0);
         Tile.get(convertX(3289), convertY(4248), 0, true).destroy(); // unblock exit
         Tile.get(convertX(3289), convertY(4249), 0, true).destroy(); // unblock exit
         Tile.get(convertX(3302), convertY(4248), 0, true).destroy(); // unblock exit
@@ -51,7 +53,6 @@ public class VasiliasRoom extends TheatreRoom {//Room 3
                     p.sendFilteredMessage("You have completed stage 3!");
                     p.tobDeaths = 0;
                     if (p.getCombat().isDead()) {
-                        System.out.println("Setting dead to false");
                         p.getCombat().setDead(false);
                         p.sendMessage("You can now move forward.");
                         p.animate(-1, 0);

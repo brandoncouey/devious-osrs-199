@@ -59,7 +59,7 @@ public class DeathStorage extends ItemContainer {
 
     static {
         InterfaceHandler.register(Interface.DEATH_STORAGE, h -> {
-            h.actions[3] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[3] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 if (option == 2)
                     p.getDeathStorage().take(slot);
                 else if (option == 9)
@@ -180,14 +180,16 @@ public class DeathStorage extends ItemContainer {
     }
 
     private void takeAll() {
-        for (Item item : getItems()) {
-            if (item != null) {
-                if (item.move(item.getId(), item.getAmount(), player.getInventory()) != item.getAmount()) {
-                    break;
+        for (int i = 0; i < 27; i++) {
+            for (Item item : getItems()) {
+                if (item != null) {
+                    if (item.move(item.getId(), item.getAmount(), player.getInventory()) != item.getAmount()) {
+                        break;
+                    }
                 }
             }
+            sendUpdates();
         }
-        sendUpdates();
     }
 
     public boolean isUnlocked() {

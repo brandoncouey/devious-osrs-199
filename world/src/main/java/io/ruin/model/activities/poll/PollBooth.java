@@ -240,10 +240,10 @@ public class PollBooth {
         });
 
         InterfaceHandler.register(POLL_WIDGET, h -> {
-            h.actions[5] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[5] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 openVoteInterface(player);
             };
-            h.actions[7] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[7] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 int questionIndex = getQuestion(option);
                 if (player.getBallot() == null) {
                     player.setBallot(new PlayerBallot(player));
@@ -253,13 +253,13 @@ public class PollBooth {
                 refreshInterface(player, playerBallot);
                 openPollInterface(player);
             };
-            h.actions[8] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[8] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.sendMessage("This button is not working yet.");
             };
         });
 
         InterfaceHandler.register(VOTE_WIDGET, h -> {
-            h.actions[6] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[6] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 int questionIndex = getQuestion(option);
                 if (player.getBallot() == null) {
                     player.setBallot(new PlayerBallot(player));
@@ -268,14 +268,14 @@ public class PollBooth {
                 playerBallot.getAnswers().clear();
                 refreshInterface(player, playerBallot);
             };
-            h.actions[8] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[8] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 openPollInterface(player);
                 player.setBallot(null);
             };
             //Answers
             int[] answerSlotIds = {0, 1,/**/32, 33, 34, 35,/**/64, 65,/**/96, 97,/**/128, 129,/**/160, 161,/**/192, 193, 194};
             String[] chosenAnswers = new String[8];
-            h.actions[2] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[2] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (contains(answerSlotIds, slot)) {
                     int questionNumber = 1;
                     switch (slot) {
@@ -371,7 +371,7 @@ public class PollBooth {
                     player.sendMessage(Color.DARK_RED, "Voted for question " + questionNumber + " answer: " + chosenAnswers[questionNumber - 1] + " answer id was " + answer);
                 }
             };
-            h.actions[12] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[12] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 int questionIndex = getQuestion(option);
                 if (player.getBallot() == null) {
                     player.setBallot(new PlayerBallot(player));

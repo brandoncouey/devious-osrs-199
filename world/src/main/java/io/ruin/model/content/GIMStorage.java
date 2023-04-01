@@ -284,16 +284,16 @@ public class GIMStorage extends ItemContainerG<GIMItem> {
         /* gim storage interface */
         InterfaceHandler.register(724, h -> {
 
-            h.actions[9] = (DefaultAction) (player, option, slot, itemId) -> player.getBank().open();
+            h.actions[9] = (DefaultAction) (player, childId, option, slot, itemId) -> player.getBank().open();
 
 
-            h.actions[12] = (DefaultAction) (player, option, slot, itemId) -> player.getGIMStorage().deposit(player.getEquipment(), true);
+            h.actions[12] = (DefaultAction) (player, childId, option, slot, itemId) -> player.getGIMStorage().deposit(player.getEquipment(), true);
 
-            h.actions[16] = (DefaultAction) (player, option, slot, itemId) -> player.getGIMStorage().deposit(player.getInventory(), true);
+            h.actions[16] = (DefaultAction) (player, childId, option, slot, itemId) -> player.getGIMStorage().deposit(player.getInventory(), true);
 
             h.action(10, new InterfaceAction() {
                 @Override
-                public void handleClick(Player player, int option, int slot, int itemId) {
+                public void handleClick(Player player, int childId, int option, int slot, int itemId) {
                     GIMItem item = player.getGIMStorage().get(slot, itemId);
                     if (item == null)
                         return;

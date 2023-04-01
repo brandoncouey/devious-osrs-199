@@ -15,6 +15,7 @@ import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.Tile;
+import io.ruin.model.map.route.routes.DumbRoute;
 import io.ruin.model.map.route.routes.ProjectileRoute;
 import io.ruin.model.skills.prayer.Prayer;
 import io.ruin.process.event.Event;
@@ -34,6 +35,10 @@ public class CorporealBeast extends NPCCombat {
     private static final Projectile CORE_PROJECTILE = new Projectile(319, 0, 0, 0, 60, 0, 15, 0);
 
     private NPC core;
+
+    private long lastAttackTime;
+
+    boolean rerouting;
 
     @Override
     public void init() {
@@ -71,6 +76,7 @@ public class CorporealBeast extends NPCCombat {
             }
         });
     }
+
 
     private boolean coreDrain() {
         if (core == null || core.isRemoved() || core.getCombat().isDead())
@@ -150,13 +156,14 @@ public class CorporealBeast extends NPCCombat {
 
     @Override
     public void follow() {
-        follow(1);
+        follow(2);
     }
 
     @Override
     public boolean attack() {
-        if (!withinDistance(8))
-            return false;
+        if (!DumbRoute.withinDistance(npc, target.player, 8) && target != null) {
+            npc.getRouteFinder().routeEntity(target.player);
+        }
         if (Random.rollDie(10, 6)) {
             if (withinDistance(1) && Random.rollDie(10, 6)) {
                 basicAttack();
@@ -168,6 +175,7 @@ public class CorporealBeast extends NPCCombat {
         } else {
             fireSplit();
         }
+        lastAttackTime = System.currentTimeMillis();
         return true;
     }
 

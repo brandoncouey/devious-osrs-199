@@ -1,7 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.ItemDialogue;
@@ -72,7 +71,6 @@ public class SpiritTree {
         options.add(new Option("Tree Gnome Village", () -> teleport(player, 2542, 3170, 0)));
         options.add(new Option("Gnome Stronghold", () -> {
             teleport(player, 2462, 3444, 0);
-            player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.SPIRIT_TREE);
         }));
         options.add(new Option("Battlefield of Khazard", () -> teleport(player, 2555, 3259, 0)));
         options.add(new Option("Grand Exchange", () -> teleport(player, 3184, 3508, 0)));
@@ -111,7 +109,6 @@ public class SpiritTree {
 
     public static void open(Player player) {
         OptionScroll.open(player, "Spirit Tree Locations", getOptions(player));
-        player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.SPIRIT_TREE);
     }
 
     private static void teleport(Player player, int x, int y, int z) {

@@ -68,31 +68,116 @@ public class StarterGuide {
             new Item(1331, 1), // Addy scim
             new Item(1712, 1), // Amulet of glory (4)
             new Item(2552, 1), // RIng of dueling (8)
-
+            new Item(20211, 1), // Team Cape
     };
 
     private static final Item[] IRONMAN_STARTER = new Item[] {
-
+            new Item(COINS_995, 25000), // gp
+            new Item(558, 500), // Mind Rune
+            new Item(556, 1000), // Air Rune
+            new Item(554, 500), // Fire Rune
+            new Item(555, 500), // Water Rune
+            new Item(557, 500), // Earth Rune
+            new Item(1381, 1), // Air Staff
+            new Item(362, 25), // Tuna
+            new Item(841, 1), // Shortbow
+            new Item(884, 250), // Iron Arrow
+            new Item(863, 150), // Iron Knives
+            new Item(1169, 1), // Coif
+            new Item(1129, 1), // Leather body
+            new Item(1095, 1), // Leather Chaps
+            new Item(12810, 1), // Ironman Helm
+            new Item(12811, 1), // Ironman Chest
+            new Item(12812, 1), // Ironman legs
+            new Item(1323, 1), // Iron scim
+            new Item(20211, 1), // Team Cape
 
     };
 
     private static final Item[] ULTIMATE_IRONMAN_STARTER = new Item[] {
-
-
+            new Item(COINS_995, 15000), // gp
+            new Item(558, 250), // Mind Rune
+            new Item(556, 500), // Air Rune
+            new Item(554, 250), // Fire Rune
+            new Item(555, 250), // Water Rune
+            new Item(557, 250), // Earth Rune
+            new Item(1381, 1), // Air Staff
+            new Item(362, 25), // Tuna
+            new Item(841, 1), // Shortbow
+            new Item(884, 150), // Iron Arrow
+            new Item(863, 100), // Iron Knives
+            new Item(1169, 1), // Coif
+            new Item(1129, 1), // Leather body
+            new Item(1095, 1), // Leather Chaps
+            new Item(12813, 1), // Ultimate Ironman Helm
+            new Item(12814, 1), // Ultimate Ironman Chest
+            new Item(12815, 1), // Ultimate Ironman legs
+            new Item(1323, 1), // Iron scim
+            new Item(20211, 1), // Team Cape
     };
 
     private static final Item[] HARDCORE_IRONMAN_STARTER = new Item[] {
-
-
+            new Item(COINS_995, 10000), // gp
+            new Item(558, 150), // Mind Rune
+            new Item(556, 250), // Air Rune
+            new Item(554, 150), // Fire Rune
+            new Item(555, 150), // Water Rune
+            new Item(557, 150), // Earth Rune
+            new Item(362, 15), // Tuna
+            new Item(841, 1), // Shortbow
+            new Item(884, 50), // Iron Arrow
+            new Item(1169, 1), // Coif
+            new Item(1129, 1), // Leather body
+            new Item(1095, 1), // Leather Chaps
+            new Item(20792, 1), // HC Ironman Helm
+            new Item(20794, 1), // HC Ironman Chest
+            new Item(20796, 1), // HC Ironman legs
+            new Item(1323, 1), // Iron scim
+            new Item(20211, 1), // Team Cape
     };
 
     private static final Item[] GROUP_IRONMAN_STARTER = new Item[] {
-
-
+            new Item(COINS_995, 25000), // gp
+            new Item(558, 500), // Mind Rune
+            new Item(556, 1000), // Air Rune
+            new Item(554, 500), // Fire Rune
+            new Item(555, 500), // Water Rune
+            new Item(557, 500), // Earth Rune
+            new Item(1381, 1), // Air Staff
+            new Item(362, 25), // Tuna
+            new Item(841, 1), // Shortbow
+            new Item(884, 250), // Iron Arrow
+            new Item(863, 150), // Iron Knives
+            new Item(1169, 1), // Coif
+            new Item(1129, 1), // Leather body
+            new Item(1095, 1), // Leather Chaps
+            new Item(26156, 1), // Group Ironman Helm
+            new Item(26158, 1), // Group Ironman Chest
+            new Item(26166, 1), // Group Ironman legs
+            new Item(26168, 1), // Group Ironman Vamp
+            new Item(1323, 1), // Iron scim
+            new Item(20211, 1), // Team Cape
     };
 
     private static final Item[] HARDCORE_GROUP_IRONMAN_STARTER = new Item[] {
-
+            new Item(COINS_995, 10000), // gp
+            new Item(558, 100), // Mind Rune
+            new Item(556, 150), // Air Rune
+            new Item(554, 100), // Fire Rune
+            new Item(555, 100), // Water Rune
+            new Item(557, 100), // Earth Rune
+            new Item(362, 15), // Tuna
+            new Item(841, 1), // Shortbow
+            new Item(884, 50), // Iron Arrow
+            new Item(1169, 1), // Coif
+            new Item(1129, 1), // Leather body
+            new Item(1095, 1), // Leather Chaps
+            new Item(1323, 1), // Iron scim
+            new Item(26170, 1), // HC Group Ironman Helm
+            new Item(26172, 1), // HC Group Ironman Chest
+            new Item(26180, 1), // HC Group Ironman legs
+            new Item(26182, 1), // HC Group Ironman Vamp
+            new Item(20211, 1), // Team Cape
 
     };
 
@@ -389,7 +474,7 @@ public class StarterGuide {
                             new NPCDialogue(guide, "There you go, some basic stuff. If you need anything else, remember to check the shops.") {
                                 @Override
                                 public void open(Player player) {
-                                    giveIronStarter(player);
+                                    giveStarter(player);
                                     player.newPlayer = false;
                                     super.open(player);
                                 }
@@ -399,7 +484,7 @@ public class StarterGuide {
                             new NPCDialogue(guide, "There you go, some basic stuff. If you need anything else, remember to check Sigmund's shop.") {
                                 @Override
                                 public void open(Player player) {
-                                    giveEcoStarter(player);
+                                    giveStarter(player);
                                     player.newPlayer = false;
                                     super.open(player);
                                 }
@@ -574,7 +659,7 @@ public class StarterGuide {
     }
 
 
-    private static void giveEcoStarter(Player player) {
+    private static void giveStarter(Player player) {
         final int mode = Config.IRONMAN_MODE.get(player);
         switch (mode) {
             case 0:
@@ -636,6 +721,7 @@ public class StarterGuide {
         player.getInventory().add(362, 50); // Tuna
         player.getInventory().add(863, 200); // Iron Knives
         player.getInventory().add(1323, 1); // Iron scim
+        player.getInventory().add(20211, 1); // Team cape
         switch (player.getGameMode()) {
             case IRONMAN:
                 player.getInventory().add(12810, 1);

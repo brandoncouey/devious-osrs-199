@@ -18,11 +18,18 @@ public class JS5Server extends ServerWrapper {
     public static FileStore fileStore;
     public static WatchService fileWatcher;
 
+    public static void main(String[] args) {
+        try {
+            start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public static void start() throws Exception {
         try {
             Properties properties = new Properties();
             File systemProps = new File("./server.properties");
-//            log.info("Looking for system.properties in {}", systemProps.getAbsolutePath());
             try (InputStream in = new FileInputStream(systemProps)) {
                 properties.load(in);
             } catch (IOException e) {
@@ -31,7 +38,7 @@ public class JS5Server extends ServerWrapper {
             }
             System.out.println("Initiating file store...");
             fileStore = new FileStore(properties.getProperty("cache_path"));
-            NettyServer nettyServer = NettyServer.start("Update Server", 443, pipeline -> new HandshakeDecoder(fileStore), 5, Boolean.parseBoolean(properties.getProperty("offline_mode")));
+            NettyServer nettyServer = NettyServer.start("Update Server", 443, pipeline -> new HandshakeDecoder(fileStore));
             Runtime.getRuntime().addShutdownHook(new Thread(nettyServer::shutdown));
         } catch (Exception e) {
             JS5Server.logError("Error", e);

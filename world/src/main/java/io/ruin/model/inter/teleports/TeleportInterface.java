@@ -2,14 +2,10 @@ package io.ruin.model.inter.teleports;
 
 import io.ruin.model.activities.bosses.nex.Nex;
 import io.ruin.model.activities.wilderness.Wilderness;
+import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
 import io.ruin.model.diaries.devious.DeviousDiaryEntry;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -93,6 +89,15 @@ public class TeleportInterface {
         player.openInterface(InterfaceType.MAIN, INTERFACE_ID);
         player.teleportSelectedCategory = -1;
         player.searchTeleports = null;
+        if (player.lastTeleport1 != null) {
+            player.getPacketSender().sendString(1039, 42, player.lastTeleport1.getName());
+        }
+        if (player.lastTeleport2 != null) {
+            player.getPacketSender().sendString(1039, 43, player.lastTeleport2.getName());
+        }
+        if (player.lastTeleport3 != null) {
+            player.getPacketSender().sendString(1039, 44, player.lastTeleport3.getName());
+        }
         showTeleports(player, 1);
     }
 
@@ -108,78 +113,56 @@ public class TeleportInterface {
             return;
         }
         for (int index = 0; index < 21; index++) {
-            player.getPacketSender().setHidden(INTERFACE_ID, (55 + (index * 10)), true);
+            player.getPacketSender().setHidden(INTERFACE_ID, (53 + (index * 5)), true);
         }
 
         int teleports = 0;
-        for (TeleportList.Teleport teleport : cat.getTeleports()) {
-            player.getPacketSender().setHidden(INTERFACE_ID, (55 + (teleports * 10)), false);
-            player.getPacketSender().setHidden(INTERFACE_ID, (57 + (teleports * 10)), !teleport.isWild());
-            if (teleport.isWild()) {
-                player.getPacketSender().sendString(INTERFACE_ID, (59 + (teleports * 10)), "Wilderness level:");
-                player.getPacketSender().sendString(INTERFACE_ID, (60 + (teleports * 10)), Integer.toString(Wilderness.getLevel(teleport.getPosition())));
-                player.getPacketSender().sendString(INTERFACE_ID, (62 + (teleports * 10)), "<col=ff0000>Dangerous</col>");
-            }
-            if (cat.equals(TeleportList.Category.MINIGAMES) || cat.equals(TeleportList.Category.CITIES) || cat.equals(TeleportList.Category.SKILLING)) {
-                player.getPacketSender().sendString(INTERFACE_ID, (59 + (teleports * 10)), "");
-                player.getPacketSender().sendString(INTERFACE_ID, (60 + (teleports * 10)), "");
-                player.getPacketSender().sendString(INTERFACE_ID, (62 + (teleports * 10)), "<col=00ff00>Safe</col>");
-            } else {
-                player.getPacketSender().sendString(INTERFACE_ID, (62 + (teleports * 10)), "<col=ff0000>Dangerous</col>");
-            }
-            player.getPacketSender().sendString(INTERFACE_ID, (58 + (teleports * 10)), teleport.getName());
-            teleports++;
-        }
-
-       /* if (category == 0) {
-            if (player.favoriteTeleports.isEmpty()) {
-                player.getPacketSender().sendString(803, 17, "Your favorite teleports are currently empty.");
-            } else {
-                for (int i = 0; i < player.favoriteTeleports.size(); i++) {
-                    TeleportList.Teleport teleport = TeleportList.getTeleportForId(player.favoriteTeleports.get(i));
-                    player.getPacketSender().sendClientScript(10185, "isiiii", i, teleport.getName(), teleport.isMulti() ? 1 : 0, teleport.isWild() ? 1 : 0, 0, player.favoriteTeleports.contains(teleport.getId()) ? 1 : 0);
-                }
-
-                player.getPacketSender().sendClientScript(10186, "iii", (803 << 16) | 13, (803 << 16) | 14, player.favoriteTeleports.size() * 24);
-                player.getPacketSender().sendAccessMask(803, 13, 0, player.favoriteTeleports.size() * 5, 1 << 1);
-                player.getPacketSender().sendString(803, 17, "");
+        if (category == 0) {
+            for (int i = 0; i < player.favoriteTeleports.size(); i++) {
+                TeleportList.Teleport teleport = TeleportList.getTeleportForId(player.favoriteTeleports.get(i));
+                if (teleport == null) continue;
+                player.getPacketSender().setHidden(INTERFACE_ID, (53 + (teleports * 5)), false);
+                player.getPacketSender().sendString(INTERFACE_ID, (55 + (teleports * 5)), (teleport.isWild() ? "<col=ff0000>" : "") + teleport.getName());
+                player.getPacketSender().setHidden(INTERFACE_ID, (57 + (teleports * 5)), true);
+                teleports++;
             }
         } else {
-            if (cat.getTeleports() == null) {
-                return;
-            }
 
-            int index = 0;
             for (TeleportList.Teleport teleport : cat.getTeleports()) {
-                player.getPacketSender().sendClientScript(10185, "isiiii", index, teleport.getName(), teleport.isMulti() ? 1 : 0, teleport.isWild() ? 1 : 0, 0, player.favoriteTeleports.contains(teleport.getId()) ? 1 : 0);
-                index++;
+                player.getPacketSender().setHidden(INTERFACE_ID, (53 + (teleports * 5)), false);
+                player.getPacketSender().sendString(INTERFACE_ID, (55 + (teleports * 5)), (teleport.isWild() ? "<col=ff0000>" : "") + teleport.getName());
+                player.getPacketSender().setHidden(INTERFACE_ID, (57 + (teleports * 5)), player.favoriteTeleports.contains(teleport.getId()));
+                teleports++;
             }
-
-            player.getPacketSender().sendClientScript(10186, "iii", (803 << 16) | 13, (803 << 16) | 14, index * 24);
-            player.getPacketSender().sendAccessMask(803, 13, 0, index * 5, 1 << 1);
-
-            if (cat.getTeleports().length == 0) {
-                player.getPacketSender().sendString(803, 17, "There are no teleports for this category.");
-            } else {
-                player.getPacketSender().sendString(803, 17, "");
-            }
-
-        }*/
-
+        }
         player.teleportSelectedCategory = category;
     }
+
 
     static void handleTeleport(Player player, int slot) {
         TeleportList.Teleport teleport = getTeleportForSlot(player, slot);
 
         if (teleport == null)
             return;
+
+        TeleportList.Teleport lastTeleport1 = player.lastTeleport1;
+        TeleportList.Teleport lastTeleport2 = player.lastTeleport2;
+        if (player.lastTeleport1 != teleport) {
+            player.lastTeleport1 = teleport;
+            if (player.lastTeleport2 != lastTeleport1)
+                player.lastTeleport2 = lastTeleport1;
+            if (player.lastTeleport3 != lastTeleport2)
+                player.lastTeleport3 = lastTeleport2;
+        }
+
+
         if (teleport.equals(TeleportList.Teleport.ARDOUGNE)) {
             player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.TELEPORT_ARDOUGNE);
         }
+
         if (teleport.equals(TeleportList.Teleport.DONATION_BOSS)) {
             if (!player.isADonator()) {
-                player.sendMessage("You cannot teleport here without being a member.");
+                player.sendMessage("You cannot teleport here without being a donator.");
                 return;
             }
         }
@@ -187,37 +170,37 @@ public class TeleportInterface {
             player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.TELEPORT_FALADOR);
         }
         if (teleport.equals(TeleportList.Teleport.NEITIZNOT)) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TRAVEL_NEITIZNOT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TRAVEL_NEITIZNOT);
         }
         if (teleport.equals(TeleportList.Teleport.TROLLHEIM_TROLLS)) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TROLLHEIM_TELEPORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TROLLHEIM_TELEPORT);
         }
         if (teleport.equals(TeleportList.Teleport.RELLEKA_SLAYER_CAVE)) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_MARKET_GUARD);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_MARKET_GUARD);
         }
         if (teleport.equals(TeleportList.Teleport.WATERBIRTH_ISLAND)) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.WATERBIRTH_TELEPORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.WATERBIRTH_TELEPORT);
         }
         if (teleport.equals(TeleportList.Teleport.CAMELOT)) {
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CAMELOT_TELEPORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CAMELOT_TELEPORT);
         }
         if (teleport.equals(TeleportList.Teleport.CATHERBY)) {
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CATHERY_TELEPORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CATHERY_TELEPORT);
         }
         if (teleport.equals(TeleportList.Teleport.LUMBRIDGE)) {
-            player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.LUMBRIDGE_TELEPORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.LUMBRIDGE_TELEPORT);
         }
         if (teleport.equals(TeleportList.Teleport.VARROCK)) {
-            player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.TELEPORT_VARROCK);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TELEPORT_VARROCK);
         }
         if (teleport.equals(TeleportList.Teleport.PEST_CONTROL)) {
-            player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.PEST_CONTROL_TELEPORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.PEST_CONTROL_TELEPORT);
         }
         if (teleport.equals(TeleportList.Teleport.EDGEVILLE)) {
-            player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.EDGEVILLE_TELE);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.EDGEVILLE_TELE);
         }
         if (teleport.equals(TeleportList.Teleport.APE_ATOLL)) {
-            player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.TELEPORT_APE_ATOLL);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TELEPORT_APE_ATOLL);
         }
         if (teleport.equals(TeleportList.Teleport.CATACOMBS_OF_KOUREND)) {
             player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CATACOMBS);
@@ -229,10 +212,10 @@ public class TeleportInterface {
             //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.KOUREND);
         }
         if (teleport.equals(TeleportList.Teleport.TROLLHEIM_TROLLS)) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TROLLHEIM_TELEPORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TROLLHEIM_TELEPORT);
         }
         if (teleport.equals(TeleportList.Teleport.WATERBIRTH_ISLAND)) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.WATERBIRTH_TELEPORT);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.WATERBIRTH_TELEPORT);
         }
         if (teleport.equals(TeleportList.Teleport.NEX) && Nex.deadplayers.contains(player)) {
             player.sendMessage("You cannot return to this fight until nex has been killed.");
@@ -270,8 +253,15 @@ public class TeleportInterface {
             showTeleports(player, 0);
             return;
         }
+        TeleportList.Category cat = TeleportList.categories[player.teleportSelectedCategory];
+        int teleports = 0;
+        for (TeleportList.Teleport t : cat.getTeleports()) {
+            player.getPacketSender().setHidden(INTERFACE_ID, (53 + (teleports * 5)), false);
+            player.getPacketSender().sendString(INTERFACE_ID, (55 + (teleports * 5)), (t.isWild() ? "<col=ff0000>" : "") + t.getName());
+            player.getPacketSender().setHidden(INTERFACE_ID, (57 + (teleports * 5)), player.favoriteTeleports.contains(t.getId()));
+            teleports++;
+        }
 
-        player.getPacketSender().sendClientScript(10185, "isiiii", slot, teleport.getName(), teleport.isMulti() ? 1 : 0, teleport.isWild() ? 1 : 0, 0, player.favoriteTeleports.contains(teleport.getId()) ? 1 : 0);
     }
 
     static TeleportList.Teleport getTeleportForSlot(Player player, int slot) {
@@ -330,106 +320,282 @@ public class TeleportInterface {
             }
         }
 
-        TeleportList.Category cat = TeleportList.categories[player.teleportSelectedCategory];
-        player.getPacketSender().sendClientScript(10184, "iiiisi", player.teleportSelectedCategory, cat.getSpriteId(), cat.getSw(), cat.getSh(), cat.getName(), -1);
-
-        player.getPacketSender().sendClientScript(10187, "i", (803 << 16) | 13);
-
-        if (player.searchTeleports.isEmpty()) {
-            player.getPacketSender().sendString(803, 17, "No results found!");
-        } else {
-            for (int i = 0; i < player.searchTeleports.size(); i++) {
-                TeleportList.Teleport teleport = player.searchTeleports.get(i);
-
-                player.getPacketSender().sendClientScript(10185, "isiiii", i, teleport.getName(), teleport.isMulti() ? 1 : 0, teleport.isWild() ? 1 : 0, 0, player.favoriteTeleports.contains(teleport.getId()) ? 1 : 0);
-            }
-
-            player.getPacketSender().sendString(803, 17, "");
+        for (int index = 0; index < 21; index++) {
+            player.getPacketSender().setHidden(INTERFACE_ID, (53 + (index * 5)), true);
         }
 
-        player.getPacketSender().sendClientScript(10186, "iii", (803 << 16) | 13, (803 << 16) | 14, player.searchTeleports.size() * 24);
-        player.getPacketSender().sendAccessMask(803, 13, 0, player.searchTeleports.size() * 5, 1 << 1);
+        int teleports = 0;
+        for (TeleportList.Teleport teleport : player.searchTeleports) {
+            player.getPacketSender().setHidden(INTERFACE_ID, (53 + (teleports * 5)), false);
+            player.getPacketSender().sendString(INTERFACE_ID, (55 + (teleports * 5)), (teleport.isWild() ? "<col=ff0000>" : "") + teleport.getName());
+            teleports++;
+        }
+
     }
 
     static {
-        ObjectAction.register(13641, "Direct-portal", (player, obj) -> TeleportInterface.open(player));
+        ObjectAction.register(35075, "Use", (player, obj) -> TeleportInterface.open(player));
         NPCAction.register(7046, 1, (player, npc) -> TeleportInterface.open(player));
         NPCAction.register(7046, 2, (player, npc) -> ModernTeleport.teleport(player, player.previousTeleportX, player.previousTeleportY, player.previousTeleportZ));
         InterfaceHandler.register(INTERFACE_ID, h -> {
-            h.actions[18] = (SlotAction) (player, slot) -> showTeleports(player, 1);//Global
-            h.actions[22] = (SlotAction) (player, slot) -> showTeleports(player, 2);//Wilderness
-            h.actions[26] = (SlotAction) (player, slot) -> showTeleports(player, 3);//Monsters
-            h.actions[30] = (SlotAction) (player, slot) -> showTeleports(player, 4);//Skilling
-            h.actions[34] = (SlotAction) (player, slot) -> showTeleports(player, 5);//Bosses
-            h.actions[38] = (SlotAction) (player, slot) -> showTeleports(player, 6);
-            h.actions[50] = (SimpleAction) (p) -> {
+            h.actions[16] = (SlotAction) (player, slot) -> showTeleports(player, 0);//Favourites
+            h.actions[19] = (SlotAction) (player, slot) -> showTeleports(player, 1);//Cities
+            h.actions[22] = (SlotAction) (player, slot) -> showTeleports(player, 2);//Minigames
+            h.actions[25] = (SlotAction) (player, slot) -> showTeleports(player, 3);//Skilling
+            h.actions[28] = (SlotAction) (player, slot) -> showTeleports(player, 4);//Monsters
+            h.actions[31] = (SlotAction) (player, slot) -> showTeleports(player, 5);//Dungeons
+            h.actions[34] = (SlotAction) (player, slot) -> showTeleports(player, 6);//Bosses
+            h.actions[37] = (SlotAction) (player, slot) -> showTeleports(player, 7);//Wilderness
+            h.actions[42] = (SlotAction) (player, slot) -> {
+                if (player.lastTeleport1 != null) {
+                    teleportFinish(player, player.lastTeleport1.getPosition());
+                }
+            };
+            h.actions[43] = (SlotAction) (player, slot) -> {
+                if (player.lastTeleport2 != null) {
+                    teleportFinish(player, player.lastTeleport2.getPosition());
+                }
+            };
+            h.actions[44] = (SlotAction) (player, slot) -> {
+                if (player.lastTeleport3 != null) {
+                    teleportFinish(player, player.lastTeleport3.getPosition());
+                }
+            };
+            h.actions[48] = (SimpleAction) (p) -> {
                 p.stringInput("Search teleports (name, npc, location):", s -> {
                     search(p, s);
                 });
             };
-            h.actions[56] = (SlotAction) (player, slot) -> {
+            h.actions[54] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 0);
             };
-            h.actions[66] = (SlotAction) (player, slot) -> {
+            h.actions[56] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 0);
+            };
+            h.actions[57] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 0);
+            };
+
+
+            h.actions[59] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 1);
             };
-            h.actions[76] = (SlotAction) (player, slot) -> {
+            h.actions[61] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 1);
+            };
+            h.actions[62] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 1);
+            };
+
+            h.actions[64] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 2);
             };
-            h.actions[86] = (SlotAction) (player, slot) -> {
+            h.actions[66] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 0);
+            };
+            h.actions[67] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 0);
+            };
+
+
+            h.actions[69] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 3);
             };
-            h.actions[96] = (SlotAction) (player, slot) -> {
+            h.actions[71] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 3);
+            };
+            h.actions[72] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 3);
+            };
+
+
+            h.actions[74] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 4);
             };
-            h.actions[106] = (SlotAction) (player, slot) -> {
+            h.actions[76] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 4);
+            };
+            h.actions[77] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 4);
+            };
+
+
+            h.actions[79] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 5);
             };
-            h.actions[116] = (SlotAction) (player, slot) -> {
+            h.actions[81] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 5);
+            };
+            h.actions[82] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 5);
+            };
+
+
+            h.actions[84] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 6);
             };
-            h.actions[126] = (SlotAction) (player, slot) -> {
+            h.actions[86] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 6);
+            };
+            h.actions[87] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 6);
+            };
+
+
+            h.actions[89] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 7);
             };
-            h.actions[136] = (SlotAction) (player, slot) -> {
+            h.actions[91] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 7);
+            };
+            h.actions[92] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 7);
+            };
+
+
+            h.actions[94] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 8);
             };
-            h.actions[146] = (SlotAction) (player, slot) -> {
+            h.actions[96] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 8);
+            };
+            h.actions[97] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 8);
+            };
+
+
+            h.actions[99] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 9);
             };
-            h.actions[156] = (SlotAction) (player, slot) -> {
+            h.actions[101] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 9);
+            };
+            h.actions[102] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 9);
+            };
+
+
+            h.actions[104] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 10);
             };
-            h.actions[166] = (SlotAction) (player, slot) -> {
+            h.actions[106] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 10);
+            };
+            h.actions[107] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 10);
+            };
+
+
+            h.actions[109] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 11);
             };
-            h.actions[176] = (SlotAction) (player, slot) -> {
+            h.actions[111] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 11);
+            };
+            h.actions[112] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 11);
+            };
+
+
+            h.actions[114] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 12);
             };
-            h.actions[186] = (SlotAction) (player, slot) -> {
+            h.actions[116] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 12);
+            };
+            h.actions[117] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 12);
+            };
+
+
+            h.actions[119] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 13);
             };
-            h.actions[196] = (SlotAction) (player, slot) -> {
+            h.actions[121] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 13);
+            };
+            h.actions[122] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 13);
+            };
+
+
+            h.actions[124] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 14);
             };
-            h.actions[206] = (SlotAction) (player, slot) -> {
+            h.actions[126] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 14);
+            };
+            h.actions[127] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 14);
+            };
+
+
+            h.actions[129] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 15);
             };
-            h.actions[216] = (SlotAction) (player, slot) -> {
+            h.actions[131] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 15);
+            };
+            h.actions[132] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 15);
+            };
+
+
+            h.actions[134] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 16);
             };
-            h.actions[226] = (SlotAction) (player, slot) -> {
+            h.actions[136] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 16);
+            };
+            h.actions[137] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 16);
+            };
+
+
+            h.actions[139] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 17);
             };
-            h.actions[236] = (SlotAction) (player, slot) -> {
+            h.actions[141] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 17);
+            };
+            h.actions[142] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 17);
+            };
+
+
+            h.actions[144] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 18);
             };
-            h.actions[246] = (SlotAction) (player, slot) -> {
+            h.actions[146] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 18);
+            };
+            h.actions[147] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 18);
+            };
+
+
+            h.actions[149] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 19);
             };
-            h.actions[256] = (SlotAction) (player, slot) -> {
+            h.actions[151] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 19);
+            };
+            h.actions[152] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 19);
+            };
+
+
+            h.actions[154] = (SlotAction) (player, slot) -> {
                 handleTeleport(player, 20);
             };
+            h.actions[156] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 20);
+            };
+            h.actions[157] = (SlotAction) (player, slot) -> {
+                handleFavorite(player, 20);
+            };
+
+
         });
     }
 }

@@ -345,7 +345,7 @@ public class GambleInterface {
 
     static {
         InterfaceHandler.register(Interface.GAMBLE_INVENTORY, h ->
-                h.actions[0] = (GambleAction) (p, option, slot, itemId) -> {
+                h.actions[0] = (GambleAction) (p, childId, option, slot, itemId) -> {
                     if (option == 1) { //1
                         add(p, itemId, 1);
                     } else if (option == 2) { //5
@@ -360,7 +360,7 @@ public class GambleInterface {
                 }
         );
         InterfaceHandler.register(Interface.GAMBLE_INTERFACE, h -> {
-            h.actions[56] = (GambleAction) (p, option, slot, itemId) -> {
+            h.actions[56] = (GambleAction) (p, childId, option, slot, itemId) -> {
                 if (option == 1) { //1
                     remove(p, 1, slot, itemId);
                 } else if (option == 2) { //5
@@ -377,7 +377,7 @@ public class GambleInterface {
                 p.gambleInterface.closeInterfaces(true);//If this button is the accept button then lmao
                 System.out.println("Pressing from interface");
             };
-            h.actions[20] = (GambleAction) (p, option, slot, itemId) -> {
+            h.actions[20] = (GambleAction) (p, childId, option, slot, itemId) -> {
                 if (option == 1) {
                     p.gambleInterface.changePlayerAcceptedState(p);
                 }
@@ -387,10 +387,10 @@ public class GambleInterface {
 
     private interface GambleAction extends InterfaceAction {
 
-        void handle(Player player, int option, int slot, int itemId);
+        void handle(Player player, int childId, int option, int slot, int itemId);
 
-        default void handleClick(Player player, int option, int slot, int itemId) {
-            handle(player, option, slot, itemId);
+        default void handleClick(Player player, int childId, int option, int slot, int itemId) {
+            handle(player, childId, option, slot, itemId);
         }
     }
 

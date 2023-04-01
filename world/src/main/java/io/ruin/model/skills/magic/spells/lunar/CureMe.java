@@ -13,7 +13,7 @@ public class CureMe extends Spell {
                 Rune.ASTRAL.toItem(2),
                 Rune.COSMIC.toItem(2)
         };
-        registerClick(68, 112.0, false, runes, CureMe::cast);
+        registerClick(71, 69, false, runes, CureMe::cast);
     }
 
     public static boolean cast(Player player, Integer i) {

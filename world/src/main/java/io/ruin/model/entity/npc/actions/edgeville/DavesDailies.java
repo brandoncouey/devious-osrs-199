@@ -24,13 +24,12 @@ public class DavesDailies {
                                 );
                             }),
                             new Option("I need new daily tasks", plr -> DailyTask.assignTask(player)),
-                            new Option("I've finished all three of today's tasks", plr -> finishedTasks(player, npc)),
-                            new Option("What are my current tasks?", () -> DailyTask.open(player))
-                            //new Option("What rewards can I buy with Daily Task Points?", () ->//TODO SETUP A SHOP
+                            new Option("I've finished all of my dailies", plr -> finishedTasks(player, npc)),
+                            new Option("What are my current tasks?", () -> DailyTask.openDailyTasksViewer(player))
                     ));
         });
         NPCAction.register(15109, "view-tasks", (player, npc) -> {
-            DailyTask.open(player);
+            DailyTask.openDailyTasksViewer(player);
         });
         NPCAction.register(15109, "open-shop", (player, npc) -> {
             ShopManager.openIfExists(player, "dailypointshop");
@@ -39,7 +38,7 @@ public class DavesDailies {
 
     public static void finishedTasks(Player player, NPC npc) {
         int amount = 5;
-        if (player.storeAmountSpent >= 10) {
+        if (player.amountDonated >= 10) {
             amount = 5 + Random.get(5, 10);
         }
         if (player.dailyCount < 3) {
@@ -54,7 +53,6 @@ public class DavesDailies {
                             " as well as 5 extra daily task points!"),
                     new MessageDialogue("You receive a daily task cache and 5 daily task points!"),
                     new ActionDialogue(() -> {
-                        player.hasTask = false;
                         player.dailyCount = 0;
                         player.dailyTaskPoints += finalAmount;
                         player.getInventory().add(6199, 1);

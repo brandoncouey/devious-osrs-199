@@ -40,6 +40,11 @@ public class PestPortal {
 		def.combatInfo.hitpoints = game.settings().portalHp();
 		def.combatInfo.defend_animation = -1;
 		def.combatInfo.death_animation = -1;
+		def.combatInfo.magic_defence = 100;
+		def.combatInfo.ranged_defence = 100;
+		def.combatInfo.crush_defence = 100;
+		def.combatInfo.stab_defence = 100;
+		def.combatInfo.slash_defence = 100;
 
 		npc = new NPC(shieldId);
 		npc.spawn(game.map().convertX(x), game.map().convertY(y), 0);

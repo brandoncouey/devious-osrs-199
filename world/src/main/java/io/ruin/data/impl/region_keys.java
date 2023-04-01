@@ -42,26 +42,6 @@ public class region_keys extends DataFile {
             Region.LOADED[regionId] = region;
         }
 
-//        Map<Integer, int[]> key_map = Maps.newHashMap();
-//        JsonParser parser = new JsonParser();
-//        JsonArray array = (JsonArray) parser.parse(json);
-//        Gson builder = new GsonBuilder().create();
-//
-//        //Load keys into map
-//        for (int i = 0; i < array.size(); i++) {
-//            JsonObject jObject = (JsonObject) array.get(i);
-//            int regionId = jObject.get("mapsquare").getAsInt();
-//            int[] keys = builder.fromJson(jObject.getAsJsonArray("key"), int[].class);
-//            key_map.put(regionId, keys);
-//        }
-//        //Populate regions list
-//        for (int i = 0; i < Region.LOADED.length; i++) {
-//            Region region = new Region(i);
-//            if ((region.keys = key_map.get(i)) != null && !isValid(region.id, region.keys)) {
-//                region.keys = null; //Invalid keys
-//            }
-//            Region.LOADED[i] = region;
-//        }
         //Load each region
         for (Region region : Region.LOADED) {
             try {

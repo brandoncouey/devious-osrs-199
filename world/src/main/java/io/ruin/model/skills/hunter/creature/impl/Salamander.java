@@ -1,7 +1,6 @@
 package io.ruin.model.skills.hunter.creature.impl;
 
-import io.ruin.api.utils.Random;
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -71,14 +70,10 @@ public class Salamander extends Creature {
             event.delay(2);
             addLoot(player);
             player.getStats().addXp(StatType.Hunter, getCatchXP(), true);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             if (getCounter() != null)
                 getCounter().increment(player, 1);
             if (getCreatureName().matches("swamp lizard")) {
-                player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.CATCH_LIZARD);
+                player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.CATCH_SWAMP_LIZARD);
             }
             if (getCreatureName().matches("black salamander")) {
                 player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.BLACK_SALAMANDER);

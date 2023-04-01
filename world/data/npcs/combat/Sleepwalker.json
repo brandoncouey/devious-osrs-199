@@ -5,7 +5,7 @@
     //Combat Info
     "hitpoints": 10,
     "aggressive_level": -1,
-    "max_damage": 10,
+    "max_damage": 24,
     "attack_style": "STAB",
    //"pet": "",
     //Slayer Info

@@ -298,10 +298,6 @@ public class BirdHouseHandler {
                     player.getInventory().remove(birdHouseHandler.log, 1);
                     player.getInventory().add(birdHouseHandler.birdhouse, 1);
                     player.getStats().addXp(StatType.Crafting, birdHouseHandler.craftingExperience, false);
-                    if (io.ruin.api.utils.Random.rollDie(50, 1)) {
-                        player.getInventory().addOrDrop(6828, 1);
-                        player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                    }
                 });
             }
         }

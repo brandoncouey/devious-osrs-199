@@ -10,16 +10,9 @@ import io.ruin.model.activities.bosses.nex.Nex;
 import io.ruin.model.activities.tasks.DailyTaskKills;
 import io.ruin.model.activities.wilderness.Wilderness;
 import io.ruin.model.combat.*;
-import io.ruin.model.content.PvmPoints;
 import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
 import io.ruin.model.diaries.pvm.PvMDiaryEntry;
-import io.ruin.model.diaries.devious.DeviousDiaryEntry;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.player.DoubleDrops;
@@ -208,6 +201,14 @@ public abstract class NPCCombat extends Combat {
         return hit;
     }
 
+    protected Hit basicAttackIgnorePrayer(int animation, AttackStyle attackStyle, int maxDamage) {
+        npc.animate(animation);
+        defendAnim();
+        Hit hit = new Hit(npc, attackStyle, null).randDamage(maxDamage).ignorePrayer();
+        target.hit(hit);
+        return hit;
+    }
+
     protected Hit projectileAttack(Projectile projectile, int animation, AttackStyle attackStyle, int maxDamage) {
         return projectileAttack(projectile, animation, Graphic.builder().id(-1).build(), attackStyle, maxDamage);
     }
@@ -278,8 +279,10 @@ public abstract class NPCCombat extends Combat {
             if (info.death_ticks > 0)
                 event.delay(info.death_ticks);
             dropItems(killer);
-            if (Slayer.isTask(killer.player, npc) && killer.player.slayerTask != null) {
-                Slayer.onNPCKill(killer.player, npc);
+            if (killer != null && npc != null && killer.player != null) {
+                if (Slayer.isTask(killer.player, npc) && killer.player.slayerTask != null) {
+                    Slayer.onNPCKill(killer.player, npc);
+                }
             }
             if (npc.getDef().name.contains("Bloodveld")) {
                 if (killer.player.bloodveldKills.getKills() <= 1) {
@@ -382,46 +385,9 @@ public abstract class NPCCombat extends Combat {
                 }
             }
         }
-
-        /*
-         * Handle giving player vorkaths head after 50 kills.
-         */
         vorkathHead(dropPosition, pKiller);
-
-        /*
-         * Summer Loot
-         */
-        //SummerTokens.npcKill(pKiller, npc, dropPosition);
-        /*
-         * Catacombs loot
-         */
         KourendCatacombs.drop(pKiller, npc, dropPosition);
-
-        /*
-         * Roll for OSRS wilderness key
-         */
-/*        if(World.wildernessKeyEvent)
-            WildernessKey.rollForWildernessBossKill(pKiller, npc);*/
-
-        /*
-         * PvP Item loots
-         */
-//        Wilderness.rollPvPItemDrop(pKiller, npc, dropPosition);
-
-        /*
-         * Roll for wilderness clue key
-         */
-//        Wilderness.rollClueKeyDrop(pKiller, npc, dropPosition);
-
-        /*
-         * Blood Money
-         */
-        Wilderness.bloodMoneyDrop(pKiller, npc);
         Wilderness.bloodMoneyDropPVP(pKiller, npc);
-        /*
-         * Resource packs
-         */
-//        Wilderness.resourcePackWithBoss(pKiller, npc);
 
     }
 
@@ -490,7 +456,7 @@ public abstract class NPCCombat extends Combat {
             /*
              * Global Broadcast
              */
-            if (item.lootBroadcast != null || item.getDef().dropAnnounce) {
+            if (item.getDef().dropAnnounce) {
                 getRareDropAnnounce(pKiller, item);
             }
 
@@ -583,7 +549,6 @@ public abstract class NPCCombat extends Combat {
         } else {
             Broadcast.WORLD.sendNews(pKiller, message + " from " + npc.getDef().descriptiveName + " at KC: " + npc.getDef().killCounter.apply(pKiller).getKills());
         }
-        RareDropEmbedMessage.sendDiscordMessage(message, npc.getDef().descriptiveName, item.getId(), npc.getDef().killCounter.apply(pKiller).getKills());
     }
 
     private void getLocalAnnounce(Player pKiller, Item item) {
@@ -687,6 +652,10 @@ public abstract class NPCCombat extends Combat {
         }
     }
 
+    public void process() {
+
+    }
+
     protected Entity findAggressionTarget() {
         if (npc.localPlayers().isEmpty())
             return null;
@@ -787,16 +756,16 @@ public abstract class NPCCombat extends Combat {
 
     public void DiaryKCCheck(Player player, NPC npc) {
         if (npc.getId() == 2215) { //  bandos
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_BANDOS);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_BANDOS);
         }
         if (npc.getId() == 3129) { // zammy
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_ZAMORAK);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_ZAMORAK);
         }
         if (npc.getId() == 3162) { // kree
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_ARMADYL);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_ARMADYL);
         }
         if (npc.getId() == 2205) { // sara
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_SARADOMIN);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_SARADOMIN);
         }
         if (npc.getDef().name.equalsIgnoreCase("earth warrior") && player.getPosition().regionId() == 12444) { // sara
             player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.KILL_EARTH_WARRIOR);
@@ -811,18 +780,18 @@ public abstract class NPCCombat extends Combat {
             player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.KILL_BLOODVELD);
         }
         if (npc.getDef().name.equalsIgnoreCase("abyssal demon") && player.getPosition().regionId() == 13623) { //
-            player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.KILL_ABYSSAL_DEMON);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_ABYSSAL_DEMON);
         }
         if (npc.getDef().name.equalsIgnoreCase("mithril dragon") && player.getPosition().regionId() == 6995) { //
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.KILL_MITHRIL_DRAGON_KAN);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_MITHRIL_DRAGON_KAN);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("zulrah") || npc.getId() == 2042 || npc.getId() == 2043 || npc.getId() == 2044) { //
-            player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.KILL_ZULRAH);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_ZULRAH);
         }
 
         if (npc.getId() == 499) { //
-            player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.KILL_THERMO);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_THERMO);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("mammoth") && player.wildernessLevel > 0) { //
@@ -830,17 +799,17 @@ public abstract class NPCCombat extends Combat {
         }
 
         if (npc.getDef().name.equalsIgnoreCase("ghoul")) { //
-            player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.KILL_GHOUL);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_GHOUL);
         }
         if (npc.getDef().name.equalsIgnoreCase("cave horror") && (player.getPosition().regionId() == 14994 | player.getPosition().regionId() == 14995 | player.getPosition().regionId() == 15251)) { //
-            player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.KILL_CAVE_HORROR);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_CAVE_HORROR);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("banshee") && player.getPosition().regionId() == 13623) { //
-            player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.KILL_BANSHEE);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_BANSHEE);
         }
         if (npc.getDef().name.equalsIgnoreCase("cave bug")) { //
-            player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.SLAY_BUG);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.SLAY_BUG);
         }
         if (npc.getDef().name.equalsIgnoreCase("giant mole")) {
             player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.KILL_GIANT_MOLE);
@@ -885,11 +854,11 @@ public abstract class NPCCombat extends Combat {
             player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.VETION);
         }
         if (npc.getDef().name.equalsIgnoreCase("dagannoth supreme") || npc.getDef().name.equalsIgnoreCase("dagannoth rex") || npc.getDef().name.equalsIgnoreCase("dagannoth prime")) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.DAGANNOTH_KINGS);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.DAGANNOTH_KINGS);
         }
 
         if (npc.getDef().name.equalsIgnoreCase("brine rat")) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_BRINE_RAT);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_BRINE_RAT);
         }
         if (npc.getDef().name.equalsIgnoreCase("bronze dragon") && player.getPosition().regionId() == 10643) {
             player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_METAL_DRAGON);
@@ -908,13 +877,13 @@ public abstract class NPCCombat extends Combat {
         }
 
         if (npc.getDef().name.equalsIgnoreCase("Rock Crab") && (player.getPosition().regionId() == 10554 || player.getPosition().regionId() == 10553)) {
-            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.KILL_ROCK_CRAB);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_ROCK_CRAB);
         }
         if (npc.getDef().name.equalsIgnoreCase("black dragon") && player.getPosition().regionId() == 11161) {
             player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.KILL_BLACK_DRAGON);
         }
         if (npc.getDef().name.equalsIgnoreCase("dust devil") && player.getPosition().inBounds(new Bounds(3168, 9344, 3327, 9407, 0)) && player.getEquipment().wearsSlayerHelm()) {
-            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.KILL_DUST_DEVIL);
+            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.KILL_DUST_DEVIL);
         }
         if (npc.getDef().name.contains("Lizard") && player.getPosition().inBounds(new Bounds(3143, 2753, 3504, 3179, 0))) {
             player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.KILL_LIZARDS_DESERT);

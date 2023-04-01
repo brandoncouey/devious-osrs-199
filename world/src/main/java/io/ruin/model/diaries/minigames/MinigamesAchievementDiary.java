@@ -1,28 +1,41 @@
 package io.ruin.model.diaries.minigames;
 
 import io.ruin.model.diaries.StatefulAchievementDiary;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.Item;
+import io.ruin.utility.Misc;
+import io.ruin.utility.Utils;
 
-import java.util.EnumSet;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static io.ruin.model.diaries.minigames.MinigamesDiaryEntry.*;
 
 
 public final class MinigamesAchievementDiary extends StatefulAchievementDiary<MinigamesDiaryEntry> {
 
-    public static final Set<MinigamesDiaryEntry> EASY_TASKS = EnumSet.of(PASS_GATE, CUT_CACTUS, KILL_SNAKES_DESERT, KILL_LIZARDS_DESERT, MINE_CLAY);
+    public static final Set<MinigamesDiaryEntry> EASY_TASKS = EnumSet.of(
+            PASS_GATE, CUT_CACTUS, KILL_SNAKES_DESERT, KILL_LIZARDS_DESERT, MINE_CLAY
+    );
 
-    public static final Set<MinigamesDiaryEntry> MEDIUM_TASKS = EnumSet.of(KILL_BANDIT, PASS_GATE_ROBES, COMBAT_POTION, CHOP_TEAK, PICKPOCKET_THUG, ACTIVATE_ANCIENT, CAST_BARRAGE, KILL_VULTURE);
+    public static final Set<MinigamesDiaryEntry> MEDIUM_TASKS = EnumSet.of(
+            KILL_BANDIT, PASS_GATE_ROBES, COMBAT_POTION, CHOP_TEAK, PICKPOCKET_THUG, ACTIVATE_ANCIENT, CAST_BARRAGE, KILL_VULTURE
+    );
 
-    public static final Set<MinigamesDiaryEntry> HARD_TASKS = EnumSet.of(TRAVEL_POLLNIVNEACH, KILL_DUST_DEVIL);
+    public static final Set<MinigamesDiaryEntry> HARD_TASKS = EnumSet.of(
+            TRAVEL_POLLNIVNEACH
+    );
 
-    public static final Set<MinigamesDiaryEntry> ELITE_TASKS = EnumSet.of(PRAY_SOPHANEM);
+    public static final Set<MinigamesDiaryEntry> ELITE_TASKS = EnumSet.of(
+            PRAY_SOPHANEM
+    );
 
-    public static final String NAME = "Desert area";
+    public static final String NAME = "Minigames";
 
     public MinigamesAchievementDiary(Player player) {
         super(NAME, player);
@@ -54,53 +67,17 @@ public final class MinigamesAchievementDiary extends StatefulAchievementDiary<Mi
         return achievements.containsAll(EASY_TASKS);
     }
 
-    public boolean hasCompletedAchieve(String difficulty) {
-        for (MinigamesDiaryEntry value : values()) {
+    public boolean hasCompletedAchieve(String achievementName) {
+        for (MinigamesDiaryEntry value : MinigamesDiaryEntry.values()) {
             player.DiaryRecorder.forEach((s, integer) -> {
                 if (s.equalsIgnoreCase(value.toString()) && integer == 1000) {
                     achievements.add(MinigamesDiaryEntry.valueOf(s));
                 }
             });
         }
-        switch (difficulty) {
-            //EASY
-            case "PASS_GATE":
-                return achievements.contains(PASS_GATE);
-            case "CUT_CACTUS":
-                return achievements.contains(CUT_CACTUS);
-            case "KILL_SNAKES_DESERT":
-                return achievements.contains(KILL_SNAKES_DESERT);
-            case "KILL_LIZARDS_DESERT":
-                return achievements.contains(KILL_LIZARDS_DESERT);
-            case "MINE_CLAY":
-                return achievements.contains(MINE_CLAY);
-            //MEDIUM
-            case "KILL_BANDIT":
-                return achievements.contains(KILL_BANDIT);
-            case "PASS_GATE_ROBES":
-                return achievements.contains(PASS_GATE_ROBES);
-            case "COMBAT_POTION":
-                return achievements.contains(COMBAT_POTION);
-            case "CHOP_TEAK":
-                return achievements.contains(CHOP_TEAK);
-            case "PICKPOCKET_THUG":
-                return achievements.contains(PICKPOCKET_THUG);
-            case "ACTIVATE_ANCIENT":
-                return achievements.contains(ACTIVATE_ANCIENT);
-            case "CAST_BARRAGE":
-                return achievements.contains(CAST_BARRAGE);
-            case "KILL_VULTURE":
-                return achievements.contains(KILL_VULTURE);
-            //HARD
-            case "TRAVEL_POLLNIVNEACH":
-                return achievements.contains(TRAVEL_POLLNIVNEACH);
-            case "KILL_DUST_DEVIL":
-                return achievements.contains(KILL_DUST_DEVIL);
-            //ELITE
-            case "PRAY_SOPHANEM":
-                return achievements.contains(PRAY_SOPHANEM);
-        }
-        return achievements.containsAll(EASY_TASKS);
+        Optional<MinigamesDiaryEntry> achievement = MinigamesDiaryEntry.fromName(achievementName);
+        if (achievement.isEmpty()) return false;
+        return achievements.contains(achievement.get());
     }
 
     public boolean hasCompletedSome(String difficulty) {
@@ -178,22 +155,15 @@ public final class MinigamesAchievementDiary extends StatefulAchievementDiary<Mi
         }
     }
 
-    public void npcDialogue(String dialogue) {
-        //player.getDH().sendNpcChat1(dialogue, player.npcType, "Diary Manager");
-        // player.nextChat = -1;
-    }
-
     public void addReward(int reward, NPC npc) {
         player.getInventory().add(reward, 1);
         player.dialogue(new NPCDialogue(npc, "Here you go, upgraded and ready to be used!"));
-        //player.getDH().sendNpcChat1("Here you go, upgraded and ready to be used.", player.npcType, "Diary Manager");
     }
 
     public void upgradeReward(int reward, int upgrade, NPC npc) {
         player.getInventory().remove(reward, 1);
         player.getInventory().add(upgrade, 1);
         player.dialogue(new NPCDialogue(npc, "Here you go, upgraded and ready!"));
-        //player.getDH().sendNpcChat1("Here you go, upgraded and ready.", player.npcType, "Diary Manager");
     }
 
     public int getCount(int id) {
@@ -220,35 +190,178 @@ public final class MinigamesAchievementDiary extends StatefulAchievementDiary<Mi
         return ELITE_TASKS;
     }
 
-    public final void display() {
-        player.sendScroll("<col=8B0000>Desert Diary",
-                "<col=501061><strong><u>Easy",
-                hasCompletedAchieve("PASS_GATE") ? "<col=24d124>Pass through Shantay Pass.</col>" : "<col=911c25>Pass through Shantay Pass.",
-                hasCompletedAchieve("CUT_CACTUS") ? "<col=24d124>Fill a Waterskin by cutting a cactus.</col>" : "<col=911c25>Fill a Waterskin by cutting a cactus.",
-                hasCompletedAchieve("KILL_SNAKES_DESERT") ? "<col=24d124>Kill Snakes. (" + (getAbsoluteAchievementStage(KILL_SNAKES_DESERT)) + "/" + getMaximum(KILL_SNAKES_DESERT) + ")</col>" : "<col=911c25>Kill Snakes. (" + (getAbsoluteAchievementStage(KILL_SNAKES_DESERT)) + "/" + getMaximum(KILL_SNAKES_DESERT) + ")",
-                hasCompletedAchieve("KILL_LIZARDS_DESERT") ? "<col=24d124>Kill Lizards. (" + (getAbsoluteAchievementStage(KILL_LIZARDS_DESERT)) + "/" + getMaximum(KILL_LIZARDS_DESERT) + ")</col>" : "<col=911c25>Kill Lizards. (" + (getAbsoluteAchievementStage(KILL_LIZARDS_DESERT)) + "/" + getMaximum(KILL_LIZARDS_DESERT) + ")",
-                hasCompletedAchieve("MINE_CLAY") ? "<col=24d124>Mine a piece of Clay in the Northeast part of the desert.</col>" : "<col=911c25>Mine a piece of Clay in the Northeast part of the desert.",
-                "",
-                "<col=501061><strong><u>Medium",
-                hasCompletedAchieve("KILL_BANDIT") ? "<col=24d124>Kill Bandits. (" + (getAbsoluteAchievementStage(KILL_BANDIT)) + "/" + getMaximum(KILL_BANDIT) + ")</col>" : "<col=911c25>Kill Bandits. (" + (getAbsoluteAchievementStage(KILL_BANDIT)) + "/" + getMaximum(KILL_BANDIT) + ")",
-                hasCompletedAchieve("PASS_GATE_ROBES") ? "<col=24d124>Enter the Pyramid Plunder minigame.</col>" : "<col=911c25>Enter the Pyramid Plunder minigame.",
-                hasCompletedAchieve("COMBAT_POTION") ? "<col=24d124>Create a Combat Potion in the desert.</col>" : "<col=911c25>Create a Combat Potion in the desert.",
-                hasCompletedAchieve("CHOP_TEAK") ? "<col=24d124>Chop Teak Logs near Uzer. (" + (getAbsoluteAchievementStage(CHOP_TEAK)) + "/" + getMaximum(CHOP_TEAK) + ")</col>" : "<col=911c25>Chop Teak Logs near Uzer. (" + (getAbsoluteAchievementStage(CHOP_TEAK)) + "/" + getMaximum(CHOP_TEAK) + ")",
-                hasCompletedAchieve("PICKPOCKET_THUG") ? "<col=24d124>Pickpocket Menaphite Thugs. (" + (getAbsoluteAchievementStage(PICKPOCKET_THUG)) + "/" + getMaximum(PICKPOCKET_THUG) + ")</col>" : "<col=911c25>Pickpocket Menaphite Thugs. (" + (getAbsoluteAchievementStage(PICKPOCKET_THUG)) + "/" + getMaximum(PICKPOCKET_THUG) + ")",
-                hasCompletedAchieve("CAST_BARRAGE") ? "<col=24d124>Travel on the Magic Carpet to Nardah.</col>" : "<col=911c25>Travel on the Magic Carpet to Nardah.",
-                hasCompletedAchieve("KILL_VULTURE") ? "<col=24d124>Kill Vultures. (" + (getAbsoluteAchievementStage(KILL_VULTURE)) + "/" + getMaximum(KILL_VULTURE) + ")</col>" : "<col=911c25>Kill Vultures. (" + (getAbsoluteAchievementStage(KILL_VULTURE)) + "/" + getMaximum(KILL_VULTURE) + ")",
-                "",
-                "<col=501061><strong><u>Hard",
-                hasCompletedAchieve("TRAVEL_POLLNIVNEACH") ? "<col=24d124>Travel on the Magic Carpet to Pollnivneach.</col>" : "<col=911c25>Travel on the Magic Carpet to Pollnivneach.",
-                hasCompletedAchieve("KILL_DUST_DEVIL") ? "<col=24d124>Kill Dust Devils. (" + (getAbsoluteAchievementStage(KILL_DUST_DEVIL)) + "/" + getMaximum(KILL_DUST_DEVIL) + ")</col>" : "<col=911c25>Kill Dust Devils. (" + (getAbsoluteAchievementStage(KILL_DUST_DEVIL)) + "/" + getMaximum(KILL_DUST_DEVIL) + ")",
-                "",
-                "<col=501061><strong><u>Elite",
-                hasCompletedAchieve("PRAY_SOPHANEM") ? "<col=24d124>Restore 85 Prayer Points at the Sophanem Great Temple.</col>" : "<col=911c25>Restore 85 Prayer Points at the Sophanem Great Temple.");
+    public int getEasyAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        EASY_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getMediumAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        MEDIUM_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getHardAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        HARD_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getEliteAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        ELITE_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+
+    public final void display(String difficulty) {
+        player.currentAchievementDifficultyViewing = difficulty;
+        player.getPacketSender().sendString(1041, 14, "Minigames Achievement Diary");
+        for (int i = 0; i < 32; i++) {
+            player.getPacketSender().setHidden(1041, 74 + (i * 5), true);
+        }
+        AtomicInteger index = new AtomicInteger();
+
+        Set<MinigamesDiaryEntry> TASKS = EASY_TASKS;
+        List<Item> rewards = easyRewards;
+
+        switch (difficulty) {
+            case "MEDIUM":
+                TASKS = MEDIUM_TASKS;
+                rewards = mediumRewards;
+                spriteId = 3400;
+                break;
+            case "HARD":
+                TASKS = HARD_TASKS;
+                rewards = hardRewards;
+                spriteId = 3401;
+                break;
+            case "ELITE":
+                TASKS = ELITE_TASKS;
+                rewards = eliteRewards;
+                spriteId = 3402;
+                break;
+        }
+
+        int finalSpriteId = spriteId;
+        TASKS.forEach(e -> {
+            if (!hasCompletedAchieve(e.name())) {
+                player.getPacketSender().setSprite(1041, 76 + (index.get() * 5), finalSpriteId);
+                player.getPacketSender().sendString(1041, 77 + (index.get() * 5), Misc.formatStringFormal(e.getName()));
+                player.getPacketSender().sendString(1041, 78 + (index.get() * 5), e.getDescription().replace("%progress%", "<col=deb31f>" + Utils.formatMoneyString(player.getDiaryManager().getMinigamesDiary().getAchievementStage(e).isPresent() ? player.getDiaryManager().getMinigamesDiary().getAchievementStage(e).getAsInt() : 0)).replace("%amount%", Utils.formatMoneyString(e.getMaximumStages()) + "</col>"));
+                player.getPacketSender().setHidden(1041, 74 + (index.get() * 5), false);
+                index.getAndIncrement();
+            }
+        });
+        TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name())) {
+                player.getPacketSender().setSprite(1041, 76 + (index.get() * 5), finalSpriteId);
+                player.getPacketSender().sendString(1041, 77 + (index.get() * 5), "<col=404040><str>" + Misc.formatStringFormal(e.name()));
+                player.getPacketSender().sendString(1041, 78 + (index.get() * 5), e.getDescription().replace("%progress%", "<col=deb31f>" + Utils.formatMoneyString(player.getDiaryManager().getMinigamesDiary().getAchievementStage(e).isPresent() ? player.getDiaryManager().getMinigamesDiary().getAchievementStage(e).getAsInt() : 0)).replace("%amount%", Utils.formatMoneyString(e.getMaximumStages()) + "</col>"));
+                player.getPacketSender().setHidden(1041, 74 + (index.get() * 5), false);
+                index.getAndIncrement();
+            }
+        });
+        player.getPacketSender().sendString(1041, 24, getEasyAmountCompleted() + "/" + EASY_TASKS.size());
+        player.getPacketSender().sendString(1041, 37, getMediumAmountCompleted() + "/" + MEDIUM_TASKS.size());
+        player.getPacketSender().sendString(1041, 50, getHardAmountCompleted() + "/" + HARD_TASKS.size());
+        player.getPacketSender().sendString(1041, 63, getEliteAmountCompleted() + "/" + ELITE_TASKS.size());
+        int count = 0;
+        for (Item reward : rewards) {
+            player.getPacketSender().sendItems(1041, (248 + count), 0, reward);
+            count++;
+        }
+        player.openInterface(InterfaceType.MAIN, 1041);
     }
 
     @Override
-    public int getMaximum(MinigamesDiaryEntry achievement) {
+    public int getStage(MinigamesDiaryEntry achievement) {
         return achievement.getMaximumStages();
     }
 
+    public void claimRewards() {
+        if (!hasCompleted(player.currentAchievementDifficultyViewing)) {
+            player.sendMessage("You must complete all of the " + Misc.formatStringFormal(player.currentAchievementDifficultyViewing)  + " " + NAME + " achievement diaries to claim your rewards.");
+            return;
+        }
+        switch (player.currentAchievementDifficultyViewing) {
+            case "EASY":
+                for (Item item : easyRewards) {
+                    if (new HashSet<>(player.claimedAchievementRewards).containsAll(easyRewards)) {
+                        player.sendMessage("You've already claimed all of your rewards.");
+                        return;
+                    }
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "MEDIUM":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(mediumRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : mediumRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "HARD":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(hardRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : hardRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "ELITE":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(eliteRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : eliteRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+        }
+    }
 }

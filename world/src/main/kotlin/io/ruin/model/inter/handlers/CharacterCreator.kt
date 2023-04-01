@@ -18,7 +18,7 @@ object CharacterCreator {
                 h.simpleAction(value.childPrevious, value::previous)
             }
             var hairc = 0
-            h.actions[43] = DefaultAction { p, _, _, _ ->
+            h.actions[43] = DefaultAction { p, _, _, _, _ ->
                 if (hairc == 0) {
                     hairc = 25
                 }
@@ -26,7 +26,7 @@ object CharacterCreator {
                 p.appearance.update()
             }
 
-            h.actions[44] = DefaultAction { p, _, _, _ ->
+            h.actions[44] = DefaultAction { p, _, _, _, _ ->
                 if (hairc == 25) {
                     hairc = 0
                 }
@@ -36,7 +36,7 @@ object CharacterCreator {
             }
 
             var torsoc = 0
-            h.actions[47] = DefaultAction { p, _, _, _ ->
+            h.actions[47] = DefaultAction { p, _, _, _, _ ->
                 if (torsoc == 0) {
                     torsoc = 29
                 }
@@ -44,7 +44,7 @@ object CharacterCreator {
                 p.appearance.update()
             }
 
-            h.actions[48] = DefaultAction { p, _, _, _ ->
+            h.actions[48] = DefaultAction { p, _, _, _, _ ->
                 if (torsoc == 29) {
                     torsoc = 0
                 }
@@ -53,7 +53,7 @@ object CharacterCreator {
             }
 
             var legsc = 0
-            h.actions[51] = DefaultAction { p, _, _, _ ->
+            h.actions[51] = DefaultAction { p, _, _, _, _ ->
                 if (legsc == 0) {
                     legsc = 29
                 }
@@ -61,7 +61,7 @@ object CharacterCreator {
                 p.appearance.update()
             }
 
-            h.actions[52] = DefaultAction { p, _, _, _ ->
+            h.actions[52] = DefaultAction { p, _, _, _, _ ->
                 if (legsc == 29) {
                     legsc = 0
                 }
@@ -70,7 +70,7 @@ object CharacterCreator {
             }
 
             var feetc = 0
-            h.actions[55] = DefaultAction { p, _, _, _ ->
+            h.actions[55] = DefaultAction { p, _, _, _, _ ->
                 if (feetc == 0) {
                     feetc = 7
                 }
@@ -78,7 +78,7 @@ object CharacterCreator {
                 p.appearance.update()
             }
 
-            h.actions[56] = DefaultAction { p, _, _, _ ->
+            h.actions[56] = DefaultAction { p, _, _, _, _ ->
                 if (feetc == 7) {
                     feetc = 0
                 }
@@ -87,7 +87,7 @@ object CharacterCreator {
             }
 
             var skinc = 0
-            h.actions[59] = DefaultAction { p, _, _, _ ->
+            h.actions[59] = DefaultAction { p, _, _, _, _ ->
                 if (skinc == 0) {
                     skinc = 8
                 }
@@ -95,7 +95,7 @@ object CharacterCreator {
                 p.appearance.update()
             }
 
-            h.actions[60] = DefaultAction { p, _, _, _ ->
+            h.actions[60] = DefaultAction { p, _, _, _, _ ->
                 if (skinc == 8) {
                     skinc = 0
                 }
@@ -103,7 +103,7 @@ object CharacterCreator {
                 p.appearance.update()
             }
 
-            h.actions[65] = DefaultAction { p, _, _, _ ->
+            h.actions[65] = DefaultAction { p, _, _, _, _ ->
                 Config.GENDER_VAR.set(p, 0)
                 Config.GENDER.set(p, 0)
                 p.appearance.setGender(0)
@@ -111,7 +111,7 @@ object CharacterCreator {
                 p.appearance.update()
             }
 
-            h.actions[66] = DefaultAction { p, _, _, _ ->
+            h.actions[66] = DefaultAction { p, _, _, _, _ ->
                 Config.GENDER_VAR.set(p, 1)
                 Config.GENDER.set(p, 1)
                 p.appearance.setGender(1)
@@ -119,7 +119,7 @@ object CharacterCreator {
                 p.appearance.update()
             }
 
-            h.actions[68] = DefaultAction { p, _, _, _ ->
+            h.actions[68] = DefaultAction { p, _, _, _, _ ->
                 p.appearance.update()
                 p.closeInterfaces()
             }

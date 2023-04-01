@@ -3,7 +3,7 @@ package io.ruin.model.skills.agility.courses.rooftop;
 import io.ruin.api.utils.Random;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -223,14 +223,10 @@ public class AlKharidCourse {
             PlayerCounter.ALKHARID_ROOFTOP.increment(p, 1);
             AgilityPet.rollForPet(p, 13000);
             MarkOfGrace.rollMark(p, 20, MARK_SPAWNS);
-            p.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.AL_KHARID_ROOFTOP);
+            p.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.AL_KHARID_ROOFTOP);
             p.unlock();
             if(p.agilityContractType == AgilityContractType.AL_KHARID_ROOFTOP)
                 AgilityContract.advanceAgilityContract(p);
-            if (Random.rollDie(50, 1)) {
-                p.getInventory().addOrDrop(6828);
-                p.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
         }));
     }
 }

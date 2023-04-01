@@ -17,6 +17,9 @@ import lombok.extern.slf4j.Slf4j;
 
 import java.util.Map;
 
+import static io.ruin.cache.ItemID.BLOOD_MONEY;
+import static io.ruin.cache.ItemID.COINS_995;
+
 /**
  * Represents an item that is in an item container.
  */
@@ -466,6 +469,40 @@ public class Item {
 
     public boolean noteable() {
         return id != note().id;
+    }
+
+    public static long getWealth(int itemId) {
+        if (itemId == BLOOD_MONEY) {
+            return 1;
+        }
+        if (itemId == COINS_995) {
+            return 1;
+        }
+        ItemDef def = ItemDef.get(itemId);
+        if (def.isNote()) {
+            ItemDef unnoted;
+            unnoted = def.fromNote();
+            long price = unnoted.highAlchValue;
+            return price;
+        }
+        return def.highAlchValue;
+    }
+
+    public static long getWealth(Item item) {
+        if (item.getId() == BLOOD_MONEY) {
+            return item.getAmount();
+        }
+        if (item.getId() == COINS_995) {
+            return item.getAmount();
+        }
+        if (item.getDef().isNote()) {
+            ItemDef unnoted;
+            unnoted = item.getDef().fromNote();
+            long price = unnoted.highAlchValue;
+            return item.getAmount() * price;
+        }
+        long price = item.getDef().highAlchValue;
+        return item.getAmount() * price;
     }
 
 }

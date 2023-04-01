@@ -32,9 +32,6 @@ class EventBoss(val boss: EventBossType) : TimedEventImpl {
         npc.setIgnoreMulti(true)
         npc.combat.setAllowRespawn(false)
         globalEvent { Broadcast.WORLD_NOTIFICATION.sendNews(boss.message[random]) }
-        if (!OfflineMode.enabled) {
-            EventBossEmbedMessage.sendDiscordMessage(boss, boss.message[random])
-        }
         npc.deathStartListener = DeathListener { entity, _, killHit ->
             for (killer in npc.combat.killers.values) {
                 boss.lootTable.guaranteed.forEach {

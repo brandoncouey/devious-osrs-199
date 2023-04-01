@@ -22,7 +22,7 @@ public class TabMagic {
                 for (int i = 0; i < book.spells.length; i++)
                     h.actions[book.spellIdOffset + i] = createAction(book, book.spells[i]);
             }
-            h.actions[194] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[194] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (slot == 0)
                     Config.SHOW_COMBAT_SPELLS.toggle(player);
                 if (slot == 1)
@@ -47,7 +47,7 @@ public class TabMagic {
     private static InterfaceAction createAction(SpellBook book, Spell spell) {
         return new InterfaceAction() {
             @Override
-            public void handleClick(Player player, int option, int slot, int itemId) {
+            public void handleClick(Player player, int childId, int option, int slot, int itemId) {
                 if (spell.clickAction == null || !book.isActive(player) && !DuelArena.allowMagic(player))
                     return;
                 spell.clickAction.accept(player, option - 1);

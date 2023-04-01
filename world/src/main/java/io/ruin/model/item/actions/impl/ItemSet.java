@@ -77,7 +77,7 @@ public class ItemSet {
         }
         ItemSet[] sets = setList.toArray(new ItemSet[setList.size()]);
         InterfaceHandler.register(Interface.ITEM_SETS, h -> {
-            h.actions[2] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[2] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 if (slot < 0 || slot >= sets.length)
                     return;
                 if (option == 1) {
@@ -88,7 +88,7 @@ public class ItemSet {
             };
         });
         InterfaceHandler.register(Interface.ITEM_SETS_INV, h -> {
-            h.actions[0] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[0] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 Item item = p.getInventory().get(slot, itemId);
                 if (item == null)
                     return;

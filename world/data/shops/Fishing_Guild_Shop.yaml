@@ -28,6 +28,8 @@ defaultStock:
     amount: 100000
   - id: 301
     amount: 1000
+  - id: 311
+    amount: 1000
     price: 40
   - id: 11323
     amount: 1000000
@@ -41,13 +43,9 @@ defaultStock:
     amount: 100000
   - id: 11881
     amount: 100000
+  - id: 330
+    amount: 1000000
   - id: 362
-    amount: 1000000
-  - id: 380
-    amount: 1000000
-  - id: 7947
-    amount: 1000000
-  - id: 386
     amount: 1000000
   - id: 3157
     amount: 1000000

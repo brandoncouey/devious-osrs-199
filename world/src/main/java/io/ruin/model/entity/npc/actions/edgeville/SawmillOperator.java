@@ -1,7 +1,7 @@
 package io.ruin.model.entity.npc.actions.edgeville;
 
 import io.ruin.cache.ItemDef;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.Interface;
@@ -93,7 +93,7 @@ public class SawmillOperator {
 
                         player.getInventory().remove(plank.woodId, 1);
                         player.getInventory().add(plank.plankId, 1);
-                        player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.MAKE_PLANK);
+                        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.MAKE_PLANK);
                     }
                 });
             }

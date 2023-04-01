@@ -1,7 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.Interface;
@@ -135,10 +134,10 @@ public enum FairyRing { //todo add favorite option
                 player.dialogue(new PlayerDialogue("Wow, fairy magic sure is useful, I hardly moved at all!"));
 
             if (entry == FairyRing.MISCELLANIA) {
-                player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.TRAVEL_MISCELLANIA);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TRAVEL_MISCELLANIA);
             }
             if (entry == FairyRing.WIZARD_TOWER) {
-                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.FAIRY_RING);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.FAIRY_RING);
             }
             player.unlock();
         });

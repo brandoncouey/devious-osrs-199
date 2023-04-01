@@ -1,10 +1,17 @@
 package io.ruin.model.activities.raids.tob.dungeon.boss.vasilias;
 
+import io.ruin.api.utils.Random;
+import io.ruin.model.activities.ActivityTimer;
 import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.combat.HitType;
 import io.ruin.model.entity.npc.NPCCombat;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.DeathListener;
+import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Projectile;
+
+import static io.ruin.model.activities.raids.tob.dungeon.TheatreBoss.getHealthMultiplier;
 
 public class NylocasPrinkipas extends NPCCombat {
 
@@ -27,24 +34,30 @@ public class NylocasPrinkipas extends NPCCombat {
     private static final int MAGIC = 10802;
     private static final int RANGED = 10801;
 
+    private int tick;
+
     @Override
     public void init() {
         npc.setIgnoreMulti(true);
-        // npc.setMaxHp((int) ((double) npc.getMaxHp() * 0.75));
+        npc.setMaxHp((int) ((double) npc.getMaxHp() * 0.75));
         npc.startEvent(e -> {
             e.delay(50);
             if (npc.getHp() > 0) {
                 npc.hit(new Hit().fixedDamage(npc.getHp()));
-                npc.remove();
-                for (Player p : npc.localPlayers()) {
+                for (Player p : npc.localPlayers()){
                     if (p.getPosition().isWithinDistance(npc.getPosition(), 2)) {
-                        p.hit(new Hit().randDamage(5, 10));
+                        p.hit(new Hit().randDamage(5,10));
                     }
                 }
             }
         });
     }
 
+    @Override
+    public void process() {
+        super.process();
+
+    }
 
     @Override
     public void follow() {
@@ -66,12 +79,12 @@ public class NylocasPrinkipas extends NPCCombat {
     private void magicAttack() {
         npc.animate(ANIM);
         int delay = MAGIC_PROJECTILE.send(npc, target);
-        target.hit(new Hit(npc, AttackStyle.MAGIC).randDamage(30).clientDelay(delay));
+        target.hit(new Hit(npc, AttackStyle.MAGIC).randDamage(82).clientDelay(delay));
     }
 
     private void rangedAttack() {
         npc.animate(ANIM_RANGED);
         int delay = RANGED_PROJECTILE.send(npc, target);
-        target.hit(new Hit(npc, AttackStyle.RANGED).randDamage(35).clientDelay(delay));
+        target.hit(new Hit(npc, AttackStyle.RANGED).randDamage(47).clientDelay(delay));
     }
 }

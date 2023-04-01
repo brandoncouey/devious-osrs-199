@@ -32,7 +32,7 @@ public class RecruitingBoard {
     static {
         ObjectAction.register(29776, "read", (player, obj) -> displayRecruitingBoard(player));
         InterfaceHandler.register(Interface.RAIDING_RECRUITING_BOARD, h -> {
-            h.actions[3] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[3] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (slot == 0)
                     displayRecruitingBoard(player);
                 if (slot == 1)
@@ -41,7 +41,7 @@ public class RecruitingBoard {
                     else
                         displayParty(player, player.raidsParty);
             };
-            h.actions[14] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[14] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (slot < ADVERTISED_PARTIES.size() && ADVERTISED_PARTIES.get(slot) != null) {
                     Player partyLeader = ADVERTISED_PARTIES.get(slot);
                     displayParty(player, partyLeader.raidsParty);
@@ -49,7 +49,7 @@ public class RecruitingBoard {
             };
         });
         InterfaceHandler.register(Interface.RAIDING_PARTY, h -> {
-            h.actions[3] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[3] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (slot == 0)
                     if (player.raidsParty == null)
                         joinParty(player, player.viewingParty);

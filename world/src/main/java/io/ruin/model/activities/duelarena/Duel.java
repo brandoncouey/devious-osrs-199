@@ -25,8 +25,10 @@ import io.ruin.model.map.object.actions.ObjectAction;
 import io.ruin.model.stat.StatList;
 import io.ruin.model.stat.StatType;
 import io.ruin.services.Loggers;
+import io.ruin.utility.PlayerLog;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 
 import static io.ruin.cache.ItemID.BLOOD_MONEY;
@@ -40,6 +42,11 @@ public class Duel extends ItemContainer {
             {new Bounds(new Position(3371, 3232, 0), 4), new Bounds(new Position(3381, 3232, 0), 4)},
             {new Bounds(new Position(3340, 3213, 0), 4), new Bounds(new Position(3350, 3213, 0), 4)},
     };
+
+    private static final Bounds[][] EDGE_SPAWNS = {
+            { new Bounds(new Position(3045, 3482, 0), 4), new Bounds(new Position(3045, 3495, 0), 4), }
+    };
+
 
     private static final Bounds[][] OBSTACLE_SPAWNS = {
             {new Bounds(new Position(3366, 3251, 0), 1), new Bounds(new Position(3386, 3251, 0), 1)},
@@ -469,6 +476,10 @@ public class Duel extends ItemContainer {
     }
 
     private void toggle(DuelRule rule) {
+        if (rule == DuelRule.OBSTACLES && player.getPosition().getRegion().id == 12086) {
+            player.sendMessage("Obstacles are not supported at this duel arena.");
+            return;
+        }
         boolean toggleable = checkToggle(rule);
         if (!prepSettings())
             return;
@@ -611,6 +622,9 @@ public class Duel extends ItemContainer {
             spawnBounds = OBSTACLE_SPAWNS[Random.get(OBSTACLE_SPAWNS.length - 1)];
         else
             spawnBounds = REGULAR_SPAWNS[Random.get(REGULAR_SPAWNS.length - 1)];
+        if (player.getPosition().getRegion().id == 12086) {
+            spawnBounds = EDGE_SPAWNS[0];
+        }
         Bounds b1, b2;
         if (Random.rollDie(2)) {
             b1 = spawnBounds[0];
@@ -732,7 +746,11 @@ public class Duel extends ItemContainer {
             player.getCombat().setDead(false);
             player.animate(-1, 0);
         }
-        player.getMovement().teleport(3366, 3267, 0);
+        if (player.getPosition().getRegion().id == 12086) {
+            player.getMovement().teleport(3059, 3476, 0);
+        } else {
+            player.getMovement().teleport(3366, 3267, 0);
+        }
         player.getPacketSender().resetHintIcon(false);
         player.setAction(1, PlayerAction.CHALLENGE);
         player.getCombat().restore();
@@ -762,7 +780,7 @@ public class Duel extends ItemContainer {
             player.sendFilteredMessage("You have lost " + player.duelLosses + " duel" + (player.duelLosses == 1 ? "." : "s."));
             registerResults(player, targetDuel.player);
             if (itemCount > 0 || targetDuel.itemCount > 0)
-                Loggers.logDuelStake(player.getUserId(), player.getName(), player.getIp(), targetDuel.player.getUserId(), targetDuel.player.getName(), targetDuel.player.getIp(), items, targetDuel.items, player.getUserId());
+                PlayerLog.log(PlayerLog.Type.STAKED_DUEL, player.getName(), "Staked items [" + Arrays.toString(items) + "] \n to " + targetDuel.player.getName() + "for items [" + Arrays.toString(targetDuel.items) + "]");
         } else {
             for (Item item : getItems()) {
                 if (item != null)
@@ -906,7 +924,7 @@ public class Duel extends ItemContainer {
         });
 
         InterfaceHandler.register(Interface.DUEL_ARENA_STAGE_TWO, h -> {
-            h.actions[20] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[20] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 if (p.getGameMode().isIronMan()) {
                     p.sendMessage("As an ironman you cannot stake items.");
                     return;
@@ -922,11 +940,14 @@ public class Duel extends ItemContainer {
                     p.getInventory().add(995, 1);
 
                     int total = p.getDuel().count(995);
-                    if (total >= Integer.MAX_VALUE) return;
+                    if (total > Integer.MAX_VALUE)  {
+                        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=ff0000>Too High!");
+                        return;
+                    }
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 995, total + plat, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice(total + plat) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice(total + plat) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
                     return;
                 }
                 if (slot == 1) {
@@ -938,8 +959,8 @@ public class Duel extends ItemContainer {
                     if (total >= Integer.MAX_VALUE) return;
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 995, total + plat, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice(total + plat) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice(total + plat) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
                     return;
                 }
                 if (slot == 2) {
@@ -951,8 +972,8 @@ public class Duel extends ItemContainer {
                     if (total >= Integer.MAX_VALUE) return;
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 995, total + plat, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice(total + plat) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice(total + plat) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
                     return;
                 }
                 if (slot == 3) {
@@ -964,8 +985,8 @@ public class Duel extends ItemContainer {
                     if (total >= Integer.MAX_VALUE) return;
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 995, total + plat, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice(total + plat) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice(total + plat) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
                     return;
                 }
                 if (slot == 4) {
@@ -974,36 +995,43 @@ public class Duel extends ItemContainer {
                     p.getInventory().remove(995, 10_000_000);
 
                     int total = p.getDuel().count(995);
-                    if (total >= Integer.MAX_VALUE) return;
+                    if (total > Integer.MAX_VALUE)  {
+                        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=ff0000>Too High!");
+                        return;
+                    }
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 995, total + plat, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice(total + plat) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice(total + plat) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
                     return;
                 }
                 if (slot == 5) {
-                    p.integerInput("How much would you like to stake.", value -> {
+                    p.integerInput("How much would you like to stake?", value -> {
+                        int previousAmount = p.getDuel().count(995);
+                        p.getInventory().add(995, p.getDuel().count(995));
+                        p.getDuel().remove(995, p.getDuel().count(995));
                         if (value > p.getInventory().count(995)) {
+                            p.getInventory().remove(995, previousAmount);
+                            p.getDuel().add(995, previousAmount);
                             p.sendMessage("You can't stake that amount");
                             return;
                         }
                         if (value == 0) {
-                            p.getInventory().add(995, p.getDuel().count(13204));
-                            p.getDuel().remove(995, p.getDuel().count(13204));
-                        } else {
-                            p.getDuel().add(995, value);
-                            p.getInventory().remove(995, value);
+                            p.getInventory().add(995, p.getDuel().count(995));
+                            p.getDuel().remove(995, p.getDuel().count(995));
+                            return;
                         }
+                        p.getInventory().remove(995, value);
+                        p.getDuel().add(995, value);
 
                         int total = p.getDuel().count(995);
-
                         p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 995, total + plat, 31522896, 31522906, 31522910);
-                        p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice(total + plat) + " GP");
-                        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice(total + plat) + " GP");
+                        p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
+                        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + plat) + formatPrice(total + plat) + " GP");
                     });
                 }
             };
-            h.actions[19] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[19] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 if (p.getGameMode().isIronMan()) {
                     p.sendMessage("As an ironman you cannot stake items.");
                     return;
@@ -1022,8 +1050,8 @@ public class Duel extends ItemContainer {
                     if (total >= Integer.MAX_VALUE) return;
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 13204, (total * 1000) + coins, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
                     return;
                 }
                 if (slot == 1) {
@@ -1035,8 +1063,8 @@ public class Duel extends ItemContainer {
                     if (total >= Integer.MAX_VALUE) return;
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 13204, (total * 1000) + coins, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
                     return;
                 }
                 if (slot == 2) {
@@ -1045,11 +1073,14 @@ public class Duel extends ItemContainer {
                     p.getInventory().remove(13204, 10);
 
                     int total = p.getDuel().count(13204);
-                    if (total >= Integer.MAX_VALUE) return;
+                    if (total > Integer.MAX_VALUE)  {
+                        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=ff0000>Too High!");
+                        return;
+                    }
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 13204, (total * 1000) + coins, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
                     return;
                 }
                 if (slot == 3) {
@@ -1061,8 +1092,8 @@ public class Duel extends ItemContainer {
                     if (total >= Integer.MAX_VALUE) return;
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 13204, (total * 1000) + coins, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
                     return;
                 }
                 if (slot == 4) {
@@ -1074,13 +1105,18 @@ public class Duel extends ItemContainer {
                     if (total >= Integer.MAX_VALUE) return;
 
                     p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 13204, (total * 1000) + coins, 31522896, 31522906, 31522910);
-                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
-                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
+                    p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
                     return;
                 }
                 if (slot == 5) {
-                    p.integerInput("How much would you like to stake.", value -> {
+                    p.integerInput("How much would you like to stake?", value -> {
+                        int previousAmount = p.getDuel().count(13204);
+                        p.getInventory().add(13204, p.getDuel().count(13204));
+                        p.getDuel().remove(13204, p.getDuel().count(13204));
                         if (value > p.getInventory().count(13204)) {
+                            p.getInventory().remove(13204, previousAmount);
+                            p.getDuel().add(13204, previousAmount);
                             p.sendMessage("You can't stake that amount");
                             return;
                         }
@@ -1089,15 +1125,18 @@ public class Duel extends ItemContainer {
                             p.getDuel().remove(13204, p.getDuel().count(13204));
                             return;
                         }
-                        p.getDuel().add(13204, value);
                         p.getInventory().remove(13204, value);
+                        p.getDuel().add(13204, value);
 
                         int total = p.getDuel().count(13204);
-                        if (total >= Integer.MAX_VALUE) return;
+                        if (total > Integer.MAX_VALUE)  {
+                            p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=ff0000>Too High!");
+                            return;
+                        }
 
                         p.getDuel().targetDuel.player.getPacketSender().sendClientScript(1450, 31522846, 13204, (total * 1000) + coins, 31522896, 31522906, 31522910);
-                        p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
-                        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, "<col=00ff00>" + formatPrice((total * 1000L) + coins) + " GP");
+                        p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 27, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
+                        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_TWO, 17, getColorForAmount(total + 1000) + formatPrice((total * 1000L) + coins) + " GP");
                     });
                 }
             };
@@ -1158,18 +1197,26 @@ public class Duel extends ItemContainer {
     public static void sendStageThreeStrings(Player p) {
         int coins = p.getDuel().getAmount(995);
         int amount = p.getDuel().getAmount(13204);
-        p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_THREE, 86, "<col=00ff00>" + formatPrice(coins) + " GP");
-        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_THREE, 95, "<col=00ff00>" + formatPrice(coins) + " GP");
-        p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_THREE, 81, "<col=00ff00>" + formatPrice(amount * 1000L) + " GP");
-        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_THREE, 90, "<col=00ff00>" + formatPrice(amount * 1000L) + " GP");
+        p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_THREE, 86, getColorForAmount(coins) + formatPrice(coins) + " GP");
+        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_THREE, 95, getColorForAmount(coins) + formatPrice(coins) + " GP");
+        p.getDuel().targetDuel.player.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_THREE, 81, getColorForAmount(amount * 1000) + formatPrice(amount * 1000L) + " GP");
+        p.getPacketSender().sendString(Interface.DUEL_ARENA_STAGE_THREE, 90, getColorForAmount(amount * 1000) + formatPrice(amount * 1000L) + " GP");
+    }
+
+    public static String getColorForAmount(int amount) {
+        if (amount >= 10000000)
+            return "<col=00ff00>";
+        else if (amount >= 100000)
+            return "<col=ffffff>";
+        return "<col=deb61f>";
     }
 
     public static String formatPrice(long price) {
-        if (price > 999_999_99) {
-            return NumberUtils.formatNumber(price / 100_000_000) + "B";
-        } else if (price > 9_999_999) {
+        if (price >= 1_000_000_000) {
+            return NumberUtils.formatNumber(price / 1_000_000_000) + "B";
+        } else if (price >= 10_000_000) {
             return NumberUtils.formatNumber(price / 1_000_000) + "M";
-        } else if (price > 99_999) {
+        } else if (price >= 10_000) {
             return NumberUtils.formatNumber(price / 1_000) + "K";
         }
 

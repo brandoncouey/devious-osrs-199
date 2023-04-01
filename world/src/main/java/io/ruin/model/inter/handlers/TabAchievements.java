@@ -10,47 +10,30 @@ public class TabAchievements {
 
     static {
         InterfaceHandler.register(Interface.ACHIEVEMENT, h -> {
-            h.actions[2] = (DefaultAction) (player, option, slot, itemId) -> handleSlots(player, slot);
+            h.actions[2] = (DefaultAction) (player, childId, option, slot, itemId) -> handleSlots(player, slot);
         });
     }
 
     public static void handleSlots(Player player, int slot) {
         switch (slot) {
-            case 0:
-                player.getDiaryManager().getPvmDiary().display();
-                return;
             case 1:
-                player.getDiaryManager().getPvpDiary().display();
-                return;
-            case 2:
-                player.getDiaryManager().getSkillingDiary().display();
-                return;
-            case 3:
-                player.getDiaryManager().getFremennikDiary().display();
+                player.getDiaryManager().getDeviousDiary().display("EASY");
                 return;
             case 4:
-                player.getDiaryManager().getKandarinDiary().display();
+                player.getDiaryManager().getMinigamesDiary().display("EASY");
+                return;
+            case 2:
+                player.getDiaryManager().getPvmDiary().display("EASY");
+                return;
+            case 3:
+                player.getDiaryManager().getPvpDiary().display("EASY");
                 return;
             case 5:
-                player.getDiaryManager().getMinigamesDiary().display();
+                player.getDiaryManager().getSkillingDiary().display("EASY");
                 return;
-            case 6:
-                player.getDiaryManager().getLumbridgeDraynorDiary().display();
-                return;
-            case 7:
-                player.getDiaryManager().getMorytaniaDiary().display();
-                return;
-            case 8:
-                player.getDiaryManager().getVarrockDiary().display();
-                return;
-            case 9:
-                player.getDiaryManager().getWildernessDiary().display();
-                return;
-            case 10:
-                player.getDiaryManager().getWesternDiary().display();
-                return;
-            case 11:
-                player.getDiaryManager().getDeviousDiary().display();
+            case 0:
+                player.getDiaryManager().getWildernessDiary().display("EASY");
         }
+        player.currentAchievementViewing = slot;
     }
 }

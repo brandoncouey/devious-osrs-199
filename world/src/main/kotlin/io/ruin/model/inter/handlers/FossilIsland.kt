@@ -26,18 +26,18 @@ object FossilIsland {
 
         InterfaceHandler.register(INTERFACE_ID) { h ->
 
-            h.actions[4] = DefaultAction { p, _, _, _ ->
+            h.actions[4] = DefaultAction { p, _, _, _, _ ->
                 //withdraw all
                 p.sendMessage("You have to left click the item to withdraw the item!")
             }
 
-            h.actions[6] = DefaultAction { p, _, _, _ ->
+            h.actions[6] = DefaultAction { p, _, _, _, _ ->
                 //deposit all
                 FossilIslandStorage.fossilstorage(p)
             }
 
 
-            h.actions[11] = DefaultAction { p, _, slot, _ ->
+            h.actions[11] = DefaultAction { p, _, _, slot, _ ->
                 when (slot) {
                     0 -> {
                         FossilIslandStorage.withdrawStore(p, 21570)

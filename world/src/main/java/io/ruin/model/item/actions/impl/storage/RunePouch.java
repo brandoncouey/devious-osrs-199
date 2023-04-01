@@ -138,7 +138,7 @@ public class RunePouch extends ItemContainer {
         for (Rune rune : Rune.values())
             ItemItemAction.register(RUNE_POUCH, rune.getId(), (player, pouchItem, runeItem) -> player.getRunePouch().deposit(runeItem, runeItem.getAmount()));
         InterfaceHandler.register(Interface.RUNE_POUCH, h -> {
-            h.actions[8] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[8] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 Item item = p.getInventory().get(slot, itemId);
                 if (item == null)
                     return;
@@ -156,7 +156,7 @@ public class RunePouch extends ItemContainer {
             h.actions[4] = new InterfaceAction() {
 
                 @Override
-                public void handleClick(Player p, int option, int slot, int itemId) {
+                public void handleClick(Player p, int childId, int option, int slot, int itemId) {
                     Item item = p.getRunePouch().get(slot, itemId);
                     if (item == null)
                         return;

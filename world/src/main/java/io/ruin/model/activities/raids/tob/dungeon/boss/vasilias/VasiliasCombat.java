@@ -5,12 +5,19 @@ import io.ruin.model.combat.AttackStyle;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
+import io.ruin.model.entity.npc.actions.edgeville.Nurse;
+import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
+import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Projectile;
+import io.ruin.model.skills.prayer.Prayer;
+import lombok.Getter;
 
 public class VasiliasCombat extends NPCCombat {
+
+    public enum AttackPhases { MAGIC, MELEE, RANGE };
 
     private static final int START_HEIGHT = 25;
     private static final int END_HEIGHT = 30;
@@ -36,9 +43,17 @@ public class VasiliasCombat extends NPCCombat {
     private int spawn = 0;
     private boolean sleep = false;
 
+    @Getter private AttackPhases phase = AttackPhases.MAGIC;
+
+    private int tick;
+
     @Override
     public void init() {
-        //  npc.setMaxHp((int) ((double) npc.getMaxHp() * 0.75));
+        npc.deathEndListener = (DeathListener.Simple) () -> {
+            for (Player p : npc.getPosition().getRegion().players) {
+                Nurse.restoreOnly(p);
+            }
+        };
         npc.hitListener = new HitListener().postDamage(hit -> {
             double ratio = ((double) npc.getHp() / npc.getMaxHp());
             if (ratio <= .70 && stage == 0) {
@@ -72,6 +87,23 @@ public class VasiliasCombat extends NPCCombat {
         });
     }
 
+    @Override
+    public void process() {
+        if (tick == 10) {
+            if (phase == AttackPhases.MAGIC) {
+                phase = AttackPhases.MELEE;
+                npc.transform(MELEE);
+            } else if (phase == AttackPhases.MELEE) {
+                phase = AttackPhases.RANGE;
+                npc.transform(RANGED);
+            } else if (phase == AttackPhases.RANGE) {
+                phase = AttackPhases.MAGIC;
+                npc.transform(MAGIC);
+            }
+            tick = 0;
+        }
+        tick++;
+    }
 
     @Override
     public void follow() {
@@ -80,11 +112,11 @@ public class VasiliasCombat extends NPCCombat {
 
     @Override
     public boolean attack() {
-        if (npc.getId() == MELEE) {
-            basicAttack(8004, AttackStyle.CRUSH, info.max_damage);
-        } else if (npc.getId() == RANGED) {
+        if (phase == AttackPhases.MELEE) {
+            basicAttackIgnorePrayer(8004, AttackStyle.STAB, (target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MELEE) ? 70 : 17));
+        } else if (phase == AttackPhases.RANGE) {
             rangedAttack();
-        } else if (npc.getId() == MAGIC) {
+        } else if (phase == AttackPhases.MAGIC) {
             magicAttack();
         }
         return true;
@@ -93,13 +125,21 @@ public class VasiliasCombat extends NPCCombat {
     private void magicAttack() {
         npc.animate(ANIM);
         int delay = MAGIC_PROJECTILE.send(npc, target);
-        target.hit(new Hit(npc, AttackStyle.MAGIC).randDamage(25).clientDelay(delay));
+        if (target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MAGIC)) {
+            target.hit(new Hit(npc, AttackStyle.MAGIC).randDamage(70).clientDelay(delay).ignorePrayer());
+        } else {
+            target.hit(new Hit(npc, AttackStyle.MAGIC).randDamage(17).clientDelay(delay).ignorePrayer());
+        }
     }
 
     private void rangedAttack() {
         npc.animate(ANIM_RANGED);
         int delay = RANGED_PROJECTILE.send(npc, target);
-        target.hit(new Hit(npc, AttackStyle.RANGED).randDamage(25).clientDelay(delay));
+        if (target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MISSILES)) {
+            target.hit(new Hit(npc, AttackStyle.RANGED).randDamage(70).clientDelay(delay).ignorePrayer());
+        } else {
+            target.hit(new Hit(npc, AttackStyle.RANGED).randDamage(17).clientDelay(delay).ignorePrayer());
+        }
     }
 
     public Position getAbsolute(int localX, int localY) {

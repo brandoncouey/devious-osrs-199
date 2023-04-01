@@ -52,11 +52,10 @@ public class MaxCape {
     }
 
     public static boolean doneAchieves(Player player) {
-        return player.getDiaryManager().getDeviousDiary().hasDoneAll() && player.getDiaryManager().getPvpDiary().hasDoneAll()
-                && player.getDiaryManager().getWesternDiary().hasDoneAll() && player.getDiaryManager().getSkillingDiary().hasDoneAll()
-                && player.getDiaryManager().getFremennikDiary().hasDoneAll() && player.getDiaryManager().getKandarinDiary().hasDoneAll()
-               && player.getDiaryManager().getPvmDiary().hasDoneAll() && player.getDiaryManager().getLumbridgeDraynorDiary().hasDoneAll()
-                && player.getDiaryManager().getMorytaniaDiary().hasDoneAll() && player.getDiaryManager().getVarrockDiary().hasDoneAll()
+        return player.getDiaryManager().getDeviousDiary().hasDoneAll()
+                && player.getDiaryManager().getPvpDiary().hasDoneAll()
+                && player.getDiaryManager().getSkillingDiary().hasDoneAll()
+                && player.getDiaryManager().getPvmDiary().hasDoneAll()
                 && player.getDiaryManager().getWildernessDiary().hasDoneAll();
 
     }

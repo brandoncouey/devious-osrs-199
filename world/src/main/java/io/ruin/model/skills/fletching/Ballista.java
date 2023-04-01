@@ -33,10 +33,6 @@ public class Ballista {
             player.getInventory().add(result, 1);
             player.animate(7172);
             player.getStats().addXp(StatType.Fletching, exp, true);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             event.delay(4);
             player.resetAnimation();
         });

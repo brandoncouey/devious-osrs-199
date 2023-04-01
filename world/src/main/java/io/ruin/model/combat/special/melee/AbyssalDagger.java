@@ -39,7 +39,7 @@ public class AbyssalDagger implements Special {
 
     @Override
     public int getDrainAmount() {
-        return 50;
+        return 25;
     }
 
 }

@@ -17,8 +17,11 @@ public class TeleportConstants {
     public static final Position LUMBRIDGE = new Position(3222, 3218, 0);
     public static final Position HOME = new Position(3221, 3219, 0);
     public static final Position EDGEVILLE = new Position(3088, 3501, 0);
+    public static final Position EDGEVILLE_MONESTARY = new Position(3052, 3491, 0);
     public static final Position VARROCK = new Position(3211, 3424, 0);
     public static final Position FALADOR = new Position(2964, 3378, 0);
+    public static final Position TAVERLY = new Position(2934, 3450, 0);
+    public static final Position REMINGTON = new Position(2954, 3224, 0);
     public static final Position CAMELOT = new Position(2757, 3478, 0);
     public static final Position CATHERBY = new Position(2808, 3436, 0);
     public static final Position SEERS = new Position(2725, 3485, 0);
@@ -97,7 +100,7 @@ public class TeleportConstants {
     public static final Position GRAND_EXCHANGE_TREE = new Position(3185, 3508, 0);
     public static final Position GNOME_STRONGHOLD = new Position(2461, 3444, 0);
     public static final Position KHAZARD = new Position(2555, 3259, 0);
-    public static final Position FELDIP_HILLS = new Position(2488, 2850, 0);
+    public static final Position FELDIP_HILLS = new Position(2571, 2956, 0);
 
     /*Ornate Jewelry box*/
     public static final Position DUEL_ARENA = new Position(3367, 3266, 0);
@@ -141,6 +144,7 @@ public class TeleportConstants {
 
 
     public static final Position KOUREND_ANGLERS = new Position(1829, 3782, 0);
+    public static final Position BLACK_CHINS = new Position(3148, 3796, 0);
     public static final Position KARAMJA_DOCKS = new Position(2925, 3177, 0);
     public static final Position BARB_FISHING = new Position(2503, 3488, 0);
     public static final Position FISHING_COLONY = new Position(2341, 3666, 0);
@@ -191,7 +195,7 @@ public class TeleportConstants {
     public static final Position GODWARS_DUNGEON = new Position(2915, 3746, 0);
     public static final Position EDGEVILLE_DUNGEON = new Position(3096, 9867, 0);
     public static final Position ROCK_CRABS = new Position(2674, 3710, 0);
-    public static final Position COWS = new Position(1744, 3485, 0);
+    public static final Position COWS = new Position(3254, 3267, 0);
     public static final Position EXPERIMENTS = new Position(3512, 9957, 0);
     public static final Position SAND_CRABS = new Position(1719, 3465, 0);
     public static final Position APE_ATOLL = new Position(2764, 2768, 0);

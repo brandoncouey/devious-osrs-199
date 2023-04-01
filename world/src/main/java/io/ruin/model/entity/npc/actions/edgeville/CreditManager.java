@@ -22,19 +22,19 @@ public class CreditManager {
      * Misc
      */
     public static SecondaryGroup getGroup(Player player) {
-        if (player.storeAmountSpent >= 1000)
+        if (player.amountDonated >= 1000)
             return SecondaryGroup.DIAMOND;
-        if (player.storeAmountSpent >= 500)
+        if (player.amountDonated >= 500)
             return SecondaryGroup.RUBY;
-        if (player.storeAmountSpent >= 250)
+        if (player.amountDonated >= 250)
             return SecondaryGroup.EMERALD;
-        if (player.storeAmountSpent >= 150)
+        if (player.amountDonated >= 150)
             return SecondaryGroup.SAPPHIRE;
-        if (player.storeAmountSpent >= 100)
+        if (player.amountDonated >= 100)
             return SecondaryGroup.RED_TOPAZ;
-        if (player.storeAmountSpent >= 50)
+        if (player.amountDonated >= 50)
             return SecondaryGroup.JADE;
-        if (player.storeAmountSpent >= 10)
+        if (player.amountDonated >= 10)
             return SecondaryGroup.OPAL;
         return null;
     }

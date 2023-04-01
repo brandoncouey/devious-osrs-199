@@ -1,7 +1,7 @@
 package io.ruin.model.reputation;
 
 
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -19,7 +19,7 @@ public class AuburyRep {
         NPCAction.register(AUBURY, "teleport", ((player, npc) -> {
             player.sendMessage("Aubury teleports you to the essence mine.");
             player.getMovement().teleport(2910, 4830, 0);
-            player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.TELEPORT_ESSENCE_VAR);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.TELEPORT_ESSENCE_VAR);
         }));
     }
 

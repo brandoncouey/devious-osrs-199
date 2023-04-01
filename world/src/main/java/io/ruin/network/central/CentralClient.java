@@ -19,6 +19,7 @@ import io.ruin.model.entity.player.Player;
 import io.ruin.process.task.TaskWorker;
 import io.ruin.utility.Broadcast;
 import kilim.Task;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 
@@ -37,7 +38,7 @@ public class CentralClient extends CentralSender {
         bootstrap.channel(NioSocketChannel.class);
         bootstrap.handler(new ChannelInitializer<SocketChannel>() {
             @Override
-            public void initChannel(SocketChannel ch) throws Exception {
+            public void initChannel(@NotNull SocketChannel ch) {
                 ChannelPipeline pipeline = ch.pipeline();
                 pipeline.addLast("exception_handler", new ExceptionHandler());
             }

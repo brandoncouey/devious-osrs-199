@@ -17,6 +17,7 @@ import io.ruin.services.Loggers;
 import io.ruin.services.discord.impl.KillingSpreeEmbedMessage;
 import io.ruin.utility.Broadcast;
 import io.ruin.utility.Misc;
+import io.ruin.utility.PlayerLog;
 
 public class Killer {
     public static final Bounds EDGEVILLE_FARM_SKIP_BOUNDS = new Bounds(3034, 3523, 3125, 3574, 0);
@@ -53,19 +54,20 @@ public class Killer {
          */
         Config.PVP_KILLS.increment(player, 1);
         int killerSpree = ++player.currentKillSpree;
+        PlayerLog.log(PlayerLog.Type.KILLED_PLAYER, player.getName(), "IP=" + player.getIp() + ", TargetIP=" + pKilled.getIp() + ", Killing Spree=" + killerSpree + " Time=" + Misc.formatTime(System.currentTimeMillis()));
         if (killerSpree > player.highestKillSpree)
             player.highestKillSpree = killerSpree;
         if (killerSpree == 10)
-            player.getInventory().add(13307, 250000);
+            player.getInventory().add(13307, Misc.random(5000, 15000));
         player.sendMessage("You are currently on a killing spree of " + killerSpree + "!");
         if (killerSpree == 20)
-            player.getInventory().add(13307, 500000);
+            player.getInventory().add(13307, Misc.random(15000, 25000));
         player.sendMessage("You are currently on a killing spree of " + killerSpree + "!");
         if (killerSpree == 30)
-            player.getInventory().add(13307, 750000);
+            player.getInventory().add(13307, Misc.random(25000, 35000));
         player.sendMessage("You are currently on a killing spree of " + killerSpree + "!");
         if (killerSpree == 40)
-            player.getInventory().add(13307, 1000000);
+            player.getInventory().add(13307, Misc.random(35000, 45000));
         player.sendMessage("You are currently on a killing spree of " + killerSpree + "!");
         if (!player.isADonator()) {
             if (killerSpree > 1)
@@ -74,14 +76,12 @@ public class Killer {
                 String spreeMessage = player.getName() + " is on a killing spree of " + killerSpree + ". Kill "
                         + (player.getAppearance().isMale() ? "him" : "her") + " for a bounty reward of " + (nondonator + bountyValue(killerSpree)) + " Blood money!";
                 Broadcast.WORLD.sendPlain(KillingSpree.imgTag(killerSpree) + Color.DARK_GREEN.tag() + " " + spreeMessage);
-                KillingSpreeEmbedMessage.sendDiscordMessage(spreeMessage);
             } else if (player.isADonator()) {
                 // player.sendMessage("You are currently on a killing spree of " + killerSpree + "!");
                 if (killerSpree % 5 == 0 || killerSpree > 15) {
                     String spreeMessage = player.getName() + " is on a killing spree of " + killerSpree + ". Kill "
                             + (player.getAppearance().isMale() ? "him" : "her") + " for a bounty reward of " + (donator + bountyValue(killerSpree)) + " Blood money!";
                     Broadcast.WORLD.sendPlain(KillingSpree.imgTag(killerSpree) + Color.DARK_GREEN.tag() + " " + spreeMessage);
-                    KillingSpreeEmbedMessage.sendDiscordMessage(spreeMessage);
                 }
                 if (player.getCombat().isSkulled()) //Overheads start at sprees of 2, so this fits here.
                     player.getAppearance().setSkullIcon(KillingSpree.overheadId(player));
@@ -94,7 +94,6 @@ public class Killer {
         if (targetSpree >= 5) {
             String shutdownMessage2 = KillingSpree.shutdownMessage(player.getName(), pKilled.getName(), targetSpree);
             Broadcast.WORLD.sendPlain("<img=36> " + Color.DARK_GREEN.tag() + shutdownMessage2);
-//            ShutdownEmbedMessage.sendDiscordMessage(shutdownMessage);
             if (targetSpree > player.highestShutdown)
                 player.highestShutdown = targetSpree;
         }
@@ -131,49 +130,10 @@ public class Killer {
             bmAmount += 250;
         }
 
-        /**
-         * Check for staff bounty event
-         */
-        if (StaffBounty.EVENT_ACTIVE) {
-            if (pKilled.isSupport()) {
-                bmAmount += StaffBounty.SUPPORT_KILL_VALUE;
-                StaffBounty.incrementStaffBounty("support_deaths");
-                Broadcast.WORLD.sendNews(Icon.WILDERNESS, "Staff Bounty", pKilled.getName() + " has been slain! " + player.getName() +
-                        " has claimed " + StaffBounty.SUPPORT_KILL_VALUE + " for their bounty! The hunt continues...");
-
-            }
-            if (pKilled.isModerator()) {
-                bmAmount += StaffBounty.MODERATOR_KILL_VALUE;
-                StaffBounty.incrementStaffBounty("moderator_deaths");
-                Broadcast.WORLD.sendNews(Icon.WILDERNESS, "Staff Bounty", pKilled.getName() + " has been slain! " + player.getName() +
-                        " has claimed " + StaffBounty.MODERATOR_KILL_VALUE + " for their bounty! The hunt continues...");
-            }
-            if (pKilled.isAdmin()) {
-                bmAmount += StaffBounty.ADMINISTRATOR_KILL_VALUE;
-                StaffBounty.incrementStaffBounty("administrator_deaths");
-                Broadcast.WORLD.sendNews(Icon.WILDERNESS, "Staff Bounty", pKilled.getName() + " has been slain! " + player.getName() +
-                        " has claimed " + StaffBounty.ADMINISTRATOR_KILL_VALUE + " for their bounty! The hunt continues...");
-            }
-            Loggers.logStaffBountyKill(player, pKilled);
-        }
-
-
-        if (player.getPosition().isWithinDistance(pKilled.getPosition(), 32)) {
-            player.getCombat().restoreSpecial(100);
-        }
-
         player.rewardBm(pKilled, bmAmount);
-
         if (World.isPVPWorld()) {
            WildernessDeadmanKey.rollForDeadmanKey(player, pKilled);
         }
-
-        if (player.insideWildernessAgilityCourse) {
-            player.getStats().addXp(StatType.Agility, 50000, false);
-            player.getInventory().addOrDrop(11849, 10);
-            player.sendFilteredMessage("<col=6f0000> You receive 50,000 agility experience and 10 marks of grace for killing a player inside the Agility course.");
-        }
-
         WildernessRating.adjustEloRatings(pKilled, player);
     }
 

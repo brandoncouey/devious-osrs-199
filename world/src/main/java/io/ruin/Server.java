@@ -15,12 +15,14 @@ import io.ruin.model.World;
 import io.ruin.model.achievements.Achievement;
 import io.ruin.model.activities.gambling.GambleManager;
 import io.ruin.model.activities.wellofgoodwill.WellofGoodwill;
+import io.ruin.model.clan.ClanManager;
 import io.ruin.model.combat.special.Special;
 import io.ruin.model.content.GIMRepository;
 import io.ruin.model.entity.npc.actions.Lottery;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.actions.impl.pets.Pets;
 import io.ruin.model.item.containers.TournamentSuppliesInterface;
+import io.ruin.model.map.object.actions.ObjectExamine;
 import io.ruin.model.shop.ShopManager;
 import io.ruin.network.LoginDecoder;
 import io.ruin.network.central.CentralClient;
@@ -33,6 +35,7 @@ import io.ruin.update.JS5Server;
 import io.ruin.utility.Broadcast;
 import io.ruin.utility.CharacterBackups;
 import io.ruin.utility.OfflineMode;
+import io.ruin.utility.ServerLog;
 import kilim.tools.Kilim;
 import lombok.extern.slf4j.Slf4j;
 
@@ -89,11 +92,6 @@ public class Server extends ServerWrapper {
 
         init(Server.class);
 
-        JS5Server.start();
-
-        /*
-         * Server properties
-         */
         println("Loading server settings...");
         Properties properties = new Properties();
         File systemProps = new File("server.properties");
@@ -158,30 +156,22 @@ public class Server extends ServerWrapper {
             storeDB = new Database(properties.getProperty("database_host"), "psdeviou_store", properties.getProperty("database_user"), properties.getProperty("database_password"));
             voteDB = new Database(properties.getProperty("database_host"), "psdeviou_vote", properties.getProperty("database_user"), properties.getProperty("database_password"));
             hsDb = new Database(properties.getProperty("database_host"), "psdeviou_scores", properties.getProperty("database_user"), properties.getProperty("database_password"));
-//            discordDb = new Database(properties.getProperty("database_host"), "discordauth", properties.getProperty("database_user"), properties.getProperty("database_password"));
 
             DatabaseUtils.connect(new Database[]{/*hsDb, */storeDB, voteDB}, errors -> {
                 if (!errors.isEmpty()) {
                     for (Throwable t : errors)
                         logError("Database error", t);
-                    System.exit(1);
                 }
             });
-            Loggers.clearOnlinePlayers(World.id);
-
-            if (!OfflineMode.enabled) {
-//                new DiscordConnection().initialize();
-            }
         }
-
+        ObjectExamine.load();
         GIMRepository.load();
-
         Achievement.staticInit();
-
         ShopManager.registerUI();
         WellofGoodwill.load();
+        ServerLog.buildLogFiles();
         Lottery.load();
-        WhitelistLogins.load();
+        ClanManager.init();
         TournamentSuppliesInterface.registerTournamentSupplies();
 
         /*
@@ -205,15 +195,11 @@ public class Server extends ServerWrapper {
         try {
             Special.load();
             Incoming.load();
-
-            PackageLoader.load("io.ruin"/*, Server.class.getClassLoader()*/); //ensures all static blocks load
-
+            PackageLoader.load("io.ruin"); //ensures all static blocks load
             YamlLoader.initYamlFiles();
-
             backups.start();
         } catch (Throwable t) {
             logError("Error loading handlers", t);
-            //return;
         }
 
         /*
@@ -221,40 +207,37 @@ public class Server extends ServerWrapper {
          */
         println("Starting server workers...");
         worker.queue(() -> {
-            CoreWorker.process();
-            EventWorker.process();
-            GambleManager.process();
+            try {
+                CoreWorker.process();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                EventWorker.process();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            try {
+                GambleManager.process();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return false;
         });
         LoginWorker.start();
-        //LiveData.start();
-        /*
-         * Network
-         */
-        NettyServer nettyServer = NettyServer.start(World.type.getWorldName() + " World (" + World.id + ") Server", World.port, pipeline -> new LoginDecoder(fileStore), 5, Boolean.parseBoolean(properties.getProperty("offline_mode")));
-        // ServerOnline.sendDiscordMessage();
-        /*
-         * Central server
-         */
-         CentralClient.start();
+        NettyServer nettyServer = NettyServer.start(World.type.getWorldName() + " World (" + World.id + ") Server", World.port, pipeline -> new LoginDecoder(fileStore));
+        CentralClient.start();
         ServerWrapper.println("Started server in " + (System.currentTimeMillis() - startTime) + "ms.");
 
         /*
          * Shutdown hook
          */
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            //   ServerOffline.sendDiscordMessage();
             System.out.println();
             System.out.println("Server shutting down with " + worker.getQueuedTaskCount() + " tasks queued.");
             System.out.println("Gracefully shutting down world server...");
-            /*
-             * Shutdown network
-             */
             nettyServer.shutdown();
 
-            /*
-             * Remove players
-             */
             int fails = 0;
             while (true) {
                 try {

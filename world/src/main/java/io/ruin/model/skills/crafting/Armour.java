@@ -1,8 +1,9 @@
 package io.ruin.model.skills.crafting;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillItem;
@@ -128,12 +129,8 @@ public enum Armour {
                 player.animate(1249);
                 player.sendFilteredMessage("You make " + armourType.leatherName + ".");
                 player.getStats().addXp(StatType.Crafting, armourType.exp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 if (armourType.leatherName.matches("a black dragonhide body")) {
-                    player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.CRAFT_DHIDE);
+                    player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.CRAFT_DHIDE);
                 }
                 event.delay(2);
             }

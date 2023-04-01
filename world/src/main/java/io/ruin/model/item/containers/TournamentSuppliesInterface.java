@@ -33,7 +33,7 @@ public class TournamentSuppliesInterface {
     public static void registerTournamentSupplies() {
 
         InterfaceHandler.register(INTERFACE_ID, h -> {
-            h.actions[4] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[4] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 switch (option) {
                     case ONE:
                         player.getInventory().add(itemId, 1);

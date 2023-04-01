@@ -16,7 +16,7 @@ import java.util.Map;
 public class IPBans {
 
     private static final Map<String, String> banned_ips = Maps.newHashMap();
-    private static final File store = new File("data//ip_bans.txt");
+    private static final File store = new File("data/ip_bans.txt");
 
     static {
         try {

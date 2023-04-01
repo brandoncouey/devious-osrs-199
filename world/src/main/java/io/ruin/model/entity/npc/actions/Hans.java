@@ -2,7 +2,7 @@ package io.ruin.model.entity.npc.actions;
 
 import io.ruin.Server;
 import io.ruin.api.utils.TimeUtils;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -56,7 +56,7 @@ public class Hans {
     }
 
     public static void askAge(Player player) {
-        player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.HANS);
+        player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.HANS);
         player.dialogue(
                 new PlayerDialogue("Can you tell me how long I've been here?"),
                 new NPCDialogue(3105, "Ahh, I see all the newcomers arriving in Lumbridge, " +

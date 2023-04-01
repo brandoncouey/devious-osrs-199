@@ -1,6 +1,13 @@
 package io.ruin.model.activities.raids.tob.dungeon.boss.maiden.attacks;
 
 
+import io.ruin.model.combat.AttackStyle;
+import io.ruin.model.combat.Hit;
+import io.ruin.model.entity.Entity;
+import io.ruin.model.entity.npc.NPC;
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.map.Projectile;
+
 public class TornadoAttack {
 
    /* private final int TORNADO_ANIM = 8092;

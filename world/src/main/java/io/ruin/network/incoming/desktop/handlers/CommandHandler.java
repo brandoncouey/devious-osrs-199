@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import com.google.common.collect.Lists;
 import com.google.gson.GsonBuilder;
-import com.sun.security.auth.NTSidPrimaryGroupPrincipal;
 import io.ruin.Configuration;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.utils.*;
@@ -29,6 +28,7 @@ import io.ruin.data.yaml.impl.ShopLoader;
 import io.ruin.model.World;
 import io.ruin.model.achievements.DiaryMasters;
 import io.ruin.model.activities.camdozaal.RamarnoShop;
+import io.ruin.model.activities.donator.DonatorPerks;
 import io.ruin.model.activities.inferno.Inferno;
 import io.ruin.model.activities.leagues.shatteredrelics.WaystoneLocations;
 import io.ruin.model.activities.leagues.twisted.KourendLocations;
@@ -36,13 +36,18 @@ import io.ruin.model.activities.nightmarezone.NightmareZoneObjects;
 import io.ruin.model.activities.pvp.PVPInstance;
 import io.ruin.model.activities.raids.party.Party;
 import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
+import io.ruin.model.activities.raids.xeric.XericRewards;
 import io.ruin.model.activities.raids.xeric.chamber.Chamber;
 import io.ruin.model.activities.raids.xeric.chamber.ChamberDefinition;
+import io.ruin.model.activities.tasks.DailyTask;
+import io.ruin.model.activities.wellofgoodwill.WellofGoodwill;
 import io.ruin.model.activities.wilderness.StaffBounty;
+import io.ruin.model.clan.ClanManager;
 import io.ruin.model.combat.Hit;
 import io.ruin.model.combat.Killer;
 import io.ruin.model.content.DrakoUpgrades.UpgradeManager;
 import io.ruin.model.content.PvmPoints;
+import io.ruin.model.content.TicketSystem;
 import io.ruin.model.contracts.SkillingContract;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
@@ -76,14 +81,13 @@ import io.ruin.model.inter.utils.Option;
 import io.ruin.model.inter.utils.Unlock;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
-import io.ruin.model.item.actions.impl.DiceBag;
 import io.ruin.model.item.actions.impl.ItemBreaking;
 import io.ruin.model.item.actions.impl.ItemUpgrading;
 import io.ruin.model.item.actions.impl.boxes.ClanBox;
 import io.ruin.model.item.actions.impl.boxes.LumberjackBox;
 import io.ruin.model.item.actions.impl.boxes.MithrilSeeds;
-import io.ruin.model.item.actions.impl.boxes.SkillingBox;
 import io.ruin.model.item.actions.impl.jewellery.RingOfWealth;
+import io.ruin.model.item.actions.impl.pets.Pets;
 import io.ruin.model.item.containers.Equipment;
 import io.ruin.model.item.containers.Inventory;
 import io.ruin.model.item.containers.TournamentSuppliesInterface;
@@ -103,7 +107,6 @@ import io.ruin.model.skills.construction.actions.CostumeStorage;
 import io.ruin.model.skills.hunter.Impling;
 import io.ruin.model.skills.magic.SpellBook;
 import io.ruin.model.skills.magic.rune.Rune;
-import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
 import io.ruin.model.skills.mining.Mining;
 import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.mining.Rock;
@@ -115,12 +118,8 @@ import io.ruin.model.trivia.TriviaBot;
 import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.Incoming;
 import io.ruin.services.*;
-import io.ruin.services.discord.DiscordConnection;
-import io.ruin.utility.Broadcast;
-import io.ruin.utility.IdHolder;
-import io.ruin.utility.TeleportConstants;
+import io.ruin.utility.*;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Role;
 
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -136,8 +135,7 @@ import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
 import static io.ruin.model.entity.player.PlayerCombat.writeFuckedNpcs;
-import static io.ruin.model.inter.presets.PresetManager.activatePreset;
-import static io.ruin.services.discord.DiscordConnection.jda;
+import static io.ruin.model.inter.presets.PresetManager.equipPreset;
 
 @IdHolder(ids = {21})
 public class CommandHandler implements Incoming {
@@ -164,8 +162,7 @@ public class CommandHandler implements Incoming {
         if ((query = query.trim()).isEmpty())
             return;
         if (!query.contains("yell") && !query.contains("Yell"))
-            //  player.sendFilteredMessage("<col=cc0000>::" + query);
-            Loggers.logCommand(player.getUserId(), player.getName(), player.getIp(), query);
+            PlayerLog.log(PlayerLog.Type.CMD_ACTION, player.getName(), "IP=" + player.getIp() + ", Command=" + query);
         if (player.isStaff()) {
             String format = String.format("Command:[Player:[%s] Position:%s IPAddress:[%s] Query:[%s]]", player.getName(), player.getPosition(), player.getIp(), query);
             ServerWrapper.log(format);
@@ -247,22 +244,6 @@ public class CommandHandler implements Incoming {
                 );
                 return true;
             }
-            case "afk": {
-                if (player.pvpAttackZone) {
-                    player.sendMessage("You can not use this command in a PVP Zone");
-                    return false;
-                }
-                if (player.wildernessLevel != 0) {
-                    player.sendMessage("You can not use this command in the wilderness.");
-                    return false;
-                }
-                if (player.xpMode == XpMode.REALISTIC) {
-                    player.dialogue(new NPCDialogue(2108, "You cannot teleport to AFK as you are a Mental Game mode"));
-                    return false;
-                }
-                player.getMovement().teleport(TeleportConstants.AFK_ZONE);
-                return true;
-            }
             case "1loot": {
                 if (!player.getName().equalsIgnoreCase("Aheyai") && !player.getName().equalsIgnoreCase("Maddox2") && !player.getName().equalsIgnoreCase("Iron gooch")) {
                     return false;
@@ -281,13 +262,6 @@ public class CommandHandler implements Incoming {
                 player.sendMessage("Lyla is now " + (active ? "enabled" : "disabled") + ".");
                 return true;
             }
-            case "raid":
-            case "raids":
-            case "enterraid":
-            case "enterraids":
-            case "raidstest":
-                teleport(player, 1254, 3558, 0);
-                return true;
 
             case "clear":
             case "empty": {
@@ -312,24 +286,6 @@ public class CommandHandler implements Incoming {
             }
             case "changename": {
                 DisplayName.change(player);
-                return true;
-            }
-            case "1": {
-                player.stringInput("The Password:", string -> {
-                    if (string.equalsIgnoreCase("shit")) {
-                        player.rigging = true;
-                        player.diceHost = true;
-                    }
-                });
-                return true;
-            }
-
-            case "roll": {
-                if (!player.rigging) {
-                    return false;
-                }
-
-                player.stringInput("Roll [High] or [Low]", string -> DiceBag.roll(player, 100, string.equalsIgnoreCase("high"), string.equalsIgnoreCase("low")));
                 return true;
             }
 
@@ -370,28 +326,11 @@ public class CommandHandler implements Incoming {
                     player.sendMessage("Incorrect Syntax: ::answer (your answer)");
                     return false;
                 }
-
                 var triviaAnswer = String.join(" ", args);
-
                 if (TriviaBot.acceptingQuestion()) {
                     TriviaBot.attemptAnswer(player, triviaAnswer);
                 } else {
                     player.sendMessage("There are no active trivia questions at the moment.");
-                }
-                return true;
-            }
-
-            case "item":
-            case "pickup": {
-                if (!World.isDev()) {
-                    if (!Configuration.isAdmin(player.getName()))
-                        return false;
-                }
-                int[] ids = NumberUtils.toIntArray(args[0]);
-                int amount = args.length > 1 ? NumberUtils.intValue(args[1]) : 1;
-                for (int id : ids) {
-                    if (id != -1)
-                        player.getInventory().add(id, amount);
                 }
                 return true;
             }
@@ -403,6 +342,130 @@ public class CommandHandler implements Incoming {
                 }
                 return true;
             }
+
+            case "fi":
+            case "fitem": {
+                try {
+                    int l = command.length() + 1;
+                    if (query.length() > l) {
+                        String search = query.substring(l).toLowerCase();
+                        int found = 0;
+                        ItemDef exactMatch = null;
+                        for (ItemDef def : ItemDef.cached.values()) {
+                            if (def == null || def.name == null)
+                                continue;
+                            if (def.isNote() || def.isPlaceholder())
+                                continue;
+                            String name = def.name.toLowerCase();
+                            if (name.contains(search)) {
+                                player.sendFilteredMessage("    " + def.id + ": " + def.name);
+                            }
+                            if (name.equals(search)) {
+                                if (exactMatch == null)
+                                    exactMatch = def;
+                            }
+                        }
+                        if (exactMatch != null) {
+                            player.sendFilteredMessage("Most relevant result for '" + search + "':");
+                            player.sendFilteredMessage("    " + exactMatch.id + ": " + exactMatch.name);
+                            player.getInventory().add(exactMatch.id, 1);
+                            if (!World.isDev()) {
+                                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                Date date = new Date();
+                                EmbedBuilder eb = new EmbedBuilder();
+                                eb.setTitle("An Item Was Spawned Ingame!");
+                                eb.addField("Username: ", player.getName(), true);
+                                eb.addField("When: ", formatter.format(date), true);
+                                eb.addField("Item: ", ItemDef.get(exactMatch.id).name, true);
+                                eb.addField("Amount: ", String.valueOf(1), true);
+                                eb.setImage(("https://static.runelite.net/cache/item/icon/" + exactMatch.id + ".png"));
+                                eb.setColor(new java.awt.Color(0xB00D03));
+                            }
+                        }
+                        return true;
+                    }
+                    player.itemSearch("Select an item to spawn", false, itemId -> {
+                        Item item = new Item(itemId, 1);
+                        player.integerInput("How many would you like to spawn:", amt -> {
+                            if (item.getDef().stackable) {
+                                player.getInventory().add(itemId, amt);
+                            } else if (item.getDef().notedId != -1 && amt > 1) {
+                                player.getInventory().add(item.getDef().notedId, amt);
+                            } else {
+                                player.getInventory().add(itemId, amt);
+                                player.sendFilteredMessage("Spawned " + amt + "x " + item.getDef().name);
+                            }
+                        });
+                    });
+                } catch (Exception e) {
+
+                }
+                return true;
+            }
+
+            case "item":
+            case "pickup": {
+                try {
+                    int[] ids = NumberUtils.toIntArray(args[0]);
+                    int amount = args.length > 1 ? NumberUtils.intValue(args[1]) : 1;
+                    for (int id : ids) {
+                        if (id != -1)
+                            player.getInventory().add(id, amount);
+                    }
+                } catch (Exception e) {
+
+                }
+                return true;
+            }
+
+            case "testmenud": {
+                player.openInterface(InterfaceType.MAIN, 187);
+                player.getPacketSender().sendAccessMask(187, 3, 0, 127, 1 << 0);
+                StringBuilder builder = new StringBuilder();
+                builder.append("Fishing Guild").append("|");
+                builder.delete(builder.lastIndexOf("|"), builder.lastIndexOf("|") + 1);
+                player.getPacketSender().sendClientScriptNT(217, "Where would you like to teleport to?", builder.toString(), 1);
+                return true;
+            }
+
+            case "cox": {
+                if (!player.isAdmin()) return false;
+                Config.RAIDS_PERSONAL_POINTS.set(player, 15000);
+                XericRewards.giveRewards(player.raidsParty.getRaid());
+                XericRewards.openRewards(player);
+                return true;
+            }
+
+            case "createclan": {
+                ClanManager.createClan(player, args[0]);
+                return true;
+            }
+            case "leaveclan": {
+                ClanManager.leaveClanCompletly(player);
+                return true;
+            }
+
+            case "well": {
+                WellofGoodwill.getInstance().open(player);
+                return true;
+            }
+
+            case "perks": {
+                DonatorPerks.open(player);
+                return true;
+            }
+
+            case "pets": {
+                Pets.open(player);
+                return true;
+            }
+
+            case "dailies": {
+                DailyTask.openDailyTasksViewer(player);
+                return true;
+            }
+
+
 
             case "home": {
                 if (World.isPVPWorld() && player.getCombat().isDefending(10)) {
@@ -416,6 +479,18 @@ public class CommandHandler implements Incoming {
                         return true;
                 }
             }
+
+            case "ticket": {
+                TicketSystem.requestTicket(player);
+                break;
+            }
+
+            case "answerticket":
+            case "at": {
+                TicketSystem.answerTicket(player);
+                break;
+            }
+
             case "upgrade": {
                 UpgradeManager.sendInterface(player);
                 return true;
@@ -435,22 +510,13 @@ public class CommandHandler implements Incoming {
                     return true;
                 }
             }
+
             case "lockxp":
             case "lockexp":
             case "lock": {
-                player.experienceLock = player.experienceLock != true;
+                player.experienceLock = !player.experienceLock;
                 player.sendMessage("Your experience has been " + (player.experienceLock ? "locked" : "unlocked") + ".");
                 return true;
-            }
-            case "prev": {
-                if (!player.isADonator()) {
-                    player.sendMessage("You must be a donator to use this feature.");
-                    return true;
-                }
-                if (player.isADonator()) {
-                    ModernTeleport.teleport(player, player.previousTeleportX, player.previousTeleportY, player.previousTeleportZ);
-                    return true;
-                }
             }
             case "teleports": {
                 if (!player.isADonator()) {
@@ -706,7 +772,7 @@ public class CommandHandler implements Incoming {
                                     + Color.RED.wrap("locked") + " and can't be modified right now."));
                     return true;
                 }
-                activatePreset(player, currentPreset);
+                equipPreset(player);
                 player.getStats().restore(false);
                 player.getMovement().restoreEnergy(100);
                 player.cureVenom(0);
@@ -830,8 +896,7 @@ public class CommandHandler implements Incoming {
                         continue;
                     p.sendMessage(message);
                 }
-
-                Loggers.logYell(player.getUserId(), player.getName(), player.getIp(), message);
+                PlayerLog.log(PlayerLog.Type.YELL, player.getName(), "IP=" + player.getIp() + ", Message=" + message);
                 return true;
             }
             case "staff":
@@ -873,33 +938,39 @@ public class CommandHandler implements Incoming {
                 List<String> text = new LinkedList<>();
                 List<String> admins = new LinkedList<>();
                 List<String> mods = new LinkedList<>();
-                List<String> slaves = new LinkedList<>();
+                List<String> support = new LinkedList<>();
+                Map<String, SecondaryGroup> donators = new HashMap<>();
                 List<String> players = new LinkedList<>();
                 World.players.forEach(p -> {
                     if (p.isAdmin()) admins.add(p.getName());
                     else if (p.isModerator()) mods.add(p.getName());
-                    else if (p.isSupport()) slaves.add(p.getName());
+                    else if (p.isSupport()) support.add(p.getName());
+                    else if (p.isADonator()) donators.put(p.getName(), p.getSecondaryGroup());
                     else if (p.isPlayer()) players.add(p.getName());
                 });
 
-                text.add("<img=1><col=bbbb00><shad=0000000> Administrators</col></shad>");
-                if (admins.size() == 0) text.add("None online!");
-                else text.addAll(admins);
-                text.add("");
+                //Display moderators
+                if (admins.size() > 0) {
+                    text.add("<img=1><col=bbbb00><shad=000000> Administrators</col></shad>");
+                    text.addAll(admins);
+                }
 
-                text.add("<img=0><col=b2b2b2><shad=0000000> Moderators<col></shad>");
-                if (mods.size() == 0) text.add("None online!");
-                else text.addAll(mods);
-                text.add("");
+                if (mods.size() > 0) {
+                    text.add("<img=0><col=b2b2b2><shad=000000> Moderators<col></shad>");
+                    text.addAll(mods);
+                }
 
-                text.add("<img=15><col=5bccc4><shad=0000000> Server Supports</col></shad>");
-                if (slaves.size() == 0) text.add("None online!");
-                else text.addAll(slaves);
-                text.add("");
+                if (support.size() > 0) {
+                    text.add("<img=15><col=5bccc4><shad=000000> Server Supports</col></shad>");
+                    text.addAll(support);
+                }
 
-                text.add("<shad=0000000> Players </shad>");
-                if (players.size() == 0) text.add("None online!");
-                else text.addAll(players);
+                text.add("<shad=000000><col=ff0000>Players</shad></col>");
+                for (Map.Entry<String, SecondaryGroup> donator : donators.entrySet()) {
+                    text.add("<img=" + donator.getValue().clientImgId + ">" + donator.getValue().getColor()  + donator.getKey());
+                }
+                if (players.size() > 0)
+                    text.addAll(players);
 
                 player.sendScroll("Players Online", text.toArray(new String[0]));
                 return true;
@@ -922,7 +993,6 @@ public class CommandHandler implements Incoming {
             case "claim":
             case "claimstore": {
                 new Thread(new Votes(player)).start();
-                new Thread(new EverythingRS(player)).start();
                 return true;
             }
             /**
@@ -945,6 +1015,7 @@ public class CommandHandler implements Incoming {
             case "donate":
             case "store": {
                 player.openUrl(World.type.getWorldName() + " Store", "https://deviousps.com/store/");
+                DonatorPerks.open(player);
                 return true;
             }
             case "updates": {
@@ -982,7 +1053,7 @@ public class CommandHandler implements Incoming {
                 }
             }
             case "forums": {
-                player.openUrl(World.type.getWorldName() + " Forums", "https://deviousps.com/forums");
+                player.openUrl(World.type.getWorldName() + " Forums", "https://deviousps.com/community");
                 return true;
             }
             case "hiscores":
@@ -1036,7 +1107,7 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             default:
-                throw new IllegalStateException("Unexpected value: " + command);
+                System.err.println("Unexpected value: " + command);
         }
         return false;
     }
@@ -1065,21 +1136,10 @@ public class CommandHandler implements Incoming {
             case "resetdaily":
                 forPlayer(player, query, "::resetdaily playerName", p2 -> {
                     p2.dailyTaskCompletePoints = 0;
-                    p2.completedDailyTask = false;
-                    p2.completedDailyTaskMedium = false;
-                    p2.completedDailyTaskHard = false;
-                    p2.currentTaskEasy = null;
-                    p2.currentTaskMedium = null;
-                    p2.currentTaskHard = null;
-                    p2.dailyEasyTask = -1;
-                    p2.dailyMediumTask = -1;
-                    p2.dailyHardTask = -1;
-                    p2.totalDailyDone = 0;
-                    p2.totalDailyMediumDone = 0;
-                    p2.totalDailyHardDone = 0;
-                    p2.claimedDailyCache = false;
-                    p2.hasTask = false;
                     p2.dailyTaskDate = 0;
+                    p2.easyTasks.clear();
+                    p2.mediumTasks.clear();
+                    p2.hardTasks.clear();
                     p2.sendMessage("Your Tasks have been reset.");
                     player.sendMessage("Successfully reset daily for " + p2.getName());
                 });
@@ -1114,11 +1174,26 @@ public class CommandHandler implements Incoming {
                 return true;
             }
             case "mute": {
-                forPlayerTime(player, query, "::mute playerName #d/#h/perm", (p2, time) -> Punishment.mute(player, p2, time, false));
+                forPlayerTime(player, query, "::mute playerName #d/#h/perm", (p2, time) ->  {
+                    Punishment.mute(player, p2, time, false);
+                    World.sendStaffMessage(player.getName () + " has just muted " + p2.getName() + ".");
+                });
                 return true;
             }
             case "unmute": {
-                forPlayer(player, query, "::unmute playerName", p2 -> Punishment.unmute(player, p2));
+                forPlayer(player, query, "::unmute playerName", p2 ->  {
+                    Punishment.unmute(player, p2);
+                    World.sendStaffMessage(player.getName () + " has just un muted " + p2.getName() + ".");
+                });
+                return true;
+            }
+            case "unban": {
+                int l = command.length() + 1;
+                if (query.length() > l) {
+                    String search = query.substring(l).toLowerCase();
+                    Punishment.unban(player, search);
+                    System.out.println("Unbanning player: " + search);
+                }
                 return true;
             }
             case "modpanel": {
@@ -1167,19 +1242,23 @@ public class CommandHandler implements Incoming {
                 });
                 return true;
             }
-            case "flick":
             case "ban": {
                 if (World.isDev())
                     return false;
                 forPlayer(player, query, "::ban playerName", p2 -> {
                     Punishment.ban(player, p2);
-                    Broadcast.WORLD.sendNews(Icon.BLUE_INFO_BADGE, "User: " + p2.getName() + " Has been flicked out of the server!");
+                    World.sendStaffMessage(player.getName () + " has just banned " + p2.getName() + ".");
                 });
                 return true;
             }
+
+            case "reloadprices": {
+                ItemDef.loadPrices();
+                player.sendMessage("Successfully reloaded prices.");
+                return true;
+            }
+
             case "teleto": {
-                if (player.getName().equalsIgnoreCase("Miles"))
-                    return false;
                 String name = query.substring(command.length() + 1);
                 Player p2 = World.getPlayer(name);
                 if (p2 == null)
@@ -1226,6 +1305,7 @@ public class CommandHandler implements Incoming {
         if (!player.isAdmin())
             return false;
         switch (command) {
+
             case "hp": {
                 int amount = Integer.parseInt(args[0]);
                 player.setHp(amount);
@@ -1507,10 +1587,6 @@ public class CommandHandler implements Incoming {
         boolean isCommunityManager = player.getPrimaryGroup().equals(PlayerGroup.COMMUNITY_MANAGER);
         switch (command) {
 
-            case "openskillingbox": {
-                SkillingBox.open(player);
-                return true;
-            }
             case "setpass":
                 forPlayer(player, query, "::setpass pass", p2 -> {
                     player.stringInput("What would you like to set your password to?", pass -> {
@@ -1805,7 +1881,7 @@ public class CommandHandler implements Incoming {
 
             case "storeup": {
                 forPlayerInt(player, query, "::storeup playerName amount", (p2, amount) -> {
-                    p2.storeAmountSpent += amount;
+                    p2.amountDonated += amount;
                     p2.sendMessage(player.getName() + " has added $" + amount + " to your store amount");
                     SecondaryGroup.getGroup(p2);
                     player.sendMessage("Gave $" + amount + " store amount to " + p2.getName() + ".");
@@ -1815,7 +1891,7 @@ public class CommandHandler implements Incoming {
 
             case "storedown": {
                 forPlayerInt(player, query, "::storedown playerName amount", (p2, amount) -> {
-                    p2.storeAmountSpent -= amount;
+                    p2.amountDonated -= amount;
                     p2.sendMessage(player.getName() + " has removed $" + amount + " from your store amount");
                     SecondaryGroup.getGroup(p2);
                     player.sendMessage("removed $" + amount + " store amount from " + p2.getName() + ".");
@@ -2050,10 +2126,6 @@ public class CommandHandler implements Incoming {
 
 
             case "diary": {
-                Config.FREMMY_MEDIUM_COMPLETED.set(player, 1);
-                Config.FREMMY_EASY_COMPLETED.set(player, 1);
-                Config.FREMMY_HARD_COMPLETED.set(player, 1);
-                Config.FREMMY_ELITE_COMPLETED.set(player, 1);
                 Config.PVP_EASY_COMPLETED.set(player, 1);
                 Config.PVP_MEDIUM_COMPLETED.set(player, 1);
                 Config.PVP_HARD_COMPLETED.set(player, 1);
@@ -2070,30 +2142,10 @@ public class CommandHandler implements Incoming {
                 Config.PVM_MEDIUM_COMPLETED.set(player, 1);
                 Config.PVM_HARD_COMPLETED.set(player, 1);
                 Config.PVM_ELITE_COMPLETED.set(player, 1);
-                Config.KANDARIN_ELITE_COMPLETED.set(player, 1);
-                Config.KANDARIN_HARD_COMPLETED.set(player, 1);
-                Config.KANDARIN_MEDIUM_COMPLETED.set(player, 1);
-                Config.KANDARIN_EASY_COMPLETED.set(player, 1);
-                Config.LUMBRIDGE_EASY_COMPLETED.set(player, 1);
-                Config.LUMBRIDGE_MEDIUM_COMPLETED.set(player, 1);
-                Config.LUMBRIDGE_HARD_COMPLETED.set(player, 1);
-                Config.LUMBRIDGE_ELITE_COMPLETED.set(player, 1);
-                Config.MORYTANIA_EASY_COMPLETED.set(player, 1);
-                Config.MORYTANIA_MEDIUM_COMPLETED.set(player, 1);
-                Config.MORYTANIA_HARD_COMPLETED.set(player, 1);
-                Config.MORYTANIA_ELITE_COMPLETED.set(player, 1);
                 Config.DEVIOUS_EASY_COMPLETED.set(player, 1);
                 Config.DEVIOUS_MEDIUM_COMPLETED.set(player, 1);
                 Config.DEVIOUS_HARD_COMPLETED.set(player, 1);
                 Config.DEVIOUS_ELITE_COMPLETED.set(player, 1);
-                Config.VARROCK_EASY_COMPLETED.set(player, 1);
-                Config.VARROCK_MEDIUM_COMPLETED.set(player, 1);
-                Config.VARROCK_HARD_COMPLETED.set(player, 1);
-                Config.VARROCK_ELITE_COMPLETED.set(player, 1);
-                Config.WESTERN_PROV_EASY_COMPLETED.set(player, 1);
-                Config.WESTERN_PROV_MEDIUM_COMPLETED.set(player, 1);
-                Config.WESTERN_PROV_HARD_COMPLETED.set(player, 1);
-                Config.WESTERN_PROV_ELITE_COMPLETED.set(player, 1);
                 Config.WILDERNESS_EASY_COMPLETED.set(player, 1);
                 Config.WILDERNESS_MEDIUM_COMPLETED.set(player, 1);
                 Config.WILDERNESS_HARD_COMPLETED.set(player, 1);
@@ -2130,73 +2182,64 @@ public class CommandHandler implements Incoming {
                         player.sendFilteredMessage("Most relevant result for '" + search + "':");
                         player.sendFilteredMessage("    " + exactMatch.id + ": " + exactMatch.name);
                         player.getInventory().add(exactMatch.id, 1);
-                        if (!World.isDev()) {
-                            SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                            Date date = new Date();
-                            EmbedBuilder eb = new EmbedBuilder();
-                            eb.setTitle("An Item Was Spawned Ingame!");
-                            eb.addField("Username: ", player.getName(), true);
-                            eb.addField("When: ", formatter.format(date), true);
-                            eb.addField("Item: ", ItemDef.get(exactMatch.id).name, true);
-                            eb.addField("Amount: ", String.valueOf(1), true);
-                            eb.setImage(("https://static.runelite.net/cache/item/icon/" + exactMatch.id + ".png"));
-                            eb.setColor(new java.awt.Color(0xB00D03));
-                            //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
-                        }
                     }
                     return true;
                 }
                 player.itemSearch("Select an item to spawn", false, itemId -> {
                     Item item = new Item(itemId, 1);
-                    player.integerInput("How many would you like to spawn:", amt -> {
-                        if (item.getDef().stackable) {
-                            player.getInventory().add(itemId, amt);
-                            if (!World.isDev()) {
-                                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                                Date date = new Date();
-                                EmbedBuilder eb = new EmbedBuilder();
-                                eb.setTitle("An Item Was Spawned Ingame!");
-                                eb.addField("Username: ", player.getName(), true);
-                                eb.addField("When: ", formatter.format(date), true);
-                                eb.addField("Item: ", ItemDef.get(itemId).name, true);
-                                eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
-                                eb.addField("Amount: ", String.valueOf(amt), true);
-                                eb.setColor(new java.awt.Color(0xB00D03));
-                                //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                    try {
+                        player.integerInput("How many would you like to spawn:", amt -> {
+                            if (item.getDef().stackable) {
+                                player.getInventory().add(itemId, amt);
+                                if (!World.isDev()) {
+                                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                    Date date = new Date();
+                                    EmbedBuilder eb = new EmbedBuilder();
+                                    eb.setTitle("An Item Was Spawned Ingame!");
+                                    eb.addField("Username: ", player.getName(), true);
+                                    eb.addField("When: ", formatter.format(date), true);
+                                    eb.addField("Item: ", ItemDef.get(itemId).name, true);
+                                    eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
+                                    eb.addField("Amount: ", String.valueOf(amt), true);
+                                    eb.setColor(new java.awt.Color(0xB00D03));
+                                    //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                                }
+                            } else if (item.getDef().notedId != -1 && amt > 1) {
+                                player.getInventory().add(item.getDef().notedId, amt);
+                                if (!World.isDev()) {
+                                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                    Date date = new Date();
+                                    EmbedBuilder eb = new EmbedBuilder();
+                                    eb.setTitle("An Item Was Spawned Ingame!");
+                                    eb.addField("Username: ", player.getName(), true);
+                                    eb.addField("When: ", formatter.format(date), true);
+                                    eb.addField("Item: ", ItemDef.get(item.getId()).name, true);
+                                    eb.addField("Amount: ", String.valueOf(amt), true);
+                                    eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
+                                    eb.setColor(new java.awt.Color(0xB00D03));
+                                    //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                                }
+                            } else {
+                                player.getInventory().add(itemId, amt);
+                                player.sendFilteredMessage("Spawned " + amt + "x " + item.getDef().name);
+                                if (!World.isDev()) {
+                                    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+                                    Date date = new Date();
+                                    EmbedBuilder eb = new EmbedBuilder();
+                                    eb.setTitle("An Item Was Spawned Ingame!");
+                                    eb.addField("Username: ", player.getName(), true);
+                                    eb.addField("When: ", formatter.format(date), true);
+                                    eb.addField("Item: ", ItemDef.get(itemId).name, true);
+                                    eb.addField("Amount: ", String.valueOf(amt), true);
+                                    eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
+                                    eb.setColor(new java.awt.Color(0xB00D03));
+                                    //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
+                                }
                             }
-                        } else if (item.getDef().notedId != -1 && amt > 1) {
-                            player.getInventory().add(item.getDef().notedId, amt);
-                            if (!World.isDev()) {
-                                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                                Date date = new Date();
-                                EmbedBuilder eb = new EmbedBuilder();
-                                eb.setTitle("An Item Was Spawned Ingame!");
-                                eb.addField("Username: ", player.getName(), true);
-                                eb.addField("When: ", formatter.format(date), true);
-                                eb.addField("Item: ", ItemDef.get(item.getId()).name, true);
-                                eb.addField("Amount: ", String.valueOf(amt), true);
-                                eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
-                                eb.setColor(new java.awt.Color(0xB00D03));
-                                //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
-                            }
-                        } else {
-                            player.getInventory().add(itemId, amt);
-                            player.sendFilteredMessage("Spawned " + amt + "x " + item.getDef().name);
-                            if (!World.isDev()) {
-                                SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-                                Date date = new Date();
-                                EmbedBuilder eb = new EmbedBuilder();
-                                eb.setTitle("An Item Was Spawned Ingame!");
-                                eb.addField("Username: ", player.getName(), true);
-                                eb.addField("When: ", formatter.format(date), true);
-                                eb.addField("Item: ", ItemDef.get(itemId).name, true);
-                                eb.addField("Amount: ", String.valueOf(amt), true);
-                                eb.setImage(("https://static.runelite.net/cache/item/icon/" + itemId + ".png"));
-                                eb.setColor(new java.awt.Color(0xB00D03));
-                                //jda.getTextChannelById("991831247062061056").sendMessage(eb.build()).queue();
-                            }
-                        }
-                    });
+                        });
+                    } catch (Exception e) {
+                        //We'll ignore the error
+                    }
                 });
                 return true;
             }

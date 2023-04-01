@@ -1,12 +1,11 @@
 package io.ruin.model.skills.herblore;
 
-import io.ruin.api.utils.Random;
 import io.ruin.cache.ItemDef;
 import io.ruin.model.activities.tasks.DailyTask;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.diaries.pvm.PvMDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -30,6 +29,7 @@ public enum Potion {
     RELICYMS_BALM(8, 40.0, "relicym's balm", "rogue's purse", "snake weed", "vial of water"),
     STRENGTH(12, 50.0, "strength potion", "tarromin potion (unf)", "limpwurt root"),
     GUTHIX_REST(18, 59.5, "guthix rest", "bowl of hot water", "guam leaf", "harralander", "marrentill"),
+
     RESTORE(22, 62.5, "restore potion", "harralander potion (unf)", "red spiders' eggs"),
     GUTHIX_BALANCE(22, 25.0, "guthix balance", "restore potion(3)", "garlic", "silver dust"),
     ENERGY(26, 67.5, "energy potion", "harralander potion (unf)", "chocolate dust"),
@@ -56,21 +56,26 @@ public enum Potion {
     STAMINA(77, 102.0, "stamina potion", "super energy(3)", "amylase crystal"),
     ZAMORAK_BREW(78, 175.0, "zamorak brew", "torstol potion (unf)", "jangerberries"),
     ANTIDOTE_PLUS_PLUS(79, 177.5, "antidote++", "coconut milk", "irit leaf", "magic roots"),
+
+    BASTION(80, 155, "bastion potion", "cadantine blood potion (unf)", "wine of zamorak"),
+    BATTLEMAGE(80, 155, "battlemage potion", "cadantine blood potion (unf)", "potato cactus"),
     SARADOMIN_BREW(81, 180.0, "saradomin brew", "toadflax potion (unf)", "crushed nest"),
     WEAPON_POISON_PLUS_PLUS(82, 190.0, "weapon poison(++)", "coconut milk", "cave nightshade", "poison ivy berries"),
     EXTENDED_ANTIFIRE(84, 110.0, "extended antifire", "antifire potion(3)", "lava scale shard"),
+
+    DIVINE_BASTION(86, 2.0, "divine bastion potion", "bastion potion(4)", "crystal dust"),
+    DIVINE_BATTLEMAGE(86, 2.0, "divine battlemage potion", "battlemage potion(4)", "crystal dust"),
     SUPER_COMBAT(90, 150.0, "super combat potion", "torstol", "super attack(3)", "super strength(3)", "super defence(3)"),
     SUPER_ANTIFIRE(92, 130.0, "super antifire potion", "antifire potion(3)", "crushed superior dragon bones"),
     SUPER_ANTI_VENOM(94, 125.0, "anti-venom+", "anti-venom(3)", "torstol"),
     EXTENDED_SUPER_ANTIFIRE(98, 160.0, "extended super antifire", "super antifire potion(3)", "lava scale shard"),
-    DIVINE_SUPER_ATTACK(70, 200, "divine super attack potion", "super attack(3)", "crystal shard"),
-    DIVINE_SUPER_STRENGTH(70, 200, "divine super strength potion", "super strength(3)", "crystal shard"),
-    DIVINE_SUPER_DEFENCE(70, 200, "divine super defence potion", "super defence(3)", "crystal shard"),
-    DIVINE_RANGING(74, 200, "divine ranging potion", "ranging potion(3)", "crystal shard"),
-    DIVINE_MAGIC(74, 200, "divine magic potion", "magic potion(3)", "crystal shard"),
-    DIVINE_SUPER_COMBAT(97, 200, "divine super combat potion", "super combat potion(3)", "crystal shard"),
+    DIVINE_SUPER_ATTACK(70, 200, "divine super attack potion", "super attack(4)", "crystal dust"),
+    DIVINE_SUPER_STRENGTH(70, 200, "divine super strength potion", "super strength(4)", "crystal dust"),
+    DIVINE_SUPER_DEFENCE(70, 200, "divine super defence potion", "super defence(4)", "crystal dust"),
+    DIVINE_RANGING(74, 200, "divine ranging potion", "ranging potion(4)", "crystal dust"),
+    DIVINE_MAGIC(74, 200, "divine magic potion", "magic potion(4)", "crystal dust"),
+    DIVINE_SUPER_COMBAT(97, 200, "divine super combat potion", "super combat potion(4)", "crystal dust"),
 
-    /**/
     ANTI_VENOM(87, 120.0, "anti-venom", "antidote++(3)", "zulrah's scales"),
 
 
@@ -150,14 +155,14 @@ public enum Potion {
         primaryItem.remove();
         for (Item secondaryItem : secondaryItems)
             secondaryItem.remove();
-        player.getInventory().add(vialIds[2], 1);
-        player.getStats().addXp(StatType.Herblore, xp, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
+        if (vialIds[2] == 15236) {
+            player.getInventory().add(5940, 1);
+        } else {
+            player.getInventory().add(vialIds[2], 1);
         }
-        if(player.currentTaskHard == DailyTask.PossibleTasksHard.PRAYER_POTIONS){
-            DailyTask.increaseHard(player, DailyTask.PossibleTasksHard.PRAYER_POTIONS);
+        player.getStats().addXp(StatType.Herblore, xp, true);
+        if(DailyTask.hasHardTask(player, DailyTask.HardTasks.PRAYER_POTIONS)){
+            DailyTask.increaseHard(player, DailyTask.HardTasks.PRAYER_POTIONS);
         }
         player.animate(363);
         if (potionName.contains("combat potion")) {
@@ -174,7 +179,7 @@ public enum Potion {
 
         if (potionName.contains("super combat")) {
             if (player.getPosition().regionId() == 12597) {
-                player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.SUPER_COMBAT);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.SUPER_COMBAT);
             }
             if (player.getPosition().inBounds(new Bounds(2612, 3271, 2613, 3280, 0))) {
                 player.getDiaryManager().getPvpDiary().progress(PvPDiaryEntry.SUPER_COMBAT_ARD);
@@ -312,7 +317,7 @@ public enum Potion {
                     return;
                 int doses = primary.getDef().potionDoses;
                 int reqAmt = doses * secondaryAmtPerDose;
-                if (secondary.getAmount() < reqAmt) {
+                if (!player.getInventory().contains(secondaryId, reqAmt)) {
                     if (doses == 1)
                         player.sendMessage("You need at least " + reqAmt + " " + secondaryPluralName + " to upgrade 1 dose of that potion.");
                     else
@@ -323,10 +328,6 @@ public enum Potion {
                 primary.setId(potion.vialIds[doses - 1]);
                 player.animate(363);
                 player.getStats().addXp(StatType.Herblore, xpPerDose * doses, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                if (reqAmt == 1)
                     player.sendFilteredMessage("You mix 1 " + secondaryName + " into your potion.");
                 else
@@ -389,6 +390,10 @@ public enum Potion {
             if (potion == DIVINE_RANGING)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 1);
             if (potion == DIVINE_SUPER_ATTACK)
+                registerUpgrade(potion, primaryId, secondaryIds[0], 1);
+            if (potion == DIVINE_BASTION)
+                registerUpgrade(potion, primaryId, secondaryIds[0], 1);
+            if (potion == DIVINE_BATTLEMAGE)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 1);
             if (potion == DIVINE_SUPER_STRENGTH)
                 registerUpgrade(potion, primaryId, secondaryIds[0], 1);

@@ -38,10 +38,6 @@ public enum BoltTips {
         gem.remove();
         player.getInventory().add(boltTips, amount);
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
         player.animate(anim);
         player.sendFilteredMessage("You use your chisel to fletch small bolt tips.");
     }

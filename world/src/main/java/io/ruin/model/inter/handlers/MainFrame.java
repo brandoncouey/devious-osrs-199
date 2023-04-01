@@ -11,7 +11,12 @@ import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.teleports.TeleportInterface;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.inter.utils.Option;
+import io.ruin.model.item.Item;
+import io.ruin.model.skills.magic.SpellBook;
+import io.ruin.model.skills.magic.rune.RuneRemoval;
+import io.ruin.model.skills.magic.spells.lunar.CureMe;
 import io.ruin.model.skills.magic.spells.modern.ModernTeleport;
+import io.ruin.model.stat.StatType;
 import io.ruin.services.discord.impl.commands.BugReport;
 
 public class MainFrame {
@@ -19,6 +24,26 @@ public class MainFrame {
     static {
         InterfaceHandler.register(Interface.ORBS, h -> {
             h.actions[1] = (OptionAction) XpCounter::select;
+            h.actions[4] = (OptionAction) (p, option) -> {
+                //Cure Poison
+                if (Config.MAGIC_BOOK.get(p) == SpellBook.LUNAR.ordinal()) {
+                    if (p.isLocked())
+                        return;
+                    if (!p.getStats().check(StatType.Magic, 71, "cast this spell"))
+                        return;
+                    RuneRemoval r = null;
+                    Item[] runeItems = new Item[] { new Item(9075, 2), new Item(564, 2), new Item(563, 1) };
+                    if ((r = RuneRemoval.get(p, runeItems)) == null) {
+                        p.sendMessage("You don't have enough runes to cast this spell.");
+                        return;
+                    }
+                    r.remove();
+                    CureMe.cast(p, 68);
+                    p.getStats().addXp(StatType.Magic, 69, false);
+                } else {
+                    p.sendMessage("You must be on the lunars spell book.");
+                }
+            };
             h.actions[15] = (OptionAction) (p, option) -> {
                 if (option == 1)
                     p.getPrayer().toggleQuickPrayers();
@@ -95,7 +120,7 @@ public class MainFrame {
 
 
         InterfaceHandler.register(Interface.FIXED_SCREEN, actions -> {
-            actions.actions[62] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[62] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
@@ -104,14 +129,14 @@ public class MainFrame {
 
 
         InterfaceHandler.register(Interface.RESIZED_SCREEN, actions -> {
-            actions.actions[68] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[68] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };
 
         });
         InterfaceHandler.register(Interface.RESIZED_STACKED_SCREEN, actions -> {
-            actions.actions[65] = (DefaultAction) (player, option, slot, itemId) -> {
+            actions.actions[65] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 if (option == 2)
                     Config.DISABLE_SPELL_FILTERING.toggle(player);
             };

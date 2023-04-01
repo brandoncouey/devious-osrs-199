@@ -357,10 +357,7 @@ public class TabStats {
     }
 
     private static void handleStat(Player player, StatType statType) {
-        if (!player.getGameMode().isIronMan() && XpMode.isXpMode(player, EASY) && (statType.ordinal() <= 6))
-            setLevel(player, statType);
-        else
-            openGuide(player, statType, 0);
+        openGuide(player, statType, 0);
     }
 
     private static void handleTotal(Player player, int option) {

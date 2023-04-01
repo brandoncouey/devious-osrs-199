@@ -94,6 +94,7 @@ public class HouseViewer { // mostly just converted jordan's code to work with m
     private static void addMoveRoom(Player player, int slot, boolean move) {
         if (slot < 0 || slot > 222)
             return;
+        System.out.println("We are moving : " + move);
         int pointZ = slot / 81;
         slot -= (pointZ * 81);
         int pointY = slot / 9;
@@ -263,18 +264,21 @@ public class HouseViewer { // mostly just converted jordan's code to work with m
 
     static {
         InterfaceHandler.register(Interface.CONSTRUCTION_HOUSE_VIEWER, h -> {
-            h.actions[5] = (DefaultAction) (p, option, slot, itemId) -> addMoveRoom(p, slot, option == 1);
+            h.actions[5] = (DefaultAction) (p, childId, option, slot, itemId) -> {
+                addMoveRoom(p, slot, option == 1);
+            };
             for (int i = 6; i <= 38; i++) {
                 final int index = i - 6;
                 h.actions[i] = (SimpleAction) p -> viewRoom(p, index);
             }
             h.actions[41] = (SimpleAction) HouseViewer::toPortal;
-            h.actions[59] = (SimpleAction) HouseViewer::rotate;
-            h.actions[60] = (SimpleAction) p -> rotate(p, true);
-            h.actions[61] = (SimpleAction) p -> rotate(p, false);
-            h.actions[62] = (SimpleAction) HouseViewer::delete;
-            h.actions[63] = (SimpleAction) HouseViewer::cancel;
-            h.actions[64] = (SimpleAction) HouseViewer::done;
+            //h.actions[59] = (SimpleAction) HouseViewer::moveRoom;
+            h.actions[60] = (SimpleAction) HouseViewer::rotate;
+            h.actions[61] = (SimpleAction) p -> rotate(p, true);
+            h.actions[62] = (SimpleAction) p -> rotate(p, false);
+            h.actions[63] = (SimpleAction) HouseViewer::delete;
+            h.actions[64] = (SimpleAction) HouseViewer::cancel;
+            h.actions[65] = (SimpleAction) HouseViewer::done;
             h.closedAction = (p, i) -> {
                 p.houseViewerRooms = null;
                 p.houseViewerRoom = null;

@@ -26,16 +26,42 @@
     }
   },
   {
+    "name": "Shop keeper",
+    "id": 2813,
+    "x": 3070,
+    "y": 3500,
+    "z": 0,
+    "direction": "E",
+    "walkRange": 0,
+    "world": "ECO",
+    "shopOptions": {
+      "trade": "e522b145-fbaa-4746-8d71-6ad9808d2338"
+    }
+  },
+  {
     "name": "Forester",
     "id": 4076,
-    "x": 3081,
-    "y": 3472,
+    "x": 3078,
+    "y": 3513,
     "z": 0,
     "direction": "S",
     "walkRange": 1,
     "world": "ECO",
     "shopOptions": {
       "trade": "x5X81TOGzsw0mi4MEW8WF3MxJj5LR0"
+    }
+  },
+  {
+    "name": "Aleck",
+    "id": 1501,
+    "x": 3073,
+    "y": 3512,
+    "z": 0,
+    "direction": "S",
+    "walkRange": 1,
+    "world": "ECO",
+    "shopOptions": {
+      "trade": "7Yzhe2QTSL2zocxD23ldVSlb2ImTpc"
     }
   },
   {
@@ -54,11 +80,11 @@
   {
     "name": "Herblore",
     "id": 8532,
-    "x": 3079,
-    "y": 3507,
+    "x": 3101,
+    "y": 3510,
     "z": 0,
     "direction": "S",
-    "walkRange": 2,
+    "walkRange": 1,
     "world": "ECO",
     "shopOptions": {
       "trade": "1f68200d-0ba3-4a2e-859d-ec1888679034"
@@ -67,10 +93,10 @@
   {
     "name": "Tournament Manager",
     "id": 7316,
-    "x": 3076,
-    "y": 3514,
+    "x": 3053,
+    "y": 3463,
     "z": 0,
-    "direction": "E",
+    "direction": "N",
     "walkRange": 0,
     "world": "ECO",
     "shopOptions": {
@@ -124,10 +150,10 @@
   {
     "name": "Estate agent",
     "id": 3097,
-    "x": 3097,
-    "y": 3503,
+    "x": 3095,
+    "y": 3492,
     "z": 0,
-    "direction": "S",
+    "direction": "E",
     "walkRange": 0,
     "shopOptions": {
       "trade": "a1e55885-3aa4-4d63-8a5e-5808c01f54e0"
@@ -402,8 +428,8 @@
   {
     "name": "Magic Shop",
     "id": 5081,
-    "x": 3076,
-    "y": 3490,
+    "x": 3078,
+    "y": 3492,
     "z": 0,
     "direction": "E",
     "walkRange": 1,
@@ -436,18 +462,6 @@
     }
   },
   {
-    "name": "Twiggy O\u0027Korn",
-    "id": 5527,
-    "x": 2024,
-    "y": 3567,
-    "z": 1,
-    "direction": "W",
-    "walkRange": 0,
-    "shopOptions": {
-      "rewards": "afd8d69d-37c8-44d9-bfec-680bfaf4dfa4"
-    }
-  },
-  {
     "name": "Shop assistant",
     "id": 2820,
     "x": 2024,
@@ -462,8 +476,8 @@
   {
     "name": "Mac",
     "id": 6481,
-    "x": 3099,
-    "y": 3506,
+    "x": 3089,
+    "y": 3486,
     "z": 0,
     "direction": "N",
     "walkRange": 0
@@ -471,11 +485,11 @@
   {
     "name": "Bob Decanter",
     "id": 5449,
-    "x": 3080,
-    "y": 3509,
+    "x": 3102,
+    "y": 3511,
     "z": 0,
     "direction": "E",
-    "walkRange": 0
+    "walkRange": 1
   },
   {
     "name": "Sand Crab",

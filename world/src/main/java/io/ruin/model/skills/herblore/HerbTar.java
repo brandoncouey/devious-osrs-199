@@ -34,10 +34,6 @@ public enum HerbTar {
         player.getInventory().add(result, 15);
         player.sendMessage("You mix the " + herbName + " into the swamp tar.");
         player.getStats().addXp(StatType.Herblore, exp, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
     }
 
     private static final int SWAMP_TAR = 1939;

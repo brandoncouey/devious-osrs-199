@@ -14,6 +14,7 @@ import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
 import io.ruin.model.map.object.GameObject;
 import io.ruin.services.Loggers;
+import io.ruin.utility.PlayerLog;
 
 public class TabInventory {
 
@@ -21,8 +22,8 @@ public class TabInventory {
         InterfaceHandler.register(Interface.INVENTORY, h -> {
             h.actions[0] = new InterfaceAction() {
                 @Override
-                public void handleClick(Player player, int option, int slot, int itemId) {
-                    click(player, option, slot, itemId);
+                public void handleClick(Player player, int childId, int option, int slot, int itemId) {
+                    click(player, childId, option, slot, itemId);
                 }
 
                 @Override
@@ -53,7 +54,7 @@ public class TabInventory {
         });
     }
 
-    private static void click(Player player, int option, int slot, int itemId) {
+    private static void click(Player player, int childId, int option, int slot, int itemId) {
         if (player.isLocked())
             return;
         Item item = player.getInventory().get(slot, itemId);
@@ -128,7 +129,10 @@ public class TabInventory {
                     new GroundItem(item).owner(player).droppedBy(player).position(player.getPosition()).spawn();
                 }
             }
-            Loggers.logDrop(player.getUserId(), player.getName(), player.getIp(), item.getId(), item.getAmount(), player.getAbsX(), player.getAbsY(), player.getHeight());
+            if (Item.getWealth(item) > 100000) {
+                PlayerLog.log(PlayerLog.Type.DROPS_HIGH_VALUE, player.getName(), "Dropped item [" + item + "] at position [X=" + player.getAbsX() + ", Y=" + player.getAbsY() + ", Z=" + player.getHeight() + "].");
+            }
+            PlayerLog.log(PlayerLog.Type.DROPPED_ITEM, player.getName(), "Dropped item [" + item + "] at position [X=" + player.getAbsX() + ", Y=" + player.getAbsY() + ", Z=" + player.getHeight() + "].");
             return;
         }
         if (option == def.equipOption) {

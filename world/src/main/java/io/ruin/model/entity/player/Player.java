@@ -5,7 +5,6 @@ import io.netty.channel.Channel;
 import io.ruin.Server;
 import io.ruin.api.protocol.login.LoginInfo;
 import io.ruin.api.utils.ISAACCipher;
-import io.ruin.api.utils.NumberUtils;
 import io.ruin.api.utils.Random;
 import io.ruin.api.utils.ServerWrapper;
 import io.ruin.cache.Color;
@@ -13,11 +12,15 @@ import io.ruin.cache.InterfaceDef;
 import io.ruin.cache.Varp;
 import io.ruin.event.GameEventProcessor;
 import io.ruin.model.World;
+import io.ruin.model.activities.Minigames;
 import io.ruin.model.activities.blastfurnace.BlastFurnace;
 import io.ruin.model.activities.duelarena.Duel;
 import io.ruin.model.activities.duelarena.DuelArena;
 import io.ruin.model.activities.pyramidplunder.PyramidPlunder;
+import io.ruin.model.activities.tasks.DailyTask;
+import io.ruin.model.activities.wellofgoodwill.WellofGoodwill;
 import io.ruin.model.activities.wilderness.BountyHunter;
+import io.ruin.model.clan.ClanManager;
 import io.ruin.model.content.DrakoUpgrades.UpgradeManager;
 import io.ruin.model.content.GIMRepository;
 import io.ruin.model.content.GIMStorage;
@@ -44,6 +47,7 @@ import io.ruin.model.inter.handlers.TeleportInterface;
 import io.ruin.model.inter.handlers.shopinterface.CustomShop;
 import io.ruin.model.inter.journal.presets.PresetCustom;
 import io.ruin.model.inter.presets.PresetManager;
+import io.ruin.model.inter.teleports.TeleportList;
 import io.ruin.model.inter.utils.Config;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.ItemContainer;
@@ -76,8 +80,9 @@ import io.ruin.network.PacketSender;
 import io.ruin.network.central.CentralClient;
 import io.ruin.network.incoming.IncomingDecoder;
 import io.ruin.services.Highscores;
-import io.ruin.services.Loggers;
 import io.ruin.utility.CS2Script;
+import io.ruin.utility.Misc;
+import io.ruin.utility.PlayerLog;
 import io.ruin.utility.TickDelay;
 import lombok.Getter;
 import lombok.Setter;
@@ -100,6 +105,17 @@ public class Player extends PlayerAttributes {
 
     public final AchievementDiaryManager diaryManager = new AchievementDiaryManager(this);
 
+    @Getter @Setter public ClanManager clanManager;
+
+    public WellofGoodwill.Perk currentViewingPerk = WellofGoodwill.Perk.values()[0];
+    public int currentAchievementViewing = 1;
+    public String currentAchievementDifficultyViewing = "EASY";
+    @Expose public List<Item> claimedAchievementRewards = new LinkedList<>();
+    @Expose public int currentTab;
+    @Expose @Getter @Setter private boolean connectedClanChannel;
+
+    @Expose @Getter @Setter private String clanName;
+
     public boolean pvpBank;
 
     public Event.Type currentlyViewingEventType;
@@ -115,6 +131,9 @@ public class Player extends PlayerAttributes {
         return isFlying;
     }
 
+    @Expose
+    public boolean lootedAdfs;
+
     /**
      * Group IronMan
      **/
@@ -124,6 +143,8 @@ public class Player extends PlayerAttributes {
     public boolean checkGIM = false;
     @Expose
     public GroupIronman GIM;
+
+    public String clanInviter = "";
 
     public io.ruin.model.content.GIMStorage getGIMStorage() {
         GIMStorage.player = this;
@@ -203,11 +224,8 @@ public class Player extends PlayerAttributes {
 
     @Expose
     private String name;
-    @Expose
-    private boolean ecoReset = false;
 
 
-    private boolean sigilReset = false;
     @Expose
     private String displayName;
 
@@ -244,6 +262,13 @@ public class Player extends PlayerAttributes {
      */
     @Expose
     public Position lastTeleport;
+
+    @Expose
+    public TeleportList.Teleport lastTeleport1;
+    @Expose
+    public TeleportList.Teleport lastTeleport2;
+    @Expose
+    public TeleportList.Teleport lastTeleport3;
 
     /**
      * Minigame
@@ -443,10 +468,10 @@ public class Player extends PlayerAttributes {
     }
 
     public boolean isGroups(SecondaryGroup g) {
-        return secondaryGroup.equals(g);
+        return secondaryGroup.ordinal() >= g.ordinal();
     }
     public boolean isSecondaryGroup(SecondaryGroup s) {
-        return secondaryGroup.equals(s);
+        return secondaryGroup.ordinal() >= s.ordinal();
     }
     public boolean isModerator() {
         return isGroup(PlayerGroup.MODERATOR) || isAdmin() || isDev() || isOwner();
@@ -755,6 +780,9 @@ public class Player extends PlayerAttributes {
     }
 
     public void openInterface(InterfaceType type, int interfaceId) {
+        if (type == InterfaceType.MAIN && interfaceId != Interface.BANK) {
+            player.getPacketSender().sendClientScript(2524, "ii", -1, -1);
+        }
         openInterface(type, interfaceId, InterfaceHandler.HANDLERS[interfaceId]);
     }
 
@@ -786,7 +814,6 @@ public class Player extends PlayerAttributes {
         if (duel != null)
             duel.close();
         closeChatbox(skipDialogues);
-
         packetSender.sendClientScript(2158);
     }
 
@@ -1549,10 +1576,8 @@ public class Player extends PlayerAttributes {
         }
         if (SeasonPassParameters.PassActive) {
             if (drakoPass == null) {
-                System.out.println("Creating new battlepass");
                 drakoPass = new BattlePass(this);
             } else if (player.seasonpassv != SeasonPassParameters.version) {
-                System.out.println("Creating new battlepass");
                 drakoPass = new BattlePass(this);
             }
         }
@@ -1571,102 +1596,37 @@ public class Player extends PlayerAttributes {
         combat.start();
         movement.sendEnergy(-1);
         getCombat().resetTb();
-        /*
-         * Misc
-         */
         PresetCustom.check(this);
         bankPin.loggedIn();
-        /*
-         * Actions
-         */
         setAction(2, PlayerAction.FOLLOW);
         setAction(3, PlayerAction.TRADE);
         setInvisibleAction(4, PlayerAction.TRADE);
-        /*
-         * Messages
-         */
         sendMessage("Welcome to " + World.type.getWorldName() + ".");
-
+        DailyTask.assignTaskNoWarning(this);
         packetSender.sendDiscordPresence("Idle");
         if (World.weekendExpBoost)
             player.sendMessage(Color.COOL_BLUE.wrap("The 25% experience weekend boost is currently active!"));
 
         World.sendLoginMessages(this);
-
-        /*
-         * Listeners
-         */
         LoginListener.executeAll(this);
-
-        /*
-         * Misc 2
-         */
 
         if (pet != null)
             pet.spawn(this);
 
-        Loggers.addOnlinePlayer(userId, name, World.id, ipAddress, player.isSupport(), player.isModerator(), player.isAdmin());
+        ClanManager.clear(this);
+        if (clanName != null) {
+            if (!ClanManager.connectToClan(this, clanName)) {
+                clanName = null;
+            }
+        }
+
+        PlayerLog.log(PlayerLog.Type.LOGGED_ON, getName(), "Time=" + Misc.formatTime(System.currentTimeMillis()) + ", IP=" + getIp());
 
         Title.load(this);
 
-        /*
-         * Clean those who have a crazy amount of money on update
-         */
-
-
-        /*
-         * Daily
-         */
-        if (
-                lastLoginDate == null || LocalDate.parse(lastLoginDate).isBefore(LocalDate.now())) {
+        if (lastLoginDate == null || LocalDate.parse(lastLoginDate).isBefore(LocalDate.now())) {
             dailyReset();
         }
-
-        /*
-         * Donator Benefit: [1 Daily Lottery Ticket]
-         */
-/*        if (lastLoginDate != null && LocalDate.parse(lastLoginDate).isBefore(LocalDate.now()) && isBronze()) {
-            sendMessage("You have received your daily lottery ticket. Thanks for supporting the server!");
-            bank.add(1464, 1);
-        }*/
-        if (!player.sigilReset) {
-            Config.SIGIL_SLOT_ONE.set(player, 0);
-            Config.SIGIL_SLOT_TWO.set(player, 0);
-            Config.SIGIL_SLOT_THREE.set(player, 0);
-            player.sigilReset = true;
-        }
-
-        if (!player.ecoReset) {
-          if(player.getInventory() != null) {
-              player.getInventory().clear();
-          }
-          if (player.getEquipment() != null) {
-              player.getEquipment().clear();
-          }
-          if (player.getBank() != null) {
-              player.getBank().clear();
-          }
-          if (player.getLootingBag() != null) {
-              player.getLootingBag().clear();
-          }
-            player.PvmPoints = 0;
-            if (player.getDeathStorage() != null ) {
-                player.getDeathStorage().clear();
-            }
-            player.tradePost.container().coffer = 0;
-            player.bank.add(995, 1000000);
-            if (player.storeAmountSpent > 1) {
-                player.bank.add(30308, player.storeAmountSpent);
-            }
-            if (player.xpMode == XpMode.HARD || player.xpMode == XpMode.MEDIUM || player.xpMode == XpMode.REALISTIC) {
-                if (player.bank.getAmount(30353) < 1) {
-                    player.bank.add(30353, 1);
-                }
-            }
-            player.ecoReset = true;
-        }
-
-
 
         packetSender.sendVarp(1737, -2147483648);
         packetSender.sendClientScript(1105, "i", 1);
@@ -1678,6 +1638,13 @@ public class Player extends PlayerAttributes {
         packetSender.sendClientScript(233, "ImiiiiiiA", 24772665, 38864, 10, 180, 78, 158, 0, 2000, 8500);
         packetSender.sendClientScript(3954, "IIi", 712 << 16 | 2, 712 << 16 | 3, player.getCombat().getLevel());
         packetSender.sendInterface(7, 707, 7, 1);//Sets default clan tab
+        //packetSender.setHidden(629, 28, false);
+        //packetSender.setHidden(629, 23, false);
+        Config.UNKNOWNWTF.set(player, 2);
+        Config.UNKNOWNWTF2.set(player, 3);
+        Config.UNKN_2606.set(player, 5);
+        packetSender.sendClientScript(2957, "i", (629 << 16 | 27));
+        packetSender.sendClientScript(2956, "i", 41222171);
         Config.CLANCHAT_TAB_ID.set(this, 0);
 
         if (World.isDev() || Arrays.stream(World.OWNERS).anyMatch(o -> name.equalsIgnoreCase(o)))
@@ -1694,6 +1661,11 @@ public class Player extends PlayerAttributes {
 
         if (Arrays.stream(World.MODERATORS).anyMatch(o -> name.equalsIgnoreCase(o)))
             player.join(PlayerGroup.MODERATOR);
+
+        Minigames.checkLogin(this);
+        getDiaryManager().login();
+        WellofGoodwill.sendTab(this);
+        PlayerLog.buildLogFiles(getName());
     }
 
     public void finish() {
@@ -1787,6 +1759,8 @@ public class Player extends PlayerAttributes {
             return;
         if (logoutListener != null && logoutListener.attemptAction != null && !logoutListener.attemptAction.allow(this))
             return;
+        if (clanManager != null)
+            clanManager.disconnect(this);
         logoutStage = 1;
         packetSender.sendDiscordPresence("In Lobby");
         packetSender.sendLogout();
@@ -1807,10 +1781,14 @@ public class Player extends PlayerAttributes {
                 channel.close();
                 logoutStage = 1;
             } else {
-                if (!decoder.process(this, 250))
-                    Server.logWarning(name + " has suspicious packet count!");
-                if (logoutStage == 0) //This player hasn't tried to log out, we good.
-                    return;
+                try {
+                    if (!decoder.process(this, 250))
+                        Server.logWarning(name + " has suspicious packet count!");
+                    if (logoutStage == 0) //This player hasn't tried to log out, we good.
+                        return;
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
         /**
@@ -1867,29 +1845,17 @@ public class Player extends PlayerAttributes {
         }
         World.players.remove(getIndex());
         CentralClient.sendLogout(userId);
-        /**
-         * Misc things like SQL updates
-         */
-//        XenGroup.update(this);
-        Loggers.logPlayer(this);
-        Loggers.updateItems(this);
-        Loggers.removeOnlinePlayer(userId, World.id);
+        PlayerLog.log(PlayerLog.Type.ALL_ITEMS, getName(), "Time=" + Misc.formatTime(System.currentTimeMillis()) + ", IP=" + getIp() + ", Inventory=[" + Arrays.toString(player.getInventory().getItems()) + "\nEquipment=" + Arrays.toString(player.getEquipment().getItems()) + "\nBank=" + Arrays.toString(player.getBank().getItems()) + "\nLootingBag=" + Arrays.toString(player.getInventory().getItems()) + "\n\n\n");
+        PlayerLog.log(PlayerLog.Type.LOGGED_OFF, getName(), "Time=" + Misc.formatTime(System.currentTimeMillis()) + ", IP=" + getIp());
        if (player.getStats().totalLevel >= 250) {
              new Thread(new Highscores(player)).start();
        }
         GIMRepository.onlogout(this);
-//        if (!World.isDev()) {
-//        //jda.getPresence().setPresence(OnlineStatus.ONLINE, Activity.watching(World.players.count() - 1 + " players!"));
-//        }
     }
 
-    /**
-     * Processing
-     */
 
     public void process() {
         processEvent();
-
         inventory.sendUpdates();
         equipment.sendUpdates();
         bank.sendUpdates();
@@ -1904,23 +1870,15 @@ public class Player extends PlayerAttributes {
         TargetRoute.beforeMovement(this);
         movement.process();
         TargetRoute.afterMovement(this);
-
         Region region;
         if (movement.hasMoved() && lastRegion != (region = getPosition().getRegion()))
             lastRegion = region;
         validateMapListeners();
-
-
         combat.attack();
-
         prayer.process();
         stats.process();
-
         tick();
-
         processHits();
-
-      //  dupeWarden.update(this);
     }
 
     /**
@@ -2037,30 +1995,21 @@ public class Player extends PlayerAttributes {
         String format = String.format("BloodMoneyKill:[Player:[%s] Position:%s IPAddress:[%s] Target:[%s] IPAddress:[%s] Amount:[%d]]", player.getName(), player.getPosition(), player.getIp(), target.getName(), target.getIp(), amount);
         ServerWrapper.log(format);
         if (player.isADonator()) {
-            if (inventory.add(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(5000, 25000)) > 0)
+            if (inventory.add(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(2500, 5000)) > 0)
                 sendFilteredMessage("You received blood money for killing: " + target.getName() + ".");
             else
-                new GroundItem(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(5000, 25000)).owner(this).position(target.getPosition()).spawn();
-        } else if (inventory.add(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(1000, 10000)) > 0)
+                new GroundItem(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(2500, 5000)).owner(this).position(target.getPosition()).spawn();
+        } else if (inventory.add(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(1000, 5000)) > 0)
             sendFilteredMessage("You received blood money for killing: " + target.getName() + ".");
         else
-            new GroundItem(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(1000, 10000)).owner(this).position(target.getPosition()).spawn();
+            new GroundItem(BLOOD_MONEY, ThreadLocalRandom.current().nextInt(1000, 5000)).owner(this).position(target.getPosition()).spawn();
     }
 
     public void rewardBm(NPC target, int amount) {
         String format = String.format("BloodMoneyKillNPC:[Player:[%s] Position:%s IPAddress:[%s] Target:[%s] Amount:[%d]]", player.getName(), player.getPosition(), player.getIp(), target.getDef().name, amount);
         ServerWrapper.log(format);
-        if (player.isADonator()) {
-            if (inventory.add(BLOOD_MONEY, amount * 2) > 0)
-                sendFilteredMessage("You received <col=6f0000>" + NumberUtils.formatNumber(amount * 2) + "</col> blood money for killing npc: " + target.getDef().name);
-            else
-                new GroundItem(BLOOD_MONEY, amount * 2).owner(this).position(target.getPosition()).spawn();
-        } else {
-            if (inventory.add(BLOOD_MONEY, amount) > 0)
-                sendFilteredMessage("You received <col=6f0000>" + NumberUtils.formatNumber(amount) + "</col> blood money for killing npc: " + target.getDef().name);
-            else
+            if (inventory.add(BLOOD_MONEY, amount) <= 0);
                 new GroundItem(BLOOD_MONEY, amount).owner(this).position(target.getPosition()).spawn();
-        }
     }
 
     @Override

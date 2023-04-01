@@ -166,7 +166,9 @@ public enum RingOfSuffering {
         } else {
             ring.setUniqueValue(ring.getUniqueValue() - damage);
         }
-        hit.attacker.hit(new Hit().fixedDamage(damage));
+        if (hit.attacker != null) {
+            hit.attacker.hit(new Hit().fixedDamage(damage));
+        }
     }
 
 }

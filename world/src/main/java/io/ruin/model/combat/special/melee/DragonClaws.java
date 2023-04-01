@@ -30,7 +30,8 @@ public class DragonClaws implements Special {
     public boolean handle(Player player, Entity victim, AttackStyle attackStyle, AttackType attackType, int maxDamage) {
         player.animate(7514, 10);
         player.graphics(1171, 0, 10);
-        player.publicSound(2537);
+        player.publicSound(4138, 1, 4);
+        player.publicSound(4140, 1, 5);
         Hit hit1 = new Hit(player, attackStyle, attackType).boostAttack(0.25),
                 hit2 = new Hit(player, attackStyle, attackType).boostAttack(0.25),
                 hit3 = new Hit(player, attackStyle, attackType).boostAttack(0.25).delay(2),

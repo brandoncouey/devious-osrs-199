@@ -2,7 +2,7 @@ package io.ruin.model.skills.agility.shortcut;
 
 import com.google.common.collect.Lists;
 import io.ruin.model.World;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.map.Direction;
@@ -172,7 +172,7 @@ public enum ClimbingSpots {
             if (World.isEco())
                 p.getStats().addXp(StatType.Agility, xp, true);
             if (obj.id == 16534) {
-                p.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.SHORTCUT);
+                p.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.SHORTCUT);
             }
             p.unlock();
             p.resetAnimation();

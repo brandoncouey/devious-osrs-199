@@ -150,11 +150,6 @@ public enum ArielFishing {
                 player.getStats().addXp(StatType.Fishing, reward.fishExp * anglerBonus(player), true);
                 player.getStats().addXp(StatType.Hunter, reward.hunterExp, true);
                 player.getInventory().add(reward.fishId, 1);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
-
                 if (Random.rollDie(10, 3)) {
                     player.getInventory().addOrDrop(MOLCH_PEARL, 1);
                 }

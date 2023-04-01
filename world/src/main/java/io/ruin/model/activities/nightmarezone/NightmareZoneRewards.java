@@ -168,11 +168,11 @@ public class NightmareZoneRewards {
     static {
         try {
             InterfaceHandler.register(Interface.NIGHTMARE_ZONE_REWARDS, h -> {
-                h.actions[4] = (DefaultAction) (player, option, slot, itemId) -> handlePurchaseRewardItemAction(player, option, slot, itemId);
+                h.actions[4] = (DefaultAction) (player, childId, option, slot, itemId) -> handlePurchaseRewardItemAction(player, option, slot, itemId);
 
-                h.actions[5] = (DefaultAction) (player, option, slot, itemId) -> handleImbueItemAction(player, option, slot, itemId);
+                h.actions[5] = (DefaultAction) (player, childId, option, slot, itemId) -> handleImbueItemAction(player, option, slot, itemId);
 
-                h.actions[6] = (DefaultAction) (player, option, slot, itemId) -> handlePurchaseBenefitItemAction(player, option, slot, itemId);
+                h.actions[6] = (DefaultAction) (player, childId, option, slot, itemId) -> handlePurchaseBenefitItemAction(player, option, slot, itemId);
             });
 
         } catch (Throwable e) {

@@ -6,8 +6,6 @@ import io.ruin.model.World;
 import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.diaries.devious.DeviousDiaryEntry;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
@@ -167,7 +165,7 @@ public enum Altars {
             player.getStats().addXp(StatType.Runecrafting, essenceCount * altar.experience, true);
             counter.increment(player, amount);
             if (altar.runeID == WATER.runeID) {
-                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CRAFT_WATER);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CRAFT_WATER);
             }
 
             if (altar.runeID == NATURE.runeID && amount >= 56) {
@@ -179,23 +177,23 @@ public enum Altars {
             }
 
             if (altar.runeID == EARTH.runeID && amount >= 100) {
-                player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.ALOT_OF_EARTH);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.ALOT_OF_EARTH);
             }
 
             if (altar.runeID == EARTH.runeID) {
-                player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.EARTH_RUNES);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.EARTH_RUNES);
             }
 
             if (altar.runeID == WATER.runeID && amount >= 140) {
-                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CRAFT_WATERS);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CRAFT_WATERS);
             }
 
             if (altar.runeID == FIRE.runeID) {
-                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CRAFT_LAVAS);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CRAFT_FIRES);
             }
 
             if (altar.runeID == COSMIC.runeID && amount >= 56) {
-                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CRAFT_COSMIC);
+                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CRAFT_COSMIC);
             }
 
             if (altar.runeID == BLOOD.runeID) {
@@ -267,10 +265,6 @@ public enum Altars {
             player.graphics(186, 100, 0);
             player.privateSound(2710);
             player.getStats().addXp(StatType.Runecrafting, runeCombination.exp * amountToCombine, true);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             /* 50% chance of success without binding necklace */
             if (Random.rollDie(2, 1) && !hasNecklace(player)) {
                 player.sendMessage("You fail to combine the runes.");

@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -66,13 +66,13 @@ public class Edgeville {
         /**
          * Ladder
          */
-        ObjectAction.register(17385, 3116, 9852, 0, "climb-up", (player, obj) -> Ladder.climb(player, 3117, 3452, 0, true, true, false));
-        ObjectAction.register(17384, 3116, 3452, 0, "climb-down", (player, obj) -> Ladder.climb(player, 3117, 9852, 0, false, true, false));
+        ObjectAction.register(17385, 3116, 9852, 0, "climb-up", (player, obj) -> Ladder.climb(player, 3108, 3514, 0, true, true, false));
+        ObjectAction.register(11668, 3107, 3514, 0, "climb-down", (player, obj) -> Ladder.climb(player, 3117, 9852, 0, false, true, false));
 
         /**
          * Brass key door
          */
-        ObjectAction.register(1804, 3115, 3450, 0, "open", (player, obj) -> {
+        /*ObjectAction.register(1804, 3115, 3450, 0, "open", (player, obj) -> {
             if (player.getInventory().hasId(983)) {
                 player.startEvent(event -> {
                     player.lock();
@@ -88,13 +88,12 @@ public class Edgeville {
                     event.delay(2);
                     obj.restore().skipClipping(false);
                     opened.remove();
-
                     player.unlock();
                 });
             } else {
                 player.sendFilteredMessage("The door is locked.");
             }
-        });
+        });*/
 
         /**
          * Obstacle pipe
@@ -104,7 +103,7 @@ public class Edgeville {
             player.animate(749, 30);
             player.getMovement().force(3, 0, 0, 0, 33, 126, Direction.EAST);
             event.delay(3);
-            player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.OBSTACLE_PIPE);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.OBSTACLE_PIPE);
             player.getMovement().force(3, 0, 0, 0, 33, 126, Direction.EAST);
             event.delay(1);
             player.animate(749, 30);

@@ -107,7 +107,7 @@ public class BotPrevention {
     }
 
     public static void attemptBlock(Player player) {
-        if (Random.rollDie(300, 1)) {
+        if (Random.rollDie(275, 1)) {
             if (player.botPreventionNPC == null)
                 spawn(player);
         }

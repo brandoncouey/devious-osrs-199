@@ -49,11 +49,9 @@ public class CompletionistCape {
         player.sendMessage("<col=aa0000>Your " + item.getDef().name + " has been unequipped and dropped to the floor because you no longer meet the requirements to wear it and have no space in your inventory or bank to store it.");
     }
     public static boolean doneAchieves(Player player) {
-        return player.getDiaryManager().getDeviousDiary().hasDoneAll() && player.getDiaryManager().getPvpDiary().hasDoneAll()
-                && player.getDiaryManager().getWesternDiary().hasDoneAll() && player.getDiaryManager().getSkillingDiary().hasDoneAll()
-                && player.getDiaryManager().getFremennikDiary().hasDoneAll() && player.getDiaryManager().getKandarinDiary().hasDoneAll()
-                && player.getDiaryManager().getPvmDiary().hasDoneAll() && player.getDiaryManager().getLumbridgeDraynorDiary().hasDoneAll()
-                && player.getDiaryManager().getMorytaniaDiary().hasDoneAll() && player.getDiaryManager().getVarrockDiary().hasDoneAll()
+        return player.getDiaryManager().getDeviousDiary().hasDoneAll() && player.getDiaryManager().getPvpDiary().hasDoneAll() &&
+                player.getDiaryManager().getSkillingDiary().hasDoneAll() &&
+                player.getDiaryManager().getPvmDiary().hasDoneAll()
                 && player.getDiaryManager().getWildernessDiary().hasDoneAll() && player.getStats().total99s >= 22;
     }
 

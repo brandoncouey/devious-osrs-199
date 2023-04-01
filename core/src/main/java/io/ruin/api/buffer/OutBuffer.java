@@ -45,9 +45,6 @@ public class OutBuffer {
         int length = Math.min(position, payload.length);
         for (int i = 0; i < length; i++)
             bytes2[i] = payload[i];
-        if (!Arrays.equals(bytes, bytes2))
-            ServerWrapper.logError("", new Throwable()); //I want to see if this happens lol..
-
         return bytes;
     }
 

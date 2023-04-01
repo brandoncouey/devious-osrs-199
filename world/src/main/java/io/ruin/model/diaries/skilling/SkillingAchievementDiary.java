@@ -3,11 +3,15 @@ package io.ruin.model.diaries.skilling;
 import io.ruin.model.diaries.StatefulAchievementDiary;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.utils.Config;
+import io.ruin.model.item.Item;
+import io.ruin.utility.Misc;
+import io.ruin.utility.Utils;
 
-import java.util.EnumSet;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static io.ruin.model.diaries.skilling.SkillingDiaryEntry.*;
 
@@ -22,7 +26,7 @@ public final class SkillingAchievementDiary extends StatefulAchievementDiary<Ski
 
     public static final Set<SkillingDiaryEntry> ELITE_TASKS = EnumSet.of(STRANGE_FLOOR, KILL_BLACK_DRAGON, WEAR_PROSPECTOR);
 
-    public static final String NAME = "Falador area";
+    public static final String NAME = "Skilling";
 
     public SkillingAchievementDiary(Player player) { super(NAME, player);
     }
@@ -53,7 +57,7 @@ public final class SkillingAchievementDiary extends StatefulAchievementDiary<Ski
         return achievements.containsAll(EASY_TASKS);
     }
 
-    public boolean hasCompletedAchieve(String difficulty) {
+    public boolean hasCompletedAchieve(String achievementName) {
         for (SkillingDiaryEntry value : values()) {
             player.DiaryRecorder.forEach((s, integer) -> {
                 if (s.equalsIgnoreCase(value.toString()) && integer == 1000) {
@@ -61,54 +65,9 @@ public final class SkillingAchievementDiary extends StatefulAchievementDiary<Ski
                 }
             });
         }
-
-        switch (difficulty) {
-            //EASY
-            case "KILL_DUCK":
-                return achievements.contains(KILL_DUCK);
-            case "WESTERN_WALL":
-                return achievements.contains(WESTERN_WALL);
-            case "FILL_BUCKET":
-                return achievements.contains(FILL_BUCKET);
-            case "REPAIR_STRUT":
-                return achievements.contains(REPAIR_STRUT);
-            case "TRAVEL_ENTRANA":
-                return achievements.contains(TRAVEL_ENTRANA);
-            case "MIND_TIARA":
-                return achievements.contains(MIND_TIARA);
-            case "FARMING_SHOP":
-                return achievements.contains(FARMING_SHOP);
-            //MEDIUM
-            case "CRYSTAL_CHEST":
-                return achievements.contains(CRYSTAL_CHEST);
-            case "PICKPOCKET_GUARD":
-                return achievements.contains(PICKPOCKET_GUARD);
-            case "GOLD_ORE":
-                return achievements.contains(GOLD_ORE);
-            case "NARROW_CREVICE":
-                return achievements.contains(NARROW_CREVICE);
-            case "ALTAR_OF_GUTHIX":
-                return achievements.contains(ALTAR_OF_GUTHIX);
-            case "TELEPORT_FALADOR":
-                return achievements.contains(TELEPORT_FALADOR);
-            //HARD
-            case "KILL_WYVERN":
-                return achievements.contains(KILL_WYVERN);
-            case "FALADOR_ROOFTOP":
-                return achievements.contains(FALADOR_ROOFTOP);
-            case "KILL_GIANT_MOLE":
-                return achievements.contains(KILL_GIANT_MOLE);
-            case "WARRIOR_GUILD":
-                return achievements.contains(WARRIOR_GUILD);
-            //ELITE
-            case "STRANGE_FLOOR":
-                return achievements.contains(STRANGE_FLOOR);
-            case "KILL_BLACK_DRAGON":
-                return achievements.contains(KILL_BLACK_DRAGON);
-            case "WEAR_PROSPECTOR":
-                return achievements.contains(WEAR_PROSPECTOR);
-        }
-        return achievements.containsAll(EASY_TASKS);
+        Optional<SkillingDiaryEntry> achievement = fromName(achievementName);
+        if (achievement.isEmpty()) return false;
+        return achievements.contains(achievement.get());
     }
 
     int REWARD = 13117;
@@ -167,22 +126,15 @@ public final class SkillingAchievementDiary extends StatefulAchievementDiary<Ski
 
     }
 
-    public void npcDialogue(String dialogue) {
-        //player.getDH().sendNpcChat1(dialogue, player.npcType, "Diary Manager");
-        // player.nextChat = -1;
-    }
-
     public void addReward(int reward, NPC npc) {
         player.getInventory().add(reward, 1);
         player.dialogue(new NPCDialogue(npc, "Here you go, upgraded and ready to be used!"));
-        //player.getDH().sendNpcChat1("Here you go, upgraded and ready to be used.", player.npcType, "Diary Manager");
     }
 
     public void upgradeReward(int reward, int upgrade, NPC npc) {
         player.getInventory().remove(reward, 1);
         player.getInventory().add(upgrade, 1);
         player.dialogue(new NPCDialogue(npc, "Here you go, upgraded and ready!"));
-        //player.getDH().sendNpcChat1("Here you go, upgraded and ready.", player.npcType, "Diary Manager");
     }
 
     public int getCount(int id) {
@@ -208,40 +160,178 @@ public final class SkillingAchievementDiary extends StatefulAchievementDiary<Ski
         return ELITE_TASKS;
     }
 
-    public final void display() {
-        player.sendScroll("<col=8B0000>Falador Diary",
-                "<col=501061><strong><u>Easy",
-                hasCompletedAchieve("KILL_DUCK") ? "<col=24d124>Kill a Duck in Falador Park.</col>" : "<col=911c25>Kill a Duck in Falador Park.",
-                hasCompletedAchieve("WESTERN_WALL") ? "<col=24d124>Climb the Crumbling Wall shortcut.</col>" : "<col=911c25>Climb the Crumbling Wall shortcut.",
-                hasCompletedAchieve("FILL_BUCKET") ? "<col=24d124>Fill a Bucket at the Waterpump in Northwest Falador.</col>" : "<col=911c25>Fill a Bucket at the Waterpump in Northwest Falador.",
-                hasCompletedAchieve("REPAIR_STRUT") ? "<col=24d124>Repair a Broken Strut in the Motherlode Mine." : "<col=911c25>Repair a Broken Strut in the Motherlode Mine.",
-                hasCompletedAchieve("TRAVEL_ENTRANA") ? "<col=24d124>Travel by boat to Entrana.</col>" : "<col=911c25>Travel by boat to Entrana.",
-                hasCompletedAchieve("MIND_TIARA") ? "<col=24d124>Mine a Copper Ore in Rimmington.</col>" : "<col=911c25>Mine a Copper Ore in Rimmington.",
-                hasCompletedAchieve("FARMING_SHOP") ? "<col=24d124>Kill a White Knight.</col>" : "<col=911c25>Kill a White Knight.",
-                "",
-                "<col=501061><strong><u>Medium",
-                hasCompletedAchieve("CRYSTAL_CHEST") ? "<col=24d124>Unlock the Crystal Chest in Taverley.</col>" : "<col=911c25>Unlock the Crystal Chest in Taverley.",
-                hasCompletedAchieve("PICKPOCKET_GUARD") ? "<col=24d124>Pickpocket a Falador Guard.</col>" : "<col=911c25>Pickpocket a Falador Guard.",
-                hasCompletedAchieve("GOLD_ORE") ? "<col=24d124>Mine a piece of Gold Ore in the Crafting Guild.</col>" : "<col=911c25>Mine a piece of Gold Ore in the Crafting Guild.",
-                hasCompletedAchieve("NARROW_CREVICE") ? "<col=24d124>Squeeze through the Crevice shortcut in the Dwarven Mines.</col>" : "<col=911c25>Squeeze through the Crevice shortcut in the Dwarven Mines.",
-                hasCompletedAchieve("ALTAR_OF_GUTHIX") ? "<col=24d124>Pray at the Guthix Altar in Taverley.</col>" : "<col=911c25>Pray at the Guthix Altar in Taverley.",
-                hasCompletedAchieve("TELEPORT_FALADOR") ? "<col=24d124>Teleport to Falador.</col>" : "<col=911c25>Teleport to Falador.",
-                "",
-                "<col=501061><strong><u>Hard",
-                hasCompletedAchieve("KILL_WYVERN") ? "<col=24d124>Kill Skeletal Wyverns. (" + (getAbsoluteAchievementStage(KILL_WYVERN)) + "/" + getMaximum(KILL_WYVERN) + ")</col>" : "<col=911c25>Kill Skeletal Wyverns. (" + (getAbsoluteAchievementStage(KILL_WYVERN)) + "/" + getMaximum(KILL_WYVERN) + ")",
-                hasCompletedAchieve("FALADOR_ROOFTOP") ? "<col=24d124>Complete the Falador Rooftop Agility Course. (" + (getAbsoluteAchievementStage(FALADOR_ROOFTOP)) + "/" + getMaximum(FALADOR_ROOFTOP) + ")</col>" : "<col=911c25>Complete the Falador Rooftop Agility Course. (" + (getAbsoluteAchievementStage(FALADOR_ROOFTOP)) + "/" + getMaximum(FALADOR_ROOFTOP) + ")",
-                hasCompletedAchieve("KILL_GIANT_MOLE") ? "<col=24d124>Kill Giant Moles. (" + (getAbsoluteAchievementStage(KILL_GIANT_MOLE)) + "/" + getMaximum(KILL_GIANT_MOLE) + ")</col>" : "<col=911c25>Kill Giant Moles. (" + (getAbsoluteAchievementStage(KILL_GIANT_MOLE)) + "/" + getMaximum(KILL_GIANT_MOLE) + ")",
-                hasCompletedAchieve("WARRIOR_GUILD") ? "<col=24d124>Enter the Warrior's Guild.</col>" : "<col=911c25>Enter the Warrior's Guild.",
-                "",
-                "<col=501061><strong><u>Elite",
-                hasCompletedAchieve("STRANGE_FLOOR") ? "<col=24d124>Cross the Strange Floor shortcut in Taverley Dungeon.</col>" : "<col=911c25>Cross the Strange Floor shortcut in Taverley Dungeon.",
-                hasCompletedAchieve("KILL_BLACK_DRAGON") ? "<col=24d124>Kill Black Dragons on the upper level of Taverley Dungeon. (" + (getAbsoluteAchievementStage(KILL_BLACK_DRAGON)) + "/" + getMaximum(KILL_BLACK_DRAGON) + ")</col>" : "<col=911c25>Kill Black Dragons on the upper level of Taverley Dungeon. (" + (getAbsoluteAchievementStage(KILL_BLACK_DRAGON)) + "/" + getMaximum(KILL_BLACK_DRAGON) + ")",
-                hasCompletedAchieve("WEAR_PROSPECTOR") ? "<col=24d124>Enter the Mining Guild wearing full Prospector.</col>" : "<col=911c25>Enter the Mining Guild wearing full Prospector.");
+    public int getEasyAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        EASY_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getMediumAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        MEDIUM_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getHardAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        HARD_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+    public int getEliteAmountCompleted() {
+        AtomicInteger amount = new AtomicInteger();
+        ELITE_TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name()))
+                amount.getAndIncrement();
+        });
+        return amount.get();
+    }
+
+    public final void display(String difficulty) {
+        player.currentAchievementDifficultyViewing = difficulty;
+        player.getPacketSender().sendString(1041, 14, "Skilling Achievement Diary");
+        for (int i = 0; i < 32; i++) {
+            player.getPacketSender().setHidden(1041, 74 + (i * 5), true);
+        }
+        AtomicInteger index = new AtomicInteger();
+
+        Set<SkillingDiaryEntry> TASKS = EASY_TASKS;
+        List<Item> rewards = easyRewards;
+
+        switch (difficulty) {
+            case "MEDIUM":
+                TASKS = MEDIUM_TASKS;
+                rewards = mediumRewards;
+                spriteId = 3400;
+                break;
+            case "HARD":
+                TASKS = HARD_TASKS;
+                rewards = hardRewards;
+                spriteId = 3401;
+                break;
+            case "ELITE":
+                TASKS = ELITE_TASKS;
+                rewards = eliteRewards;
+                spriteId = 3402;
+                break;
+        }
+
+        int finalSpriteId = spriteId;
+        TASKS.forEach(e -> {
+            if (!hasCompletedAchieve(e.name())) {
+                player.getPacketSender().setSprite(1041, 76 + (index.get() * 5), finalSpriteId);
+                player.getPacketSender().sendString(1041, 77 + (index.get() * 5), Misc.formatStringFormal(e.getName()));
+                player.getPacketSender().sendString(1041, 78 + (index.get() * 5), e.getDescription().replace("%progress%", "<col=deb31f>" + Utils.formatMoneyString(player.getDiaryManager().getSkillingDiary().getAchievementStage(e).isPresent() ? player.getDiaryManager().getSkillingDiary().getAchievementStage(e).getAsInt() : 0)).replace("%amount%", Utils.formatMoneyString(e.getMaximumStages()) + "</col>"));
+                player.getPacketSender().setHidden(1041, 74 + (index.get() * 5), false);
+                index.getAndIncrement();
+            }
+        });
+        TASKS.forEach(e -> {
+            if (hasCompletedAchieve(e.name())) {
+                player.getPacketSender().setSprite(1041, 76 + (index.get() * 5), finalSpriteId);
+                player.getPacketSender().sendString(1041, 77 + (index.get() * 5), "<col=404040><str>" + Misc.formatStringFormal(e.name()));
+                player.getPacketSender().sendString(1041, 78 + (index.get() * 5), e.getDescription().replace("%progress%", "<col=deb31f>" + Utils.formatMoneyString(player.getDiaryManager().getSkillingDiary().getAchievementStage(e).isPresent() ? player.getDiaryManager().getSkillingDiary().getAchievementStage(e).getAsInt() : 0)).replace("%amount%", Utils.formatMoneyString(e.getMaximumStages()) + "</col>"));
+                player.getPacketSender().setHidden(1041, 74 + (index.get() * 5), false);
+                index.getAndIncrement();
+            }
+        });
+        player.getPacketSender().sendString(1041, 24, getEasyAmountCompleted() + "/" + EASY_TASKS.size());
+        player.getPacketSender().sendString(1041, 37, getMediumAmountCompleted() + "/" + MEDIUM_TASKS.size());
+        player.getPacketSender().sendString(1041, 50, getHardAmountCompleted() + "/" + HARD_TASKS.size());
+        player.getPacketSender().sendString(1041, 63, getEliteAmountCompleted() + "/" + ELITE_TASKS.size());
+        int count = 0;
+        for (Item reward : rewards) {
+            player.getPacketSender().sendItems(1041, (248 + count), 0, reward);
+            count++;
+        }
+        player.openInterface(InterfaceType.MAIN, 1041);
     }
 
     @Override
-    public int getMaximum(SkillingDiaryEntry achievement) {
+    public int getStage(SkillingDiaryEntry achievement) {
         return achievement.getMaximumStages();
     }
 
+    public void claimRewards() {
+        if (!hasCompleted(player.currentAchievementDifficultyViewing)) {
+            player.sendMessage("You must complete all of the " + Misc.formatStringFormal(player.currentAchievementDifficultyViewing)  + " " + NAME + " achievement diaries to claim your rewards.");
+            return;
+        }
+        switch (player.currentAchievementDifficultyViewing) {
+            case "EASY":
+                for (Item item : easyRewards) {
+                    if (new HashSet<>(player.claimedAchievementRewards).containsAll(easyRewards)) {
+                        player.sendMessage("You've already claimed all of your rewards.");
+                        return;
+                    }
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "MEDIUM":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(mediumRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : mediumRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "HARD":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(hardRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : hardRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+            case "ELITE":
+                if (new HashSet<>(player.claimedAchievementRewards).containsAll(eliteRewards)) {
+                    player.sendMessage("You've already claimed all of your rewards.");
+                    return;
+                }
+                for (Item item : eliteRewards) {
+                    if (!player.claimedAchievementRewards.contains(item)) {
+                        if (player.getInventory().getFreeSlots() > 0) {
+                            player.getInventory().add(item);
+                            player.claimedAchievementRewards.add(item);
+                        } else {
+                            player.sendMessage("You do not have enough inventory space.");
+                            return;
+                        }
+                    }
+                }
+                break;
+        }
+    }
 }

@@ -435,24 +435,24 @@ public enum SmithBar {
 
         AtomicInteger amount = new AtomicInteger();
         InterfaceHandler.register(Interface.SMITHING, h -> {
-            h.actions[3] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[3] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 amount.set(1);
             };
-            h.actions[4] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[4] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 amount.set(2);
             };
-            h.actions[5] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[5] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 amount.set(3);
             };
-            h.actions[6] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[6] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 amount.set(4);
             };
-            h.actions[7] = (DefaultAction) (p, option, slot, itemId) -> {
+            h.actions[7] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                 amount.set(5);
             };
             for (int i = 9; i <= 35; i++) {
                 int itemIndex = i - 9;
-                h.actions[i] = (DefaultAction) (p, option, slot, itemId) -> {
+                h.actions[i] = (DefaultAction) (p, childId, option, slot, itemId) -> {
                     SmithItem item = p.smithBar.smithItems[itemIndex];
                     if (item == null)
                         return;

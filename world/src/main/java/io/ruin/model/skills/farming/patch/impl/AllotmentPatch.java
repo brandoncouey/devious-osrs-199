@@ -38,10 +38,6 @@ public class AllotmentPatch extends Patch {
             if (index == 1)
                 player.sendMessage("Your watering can is now empty.");
             player.getStats().addXp(StatType.Farming, 1 * FarmingSet.FarmingSet(player), false);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
         });
     }
 
@@ -106,10 +102,6 @@ public class AllotmentPatch extends Patch {
                     event.delay(2);
                     player.getInventory().add(getPlantedCrop().getProduceId(), 1);
                     player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP() * FarmingSet.FarmingSet(player), true);
-                    if (Random.rollDie(50, 1)) {
-                        player.getInventory().addOrDrop(6828, 1);
-                        player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                    }
                     player.sendFilteredMessage("You harvest the patch.");
                     getPlantedCrop().getCounter().increment(player, 1);
                     removeProduce();
@@ -152,10 +144,6 @@ public class AllotmentPatch extends Patch {
             setProduceCount(calculateProduceAmount());
             player.getStats().addXp(StatType.Farming, crop.getPlantXP() * FarmingSet.FarmingSet(player), true);
             setTimePlanted(System.currentTimeMillis());
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             player.sendFilteredMessage("You plant the seed in the patch.");
             send();
         });

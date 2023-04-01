@@ -173,6 +173,7 @@ public class JalTokJad extends NPCCombat { // Inferno jad
                 World.sendGraphics(451, 0, 0, target.getPosition());
                 e.delay(1);
                 int maxdmg = 97;
+                if (target == null || target.player == null) return;
                 if (target.player.getPrayer().isActive(Prayer.PROTECT_FROM_MISSILES)) {
                     maxdmg = 1;
                 }

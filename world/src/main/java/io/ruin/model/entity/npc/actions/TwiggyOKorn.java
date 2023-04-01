@@ -44,36 +44,12 @@ public class TwiggyOKorn {
                                                 player.sendMessage("You need to complete the Ardougne Diary Before you can Access the shop!");
                                                 return;
                                             }
-                                            if (!player.getDiaryManager().getWesternDiary().hasDoneAll()) {
-                                                player.sendMessage("You need to complete the Western Diary Before you can Access the shop!");
-                                                return;
-                                            }
                                             if (!player.getDiaryManager().getSkillingDiary().hasDoneAll()) {
                                                 player.sendMessage("You need to complete the Falador Diary Before you can Access the shop!");
                                                 return;
                                             }
-                                            if (!player.getDiaryManager().getFremennikDiary().hasDoneAll()) {
-                                                player.sendMessage("You need to complete the Fremennik Diary Before you can Access the shop!");
-                                                return;
-                                            }
-                                            if (!player.getDiaryManager().getKandarinDiary().hasDoneAll()) {
-                                                player.sendMessage("You need to complete the Kandarin Diary Before you can Access the shop!");
-                                                return;
-                                            }
                                             if (!player.getDiaryManager().getPvmDiary().hasDoneAll()) {
                                                 player.sendMessage("You need to complete the Karamja Diary Before you can Access the shop!");
-                                                return;
-                                            }
-                                            if (!player.getDiaryManager().getLumbridgeDraynorDiary().hasDoneAll()) {
-                                                player.sendMessage("You need to complete the Lumbridge Diary Before you can Access the shop!");
-                                                return;
-                                            }
-                                            if (!player.getDiaryManager().getMorytaniaDiary().hasDoneAll()) {
-                                                player.sendMessage("You need to complete the Morytania Diary Before you can Access the shop!");
-                                                return;
-                                            }
-                                            if (!player.getDiaryManager().getVarrockDiary().hasDoneAll()) {
-                                                player.sendMessage("You need to complete the Varrock Diary Before you can Access the shop!");
                                                 return;
                                             }
                                             if (!player.getDiaryManager().getWildernessDiary().hasDoneAll()) {

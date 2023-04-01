@@ -9,6 +9,7 @@ import io.ruin.model.World;
 import io.ruin.model.activities.ActivityTimer;
 import io.ruin.model.activities.miscpvm.PassiveCombat;
 import io.ruin.model.combat.Hit;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
@@ -74,7 +75,7 @@ public class Inferno {
      * Separator
      */
 
-    private Player player;
+    public Player player;
 
     @Expose
     private int wave;
@@ -110,7 +111,6 @@ public class Inferno {
             deadPillars = new boolean[3];
         player.startEvent(e -> {
             player.lock();
-
             player.inferno = this;
             player.deathEndListener = (DeathListener.Simple) this::handleDeath;
             player.logoutListener = new LogoutListener().onAttempt(this::allowLogout);
@@ -189,7 +189,7 @@ public class Inferno {
                     player.getInventory().addOrDrop(6529, 16440);
                     Broadcast.WORLD.sendNews(player, player.getName() + " has defeated the Inferno.");
                     player.getCollectionLog().collect(21295);
-                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.COMPLETE_INFERNO);
+                    player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.COMPLETE_INFERNO);
                 }
             }
             player.inferno = null;
@@ -630,7 +630,7 @@ public class Inferno {
     }
 
     public static void checkForFireCape(Player player) {
-        if (player.getInventory().hasId(6570) && player.hasSacrificedFireCape == false) {
+        if (player.getInventory().hasId(6570) && !player.hasSacrificedFireCape) {
             player.dialogue(new OptionsDialogue("<col=8B0000>Sacrifice your fire cape?",
                     new Option("Yes!", () -> removeCapeAndGiveAccess(player)),
                     new Option("No, I'll keep it.", player::closeDialogue)));
@@ -640,7 +640,7 @@ public class Inferno {
     }
 
     public static void removeCapeAndGiveAccess(Player player) {
-        if (player.getInventory().hasId(6570) && player.hasSacrificedFireCape == false) {
+        if (player.getInventory().hasId(6570) && !player.hasSacrificedFireCape) {
             player.getInventory().remove(6570, 1);
             player.hasSacrificedFireCape = true;
             player.sendMessage("<col=8B0000>You have sacrificed your fire cape and you now have access to the Inferno. Good luck!");
@@ -648,9 +648,8 @@ public class Inferno {
     }
 
     public static void handleEnterInferno(Player player) {
-        if (player.hasSacrificedFireCape == false) {
+        if (!player.hasSacrificedFireCape) {
             checkForFireCape(player);
-            return;
         } else {
             player.dialogue(new OptionsDialogue(
                     new Option("Enter the Inferno", () -> join(player, getStartingWave(player), false)),
@@ -671,13 +670,6 @@ public class Inferno {
             actions[1] = (player, obj) -> {
                 handleEnterInferno(player);
             };
-        });
-
-        LoginListener.register(p -> {
-            if (p.inferno != null) {
-                p.inferno.player = p;
-                p.inferno.start(true);
-            }
         });
 
         ObjectAction.register(30283, "exit", (player, obj) -> player.dialogue(

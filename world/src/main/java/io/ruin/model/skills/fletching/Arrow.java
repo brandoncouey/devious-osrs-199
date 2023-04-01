@@ -45,10 +45,6 @@ public enum Arrow {
         player.animate(8481);
         player.getInventory().add(outcome, amount);
         player.getStats().addXp(StatType.Fletching, exp * amount, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
         boolean headless = shaft.getId() == 52 && tipItem.getId() == 314;
         if (headless) {
             player.sendFilteredMessage("You attach feathers to " + amount + " arrow shafts.");

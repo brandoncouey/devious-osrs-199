@@ -24,6 +24,7 @@ public class SanguineScytheOfVitur {
         ItemItemAction.register(SCYTHE, BLOOD_RUNE, SanguineScytheOfVitur::charge);
         ItemAction.registerInventory(SCYTHE, 3, SanguineScytheOfVitur::check);
         ItemAction.registerInventory(SCYTHE, "uncharge", SanguineScytheOfVitur::uncharge);
+        ItemAction.registerInventory(UNCHARGED_SYCTHE, "charge", SanguineScytheOfVitur::charge);
         ItemDef.get(SCYTHE).addPostTargetDefendListener(((player, item, hit, target) -> {
             int charges = AttributeExtensions.getCharges(item);
             if (--charges <= 0) {
@@ -69,6 +70,21 @@ public class SanguineScytheOfVitur {
     }
 
     private static void charge(Player player, Item scythe, Item blood) {
+        int currentCharges = AttributeExtensions.getCharges(scythe);
+        int allowedAmount = MAX_CHARGE - currentCharges;
+        if (allowedAmount == 0) {
+            player.sendMessage("Your Scythe of Vitur is already full charged.");
+            return;
+        }
+        int addAmount = Math.min(allowedAmount, blood.getAmount());
+        blood.incrementAmount(-addAmount);
+        scythe.putAttribute(AttributeTypes.CHARGES, currentCharges + (addAmount));
+        scythe.setId(SCYTHE);
+        check(player, scythe);
+    }
+
+    private static void charge(Player player, Item scythe) {
+        Item blood = player.getInventory().getItemWithId(565);
         int currentCharges = AttributeExtensions.getCharges(scythe);
         int allowedAmount = MAX_CHARGE - currentCharges;
         if (allowedAmount == 0) {

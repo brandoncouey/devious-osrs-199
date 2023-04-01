@@ -7,6 +7,9 @@ import io.ruin.model.combat.Killer;
 import io.ruin.model.entity.Entity;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCCombat;
+import io.ruin.model.entity.npc.actions.edgeville.Nurse;
+import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.shared.listeners.DeathListener;
 import io.ruin.model.entity.shared.listeners.HitListener;
 import io.ruin.model.map.Projectile;
 import io.ruin.model.map.route.routes.ProjectileRoute;
@@ -20,6 +23,11 @@ public class VerzikCombat extends NPCCombat {
 
     @Override
     public void init() {
+        npc.deathEndListener = (DeathListener.Simple) () -> {
+            for (Player p : npc.getPosition().getRegion().players) {
+                Nurse.restoreOnly(p);
+            }
+        };
         npc.hitListener = new HitListener().postDamage((hit -> {
             for (Killer k : npc.getCombat().killers.values()) {
                 k.player.tobDamage++;

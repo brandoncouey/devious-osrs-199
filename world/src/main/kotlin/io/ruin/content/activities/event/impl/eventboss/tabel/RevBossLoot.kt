@@ -8,7 +8,7 @@ class RevBossLoot : LootTable() {
 
     init {
         guaranteedItems(
-            LootItem(13307, 100_000, 250_000, 100), //coins
+            LootItem(13307, 1000, 2500, 100), //coins
             LootItem(11943, 1, 1, 100) //coins
         )
         addTable(

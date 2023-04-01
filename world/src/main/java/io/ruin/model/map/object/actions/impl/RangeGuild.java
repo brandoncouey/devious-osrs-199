@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl;
 
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.shared.StepType;
 import io.ruin.model.inter.dialogue.MessageDialogue;
@@ -42,7 +42,7 @@ public class RangeGuild {
             event.delay(2);
             door.restore().skipClipping(false);
             opened.remove();
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.RANGING_GUILD);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.RANGING_GUILD);
             player.unlock();
         });
     }

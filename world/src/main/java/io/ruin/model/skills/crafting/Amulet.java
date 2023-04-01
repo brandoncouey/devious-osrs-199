@@ -42,10 +42,6 @@ public enum Amulet {
         wool.remove();
         player.sendFilteredMessage("You put some string on your amulet.");
         player.getStats().addXp(StatType.Crafting, xp, true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
     }
 
     static {

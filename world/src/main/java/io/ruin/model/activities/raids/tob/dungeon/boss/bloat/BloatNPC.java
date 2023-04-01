@@ -1,6 +1,7 @@
 package io.ruin.model.activities.raids.tob.dungeon.boss.bloat;
 
 import io.ruin.model.activities.raids.tob.dungeon.TheatreBoss;
+import io.ruin.model.activities.raids.tob.dungeon.boss.xarpus.XarpusCombat;
 import io.ruin.model.activities.raids.tob.party.TheatreParty;
 
 public class BloatNPC extends TheatreBoss {

@@ -66,7 +66,7 @@ public class ShopManager {
     public static void registerUI() {
 
         InterfaceHandler.register(301, h -> { //Player inventory
-            h.actions[0] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[0] = (DefaultAction) (player, childId, option, slot, itemId) -> {
 
                 if (player.isVisibleInterface(Interface.CUSTOM_SHOP)) {
                     CustomShopInterface.attemptSell(player, option, slot, itemId);
@@ -118,7 +118,7 @@ public class ShopManager {
 
 
         InterfaceHandler.register(300, h -> {
-            h.actions[16] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[16] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 Shop shop = player.viewingShop;
                 if (shop == null) {
                     log.warn(player.getName() + " attempted to perform action on shop UI but none were open!");

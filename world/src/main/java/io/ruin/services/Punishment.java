@@ -9,8 +9,11 @@ import io.ruin.model.World;
 import io.ruin.model.activities.jail.Jail;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.entity.player.PlayerFile;
 import io.ruin.process.task.TaskWorker;
 import io.ruin.services.discord.DiscordConnection;
+import io.ruin.utility.Misc;
+import io.ruin.utility.ServerLog;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 
@@ -116,6 +119,18 @@ public class Punishment {
         p1.sendMessage(p2.getName() + " is now unmuted.");
         logPunishment(p1, p2, -2, "unmuted");
     }
+    public static void unban(Player p1, String search) {
+        Player p2 = PlayerFile.load(Misc.formatStringFormal(search).replace(" ", "_"));
+        if (p2 != null) {
+            p2.setPermBanned(false);
+            PlayerFile.save(p2, 0);
+            World.sendStaffMessage(p1.getName () + " has just unbanned " + p2.getName() + ".");
+            p1.sendMessage(p2.getName() + " is now unbanned.");
+            logPunishment(p1, p2, -2, "unbanned");
+        } else {
+            p1.sendMessage("Unable to load player file " + search);
+        }
+    }
 
     public static boolean isMuted(Player player) {
         return player.muteEnd == -1 || (player.muteEnd > 0 && System.currentTimeMillis() < player.muteEnd);
@@ -174,6 +189,48 @@ public class Punishment {
             until = TimeUtils.dateFormat.format(new Date(time))
                     + " (in " + TimeUtils.fromMs(time - System.currentTimeMillis(), false) + ")";
         }
+
+        ServerLog.Type log = null;
+        switch (type) {
+            case "IP banned":
+                log = ServerLog.Type.IPBAN;
+                break;
+            case "Kicked":
+                log = ServerLog.Type.KICKED;
+                break;
+            case "jailed":
+                log = ServerLog.Type.JAILED;
+                break;
+            case "unjailed":
+                log = ServerLog.Type.UNJAILED;
+                break;
+            case "unmuted":
+                log = ServerLog.Type.UNMUTE;
+                break;
+            case "banned":
+                log = ServerLog.Type.BANS;
+                break;
+            case "MAC banned":
+                log = ServerLog.Type.MAC_BANNED;
+                break;
+            case "UUID banned":
+                log = ServerLog.Type.UUID_BANNED;
+                break;
+            case "IP Muted":
+                log = ServerLog.Type.IP_MUTED;
+                break;
+            case "shadowmuted":
+                log = ServerLog.Type.SHADOWMUTED;
+                break;
+            case "muted":
+                log = ServerLog.Type.MUTES;
+                break;
+            case "unbanned":
+                log = ServerLog.Type.UNBAN;
+                break;
+        }
+        if (log != null)
+             ServerLog.log(log, "Staff Name=" + staff.getName() + ", Staff IP=" + staff.getIp() + ", Target=" + victim.getName() + ", Duration=" + until + ", Time=" + Misc.formatTime(System.currentTimeMillis()));
 
         EmbedBuilder builder = new EmbedBuilder();
         builder.setTitle(String.format("%s has been %s by %s", victim.getName(), type, staff.getName()));

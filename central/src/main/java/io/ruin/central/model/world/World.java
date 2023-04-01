@@ -124,14 +124,22 @@ public class World extends WorldSender {
             this.lastPing = currentMs;
             this.sendPing();
         }
-        this.decoder.process(this, -1);
+        try {
+            this.decoder.process(this, -1);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         this.logins.removeIf(login -> {
                     this.finishLogin(login);
                     return true;
                 }
         );
-        for (Player player : this.players) {
-            player.process();
+        try {
+            for (Player player : this.players) {
+                player.process();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         this.flush();
         return true;

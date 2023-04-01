@@ -1,6 +1,6 @@
 package io.ruin.model.map.object.actions.impl.dungeons;
 
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.map.object.actions.ObjectAction;
@@ -55,7 +55,7 @@ public class StrongholdSecurity {
         ObjectAction.register(20785, 1902, 5222, 0, "climb-down", (player, obj) -> {
             Ladder.climb(player, 2042, 5245, 0, false, true, false);
             player.sendFilteredMessage("You climb down the ladder to the next level.");
-            player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.STRONGHOLD);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.STRONGHOLD);
         });
 
         /**

@@ -75,9 +75,9 @@ public class HouseAdvertisement {
         /* handling of the house advertisement interface */
         InterfaceHandler.register(INTERFACE_ID, h -> {
 
-            h.actions[23] = (DefaultAction) (player, option, slot, itemId) -> handleAddRemoveHouse(player);
+            h.actions[23] = (DefaultAction) (player, childId, option, slot, itemId) -> handleAddRemoveHouse(player);
 
-            h.actions[30] = (DefaultAction) (player, option, slot, itemId) -> refreshHouseData(player);
+            h.actions[30] = (DefaultAction) (player, childId, option, slot, itemId) -> refreshHouseData(player);
 
         });
 

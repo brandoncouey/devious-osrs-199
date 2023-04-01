@@ -6,11 +6,8 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.contracts.woodcutting.WoodcuttingContract;
-import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
 import io.ruin.model.diaries.devious.DeviousDiaryEntry;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.diaries.wilderness.WildernessDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
@@ -110,10 +107,6 @@ public class Woodcutting {
                             player.sendFilteredMessage("The infernal axe incinerates some logs.");
                             player.graphics(580, 50, 0);
                             player.getStats().addXp(StatType.Firemaking, burning.exp, true);
-                            if (Random.rollDie(50, 1)) {
-                                player.getInventory().addOrDrop(6828, 1);
-                                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                            }
                             //TODO: take away an item charge?
                         }
                     } else {
@@ -124,16 +117,16 @@ public class Woodcutting {
                                 player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.CHOP_TEAK);
                             }
                             if (treeData.log == Tree.MAHOGANY.log && player.getPosition().regionId() == 10300) {
-                                player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.CHOP_MAHOGANY);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_MAHOGANY);
                             }
                             if (treeData.log == Tree.MAGIC.log && player.getPosition().regionId() == 10805) {
-                                player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CUT_MAGIC_SEERS);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CUT_MAGIC_SEERS);
                             }
                             if (treeData.log == Tree.WILLOW.log && player.getPosition().regionId() == 12338) {
-                                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CHOP_WILLOW_DRAY);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_WILLOW_DRAY);
                             }
                             if (treeData.log == Tree.MAGIC.log && player.getPosition().regionId() == 13363) {
-                                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CHOP_MAGIC_AL);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_MAGIC_AL);
                             }
                             if (treeData.log == Tree.MAGIC.log && player.getPosition().regionId() == 12605) {
                                 player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MAGIC_LOG_WILD);
@@ -159,10 +152,6 @@ public class Woodcutting {
                                 player.sendFilteredMessage("Your axe's buff allows you to chop some additional logs!");
                                 player.getInventory().add(ItemDef.get(id).notedId, 1);
                                 player.getStats().addXp(StatType.Woodcutting, treeData.experience / 2.0, true);
-                                if (Random.rollDie(50, 1)) {
-                                    player.getInventory().addOrDrop(6828, 1);
-                                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                                }
                             }
                         } else {
                             player.getInventory().add(treeData.log, 1);
@@ -170,16 +159,16 @@ public class Woodcutting {
                                 player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.CHOP_TEAK);
                             }
                             if (treeData.log == Tree.MAHOGANY.log && player.getPosition().regionId() == 10300) {
-                                player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.CHOP_MAHOGANY);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_MAHOGANY);
                             }
                             if (treeData.log == Tree.MAGIC.log && player.getPosition().regionId() == 10805) {
-                                player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.CUT_MAGIC_SEERS);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CUT_MAGIC_SEERS);
                             }
                             if (treeData.log == Tree.WILLOW.log && player.getPosition().regionId() == 12338) {
-                                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CHOP_WILLOW_DRAY);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_WILLOW_DRAY);
                             }
                             if (treeData.log == Tree.MAGIC.log && player.getPosition().regionId() == 13363) {
-                                player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.CHOP_MAGIC_AL);
+                                player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.CHOP_MAGIC_AL);
                             }
                             if (treeData.log == Tree.MAGIC.log && player.getPosition().regionId() == 12605) {
                                 player.getDiaryManager().getWildernessDiary().progress(WildernessDiaryEntry.MAGIC_LOG_WILD);
@@ -205,15 +194,11 @@ public class Woodcutting {
                                 player.sendFilteredMessage("Your axe's buff allows you to chop some additional logs!");
                                 player.getInventory().add(treeData.log, 1);
                                 player.getStats().addXp(StatType.Woodcutting, treeData.experience / 2.0, true);
-                                if (Random.rollDie(50, 1)) {
-                                    player.getInventory().addOrDrop(6828, 1);
-                                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                                }
                             }
                         }
                     }
-                    if(player.currentTaskEasy == DailyTask.PossibleTasksEasy.LOGS){
-                        DailyTask.increase(player, DailyTask.PossibleTasksEasy.LOGS);
+                    if(DailyTask.hasEasyTask(player, DailyTask.EasyTasks.LOGS)){
+                        DailyTask.increase(player, DailyTask.EasyTasks.LOGS);
                     }
                     treeData.counter.increment(player, 1);
 
@@ -221,10 +206,6 @@ public class Woodcutting {
                     if (player.infernalAxeSpecial > 0)
                         xp *= 1.1;
                     player.getStats().addXp(StatType.Woodcutting, xp * LumberjackSet(player), true);
-                    if (Random.rollDie(50, 1)) {
-                        player.getInventory().addOrDrop(6828, 1);
-                        player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                    }
                     if (treeData.single || Random.get(10) == 3) {
                         player.resetAnimation();
                         World.startEvent(treeDeadAction);

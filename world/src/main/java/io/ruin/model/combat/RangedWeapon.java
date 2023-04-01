@@ -151,6 +151,7 @@ public enum RangedWeapon {
     }
 
     public boolean allowAmmo(RangedAmmo ammo) {
+        if (allowedAmmo == null) return false;
         return allowedAmmo[ammo.ordinal()];
     }
 

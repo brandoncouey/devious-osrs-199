@@ -17,28 +17,32 @@ priceRules:
   buysAt: 30
   changePer: 3
 defaultStock:
+  - id: 954
+    amount: 10000
   - id: 1931
-    amount: 5
+    amount: 10000
   - id: 1935
-    amount: 2
+    amount: 10000
   - id: 20742
-    amount: 5
+    amount: 10000
   - id: 1735
-    amount: 2
+    amount: 10000
   - id: 1925
-    amount: 3
+    amount: 10000
   - id: 22660
-    amount: 16
+    amount: 10000
   - id: 1923
-    amount: 2
+    amount: 10000
   - id: 1887
-    amount: 2
+    amount: 10000
   - id: 590
-    amount: 2
+    amount: 10000
   - id: 1755
-    amount: 2
+    amount: 10000
   - id: 2347
-    amount: 5
+    amount: 10000
   - id: 550
-    amount: 5
+    amount: 10000
+  - id: 1523
+    amount: 10000
 

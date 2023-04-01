@@ -1,7 +1,7 @@
 package io.ruin.model.map.object.actions.impl;
 
 import io.ruin.model.combat.Hit;
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.inter.dialogue.MessageDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
 import io.ruin.model.inter.utils.Option;
@@ -48,7 +48,6 @@ public class SlayerTower {
             } else if (obj.x == 3447 && obj.y == 3576 && player.getStats().get(StatType.Agility).currentLevel >= 71) {
                 Ladder.climb(player, player.getAbsX(), player.getAbsY(), player.getHeight() + 1, true, true, false);
                 player.getStats().addXp(StatType.Agility, 4.0, false);
-                player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.CLIMB_CHAIN);
             } else {
                 player.sendFilteredMessage("You need an Agility level of 71 to negotiate this obstacle.");
             }
@@ -57,11 +56,9 @@ public class SlayerTower {
             if (obj.x == 3422 && obj.y == 3550) {
                 player.hit(new Hit().randDamage(5));
                 Ladder.climb(player, player.getAbsX(), player.getAbsY(), player.getHeight() - 1, false, true, false);
-                player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.CLIMB_CHAIN);
             } else if (obj.x == 3447 && obj.y == 3576 && player.getStats().get(StatType.Agility).currentLevel >= 71) {
                 player.hit(new Hit().randDamage(5));
                 Ladder.climb(player, player.getAbsX(), player.getAbsY(), player.getHeight() - 1, false, true, false);
-                player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.CLIMB_CHAIN);
             } else {
                 player.sendFilteredMessage("You need an agility level of 71 to negotiate this obstacle.");
             }

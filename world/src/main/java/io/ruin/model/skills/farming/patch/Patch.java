@@ -95,10 +95,6 @@ public abstract class Patch {
                     if (Random.get() < 0.8) {
                         raked++;
                         player.getStats().addXp(StatType.Farming, 3 * FarmingSet.FarmingSet(player), true);
-                        if (Random.rollDie(50, 1)) {
-                            player.getInventory().addOrDrop(6828, 1);
-                            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                        }
                         player.getInventory().addOrDrop(6055, 1);
                         lastWeedGrowth = System.currentTimeMillis();
                         send();
@@ -276,10 +272,6 @@ public abstract class Patch {
         else
             item.remove();
         player.getStats().addXp(StatType.Farming, 4 * FarmingSet.FarmingSet(player), true);
-        if (Random.rollDie(50, 1)) {
-            player.getInventory().addOrDrop(6828, 1);
-            player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-        }
         player.sendMessage("You treat the patch with " + (compostType == 2 ? "super" : "") + " compost.");
     }
 
@@ -321,10 +313,6 @@ public abstract class Patch {
             produceCount = calculateProduceAmount();
             player.getStats().addXp(StatType.Farming, crop.getPlantXP() * FarmingSet.FarmingSet(player), true);
             timePlanted = System.currentTimeMillis();
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             send();
         });
     }

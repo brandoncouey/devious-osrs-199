@@ -13,6 +13,7 @@ import io.ruin.model.entity.player.XpMode;
 import io.ruin.model.inter.InterfaceType;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.containers.ShopItemContainer;
+import io.ruin.utility.PlayerLog;
 import lombok.Builder;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
@@ -222,7 +223,7 @@ public class Shop {
                 if (!shopItem.defaultStockItem) {
                     shopItems.remove(bought);
                 }
-                log.debug("Player bought {}", bought);
+                PlayerLog.log(PlayerLog.Type.NORMAL_SHOP_BUY, player.getName(), "Purchased=[" + bought + "].");
                 sendUpdates();
             } else {
                 log.debug("Failed to buy {} x {} | removedCurrency {}", buyAmount, shopItem.getId(), removedCurrency);
@@ -300,6 +301,7 @@ public class Shop {
                 int givenCurrency = currencyHandler.addCurrency(player, pricePer * removed);
                 log.debug("Sold {} x {}, given currency {}", requestedItem.getDef().name, removed, pricePer * removed);
                 shopItems.add(unnoted, removed, -1, null);
+                PlayerLog.log(PlayerLog.Type.NORMAL_SHOP_SELL, player.getName(), "Sold=[" + ItemDef.get(unnoted).name + ", Amount=" + removed +"] for " + (pricePer * removed) + "gp.");
                 sendUpdates();
             }
 
@@ -321,6 +323,7 @@ public class Shop {
             int unnoted = requestedItem.getDef().isNote() ? requestedItem.getDef().fromNote().id : requestedItem.getId();
             currencyHandler.addCurrency(player, pricePer * removed);
             log.debug("Sold {} x {}, given currency {}", requestedItem.getDef().name, removed, pricePer * removed);
+            PlayerLog.log(PlayerLog.Type.NORMAL_SHOP_SELL, player.getName(), "Sold=[" + ItemDef.get(unnoted).name + ", Amount=" + removed +"] for " + (pricePer * removed) + "gp.");
             shopItems.add(unnoted, removed, -1, null);
             sendUpdates();
         }

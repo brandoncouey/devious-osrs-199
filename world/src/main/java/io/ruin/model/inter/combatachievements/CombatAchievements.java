@@ -609,49 +609,49 @@ public class CombatAchievements {
         InterfaceHandler.register(REWARDS_INTERFACE_ID, h -> {
 
             /* handles the rewards button slots */
-            h.actions[14] = (DefaultAction) (player, option, slot, itemId) -> handleRewardsSlots(player, slot);
+            h.actions[14] = (DefaultAction) (player, childId, option, slot, itemId) -> handleRewardsSlots(player, slot);
 
         });
 
         InterfaceHandler.register(TASKS_INTERFACE_ID, h -> {
 
             /* handles the tasks button slots */
-            h.actions[25] = (DefaultAction) (player, option, slot, itemId) -> handleTaskSlots(player, slot);
+            h.actions[25] = (DefaultAction) (player, childId, option, slot, itemId) -> handleTaskSlots(player, slot);
 
-            h.actions[30] = (DefaultAction) (player, option, slot, itemId) -> handleTaskFilterTier(player, slot);
+            h.actions[30] = (DefaultAction) (player, childId, option, slot, itemId) -> handleTaskFilterTier(player, slot);
 
-            h.actions[31] = (DefaultAction) (player, option, slot, itemId) -> handleTaskFilterType(player, slot);
+            h.actions[31] = (DefaultAction) (player, childId, option, slot, itemId) -> handleTaskFilterType(player, slot);
 
-            h.actions[32] = (DefaultAction) (player, option, slot, itemId) -> handleTaskFilterMonster(player, slot);
+            h.actions[32] = (DefaultAction) (player, childId, option, slot, itemId) -> handleTaskFilterMonster(player, slot);
 
-            h.actions[33] = (DefaultAction) (player, option, slot, itemId) -> handleTaskFilterCompleted(player, slot);
+            h.actions[33] = (DefaultAction) (player, childId, option, slot, itemId) -> handleTaskFilterCompleted(player, slot);
 
         });
 
         InterfaceHandler.register(BOSSES_INTERFACE_ID, h -> {
 
             /* handles the boss button slots */
-            h.actions[15] = (DefaultAction) (player, option, slot, itemId) -> handleBossesSlots(player, slot);
+            h.actions[15] = (DefaultAction) (player, childId, option, slot, itemId) -> handleBossesSlots(player, slot);
 
             /* handles the boss button slots */
-            h.actions[23] = (DefaultAction) (player, option, slot, itemId) -> handleBossesSlots2(player, slot);
+            h.actions[23] = (DefaultAction) (player, childId, option, slot, itemId) -> handleBossesSlots2(player, slot);
 
         });
 
         InterfaceHandler.register(BOSS_INFO_INTERFACE_ID, h -> {
 
             /* handles the boss button slots */
-            h.actions[27] = (DefaultAction) (player, option, slot, itemId) -> handleBossInfoSlots1(player, slot);
+            h.actions[27] = (DefaultAction) (player, childId, option, slot, itemId) -> handleBossInfoSlots1(player, slot);
 
-            h.actions[22] = (DefaultAction) (player, option, slot, itemId) -> handleBossInfoSlots2(player, slot);
+            h.actions[22] = (DefaultAction) (player, childId, option, slot, itemId) -> handleBossInfoSlots2(player, slot);
 
         });
 
         InterfaceHandler.register(OVERVIEW_INTERFACE_ID, h -> {
 
             /* handles the boss button slots */
-            h.actions[16] = (DefaultAction) (player, option, slot, itemId) -> handleOverviewSlots(player, slot);
-            h.actions[7] = (DefaultAction) (player, option, slot, itemId) -> handleOverviewSlots1(player, slot);
+            h.actions[16] = (DefaultAction) (player, childId, option, slot, itemId) -> handleOverviewSlots(player, slot);
+            h.actions[7] = (DefaultAction) (player, childId, option, slot, itemId) -> handleOverviewSlots1(player, slot);
 
         });
     }

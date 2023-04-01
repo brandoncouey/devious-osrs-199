@@ -4,7 +4,7 @@ import io.ruin.api.utils.Random;
 import io.ruin.model.activities.tasks.DailyTask;
 import io.ruin.model.contracts.agility.AgilityContract;
 import io.ruin.model.contracts.agility.AgilityContractType;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.entity.shared.LockType;
 import io.ruin.model.entity.shared.Renders;
@@ -136,19 +136,15 @@ public class SeersCourse {
                 PlayerCounter.SEERS_ROOFTOP.increment(p, 1);
                 AgilityPet.rollForPet(p, 18000);
                 MarkOfGrace.rollMark(p, 60, MARK_SPAWNS);
-                p.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.SEERS_AGILITY);
+                p.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.SEERS_AGILITY);
                 p.preventSkippingCourse = false;
             }
             p.unlock();
-            if(p.currentTaskHard == DailyTask.PossibleTasksHard.SEERS_COURSE){
-                DailyTask.increaseHard(p, DailyTask.PossibleTasksHard.SEERS_COURSE);
+            if(DailyTask.hasHardTask(p, DailyTask.HardTasks.SEERS_COURSE)){
+                DailyTask.increaseHard(p, DailyTask.HardTasks.SEERS_COURSE);
             }
             if(p.agilityContractType == AgilityContractType.SEERS_ROOFTOP)
                 AgilityContract.advanceAgilityContract(p);
-            if (Random.rollDie(50, 1)) {
-                p.getInventory().addOrDrop(6828);
-                p.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
         }));
     }
 }

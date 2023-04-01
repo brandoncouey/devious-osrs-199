@@ -9,6 +9,7 @@ import io.ruin.model.item.actions.impl.storage.LootingBag;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.Tile;
 import io.ruin.services.Loggers;
+import io.ruin.utility.PlayerLog;
 
 import java.util.Map;
 
@@ -18,6 +19,8 @@ import static io.ruin.cache.ItemID.COINS_995;
 public class GroundItem {
 
     public int originalOwner = -1;
+
+    public String originalOwnerName = "";
 
     public int activeOwner = -1;
 
@@ -54,10 +57,12 @@ public class GroundItem {
     }
 
     public GroundItem owner(Player player) {
-        return owner(player.getUserId());
+        originalOwnerName = player.getName();
+        return owner(player.getName(), player.getUserId());
     }
 
-    public GroundItem owner(int ownerId) {
+    public GroundItem owner(String ownerName, int ownerId) {
+        this.originalOwnerName = ownerName;
         this.originalOwner = ownerId;
         this.activeOwner = ownerId;
         return this;
@@ -221,9 +226,9 @@ public class GroundItem {
             });
         }
 
-        Loggers.logPickup(player.getUserId(), player.getName(), player.getIp(), id, amount, x, y, z);
+        PlayerLog.log(PlayerLog.Type.PICKUP_ITEM, player.getName(), "Picked up item [Id=" + id + ", Amount=" + amount + "] at position [X=" + x + ", Y=" + y + ", Z=" + z + "]");
         if (getTimeDropped() > 0) { // this item was manually dropped by someone, log as trade
-            Loggers.logDropTrade(player.getUserId(), originalOwner, player.getIp(), getDropperIp(), player.getName(), getDropperName(), id, amount, x, y, z, getTimeDropped());
+            PlayerLog.log(PlayerLog.Type.PICKUP_ITEM_FROM_PLAYER, player.getName(), "Picked up item from [Name=" + originalOwnerName + ", IP=" + getDropperIp() + "] Dropped At=" + getTimeDropped() + ", Time Elapsed=" + (System.currentTimeMillis() - getTimeDropped()) + ", Item=[Id=" + id + ", Amount=" + amount + ", at Position[X=" + x + ", Y=" + y + ", Z=" + z + ".");
         }
         if (id == 88 && !player.bootsOfLightnessTaken) {
             player.bootsOfLightnessTaken = true;

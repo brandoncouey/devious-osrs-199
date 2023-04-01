@@ -13,8 +13,191 @@ import io.ruin.model.skills.magic.SpellBook;
 
 public class PresetInterfaceHandler {
     static {
-        InterfaceHandler.register(1019, h -> {
-            h.actions[124] = (DefaultAction) (player, option, slot, itemId) -> {
+        InterfaceHandler.register(1033, h -> {
+
+
+
+            h.actions[24] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(0).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(0);
+               updatePresetView(player);
+            };
+            h.actions[29] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(1).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(1);
+               updatePresetView(player);
+            };
+            h.actions[34] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(2).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(2);
+               updatePresetView(player);
+            };
+            h.actions[39] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isOpalDonator()) {
+                    player.sendMessage("You must be a opal donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(3).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(3);
+               updatePresetView(player);
+            };
+            h.actions[45] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isJadeDonator()) {
+                    player.sendMessage("You must be a jade donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(4).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(4);
+               updatePresetView(player);
+            };
+            h.actions[51] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isRedTopazDonator()) {
+                    player.sendMessage("You must be a red topaz donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(5).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(5);
+                updatePresetView(player);
+            };
+            h.actions[57] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isSapphireDonator()) {
+                    player.sendMessage("You must be a sapphire donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(6).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(6);
+               updatePresetView(player);
+            };
+            h.actions[63] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isEmeraldDonator()) {
+                    player.sendMessage("You must be a emerald donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(7).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(7);
+               updatePresetView(player);
+            };
+            h.actions[69] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isRubyDonator()) {
+                    player.sendMessage("You must be a ruby donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(8).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(8);
+               updatePresetView(player);
+            };
+            h.actions[75] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isRubyDonator()) {
+                    player.sendMessage("You must be a ruby donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(9).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(9);
+               updatePresetView(player);
+            };
+            h.actions[81] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isDiamondDonator()) {
+                    player.sendMessage("You must be a diamond donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(10).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(10);
+               updatePresetView(player);
+            };
+            h.actions[87] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                if (!player.isDiamondDonator()) {
+                    player.sendMessage("You must be a diamond donator to use this preset.");
+                    return;
+                }
+                if (option == 2) {
+                    player.stringInput("Name your preset", s -> {
+                        player.getPresetManager().getPreset(11).setName(s);
+                        refreshPresets(player);
+                    });
+                    return;
+                }
+                player.getPresetManager().setSelectedPreset(11);
+               updatePresetView(player);
+            };
+
+            //Save
+            h.actions[287] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                player.getPresetManager().save(player);
+            };
+            h.actions[293] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                player.getPresetManager().delete(player);
+            };
+            h.actions[299] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                PresetManager.equipPreset(player);
+            };
+
+           /* h.actions[124] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.openDialogue(false,
                         new OptionsDialogue(
                                 new Option("Set my current equipment to this preset", () -> {
@@ -72,132 +255,87 @@ public class PresetInterfaceHandler {
                         )
                 );
             };
-//            for (int child = 129; child <= 153; child += 4) {
-//                int finalChild = child;
-//                h.actions[child] = (DefaultAction) (player, option, slot, itemId) -> {
-//                    Preset currentPreset = player.getPresetManager()
-//                            .getPreset(player.getPresetManager().getSelectedPreset());
-//                    if (currentPreset != null) {
-//                        player.integerInput("Set your level to:", input -> {
-//                            int level = input;
-//                            if(finalChild == 129) {
-//                                if (input < 10) {
-//                                    level = 10;
-//                                } else if(level > 99) {
-//                                    level = 99;
-//                                }
-//                            } else {
-//                                if (input < 1) {
-//                                    level = 1;
-//                                } else if(level > 99) {
-//                                    level = 99;
-//                                }
-//                            }
-//
-//                            if (finalChild == 129) {
-//                                currentPreset.setHitpointsLevel(level);
-//                            } else if (finalChild == 133) {
-//                                currentPreset.setAttackLevel(level);
-//                            } else if (finalChild == 137) {
-//                                currentPreset.setStrengthLevel(level);
-//                            } else if (finalChild == 141) {
-//                                currentPreset.setDefenceLevel(level);
-//                            } else if (finalChild == 145) {
-//                                currentPreset.setMagicLevel(level);
-//                            } else if (finalChild == 149) {
-//                                currentPreset.setRangedLevel(level);
-//                            } else if (finalChild == 153) {
-//                                currentPreset.setPrayerLevel(level);
-//                            }
-//                            updatePresetView(player);
-//                        });
-//                    } else {
-//                        player.sendMessage("Broken code, notify a staff member please.");
-//                        return;
-//                    }
-//                };
-//            }
 
-            h.actions[71] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[71] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(0);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[74] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[74] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(1);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
             // how does this even not cause issues??
-            h.actions[77] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[77] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(2);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[80] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[80] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(3);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[83] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[83] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(4);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[86] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[86] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(5);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[89] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[89] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(6);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[92] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[92] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(7);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[95] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[95] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(8);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[98] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[98] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(9);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[101] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[101] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(10);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[104] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[104] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(11);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[107] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[107] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getPresetManager().setSelectedPreset(12);
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 updatePresetView(player);
             };
-            h.actions[109] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[299] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 if (currentPreset.isLocked()) {
@@ -206,12 +344,12 @@ public class PresetInterfaceHandler {
                                     + Color.RED.wrap("locked") + " and can't be modified right now."));
                     return;
                 }
-                activatePreset(player, currentPreset);
+                equipPreset(player, currentPreset);
             };
-            h.actions[48] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[48] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 showSpellbookDialogue(player, player.getPresetManager().getSelectedPreset());
             };
-            h.actions[131] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[131] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 Preset currentPreset = player.getPresetManager()
                         .getPreset(player.getPresetManager().getSelectedPreset());
                 if (currentPreset.isLocked()) {
@@ -226,7 +364,7 @@ public class PresetInterfaceHandler {
                         new Option("Nevermind")
                 ));
             };
-            h.actions[63] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[63] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 int selectedPreset = player.getPresetManager().getSelectedPreset();
                 Preset currentPreset = player.getPresetManager().getPreset(selectedPreset);
                 player.openDialogue(false, new OptionsDialogue(Color.RED.wrap(currentPreset.getName())
@@ -237,6 +375,7 @@ public class PresetInterfaceHandler {
                         new Option("Nevermind")
                 ));
             };
+        });*/
         });
     }
 
@@ -308,15 +447,15 @@ public class PresetInterfaceHandler {
 //        currentPreset.setPrayerLevel(player.getStats().get(StatType.Prayer).fixedLevel);
 //    }
 
-    private static void activatePreset(Player player, Preset currentPreset) {
-        player.openDialogue(false, new OptionsDialogue("Do you really want to activate the preset?",
+    private static void equipPreset(Player player, Preset currentPreset) {
+        /*player.openDialogue(false, new OptionsDialogue("Do you really want to activate the preset?",
                 new Option("Yes, activate my preset", () -> {
-                    PresetManager.activatePreset(player, currentPreset);
+                    PresetManager.equipPreset(player, currentPreset);
                     updatePresetView(player);
                     player.sendMessage("Your preset has been successfully loaded.");
                 }),
                 new Option("No thanks", () -> updatePresetView(player))
-        ));
+        ));*/
     }
 
     public static void updatePresetView(Player player) {
@@ -326,9 +465,7 @@ public class PresetInterfaceHandler {
         }
         Preset preset = player.getPresetManager().getPreset(player.getPresetManager().getSelectedPreset());
         Item[] eq = PresetItem.presetItemsToItems(preset.getEquipment(), 14);
-        Item[] inv = PresetItem.presetItemsToItems(preset.getInventory(), 28);
         player.getPacketSender().sendItems(633, eq);
-        player.getPacketSender().sendItems(634, inv);
         int bookId;
         if (preset.getSpellBook() == SpellBook.MODERN) {
             bookId = 1;
@@ -338,9 +475,40 @@ public class PresetInterfaceHandler {
             bookId = 3;
         }
         player.getPacketSender().sendClientScript(11321, "isi", preset.getPresetId(), preset.getName(), bookId);
-        player.getPacketSender().sendClientScript(11320);
         refreshPresets(player);
-        player.openInterface(InterfaceType.MAIN, 1019);
+        if (player.isOpalDonator()) {
+            player.getPacketSender().sendString(1033, 40, "Preset #4");
+            player.getPacketSender().setHidden(1033, 38, true);
+        }
+        if (player.isJadeDonator()) {
+            player.getPacketSender().sendString(1033, 46, "Preset #5");
+            player.getPacketSender().setHidden(1033, 44, true);
+        }
+        if (player.isRedTopazDonator()) {
+            player.getPacketSender().sendString(1033, 52, "Preset #6");
+            player.getPacketSender().setHidden(1033, 50, true);
+        }
+        if (player.isSapphireDonator()) {
+            player.getPacketSender().sendString(1033, 58, "Preset #7");
+            player.getPacketSender().setHidden(1033, 56, true);
+        }
+        if (player.isEmeraldDonator()) {
+            player.getPacketSender().sendString(1033, 64, "Preset #8");
+            player.getPacketSender().setHidden(1033, 62, true);
+        }
+        if (player.isRubyDonator()) {
+            player.getPacketSender().sendString(1033, 70, "Preset #9");
+            player.getPacketSender().sendString(1033, 76, "Preset #10");
+            player.getPacketSender().setHidden(1033, 68, true);
+            player.getPacketSender().setHidden(1033, 74, true);
+        }
+        if (player.isDiamondDonator()) {
+            player.getPacketSender().sendString(1033, 82, "Preset #11");
+            player.getPacketSender().sendString(1033, 88, "Preset #12");
+            player.getPacketSender().setHidden(1033, 80, true);
+            player.getPacketSender().setHidden(1033, 86, true);
+        }
+        player.openInterface(InterfaceType.MAIN, 1033);
     }
 
     public static void refreshPresets(Player player) {
@@ -356,10 +524,8 @@ public class PresetInterfaceHandler {
         Preset preset10 = player.getPresetManager().getPreset(9);
         Preset preset11 = player.getPresetManager().getPreset(10);
         Preset preset12 = player.getPresetManager().getPreset(11);
-        Preset preset13 = player.getPresetManager().getPreset(12);
-
-        player.getPacketSender().sendClientScript(11319, "sssssssssssss", preset1.getName(), preset2.getName(), preset3.getName(), preset4.getName(), preset5.getName(),
-                preset6.getName(), preset7.getName(), preset8.getName(), preset9.getName(), preset10.getName(), preset11.getName(), preset12.getName(), preset13.getName());
+        player.getPacketSender().sendClientScript(11319, "ssssssssssss", preset1.getName(), preset2.getName(), preset3.getName(), preset4.getName(), preset5.getName(),
+                preset6.getName(), preset7.getName(), preset8.getName(), preset9.getName(), preset10.getName(), preset11.getName(), preset12.getName());
     }
 
 }

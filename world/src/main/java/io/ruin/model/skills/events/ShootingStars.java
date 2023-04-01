@@ -223,10 +223,6 @@ public class ShootingStars {
                 player.animate(pickaxe.crystalAnimationID);
                 player.getInventory().add(STAR_CURRENCY, random);
                 player.getStats().addXp(StatType.Mining, 30, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 removeShards(random);
                 player.sendFilteredMessage("You mine " + random + " " + ItemDef.get(STAR_CURRENCY).name.toLowerCase() + ".");
                 if (METEORITE_REMAINING > 500 && METEORITE_REMAINING <= 700) {

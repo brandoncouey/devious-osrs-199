@@ -9,7 +9,8 @@ import io.ruin.utility.Broadcast;
 
 public class ChristmasCracker {
 
-    private static final LootTable CHRISTMAS_CRACKER = new LootTable().addTable(1,
+    private static final LootTable CHRISTMAS_CRACKER =
+            new LootTable().addTable(1,
             new LootItem(1038, 1, 1), //Red partyhat
             new LootItem(1040, 1, 1), //Yellow partyhat
             new LootItem(1042, 1, 1), //Blue partyhat
@@ -32,7 +33,7 @@ public class ChristmasCracker {
                 player.graphics(176, 82, 0);
                 event.delay(1);
                 Item prize = CHRISTMAS_CRACKER.rollItem();
-                Broadcast.WORLD.sendNews(Icon.MYSTERY_BOX, "Christmas Cracker", "" + player.getName() + " just received " + prize.getDef().descriptiveName + "!");
+                Broadcast.WORLD.sendNews("<col=ffffff><shad=ff0000>"+ player.getName() + " just received " + prize.getDef().descriptiveName + " from a Christmas Cracker!");
                 item.setId(prize.getId());
                 player.unlock();
             });

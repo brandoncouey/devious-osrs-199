@@ -3,6 +3,7 @@ package io.ruin.model.activities.fightcaves;
 import com.google.gson.annotations.Expose;
 import io.ruin.api.utils.Random;
 import io.ruin.model.activities.ActivityTimer;
+import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.diaries.pvm.PvMDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.player.Player;
@@ -49,7 +50,7 @@ public class FightCaves {
      * Separator
      */
 
-    private Player player;
+    public Player player;
 
     @Expose
     private int wave;
@@ -73,7 +74,7 @@ public class FightCaves {
         this.practice = practice;
     }
 
-    private void start(boolean login) {
+    public void start(boolean login) {
         player.fightCaves = this;
         player.deathEndListener = (DeathListener.Simple) this::handleDeath;
         player.logoutListener = new LogoutListener().onAttempt(this::allowLogout);
@@ -105,7 +106,7 @@ public class FightCaves {
                     e.delay(1);
             }
             beginWave();
-            player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.ATTEMPT_FIGHT_CAVES);
+            player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.ATTEMPT_FIGHT_CAVES);
         });
     }
 
@@ -143,7 +144,7 @@ public class FightCaves {
                     player.getInventory().addOrDrop(6570, 1);
                     player.getInventory().addOrDrop(6529, tokkul + 4000);
                     player.getCollectionLog().collect(6570);
-                    player.getDiaryManager().getPvmDiary().progress(PvMDiaryEntry.COMPLETE_FIGHT_CAVES);
+                    player.getDiaryManager().getMinigamesDiary().progress(MinigamesDiaryEntry.COMPLETE_FIGHT_CAVES);
                 }
             }
             player.fightCaves = null;
@@ -355,7 +356,6 @@ public class FightCaves {
     }
 
     private static void exit(Player player) {
-        //map listener will stop your session the second you leave the map.
         player.getMovement().teleport(EXIT);
     }
 
@@ -394,15 +394,6 @@ public class FightCaves {
          * Escape
          */
         ObjectAction.register(11834, "escape", (player, obj) -> exit(player));
-        /**
-         * Login
-         */
-        LoginListener.register(p -> {
-            if (p.fightCaves != null) {
-                p.fightCaves.player = p;
-                p.fightCaves.start(true);
-            }
-        });
 
     }
 

@@ -23,7 +23,7 @@ public class SkillDialogue implements Dialogue {
         InterfaceHandler.register(Interface.MAKE_DIALOGUE, h -> {
             for (int i = 0; i < 10; i++) {
                 int index = i;
-                h.actions[14 + i] = (DefaultAction) (player, option, slot, itemId) -> {
+                h.actions[14 + i] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                     select(player, index, slot);
                 };
             }

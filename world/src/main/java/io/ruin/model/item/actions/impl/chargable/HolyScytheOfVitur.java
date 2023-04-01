@@ -22,6 +22,7 @@ public class HolyScytheOfVitur {
 
     static {
         ItemItemAction.register(UNCHARGED_SYCTHE, BLOOD_RUNE, HolyScytheOfVitur::charge);
+        ItemAction.registerInventory(UNCHARGED_SYCTHE, "charge", HolyScytheOfVitur::charge);
         ItemItemAction.register(SCYTHE, BLOOD_RUNE, HolyScytheOfVitur::charge);
         ItemAction.registerInventory(SCYTHE, "check", HolyScytheOfVitur::check);
         ItemAction.registerInventory(SCYTHE, "uncharge", HolyScytheOfVitur::uncharge);
@@ -76,6 +77,21 @@ public class HolyScytheOfVitur {
             player.sendMessage("Your Scythe of Vitur is already full charged.");
             return;
         }
+        int addAmount = Math.min(allowedAmount, blood.getAmount());
+        blood.incrementAmount(-addAmount);
+        scythe.putAttribute(AttributeTypes.CHARGES, currentCharges + (addAmount));
+        scythe.setId(SCYTHE);
+        check(player, scythe);
+    }
+
+    private static void charge(Player player, Item scythe) {
+        int currentCharges = AttributeExtensions.getCharges(scythe);
+        int allowedAmount = MAX_CHARGE - currentCharges;
+        if (allowedAmount == 0) {
+            player.sendMessage("Your Scythe of Vitur is already full charged.");
+            return;
+        }
+        Item blood = player.getInventory().getItemWithId(565);
         int addAmount = Math.min(allowedAmount, blood.getAmount());
         blood.incrementAmount(-addAmount);
         scythe.putAttribute(AttributeTypes.CHARGES, currentCharges + (addAmount));

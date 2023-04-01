@@ -1,6 +1,6 @@
 ---
 identifier: "dailypointshop"
-title: "Edgeville's Task Point Shop"
+title: "Task Point Shop"
 currency: "TASK_POINTS"
 accessibleByIronMan: true
 accessibleByRegular: true

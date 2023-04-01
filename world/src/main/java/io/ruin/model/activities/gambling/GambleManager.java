@@ -74,17 +74,21 @@ public class GambleManager {
     }
 
     public static void process() {
-        cleanUpScrewedParties();
+        try {
+            cleanUpScrewedParties();
 
-        if (flowerPokerQueue.size() > 0 && freeFlowerPokerRooms >= 1) {
-            Optional<FlowerPokerRoom> freeRoom = getFreeFlowerPokerRoom();
+            if (flowerPokerQueue.size() > 0 && freeFlowerPokerRooms >= 1) {
+                Optional<FlowerPokerRoom> freeRoom = getFreeFlowerPokerRoom();
 
-            if (freeRoom.isPresent()) {
-                GambleQeueSpot game = flowerPokerQueue.remove(0);
-                freeRoom.get().setUsed(true);
-                new FlowerPoker(game.getPlayerOne(), game.getPlayerTwo(), freeRoom.get());
-                notifyOtherPlayers();
+                if (freeRoom.isPresent()) {
+                    GambleQeueSpot game = flowerPokerQueue.remove(0);
+                    freeRoom.get().setUsed(true);
+                    new FlowerPoker(game.getPlayerOne(), game.getPlayerTwo(), freeRoom.get());
+                    notifyOtherPlayers();
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 

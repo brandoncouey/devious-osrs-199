@@ -20,6 +20,9 @@ import io.ruin.model.map.object.actions.ObjectAction;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import static io.ruin.process.event.EventWorker.startEvent;
 
 public final class NightmareZoneDream {
 
@@ -119,6 +122,7 @@ public final class NightmareZoneDream {
         player.set("nmz", this);
         prepareMap();
 
+        AtomicBoolean spawned = new AtomicBoolean(false);
         player.startEvent(event -> {
             player.lock();
             player.getPacketSender().fadeOut();
@@ -129,10 +133,14 @@ public final class NightmareZoneDream {
             prepareInterface();
             player.sendMessage("Welcome to The Nightmare Zone.");
             player.unlock();
-
-            event.delay(30);
-            spawnMonsters();
-        }).setCancelCondition(() -> map == null);
+        });
+        startEvent(e -> {
+            while (!spawned.get()) {
+                e.delay(30);
+                spawned.set(true);
+                spawnMonsters();
+            }
+        });
 
     }
 
@@ -148,11 +156,7 @@ public final class NightmareZoneDream {
 
     private void prepareInterface() {
         player.openInterface(InterfaceType.SECONDARY_OVERLAY, 202);
-
-        // This is a hash of the arena's southwestern-most tile. This is presumably used by the client to differentiate between KBD lair
         int hash = map.convertY(4680) + (map.convertX(2256) << 14);
-
-        // [clientscript,nzone_game_overlay].cs2 -> tile hash does not seem to matter, empty string at end is some sort of unused in-game notification string
         player.getPacketSender().sendClientScript(255, "cs", hash, "");
     }
 
@@ -160,6 +164,9 @@ public final class NightmareZoneDream {
     public static int npccount;
 
     private void spawnMonsters() {
+        if (map == null) {
+            System.out.println("oh no");return;
+        }
         if (difficulty == NightmareZoneDreamDifficulty.HARD) {
             npccount = 10;
         } else {

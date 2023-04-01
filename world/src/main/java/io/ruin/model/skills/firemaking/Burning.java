@@ -5,9 +5,8 @@ import io.ruin.cache.ItemDef;
 import io.ruin.model.World;
 import io.ruin.model.activities.raids.xeric.ChambersOfXeric;
 import io.ruin.model.activities.tasks.DailyTask;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
-import io.ruin.model.diaries.morytania.MorytaniaDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
+import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.item.Item;
@@ -167,29 +166,25 @@ public enum Burning {
                 player.unlock();
             } else {
                 if (groundLog.id == WILLOW.itemId) {
-                    player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.BURN_WILLOW_LOGS);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.BURN_WILLOW_LOGS);
                 }
 
                 groundLog.remove();
                 player.sendFilteredMessage("The fire catches and the logs begin to burn.");
                 player.getStats().addXp(StatType.Firemaking, burning.exp * pyromancerBonus(player), true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 burning.counter.increment(player, 1);
                 createFire(burning, fire);
-                if(player.currentTaskEasy == DailyTask.PossibleTasksEasy.LIGHT_LOGS){
-                    DailyTask.increase(player, DailyTask.PossibleTasksEasy.LIGHT_LOGS);
+                if(DailyTask.hasEasyTask(player, DailyTask.EasyTasks.LIGHT_LOGS)){
+                    DailyTask.increase(player, DailyTask.EasyTasks.LIGHT_LOGS);
                 }
                 player.face(fire);
                 player.unlock();
                 if (player.getPosition().regionId() == 10795 || player.getPosition().regionId() == 10794 ||
                         player.getPosition().regionId() == 11050 || player.getPosition().regionId() == 11051 && groundLog.id == 6333) {
-                    player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.BURN_LOGS);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.BURN_LOGS);
                 }
                 if (player.getPosition().regionId() == 14638 || player.getPosition().regionId() == 14639 || player.getPosition().regionId() == 14894 || player.getPosition().regionId() == 14895 || player.getPosition().regionId() == 15151 || player.getPosition().regionId() == 15150) {
-                    player.getDiaryManager().getMorytaniaDiary().progress(MorytaniaDiaryEntry.BURN_MAHOGANY);
+                    player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.BURN_MAHOGANY);
                 }
             }
         });
@@ -215,7 +210,7 @@ public enum Burning {
         return player.getInventory().hasMultiple(log.itemId) && player.getInventory().getFreeSlots() > 1;
     }
 
-    private static double pyromancerBonus(Player player) {
+    public static double pyromancerBonus(Player player) {
         double bonus = 1.0;
         Item hood = player.getEquipment().get(Equipment.SLOT_HAT);
         Item garb = player.getEquipment().get(Equipment.SLOT_CHEST);

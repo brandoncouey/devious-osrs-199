@@ -2,6 +2,7 @@ package io.ruin.model.entity.player;
 
 import io.ruin.api.utils.ListUtils;
 import io.ruin.api.utils.StringUtils;
+import io.ruin.cache.Color;
 import lombok.Getter;
 
 import java.util.HashMap;
@@ -12,17 +13,18 @@ import java.util.concurrent.CompletableFuture;
  * Descending order from highest priority group
  */
 public enum SecondaryGroup {
-    ZENYTE(200, 200, 55, 75),
-    ONYX(190, 190, 54, 75),
-    DRAGONSTONE(180, 180, 53, 75),
-    DIAMOND(17, 17, 49, 75),
-    RUBY(16, 13, 48, 50),
-    EMERALD(150, 14, 47, 45),
-    SAPPHIRE(140, 15, 46, 40),
-    RED_TOPAZ(13, 16, 45, 30),
-    JADE(12, 19, 44, 20),
-    OPAL(11, 18, 43, 10),
-    NONE(2, 0, 0, 0);
+    NONE(2, 0, 0, 0, "", 25),
+    OPAL(11, 18, 43, 10, "<shad=000000><col=" + Color.OPAL + ">", 50),
+    JADE(12, 19, 44, 20, "<shad=000000><col=" + Color.JADE + ">", 150),
+    RED_TOPAZ(13, 16, 45, 30, "<shad=000000><col=" + Color.REDTOPAZ + ">", 350),
+    SAPPHIRE(140, 15, 46, 40, "<shad=000000><col=" + Color.BLACK + ">", 700),
+    EMERALD(150, 14, 47, 45, "<shad=000000><col=" + Color.GREEN + ">", 1500),
+    RUBY(16, 13, 48, 50, "<shad=000000><col=" + Color.RED + ">", 2450),
+    DIAMOND(17, 17, 49, 75, "<shad=000000><col=" + Color.WHITE + ">", 3500),
+    DRAGONSTONE(180, 180, 53, 75, "<shad=000000><col=" + Color.PURPLE + ">", 4750),
+    ONYX(190, 190, 54, 75, "<shad=000000><col=" + Color.BLACK + ">", 6500),
+    ZENYTE(200, 200, 55, 75, "<shad=000000><col=" + Color.ORANGE + ">", 8250),
+    ;
 
     public final int id;
 
@@ -30,30 +32,30 @@ public enum SecondaryGroup {
 
     public final int clientImgId;
 
+    @Getter public final String color;
+
     public String title;
     @Getter
     public int doubleDropChance;
 
     public int dropBonus;
 
-    SecondaryGroup(int id, int clientId, int clientImgId, String title) {
-        this.id = id;
-        this.clientId = clientId;
-        this.clientImgId = clientImgId;
-        this.title = title;
+    public int dontationRequired;
+
+    SecondaryGroup(int id, int clientId, int clientImgId, double dropBonus, String color, int donationRequired) {
+        this(id, clientId, clientImgId, dropBonus, color);
+        this.dontationRequired = donationRequired;
     }
 
-    SecondaryGroup(int id, int clientId, int clientImgId, double dropBonus) {
+    SecondaryGroup(int id, int clientId, int clientImgId, double dropBonus, String color) {
         this.id = id;
         this.clientId = clientId;
         this.clientImgId = clientImgId;
         this.dropBonus = (int) dropBonus;
         this.title = StringUtils.getFormattedEnumName(name());
+        this.color = color;
     }
 
-    SecondaryGroup(int id, int clientId, int clientImgId) {
-        this(id, clientId, clientImgId, "");
-    }
 
     public void sync(Player player, String type) {
         sync(player, type, null);
@@ -90,19 +92,19 @@ public enum SecondaryGroup {
     }
 
     public static void getGroup(Player player) {
-        if (player.storeAmountSpent >= 1000) {
+        if (player.amountDonated >= 1000) {
             player.setSecondaryGroups(ListUtils.toList(SecondaryGroup.DIAMOND.id));
-        } else if (player.storeAmountSpent >= 500) {
+        } else if (player.amountDonated >= 500) {
             player.setSecondaryGroups(ListUtils.toList(SecondaryGroup.RUBY.id));
-        } else if (player.storeAmountSpent >= 250) {
+        } else if (player.amountDonated >= 250) {
             player.setSecondaryGroups(ListUtils.toList(SecondaryGroup.EMERALD.id));
-        } else if (player.storeAmountSpent >= 150) {
+        } else if (player.amountDonated >= 150) {
             player.setSecondaryGroups(ListUtils.toList(SecondaryGroup.SAPPHIRE.id));
-        } else if (player.storeAmountSpent >= 100) {
+        } else if (player.amountDonated >= 100) {
             player.setSecondaryGroups(ListUtils.toList(SecondaryGroup.RED_TOPAZ.id));
-        } else if (player.storeAmountSpent >= 50) {
+        } else if (player.amountDonated >= 50) {
             player.setSecondaryGroups(ListUtils.toList(SecondaryGroup.JADE.id));
-        } else if (player.storeAmountSpent >= 10) {
+        } else if (player.amountDonated >= 10) {
             player.setSecondaryGroups(ListUtils.toList(SecondaryGroup.OPAL.id));
         }
     }

@@ -29,7 +29,7 @@ public class TabLogout {
                 h.actions[11] = (SimpleAction) p -> toggleSettings(p, 4, 5);
                 h.actions[12] = (SimpleAction) p -> toggleSettings(p, 8, 9);
                 h.actions[13] = (SimpleAction) p -> toggleSettings(p, 6, 7);
-                h.actions[14] = (DefaultAction) (player, option, slot, itemId) -> {
+                h.actions[14] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                     if (option == 1) {
                         player.attemptLogout();
                     } else {
@@ -39,20 +39,20 @@ public class TabLogout {
                             Config.WORLD_SWITCHER_FAVOURITE_TWO.set(player, slot);
                     }
                 };
-                h.actions[17] = (DefaultAction) (player, option, slot, itemId) -> {
+                h.actions[17] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                     if (option == 1)
                         System.out.println("World hop");
                     else
                         Config.WORLD_SWITCHER_FAVOURITE_ONE.set(player, 0);
 
                 };
-                h.actions[18] = (DefaultAction) (player, option, slot, itemId) -> {
+                h.actions[18] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                     if (option == 1)
                         System.out.println("World hop");
                     else
                         Config.WORLD_SWITCHER_FAVOURITE_TWO.set(player, 0);
                 };
-                h.actions[16] = (DefaultAction) (player, option, slot, itemId) -> {
+                h.actions[16] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                     if (option == 1)
                         System.out.println("World hop");
                     else

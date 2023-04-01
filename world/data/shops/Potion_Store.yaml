@@ -34,6 +34,8 @@ defaultStock:
   amount: 100000
 - id: 266
   amount: 100000
+- id: 2482
+  amount: 100000
 - id: 268
   amount: 100000
 - id: 270
@@ -55,9 +57,5 @@ defaultStock:
   amount: 100000
 - id: 2435
   amount: 100000
-- id: 12906
-  amount: 100000
 - id: 2453
-  amount: 100000
-- id: 12626
   amount: 100000

@@ -203,7 +203,7 @@ public class Tile {
             if(groundItem.amount > 1) {
                 for(int i = 0; i < (groundItem.amount - 1); i++) {
                     GroundItem newItem = new GroundItem(groundItem.id, 1)
-                            .owner(groundItem.originalOwner)
+                            .owner(groundItem.originalOwnerName, groundItem.originalOwner)
                             .position(groundItem.x, groundItem.y, groundItem.z);
                     newItem.tile = this;
                     groundItems.add(newItem);

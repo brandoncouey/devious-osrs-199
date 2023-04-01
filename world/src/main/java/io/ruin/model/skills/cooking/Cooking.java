@@ -1,10 +1,7 @@
 package io.ruin.model.skills.cooking;
 
 import io.ruin.api.utils.Random;
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
 import io.ruin.model.diaries.devious.DeviousDiaryEntry;
-import io.ruin.model.diaries.varrock.VarrockDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.entity.player.PlayerCounter;
 import io.ruin.model.inter.dialogue.skill.SkillDialogue;
@@ -66,10 +63,6 @@ public class Cooking {
                                 player.getStats().addXp(StatType.Cooking, food.experience * bonus(player, fire), true);
                                 player.sendFilteredMessage(cookingMessage(food));
                                 PlayerCounter.COOKED_FOOD.increment(player, 1);
-                                if (Random.rollDie(50, 1)) {
-                                    player.getInventory().addOrDrop(6828, 1);
-                                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                                }
                             } else {
                                 player.getInventory().add(food.burntID);
                                 rawFood.remove(1);
@@ -92,16 +85,16 @@ public class Cooking {
                     PlayerCounter.BURNT_FOOD.increment(player, 1);
                 }
                 if (player.getPosition().regionId() == 11317 && player.getEquipment().contains(775) && food.cookedID == 385) {
-                    player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.COOK_SHARKS);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.COOK_SHARKS);
                 }
                 if (player.getPosition().regionId() == 9273 && food.cookedID == 7946) {
-                    player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.COOK_MONK);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.COOK_MONK);
                 }
                 if (fire)
                     PlayerCounter.COOKED_ON_FIRE.increment(player, 1);
 
                 if (food.cookedID == 7218 && player.getPosition().inBounds(new Bounds(3138, 3444, 3148, 3453, 0))) {
-                    player.getDiaryManager().getVarrockDiary().progress(VarrockDiaryEntry.SUMMER_PIE);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.SUMMER_PIE);
                 }
                 if (food.cookedID == 379 && player.getPosition().regionId() == 6713) {
                     //player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.COOK_LOBSTER);

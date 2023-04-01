@@ -22,7 +22,7 @@ public class DoubleDrops {
         if (World.isPVPWorld())
             rolls++;
 
-        if (player.storeAmountSpent > 0) {
+        if (player.amountDonated > 0) {
             if (Random.get(1, 100) <= doubleDropChance) {
                 rolls++;
             }
@@ -39,7 +39,7 @@ public class DoubleDrops {
         if (World.isPVPWorld())
             amount++;
 
-        if (player.storeAmountSpent > 0) {
+        if (player.amountDonated > 0) {
             if (Random.get(1, 100) <= doubleDropChance) {
                 amount++;
             }
@@ -67,7 +67,7 @@ public class DoubleDrops {
         chance += XpMode.MEDIUM.getDropBonus();
         if (player.xpMode == XpMode.HARD)
         chance += XpMode.HARD.getDropBonus();
-        if (player.storeAmountSpent > 0)
+        if (player.amountDonated > 0)
             chance += getDoubleDropChance(player);
         return chance;
     }

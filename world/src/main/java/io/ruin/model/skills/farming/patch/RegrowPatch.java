@@ -56,10 +56,6 @@ public abstract class RegrowPatch extends Patch { // for patches that "restore" 
                 player.getInventory().add(getPlantedCrop().getProduceId(), 1);
                 player.getStats().addXp(StatType.Farming, getPlantedCrop().getHarvestXP() * FarmingSet.FarmingSet(player), true);
                 player.sendFilteredMessage("You pick a " + ItemDef.get(getPlantedCrop().getProduceId()).name.toLowerCase() + ".");
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
                 removeProduce();
                 update();
                 if (getProduceCount() == 0) {

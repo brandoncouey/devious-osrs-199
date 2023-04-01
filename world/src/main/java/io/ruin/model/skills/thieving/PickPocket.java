@@ -7,8 +7,7 @@ import io.ruin.model.combat.Hit;
 import io.ruin.model.diaries.pvp.PvPDiaryEntry;
 import io.ruin.model.diaries.minigames.MinigamesDiaryEntry;
 import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
-import io.ruin.model.diaries.lumbridge_draynor.LumbridgeDraynorDiaryEntry;
-import io.ruin.model.diaries.western.WesternDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPC;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.entity.player.Player;
@@ -269,12 +268,8 @@ public enum PickPocket {
                 player.sendFilteredMessage("You pick the " + pickpocket.identifier + " pocket.");
                 player.getInventory().add(pickpocket.lootTable.rollItem());
                 player.getStats().addXp(StatType.Thieving, pickpocket.exp, true);
-                if (Random.rollDie(50, 1)) {
-                    player.getInventory().addOrDrop(6828, 1);
-                    player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-                }
-                if(player.currentTaskHard == DailyTask.PossibleTasksHard.MASTER_FARMER){
-                    DailyTask.increaseHard(player, DailyTask.PossibleTasksHard.MASTER_FARMER);
+                if(DailyTask.hasHardTask(player, DailyTask.HardTasks.MASTER_FARMER)){
+                    DailyTask.increaseHard(player, DailyTask.HardTasks.MASTER_FARMER);
                 }
                 if (player.getEquipment().contains(5553) && player.getEquipment().contains(5554) && player.getEquipment().contains(5555) &&
                         player.getEquipment().contains(5556) && player.getEquipment().contains(5557)) {
@@ -293,16 +288,16 @@ public enum PickPocket {
                     player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.PICKPOCKET_GUARD);
                 }
                 if (pickpocket.identifier.equalsIgnoreCase("elf's")) {
-                    player.getDiaryManager().getWesternDiary().progress(WesternDiaryEntry.PICKPOCKET_ELF);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.PICKPOCKET_ELF);
                 }
                 if (npc.getId() == 3271) {
                     player.getDiaryManager().getSkillingDiary().progress(SkillingDiaryEntry.PICKPOCKET_GUARD);
                 }
                 if (npc.getId() == 5832) {
-                    player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.PICKPOCKET_MARTIN);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.PICKPOCKET_MARTIN);
                 }
                 if (npc.getDef().name.equalsIgnoreCase("man") && player.getPosition().regionId() == 12850) {
-                    player.getDiaryManager().getLumbridgeDraynorDiary().progress(LumbridgeDraynorDiaryEntry.PICKPOCKET_MAN_LUM);
+                    player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.PICKPOCKET_MAN_LUM);
                 }
             } else {
                 player.sendFilteredMessage("You fail to pick the " + pickpocket.identifier + " pocket.");

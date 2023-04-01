@@ -24,11 +24,11 @@
   "magic_attack": 100,
   "ranged_attack": 150,
   //Defensive Stats
-  "stab_defence": 40,
-  "slash_defence": 140,
-  "crush_defence": 60,
-  "magic_defence": 300,
-  "ranged_defence": 190,
+  "stab_defence": 30,
+  "slash_defence": 120,
+  "crush_defence": 50,
+  "magic_defence": 275,
+  "ranged_defence": 160,
   //Immunites
   "poison_immunity": true,
   "venom_immunity": true,

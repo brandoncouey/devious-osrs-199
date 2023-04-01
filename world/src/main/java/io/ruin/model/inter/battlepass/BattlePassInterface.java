@@ -12,17 +12,17 @@ public class BattlePassInterface {
             int levelIndex = 1;
             for(int buttonId = 42; buttonId <= 98; buttonId += 8) {
                 int finalLevelIndex = levelIndex;
-                h.actions[buttonId] = (DefaultAction) (player, option, slot, itemId) -> {
+                h.actions[buttonId] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                     player.getBattlePass().claim(player, finalLevelIndex);
                 };
                 levelIndex++;
             }
 
-            h.actions[106] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[106] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     player.getBattlePass().previousPage(player)
             ;
 
-            h.actions[108] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[108] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     player.getBattlePass().nextPage(player)
             ;
             h.actions[32] = (SimpleAction) p -> p.openUrl(World.type.getWorldName() + " Store", World.type.getWebsiteUrl() + "store");

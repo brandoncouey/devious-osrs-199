@@ -14,13 +14,13 @@ public class TotalSpent extends JournalEntry {
 
     @Override
     public void send(Player player) {
-        double spentDollars = player.storeAmountSpent;
+        double spentDollars = player.amountDonated;
         send(player, "Total Spent", "$" + spentDollars, Color.GREEN);
     }
 
     @Override
     public void select(Player player) {
-        double spentDollars = player.storeAmountSpent;
+        double spentDollars = player.amountDonated;
         player.dialogue(
                 new MessageDialogue("You have spent a total of " + Color.COOL_BLUE.wrap("$" + spentDollars) +
                         " inside the store. You can view a list of donator benefits by going to "

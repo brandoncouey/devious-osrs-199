@@ -8,7 +8,7 @@ object GroupTab {
     enum class GroupTabPanel(val panelID: Int, val childID: Int) {
         GROUP_IRON(723, 3),
         FRIENDS_CHAT(7, 4),
-        CLAN_CHAT(701, 5),
+        CLAN_CHAT(1049, 5),
         FORM_CLAN(702, 6),
         MINIGAMES(76, 7);
 

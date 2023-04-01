@@ -1,4 +1,9 @@
 {
+  "claimedAchievementRewards": [],
+  "currentTab": 0,
+  "connectedClanChannel": true,
+  "clanName": "Brrad",
+  "lootedAdfs": false,
   "inviteDelay": 1000,
   "checkGIM": false,
   "ipAddress": "127.0.0.1",
@@ -7,21 +12,28 @@
   "macAddress": "",
   "uuid": "",
   "name": "Brad",
-  "ecoReset": true,
-  "password": "testing",
+  "password": "treason",
   "hcimdeath": false,
   "hcgimdeath": false,
   "lastTeleport": {
-    "x": 2541,
-    "y": 2915,
+    "x": 1744,
+    "y": 3485,
     "z": 0
   },
+  "lastTeleport1": "EASY_TRAINING",
+  "lastTeleport2": "MED_TRAINING",
+  "lastTeleport3": "EASY_TRAINING",
   "primaryGroup": "OWNER",
-  "secondaryGroup": "OPAL",
+  "secondaryGroup": "DIAMOND",
   "DiaryRecorder": {
-    "VOTE_STORE": 1,
+    "STEAL_GEM_ARD": 78,
+    "TELEPORT_FALADOR": 1,
+    "CAMELOT_TELEPORT": 1,
+    "CATHERY_TELEPORT": 1,
+    "TELEPORT_ARDOUGNE": 1,
     "BUY_HOUSE": 1,
-    "SPEAK_TO_DEATH": 1,
+    "VOTE_STORE": 1,
+    "STEAL_CAKE": 4,
     "GE": 1
   },
   "dropBonus": 0,
@@ -31,7 +43,7 @@
   "Dslayertask": 0,
   "currentSlayerMaster": 0,
   "drakoPass": {
-    "version": 1,
+    "version": 3,
     "startLevel": 0,
     "unlocked": false,
     "hasPaidFor": false,
@@ -42,53 +54,221 @@
       {
         "presetId": 1,
         "equipment": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          {
+            "id": 30000,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": 21295,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": 6585,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": 24417,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": 30001,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": 30002,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": 7462,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": 11840,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": 2550,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": 882,
+            "amount": 1,
+            "attributes": {}
+          }
         ],
         "inventory": [
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
+          {
+            "id": 1963,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": 1963,
+            "amount": 1,
+            "attributes": {}
+          },
+          {
+            "id": 9194,
+            "amount": 4,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          },
+          {
+            "id": -1,
+            "amount": 0,
+            "attributes": {}
+          }
         ],
-        "name": "Preset #1",
-        "spellBook": "MODERN",
+        "name": "big boosie",
+        "spellBook": "ANCIENT",
         "locked": false,
         "hitpointsLevel": 1,
         "attackLevel": 1,
@@ -146,7 +326,7 @@
           null,
           null
         ],
-        "name": "Preset #2",
+        "name": "Preset $3",
         "spellBook": "MODERN",
         "locked": false,
         "hitpointsLevel": 1,
@@ -264,7 +444,7 @@
           null,
           null
         ],
-        "name": "Preset #4",
+        "name": "oof",
         "spellBook": "MODERN",
         "locked": false,
         "hitpointsLevel": 1,
@@ -807,20 +987,19 @@
         "prayerLevel": 1
       }
     ],
-    "selectedPreset": 0,
     "previousSelectedPreset": -1
   },
   "savedConfigs": {
     "537329665": 1,
     "805830657": 150,
     "1179648": 0,
-    "1310720": 1179650,
-    "1376256": 2424832,
-    "1441792": 268435712,
-    "1507328": 2097152,
-    "1572864": 1064992,
+    "1310720": 1074921478,
+    "1376256": 402731008,
+    "1441792": 165376,
+    "1507328": 520,
+    "1572864": 49152,
     "1638401": 0,
-    "1638400": 4194304,
+    "1638400": 164864,
     "1703937": 0,
     "1900545": 0,
     "270925825": 0,
@@ -846,10 +1025,10 @@
     "410648577": 0,
     "410845185": 0,
     "410779649": 0,
-    "142606337": 0,
+    "142606337": 1,
     "412155905": 0,
     "412090369": 0,
-    "412286977": 0,
+    "412286977": 3,
     "412221441": 0,
     "412418049": 0,
     "680853505": 0,
@@ -880,21 +1059,21 @@
     "413663233": 0,
     "11075584": 0,
     "816513025": 0,
-    "413859841": 0,
+    "413859841": 5,
     "11141120": 0,
     "816447489": 0,
     "413794305": 0,
     "11206656": 0,
     "816644097": 0,
-    "413990913": 0,
+    "413990913": 5,
     "11272192": 0,
     "816578561": 0,
-    "413925377": 0,
+    "413925377": 5,
     "11337728": 1,
     "816775169": 0,
     "414121985": 0,
     "816709633": 0,
-    "414056449": 0,
+    "414056449": 5,
     "816906241": 0,
     "414253057": 0,
     "816840705": 0,
@@ -906,7 +1085,7 @@
     "817168385": 0,
     "414515201": 0,
     "817102849": 0,
-    "414449665": 0,
+    "414449665": 1,
     "817299457": 0,
     "414646273": 0,
     "414580737": 0,
@@ -995,7 +1174,7 @@
     "822214657": 0,
     "822411265": 0,
     "151322625": 1,
-    "17104896": 3,
+    "17104896": 0,
     "822345729": 0,
     "822542337": 0,
     "151453697": 1,
@@ -1041,7 +1220,7 @@
     "824770561": 0,
     "824705025": 0,
     "824901633": 0,
-    "19529728": 0,
+    "19529728": 512,
     "824836097": 0,
     "825032705": 0,
     "19660800": 1000,
@@ -1056,7 +1235,7 @@
     "825491457": 0,
     "825688065": 0,
     "825622529": 0,
-    "20381696": 131072,
+    "20381696": 33685504,
     "825819137": 0,
     "825753601": 0,
     "20512768": 16777215,
@@ -1092,7 +1271,7 @@
     "827719681": 0,
     "827850753": 0,
     "828047361": 0,
-    "22675456": 524289,
+    "22675456": 2,
     "827981825": 0,
     "828178433": 0,
     "828112897": 0,
@@ -1167,72 +1346,72 @@
     "295239681": 0,
     "295174145": 0,
     "832241665": 0,
-    "295370753": 0,
+    "295370753": 1,
     "832176129": 0,
     "295305217": 0,
     "832372737": 0,
-    "295501825": 0,
+    "295501825": 1,
     "832307201": 0,
-    "295436289": 0,
+    "295436289": 1,
     "832503809": 0,
-    "295632897": 0,
+    "295632897": 1,
     "27131904": 0,
     "832438273": 0,
-    "295567361": 0,
+    "295567361": 1,
     "161349633": 0,
     "832634881": 0,
-    "295763969": 0,
+    "295763969": 1,
     "832569345": 0,
-    "295698433": 0,
+    "295698433": 1,
     "832765953": 0,
     "295895041": 0,
     "832700417": 0,
-    "295829505": 0,
+    "295829505": 1,
     "832897025": 0,
     "296026113": 0,
     "832831489": 0,
     "295960577": 0,
     "833028097": 0,
-    "296157185": 0,
+    "296157185": 1,
     "832962561": 0,
     "296091649": 0,
     "833159169": 0,
-    "296288257": 0,
+    "296288257": 1,
     "833093633": 0,
-    "296222721": 0,
+    "296222721": 1,
     "833290241": 0,
     "296419329": 0,
     "833224705": 0,
-    "296353793": 0,
+    "296353793": 1,
     "430571521": 0,
     "833421313": 0,
     "296550401": 0,
     "833355777": 0,
     "296484865": 0,
     "833552385": 0,
-    "296681473": 0,
+    "296681473": 1,
     "833486849": 0,
     "296615937": 0,
     "833683457": 0,
-    "296812545": 0,
+    "296812545": 1,
     "833617921": 0,
-    "296747009": 0,
+    "296747009": 1,
     "833814529": 0,
     "296943617": 0,
     "833748993": 0,
-    "296878081": 0,
+    "296878081": 1,
     "833945601": 0,
     "297074689": 0,
     "833880065": 0,
     "297009153": 0,
     "834076673": 0,
-    "297205761": 0,
+    "297205761": 1,
     "834011137": 0,
     "297140225": 0,
     "834207745": 0,
-    "297336833": 0,
+    "297336833": 1,
     "834142209": 0,
-    "297271297": 0,
+    "297271297": 1,
     "834338817": 0,
     "834273281": 0,
     "297402369": 1,
@@ -1268,7 +1447,7 @@
     "30277633": 0,
     "432930817": 0,
     "835780609": 0,
-    "30408704": 0,
+    "30408704": 2097408,
     "433127425": 0,
     "835715073": 0,
     "433061889": 0,
@@ -1377,6 +1556,7 @@
     "841809921": 0,
     "841744385": 0,
     "841940993": 0,
+    "170786817": 0,
     "842072065": 0,
     "842006529": 0,
     "842203137": 0,
@@ -1512,6 +1692,7 @@
     "854392833": 1,
     "452591617": 0,
     "856621057": 0,
+    "187039745": 0,
     "323092481": 0,
     "57147392": 0,
     "193200128": 0,
@@ -1539,6 +1720,7 @@
     "74317824": 0,
     "74383360": 0,
     "74448896": 0,
+    "611713025": 3,
     "209846273": 0,
     "210173953": 0,
     "210239489": 0,
@@ -1695,20 +1877,20 @@
     "787742721": 0,
     "787939329": 0,
     "787873793": 0,
-    "519634945": 0,
+    "519634945": 1,
     "788070401": 0,
     "788004865": 0,
-    "519766017": 0,
+    "519766017": 1,
     "788201473": 0,
-    "519700481": 0,
+    "519700481": 1,
     "788135937": 0,
-    "519897089": 4,
+    "519897089": 0,
     "788332545": 0,
-    "519831553": 0,
+    "519831553": 1,
     "788267009": 0,
     "520028161": 0,
     "788463617": 0,
-    "519962625": 0,
+    "519962625": 1,
     "788398081": 0,
     "788594689": 0,
     "520093697": 0,
@@ -1734,6 +1916,7 @@
     "120586241": 0,
     "120782849": 0,
     "120717313": 0,
+    "657784833": 2,
     "121110529": 0,
     "390070273": 0,
     "792920065": 0,
@@ -1754,7 +1937,7 @@
     "260374529": 0,
     "260308993": 0,
     "260505601": 0,
-    "260571137": 1,
+    "260571137": 0,
     "261160961": 0,
     "261292033": 0,
     "261226497": 0,
@@ -1774,7 +1957,7 @@
     "131923969": 0,
     "266665985": 0,
     "266600449": 0,
-    "266731521": 0,
+    "266731521": 1,
     "267714561": 0,
     "267649025": 0,
     "267845633": 0,
@@ -1811,7 +1994,7 @@
     "items": [
       {
         "id": 995,
-        "amount": 2147000000,
+        "amount": 105599990,
         "uniqueValue": 0,
         "attributes": {}
       },
@@ -1847,57 +2030,125 @@
   "equipment": {
     "items": [
       {
-        "id": 30197,
+        "id": 30000,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
-        "id": 13280,
+        "id": 21295,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 6585,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 24417,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 30001,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       null,
       null,
+      {
+        "id": 30002,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
       null,
+      {
+        "id": 7462,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 11840,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
       null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      {
+        "id": 2550,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 882,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      }
     ]
   },
   "bank": {
     "items": [
       {
         "tab": 0,
-        "id": 8782,
-        "amount": 67,
+        "id": 431,
+        "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 1515,
-        "amount": 257,
+        "id": 123,
+        "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 1597,
+        "id": 34,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 30000,
         "amount": 2,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 1755,
+        "id": 6585,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 30001,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 30002,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 11840,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
@@ -1905,121 +2156,171 @@
       {
         "tab": 0,
         "id": 995,
-        "amount": 62943,
+        "amount": 2104563198,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 21186,
+        "id": 343,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 30196,
+        "id": 341,
+        "amount": 3,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 9531,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 21285,
+        "id": 867,
+        "amount": 16,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 444,
+        "amount": 2910,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 8780,
+        "amount": 1760,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 8782,
+        "amount": 1216,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 1617,
+        "amount": 114,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 1747,
+        "amount": 6,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 453,
+        "amount": 6553,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 220,
+        "amount": 268,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 2485,
+        "amount": 100,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 30426,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 24133,
+        "id": 30387,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 20760,
+        "id": 6570,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 24135,
+        "id": 30230,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 24855,
+        "id": 30386,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 13329,
+        "id": 24186,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 13337,
+        "id": 30385,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 30201,
-        "amount": 2,
+        "id": 269,
+        "amount": 11,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 30200,
+        "id": 219,
+        "amount": 42,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "tab": 0,
+        "id": 12424,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
       {
         "tab": 0,
-        "id": 8788,
+        "id": 2550,
         "amount": 1,
         "uniqueValue": 0,
         "attributes": {}
       },
-      {
-        "tab": 0,
-        "id": 30339,
-        "amount": 1,
-        "uniqueValue": 0,
-        "attributes": {}
-      },
-      {
-        "tab": 0,
-        "id": 30256,
-        "amount": 1,
-        "uniqueValue": 0,
-        "attributes": {}
-      },
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
       null,
       null,
       null,
@@ -2843,7 +3144,7 @@
     ]
   },
   "deathStorage": {
-    "unlocked": false,
+    "unlocked": true,
     "items": [
       null,
       null,
@@ -3911,25 +4212,7 @@
         "boostedFor": 0,
         "depletedFor": 0,
         "currentLevel": 99,
-        "experience": 1.3040031E7
-      },
-      {
-        "boostedFor": 0,
-        "depletedFor": 0,
-        "currentLevel": 99,
-        "experience": 1.3034431E7
-      },
-      {
-        "boostedFor": 0,
-        "depletedFor": 0,
-        "currentLevel": 99,
-        "experience": 1.3107631E7
-      },
-      {
-        "boostedFor": 0,
-        "depletedFor": 0,
-        "currentLevel": 99,
-        "experience": 1.3060632E7
+        "experience": 1.5947716E7
       },
       {
         "boostedFor": 0,
@@ -3947,7 +4230,13 @@
         "boostedFor": 0,
         "depletedFor": 0,
         "currentLevel": 99,
-        "experience": 1.3034431E7
+        "experience": 1.4005093262499997E7
+      },
+      {
+        "boostedFor": 0,
+        "depletedFor": 0,
+        "currentLevel": 99,
+        "experience": 1.3040431E7
       },
       {
         "boostedFor": 0,
@@ -3989,25 +4278,7 @@
         "boostedFor": 0,
         "depletedFor": 0,
         "currentLevel": 99,
-        "experience": 1.3034431E7
-      },
-      {
-        "boostedFor": 0,
-        "depletedFor": 0,
-        "currentLevel": 99,
-        "experience": 1.3034431E7
-      },
-      {
-        "boostedFor": 0,
-        "depletedFor": 0,
-        "currentLevel": 99,
-        "experience": 1.3034431E7
-      },
-      {
-        "boostedFor": 0,
-        "depletedFor": 0,
-        "currentLevel": 99,
-        "experience": 1.3035106E7
+        "experience": 1.3130431E7
       },
       {
         "boostedFor": 0,
@@ -4031,6 +4302,24 @@
         "boostedFor": 0,
         "depletedFor": 0,
         "currentLevel": 99,
+        "experience": 1.3153681E7
+      },
+      {
+        "boostedFor": 0,
+        "depletedFor": 0,
+        "currentLevel": 99,
+        "experience": 1.3034431E7
+      },
+      {
+        "boostedFor": 0,
+        "depletedFor": 0,
+        "currentLevel": 99,
+        "experience": 1.5348631E7
+      },
+      {
+        "boostedFor": 0,
+        "depletedFor": 0,
+        "currentLevel": 99,
         "experience": 1.3034431E7
       },
       {
@@ -4038,6 +4327,18 @@
         "depletedFor": 0,
         "currentLevel": 99,
         "experience": 1.3034431E7
+      },
+      {
+        "boostedFor": 0,
+        "depletedFor": 0,
+        "currentLevel": 99,
+        "experience": 1.3034431E7
+      },
+      {
+        "boostedFor": 0,
+        "depletedFor": 0,
+        "currentLevel": 99,
+        "experience": 1.46482435E7
       },
       {
         "boostedFor": 0,
@@ -4045,6 +4346,56 @@
         "currentLevel": 99,
         "experience": 1.3034431E7
       }
+    ],
+    "announced104m": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ],
+    "announced200m": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
     ],
     "counters": [
       {
@@ -4202,11 +4553,11 @@
       false,
       false
     ],
-    "drainCounter": 0
+    "drainCounter": 32
   },
   "combat": {
     "skullDelay": 0,
-    "highRiskSkull": true,
+    "highRiskSkull": false,
     "tbTicks": 0,
     "tbImmunityTicks": 0,
     "chargeTicks": 0
@@ -4777,7 +5128,7 @@
   "hasUnlockedCanifisWaystone": false,
   "hasUnlockedPrifddinasWaystone": false,
   "hasUnlockedKourendWaystone": false,
-  "hasSacrificedFireCape": false,
+  "hasSacrificedFireCape": true,
   "bitcoins": 0.0,
   "debug": true,
   "tutorialStage": 0,
@@ -4832,30 +5183,30 @@
   "morytaniaRep": 0,
   "prifddinasRep": 0,
   "varrockRep": 0,
-  "easyArdy": 0,
-  "medArdy": 0,
-  "hardArdy": 0,
-  "eliteArdy": 0,
-  "desertEasy": 0,
-  "desertMedium": 0,
-  "desertHard": 0,
-  "desertElite": 0,
-  "faladorEasy": 0,
-  "faladorMedium": 0,
-  "faladorHard": 0,
-  "faladorElite": 0,
+  "pvpEasy": 0,
+  "pvpMedium": 0,
+  "pvpHard": 0,
+  "pvpElite": 0,
+  "minigamesEasy": 0,
+  "minigamesMedium": 0,
+  "minigamesHard": 0,
+  "minigamesElite": 0,
+  "skillingEasy": 0,
+  "skillingMedium": 0,
+  "skillingHard": 0,
+  "skillingElite": 0,
   "fremennikEasy": 0,
   "fremennikMedium": 0,
   "fremennikHard": 0,
   "fremennikElite": 0,
   "kandarinEasy": 0,
-  "kandarinMedium": 0,
+  "kandarinMedium": 1,
   "kandarinHard": 0,
-  "kandarinElite": 0,
-  "karamjaEasy": 0,
-  "karamjaMedium": 0,
-  "karamjaHard": 0,
-  "karamjaElite": 0,
+  "kandarinElite": 1,
+  "pvmEasy": 0,
+  "pvmMedium": 0,
+  "pvmHard": 0,
+  "pvmElite": 0,
   "lumbEasy": 0,
   "lumbMedium": 0,
   "lumbHard": 0,
@@ -4876,10 +5227,10 @@
   "wildyMedium": 0,
   "wildyHard": 0,
   "wildyElite": 0,
-  "kourendEasy": 4,
-  "kourendMedium": 0,
-  "kourendHard": 0,
-  "kourendElite": 0,
+  "deviousEasy": 0,
+  "deviousMedium": 0,
+  "deviousHard": 0,
+  "deviousElite": 0,
   "tonel": false,
   "ttwol": false,
   "tthreel": false,
@@ -4948,25 +5299,25 @@
   "runecraftingContractAmount": 0,
   "constructionContractAmount": 0,
   "nightmareZonePoints": 0,
-  "nmzRewardPoints": 0,
+  "nmzRewardPoints": 635,
   "nmz": false,
-  "nmzCofferCoins": 0,
+  "nmzCofferCoins": 12000000,
   "deathsCoffer": 0,
   "absorptionPoints": 0,
   "combatXpRate": 100,
-  "xpMode": "NORMAL",
+  "xpMode": "EASY",
   "restored": false,
   "beforeFuckup": false,
   "edgeHome": false,
   "dzHome": false,
   "theatreOfBloodCompleted": 0,
-  "theatreOfBloodStage": 0,
-  "theatreroom": "",
+  "theatreOfBloodStage": 3,
+  "theatreroom": "sotetseg",
   "tobreward": false,
   "scrying": false,
-  "acceptedTheatreRisk": false,
-  "acceptedTheatreCrystals": false,
-  "lastAgilityObjId": 23145,
+  "acceptedTheatreRisk": true,
+  "acceptedTheatreCrystals": true,
+  "lastAgilityObjId": -1,
   "draynorRooftopLaps": 0,
   "alKharidRooftopLaps": 0,
   "varrockRooftopLaps": 0,
@@ -5032,9 +5383,9 @@
   "jugsOfWineMade": 0,
   "cookedOnFire": 0,
   "vegetableStallThieves": 0,
-  "bakerStallThieves": 0,
-  "craftingStallThieves": 6,
-  "monkeyFoodStallThieves": 36,
+  "bakerStallThieves": 4,
+  "craftingStallThieves": 0,
+  "monkeyFoodStallThieves": 0,
   "monkeyGeneralStallThieves": 0,
   "teaStallThieves": 0,
   "silkStallThieves": 0,
@@ -5047,7 +5398,7 @@
   "spiceStallThieves": 0,
   "magicStallThieves": 0,
   "scimitarStallThieves": 0,
-  "gemStallThieves": 0,
+  "gemStallThieves": 78,
   "gemMorStallThieves": 0,
   "oreStallThieves": 0,
   "pickpocketMan": 0,
@@ -5067,7 +5418,7 @@
   "wallSafesCracked": 0,
   "rougesCastleChests": 0,
   "pickedLocks": 0,
-  "normalLogsBurnt": 0,
+  "normalLogsBurnt": 22,
   "acheyLogsBurnt": 0,
   "oakLogsBurnt": 0,
   "willowLogsBurnt": 0,
@@ -5089,7 +5440,7 @@
   "maliciousAshesSpread": 0,
   "infernalAshesSpread": 0,
   "abyssalAshesSpread": 0,
-  "regularBonesBuried": 1,
+  "regularBonesBuried": 0,
   "burntBonesBuried": 0,
   "batBonesBuried": 0,
   "wolfBonesBuried": 0,
@@ -5129,7 +5480,7 @@
   "wyrmBonesAltar": 0,
   "drakeBonesAltar": 0,
   "hydraBonesAltar": 0,
-  "seasonpassv": 1,
+  "seasonpassv": 3,
   "currentLevel": 0,
   "currentxp": 0,
   "takenRewards": [
@@ -5295,8 +5646,8 @@
     },
     {
       "rewardLevel": 18,
-      "rewardItemId": 30290,
-      "rewardItemAmount": 5,
+      "rewardItemId": 995,
+      "rewardItemAmount": 125000,
       "rewardState": 0
     },
     {
@@ -5409,8 +5760,8 @@
     },
     {
       "rewardLevel": 37,
-      "rewardItemId": 22330,
-      "rewardItemAmount": 25,
+      "rewardItemId": 995,
+      "rewardItemAmount": 2500000,
       "rewardState": 0
     },
     {
@@ -5640,7 +5991,7 @@
   "loot26613": false,
   "loot26616": false,
   "loot26626": false,
-  "playTime": 708725,
+  "playTime": 4446944,
   "staminaTicks": 0,
   "darkEssFragments": 0,
   "baggedCoal": 0,
@@ -5715,12 +6066,12 @@
   ],
   "edgevilleLeverWarning": true,
   "mageArenaPoints": 0,
-  "previousTeleportX": 2541,
-  "previousTeleportY": 2915,
+  "previousTeleportX": 1744,
+  "previousTeleportY": 3485,
   "previousTeleportZ": 0,
   "previousTeleportPrice": 0,
   "newPlayer": false,
-  "finishedIntro": false,
+  "finishedIntro": true,
   "choseXpMode": true,
   "krakenWarning": true,
   "smokeBossWarning": true,
@@ -5731,14 +6082,14 @@
   "colorValuedGroundItems": false,
   "swapRangePrayerPosition": false,
   "swapMagePrayerPosition": false,
-  "yellDelay": 1673932925044,
+  "yellDelay": 0,
   "yellFilter": false,
   "hideTitles": false,
-  "recoilDamageRemaining": 40,
+  "recoilDamageRemaining": 31,
   "sufferingCharges": 0,
   "presetDuelVarp": 0,
   "lastDuelVarp": 0,
-  "duelWins": 0,
+  "duelWins": 2,
   "duelLosses": 0,
   "experienceLock": false,
   "mageArena": false,
@@ -5790,7 +6141,7 @@
   "caughtWagtail": 0,
   "caughtGreyChinchompa": 0,
   "caughtRedChinchompa": 0,
-  "caughtBlackChinchompa": 0,
+  "caughtBlackChinchompa": 27,
   "caughtSwampLizard": 0,
   "caughtOrangeSalamander": 0,
   "caughtRedSalamander": 0,
@@ -5967,8 +6318,8 @@
     "streak": 0
   },
   "theatreOfBloodKills": {
-    "kills": 0,
-    "streak": 0
+    "kills": 1,
+    "streak": 1
   },
   "derangedArchaeologistKills": {
     "kills": 0,
@@ -6063,8 +6414,8 @@
     "streak": 0
   },
   "molaniskKills": {
-    "kills": 0,
-    "streak": 0
+    "kills": 1,
+    "streak": 1
   },
   "basiliskKills": {
     "kills": 0,
@@ -6214,7 +6565,7 @@
   "elvenCrystalChestsOpened": 0,
   "zulrahBestTime": 0,
   "isInstanced": false,
-  "lastMakeXAmount": 0,
+  "lastMakeXAmount": 1,
   "hidePlayerIcon": false,
   "petStatistics": {},
   "customPresets": [
@@ -6233,18 +6584,46 @@
   "Shift_Drop": false,
   "ESC_Close": false,
   "pkRating": 1300,
-  "loyaltyTimer": 1673419598162,
-  "loyaltySpreeTimer": 1673419598162,
+  "loyaltyTimer": 1675157977283,
+  "loyaltySpreeTimer": 1675157977283,
   "loyaltyChestReward": 1,
   "loyaltyChestCount": 0,
   "loyaltyChestSpree": 0,
   "highestLoyaltyChestSpree": 0,
   "first3TimeLeft": 0,
-  "PvmPoints": 152,
-  "storeAmountSpent": 10,
+  "PvmPoints": 0,
+  "amountDonated": 1530,
   "resting": false,
   "joinedTournament": false,
   "tournamentWins": 0,
+  "preTournyAttack": [
+    99,
+    15901651
+  ],
+  "preTournyStrength": [
+    99,
+    13034431
+  ],
+  "preTournyDefence": [
+    99,
+    13034431
+  ],
+  "preTournyRanged": [
+    99,
+    13040431
+  ],
+  "preTournyPrayer": [
+    99,
+    13034431
+  ],
+  "preTournyMagic": [
+    99,
+    13034431
+  ],
+  "preTournyHitpoints": [
+    99,
+    13989776
+  ],
   "amuletOfBloodFuryEffect": true,
   "partyAdvertisementsRemaining": 15,
   "raidsEntranceWarning": true,
@@ -6254,7 +6633,7 @@
   "hasCustomTitle": false,
   "lastSacrifice": 0,
   "bestiaryIntro": false,
-  "teleportPortalUses": 10,
+  "teleportPortalUses": 40,
   "presetsLoaded": 0,
   "house": {
     "style": "BASIC_WOOD",
@@ -6367,7 +6746,19 @@
           null,
           null,
           null,
-          null,
+          {
+            "definition": "PARLOUR",
+            "built": [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ],
+            "rotation": 2
+          },
           null,
           null,
           null
@@ -6390,19 +6781,7 @@
             ],
             "rotation": 0
           },
-          {
-            "definition": "PARLOUR",
-            "built": [
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            "rotation": 0
-          },
+          null,
           null,
           null,
           null
@@ -6612,22 +6991,26 @@
     null
   ],
   "diceHost": false,
-  "lastLoginDate": "2023-01-27",
+  "lastLoginDate": "2023-03-31",
   "dailyTasksCompleted": 0,
   "afkPoints": 0,
   "exchangePoints": 0,
-  "dailyEasyTask": -1,
-  "dailyMediumTask": -1,
-  "dailyHardTask": -1,
   "dailyTaskPoints": 0,
-  "hasTask": false,
-  "dailyTaskDate": 0,
+  "easyTasks": {
+    "CRAFT_STALL": 0,
+    "FIRE_GIANTS": 0
+  },
+  "mediumTasks": {
+    "BLACK_DRAGONS": 0
+  },
+  "hardTasks": {
+    "KING_BLACK_DRAGON": 0,
+    "ZILYANA": 0,
+    "TSUTSAROTH": 0
+  },
+  "dailyTaskDate": 131,
   "dailyCount": 0,
-  "totalDailyDone": 0,
-  "totalDailyMediumDone": 0,
-  "totalDailyHardDone": 0,
   "dailyTaskCompletePoints": 0,
-  "claimedDailyCache": false,
   "PVPAmorNotification": true,
   "supplyChestWarning": true,
   "bloodyKeyWarning": true,
@@ -6646,9 +7029,9 @@
   "ROWAutoCollectEther": false,
   "ROWAutoCollectGold": false,
   "riskProtectionTier": 10,
-  "riskedBloodMoney": 62941,
+  "riskedBloodMoney": 0,
   "gambleRequestCooldown": 0,
-  "mageSkillcapeSpecial": 1673419598162,
+  "mageSkillcapeSpecial": 1675157977283,
   "magicSkillcapeUses": 0,
   "galvekBestTime": 0,
   "gotChristmasPresent": false,
@@ -6671,16 +7054,17 @@
   "nestBoxSeeds": 0,
   "nestBoxRings": 0,
   "chaosAltarBoneChance": 50.0,
-  "appreciationTicks": 25,
-  "appreciationPoints": 70741,
+  "appreciationTicks": 44,
+  "appreciationPoints": 444305,
   "energyUnits": 10000.0,
   "refundedCredits": 0,
   "claimedVotes": 0,
   "voteMysteryBoxReward": 0,
-  "implingCaught": 0,
+  "implingCaught": 2,
   "startedEggHunt": false,
   "preventSkippingCourse": false,
   "lastAgilityCapeBoost": 0,
+  "donatorPoints": 0,
   "timesKilledDonatorBoss": 0,
   "lastTimeKilledDonatorBoss": 0,
   "obtained50KCVorkathHead": false,
@@ -6740,8 +7124,8 @@
   "totalNameChanges": 0,
   "braceletSaves": 30,
   "position": {
-    "x": 3088,
-    "y": 3501,
+    "x": 3092,
+    "y": 3502,
     "z": 0
   },
   "poisonTicks": 0,

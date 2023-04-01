@@ -59,7 +59,7 @@ public class newtob {
             player.sendMessage("<shad=000000>" + Color.COOL_BLUE.wrap("You got " + rolled.getDef().name + " X " + rolled.getAmount()) + "</shad>");
             player.getCollectionLog().collect(rolled);
             if (rolled.lootBroadcast != null) {
-                Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.RAID_PURPLE.wrap("[RARE DROP] ") + player.getName() + " has just received " + Color.DARK_RED.wrap(rolled.getDef().name) + " from Theatre Of Blood!" + "</shad>");
+                Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.ORANGE.wrap(player.getName() + " has just received " + rolled.getDef().name + " from Theatre Of Blood!" + "</shad>"));
             }
         });
 

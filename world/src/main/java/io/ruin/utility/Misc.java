@@ -5,6 +5,9 @@ import io.ruin.model.entity.Entity;
 import io.ruin.model.map.Position;
 
 import java.security.SecureRandom;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -23,6 +26,11 @@ public class Misc {
             return b ? Color.GREEN.wrap("Enabled") : Color.RED.wrap("Disabled");
         }
         return "Enabled";
+    }
+
+    public static String formatTime(long milis) {
+        DateFormat simple = new SimpleDateFormat("dd MMM, hh:mm aa");
+        return simple.format(new Date(milis)) + " CST";
     }
 
     public static String formatStringFormal(String str) {

@@ -2,15 +2,18 @@ package io.ruin.model.activities.tasks;
 
 import io.ruin.cache.Color;
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.Interface;
+import io.ruin.model.inter.InterfaceHandler;
+import io.ruin.model.inter.InterfaceType;
+import io.ruin.model.inter.actions.DefaultAction;
+import io.ruin.model.inter.utils.Config;
 import io.ruin.utility.Misc;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 public class DailyTask {
 
-    public enum PossibleTasksHard {
+    public enum HardTasks {
 
         BARROWS_CHESTS(DailyTaskDifficulty.HARD, 20, "Loot 20 barrows chests"),
         SKOTIZO(DailyTaskDifficulty.HARD, 5, "Kill skotizo 5 times"),
@@ -34,14 +37,14 @@ public class DailyTask {
         public int amount;
         String message;
 
-        PossibleTasksHard(DailyTaskDifficulty type, int amount, String message) {
+        HardTasks(DailyTaskDifficulty type, int amount, String message) {
             this.type = type;
             this.amount = amount;
             this.message = message;
         }
     }
 
-    public enum PossibleTasksMedium {
+    public enum MediumTasks {
 
         LAVA_DRAGONS(DailyTaskDifficulty.MEDIUM, 30, "Kill 30 lava dragons"),
         GIANT_MOLE(DailyTaskDifficulty.MEDIUM, 30, "Kill 30 giant moles"),
@@ -60,14 +63,14 @@ public class DailyTask {
         public int amount;
         String message;
 
-        PossibleTasksMedium(DailyTaskDifficulty type, int amount, String message) {
+        MediumTasks(DailyTaskDifficulty type, int amount, String message) {
             this.type = type;
             this.amount = amount;
             this.message = message;
         }
     }
 
-    public enum PossibleTasksEasy {
+    public enum EasyTasks {
         ROCK_CRABS(DailyTaskDifficulty.EASY, 50, "Kill 50 rock crabs"),
         DAGANNOTHS(DailyTaskDifficulty.EASY, 30, "Kill 30 dagannoths"),
         FIRE_GIANTS(DailyTaskDifficulty.EASY, 30, "Kill 30 fire giants"),
@@ -92,7 +95,7 @@ public class DailyTask {
         public int amount;
         String message;
 
-        PossibleTasksEasy(DailyTaskDifficulty type, int amount, String message) {
+        EasyTasks(DailyTaskDifficulty type, int amount, String message) {
 
             this.type = type;
             this.amount = amount;
@@ -101,16 +104,16 @@ public class DailyTask {
         }
     }
 
-    public static PossibleTasksEasy getEasyTask(int taskId) {
-        return PossibleTasksEasy.values()[taskId];
+    public static EasyTasks getEasyTask(int taskId) {
+        return EasyTasks.values()[taskId];
     }
 
-    public static PossibleTasksMedium getMediumTask(int taskId) {
-        return PossibleTasksMedium.values()[taskId];
+    public static MediumTasks getMediumTask(int taskId) {
+        return MediumTasks.values()[taskId];
     }
 
-    public static PossibleTasksHard getHardTask(int taskId) {
-        return PossibleTasksHard.values()[taskId];
+    public static HardTasks getHardTask(int taskId) {
+        return HardTasks.values()[taskId];
     }
 
     /**
@@ -126,18 +129,6 @@ public class DailyTask {
         return (month * 100 + day);
     }
 
-    /*private void complete(Player player) {
-        PlayerCounter.DAILY_TASKS_COMPLETED.increment(player, 1);
-        player.dailyTaskPoints += difficulty().getPointsReward();
-        player.sendMessage(Color.DARK_GREEN.wrap("Congratulations, you have completed the task \"" + shortDescription() + "\"! You receive " + NumberUtils.formatNumber(difficulty().getBmReward()) + " blood money and " + difficulty().getPointsReward() + " task points. You now have a total of " + NumberUtils.formatNumber(player.dailyTaskPoints) + " task points."));
-        if (isComplete(player, 0) && isComplete(player, 1) && isComplete(player, 2)) {
-            player.sendMessage("You have completed all of today's tasks and receive 6 bonus task points. Visit the guide in Edgeville to spend them!");
-            player.dailyTaskPoints += 6;
-        } else {
-            player.sendMessage("Complete the remaining tasks for the day to receive 6 bonus task points.");
-        }
-    }*
-
 
     /**
      * Assigns a task to a player when it has daily's enabled and has no current task.
@@ -146,204 +137,358 @@ public class DailyTask {
      */
 
     public static void assignTask(Player player) {
-            if (player.currentTaskEasy != null || player.currentTaskMedium != null || player.currentTaskHard != null) {
-                player.sendMessage("<col=0000FF>You already have tasks. You can check your current tasks from your Task Book");
+        if (!player.easyTasks.isEmpty() || !player.mediumTasks.isEmpty() || !player.hardTasks.isEmpty()) {
+            player.sendMessage("<col=0000FF>You already have tasks. You can check your current tasks from your Task Book");
+            return;
         }
-        if (player.currentTaskEasy == null && player.currentTaskMedium == null && player.currentTaskHard == null) {
-            player.currentTaskEasy = getRandomTask(DailyTaskDifficulty.EASY);
-            player.dailyEasyTask = player.currentTaskEasy.ordinal();
-            player.currentTaskMedium = getRandomTaskMedium(DailyTaskDifficulty.MEDIUM);
-            player.dailyMediumTask = player.currentTaskMedium.ordinal();
-            player.currentTaskHard = getRandomTaskHard(DailyTaskDifficulty.HARD);
-            player.dailyHardTask = player.currentTaskHard.ordinal();
-            player.dailyTaskDate = getTodayDate();
-            player.sendMessage("<col=7F00FF>New Easy Task: " + player.currentTaskEasy.message);
-            player.sendMessage("<col=7F00FF>New Medium Task: " + player.currentTaskMedium.message);
-            player.sendMessage("<col=7F00FF>New Hard Task: " + player.currentTaskHard.message);
-            //Achievements.Achievement.increase(player, AchievementType._4, 1);
+        while (player.easyTasks.size() < 3 && player.mediumTasks.size() < 3 && player.hardTasks.size() < 3) {
+            if (player.easyTasks.size() < 3)
+                player.easyTasks.put(getRandomTask(DailyTaskDifficulty.EASY), 0);
+            if (player.mediumTasks.size() < 3)
+                player.mediumTasks.put(getRandomTaskMedium(DailyTaskDifficulty.MEDIUM), 0);
+            if (player.hardTasks.size() < 3)
+                player.hardTasks.put(getRandomTaskHard(DailyTaskDifficulty.HARD), 0);
         }
+        openDailyTasksViewer(player);
+        player.sendMessage("<col=03b329>Your dailies have been reset.");
     }
 
-    public static void autoReset(Player player) {
-        if (player.dailyTaskDate != getTodayDate()) {
-            player.dailyTaskCompletePoints = 0;
-            player.completedDailyTask = false;
-            player.completedDailyTaskMedium = false;
-            player.completedDailyTaskHard = false;
-            player.currentTaskEasy = null;
-            player.currentTaskMedium = null;
-            player.currentTaskHard = null;
-            player.totalDailyDone = 0;
-            player.totalDailyMediumDone = 0;
-            player.totalDailyHardDone = 0;
-            player.claimedDailyCache = false;
-            if(player.dailyTaskDate != 0) {
-                player.sendMessage("Daily tasks have been reset.");
-                player.dailyTaskDate = 0;
-            } else {
-                player.sendMessage("<col=7F00FF>You currently have no daily tasks, talk to Dave at home for a task.");
-            }
-        } else {
-            if(player.getCurrentTaskEasy() == null) {
-                if(player.dailyEasyTask > -1) {
-                    player.setCurrentTaskEasy(getEasyTask(player.dailyEasyTask));
-                    player.sendMessage(Color.BLUE.wrap("Your daily easy task is: " + player.getCurrentTaskEasy().message));
-                } else {
-                    player.sendMessage(Color.RED.wrap("Failed to load the daily easy task!"));
-                }
-            } else {
-                player.sendMessage("easy task: " + player.getCurrentTaskEasy().message);
-            }
-            if(player.getCurrentTaskMedium() == null) {
-                if(player.dailyMediumTask > -1) {
-                    player.setCurrentTaskMedium(getMediumTask(player.dailyMediumTask));
-                    player.sendMessage(Color.BLUE.wrap("Your daily medium task is: " + player.getCurrentTaskMedium().message));
-                } else {
-                    player.sendMessage(Color.RED.wrap("Failed to load the daily medium task!"));
-                }
-            } else {
-                player.sendMessage("medium task: " + player.getCurrentTaskMedium().message);
-            }
-            if(player.getCurrentTaskHard() == null) {
-                if(player.dailyHardTask > -1) {
-                    player.setCurrentTaskHard(getHardTask(player.dailyHardTask));
-                    player.sendMessage(Color.BLUE.wrap("Your daily hard task is: " + player.getCurrentTaskHard().message));
-                } else {
-                    player.sendMessage(Color.RED.wrap("Failed to load the daily hard task!"));
-                }
-            } else {
-                player.sendMessage("hard task: " + player.getCurrentTaskHard().message);
-            }
+    public static void assignTaskNoWarning(Player player) {
+        if (!player.easyTasks.isEmpty() || !player.mediumTasks.isEmpty() || !player.hardTasks.isEmpty()) {
+            return;
         }
+        while (player.easyTasks.size() < 3 && player.mediumTasks.size() < 3 && player.hardTasks.size() < 3) {
+            if (player.easyTasks.size() < 3)
+                player.easyTasks.put(getRandomTask(DailyTaskDifficulty.EASY), 0);
+            if (player.mediumTasks.size() < 3)
+                player.mediumTasks.put(getRandomTaskMedium(DailyTaskDifficulty.MEDIUM), 0);
+            if (player.hardTasks.size() < 3)
+                player.hardTasks.put(getRandomTaskHard(DailyTaskDifficulty.HARD), 0);
+        }
+        openDailyTasksViewer(player);
+        player.sendMessage("<col=03b329>Your dailies have been reset.");
     }
 
-    public static void open(Player player) {
-        if (player.currentTaskEasy == null && player.currentTaskMedium == null && player.currentTaskHard == null) {
-            player.sendScroll("<col=8B0000>Daily Task Manager",
-                    "Tasks reset after claiming reward from Manager",
-                    "<col=8B0000>---------------- Easy Task ----------------",
-                    "<col=0000FF>No task assigned",
-                    "",
-                    "<col=8B0000>---------------- Medium Task ----------------",
-                    "<col=0000FF>No task assigned",
-                    "",
-                    "<col=8B0000>---------------- Hard Task ----------------",
-                    "<col=0000FF>No task assigned"
-
-            );
-        } else {
-            if (player.currentTaskEasy != null ) {
-                player.sendMessage("<col=7F00FF>Current Easy Task: " + player.currentTaskEasy.message + " remaining: " + player.totalDailyDone + "/" + player.currentTaskEasy.amount);
-            } else {
-                player.sendMessage( "<col=0000FF>Current Easy Task: COMPLETED");
-            }
-            if (player.currentTaskMedium != null ) {
-                player.sendMessage("<col=7F00FF>Current Medium Task: " + player.currentTaskMedium.message + " remaining: " + player.totalDailyMediumDone + "/" + player.currentTaskMedium.amount);
-            } else {
-                player.sendMessage( "<col=0000FF>Current Medium Task: COMPLETED");
-            }
-            if (player.currentTaskHard != null ) {
-                player.sendMessage("<col=7F00FF>Current Hard Task: " + player.currentTaskHard.message + " remaining: " + player.totalDailyHardDone + "/" + player.currentTaskHard.amount);
-            } else {
-                player.sendMessage( "<col=0000FF>Current Hard Task: COMPLETED");
-            }
+    public static boolean assignTaskNoOpen(Player player) {
+        if (!player.easyTasks.isEmpty() || !player.mediumTasks.isEmpty() || !player.hardTasks.isEmpty()) {
+            player.sendMessage("<col=0000FF>You already have tasks. You can check your current tasks from your Task Book");
+            return false;
         }
+        while (player.easyTasks.size() < 3 && player.mediumTasks.size() < 3 && player.hardTasks.size() < 3) {
+            if (player.easyTasks.size() < 3)
+                player.easyTasks.put(getRandomTask(DailyTaskDifficulty.EASY), 0);
+            if (player.mediumTasks.size() < 3)
+                player.mediumTasks.put(getRandomTaskMedium(DailyTaskDifficulty.MEDIUM), 0);
+            if (player.hardTasks.size() < 3)
+                player.hardTasks.put(getRandomTaskHard(DailyTaskDifficulty.HARD), 0);
+        }
+        player.sendMessage("<col=03b329>Your dailies have been reset.");
+        return true;
     }
 
-    public static void complete(Player player) {
-        if (player.totalDailyDone >= player.currentTaskEasy.amount) {
-            player.totalDailyDone = 0;
+    public static boolean hasEasyTask(Player player, DailyTask.EasyTasks task) {
+        for (DailyTask.EasyTasks tasks : player.easyTasks.keySet()) {
+            if (tasks == task)
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean hasMediumTask(Player player, DailyTask.MediumTasks task) {
+        for (DailyTask.MediumTasks tasks : player.mediumTasks.keySet()) {
+            if (tasks == task)
+                return true;
+        }
+        return false;
+    }
+
+    public static boolean hasHardTask(Player player, DailyTask.HardTasks task) {
+        for (DailyTask.HardTasks tasks : player.hardTasks.keySet()) {
+            if (tasks == task)
+                return true;
+        }
+        return false;
+    }
+
+    public static void openDailyTasksViewer(Player player) {
+        List<EasyTasks> easyTasksList = new LinkedList<>();
+        List<Integer> easyTasksValuesList = new LinkedList<>();
+
+        for (Map.Entry<DailyTask.EasyTasks, Integer> easyTasks : player.easyTasks.entrySet()) {
+            easyTasksList.add(easyTasks.getKey());
+            easyTasksValuesList.add(easyTasks.getValue());
+        }
+
+
+        for (int i = 0; i < 3; i++) {
+            if (easyTasksList.size() >= (i + 1)) {
+                EasyTasks task = easyTasksList.get(i);
+                if (easyTasksValuesList.get(i) >= task.amount) {
+                    player.getPacketSender().sendString(1047, 31 + (i * 9), "<col=0000ff>Completed.");
+                    player.getPacketSender().setHidden(1047, 35 + (i * 9), false);
+                } else {
+                    player.getPacketSender().setHidden(1047, 35 + (i * 9), true);
+                    player.getPacketSender().sendString(1047, 31 + (i * 9), task.message);
+                }
+            } else {
+                player.getPacketSender().sendString(1047, 31 + (i * 9), "Task Completed.");
+                player.getPacketSender().setHidden(1047, 35 + (i * 9), true);
+            }
+        }
+
+
+        //Medium
+        List<MediumTasks> mediumTasksList = new LinkedList<>();
+        List<Integer> mediumTasksValuesList = new LinkedList<>();
+
+        for (Map.Entry<DailyTask.MediumTasks, Integer> mediumTasks : player.mediumTasks.entrySet()) {
+            mediumTasksList.add(mediumTasks.getKey());
+            mediumTasksValuesList.add(mediumTasks.getValue());
+        }
+
+        for (int i = 0; i < 3; i++) {
+            if (mediumTasksList.size() >= (i + 1)) {
+                MediumTasks task = mediumTasksList.get(i);
+                if (mediumTasksValuesList.get(i) >= task.amount) {
+                    player.getPacketSender().sendString(1047, 65 + (i * 9), "<col=0000ff>Completed.");
+                    player.getPacketSender().setHidden(1047, 69 + (i * 9), false);
+                } else {
+                    player.getPacketSender().setHidden(1047, 69 + (i * 9), true);
+                    player.getPacketSender().sendString(1047, 65 + (i * 9), task.message);
+                }
+            } else {
+                player.getPacketSender().sendString(1047, 65 + (i * 9), "Task Completed.");
+                player.getPacketSender().setHidden(1047, 69 + (i * 9), true);
+            }
+        }
+
+        //Hard
+        List<HardTasks> hardTasksList = new LinkedList<>();
+        List<Integer> hardTasksValuesList = new LinkedList<>();
+
+        for (Map.Entry<DailyTask.HardTasks, Integer> hardTasks : player.hardTasks.entrySet()) {
+            hardTasksList.add(hardTasks.getKey());
+            hardTasksValuesList.add(hardTasks.getValue());
+        }
+
+        for (int i = 0; i < 3; i++) {
+            if (hardTasksList.size() >= (i + 1)) {
+                HardTasks task = hardTasksList.get(i);
+                if (hardTasksValuesList.get(i) >= task.amount) {
+                    player.getPacketSender().sendString(1047, 99 + (i * 9), "<col=0000ff>Completed.");
+                    player.getPacketSender().setHidden(1047, 103 + (i * 9), false);
+                } else {
+                    player.getPacketSender().setHidden(1047, 103 + (i * 9), true);
+                    player.getPacketSender().sendString(1047, 99 + (i * 9), task.message);
+                }
+            } else {
+                player.getPacketSender().sendString(1047, 99 + (i * 9), "Task Completed.");
+                player.getPacketSender().setHidden(1047, 103 + (i * 9), true);
+            }
+        }
+        player.openInterface(InterfaceType.MAIN, 1047);
+    }
+
+    public static void complete(Player player, Map.Entry<DailyTask.EasyTasks, Integer> task) {
+        if (task.getValue() >= task.getKey().amount) {
+            player.easyTasks.remove(task.getKey());
             player.dailyCount++;
-            player.completedDailyTask = true;
-            player.sendMessage("<col=0000FF>You have completed your easy task: " + Misc.capitalize(player.currentTaskEasy.name().toLowerCase().replace("_", " ")) + "");
+            player.sendMessage("<col=0000FF>You have completed an easy task: " + Misc.formatStringFormal(task.getKey().name().toLowerCase().replace("_", " ")) + "");
             player.sendMessage("<col=0000FF>You receive 5 Daily Task Points");
             player.dailyTaskPoints += 5;
             player.dailyTaskCompletePoints += 1;
-            player.currentTaskEasy = null;
         }
     }
 
-    public static void completeMedium(Player player) {
-        if (player.totalDailyMediumDone >= player.currentTaskMedium.amount) {
-            player.totalDailyMediumDone = 0;
-            player.completedDailyTaskMedium = true;
-            player.sendMessage("<col=0000FF>You have completed your medium task: " + Misc.capitalize(player.currentTaskMedium.name().toLowerCase().replace("_", " ")) + "");
+    public static void completeMedium(Player player, Map.Entry<DailyTask.MediumTasks, Integer> task) {
+        if (task.getValue() >= task.getKey().amount) {
+            player.mediumTasks.remove(task.getKey());
+            player.sendMessage("<col=0000FF>You have completed your medium task: " + Misc.formatStringFormal(task.getKey().name().toLowerCase().replace("_", " ")) + "");
             player.sendMessage("<col=0000FF>You receive 10 daily task points");
             player.dailyTaskPoints += 10;
             player.dailyCount++;
             player.dailyTaskCompletePoints += 1;
-            player.currentTaskMedium = null;
         }
     }
 
-    public static void completeHard(Player player) {
-        if (player.totalDailyHardDone >= player.currentTaskHard.amount) {
-            player.totalDailyHardDone = 0;
-            player.completedDailyTaskHard = true;
-            player.sendMessage("<col=0000FF>You have completed your hard task: " + Misc.capitalize(player.currentTaskHard.name().toLowerCase().replace("_", " ")) + "");
+    public static void completeHard(Player player, Map.Entry<DailyTask.HardTasks, Integer> task) {
+        if (task.getValue() >= task.getKey().amount) {
+            player.hardTasks.remove(task.getKey());
+            player.sendMessage("<col=0000FF>You have completed your hard task: " + Misc.formatStringFormal(task.getKey().name().toLowerCase().replace("_", " ")) + "");
             player.sendMessage("<col=0000FF>You receive 15 daily task points");
             player.dailyTaskPoints += 15;
             player.dailyTaskCompletePoints += 1;
             player.dailyCount++;
-            player.currentTaskHard = null;
         }
     }
 
-    public static void increase(Player player, PossibleTasksEasy task) {
-        if (player.currentTaskEasy == null)
-            return;
-        if (player.currentTaskEasy.equals(task)) {
-            player.totalDailyDone++;
-            if (player.totalDailyDone % 5 == 0)
-                player.sendMessage("<col=8d008d>" + player.totalDailyDone + "/" + player.currentTaskEasy.amount + " of your easy task completed.");
-            complete(player);
+    public static void increase(Player player, EasyTasks task) {
+        for (Map.Entry<DailyTask.EasyTasks, Integer> tasks : player.easyTasks.entrySet()) {
+            if (tasks.getKey().equals(task)) {
+                int amount = tasks.getValue() + 1;
+                player.easyTasks.put(tasks.getKey(), amount);
+                if (amount % 5 == 0)
+                    player.sendMessage("<col=8d008d>" + amount + "/" + tasks.getKey().amount + " of your easy task completed.");
+                complete(player, tasks);
+            }
+        }
+
+    }
+
+    public static void increaseMedium(Player player, MediumTasks task) {
+        for (Map.Entry<DailyTask.MediumTasks, Integer> tasks : player.mediumTasks.entrySet()) {
+            if (tasks.getKey().equals(task)) {
+                int amount = tasks.getValue() + 1;
+                player.mediumTasks.put(tasks.getKey(), amount);
+                if (amount % 5 == 0)
+                    player.sendMessage("<col=8d008d>" + amount + "/" + tasks.getKey().amount + " of your medium task completed.");
+                completeMedium(player, tasks);
+            }
         }
     }
 
-    public static void increaseMedium(Player player, PossibleTasksMedium task) {
-        if (player.currentTaskMedium == null)
-            return;
-        if (player.currentTaskMedium.equals(task)) {
-            player.totalDailyMediumDone += 1;
-            if (player.totalDailyMediumDone % 5 == 0)
-                player.sendMessage("<col=8d008d>" + player.totalDailyMediumDone + "/" + player.currentTaskMedium.amount + " of your medium task completed.");
-            completeMedium(player);
+    public static void increaseHard(Player player, HardTasks task) {
+        for (Map.Entry<DailyTask.HardTasks, Integer> tasks : player.hardTasks.entrySet()) {
+            if (tasks.getKey().equals(task)) {
+                int amount = tasks.getValue() + 1;
+                player.hardTasks.put(tasks.getKey(), amount);
+                if (amount % 5 == 0)
+                    player.sendMessage("<col=8d008d>" + amount + "/" + tasks.getKey().amount + " of your hard task completed.");
+                completeHard(player, tasks);
+            }
         }
     }
 
-    public static void increaseHard(Player player, PossibleTasksHard task) {
-        if (player.currentTaskHard == null)
-            return;
-        if (player.currentTaskHard.equals(task)) {
-            player.totalDailyHardDone++;
-            if (player.totalDailyHardDone % 5 == 0)
-                player.sendMessage("<col=8d008d>" + player.totalDailyHardDone + "/" + player.currentTaskHard.amount + " of your hard task completed.");
-            completeHard(player);
-        }
-    }
-
-    private static PossibleTasksEasy getRandomTask(DailyTaskDifficulty type) {
-        ArrayList<PossibleTasksEasy> possibleTasks = new ArrayList<PossibleTasksEasy>();
-        for (PossibleTasksEasy tasks : PossibleTasksEasy.values())
+    private static EasyTasks getRandomTask(DailyTaskDifficulty type) {
+        ArrayList<EasyTasks> possibleTasks = new ArrayList<EasyTasks>();
+        for (EasyTasks tasks : EasyTasks.values())
             if (tasks.type.equals(type))
                 possibleTasks.add(tasks);
         return Misc.randomTypeOfList(possibleTasks);
     }
 
-    private static PossibleTasksMedium getRandomTaskMedium(DailyTaskDifficulty type) {
-        ArrayList<PossibleTasksMedium> possibleTasks = new ArrayList<PossibleTasksMedium>();
-        for (PossibleTasksMedium tasks : PossibleTasksMedium.values())
+    private static MediumTasks getRandomTaskMedium(DailyTaskDifficulty type) {
+        ArrayList<MediumTasks> possibleTasks = new ArrayList<>();
+        for (MediumTasks tasks : MediumTasks.values())
             if (tasks.type.equals(type))
                 possibleTasks.add(tasks);
         return Misc.randomTypeOfList(possibleTasks);
     }
 
-    private static PossibleTasksHard getRandomTaskHard(DailyTaskDifficulty type) {
-        ArrayList<PossibleTasksHard> possibleTasks = new ArrayList<PossibleTasksHard>();
-        for (PossibleTasksHard tasks : PossibleTasksHard.values())
+    private static HardTasks getRandomTaskHard(DailyTaskDifficulty type) {
+        ArrayList<HardTasks> possibleTasks = new ArrayList<HardTasks>();
+        for (HardTasks tasks : HardTasks.values())
             if (tasks.type.equals(type))
                 possibleTasks.add(tasks);
         return Misc.randomTypeOfList(possibleTasks);
+    }
+
+    public static boolean claimEasyReward(Player player, int slot, boolean warning) {
+        if (player.easyTasks.isEmpty()) return false;
+        final List<EasyTasks> tasks = new LinkedList<>(player.easyTasks.keySet());
+        final List<Integer> tasksValues = new LinkedList<>(player.easyTasks.values());
+        if (tasks.size() == 0 || tasksValues.size() == 0 || (tasks.size() - 1) < slot)  {
+            return false;
+        }
+        final DailyTask.EasyTasks task = tasks.get(slot);
+        final int amount = tasksValues.get(slot);
+        if (amount < task.amount) {
+            if (warning)
+                player.sendMessage("You have not completed this task.");
+            return false;
+        }
+        player.easyTasks.remove(task);
+        DailyTask.openDailyTasksViewer(player);
+        return true;
+    }
+    public static boolean claimMediumReward(Player player, int slot, boolean warning) {
+        if (player.mediumTasks.isEmpty()) return false;
+        final List<MediumTasks> tasks = new LinkedList<>(player.mediumTasks.keySet());
+        final List<Integer> tasksValues = new LinkedList<>(player.mediumTasks.values());
+        if (tasks.size() == 0 || tasksValues.size() == 0 || (tasks.size() - 1) < slot)  {
+            return false;
+        }
+        final DailyTask.MediumTasks task = tasks.get(slot);
+        final int amount = tasksValues.get(slot);
+        if (amount < task.amount) {
+            if (warning)
+                player.sendMessage("You have not completed this task.");
+            return false;
+        }
+        player.mediumTasks.remove(task);
+        DailyTask.openDailyTasksViewer(player);
+        return true;
+    }
+    public static boolean claimHardReward(Player player, int slot, boolean warning) {
+        if (player.hardTasks.isEmpty()) return false;
+        final List<HardTasks> tasks = new LinkedList<>(player.hardTasks.keySet());
+        final List<Integer> tasksValues = new LinkedList<>(player.hardTasks.values());
+        if (tasks.size() == 0 || tasksValues.size() == 0 || (tasks.size() - 1) < slot)  {
+            return false;
+        }
+        final DailyTask.HardTasks task = tasks.get(slot);
+        final int amount = tasksValues.get(slot);
+        if (amount < task.amount) {
+            if (warning)
+                player.sendMessage("You have not completed this task.");
+            return false;
+        }
+        player.hardTasks.remove(task);
+        DailyTask.openDailyTasksViewer(player);
+        return true;
+    }
+
+    static {
+        InterfaceHandler.register(1047, actions -> {
+
+            actions.actions[18] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimEasyReward(player, 2, false);
+                DailyTask.claimMediumReward(player, 2, false);
+                DailyTask.claimHardReward(player, 2, false);
+
+                DailyTask.claimEasyReward(player, 1, false);
+                DailyTask.claimMediumReward(player, 1, false);
+                DailyTask.claimHardReward(player, 1, false);
+
+                DailyTask.claimEasyReward(player, 0, false);
+                DailyTask.claimMediumReward(player, 0, false);
+                DailyTask.claimHardReward(player, 0, false);
+            };
+
+
+            actions.actions[35] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimEasyReward(player, 0, true);
+            };
+            actions.actions[44] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimEasyReward(player, 1, true);
+            };
+            actions.actions[53] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimEasyReward(player, 2, true);
+            };
+
+            actions.actions[69] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimMediumReward(player, 0, true);
+            };
+            actions.actions[78] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimMediumReward(player, 1, true);
+            };
+            actions.actions[87] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimMediumReward(player, 2, true);
+            };
+
+            actions.actions[103] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimHardReward(player, 0, true);
+            };
+            actions.actions[112] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimHardReward(player, 1, true);
+            };
+            actions.actions[121] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                DailyTask.claimHardReward(player, 2, true);
+            };
+
+
+
+        });
     }
 
 

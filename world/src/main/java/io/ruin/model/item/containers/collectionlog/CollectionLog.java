@@ -94,7 +94,6 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
                     if (item.getId() == integer) {
                         if (amount >= 1)
                             return;
-                        player.getInventory().addOrDrop(13307, 75000);
                         player.openInterface(InterfaceType.SECONDARY_OVERLAY, 660);
                         player.sendMessage("New Collection log item: " + Color.WHITE.wrap(item.getDef().name));
                         player.getPacketSender().sendClientScript(3343, "iss", 0xff981f, "Collection log", "New item:" + Color.WHITE.wrap(item.getDef().name));
@@ -159,23 +158,23 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
             h.actions[7] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogInfo.MINIGAMES);
             h.actions[8] = (SimpleAction) p -> p.getCollectionLog().sendTab(p, CollectionLogInfo.OTHER);
 
-            h.actions[11] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[11] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.BOSS);
             };
 
-            h.actions[15] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[15] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.RAIDS);
             };
 
-            h.actions[31] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[31] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.CLUES);
             };
 
-            h.actions[26] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[26] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.MINIGAMES);
             };
 
-            h.actions[33] = (DefaultAction) (player, option, slot, itemId) -> {
+            h.actions[33] = (DefaultAction) (player, childId, option, slot, itemId) -> {
                 player.getCollectionLog().selectEntry(player, slot, CollectionLogInfo.OTHER);
             };
 
@@ -1114,19 +1113,19 @@ public class CollectionLog extends ItemContainerG<CollectionLogItem> {
         //s  InterfaceHandler.register(COLLECTION_LOG_ID, h -> {
 
         /* handles the bosses button slots */
-        //      h.actions[11] = (DefaultAction) (player, option, slot, itemId) -> handleBossesButtonSlots(player, slot);
+        //      h.actions[11] = (DefaultAction) (player, childId, option, slot, itemId) -> handleBossesButtonSlots(player, slot);
 
         /* handles the raids button slots */
-        //    h.actions[15] = (DefaultAction) (player, option, slot, itemId) -> handleRaidsButtonSlots(player, slot);
+        //    h.actions[15] = (DefaultAction) (player, childId, option, slot, itemId) -> handleRaidsButtonSlots(player, slot);
 
         /* handles the clues button slots */
-        //    h.actions[31] = (DefaultAction) (player, option, slot, itemId) -> handleCluesButtonSlots(player, slot);
+        //    h.actions[31] = (DefaultAction) (player, childId, option, slot, itemId) -> handleCluesButtonSlots(player, slot);
 
         /* handles the minigames button slots */
-        //  h.actions[26] = (DefaultAction) (player, option, slot, itemId) -> handleMinigamesButtonSlots(player, slot);
+        //  h.actions[26] = (DefaultAction) (player, childId, option, slot, itemId) -> handleMinigamesButtonSlots(player, slot);
 
         /* handles the other button slots */
-        //  h.actions[33] = (DefaultAction) (player, option, slot, itemId) -> handleOtherButtonSlots(player, slot);
+        //  h.actions[33] = (DefaultAction) (player, childId, option, slot, itemId) -> handleOtherButtonSlots(player, slot);
 
         /* handles the switching of tabs */
            /* h.actions[4] = (SimpleAction) p -> sendBossesTab(p);

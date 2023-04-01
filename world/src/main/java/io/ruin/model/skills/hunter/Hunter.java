@@ -3,6 +3,7 @@ package io.ruin.model.skills.hunter;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
+import io.ruin.model.map.Position;
 import io.ruin.model.map.Region;
 import io.ruin.model.map.Tile;
 import io.ruin.model.map.ground.GroundItem;
@@ -90,6 +91,37 @@ public class Hunter {
         });
     }
 
+    public static void reset(Player player, GameObject object, TrapType type) {
+        if (!isOwner(player, object)) {
+            player.sendMessage("This isn't your trap.");
+            return;
+        }
+        if (object.trap == null) {
+            destroyTrap(object);
+            return;
+        }
+        if (object.trap.isBusy()) {
+            return;
+        }
+        player.startEvent(event -> {
+            player.lock();
+            player.animate(type.getPlaceAnimation());
+            event.delay(1); // todo check if traps need different delays
+            player.resetAnimation();
+            final Position position = object.getPosition();
+            destroyTrap(object);
+            event.delay(1);
+            GameObject obj = GameObject.spawn(type.getActiveObjectId(), position.getX(), position.getY(), player.getHeight(), 10, 0);
+            Trap trap = new Trap(player, type, obj);
+            player.traps.add(trap);
+            type.onPlace(player, obj);
+            player.getRouteFinder().routeSelf();
+            addTimeoutEvent(player, trap);
+            event.delay(1);
+            player.unlock();
+        });
+    }
+
     public static void dismantleTrap(Player player, GameObject obj) {
         if (!isOwner(player, obj)) {
             player.sendMessage("This isn't your trap.");
@@ -145,23 +177,13 @@ public class Hunter {
         ObjectAction.register(type.getActiveObjectId(), "dismantle", Hunter::dismantleTrap);
         ObjectAction.register(type.getFailedObjectId(), "dismantle", Hunter::dismantleTrap);
         ObjectAction.register(type.getFailedObjectId(), "reset", (player, obj) -> {
-            player.sendMessage("This feature is coming soon!");
-            /*player.startEvent(event -> {
-                player.animate(obj.trap.getTrapType().getDismantleAnimation());
-                event.delay(2);
-                destroyTrap(obj);
-                Item item = player.getInventory().findItem(type.getItemId());
-                placeItemTrap(player, type, item);
-            });*/
+            Hunter.reset(player, obj, type);
         });
 
-        for (int id : type.getSuccessObjects())
+        for (int id : type.getSuccessObjects()) {
             ObjectAction.register(id, 1, Hunter::checkTrap);
-/*        for (int id : type.getSuccessObjects())
-            ObjectAction.register(id, 2, (player, obj) -> {
-                Item item = player.getInventory().findItem(type.getItemId());
-                obj.trap.getTrappedCreature().resetCheck(player, obj, type, item);
-            });*/
+            ObjectAction.register(id, "reset", Hunter::checkTrap);
+        }
     }
 
     public static void checkTrap(Player player, GameObject obj) {

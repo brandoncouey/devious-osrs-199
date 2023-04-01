@@ -1,6 +1,6 @@
 package io.ruin.model.entity.npc.actions;
 
-import io.ruin.model.diaries.kandarin.KandarinDiaryEntry;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.entity.npc.NPCAction;
 import io.ruin.model.inter.dialogue.NPCDialogue;
 import io.ruin.model.inter.dialogue.OptionsDialogue;
@@ -13,13 +13,13 @@ public class CandleShop {
                 new OptionsDialogue(
                         new Option("Open shop", () -> {
                             ShopManager.openIfExists(player, "a1e55885-3b24-4d63-8a5e-5808c01f54e0");
-                            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.BUY_CANDLE);
+                            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.BUY_CANDLE);
                         }),
                         new Option("Nevermind"
                         ))));
         NPCAction.register(3199, "trade", (player, npc) -> {
             ShopManager.openIfExists(player, "a1e55885-3b24-4d63-8a5e-5808c01f54e0");
-            player.getDiaryManager().getKandarinDiary().progress(KandarinDiaryEntry.BUY_CANDLE);
+            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.BUY_CANDLE);
         });
     }
 }

@@ -1,4 +1,8 @@
 {
+  "claimedAchievementRewards": [],
+  "currentTab": 0,
+  "connectedClanChannel": false,
+  "lootedAdfs": false,
   "inviteDelay": 1000,
   "checkGIM": false,
   "ipAddress": "127.0.0.1",
@@ -7,7 +11,6 @@
   "macAddress": "",
   "uuid": "",
   "name": "Bruhad33",
-  "ecoReset": true,
   "password": "testing",
   "hcimdeath": false,
   "hcgimdeath": false,
@@ -21,7 +24,7 @@
   "Dslayertask": 0,
   "currentSlayerMaster": 0,
   "drakoPass": {
-    "version": 1,
+    "version": 3,
     "startLevel": 0,
     "unlocked": false,
     "hasPaidFor": false,
@@ -797,7 +800,6 @@
         "prayerLevel": 1
       }
     ],
-    "selectedPreset": 0,
     "previousSelectedPreset": -1
   },
   "savedConfigs": {
@@ -839,74 +841,74 @@
     "142606337": 0,
     "412155905": 0,
     "412090369": 0,
-    "412286977": 0,
+    "412286977": 5,
     "412221441": 0,
-    "412418049": 0,
+    "412418049": 5,
     "680853505": 0,
-    "412352513": 0,
+    "412352513": 5,
     "680787969": 0,
-    "412549121": 0,
-    "412483585": 0,
-    "412680193": 0,
-    "412614657": 0,
-    "412811265": 0,
-    "412745729": 0,
+    "412549121": 5,
+    "412483585": 5,
+    "412680193": 5,
+    "412614657": 5,
+    "412811265": 5,
+    "412745729": 5,
     "815398913": 0,
-    "412942337": 0,
-    "412876801": 0,
-    "413073409": 0,
-    "413007873": 0,
-    "413204481": 0,
-    "413138945": 0,
-    "413335553": 0,
-    "413270017": 0,
-    "413466625": 0,
-    "413401089": 0,
-    "413597697": 0,
+    "412942337": 5,
+    "412876801": 5,
+    "413073409": 5,
+    "413007873": 5,
+    "413204481": 5,
+    "413138945": 5,
+    "413335553": 5,
+    "413270017": 5,
+    "413466625": 5,
+    "413401089": 5,
+    "413597697": 5,
     "10878976": 90,
-    "413532161": 0,
-    "413728769": 0,
+    "413532161": 5,
+    "413728769": 5,
     "11010048": 0,
-    "413663233": 0,
+    "413663233": 5,
     "11075584": 0,
     "816513025": 0,
-    "413859841": 0,
+    "413859841": 5,
     "11141120": 0,
     "816447489": 0,
-    "413794305": 0,
+    "413794305": 5,
     "11206656": 0,
     "816644097": 0,
-    "413990913": 0,
+    "413990913": 5,
     "11272192": 0,
     "816578561": 0,
-    "413925377": 0,
+    "413925377": 5,
     "11337728": 1,
     "816775169": 0,
-    "414121985": 0,
+    "414121985": 5,
     "816709633": 0,
-    "414056449": 0,
+    "414056449": 5,
     "816906241": 0,
-    "414253057": 0,
+    "414253057": 5,
     "816840705": 0,
-    "414187521": 0,
+    "414187521": 5,
     "817037313": 0,
-    "414384129": 0,
+    "414384129": 5,
     "816971777": 0,
-    "414318593": 0,
+    "414318593": 5,
     "817168385": 0,
-    "414515201": 0,
+    "414515201": 5,
     "817102849": 0,
-    "414449665": 0,
+    "414449665": 5,
     "817299457": 0,
-    "414646273": 0,
-    "414580737": 0,
+    "414646273": 5,
+    "414580737": 5,
     "817430529": 0,
-    "414777345": 0,
+    "414777345": 5,
     "817364993": 0,
-    "414711809": 0,
+    "414711809": 5,
     "817561601": 0,
     "817496065": 0,
-    "414842881": 0,
+    "414842881": 5,
     "817692673": 0,
     "817627137": 0,
     "817823745": 0,
@@ -1367,6 +1369,7 @@
     "841809921": 0,
     "841744385": 0,
     "841940993": 0,
+    "170786817": 0,
     "842072065": 0,
     "842006529": 0,
     "842203137": 0,
@@ -1502,6 +1505,7 @@
     "854392833": 1,
     "452591617": 0,
     "856621057": 0,
+    "187039745": 0,
     "323092481": 0,
     "57147392": 0,
     "193200128": 0,
@@ -1529,6 +1533,7 @@
     "74317824": 0,
     "74383360": 0,
     "74448896": 0,
+    "611713025": 3,
     "209846273": 0,
     "210173953": 0,
     "210239489": 0,
@@ -1692,16 +1697,16 @@
     "788201473": 0,
     "519700481": 0,
     "788135937": 0,
-    "519897089": 0,
+    "519897089": 5,
     "788332545": 0,
     "519831553": 0,
     "788267009": 0,
-    "520028161": 0,
+    "520028161": 5,
     "788463617": 0,
-    "519962625": 0,
+    "519962625": 5,
     "788398081": 0,
     "788594689": 0,
-    "520093697": 0,
+    "520093697": 5,
     "788529153": 0,
     "788725761": 0,
     "788660225": 0,
@@ -1724,6 +1729,7 @@
     "120586241": 0,
     "120782849": 0,
     "120717313": 0,
+    "657784833": 2,
     "121110529": 0,
     "390070273": 0,
     "792920065": 0,
@@ -1799,30 +1805,150 @@
   },
   "inventory": {
     "items": [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
+      {
+        "id": 995,
+        "amount": 100000,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 558,
+        "amount": 500,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 556,
+        "amount": 2000,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 554,
+        "amount": 1000,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 555,
+        "amount": 1000,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 557,
+        "amount": 1000,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 562,
+        "amount": 500,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 560,
+        "amount": 250,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 1381,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 362,
+        "amount": 50,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 841,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 884,
+        "amount": 500,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 863,
+        "amount": 300,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 867,
+        "amount": 150,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 1169,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 1129,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 1095,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 12867,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 13012,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 1323,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 1331,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 1712,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 2552,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
+      {
+        "id": 20211,
+        "amount": 1,
+        "uniqueValue": 0,
+        "attributes": {}
+      },
       null,
       null,
       null,
@@ -3963,6 +4089,128 @@
       false,
       false
     ],
+    "counters": [
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      },
+      {
+        "type": 0,
+        "startXp": 0,
+        "endXp": 0
+      }
+    ],
     "announcedmax": false
   },
   "prayer": {
@@ -4627,18 +4875,18 @@
   "morytaniaRep": 0,
   "prifddinasRep": 0,
   "varrockRep": 0,
-  "easyArdy": 0,
-  "medArdy": 0,
-  "hardArdy": 0,
-  "eliteArdy": 0,
-  "desertEasy": 0,
-  "desertMedium": 0,
-  "desertHard": 0,
-  "desertElite": 0,
-  "faladorEasy": 0,
-  "faladorMedium": 0,
-  "faladorHard": 0,
-  "faladorElite": 0,
+  "pvpEasy": 0,
+  "pvpMedium": 0,
+  "pvpHard": 0,
+  "pvpElite": 0,
+  "minigamesEasy": 0,
+  "minigamesMedium": 0,
+  "minigamesHard": 0,
+  "minigamesElite": 0,
+  "skillingEasy": 0,
+  "skillingMedium": 0,
+  "skillingHard": 0,
+  "skillingElite": 0,
   "fremennikEasy": 0,
   "fremennikMedium": 0,
   "fremennikHard": 0,
@@ -4647,10 +4895,10 @@
   "kandarinMedium": 0,
   "kandarinHard": 0,
   "kandarinElite": 0,
-  "karamjaEasy": 0,
-  "karamjaMedium": 0,
-  "karamjaHard": 0,
-  "karamjaElite": 0,
+  "pvmEasy": 0,
+  "pvmMedium": 0,
+  "pvmHard": 0,
+  "pvmElite": 0,
   "lumbEasy": 0,
   "lumbMedium": 0,
   "lumbHard": 0,
@@ -4671,10 +4919,10 @@
   "wildyMedium": 0,
   "wildyHard": 0,
   "wildyElite": 0,
-  "kourendEasy": 0,
-  "kourendMedium": 0,
-  "kourendHard": 0,
-  "kourendElite": 0,
+  "deviousEasy": 0,
+  "deviousMedium": 0,
+  "deviousHard": 0,
+  "deviousElite": 0,
   "tonel": false,
   "ttwol": false,
   "tthreel": false,
@@ -4924,7 +5172,7 @@
   "wyrmBonesAltar": 0,
   "drakeBonesAltar": 0,
   "hydraBonesAltar": 0,
-  "seasonpassv": 1,
+  "seasonpassv": 3,
   "currentLevel": 0,
   "currentxp": 0,
   "takenRewards": [
@@ -5435,7 +5683,7 @@
   "loot26613": false,
   "loot26616": false,
   "loot26626": false,
-  "playTime": 6,
+  "playTime": 633,
   "staminaTicks": 0,
   "darkEssFragments": 0,
   "baggedCoal": 0,
@@ -5514,9 +5762,9 @@
   "previousTeleportY": 0,
   "previousTeleportZ": 0,
   "previousTeleportPrice": 0,
-  "newPlayer": true,
-  "finishedIntro": false,
-  "choseXpMode": false,
+  "newPlayer": false,
+  "finishedIntro": true,
+  "choseXpMode": true,
   "krakenWarning": true,
   "smokeBossWarning": true,
   "wyvernWarning": true,
@@ -6036,7 +6284,7 @@
   "highestLoyaltyChestSpree": 0,
   "first3TimeLeft": 0,
   "PvmPoints": 0,
-  "storeAmountSpent": 0,
+  "amountDonated": 0,
   "resting": false,
   "joinedTournament": false,
   "tournamentWins": 0,
@@ -6065,22 +6313,29 @@
     null
   ],
   "diceHost": false,
-  "lastLoginDate": "2023-01-26",
+  "lastLoginDate": "2023-03-30",
   "dailyTasksCompleted": 0,
   "afkPoints": 0,
   "exchangePoints": 0,
-  "dailyEasyTask": -1,
-  "dailyMediumTask": -1,
-  "dailyHardTask": -1,
   "dailyTaskPoints": 0,
-  "hasTask": false,
+  "easyTasks": {
+    "LESSER_DEMONS": 0,
+    "GNOME_COURSE": 0,
+    "HILL_GIANTS": 0
+  },
+  "mediumTasks": {
+    "COAL": 0,
+    "CAVE_HORROR": 0,
+    "RUNE_DRAGON": 0
+  },
+  "hardTasks": {
+    "KREE_ARRA": 0,
+    "GENERAL_GRAARDOR": 0,
+    "PRAYER_POTIONS": 0
+  },
   "dailyTaskDate": 0,
   "dailyCount": 0,
-  "totalDailyDone": 0,
-  "totalDailyMediumDone": 0,
-  "totalDailyHardDone": 0,
   "dailyTaskCompletePoints": 0,
-  "claimedDailyCache": false,
   "PVPAmorNotification": true,
   "supplyChestWarning": true,
   "bloodyKeyWarning": true,
@@ -6124,8 +6379,8 @@
   "nestBoxSeeds": 0,
   "nestBoxRings": 0,
   "chaosAltarBoneChance": 50.0,
-  "appreciationTicks": 6,
-  "appreciationPoints": 0,
+  "appreciationTicks": 33,
+  "appreciationPoints": 64,
   "energyUnits": 10000.0,
   "refundedCredits": 0,
   "claimedVotes": 0,
@@ -6134,6 +6389,7 @@
   "startedEggHunt": false,
   "preventSkippingCourse": false,
   "lastAgilityCapeBoost": 0,
+  "donatorPoints": 0,
   "timesKilledDonatorBoss": 0,
   "lastTimeKilledDonatorBoss": 0,
   "obtained50KCVorkathHead": false,

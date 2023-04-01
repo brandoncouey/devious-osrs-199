@@ -32,9 +32,13 @@ public class CoreWorker extends World {
     }
 
     public static void process() {
-        for(Stage stage : Stage.values()) {
-            processStage = stage;
-            processStage.runnable.run();
+        try {
+            for (Stage stage : Stage.values()) {
+                processStage = stage;
+                processStage.runnable.run();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         LAST_CYCLE_UPDATE = System.currentTimeMillis();
     }
@@ -53,26 +57,38 @@ public class CoreWorker extends World {
         /**
          * Npc indexing
          */
-        npcs.resetCount();
-        for(NPC npc : npcs.entityList) {
-            if(npc != null)
-                npcs.index(npc);
+        try {
+            npcs.resetCount();
+            for (NPC npc : npcs.entityList) {
+                if (npc != null)
+                    npcs.index(npc);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         /**
          * Player indexing
          */
-        players.resetCount();
-        for(Player player : players.entityList) {
-            if(player != null)
-                players.index(player);
+        try {
+            players.resetCount();
+            for (Player player : players.entityList) {
+                if (player != null)
+                    players.index(player);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         /*
          * Scrambling
          */
-        if(--scrambleTicks <= 0) {
-            scrambleTicks = Random.get(40, 60);
-            npcs.scramble();
-            players.scramble();
+        try {
+            if (--scrambleTicks <= 0) {
+                scrambleTicks = Random.get(40, 60);
+                npcs.scramble();
+                players.scramble();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -80,21 +96,29 @@ public class CoreWorker extends World {
      * Logic - Things like packet handling, combat, movement, etc.
      */
     private static void logic() {
-        GameEventProcessor.pulse();
-        EventManager.getInstance().checkEvents();
+        try {
+            GameEventProcessor.pulse();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        try {
+            EventManager.getInstance().checkEvents();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         for(NPC npc : npcs) {
             try {
                 npc.processed = true;
                 npc.process();
-            } catch(Throwable t) {
-                Server.logError("", t);
+            } catch(Exception t) {
+                t.printStackTrace();
             }
         }
         for(Player player : players) {
             try {
                 player.checkLogout();
-            } catch(Throwable t) {
-                Server.logError("", t);
+            } catch(Exception t) {
+                t.printStackTrace();
             }
         }
         for(Player player : players) {
@@ -103,15 +127,15 @@ public class CoreWorker extends World {
                     player.processed = true;
                     player.process();
                 }
-            } catch(Throwable t) {
-                Server.logError("", t);
+            } catch(Exception t) {
+                t.printStackTrace();
             }
         }
         for (OwnedObject object : ownedObjects.values()) {
             try {
                 object.tick();
-            } catch (Throwable t) {
-                Server.logError("", t);
+            } catch (Exception t) {
+                t.printStackTrace();
             }
         }
     }
@@ -125,8 +149,8 @@ public class CoreWorker extends World {
             try {
                 npc.resetUpdates();
                 npc.processed = false;
-            } catch(Throwable t) {
-                Server.logError("", t);
+            } catch(Exception t) {
+                t.printStackTrace();
             }
         }
         for(Player player : players) {
@@ -143,8 +167,8 @@ public class CoreWorker extends World {
                     TargetOverlay.process(player);
                     player.sendVarps();
                 }
-            } catch(Throwable t) {
-                Server.logError("", t);
+            } catch(Exception t) {
+                t.printStackTrace();
             }
         }
         for(Player player : players) {
@@ -153,8 +177,8 @@ public class CoreWorker extends World {
                     player.resetUpdates();
                 player.getChannel().flush();
                 player.processed = false;
-            } catch(Throwable t) {
-                Server.logError("", t);
+            } catch(Exception t) {
+                t.printStackTrace();
             }
         }
     }

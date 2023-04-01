@@ -2,8 +2,8 @@ package io.ruin.model.item.actions.impl;
 
 import io.ruin.cache.ItemDef;
 import io.ruin.cache.ObjectDef;
+import io.ruin.model.diaries.devious.DeviousDiaryEntry;
 import io.ruin.model.diaries.skilling.SkillingDiaryEntry;
-import io.ruin.model.diaries.fremennik.FremennikDiaryEntry;
 import io.ruin.model.entity.player.Player;
 import io.ruin.model.item.Item;
 import io.ruin.model.item.actions.ItemAction;
@@ -90,7 +90,7 @@ public enum Containers {
                     ItemObjectAction.register(container.empty, objDef.id, (player, item, obj) -> {
                         fillContainer(player, item, container, WaterSource.WELL);
                         if (player.getPosition().regionId() == 10553) {
-                            player.getDiaryManager().getFremennikDiary().progress(FremennikDiaryEntry.FFILL_BUCKET);
+                            player.getDiaryManager().getDeviousDiary().progress(DeviousDiaryEntry.FFILL_BUCKET);
                         }
                     });
             if (objDef.name.equalsIgnoreCase("tap"))

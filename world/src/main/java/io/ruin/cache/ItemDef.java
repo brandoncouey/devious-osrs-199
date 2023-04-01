@@ -1,9 +1,12 @@
 package io.ruin.cache;
 
 import com.google.common.collect.Maps;
+import com.google.gson.annotations.Expose;
 import io.ruin.Server;
 import io.ruin.api.buffer.InBuffer;
 import io.ruin.api.filestore.IndexFile;
+import io.ruin.api.utils.JsonUtils;
+import io.ruin.api.utils.ServerWrapper;
 import io.ruin.api.utils.StringUtils;
 import io.ruin.model.achievements.Achievement;
 import io.ruin.model.activities.cluescrolls.ClueType;
@@ -32,7 +35,11 @@ import io.ruin.model.skills.magic.rune.Rune;
 import io.ruin.model.skills.mining.Pickaxe;
 import io.ruin.model.skills.smithing.SmithBar;
 import io.ruin.model.skills.woodcutting.Hatchet;
+import io.ruin.utility.PriceDumper;
+import lombok.RequiredArgsConstructor;
 
+import java.io.File;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -42,6 +49,9 @@ import java.util.function.Consumer;
 public class ItemDef {
 
     public static Map<Integer, ItemDef> cached = Maps.newConcurrentMap();
+
+    public static PriceDefinition priceDefinition = new PriceDefinition();
+
     public CollectionLogDataSet collectionLogDataSet;
     private boolean currency;
     private boolean currencyChecked;
@@ -73,6 +83,26 @@ public class ItemDef {
                 cached.put(id, def);
             }
         }
+        loadPrices();
+    }
+
+    public static void loadPrices() {
+        File file = new File("data/items/", "prices.json");
+        if (file.exists()) {
+            try {
+                byte[] bytes = Files.readAllBytes(file.toPath());
+                String json = new String(bytes);
+                priceDefinition = JsonUtils.GSON_EXPOSE_PRETTY.fromJson(json, PriceDefinition.class);
+                for (PriceDefinition.ItemPrice item : priceDefinition.prices) {
+                    cached.get(item.id).value = item.price;
+                }
+                Server.println("Successfully loaded " + priceDefinition.prices.size()+ " item prices.");
+            } catch (Exception e) {
+                e.printStackTrace();
+                System.exit(1);
+            }
+        }
+
     }
 
     public static void forEach(Consumer<ItemDef> consumer) {
@@ -143,6 +173,7 @@ public class ItemDef {
     public int lowAlchValue, highAlchValue;
 
     public Achievement achievement;
+
     public boolean achievementReqIsIronmanOnly;
 
     /**
@@ -152,8 +183,11 @@ public class ItemDef {
     public int dropOption = -1;
 
     public int protectValue;
+
     public boolean neverProtect;
+
     public boolean dropAnnounce;
+
     public int equipOption = -1;
 
     public Special special;
@@ -289,7 +323,7 @@ public class ItemDef {
      * Decoding
      */
 
-    private void decode(InBuffer buffer) {
+    public void decode(InBuffer buffer) {
         for (; ; ) {
             int opcode = buffer.readUnsignedByte();
             if (opcode == 0)

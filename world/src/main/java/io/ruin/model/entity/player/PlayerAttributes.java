@@ -425,31 +425,31 @@ public abstract class PlayerAttributes extends Entity {
      * Diaries
      */
     @Expose
-    public int easyArdy = 0;
+    public int pvpEasy = 0;
     @Expose
-    public int medArdy = 0;
+    public int pvpMedium = 0;
     @Expose
-    public int hardArdy = 0;
+    public int pvpHard = 0;
     @Expose
-    public int eliteArdy = 0;
+    public int pvpElite = 0;
 
     @Expose
-    public int desertEasy = 0;
+    public int minigamesEasy = 0;
     @Expose
-    public int desertMedium = 0;
+    public int minigamesMedium = 0;
     @Expose
-    public int desertHard = 0;
+    public int minigamesHard = 0;
     @Expose
-    public int desertElite = 0;
+    public int minigamesElite = 0;
 
     @Expose
-    public int faladorEasy = 0;
+    public int skillingEasy = 0;
     @Expose
-    public int faladorMedium = 0;
+    public int skillingMedium = 0;
     @Expose
-    public int faladorHard = 0;
+    public int skillingHard = 0;
     @Expose
-    public int faladorElite = 0;
+    public int skillingElite = 0;
 
     @Expose
     public int fremennikEasy = 0;
@@ -470,13 +470,13 @@ public abstract class PlayerAttributes extends Entity {
     public int kandarinElite = 0;
 
     @Expose
-    public int karamjaEasy = 0;
+    public int pvmEasy = 0;
     @Expose
-    public int karamjaMedium = 0;
+    public int pvmMedium = 0;
     @Expose
-    public int karamjaHard = 0;
+    public int pvmHard = 0;
     @Expose
-    public int karamjaElite = 0;
+    public int pvmElite = 0;
 
     @Expose
     public int lumbEasy = 0;
@@ -524,13 +524,13 @@ public abstract class PlayerAttributes extends Entity {
     public int wildyElite = 0;
 
     @Expose
-    public int kourendEasy = 0;
+    public int deviousEasy = 0;
     @Expose
-    public int kourendMedium = 0;
+    public int deviousMedium = 0;
     @Expose
-    public int kourendHard = 0;
+    public int deviousHard = 0;
     @Expose
-    public int kourendElite = 0;
+    public int deviousElite = 0;
 
     @Expose
     public boolean tonel = false;
@@ -2325,7 +2325,7 @@ public abstract class PlayerAttributes extends Entity {
      */
 
     @Expose
-    public int storeAmountSpent;
+    public int amountDonated;
 
     @Expose
     public List<Item> claimedStoreItems;
@@ -2515,41 +2515,27 @@ public abstract class PlayerAttributes extends Entity {
     public int afkPoints;
     @Expose
     public int exchangePoints;
-    @Expose public int dailyEasyTask = -1;
-    @Expose public int dailyMediumTask = -1;
-    @Expose public int dailyHardTask = -1;
     @Expose public int dailyTaskPoints;
-    @Expose public boolean hasTask;
     @Expose
     @Getter
     @Setter
-    public DailyTask.PossibleTasksEasy currentTaskEasy;
+    public Map<DailyTask.EasyTasks, Integer> easyTasks = new LinkedHashMap<>(3);
     @Expose
     @Getter
     @Setter
-    public DailyTask.PossibleTasksMedium currentTaskMedium;
+    public Map<DailyTask.MediumTasks, Integer> mediumTasks = new LinkedHashMap<>(3);
     @Expose
     @Getter
     @Setter
-    public DailyTask.PossibleTasksHard currentTaskHard;
+    public Map<DailyTask.HardTasks, Integer> hardTasks = new LinkedHashMap<>(3);
+
     public boolean dailyEnabled = true;
-    public boolean completedDailyTask = false;
-    public boolean completedDailyTaskMedium = false;
-    public boolean completedDailyTaskHard = false;
     @Expose
     public int dailyTaskDate = 0;
     @Expose
     public int dailyCount;
     @Expose
-    public int totalDailyDone;
-    @Expose
-    public int totalDailyMediumDone;
-    @Expose
-    public int totalDailyHardDone;
-    @Expose
     public int dailyTaskCompletePoints = 0;
-    @Expose
-    public boolean claimedDailyCache = false;
 
     /**
      * PvP weapon specials
@@ -2809,6 +2795,9 @@ public abstract class PlayerAttributes extends Entity {
     public long lastAgilityCapeBoost;
 
     @Expose
+    public int donatorPoints;
+
+    @Expose
     public int timesKilledDonatorBoss;
     @Expose
     public long lastTimeKilledDonatorBoss;
@@ -2820,6 +2809,9 @@ public abstract class PlayerAttributes extends Entity {
     public boolean divineStrBoostActive = false;
     public boolean divineDefBoostActive = false;
     public boolean divineSuperCmbBoostActive = false;
+
+    public boolean divineBattlemageBoostActive = false;
+    public boolean divineBastionBoostActive = false;
     public boolean divineMagicBoostActive = false;
     public boolean divineRangingBoostActive = false;
 

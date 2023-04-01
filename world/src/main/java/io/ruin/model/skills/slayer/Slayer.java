@@ -359,7 +359,7 @@ public class Slayer {
                 }
             }
             if (Wilderness.getLevel(npc.getPosition()) > 0) {
-                player.getInventory().add(13307, Random.get(500, 1500));
+                player.getInventory().add(13307, Random.get(100, 500));
                 if (!player.getPosition().inBounds(Wilderness.SLAYER_CAVE)) {
                     if (Random.get(1, 40) == 1) {
                         new GroundItem(23490, 1).owner(player).position(npc.getPosition()).spawn();

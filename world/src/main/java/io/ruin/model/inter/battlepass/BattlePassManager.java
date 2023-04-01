@@ -57,7 +57,6 @@ public class BattlePassManager {
         if (!folder.exists()) {
             try {
                 folder.mkdir();
-                log.info("[BATTLEPASS] Creating Battle Pass Directory.");
                 writeDate();
                 seasonFile();
                 new BattlePass();
@@ -74,13 +73,10 @@ public class BattlePassManager {
                 LocalDate datenow = LocalDate.parse(LocalDate.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")), dtf);
                 long noOfDaysBetween = ChronoUnit.DAYS.between(dateThen, datenow);
                 daysleft = (int) (ChronoUnit.DAYS.between(datenow, dateThen) + 30);
-                System.out.println("[BATTLEPASS] Checking StartDate: " + dateThen.format(dtf) + ", DateNow: " + datenow.format(dtf));
-                System.out.println("[BATTLEPASS] Days left: " + daysleft);
                 File seasons = HomeFiles.get("battlepass" + File.separatorChar + "battle_pass_season.txt");
                 BufferedReader brs = new BufferedReader(new FileReader(seasons));
                 SeasonPassParameters.version = Integer.parseInt(brs.readLine());
                 if (noOfDaysBetween >= 30) {
-                    System.out.println("[BATTLEPASS] 30 days have passed time for a new battle pass!");
                     new BattlePass();
                     clearFile();
                 }

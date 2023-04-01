@@ -89,6 +89,7 @@ public class Consumable {
         registerEat(2142, 4, "meat");
 
         registerEat(315, 3, "shrimps");
+        registerEat(1971, 10, "kebab");
         registerEat(325, 4, "sardine");
         registerEat(347, 5, "herring");
         registerEat(355, 6, "mackerel");
@@ -304,6 +305,14 @@ public class Consumable {
             if (eatAngler(player, item))
                 player.sendFilteredMessage("You eat the anglerfish.");
         });
+        ItemAction.registerInventory(24592, "eat", (player, item) -> {
+            if (player.wildernessLevel <= 0) {
+                player.sendMessage("This can only be eaten in the wilderness.");
+                return;
+            }
+            if (eatAngler(player, item))
+                player.sendFilteredMessage("You eat the blighted anglerfish.");
+        });
     }
 
     private static void registerEat(int id, int heal, String name) {
@@ -512,6 +521,14 @@ public class Consumable {
         });
         registerPotion(Potion.DIVINE_MAGIC, p -> {
             p.getStats().get(StatType.Magic).boost(5, 0.15);
+            p.getStats().get(StatType.Defence).boost(5, 0.15);
+        });
+        registerPotion(Potion.BATTLEMAGE, p -> {
+            p.getStats().get(StatType.Magic).boost(4, 0.0);
+            p.getStats().get(StatType.Defence).boost(5, 0.15);
+        });
+        registerPotion(Potion.BASTION, p -> {
+            p.getStats().get(StatType.Ranged).boost(4, 0.1);
             p.getStats().get(StatType.Defence).boost(5, 0.15);
         });
 
@@ -787,7 +804,7 @@ public class Consumable {
         }
     }
 
-    private static boolean drink(Player player, Potion potion, Item item, int newId) {
+    public static boolean drink(Player player, Potion potion, Item item, int newId) {
         if (player.isLocked() || player.isStunned())
             return false;
         if (player.potDelay.isDelayed() || player.karamDelay.isDelayed())
@@ -836,6 +853,14 @@ public class Consumable {
         }
         if (player.divineSuperCmbBoostActive && potion == Potion.DIVINE_SUPER_COMBAT) {
             player.sendMessage("Your super combat boost is still active.");
+            return false;
+        }
+        if (player.divineBattlemageBoostActive && potion == Potion.DIVINE_BATTLEMAGE) {
+            player.sendMessage("Your super combat boost is still active.");
+            return false;
+        }
+        if (player.divineBastionBoostActive && potion == Potion.DIVINE_BASTION) {
+            player.sendMessage("Your divine bastion boost is still active.");
             return false;
         }
         if (player.overloadBoostActive && (potion == Potion.OVERLOAD_PLUS || potion == Potion.OVERLOAD_REGULAR || potion == Potion.OVERLOAD_MINUS)) {
@@ -929,6 +954,45 @@ public class Consumable {
                 }
                 player.divineDefBoostActive = false;
                 player.sendMessage("Your defence boost has worn off.");
+            } else if (potion == Potion.DIVINE_BATTLEMAGE) {
+                player.divineBattlemageBoostActive = true;
+                player.animate(3170);
+                player.graphics(560);
+                player.hit(new Hit().fixedDamage(10));
+                event.delay(2);
+                for (int i = 0; i < 20; i++) {
+                    //Todo: Adjust boosted stats.
+                    player.getStats().get(StatType.Magic).boost(4, 0.0);
+                    player.getStats().get(StatType.Defence).boost(5, 0.15);
+                    event.delay(25);
+
+                    if (i == 19) {
+                        player.incrementHp(10);
+                        player.getStats().set(StatType.Magic, player.getStats().get(StatType.Magic).fixedLevel, (int) player.getStats().get(StatType.Magic).experience);
+                        player.getStats().set(StatType.Defence, player.getStats().get(StatType.Defence).fixedLevel, (int) player.getStats().get(StatType.Defence).experience);
+                    }
+                }
+                player.divineBattlemageBoostActive = false;
+                player.sendMessage("Your divine battlemage potion has worn off.");
+            } else if (potion == Potion.DIVINE_BASTION) {
+                player.divineBastionBoostActive = true;
+                player.animate(3170);
+                player.graphics(560);
+                player.hit(new Hit().fixedDamage(10));
+                event.delay(2);
+                for (int i = 0; i < 20; i++) {
+                    player.getStats().get(StatType.Ranged).boost(4, 0.10);
+                    player.getStats().get(StatType.Defence).boost(5, 0.15);
+                    event.delay(25);
+
+                    if (i == 19) {
+                        player.incrementHp(10);
+                        player.getStats().set(StatType.Ranged, player.getStats().get(StatType.Ranged).fixedLevel, (int) player.getStats().get(StatType.Ranged).experience);
+                        player.getStats().set(StatType.Defence, player.getStats().get(StatType.Defence).fixedLevel, (int) player.getStats().get(StatType.Defence).experience);
+                    }
+                }
+                player.divineBastionBoostActive = false;
+                player.sendMessage("Your divine bastion potion has worn off.");
             } else if (potion == Potion.DIVINE_SUPER_COMBAT) {
                 player.divineSuperCmbBoostActive = true;//add and replace booleans.
                 player.animate(3170);

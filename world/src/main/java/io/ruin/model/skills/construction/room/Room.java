@@ -403,10 +403,6 @@ public abstract class Room {
             house.calculate();
             player.getStats().addXp(StatType.Construction, selected.getXP(), true);
             event.delay(1);
-            if (Random.rollDie(50, 1)) {
-                player.getInventory().addOrDrop(6828, 1);
-                player.sendMessage("You've discovered a Skilling box. It's been added to your inventory.");
-            }
             player.unlock();
             onBuildableChanged(player, definition.getHotspots()[hotspotIndex], selected);
         });

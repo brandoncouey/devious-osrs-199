@@ -66,7 +66,6 @@ public class GaunletRewards {
         if (player.isGaunletLootAvailable()) {
             Item item = rollForItem(player);
             player.getInventory().add(23962, Misc.random(3, 7));
-            player.getInventory().add(13307, Misc.random(500, 1500));
             player.getInventory().addOrDrop(item.getId(), item.getAmount());
 
             //second roll

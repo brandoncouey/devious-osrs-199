@@ -1,16 +1,23 @@
 package io.ruin.model.diaries;
 
 import io.ruin.model.entity.player.Player;
+import io.ruin.model.inter.InterfaceHandler;
+import io.ruin.model.inter.actions.DefaultAction;
+import io.ruin.model.item.Item;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.OptionalInt;
-import java.util.function.BiConsumer;
+import java.util.*;
 
 
 public abstract class StatefulAchievementDiary<T extends Enum<T>> extends DifficultyAchievementDiary<T> {
 
     private final Map<T, Integer> partialAchievements = new HashMap<>();
+
+    protected final List<Item> easyRewards = new LinkedList<>();
+    protected final List<Item> mediumRewards = new LinkedList<>();
+    protected final List<Item> hardRewards = new LinkedList<>();
+    protected final List<Item> eliteRewards = new LinkedList<>();
+
+    protected int spriteId = 3399;
 
     public StatefulAchievementDiary(String name, Player player) {
         super(name, player);
@@ -26,7 +33,7 @@ public abstract class StatefulAchievementDiary<T extends Enum<T>> extends Diffic
         }
 
         OptionalInt current = getAchievementStage(achievement);
-        if (!current.isPresent()) {
+        if (current.isEmpty()) {
             setAchievementStage(achievement, 1, notify);
             player.DiaryRecorder.put(achievement.name(), 1);
         } else {
@@ -38,7 +45,7 @@ public abstract class StatefulAchievementDiary<T extends Enum<T>> extends Diffic
     }
 
 
-    public abstract int getMaximum(T achievement);
+    public abstract int getStage(T achievement);
 
     public final boolean complete(T achievement) {
         boolean success = achievements.add(achievement);
@@ -53,7 +60,7 @@ public abstract class StatefulAchievementDiary<T extends Enum<T>> extends Diffic
         Integer result = partialAchievements.get(achievement);
         if (result == null) {
             if (hasDone(achievement)) {
-                return OptionalInt.of(getMaximum(achievement));
+                return OptionalInt.of(getStage(achievement));
             }
             return OptionalInt.empty();
         }
@@ -69,7 +76,7 @@ public abstract class StatefulAchievementDiary<T extends Enum<T>> extends Diffic
     }
 
     public void setAchievementStage(T achievement, int stage, boolean notify) {
-        int maximum = getMaximum(achievement);
+        int maximum = getStage(achievement);
 
         if (maximum == -1 || maximum == 0) {
             if (notify) {
@@ -90,14 +97,144 @@ public abstract class StatefulAchievementDiary<T extends Enum<T>> extends Diffic
             return;
         }
         partialAchievements.put(achievement, wantedStage);
-
     }
 
-    public void forEachPartial(BiConsumer<T, Integer> action) {
-        partialAchievements.forEach((entry, stage) -> action.accept(entry, stage));
-    }
 
-    public Map<T, Integer> getPartialAchievements() {
-        return partialAchievements;
+    static {
+        InterfaceHandler.register(1041, h -> {
+            h.actions[17] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                //Claim Rewards
+                switch (player.currentAchievementViewing) {
+                    case 1:
+                        player.getDiaryManager().getDeviousDiary().claimRewards();
+                        break;
+                    case 4:
+                        player.getDiaryManager().getMinigamesDiary().claimRewards();
+                        break;
+                    case 2:
+                        player.getDiaryManager().getPvmDiary().claimRewards();
+                        break;
+                    case 3:
+                        player.getDiaryManager().getPvpDiary().claimRewards();
+                        break;
+                    case 5:
+                        player.getDiaryManager().getSkillingDiary().claimRewards();
+                        break;
+                    case 0:
+                        player.getDiaryManager().getWildernessDiary().claimRewards();
+                        break;
+                }
+            };
+            h.actions[20] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                switch (player.currentAchievementViewing) {
+                    case 1:
+                        player.getDiaryManager().getDeviousDiary().display("EASY");
+                        break;
+                    case 4:
+                        player.getDiaryManager().getMinigamesDiary().display("EASY");
+                        break;
+                    case 2:
+                        player.getDiaryManager().getPvmDiary().display("EASY");
+                        break;
+                    case 3:
+                        player.getDiaryManager().getPvpDiary().display("EASY");
+                        break;
+                    case 5:
+                        player.getDiaryManager().getSkillingDiary().display("EASY");
+                        break;
+                    case 0:
+                        player.getDiaryManager().getWildernessDiary().display("EASY");
+                        break;
+                }
+            };
+            h.actions[33] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                switch (player.currentAchievementViewing) {
+                    case 1:
+                        player.getDiaryManager().getDeviousDiary().display("MEDIUM");
+                        break;
+                    case 4:
+                        player.getDiaryManager().getMinigamesDiary().display("MEDIUM");
+                        break;
+                    case 2:
+                        player.getDiaryManager().getPvmDiary().display("MEDIUM");
+                        break;
+                    case 3:
+                        player.getDiaryManager().getPvpDiary().display("MEDIUM");
+                        break;
+                    case 5:
+                        player.getDiaryManager().getSkillingDiary().display("MEDIUM");
+                        break;
+                    case 0:
+                        player.getDiaryManager().getWildernessDiary().display("MEDIUM");
+                        break;
+                }
+            };
+            h.actions[46] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                switch (player.currentAchievementViewing) {
+                    case 1:
+                        player.getDiaryManager().getDeviousDiary().display("HARD");
+                        break;
+                    case 4:
+                        player.getDiaryManager().getMinigamesDiary().display("HARD");
+                        break;
+                    case 2:
+                        player.getDiaryManager().getPvmDiary().display("HARD");
+                        break;
+                    case 3:
+                        player.getDiaryManager().getPvpDiary().display("HARD");
+                        break;
+                    case 5:
+                        player.getDiaryManager().getSkillingDiary().display("HARD");
+                        break;
+                    case 0:
+                        player.getDiaryManager().getWildernessDiary().display("HARD");
+                        break;
+                }
+            };
+            h.actions[59] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                switch (player.currentAchievementViewing) {
+                    case 1:
+                        player.getDiaryManager().getDeviousDiary().display("ELITE");
+                        break;
+                    case 4:
+                        player.getDiaryManager().getMinigamesDiary().display("ELITE");
+                        break;
+                    case 2:
+                        player.getDiaryManager().getPvmDiary().display("ELITE");
+                        break;
+                    case 3:
+                        player.getDiaryManager().getPvpDiary().display("ELITE");
+                        break;
+                    case 5:
+                        player.getDiaryManager().getSkillingDiary().display("ELITE");
+                        break;
+                    case 0:
+                        player.getDiaryManager().getWildernessDiary().display("ELITE");
+                        break;
+                }
+            };
+            h.actions[72] = (DefaultAction) (player, childId, option, slot, itemId) -> {
+                switch (player.currentAchievementViewing) {
+                    case 1:
+                        player.getDiaryManager().getDeviousDiary().display("GRANDMASTER");
+                        break;
+                    case 4:
+                        player.getDiaryManager().getMinigamesDiary().display("GRANDMASTER");
+                        break;
+                    case 2:
+                        player.getDiaryManager().getPvmDiary().display("GRANDMASTER");
+                        break;
+                    case 3:
+                        player.getDiaryManager().getPvpDiary().display("GRANDMASTER");
+                        break;
+                    case 5:
+                        player.getDiaryManager().getSkillingDiary().display("GRANDMASTER");
+                        break;
+                    case 0:
+                        player.getDiaryManager().getWildernessDiary().display("GRANDMASTER");
+                        break;
+                }
+            };
+        });
     }
 }

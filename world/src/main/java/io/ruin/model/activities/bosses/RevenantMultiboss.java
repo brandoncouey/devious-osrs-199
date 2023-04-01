@@ -62,8 +62,8 @@ public class RevenantMultiboss extends NPCCombat {
                         rolled.setId(rolled.getDef().notedId);
                     new GroundItem(rolled).owner(k.player).position(k.player.getPosition().getX(), k.player.getPosition().getY(), k.player.getPosition().getZ()).spawn();
                     k.player.sendMessage("<shad=000000>" + Color.COOL_BLUE.wrap("You got " + rolled.getDef().name + " X " + rolled.getAmount()) + "</shad>");
-                    if (rolled.getId() == 30256 || rolled.getId() == 6829 || rolled.getId() == 30307 || rolled.getId() == 30307 || rolled.getId() == 30307 || rolled.getId() == 11944) {
-                        Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.RAID_PURPLE.wrap("[RARE DROP] ") + k.player.getName() + " has just received " + Color.DARK_RED.wrap(rolled.getDef().name) + " from The Vote Boss!" + "</shad>");
+                    if (rolled.getId() == 30256 || rolled.getId() == 6829 || rolled.getId() == 30307  || rolled.getId() == 11944) {
+                        Broadcast.GLOBAL.sendNews("<shad=000000>" + Color.ORANGE.wrap(k.player.getName() + " has just received " + rolled.getDef().name + " from The Vote Boss!" + "</shad>"));
                     }
                 }
             }
@@ -172,8 +172,8 @@ public class RevenantMultiboss extends NPCCombat {
                     new LootItem(2, 3000, 3), //cannonballs x3000
                     new LootItem(6686, 50, 3), //saradomin brew noted x50
                     new LootItem(12696, 25, 2), //super combat pooition noted x25
-                    new LootItem(995, Random.get(100_000, 1_000_000), 3), // Coins
-                    new LootItem(13307, Random.get(100_000, 500_000), 3) // Blood Money
+                    new LootItem(995, Random.get(10000, 15000), 3), // Coins
+                    new LootItem(13307, Random.get(1500, 2500), 3) // Blood Money
             )
             .addTable(20,
                     new LootItem(6829, Random.get(4, 8), 1).broadcast(Broadcast.GLOBAL), // Vote box

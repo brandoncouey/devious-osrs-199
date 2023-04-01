@@ -152,8 +152,8 @@
 
     "name": "Sigmund The Merchant",
     "id": 3894,
-    "x": 3085,
-    "y": 3510,
+    "x": 3070,
+    "y": 3492,
     "z": 0,
     "direction": "E",
     "walkRange": 0,
@@ -280,30 +280,6 @@
       "trade": "aecef817-39c1-4a22-9ee9-2815da9dd3df"
       }
     },
-  {
-    "name": "Daily Manager",
-    "id": 15109,
-    "x": 3101,
-    "y": 3506,
-    "z": 0,
-    "direction": "N",
-    "walkRange": 0,
-    "shopOptions": {
-      "open-shop": "dailypointshop"
-    }
-  },
-  {
-    "name": "Twiggy O\u0027Korn",
-    "id": 5527,
-    "x": 3095,
-    "y": 3227,
-    "z": 0,
-    "direction": "S",
-    "walkRange": 2,
-    "shopOptions": {
-      "rewards": "afd8d69d-37c8-44d9-bfec-680bfaf4dfa4"
-    }
-  },
   {
     "name": "Fountain of Uhld",
     "id": 14750,

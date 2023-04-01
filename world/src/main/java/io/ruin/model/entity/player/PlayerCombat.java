@@ -202,7 +202,6 @@ public class PlayerCombat extends Combat {
         if(target == null || target.isHidden())
             return false;
         if(target.getCombat() == null) {
-            NPCCombatLog.sendDiscordMessage(player, target.npc);
             player.sendMessage("You can't attack that npc.");
             return false;
         }
@@ -359,13 +358,18 @@ public class PlayerCombat extends Combat {
             if (damage > 0) {
                 if (Random.rollDie(6, 1)) {
                     player.incrementHp(hit.damage / 2);
-                    target.graphics(1902, 90, duration);
+                    if (target != null) {
+                        target.graphics(1902, 90, duration);
+                    }
                 } else {
-                    target.graphics(1901, 90, duration);
+                    if (target != null)
+                        target.graphics(1901, 90, duration);
                 }
             } else {
                 hit.nullify();
-                target.graphics(85, 92, duration);
+                if (target != null) {
+                    target.graphics(85, 92, duration);
+                }
             }
             updateLastAttack(4);
         }
@@ -656,7 +660,17 @@ public class PlayerCombat extends Combat {
                 return;
             } else if (weaponType != WeaponType.UNARMED) {
                 attackAnim();
-                target.hit(new Hit(player, style, type).randDamage(maxDamage).setAttackWeapon(player.getEquipment().getDef(Equipment.SLOT_WEAPON)));
+                final Hit hit = new Hit(player, style, type).randDamage(maxDamage).setAttackWeapon(player.getEquipment().getDef(Equipment.SLOT_WEAPON));
+                if (hit.damage > 0) {
+                    if (weapon.name.contains("(p)")) {
+                        target.poison(4);
+                    } else if (weapon.name.contains("(p+)")) {
+                        target.poison(5);
+                    } else if (weapon.name.contains("(p++)")) {
+                        target.poison(6);
+                    }
+                }
+                target.hit(hit);
             }
         }
     }
@@ -813,6 +827,15 @@ public class PlayerCombat extends Combat {
             int delay = rangedData.projectiles[0].send(player, target);
             Hit hit = new Hit(player, style, type).randDamage(maxDamage).clientDelay(delay).setAttackWeapon(wepDef);
             if(ammo != null) {
+                if (hit.damage > 0) {
+                    if (ammo.getDef().name.contains("(p)")) {
+                        target.poison(2);
+                    } else if (ammo.getDef().name.contains("(p+)")) {
+                        target.poison(3);
+                    } else if (ammo.getDef().name.contains("(p++)")) {
+                        target.poison(4);
+                    }
+                }
                 // Chins dont roll for chance of saving ammo or drop on ground so just decrement.
                 if (chins) {
                     ammo.incrementAmount(-1);

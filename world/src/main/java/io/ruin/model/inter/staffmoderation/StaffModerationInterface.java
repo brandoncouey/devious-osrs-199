@@ -361,58 +361,58 @@ public class StaffModerationInterface {
 
         InterfaceHandler.register(INTERFACE_ID, h -> {
 
-            h.actions[24] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[24] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 24);
 
-            h.actions[26] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[26] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 26);
 
-            h.actions[29] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[29] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 29);
 
-            h.actions[31] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[31] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 31);
 
-            h.actions[33] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[33] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 33);
 
-            h.actions[35] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[35] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 35);
 
-            h.actions[38] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[38] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 38);
 
-            h.actions[40] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[40] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 40);
 
-            h.actions[42] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[42] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 42);
 
-            h.actions[44] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[44] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 44);
 
-            h.actions[47] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[47] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 47);
 
-            h.actions[49] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[49] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 49);
 
-            h.actions[51] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[51] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 51);
 
-            h.actions[53] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[53] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 53);
 
-            h.actions[56] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[56] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 56);
 
-            h.actions[58] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[58] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 58);
 
-            h.actions[60] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[60] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 60);
 
-            h.actions[62] = (DefaultAction) (player, option, slot, itemId) ->
+            h.actions[62] = (DefaultAction) (player, childId, option, slot, itemId) ->
                     handleActions(player, 62);
         });
     }

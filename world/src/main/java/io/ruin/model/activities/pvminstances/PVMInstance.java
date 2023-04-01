@@ -9,6 +9,8 @@ import io.ruin.model.map.MapListener;
 import io.ruin.model.map.Position;
 import io.ruin.model.map.dynamic.DynamicMap;
 import io.ruin.services.Loggers;
+import io.ruin.utility.Misc;
+import io.ruin.utility.PlayerLog;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +40,7 @@ public class PVMInstance {
     private final InstanceType type;
 
     private final int ownerId;
+    private final String ownerName;
     private int timeLeft;
     private int idleTime;
 
@@ -54,12 +57,14 @@ public class PVMInstance {
 
     public PVMInstance(Player owner, InstanceType type, InstancePrivacy privacy, String password) {
         this.ownerId = owner.getUserId();
+        this.ownerName = owner.getName();
         this.type = type;
         this.timeLeft = type.getDuration();
         this.privacy = privacy;
         this.password = password;
         build();
         activeInstances.put(ownerId, this);
+        PlayerLog.log(PlayerLog.Type.PVM_INSTANCE, ownerName, "Created Instance [Type=" + type.getName() + ", Cost=" + type.getCost() + ", Created=" + Misc.formatTime(timeCreated) + "].");
     }
 
     public PVMInstance(Player owner, InstanceType type, InstancePrivacy privacy) {
@@ -163,7 +168,7 @@ public class PVMInstance {
         if (remove)
             activeInstances.remove(ownerId);
         timeDestroyed = System.currentTimeMillis();
-        Loggers.logPvMInstance(ownerId, type.getName(), type.getCost(), timeCreated, timeDestroyed);
+        PlayerLog.log(PlayerLog.Type.PVM_INSTANCE, ownerName, "Destroyed Instance [Type=" + type.getName() + ", Cost=" + type.getCost() + ", Created=" + Misc.formatTime(timeCreated) + ", Destroyed=" + Misc.formatTime(timeDestroyed) + "].");
     }
 
     private Position convertPosition(Position pos) {

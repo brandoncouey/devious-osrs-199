@@ -433,8 +433,10 @@ public class NPC extends NPCAttributes {
         if (combat != null)
             combat.follow0();
         movement.process();
-        if (combat != null)
+        if (combat != null) {
             combat.attack0();
+            combat.process();
+        }
         processHits();
     }
 
